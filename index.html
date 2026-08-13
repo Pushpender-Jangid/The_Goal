@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GOAL | CBSE Class 10 IT (402)</title>
+
+    <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(99, 102, 241, .18), transparent 30%),
+        radial-gradient(circle at 90% 90%, rgba(139, 92, 246, .18), transparent 30%),
+        linear-gradient(135deg, #0f172a, #1e1b4b 55%, #111827);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+      padding: 35px 0 25px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px 20px;
+    }
+
+    .logo {
+      display: inline-block;
+      font-size: clamp(42px, 8vw, 78px);
+      font-weight: 900;
+      letter-spacing: 5px;
+      background: linear-gradient(90deg, #818cf8, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 10px 40px rgba(129, 140, 248, .2);
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: clamp(15px, 2.5vw, 20px);
+      color: #cbd5e1;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 8px 18px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 50px;
+      background: rgba(255, 255, 255, .07);
+      color: #e2e8f0;
+      font-size: 14px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 35px 0 22px;
+    }
+
+    .section-title h2 {
+      font-size: 28px;
+      margin-bottom: 7px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    .units {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .unit-card {
+      position: relative;
+      padding: 25px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .075);
+      border: 1px solid rgba(255, 255, 255, .12);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      transition: .3s ease;
+      overflow: hidden;
+    }
+
+    .unit-card::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(129, 140, 248, .12);
+      top: -55px;
+      right: -45px;
+    }
+
+    .unit-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(129, 140, 248, .5);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, .25);
+    }
+
+    .unit-number {
+      font-size: 13px;
+      font-weight: 700;
+      color: #a5b4fc;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .unit-card h3 {
+      margin: 8px 0 7px;
+      font-size: 21px;
+    }
+
+    .unit-card p {
+      color: #94a3b8;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 45px;
+    }
+
+    .start-btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 20px;
+      padding: 13px 18px;
+      border-radius: 13px;
+      color: white;
+      font-weight: 700;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      transition: .25s;
+    }
+
+    .start-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, .3);
+    }
+
+    .info {
+      margin: 35px 0 10px;
+      padding: 20px;
+      text-align: center;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .info strong {
+      color: #c4b5fd;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 35px 10px 15px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .footer .heart {
+      color: #f43f5e;
+    }
+
+    @media(max-width:600px) {
+      .container {
+        padding-top: 20px;
+      }
+
+      .header {
+        padding-top: 20px;
+      }
+
+      .unit-card {
+        padding: 22px;
+      }
+    }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <header class="header">
+        <div class="logo">THE GOAL</div>
+
+        <div class="tagline">
+          CBSE Class 10 Information Technology (402)
+        </div>
+
+        <div class="badge">
+          PART A • EMPLOYABILITY SKILLS
+        </div>
+      </header>
+
+
+      <section class="section-title">
+        <h2>Choose Your Unit</h2>
+        <p>Select a unit below to start your exam-oriented MCQ test.</p>
+      </section>
+
+
+      <section class="units">
+
+        <!-- UNIT 1 -->
+        <div class="unit-card">
+          <div class="unit-number">Unit 01</div>
+          <h3>Communication Skills-II</h3>
+          <p>
+            Test your understanding of communication concepts,
+            methods and effective communication skills.
+          </p>
+
+          <a class="start-btn" href="part%20A%20unit%201%20.html">
+            START TEST →
+          </a>
+        </div>
+
+
+        <!-- UNIT 2 -->
+        <div class="unit-card">
+          <div class="unit-number">Unit 02</div>
+          <h3>Self-Management Skills-II</h3>
+          <p>
+            Practice important concepts related to self-management,
+            motivation, stress and goal setting.
+          </p>
+
+          <a class="start-btn" href="unit%202%20.html">
+            START TEST →
+          </a>
+        </div>
+
+
+        <!-- UNIT 3 -->
+        <div class="unit-card">
+          <div class="unit-number">Unit 03</div>
+          <h3>ICT Skills-II</h3>
+          <p>
+            Strengthen your knowledge of ICT concepts,
+            digital tools, safety and responsible technology use.
+          </p>
+
+          <a class="start-btn" href="unit%203%20.html">
+            START TEST →
+          </a>
+        </div>
+
+
+        <!-- UNIT 4 -->
+        <div class="unit-card">
+          <div class="unit-number">Unit 04</div>
+          <h3>Entrepreneurial Skills-II</h3>
+          <p>
+            Practice entrepreneurship concepts, characteristics,
+            opportunities and important business skills.
+          </p>
+
+          <a class="start-btn" href="unit%204.html">
+            START TEST →
+          </a>
+        </div>
+
+
+        <!-- UNIT 5 -->
+        <div class="unit-card">
+          <div class="unit-number">Unit 05</div>
+          <h3>Green Skills-II</h3>
+          <p>
+            Test your knowledge of sustainable development,
+            SDGs, resource conservation and green practices.
+          </p>
+
+          <a class="start-btn" href="100%25%20unit%205%20.html">
+            START TEST →
+          </a>
+        </div>
+
+      </section>
+
+
+      <div class="info">
+        <strong>Exam Mode</strong><br>
+        50 MCQs • 20 Minutes • Instant Result • Detailed Review
+      </div>
+
+
+      <footer class="footer">
+        Made with Love <span class="heart">❤️</span> in India by Pushpender
+      </footer>
+
+    </div>
+
+  </body>
+
+</html>
