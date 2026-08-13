@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GOAL | Communication Skills-II | Top 50 MCQ</title>
+    <style>
+        :root {
+            --bg-color: #0d0e12;
+            --card-bg: rgba(22, 26, 36, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-red: #ff3344;
+            --accent-red-glow: rgba(255, 51, 68, 0.35);
+            --text-main: #f0f2f5;
+            --text-muted: #9aa0a6;
+            --correct-green: #00e676;
+            --correct-glow: rgba(0, 230, 118, 0.25);
+            --incorrect-red: #ff1744;
+            --incorrect-glow: rgba(255, 23, 68, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 51, 68, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 51, 68, 0.03) 0%, transparent 20%);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 14, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .brand-logo span {
+            color: var(--accent-red);
+            text-shadow: 0 0 10px var(--accent-red-glow);
+        }
+
+        .timer-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem auto;
+            flex-grow: 1;
+        }
+
+        /* Cards */
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            margin-bottom: 2rem;
+        }
+
+        /* Start Screen */
+        .start-screen {
+            text-align: center;
+        }
+
+        .subtitle {
+            color: var(--accent-red);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .input-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-control:focus {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 10px var(--accent-red-glow);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-red);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--accent-red-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--accent-red-glow);
+        }
+
+        .error-msg {
+            color: var(--incorrect-red);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        /* Quiz Screen */
+        .quiz-screen {
+            display: none;
+        }
+
+        .quiz-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--accent-red);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 8px var(--accent-red-glow);
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            text-align: left;
+            color: var(--text-main);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateX(4px);
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        .option-btn.correct {
+            background: rgba(0, 230, 118, 0.15) !important;
+            border-color: var(--correct-green) !important;
+            color: #fff;
+            box-shadow: 0 0 10px var(--correct-glow);
+        }
+
+        .option-btn.incorrect {
+            background: rgba(255, 23, 68, 0.15) !important;
+            border-color: var(--incorrect-red) !important;
+            color: #fff;
+            box-shadow: 0 0 10px var(--incorrect-glow);
+        }
+
+        .explanation-box {
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid var(--text-muted);
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .explanation-box.correct-border {
+            border-left-color: var(--correct-green);
+        }
+
+        .explanation-box.incorrect-border {
+            border-left-color: var(--incorrect-red);
+        }
+
+        .exp-status {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-status.correct { color: var(--correct-green); }
+        .exp-status.incorrect { color: var(--incorrect-red); }
+
+        .exp-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .action-btn-container {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-next {
+            padding: 0.8rem 2rem;
+            background: var(--text-main);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-next:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Result Screen */
+        .result-screen {
+            display: none;
+            text-align: center;
+        }
+
+        .score-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-red);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem auto;
+            box-shadow: 0 0 20px var(--accent-red-glow);
+        }
+
+        .score-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .score-max {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .perf-category {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .perf-msg {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .stat-val {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .stat-lbl {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .review-section {
+            text-align: left;
+            margin-top: 3rem;
+        }
+
+        .review-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .review-item {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-q {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .review-ans {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .review-ans.user-wrong {
+            color: var(--incorrect-red);
+        }
+
+        .review-ans.correct-ans {
+            color: var(--correct-green);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
+            background: rgba(13, 14, 18, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            header { padding: 1rem; }
+            .glass-card { padding: 1.5rem; }
+            .title { font-size: 1.6rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-logo">THE <span>GOAL</span></div>
+        <div class="timer-badge">⏱ <span id="timer-display">20:00</span></div>
+    </header>
+
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="glass-card start-screen">
+            <div class="subtitle">PART-A • COMMUNICATION SKILLS-II</div>
+            <h1 class="title">TOP 50 MCQ CHALLENGE</h1>
+            <p class="tagline">50 Exam-Oriented Questions • 20 Minutes • Instant Explanation</p>
+            
+            <div class="input-group">
+                <label for="student-name">ENTER YOUR NAME</label>
+                <input type="text" id="student-name" class="input-control" placeholder="Type your full name here..." autocomplete="off">
+                <div id="name-error" class="error-msg">Please enter your name first.</div>
+            </div>
+
+            <button id="start-btn" class="btn-primary">START TEST →</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="glass-card quiz-screen">
+            <div class="quiz-meta">
+                <span id="q-counter">Question 1/50</span>
+                <span id="score-counter">Score: 0</span>
+            </div>
+            
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div id="question-text" class="question-text"></div>
+
+            <div id="options-container" class="options-grid"></div>
+
+            <div id="explanation-box" class="explanation-box">
+                <div id="exp-status" class="exp-status"></div>
+                <div id="exp-text" class="exp-text"></div>
+            </div>
+
+            <div class="action-btn-container">
+                <button id="next-btn" class="btn-next">NEXT QUESTION →</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="glass-card result-screen">
+            <div class="subtitle">🏆 CHALLENGE COMPLETE!</div>
+            <h2 id="result-name" class="title" style="margin-bottom: 0.5rem;"></h2>
+            
+            <div class="score-circle">
+                <span id="final-score" class="score-num">0</span>
+                <span class="score-max">/ 50</span>
+            </div>
+
+            <div id="perf-category" class="perf-category"></div>
+            <p id="perf-msg" class="perf-msg"></p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div id="stat-correct" class="stat-val" style="color: var(--correct-green);">0</div>
+                    <div class="stat-lbl">Correct</div>
+                </div>
+                <div class="stat-card">
+                    <div id="stat-wrong" class="stat-val" style="color: var(--incorrect-red);">0</div>
+                    <div class="stat-lbl">Wrong</div>
+                </div>
+                <div class="stat-card">
+                    <div id="stat-accuracy" class="stat-val">0%</div>
+                    <div class="stat-lbl">Accuracy</div>
+                </div>
+            </div>
+
+            <button id="restart-btn" class="btn-primary" style="margin-top: 1rem;">🔄 PLAY AGAIN</button>
+
+            <div id="review-section" class="review-section">
+                <div class="review-title">📚 QUESTIONS TO REVISE</div>
+                <div id="review-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Made with Love ❤️ in India by Pushpender
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                q: "Which of the following are the basic methods of communication?",
+                options: ["Verbal only", "Non-verbal only", "Visual only", "Verbal, non-verbal and visual"],
+                ans: 3,
+                exp: "Communication can take place through words, body language/gestures and visual elements. These are the basic methods of communication."
+            },
+            {
+                q: "Which type of communication mainly uses words to convey information?",
+                options: ["Verbal communication", "Non-verbal communication", "Visual communication", "Symbolic communication"],
+                ans: 0,
+                exp: "Verbal communication uses spoken or written words to express ideas, information and feelings."
+            },
+            {
+                q: "Which of the following is an example of non-verbal communication?",
+                options: ["Email", "Report", "Body language", "Notice"],
+                ans: 2,
+                exp: "Body language communicates through gestures, posture and expressions without depending on spoken or written words."
+            },
+            {
+                q: "A poster displaying road-safety symbols is an example of:",
+                options: ["Verbal communication", "Visual communication", "Interpersonal communication", "Written-only communication"],
+                ans: 1,
+                exp: "Posters, signs and symbols communicate information through visual elements, making them examples of visual communication."
+            },
+            {
+                q: "Communication between two individuals is generally known as:",
+                options: ["Mass communication", "Public communication", "Interpersonal communication", "Organisational communication"],
+                ans: 2,
+                exp: "Interpersonal communication occurs between individuals, commonly in one-to-one interaction."
+            },
+            {
+                q: "Which method would be most suitable for sending an official written message quickly?",
+                options: ["Email", "Facial expression", "Hand gesture", "Eye contact"],
+                ans: 0,
+                exp: "Email allows information to be communicated quickly in written form and also provides a record of the communication."
+            },
+            {
+                q: "In the communication cycle, who generally initiates communication?",
+                options: ["Receiver", "Sender", "Audience", "Observer"],
+                ans: 1,
+                exp: "The sender starts the communication by creating and transmitting a message to the receiver."
+            },
+            {
+                q: "What is the information or idea that the sender wants to communicate called?",
+                options: ["Channel", "Feedback", "Noise", "Message"],
+                ans: 3,
+                exp: "The message is the information, idea or thought that the sender intends to convey to the receiver."
+            },
+            {
+                q: "What is the medium used to transmit a message called?",
+                options: ["Channel", "Feedback", "Receiver", "Barrier"],
+                ans: 0,
+                exp: "A channel is the medium through which a message travels, such as speech, email or another communication medium."
+            },
+            {
+                q: "Who receives and interprets the message?",
+                options: ["Sender", "Channel", "Receiver", "Observer"],
+                ans: 2,
+                exp: "The receiver gets the message and interprets its meaning."
+            },
+            {
+                q: "Which element completes the communication cycle?",
+                options: ["Noise", "Silence", "Delay", "Feedback"],
+                ans: 3,
+                exp: "Feedback is the receiver's response or acknowledgement and helps the sender know whether the message was understood."
+            },
+            {
+                q: "Which of the following is a characteristic of good feedback?",
+                options: ["Specific", "Insulting", "Vague", "Irrelevant"],
+                ans: 0,
+                exp: "Good feedback should be useful and specific so that the receiver understands what was done well or what needs improvement."
+            },
+            {
+                q: "Which feedback gives clear information about a particular area that needs improvement?",
+                options: ["Random feedback", "Specific feedback", "Silent feedback", "Irrelevant feedback"],
+                ans: 1,
+                exp: "Specific feedback focuses on a particular action, behaviour or result, making it easier for the receiver to improve."
+            },
+            {
+                q: "Which of the following is NOT a communication barrier?",
+                options: ["Physical barrier", "Cultural barrier", "Listening carefully", "Linguistic barrier"],
+                ans: 2,
+                exp: "Careful listening supports communication, whereas physical, linguistic and cultural factors can interfere with it."
+            },
+            {
+                q: "Loud machinery making it difficult to hear someone is an example of:",
+                options: ["Physical barrier", "Cultural barrier", "Linguistic barrier", "Interpersonal barrier"],
+                ans: 0,
+                exp: "Noise and unsuitable environmental conditions interfere physically with communication."
+            },
+            {
+                q: "Difficulty caused by differences in language is called a:",
+                options: ["Cultural barrier", "Physical barrier", "Organisational barrier", "Linguistic barrier"],
+                ans: 3,
+                exp: "A linguistic barrier occurs when differences in language or difficult terminology prevent effective understanding."
+            },
+            {
+                q: "Differences in customs and cultural practices can create a:",
+                options: ["Physical barrier", "Cultural barrier", "Visual barrier", "Technical barrier"],
+                ans: 1,
+                exp: "Cultural barriers occur when differences in customs, behaviour or cultural interpretation affect communication."
+            },
+            {
+                q: "A strict organisational hierarchy that restricts the flow of information may create an:",
+                options: ["Linguistic barrier", "Physical barrier", "Organisational barrier", "Visual barrier"],
+                ans: 2,
+                exp: "Organisational structures, rules and hierarchy can sometimes restrict the free flow of information."
+            },
+            {
+                q: "A message being interpreted differently because of emotions or personal perceptions may indicate a:",
+                options: ["Physical barrier", "Interpersonal barrier", "Visual barrier", "Technical barrier"],
+                ans: 1,
+                exp: "Emotions, attitudes, perceptions and relationships can distort how a message is understood and create interpersonal barriers."
+            },
+            {
+                q: "Which is an effective way to overcome a language barrier?",
+                options: ["Use complex jargon", "Speak unclearly", "Avoid feedback", "Use simple language"],
+                ans: 3,
+                exp: "Simple, clear and familiar language reduces misunderstanding and makes communication easier to understand."
+            },
+            {
+                q: "Which principle means that a message should be easy to understand?",
+                options: ["Clarity", "Courtesy", "Completeness", "Conciseness"],
+                ans: 0,
+                exp: "Clarity means expressing ideas in a way that is easy for the receiver to understand without unnecessary confusion."
+            },
+            {
+                q: "The 7 Cs of communication are mainly used to make communication:",
+                options: ["Longer", "More complicated", "More effective", "Informal only"],
+                ans: 2,
+                exp: "The 7 Cs provide practical principles that help make communication clear, effective and understandable."
+            },
+            {
+                q: "Which of the following is one of the 7 Cs of communication?",
+                options: ["Carelessness", "Correctness", "Confusion", "Casualness"],
+                ans: 1,
+                exp: "Correctness is one of the 7 Cs and focuses on accurate information and appropriate language."
+            },
+            {
+                q: "Which C means providing all necessary information in a message?",
+                options: ["Courtesy", "Clarity", "Conciseness", "Completeness"],
+                ans: 3,
+                exp: "Completeness means including all information needed by the receiver to understand and act on the message."
+            },
+            {
+                q: "Which C means expressing the required idea briefly without unnecessary information?",
+                options: ["Conciseness", "Correctness", "Courtesy", "Completeness"],
+                ans: 0,
+                exp: "Conciseness means communicating the required idea briefly while avoiding unnecessary words or information."
+            },
+            {
+                q: "Which C focuses on politeness and respect towards the receiver?",
+                options: ["Completeness", "Correctness", "Courtesy", "Clarity"],
+                ans: 2,
+                exp: "Courtesy means communicating respectfully and politely while considering the receiver's feelings."
+            },
+            {
+                q: "Which C focuses on providing accurate information and appropriate language?",
+                options: ["Correctness", "Conciseness", "Courtesy", "Completeness"],
+                ans: 0,
+                exp: "Correctness ensures that the information communicated is accurate and the language used is appropriate."
+            },
+            {
+                q: "A message containing unnecessary details violates which principle most directly?",
+                options: ["Courtesy", "Conciseness", "Correctness", "Completeness"],
+                ans: 1,
+                exp: "Conciseness requires the communicator to avoid unnecessary information and express the required idea briefly."
+            },
+            {
+                q: "A message that does not contain important information violates:",
+                options: ["Completeness", "Courtesy", "Clarity", "Correctness"],
+                ans: 0,
+                exp: "Completeness requires the message to contain all information necessary for the receiver to understand and respond appropriately."
+            },
+            {
+                q: "Which situation best demonstrates clarity in communication?",
+                options: ["Using difficult technical words unnecessarily", "Giving a confusing and lengthy explanation", "Using simple and understandable language", "Leaving important information unexplained"],
+                ans: 2,
+                exp: "Clear communication presents ideas in a simple and understandable manner, reducing confusion for the receiver."
+            },
+            {
+                q: "Which of the following is most likely to cause misunderstanding during communication?",
+                options: ["Clear language", "Active listening", "Specific feedback", "Unclear message"],
+                ans: 3,
+                exp: "An unclear message can be interpreted differently by the receiver and may result in misunderstanding."
+            },
+            {
+                q: "If the receiver asks the sender to explain a message again, which element is especially important for checking understanding?",
+                options: ["Feedback", "Noise", "Channel", "Barrier"],
+                ans: 0,
+                exp: "Feedback tells the sender how the receiver has understood the message and whether clarification is required."
+            },
+            {
+                q: "Which action is most helpful when communicating with someone who has difficulty understanding a language?",
+                options: ["Increase the use of jargon", "Speak faster", "Use simple words and examples", "Avoid communication"],
+                ans: 2,
+                exp: "Simple words and familiar examples can reduce linguistic difficulties and improve understanding."
+            },
+            {
+                q: "Which of the following is a non-verbal cue?",
+                options: ["Email", "Facial expression", "Written report", "Telephone message"],
+                ans: 1,
+                exp: "Facial expressions communicate emotions and meaning without using spoken or written words, making them non-verbal cues."
+            },
+            {
+                q: "A student nods while listening to a teacher. The nod is mainly an example of:",
+                options: ["Written communication", "Visual document", "Verbal communication", "Non-verbal communication"],
+                ans: 3,
+                exp: "Nodding is a physical gesture that communicates acknowledgement without words, so it is non-verbal communication."
+            },
+            {
+                q: "Which situation is an example of visual communication?",
+                options: ["A person explaining an idea verbally", "A phone conversation", "A safety sign showing a warning symbol", "Two people discussing a project"],
+                ans: 2,
+                exp: "A safety sign communicates information using visual symbols, making it visual communication."
+            },
+            {
+                q: "In the communication cycle, the sender first needs to:",
+                options: ["Create the message", "Receive feedback", "Interpret the receiver's response", "Remove the receiver"],
+                ans: 0,
+                exp: "The sender initiates communication by forming the information or idea that needs to be communicated."
+            },
+            {
+                q: "Which sequence best represents the basic communication process?",
+                options: ["Receiver → Feedback → Sender → Message", "Message → Noise → Receiver → Sender", "Sender → Message → Receiver → Feedback", "Feedback → Sender → Channel → Message"],
+                ans: 2,
+                exp: "The sender creates and sends a message through a channel to the receiver, who responds through feedback."
+            },
+            {
+                q: "Which of the following can interfere with the successful transmission of a message?",
+                options: ["Feedback", "Noise", "Clarity", "Courtesy"],
+                ans: 1,
+                exp: "Noise or interference can disturb the transmission and understanding of a message during communication."
+            },
+            {
+                q: "A receiver responds, “I understood your instructions and will complete the task.” This response is:",
+                options: ["Feedback", "Noise", "Barrier", "Channel"],
+                ans: 0,
+                exp: "The receiver's response confirms understanding and therefore acts as feedback to the sender."
+            },
+            {
+                q: "Which of the following would BEST improve communication in a noisy workplace?",
+                options: ["Speak more unclearly", "Increase the noise", "Move to a quieter place", "Avoid the receiver"],
+                ans: 2,
+                exp: "Moving to a quieter environment reduces the physical barrier caused by noise and improves the chances of clear communication."
+            },
+            {
+                q: "A person uses unfamiliar technical terms while explaining something to a beginner. This may create a:",
+                options: ["Linguistic barrier", "Cultural barrier", "Physical barrier", "Visual aid"],
+                ans: 0,
+                exp: "Difficult terminology can make communication difficult to understand and may create a linguistic barrier."
+            },
+            {
+                q: "Which response is an example of constructive feedback?",
+                options: ["“Everything is wrong.”", "“You are bad at this.”", "“I don't care about your work.”", "“Your introduction is clear; add one example to improve it.”"],
+                ans: 3,
+                exp: "Constructive feedback is specific and useful. It identifies what is good and clearly indicates an area for improvement."
+            },
+            {
+                q: "Which statement follows the principle of conciseness?",
+                options: ["“Please submit the assignment tomorrow by 10 a.m.”", "“I want to tell you many things before I finally mention the deadline.”", "“You should submit it sometime soon, maybe tomorrow or later.”", "“There are many details that are not necessary for this message.”"],
+                ans: 0,
+                exp: "The first statement communicates the required information briefly and directly, demonstrating conciseness."
+            },
+            {
+                q: "Which message best demonstrates completeness?",
+                options: ["“Meeting tomorrow.”", "“Come there.”", "“The meeting is tomorrow at 10 a.m. in Room 204.”", "“Meeting soon.”"],
+                ans: 2,
+                exp: "The message provides the important details—event, date, time and location—making it more complete."
+            },
+            {
+                q: "Which message best demonstrates courtesy?",
+                options: ["“Give me the file now.”", "“Send the file immediately or else.”", "“Why are you always so slow?”", "“Could you please send me the file when convenient?”"],
+                ans: 3,
+                exp: "Courtesy involves politeness and respect while communicating with the receiver."
+            },
+            {
+                q: "Which statement best demonstrates correctness?",
+                options: ["“The meeting is on Monday at 10 a.m.” when that information is verified", "“The meeting is maybe Monday or Tuesday.”", "“The meeting is at some time.”", "“The meeting information is probably correct.”"],
+                ans: 0,
+                exp: "Correctness requires accurate and reliable information with appropriate language."
+            },
+            {
+                q: "A student listens carefully, asks relevant questions and confirms the instructions. This mainly helps to:",
+                options: ["Increase communication barriers", "Improve understanding", "Create noise", "Make communication incomplete"],
+                ans: 1,
+                exp: "Careful listening and clarification help the receiver understand the message and reduce the possibility of misunderstanding."
+            },
+            {
+                q: "Which combination contains only communication barriers?",
+                options: ["Clarity, courtesy, feedback", "Sender, receiver, channel", "Physical, linguistic and cultural barriers", "Message, feedback and visual communication"],
+                ans: 2,
+                exp: "Physical, linguistic and cultural factors can interfere with communication and are recognised as communication barriers."
+            },
+            {
+                q: "Which option BEST describes effective communication?",
+                options: ["A message that is lengthy and complicated", "A message that ignores the receiver's understanding", "A message that uses difficult language unnecessarily", "A clear, appropriate message that is understood by the receiver"],
+                ans: 3,
+                exp: "Effective communication focuses on clear and appropriate exchange of information so that the receiver understands the intended message."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let studentName = "";
+        let timerInterval;
+        let timeLeft = 20 * 60; // 20 minutes
+        let userAnswers = [];
+
+        // DOM Elements
+        const startScreen = document.getElementById('start-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultScreen = document.getElementById('result-screen');
+        const startBtn = document.getElementById('start-btn');
+        const studentNameInput = document.getElementById('student-name');
+        const nameError = document.getElementById('name-error');
+        const timerDisplay = document.getElementById('timer-display');
+        
+        const qCounter = document.getElementById('q-counter');
+        const scoreCounter = document.getElementById('score-counter');
+        const progressBar = document.getElementById('progress-bar');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const explanationBox = document.getElementById('explanation-box');
+        const expStatus = document.getElementById('exp-status');
+        const expText = document.getElementById('exp-text');
+        const nextBtn = document.getElementById('next-btn');
+
+        const resultName = document.getElementById('result-name');
+        const finalScore = document.getElementById('final-score');
+        const perfCategory = document.getElementById('perf-category');
+        const perfMsg = document.getElementById('perf-msg');
+        const statCorrect = document.getElementById('stat-correct');
+        const statWrong = document.getElementById('stat-wrong');
+        const statAccuracy = document.getElementById('stat-accuracy');
+        const reviewList = document.getElementById('review-list');
+        const restartBtn = document.getElementById('restart-btn');
+
+        startBtn.addEventListener('click', () => {
+            const name = studentNameInput.value.trim();
+            if (!name) {
+                nameError.style.display = 'block';
+                return;
+            }
+            nameError.style.display = 'none';
+            studentName = name;
+            startQuiz();
+        });
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    endQuiz();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startQuiz() {
+            startScreen.style.display = 'none';
+            quizScreen.style.display = 'block';
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+            timeLeft = 20 * 60;
+            updateTimerDisplay();
+            startTimer();
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const currentQ = questions[currentQuestionIndex];
+            qCounter.textContent = `Question ${currentQuestionIndex + 1}/${questions.length}`;
+            scoreCounter.textContent = `Score: ${score}`;
+            progressBar.style.width = `${((currentQuestionIndex) / questions.length) * 100}%`;
+
+            questionText.textContent = `${currentQuestionIndex + 1}. ${currentQ.q}`;
+            optionsContainer.innerHTML = '';
+            explanationBox.style.display = 'none';
+            nextBtn.style.display = 'none';
+
+            const optionPrefixes = ['A', 'B', 'C', 'D'];
+            currentQ.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.innerHTML = `<strong>${optionPrefixes[index]}.</strong> ${opt}`;
+                btn.addEventListener('click', () => selectOption(index));
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectOption(selectedIndex) {
+            const currentQ = questions[currentQuestionIndex];
+            const buttons = optionsContainer.querySelectorAll('.option-btn');
+            
+            buttons.forEach(btn => btn.disabled = true);
+            userAnswers.push(selectedIndex);
+
+            const isCorrect = selectedIndex === currentQ.ans;
+            const optionPrefixes = ['A', 'B', 'C', 'D'];
+
+            if (isCorrect) {
+                score++;
+                scoreCounter.textContent = `Score: ${score}`;
+                buttons[selectedIndex].classList.add('correct');
+                expStatus.textContent = "✅ Correct!";
+                expStatus.className = "exp-status correct";
+                explanationBox.className = "explanation-box correct-border";
+            } else {
+                buttons[selectedIndex].classList.add('incorrect');
+                buttons[currentQ.ans].classList.add('correct');
+                expStatus.textContent = `❌ Incorrect — Correct answer: ${optionPrefixes[currentQ.ans]}. ${currentQ.options[currentQ.ans]}`;
+                expStatus.className = "exp-status incorrect";
+                explanationBox.className = "explanation-box incorrect-border";
+            }
+
+            expText.textContent = currentQ.exp;
+            explanationBox.style.display = 'block';
+            nextBtn.style.display = 'block';
+
+            if (currentQuestionIndex === questions.length - 1) {
+                nextBtn.textContent = "FINISH TEST →";
+            } else {
+                nextBtn.textContent = "NEXT QUESTION →";
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                endQuiz();
+            }
+        });
+
+        function endQuiz() {
+            clearInterval(timerInterval);
+            quizScreen.style.display = 'none';
+            resultScreen.style.display = 'block';
+
+            resultName.textContent = studentName.toUpperCase();
+            finalScore.textContent = score;
+
+            const percentage = ((score / questions.length) * 100).toFixed(0);
+            const wrongCount = questions.length - score;
+
+            statCorrect.textContent = score;
+            statWrong.textContent = wrongCount;
+            statAccuracy.textContent = `${percentage}%`;
+
+            if (score >= 45) {
+                perfCategory.textContent = "🏆 EXCELLENT";
+                perfCategory.style.color = "var(--correct-green)";
+                perfMsg.textContent = "Outstanding performance! Your concepts are very strong.";
+            } else if (score >= 30) {
+                perfCategory.textContent = "👍 AVERAGE";
+                perfCategory.style.color = "#ffb74d";
+                perfMsg.textContent = "Good attempt! Revise the weaker concepts and try again for 45+.";
+            } else {
+                perfCategory.textContent = "📚 NEED TO REVISE CONCEPT AGAIN";
+                perfCategory.style.color = "var(--incorrect-red)";
+                perfMsg.textContent = "Revise the unit concepts carefully and attempt the test again.";
+            }
+
+            // Review section
+            reviewList.innerHTML = '';
+            let wrongAnswersExist = false;
+
+            questions.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                if (userAns !== q.ans) {
+                    wrongAnswersExist = true;
+                    const optionPrefixes = ['A', 'B', 'C', 'D'];
+                    const item = document.createElement('div');
+                    item.className = 'review-item';
+                    item.innerHTML = `
+                        <div class="review-q">Q${idx + 1}. ${q.q}</div>
+                        <div class="review-ans user-wrong">Your Answer: ${userAns !== undefined ? optionPrefixes[userAns] + '. ' + q.options[userAns] : 'Not Attempted'}</div>
+                        <div class="review-ans correct-ans">Correct Answer: ${optionPrefixes[q.ans]}. ${q.options[q.ans]}</div>
+                    `;
+                    reviewList.appendChild(item);
+                }
+            });
+
+            if (!wrongAnswersExist) {
+                reviewList.innerHTML = `
+                    <div style="text-align: center; color: var(--correct-green); padding: 1rem;">
+                        🎉 PERFECT REVIEW<br>All attempted questions were correct!
+                    </div>
+                `;
+            }
+        }
+
+        restartBtn.addEventListener('click', () => {
+            resultScreen.style.display = 'none';
+            startScreen.style.display = 'block';
+            studentNameInput.value = '';
+        });
+    </script>
+</body>
+</html>

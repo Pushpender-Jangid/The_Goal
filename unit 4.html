@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GOAL - Unit 4 Entrepreneurial Skills-II MCQ Test</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e293b;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg-main: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        header p.unit-title {
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .screen {
+            display: none;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        /* Start Screen */
+        #start-screen {
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        #start-screen h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .test-info-list {
+            text-align: left;
+            background: #f1f5f9;
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .test-info-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-light);
+        }
+
+        .btn {
+            background-color: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            background-color: var(--border);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-success {
+            background-color: var(--success);
+        }
+
+        .btn-success:hover {
+            background-color: #059669;
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+        }
+
+        .btn-danger:hover {
+            background-color: #dc2626;
+        }
+
+        /* Test Layout */
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .student-display {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .timer-box {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border: 1px solid #fde68a;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .progress-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .progress-bar-bg {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--primary-light);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 850px) {
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .question-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .question-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .option-card {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 0.8rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            background: #fafafa;
+        }
+
+        .option-card:hover:not(.disabled) {
+            border-color: var(--primary-light);
+            background: #eff6ff;
+        }
+
+        .option-card.selected {
+            border-color: var(--primary-light);
+            background: #ebf8ff;
+        }
+
+        .option-card.correct {
+            border-color: var(--success) !important;
+            background-color: #ecfdf5 !important;
+            color: #065f46;
+        }
+
+        .option-card.incorrect {
+            border-color: var(--danger) !important;
+            background-color: #fef2f2 !important;
+            color: #991b1b;
+        }
+
+        .option-card.disabled {
+            cursor: default;
+        }
+
+        .option-prefix {
+            font-weight: 700;
+            background: #e2e8f0;
+            border-radius: 4px;
+            padding: 0.1rem 0.5rem;
+            font-size: 0.9rem;
+            min-width: 28px;
+            text-align: center;
+        }
+
+        .option-card.correct .option-prefix {
+            background: var(--success);
+            color: white;
+        }
+
+        .option-card.incorrect .option-prefix {
+            background: var(--danger);
+            color: white;
+        }
+
+        .option-text {
+            font-size: 1rem;
+            flex: 1;
+        }
+
+        .explanation-box {
+            margin-top: 1.5rem;
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            background: #f8fafc;
+            border-left: 4px solid var(--primary-light);
+            display: none;
+        }
+
+        .explanation-box.show {
+            display: block;
+        }
+
+        .explanation-header {
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .explanation-box.correct-bg {
+            border-color: var(--success);
+            background: #f0fdf4;
+        }
+
+        .explanation-box.correct-bg .explanation-header {
+            color: var(--success);
+        }
+
+        .explanation-box.incorrect-bg {
+            border-color: var(--danger);
+            background: #fef2f2;
+        }
+
+        .explanation-box.incorrect-bg .explanation-header {
+            color: var(--danger);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        /* Palette */
+        .palette-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            height: fit-content;
+        }
+
+        .palette-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.4rem;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.4rem;
+            max-height: 350px;
+            overflow-y: auto;
+            padding-right: 0.2rem;
+        }
+
+        .palette-btn {
+            aspect-ratio: 1;
+            border: 1px solid var(--border);
+            background: #fff;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .palette-btn:hover {
+            border-color: var(--primary-light);
+        }
+
+        .palette-btn.current {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 1px;
+            font-weight: 800;
+        }
+
+        .palette-btn.answered {
+            background: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        .palette-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-box {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+        }
+
+        .legend-box.answered { background: var(--primary-light); }
+        .legend-box.unanswered { background: #fff; }
+        .legend-box.current { border: 2px solid var(--primary-light); background: #fff; }
+
+        /* Result Screen */
+        #result-screen {
+            max-width: 700px;
+            margin: 1rem auto;
+            text-align: center;
+        }
+
+        .result-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-msg {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            background: #eff6ff;
+            color: var(--primary);
+            margin-top: 0.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card .val {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .stat-card .lbl {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+
+        .stat-card.correct-card .val { color: var(--success); }
+        .stat-card.incorrect-card .val { color: var(--danger); }
+        .stat-card.score-card { background: #eff6ff; border-color: #bfdbfe; }
+        .stat-card.score-card .val { color: var(--primary); }
+
+        footer {
+            background: var(--primary-dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+        }
+
+        footer strong {
+            color: #f1f5f9;
+        }
+
+        /* Error state for name */
+        .error-msg {
+            color: var(--danger);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>THE GOAL</h1>
+        <p>CBSE Class 10 | Information Technology (402)</p>
+        <p class="unit-title">Unit 4 — Entrepreneurial Skills-II</p>
+    </header>
+
+    <main>
+        <!-- START SCREEN -->
+        <div id="start-screen" class="screen active">
+            <h2>Welcome to Online Assessment</h2>
+            <p style="color: var(--text-muted);">Test your concepts with 50 CBSE Exam Oriented MCQs</p>
+            
+            <ul class="test-info-list">
+                <li>⏱️ <strong>Time Limit:</strong> 20 Minutes</li>
+                <li>❓ <strong>Total Questions:</strong> 50 MCQs</li>
+                <li>🎯 <strong>Target:</strong> CBSE Board Exam Preparation</li>
+                <li>⚡ <strong>Instant Feedback:</strong> Explanation provided on choice</li>
+            </ul>
+
+            <form id="start-form" onsubmit="event.preventDefault(); startTest();">
+                <div class="form-group">
+                    <label for="student-name">Enter Your Full Name <span style="color:red">*</span></label>
+                    <input type="text" id="student-name" placeholder="e.g. Rahul Sharma" autocomplete="off">
+                    <div id="name-error" class="error-msg">Please enter your name to begin the test.</div>
+                </div>
+                <button type="submit" class="btn btn-success" style="width: 100%; font-size: 1.1rem;">START TEST</button>
+            </form>
+        </div>
+
+        <!-- TEST SCREEN -->
+        <div id="test-screen" class="screen">
+            <div class="test-header">
+                <div class="student-display">Candidate: <span id="display-name">---</span></div>
+                <div class="timer-box">
+                    <span>⏱️</span>
+                    <span id="timer">20:00</span>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span id="progress-text">Question 1 of 50</span>
+                    <span id="progress-percent">0% Completed</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <div class="test-grid">
+                <!-- Question Container -->
+                <div style="display: flex; flex-direction: column;">
+                    <div class="question-card">
+                        <div class="question-number" id="q-number">Question 1</div>
+                        <div class="question-text" id="q-text">Loading question...</div>
+
+                        <div class="options-list" id="options-container">
+                            <!-- Options rendered dynamically -->
+                        </div>
+
+                        <div class="explanation-box" id="explanation-box">
+                            <div class="explanation-header" id="exp-header">✓ Correct Answer</div>
+                            <div id="exp-text" style="font-size: 0.95rem; color: #334155; white-space: pre-line;"></div>
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn" id="btn-prev" onclick="navigate(-1)">Previous</button>
+                        <button class="btn" id="btn-next" onclick="navigate(1)">Next</button>
+                        <button class="btn btn-danger" onclick="confirmSubmit()">Submit Test</button>
+                    </div>
+                </div>
+
+                <!-- Question Palette -->
+                <div class="palette-card">
+                    <div class="palette-title">Question Palette</div>
+                    <div class="palette-grid" id="palette-grid">
+                        <!-- 50 buttons rendered dynamically -->
+                    </div>
+                    <div class="palette-legend">
+                        <div class="legend-item">
+                            <div class="legend-box answered"></div>
+                            <span>Answered</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-box unanswered"></div>
+                            <span>Not Answered</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-box current"></div>
+                            <span>Current Question</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="result-screen" class="screen">
+            <div class="result-header">
+                <h2>THE GOAL</h2>
+                <p style="color: var(--text-muted); font-weight: 600;">UNIT 4 — ENTREPRENEURIAL SKILLS-II</p>
+                <p style="margin-top: 0.5rem; font-size: 1.1rem;">Candidate Name: <strong id="res-name" style="color: var(--primary);">---</strong></p>
+                <div class="badge-msg" id="badge-msg">Excellent! 🎉</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card score-card">
+                    <div class="val" id="res-score">0 / 50</div>
+                    <div class="lbl">Total Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="val" id="res-percent">0%</div>
+                    <div class="lbl">Percentage</div>
+                </div>
+                <div class="stat-card correct-card">
+                    <div class="val" id="res-correct">0</div>
+                    <div class="lbl">Correct</div>
+                </div>
+                <div class="stat-card incorrect-card">
+                    <div class="val" id="res-incorrect">0</div>
+                    <div class="lbl">Incorrect</div>
+                </div>
+                <div class="stat-card">
+                    <div class="val" id="res-unattempted">0</div>
+                    <div class="lbl">Unattempted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="val" id="res-time">00:00</div>
+                    <div class="lbl">Time Taken</div>
+                </div>
+            </div>
+
+            <button class="btn btn-success" style="margin-top: 1rem; font-size: 1.1rem;" onclick="retakeTest()">Retake Test</button>
+        </div>
+    </main>
+
+    <footer>
+        Made with Love ❤️ in India by <strong>Pushpender</strong>
+    </footer>
+
+    <script>
+        const rawQuestions = [
+            {
+                q: "Entrepreneurship is mainly a type of:",
+                options: ["Wage employment", "Self-employment", "Government service", "Part-time employment"],
+                ans: "B",
+                exp: "Entrepreneurship is a form of self-employment.\nAn entrepreneur runs a business to satisfy people's needs and tries to improve it."
+            },
+            {
+                q: "Which person is best described as an entrepreneur?",
+                options: ["A person working for a company for salary", "A student attending school regularly", "A person running a business and trying new ideas to improve it", "A person buying products for personal use"],
+                ans: "C",
+                exp: "An entrepreneur runs a business to satisfy customer needs.\nThey also take risks and try new ideas to improve the business."
+            },
+            {
+                q: "Ram and Shyam both own plant shops. Ram only sells plants, while Shyam adds seeds and flowers and actively attracts customers. Who is more entrepreneurial?",
+                options: ["Shyam", "Ram", "Both are equally entrepreneurial", "Neither"],
+                ans: "A",
+                exp: "Shyam is trying new ideas and actively working to grow the business.\nThese are important entrepreneurial behaviours."
+            },
+            {
+                q: "A market mainly consists of:",
+                options: ["Only buyers", "Only sellers", "Only manufacturers", "People who buy and sell products or services"],
+                ans: "D",
+                exp: "A market includes buyers and sellers.\nTheir buying and selling activities help businesses and the surrounding society grow."
+            },
+            {
+                q: "How can an entrepreneur help create employment?",
+                options: ["By closing other businesses", "By hiring people to work in the business", "By reducing customer demand", "By avoiding business expansion"],
+                ans: "B",
+                exp: "When businesses grow, entrepreneurs may hire employees.\nThis creates employment opportunities in the area."
+            },
+            {
+                q: "Aditi buys products in large quantities and employs two people in her shop. Which impact of entrepreneurship is shown?",
+                options: ["Increasing unemployment", "Reducing production", "Creating economic opportunities and jobs", "Stopping market activity"],
+                ans: "C",
+                exp: "Aditi's business provides income to suppliers and employees.\nThus, entrepreneurship contributes to economic activity and employment."
+            },
+            {
+                q: "Which quality helps an entrepreneur continue working despite difficulties?",
+                options: ["Giving up quickly", "Patience and perseverance", "Avoiding decisions", "Depending completely on others"],
+                ans: "B",
+                exp: "Entrepreneurs face problems and failures.\nPatience and the ability to keep trying help them continue towards their goals."
+            },
+            {
+                q: "An entrepreneur accepts a mistake and tries to correct it. Which quality is demonstrated?",
+                options: ["Creativity", "Confidence", "Hard work", "Taking responsibility"],
+                ans: "D",
+                exp: "Taking responsibility means accepting one's actions and mistakes.\nA responsible entrepreneur learns from mistakes and improves."
+            },
+            {
+                q: "Which quality is shown when an entrepreneur thinks of different solutions to a business problem?",
+                options: ["Creativity", "Patience", "Risk avoidance", "Dependence"],
+                ans: "A",
+                exp: "Creativity allows an entrepreneur to think differently.\nIt helps in finding new and useful solutions to problems."
+            },
+            {
+                q: "Before choosing a supplier, an entrepreneur compares prices and quality. Which quality is mainly involved?",
+                options: ["Patience", "Hard work", "Thinking before making a decision", "Giving up"],
+                ans: "C",
+                exp: "Entrepreneurs should carefully consider available information before making decisions.\nThis can reduce unnecessary mistakes."
+            },
+            {
+                q: "Which of the following is NOT a quality of a successful entrepreneur?",
+                options: ["Confidence", "Creativity", "Hard work", "Giving up easily"],
+                ans: "D",
+                exp: "Successful entrepreneurs do not give up when they face difficulties.\nThey keep trying and look for better solutions."
+            },
+            {
+                q: "An entrepreneur remains calm while dealing with an angry customer. Which quality does this show?",
+                options: ["Creativity", "Patience", "Risk-taking", "Decision-making"],
+                ans: "B",
+                exp: "Remaining calm and listening instead of reacting angrily demonstrates patience.\nIt helps maintain good customer relationships."
+            },
+            {
+                q: "Which function involves deciding what, how much and where to sell?",
+                options: ["Making decisions", "Dividing income", "Managing employees only", "Creating advertisements only"],
+                ans: "A",
+                exp: "Entrepreneurs make many daily decisions about products, quantity and selling locations.\nDecision-making is a key business function."
+            },
+            {
+                q: "An entrepreneur arranges raw materials and hires workers. This is an example of:",
+                options: ["Taking risk", "Creating a new product", "Managing the business", "Dividing income"],
+                ans: "C",
+                exp: "Managing a business includes arranging resources, hiring people and ensuring that planned work is completed."
+            },
+            {
+                q: "Paying rent, purchasing materials and paying salaries are related to which function?",
+                options: ["Taking risk", "Dividing income", "Making advertisements", "Creating a new idea"],
+                ans: "B",
+                exp: "Business money is divided among different expenses such as materials, rent and salaries.\nThis is an important entrepreneurial function."
+            },
+            {
+                q: "Risk is best defined as:",
+                options: ["A guaranteed profit", "A business decision without consequences", "The chance of something going wrong", "A method of saving money"],
+                ans: "C",
+                exp: "Risk means there is a possibility that something may not go as planned.\nEntrepreneurs must be prepared to handle such situations."
+            },
+            {
+                q: "Which action represents the function of creating a new method or product?",
+                options: ["Paying monthly rent", "Hiring an accountant", "Buying ordinary raw material", "Introducing a new way to deliver products"],
+                ans: "D",
+                exp: "Entrepreneurs continuously try new methods, ideas or products.\nInnovation can help improve the business and income."
+            },
+            {
+                q: "Mary discovers that another city offers cheaper bulbs and changes her supplier. This mainly shows:",
+                options: ["Making decisions", "Dividing income", "Taking risk", "Hiring workers"],
+                ans: "A",
+                exp: "Mary evaluates available information and changes her supplier.\nChoosing what is better for the business is decision-making."
+            },
+            {
+                q: "Which function is related to planning the future of a business?",
+                options: ["Managing the business", "Taking attendance", "Buying personal items", "Avoiding customers"],
+                ans: "A",
+                exp: "Business management includes planning for the future and arranging people and resources.\nIt ensures that business activities remain organised."
+            },
+            {
+                q: "An entrepreneur introduces a new product to attract more customers. Which function is demonstrated?",
+                options: ["Dividing income", "Creating a new method, idea or product", "Paying salaries", "Maintaining records only"],
+                ans: "B",
+                exp: "Introducing something new is a core entrepreneurial function.\nIt can help attract customers and improve business performance."
+            },
+            {
+                q: "A misconception is:",
+                options: ["A business plan", "A financial record", "A false belief or opinion", "A customer requirement"],
+                ans: "C",
+                exp: "A misconception is an incorrect belief about something.\nEntrepreneurship has several common misconceptions."
+            },
+            {
+                q: "Which statement is a common misconception about entrepreneurship?",
+                options: ["Every business idea must be completely unique", "Customer needs are important", "Entrepreneurs can learn skills", "Small businesses can become successful"],
+                ans: "A",
+                exp: "A business idea does not have to be completely new.\nAn entrepreneur can take an existing idea and do something different with it."
+            },
+            {
+                q: "Ganesh starts a car rental business and adds luxury cars to differentiate his service. What does this example show?",
+                options: ["A business must always be completely new", "Existing businesses cannot be improved", "Innovation can be added to an existing business idea", "Only large businesses can innovate"],
+                ans: "C",
+                exp: "Car rental is an existing business idea, but Ganesh added luxury cars.\nThis shows that differentiation can create an opportunity."
+            },
+            {
+                q: "The money used to start a business is called:",
+                options: ["Salary", "Capital", "Profit", "Tax"],
+                ans: "B",
+                exp: "Capital refers to money used to start or operate a business.\nThe amount needed can differ depending on the type and size of business."
+            },
+            {
+                q: "Which statement correctly challenges the misconception about capital?",
+                options: ["Every business requires a huge amount of money", "A business cannot start without a bank loan", "Only rich people can become entrepreneurs", "Businesses can be started with different amounts of capital"],
+                ans: "D",
+                exp: "Not every business requires a large amount of money.\nThe required capital depends on the business idea and available resources."
+            },
+            {
+                q: "If an entrepreneur earns more money and reinvests it to expand the business, what does this illustrate?",
+                options: ["Business growth through reinvestment", "Avoiding risk completely", "Wage employment", "Closing the business"],
+                ans: "A",
+                exp: "Entrepreneurs can put money earned from the business back into it.\nThis can help increase the size and capacity of the business."
+            },
+            {
+                q: "Which statement is a misconception?",
+                options: ["Entrepreneurs can learn skills", "Entrepreneurs can start small", "Entrepreneurs are born, not made", "Entrepreneurs can improve existing ideas"],
+                ans: "C",
+                exp: "Entrepreneurial skills can be developed through learning and practice.\nTherefore, entrepreneurship is not limited only to people naturally born with business talent."
+            },
+            {
+                q: "Sheila runs a small taxi business and adds useful facilities for customers. According to the textbook, she can be considered:",
+                options: ["A wage employee", "An entrepreneur", "A customer", "A supplier"],
+                ans: "B",
+                exp: "Business size does not determine whether someone is an entrepreneur.\nSheila works for herself and improves her service according to customer needs."
+            },
+            {
+                q: "Which statement correctly describes the misconception that only big businesses have entrepreneurs?",
+                options: ["Small businesses cannot earn profit", "Only companies with many employees are businesses", "Entrepreneurship depends on business size", "A person running a small business can also be an entrepreneur"],
+                ans: "D",
+                exp: "Entrepreneurship is not determined by business size.\nEven a small business can satisfy customer needs through new ideas and hard work."
+            },
+            {
+                q: "A student says, “I cannot become an entrepreneur because I was not born with business talent.” What is the best response?",
+                options: ["Entrepreneurial skills can be learned and practised", "Only business families can become entrepreneurs", "Entrepreneurship cannot be taught", "Students cannot become entrepreneurs"],
+                ans: "A",
+                exp: "Entrepreneurial qualities can be developed through education and practice.\nThe textbook specifically challenges the myth that entrepreneurs are simply born."
+            },
+            {
+                q: "Which of the following is an example of self-employment?",
+                options: ["Working as a cashier for a company", "Working as a teacher in a school", "Owning and running a clothing business", "Working as an employee in a factory"],
+                ans: "C",
+                exp: "In self-employment, a person works for themselves.\nRunning one's own business is an example of self-employment."
+            },
+            {
+                q: "A doctor works in a hospital and receives a salary. This is:",
+                options: ["Entrepreneurship", "Wage employment", "Self-employment", "Business ownership"],
+                ans: "B",
+                exp: "A person working for an organisation and receiving payment for that work is wage employed.\nThe doctor would be self-employed if they ran their own clinic."
+            },
+            {
+                q: "A doctor opens and manages their own clinic. This is an example of:",
+                options: ["Wage employment", "Government employment", "Self-employment", "Voluntary employment"],
+                ans: "C",
+                exp: "The doctor is now working independently through their own clinic.\nIf they also innovate and work to satisfy customer needs, they can be an entrepreneur."
+            },
+            {
+                q: "A career is best described as:",
+                options: ["A hobby done occasionally", "A short-term school activity", "A single business decision", "A line of work a person takes for life"],
+                ans: "D",
+                exp: "A career is a person's long-term line of work.\nEntrepreneurship can be chosen as a career option."
+            },
+            {
+                q: "Which sequence represents the career process of an entrepreneur given in the textbook?",
+                options: ["Enter → Survive → Grow", "Grow → Enter → Survive", "Survive → Grow → Enter", "Enter → Grow → Survive"],
+                ans: "A",
+                exp: "An entrepreneur first enters the market, then works to survive competition.\nOnce stable, the business can grow and expand."
+            },
+            {
+                q: "Sanjana has just started her grocery store. Which stage is she in?",
+                options: ["Grow", "Survive", "Enter", "Expand"],
+                ans: "C",
+                exp: "Starting a new business means entering the market.\nAt this stage, the entrepreneur is beginning business operations."
+            },
+            {
+                q: "Sanjana's grocery store faces many competitors but continues operating successfully. Which stage is this?",
+                options: ["Enter", "Survive", "Grow", "Close"],
+                ans: "B",
+                exp: "The survival stage involves remaining successful despite competition.\nThe entrepreneur must work to maintain the business in the market."
+            },
+            {
+                q: "Sanjana opens several more branches after her original store becomes stable. Which stage is represented?",
+                options: ["Enter", "Survive", "Maintain", "Grow"],
+                ans: "D",
+                exp: "Expansion after business stability represents the growth stage.\nThe entrepreneur increases the size or reach of the business."
+            },
+            {
+                q: "Which is a major difference between wage employment and self-employment?",
+                options: ["In wage employment, a person works for an employer; in self-employment, a person works for themselves", "Both always involve owning a business", "Self-employed people never earn money", "Wage-employed people never work for organisations"],
+                ans: "A",
+                exp: "Wage employment involves working for another person or organisation.\nSelf-employment involves working independently, often through one's own business."
+            },
+            {
+                q: "Which person is most likely to be in the “Grow” stage?",
+                options: ["Someone planning to open their first shop", "Someone trying to survive among competitors", "Someone expanding a stable business to other cities", "Someone searching for their first business idea"],
+                ans: "C",
+                exp: "Expansion into new locations is a clear sign of business growth.\nIt generally happens after the business becomes stable."
+            },
+            {
+                q: "Which action best demonstrates entrepreneurial thinking?",
+                options: ["Ignoring customer complaints", "Finding a new way to solve a customer problem", "Avoiding all changes", "Copying every competitor exactly"],
+                ans: "B",
+                exp: "Entrepreneurial thinking focuses on identifying needs and finding creative solutions.\nCustomer problems can become useful business opportunities."
+            },
+            {
+                q: "A school canteen produces a lot of plastic waste. A student suggests making useful products from waste bottles and selling them. This idea mainly demonstrates:",
+                options: ["Wage employment", "Risk avoidance", "Entrepreneurial thinking", "Lack of creativity"],
+                ans: "C",
+                exp: "The student identifies a problem and suggests a business idea to solve it.\nFinding opportunities in problems is an entrepreneurial approach."
+            },
+            {
+                q: "Which of the following can be an entrepreneurial opportunity?",
+                options: ["Ignoring an unmet customer need", "Identifying a problem and developing a useful product or service", "Avoiding all customer feedback", "Refusing to change an existing business"],
+                ans: "B",
+                exp: "Entrepreneurs identify needs and problems in the market.\nThey can turn these needs into products or services."
+            },
+            {
+                q: "Why is creativity important for an entrepreneur?",
+                options: ["It helps the entrepreneur avoid all decisions", "It guarantees success without effort", "It removes every business risk", "It helps generate different ideas and solutions"],
+                ans: "D",
+                exp: "Creativity allows entrepreneurs to think differently.\nIt can help them develop new products, methods or solutions."
+            },
+            {
+                q: "Which situation best demonstrates confidence?",
+                options: ["An entrepreneur believes in their idea and works to develop it", "An entrepreneur gives up before trying", "An entrepreneur refuses to make any decision", "An entrepreneur blames others for every problem"],
+                ans: "A",
+                exp: "Confidence means believing in one's abilities and ideas.\nIt helps entrepreneurs take action instead of being stopped by doubt."
+            },
+            {
+                q: "An entrepreneur faces a failed business decision but analyses the mistake and tries again. Which qualities are mainly shown?",
+                options: ["Laziness and dependence", "Patience and not giving up", "Carelessness and fear", "Avoidance and hesitation"],
+                ans: "B",
+                exp: "Entrepreneurs may experience failure.\nLearning from mistakes and continuing to work shows patience and perseverance."
+            },
+            {
+                q: "Which statement about entrepreneurial risk is most accurate?",
+                options: ["Entrepreneurs never face risks", "Every risk guarantees profit", "Entrepreneurship involves the possibility that something may go wrong", "Risk means refusing to make decisions"],
+                ans: "C",
+                exp: "Risk is a possibility of an undesirable outcome.\nEntrepreneurs take calculated risks while trying to improve their businesses."
+            },
+            {
+                q: "Which statement best explains why entrepreneurship benefits society?",
+                options: ["It stops people from buying products", "It removes competition completely", "It prevents new ideas", "It can create jobs and support buying and selling activities"],
+                ans: "D",
+                exp: "Entrepreneurs create products and services and may employ others.\nTheir activities contribute to the economic development of society."
+            },
+            {
+                q: "Which option correctly identifies the stage?",
+                options: ["Starting a new business — Enter", "Facing competition successfully — Grow", "Expanding a stable business — Enter", "Starting a business — Survive"],
+                ans: "A",
+                exp: "“Enter” is the first stage of the entrepreneurial career process.\nSurvive comes after entering the competitive market, followed by growth."
+            },
+            {
+                q: "Which statement best represents the overall idea of entrepreneurship in this unit?",
+                options: ["Entrepreneurship is only about earning money quickly", "Only large businesses can be entrepreneurial", "Entrepreneurship involves satisfying needs, trying new ideas, taking risks and improving a business", "Entrepreneurship cannot be learned"],
+                ans: "C",
+                exp: "Entrepreneurship combines identifying customer needs with innovation, decision-making and risk-taking.\nIt can contribute to both personal and societal development."
+            }
+        ];
+
+        // State variables
+        let studentName = "";
+        let currentIdx = 0;
+        let userAnswers = new Array(50).fill(null); // Stores selected option key: 'A', 'B', 'C', 'D'
+        let timerSeconds = 20 * 60;
+        let timerInterval = null;
+        let timeTakenSeconds = 0;
+
+        function startTest() {
+            const input = document.getElementById('student-name');
+            const err = document.getElementById('name-error');
+            if (!input.value.trim()) {
+                err.style.display = 'block';
+                return;
+            }
+            err.style.display = 'none';
+            studentName = input.value.trim();
+            document.getElementById('display-name').textContent = studentName;
+
+            // Switch screens
+            document.getElementById('start-screen').classList.remove('active');
+            document.getElementById('test-screen').classList.add('active');
+
+            // Init palette & first question
+            renderPalette();
+            loadQuestion(0);
+            startTimer();
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timerSeconds--;
+                timeTakenSeconds++;
+
+                const mins = Math.floor(timerSeconds / 60);
+                const secs = timerSeconds % 60;
+                document.getElementById('timer').textContent = 
+                    `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        function renderPalette() {
+            const grid = document.getElementById('palette-grid');
+            grid.innerHTML = '';
+            for (let i = 0; i < 50; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'palette-btn';
+                btn.id = `pal-${i}`;
+                btn.textContent = i + 1;
+                btn.onclick = () => jumpToQuestion(i);
+                grid.appendChild(btn);
+            }
+            updatePaletteUI();
+        }
+
+        function updatePaletteUI() {
+            for (let i = 0; i < 50; i++) {
+                const btn = document.getElementById(`pal-${i}`);
+                if (!btn) continue;
+                
+                // reset classes
+                btn.className = 'palette-btn';
+
+                if (userAnswers[i] !== null) {
+                    btn.classList.add('answered');
+                }
+                if (i === currentIdx) {
+                    btn.classList.add('current');
+                }
+            }
+        }
+
+        function loadQuestion(index) {
+            currentIdx = index;
+            const item = rawQuestions[index];
+
+            // Render text
+            document.getElementById('q-number').textContent = `Question ${index + 1} of 50`;
+            document.getElementById('q-text').textContent = item.q;
+
+            // Render options
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            const optionKeys = ['A', 'B', 'C', 'D'];
+            const answeredKey = userAnswers[index];
+            const isAnswered = answeredKey !== null;
+
+            optionKeys.forEach((key, idx) => {
+                const card = document.createElement('div');
+                card.className = 'option-card';
+                if (isAnswered) {
+                    card.classList.add('disabled');
+                    if (key === item.ans) {
+                        card.classList.add('correct');
+                    }
+                    if (answeredKey === key && key !== item.ans) {
+                        card.classList.add('incorrect');
+                    }
+                }
+
+                card.onclick = () => selectOption(index, key);
+
+                const prefix = document.createElement('span');
+                prefix.className = 'option-prefix';
+                prefix.textContent = key;
+
+                const text = document.createElement('span');
+                text.className = 'option-text';
+                text.textContent = item.options[idx];
+
+                card.appendChild(prefix);
+                card.appendChild(text);
+                optionsContainer.appendChild(card);
+            });
+
+            // Explanation Box
+            const expBox = document.getElementById('explanation-box');
+            const expHeader = document.getElementById('exp-header');
+            const expText = document.getElementById('exp-text');
+
+            if (isAnswered) {
+                expBox.classList.add('show');
+                expText.textContent = item.exp;
+
+                if (answeredKey === item.ans) {
+                    expBox.className = 'explanation-box show correct-bg';
+                    expHeader.textContent = '✓ Correct Answer';
+                } else {
+                    expBox.className = 'explanation-box show incorrect-bg';
+                    expHeader.textContent = '✗ Incorrect Answer';
+                }
+            } else {
+                expBox.className = 'explanation-box';
+            }
+
+            // Progress Update
+            document.getElementById('progress-text').textContent = `Question ${index + 1} of 50`;
+            const answeredCount = userAnswers.filter(a => a !== null).length;
+            const pct = Math.round((answeredCount / 50) * 100);
+            document.getElementById('progress-percent').textContent = `${pct}% Completed`;
+            document.getElementById('progress-bar-fill').style.width = `${((index + 1) / 50) * 100}%`;
+
+            // Nav buttons state
+            document.getElementById('btn-prev').disabled = index === 0;
+            document.getElementById('btn-next').disabled = index === 49;
+
+            updatePaletteUI();
+        }
+
+        function selectOption(qIdx, key) {
+            if (userAnswers[qIdx] !== null) return; // Prevent changing answer
+
+            userAnswers[qIdx] = key;
+            loadQuestion(qIdx);
+        }
+
+        function navigate(dir) {
+            const nextIdx = currentIdx + dir;
+            if (nextIdx >= 0 && nextIdx < 50) {
+                loadQuestion(nextIdx);
+            }
+        }
+
+        function jumpToQuestion(idx) {
+            loadQuestion(idx);
+        }
+
+        function confirmSubmit() {
+            const unattempted = userAnswers.filter(a => a === null).length;
+            let msg = "Are you sure you want to submit the test?";
+            if (unattempted > 0) {
+                msg = `You have ${unattempted} unattempted question(s). Are you sure you want to submit?`;
+            }
+            if (confirm(msg)) {
+                submitTest();
+            }
+        }
+
+        function submitTest() {
+            clearInterval(timerInterval);
+
+            let correct = 0;
+            let incorrect = 0;
+            let unattempted = 0;
+
+            userAnswers.forEach((ans, idx) => {
+                if (ans === null) {
+                    unattempted++;
+                } else if (ans === rawQuestions[idx].ans) {
+                    correct++;
+                } else {
+                    incorrect++;
+                }
+            });
+
+            const score = correct;
+            const percentage = Math.round((correct / 50) * 100);
+
+            // Format time taken
+            const mins = Math.floor(timeTakenSeconds / 60);
+            const secs = timeTakenSeconds % 60;
+            const formattedTime = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+            // Result Messages
+            let badgeText = "Keep Practising! 📚";
+            if (percentage >= 90) {
+                badgeText = "Excellent! 🎉";
+            } else if (percentage >= 75) {
+                badgeText = "Great Job! 💪";
+            } else if (percentage >= 50) {
+                badgeText = "Good Effort! 👍";
+            }
+
+            // Set UI
+            document.getElementById('res-name').textContent = studentName;
+            document.getElementById('badge-msg').textContent = badgeText;
+            document.getElementById('res-score').textContent = `${score} / 50`;
+            document.getElementById('res-percent').textContent = `${percentage}%`;
+            document.getElementById('res-correct').textContent = correct;
+            document.getElementById('res-incorrect').textContent = incorrect;
+            document.getElementById('res-unattempted').textContent = unattempted;
+            document.getElementById('res-time').textContent = formattedTime;
+
+            // Switch Screen
+            document.getElementById('test-screen').classList.remove('active');
+            document.getElementById('result-screen').classList.add('active');
+        }
+
+        function retakeTest() {
+            // Reset state
+            currentIdx = 0;
+            userAnswers = new Array(50).fill(null);
+            timerSeconds = 20 * 60;
+            timeTakenSeconds = 0;
+            document.getElementById('student-name').value = '';
+
+            // Switch to Start Screen
+            document.getElementById('result-screen').classList.remove('active');
+            document.getElementById('start-screen').classList.add('active');
+        }
+    </script>
+</body>
+</html>

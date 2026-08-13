@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GOAL - CBSE Class 10 IT (402) Unit 5 Green Skills</title>
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-hover: #047857;
+            --primary-light: #ecfdf5;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --correct: #10b981;
+            --correct-bg: #d1fae5;
+            --wrong: #ef4444;
+            --wrong-bg: #fee2e2;
+            --warning: #f59e0b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+            flex: 1;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+
+        /* Branding Header */
+        .brand-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .brand-title {
+            color: var(--primary);
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .brand-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .brand-unit {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Views management */
+        .view {
+            display: none;
+        }
+
+        .view.active {
+            display: block;
+        }
+
+        /* Start Screen */
+        .start-card {
+            text-align: center;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        .form-group {
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background-color: #64748b;
+        }
+
+        .btn-secondary:hover {
+            background-color: #475569;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Test Screen Styles */
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .timer-card {
+            background-color: #fffbebf5;
+            border: 1px solid #fef3c7;
+            color: #b45309;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .q-counter {
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .option-card {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s;
+            background: var(--card-bg);
+        }
+
+        .option-card:hover {
+            border-color: #a7f3d0;
+            background-color: #f0fdf4;
+        }
+
+        .option-card.selected {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        .option-label {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .option-card.selected .option-label {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .option-text {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Palette / Question Navigator */
+        .palette-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        .q-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .palette-btn {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background-color: #f8fafc;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+        }
+
+        .palette-btn.answered {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .palette-btn.current {
+            border: 2px solid var(--text-main);
+            font-weight: 800;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top:0; left:0; right:0; bottom:0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .modal-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-body {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Result View */
+        .result-summary {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .score-big {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 15px 0 5px;
+        }
+
+        .perf-msg {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+            background-color: var(--primary-light);
+            color: var(--primary-hover);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .stat-card {
+            background-color: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-val {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .stat-card.correct .stat-val { color: var(--correct); }
+        .stat-card.wrong .stat-val { color: var(--wrong); }
+        .stat-card.unanswered .stat-val { color: var(--warning); }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        /* Review Section */
+        .review-header {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .review-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 20px;
+            background: white;
+            position: relative;
+        }
+
+        .review-card.correct-card { border-left: 6px solid var(--correct); }
+        .review-card.wrong-card { border-left: 6px solid var(--wrong); }
+        .review-card.unanswered-card { border-left: 6px solid var(--warning); }
+
+        .review-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .review-card.correct-card .review-badge { background-color: var(--correct-bg); color: var(--correct); }
+        .review-card.wrong-card .review-badge { background-color: var(--wrong-bg); color: var(--wrong); }
+        .review-card.unanswered-card .review-badge { background-color: #fef3c7; color: var(--warning); }
+
+        .review-option {
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin: 6px 0;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-option.user-selected {
+            border-color: var(--wrong);
+            background-color: var(--wrong-bg);
+            color: #991b1b;
+        }
+
+        .review-option.is-correct {
+            border-color: var(--correct);
+            background-color: var(--correct-bg);
+            color: #065f46;
+            font-weight: 600;
+        }
+
+        .explanation-box {
+            margin-top: 12px;
+            padding: 12px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #334155;
+            line-height: 1.4;
+        }
+
+        .explanation-box strong {
+            color: var(--text-main);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: auto;
+            background-color: var(--card-bg);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 12px; }
+            .card { padding: 18px; }
+            .brand-title { font-size: 1.8rem; }
+            .brand-subtitle { font-size: 0.95rem; }
+            .nav-controls { flex-direction: column-reverse; gap: 10px; }
+            .nav-controls button { width: 100%; }
+            .result-actions { flex-direction: column; }
+            .result-actions button { width: 100%; }
+        }
+
+        /* Print Specifics */
+        @media print {
+            body { background: white; }
+            .container { max-width: 100%; padding: 0; }
+            .card { box-shadow: none; border: none; padding: 0; }
+            .result-actions, .brand-header, footer, .q-palette, .palette-title { display: none !important; }
+            .review-card { page-break-inside: avoid; border: 1px solid #ccc; margin-bottom: 15px; }
+            .view { display: none !important; }
+            .view#result-view { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Start Screen -->
+        <div id="start-view" class="view active">
+            <div class="card start-card">
+                <div class="brand-header">
+                    <div class="brand-title">THE GOAL</div>
+                    <div class="brand-subtitle">CBSE Class 10 Information Technology (402)</div>
+                    <div class="brand-subtitle" style="font-size:0.95rem; font-weight:normal; margin-top:2px;">Part A – Employability Skills</div>
+                    <div class="brand-unit">Unit 5 – Green Skills</div>
+                </div>
+
+                <form id="start-form" onsubmit="event.preventDefault(); startTest();">
+                    <div class="form-group">
+                        <label for="student-name">Enter your Name</label>
+                        <input type="text" id="student-name" placeholder="e.g., Rahul Sharma" required autocomplete="name">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">START TEST</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Test Screen -->
+        <div id="test-view" class="view">
+            <div class="card">
+                <div class="test-header">
+                    <div>
+                        <div style="font-weight:700; color:var(--primary);">THE GOAL</div>
+                        <div class="q-counter" id="q-counter">Question 1 of 50</div>
+                    </div>
+                    <div class="timer-card">
+                        <span>⏱️</span>
+                        <span id="timer-display">20:00</span>
+                    </div>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div class="question-text" id="question-text">Loading question...</div>
+
+                <div class="options-container" id="options-container">
+                    <!-- Options injected here -->
+                </div>
+
+                <div class="nav-controls">
+                    <button class="btn btn-outline" id="prev-btn" onclick="navigateQuestion(-1)">Previous</button>
+                    <button class="btn btn-secondary" onclick="confirmSubmit()">Submit Test</button>
+                    <button class="btn" id="next-btn" onclick="navigateQuestion(1)">Next</button>
+                </div>
+            </div>
+
+            <!-- Question Palette -->
+            <div class="card">
+                <div class="palette-title">Question Navigator</div>
+                <div class="q-palette" id="q-palette">
+                    <!-- Palette buttons injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-view" class="view">
+            <div class="card">
+                <div class="brand-header">
+                    <div class="brand-title">THE GOAL</div>
+                    <div class="brand-subtitle">Test Completed</div>
+                </div>
+
+                <div class="result-summary">
+                    <h3 id="res-student-name" style="color: var(--text-muted); font-weight: 600;">Student: Name</h3>
+                    <div class="score-big" id="res-score">0 / 50</div>
+                    <div style="font-size: 1.1rem; color: var(--text-muted);" id="res-percentage">0%</div>
+                    <div>
+                        <div class="perf-msg" id="res-perf-msg">Performance Message</div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card correct">
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Correct</div>
+                        <div class="stat-val" id="res-correct">0</div>
+                    </div>
+                    <div class="stat-card wrong">
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Wrong</div>
+                        <div class="stat-val" id="res-wrong">0</div>
+                    </div>
+                    <div class="stat-card unanswered">
+                        <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Unanswered</div>
+                        <div class="stat-val" id="res-unanswered">0</div>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button class="btn" onclick="window.print()">Print Result</button>
+                    <button class="btn btn-secondary" onclick="retakeTest()">Retake Test</button>
+                    <button class="btn btn-outline" onclick="goHome()">Back to Home</button>
+                </div>
+
+                <div class="review-header">Detailed Question Review</div>
+
+                <div id="review-container">
+                    <!-- Detailed review cards injected here -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="submit-modal">
+        <div class="modal">
+            <div class="modal-title">Submit Test?</div>
+            <div class="modal-body" id="modal-msg">Are you sure you want to submit your test?</div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="closeModal()">Continue Test</button>
+                <button class="btn" onclick="processSubmit()">Yes, Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Made with Love ❤️ in India by Pushpender
+    </footer>
+
+    <script>
+        // Exact 50 Questions Data Source
+        const questionsData = [
+            {
+                q: "What is the best definition of sustainable development?",
+                options: [
+                    "Development that focuses only on economic growth",
+                    "Development that stops the use of natural resources",
+                    "Development that meets present needs without compromising future generations",
+                    "Development that gives priority only to environmental protection"
+                ],
+                ans: "C",
+                exp: "Sustainable development meets the needs of the present without reducing the ability of future generations to meet their needs.\nIt maintains a balance between economic growth, environmental care and social well-being."
+            },
+            {
+                q: "Which three aspects need to be balanced for sustainable development?",
+                options: [
+                    "Economic growth, environmental care and social well-being",
+                    "Education, entertainment and technology",
+                    "Agriculture, transport and communication",
+                    "Business, advertising and production"
+                ],
+                ans: "A",
+                exp: "Sustainable development is not limited to protecting nature alone.\nIt requires a balance between the economy, society and the environment."
+            },
+            {
+                q: "Which of the following is a major problem related to sustainable development mentioned in the textbook?",
+                options: [
+                    "Internet access",
+                    "Food",
+                    "Computer security",
+                    "Communication barriers"
+                ],
+                ans: "B",
+                exp: "The textbook identifies food, water and fuel as three major problems related to sustainable development.\nThese problems arise because natural resources are being consumed and degraded rapidly."
+            },
+            {
+                q: "Why is careful utilisation of natural resources necessary?",
+                options: [
+                    "Natural resources are unlimited",
+                    "Resources are available only in cities",
+                    "Resources are not useful for future generations",
+                    "Many natural resources are scarce and need conservation"
+                ],
+                ans: "D",
+                exp: "Many natural resources are limited and can become depleted through excessive use.\nCareful utilisation helps conserve them for both present and future generations."
+            },
+            {
+                q: "Which of the following is an example of a renewable source of energy?",
+                options: [
+                    "Solar energy",
+                    "Coal",
+                    "Petrol",
+                    "Natural gas"
+                ],
+                ans: "A",
+                exp: "Solar energy comes from the Sun and is naturally available.\nCoal, petrol and natural gas are fossil fuels and are non-renewable resources."
+            },
+            {
+                q: "Why is solar energy considered environment-friendly?",
+                options: [
+                    "It requires burning coal",
+                    "It depends on petroleum",
+                    "It generates energy without burning non-renewable fuels",
+                    "It increases fossil-fuel consumption"
+                ],
+                ans: "C",
+                exp: "Solar power uses energy from the Sun instead of burning fuels such as coal.\nThis reduces dependence on non-renewable fossil fuels and helps reduce pollution."
+            },
+            {
+                q: "Which of the following is a non-renewable resource?",
+                options: [
+                    "Sunlight",
+                    "Wind",
+                    "Solar energy",
+                    "Coal"
+                ],
+                ans: "D",
+                exp: "Coal is a fossil fuel that takes a very long time to form and exists in limited quantities.\nTherefore, it is classified as a non-renewable resource."
+            },
+            {
+                q: "What happens when soil nutrients are continuously depleted?",
+                options: [
+                    "Soil becomes more fertile automatically",
+                    "Soil may become unusable for cultivation",
+                    "Crop production always increases",
+                    "Water pollution decreases"
+                ],
+                ans: "B",
+                exp: "Continuous cultivation and improper use of resources can consume soil nutrients.\nOver time, depleted soil may become unsuitable for agricultural production."
+            },
+            {
+                q: "Which activity directly contributes to water pollution?",
+                options: [
+                    "Planting trees",
+                    "Using solar energy",
+                    "Dumping garbage into rivers and ponds",
+                    "Repairing leaking taps"
+                ],
+                ans: "C",
+                exp: "Garbage dumped into water bodies contaminates freshwater resources.\nThis can reduce the availability of clean water for human use."
+            },
+            {
+                q: "What is one major environmental effect of cutting large numbers of trees?",
+                options: [
+                    "Soil erosion and climate-related problems",
+                    "Increase in biodiversity",
+                    "More freshwater availability",
+                    "Reduction in land degradation"
+                ],
+                ans: "A",
+                exp: "The textbook explains that cutting trees can cause soil erosion and make land dry and unsuitable for cultivation.\nDeforestation can also affect the climate of an area."
+            },
+            {
+                q: "Which of the following is included in sustainable development?",
+                options: [
+                    "Increasing excessive consumption",
+                    "Increasing waste generation",
+                    "Using resources without planning",
+                    "Recycling and reusing waste materials"
+                ],
+                ans: "D",
+                exp: "Recycling and reuse reduce the amount of waste and help conserve resources.\nThey are important practices for sustainable development."
+            },
+            {
+                q: "Which practice helps in conserving natural resources?",
+                options: [
+                    "Excessive use of resources",
+                    "Resource conservation",
+                    "Throwing reusable materials away",
+                    "Increasing unnecessary consumption"
+                ],
+                ans: "B",
+                exp: "Resource conservation means using resources carefully and efficiently.\nIt helps prevent unnecessary depletion and supports long-term availability."
+            },
+            {
+                q: "What is the main purpose of using biodegradable materials?",
+                options: [
+                    "To increase plastic pollution",
+                    "To increase landfill waste",
+                    "To reduce environmental impact",
+                    "To increase resource wastage"
+                ],
+                ans: "C",
+                exp: "Biodegradable materials can break down naturally under suitable conditions.\nTheir use can reduce the long-term environmental impact of certain wastes."
+            },
+            {
+                q: "What are Sustainable Development Goals (SDGs)?",
+                options: [
+                    "A universal call to end poverty, protect the planet and promote peace and prosperity",
+                    "Rules only for businesses",
+                    "A list of computer-related targets",
+                    "Goals only for increasing industrial production"
+                ],
+                ans: "A",
+                exp: "The textbook describes SDGs as a universal call for action to end poverty, protect the planet and ensure peace and prosperity.\nThey address important global social, economic and environmental issues."
+            },
+            {
+                q: "How many Sustainable Development Goals (SDGs) were formed by the United Nations?",
+                options: [
+                    "10",
+                    "12",
+                    "15",
+                    "17"
+                ],
+                ans: "D",
+                exp: "The United Nations established 17 Sustainable Development Goals.\nThey form part of the 2030 Agenda for Sustainable Development."
+            },
+            {
+                q: "The Sustainable Development Goals were launched in which year according to the textbook?",
+                options: [
+                    "2010",
+                    "2015",
+                    "2018",
+                    "2020"
+                ],
+                ans: "B",
+                exp: "The SDGs were launched at the United Nations Sustainable Development Summit in New York in September 2015.\nThey formed the 2030 Agenda for Sustainable Development."
+            },
+            {
+                q: "The SDGs set targets that countries should work towards achieving by:",
+                options: [
+                    "2025",
+                    "2028",
+                    "2030",
+                    "2040"
+                ],
+                ans: "C",
+                exp: "The textbook states that the SDGs formed the 2030 Agenda for Sustainable Development.\nCountries are expected to work towards the specified targets by 2030."
+            },
+            {
+                q: "Which organisation formed the 17 Sustainable Development Goals?",
+                options: [
+                    "United Nations",
+                    "World Health Organisation",
+                    "League of Nations",
+                    "UNICEF"
+                ],
+                ans: "A",
+                exp: "The textbook specifically states that the United Nations formed the 17 SDGs.\nThey provide a common framework for countries to address global challenges."
+            },
+            {
+                q: "Which of the following is NOT a Sustainable Development Goal?",
+                options: [
+                    "Gender Equality",
+                    "Clean Water and Sanitation",
+                    "Population",
+                    "Reduced Inequalities"
+                ],
+                ans: "C",
+                exp: "Gender Equality, Clean Water and Sanitation, and Reduced Inequalities are SDGs.\n“Population” by itself is not one of the 17 SDG titles."
+            },
+            {
+                q: "Which SDG focuses on providing clean water and sanitation?",
+                options: [
+                    "Quality Education",
+                    "Clean Water and Sanitation",
+                    "Gender Equality",
+                    "Decent Work and Economic Growth"
+                ],
+                ans: "B",
+                exp: "Clean water and proper sanitation are essential for health and sustainable communities.\nThe textbook highlights sanitation awareness and protection of water resources."
+            },
+            {
+                q: "How can students contribute to the goal of Quality Education?",
+                options: [
+                    "Encouraging friends to leave school",
+                    "Ignoring classmates who need help",
+                    "Helping friends study and preventing dropouts",
+                    "Avoiding educational facilities"
+                ],
+                ans: "C",
+                exp: "The textbook suggests helping friends study and stopping friends from dropping out.\nEducation creates awareness and helps people become responsible citizens."
+            },
+            {
+                q: "Which action supports the goal of Clean Water and Sanitation?",
+                options: [
+                    "Dumping waste into rivers",
+                    "Polluting ponds",
+                    "Ignoring sanitation",
+                    "Building toilets and creating sanitation awareness"
+                ],
+                ans: "D",
+                exp: "The textbook emphasises building toilets and creating awareness about sanitation.\nProper sanitation helps create healthier communities and protect water resources."
+            },
+            {
+                q: "Which is an example of an affordable and clean energy initiative?",
+                options: [
+                    "Increasing coal consumption",
+                    "Increasing solar power generation",
+                    "Burning more wood",
+                    "Increasing petrol consumption"
+                ],
+                ans: "B",
+                exp: "Solar energy is generated using sunlight without burning non-renewable fuels such as coal.\nIncreasing solar power can help meet energy needs while reducing environmental pollution."
+            },
+            {
+                q: "According to the textbook, biogas is an eco-friendly alternative to:",
+                options: [
+                    "Natural gas",
+                    "Solar energy",
+                    "Wind energy",
+                    "Sunlight"
+                ],
+                ans: "A",
+                exp: "The textbook specifically identifies biogas as an eco-friendly alternative to natural gas.\nIt is therefore an example of an alternative energy source discussed in the chapter."
+            },
+            {
+                q: "Which action can help reduce inequalities?",
+                options: [
+                    "Excluding people from activities",
+                    "Treating people differently based on caste or gender",
+                    "Including everyone while working or playing",
+                    "Avoiding people who are different"
+                ],
+                ans: "C",
+                exp: "The textbook encourages people to include everyone regardless of class, caste, gender or age.\nEqual participation helps create a more inclusive society."
+            },
+            {
+                q: "Which behaviour best represents the idea of “Reduced Inequalities”?",
+                options: [
+                    "Being friendly and helpful to everyone",
+                    "Giving opportunities only to selected people",
+                    "Excluding weaker members of a group",
+                    "Separating people based on caste"
+                ],
+                ans: "A",
+                exp: "Being helpful and friendly to everyone promotes equality and inclusion.\nThe textbook specifically encourages inclusive participation."
+            },
+            {
+                q: "Which action helps create a sustainable city?",
+                options: [
+                    "Keeping lights switched on all day",
+                    "Using energy-efficient appliances",
+                    "Wasting electricity",
+                    "Avoiding natural light"
+                ],
+                ans: "B",
+                exp: "Energy-efficient appliances consume less electricity for the same useful output.\nThe textbook recommends LED bulbs and energy-efficient appliances for sustainable cities."
+            },
+            {
+                q: "What should you do with lights and fans when they are not required?",
+                options: [
+                    "Leave them switched on",
+                    "Increase their usage",
+                    "Switch them off",
+                    "Replace them every day"
+                ],
+                ans: "C",
+                exp: "Switching off unused electrical appliances saves energy.\nThe textbook specifically lists this as a way to create sustainable cities."
+            },
+            {
+                q: "Why should natural light be used as much as possible?",
+                options: [
+                    "It helps reduce unnecessary electricity consumption",
+                    "It increases electricity wastage",
+                    "It increases dependence on fossil fuels",
+                    "It causes water pollution"
+                ],
+                ans: "A",
+                exp: "Using available natural light reduces the need for artificial lighting.\nThis helps conserve electricity and supports energy-efficient living."
+            },
+            {
+                q: "Which of the following is an example of responsible consumption?",
+                options: [
+                    "Buying more than required",
+                    "Throwing away reusable items",
+                    "Using single-use products unnecessarily",
+                    "Reusing paper, glass, plastic and water"
+                ],
+                ans: "D",
+                exp: "Reusing materials extends their useful life and reduces waste.\nThe textbook specifically recommends reusing paper, glass, plastic and water."
+            },
+            {
+                q: "Which practice is recommended to reduce plastic waste while shopping?",
+                options: [
+                    "Taking cloth bags to the market",
+                    "Taking more plastic bags",
+                    "Using disposable bags every time",
+                    "Throwing bags after one use"
+                ],
+                ans: "A",
+                exp: "Cloth bags can be reused many times and reduce dependence on disposable plastic bags.\nThis is a simple responsible-consumption practice."
+            },
+            {
+                q: "What can you do with clothes or books that you no longer use?",
+                options: [
+                    "Burn them",
+                    "Throw them into rivers",
+                    "Donate them",
+                    "Keep buying new ones"
+                ],
+                ans: "C",
+                exp: "The textbook recommends donating unused clothes, books, furniture and other useful items.\nDonation allows resources to be used by others instead of becoming waste."
+            },
+            {
+                q: "Why does the textbook recommend buying seasonal fruits and vegetables from local growers?",
+                options: [
+                    "To increase unnecessary transportation",
+                    "To support responsible consumption and local producers",
+                    "To increase food wastage",
+                    "To increase plastic use"
+                ],
+                ans: "B",
+                exp: "Buying seasonal produce from local growers is presented as a responsible consumption practice.\nIt also supports local producers and encourages sustainable choices."
+            },
+            {
+                q: "What should be done to avoid wasting water from leaking taps and pipes?",
+                options: [
+                    "Ignore the leak",
+                    "Increase water pressure",
+                    "Repair the leaking taps and pipes",
+                    "Keep the tap open"
+                ],
+                ans: "C",
+                exp: "A leaking tap continuously wastes water even when the water is not being used.\nRepairing leaks is a simple and direct method of water conservation."
+            },
+            {
+                q: "Why should garbage be sorted before disposal?",
+                options: [
+                    "To make waste management more effective",
+                    "To increase pollution",
+                    "To increase landfill waste unnecessarily",
+                    "To mix all types of waste together"
+                ],
+                ans: "A",
+                exp: "Sorting helps different types of waste receive appropriate treatment or disposal.\nIt supports better waste management and resource recovery."
+            },
+            {
+                q: "Why is protecting life below water important?",
+                options: [
+                    "Oceans do not contain living organisms",
+                    "Plastic pollution can harm marine life",
+                    "Marine ecosystems do not need protection",
+                    "Water pollution improves biodiversity"
+                ],
+                ans: "B",
+                exp: "The textbook highlights that large amounts of plastic in seas can kill marine life.\nReducing ocean pollution is therefore essential for protecting marine ecosystems."
+            },
+            {
+                q: "Which action directly supports “Life on Land”?",
+                options: [
+                    "Cutting more forests",
+                    "Dumping waste on land",
+                    "Planting trees to replace those that have been cut",
+                    "Increasing soil erosion"
+                ],
+                ans: "C",
+                exp: "The textbook explains that cutting trees contributes to soil erosion and land degradation.\nPlanting trees helps restore vegetation and supports land ecosystems."
+            },
+            {
+                q: "What can excessive cutting of trees lead to?",
+                options: [
+                    "Soil erosion",
+                    "Improved soil quality automatically",
+                    "More forest cover",
+                    "Reduced land degradation"
+                ],
+                ans: "A",
+                exp: "Tree roots help hold soil together, so removing trees can increase soil erosion.\nThe textbook connects deforestation with land becoming dry and unusable for cultivation."
+            },
+            {
+                q: "What is one major environmental advantage of using “Kulhads” instead of plastic and paper cups, according to the textbook?",
+                options: [
+                    "Increased plastic waste",
+                    "Increased cutting of trees for paper cups",
+                    "Reduced plastic waste",
+                    "Increased dependence on fossil fuels"
+                ],
+                ans: "C",
+                exp: "The textbook lists reduced plastic waste as one of the advantages of using Kulhads.\nIt also mentions reduced tree cutting for paper cups and job creation for potters."
+            },
+            {
+                q: "What economic benefit of using Kulhads is mentioned in the textbook?",
+                options: [
+                    "Job creation for potters",
+                    "Increase in plastic manufacturing",
+                    "Increase in paper production",
+                    "Reduction in local employment"
+                ],
+                ans: "A",
+                exp: "The Kulhad initiative created employment opportunities for potters.\nThis shows how an environmental initiative can also contribute to the economy."
+            },
+            {
+                q: "What was the environmental advantage of the biodegradable bag developed as an alternative to plastic?",
+                options: [
+                    "It increased plastic pollution",
+                    "It could decompose in the natural environment",
+                    "It required more fossil fuels",
+                    "It could not break down"
+                ],
+                ans: "B",
+                exp: "The textbook describes the bag as 100% biodegradable and capable of decomposing naturally.\nSuch alternatives can help reduce the environmental impact of plastic products."
+            },
+            {
+                q: "What was special about the edible cutlery mentioned in the textbook?",
+                options: [
+                    "It was made from metal",
+                    "It increased plastic waste",
+                    "It was made from a grain and could decompose in soil",
+                    "It required petroleum to manufacture"
+                ],
+                ans: "C",
+                exp: "The textbook describes edible spoons and forks made from grain.\nThey could be eaten, and if not eaten, they could decompose in soil."
+            },
+            {
+                q: "Which skill is particularly important for a person who wants to contribute towards the environment?",
+                options: [
+                    "Environmental awareness and willingness to learn",
+                    "Ignoring environmental issues",
+                    "Increasing resource consumption",
+                    "Avoiding sustainable practices"
+                ],
+                ans: "A",
+                exp: "The textbook identifies environmental awareness and willingness to learn about sustainable development as core skills.\nAwareness helps people make responsible decisions at home, school and workplace."
+            },
+            {
+                q: "A student uses both sides of a sheet of paper before recycling it. Which principle does this best demonstrate?",
+                options: [
+                    "Excessive consumption",
+                    "Resource conservation",
+                    "Resource depletion",
+                    "Environmental neglect"
+                ],
+                ans: "B",
+                exp: "Using both sides of paper increases its useful life before disposal.\nThis reduces unnecessary consumption of paper resources."
+            },
+            {
+                q: "A school creates an art project using old bottles, newspapers and used plastic. What concept does this activity demonstrate?",
+                options: [
+                    "Wasteful consumption",
+                    "Resource depletion",
+                    "Creative reuse of waste",
+                    "Increased pollution"
+                ],
+                ans: "C",
+                exp: "The textbook itself suggests making useful objects from waste materials such as bottles, paper and plastic.\nThis demonstrates creative reuse and responsible waste management."
+            },
+            {
+                q: "Why is individual participation important in sustainable development?",
+                options: [
+                    "Sustainable development can happen only through governments",
+                    "Individual actions have no environmental impact",
+                    "Only industries can conserve resources",
+                    "Everyone must contribute through responsible environmental practices"
+                ],
+                ans: "D",
+                exp: "The textbook clearly states that sustainable development can actually happen when each person works towards it.\nResponsible citizens can protect the environment through their daily actions."
+            },
+            {
+                q: "Which action would be the MOST sustainable choice for a student going to a nearby place?",
+                options: [
+                    "Walking or using a suitable shared/public transport option",
+                    "Using a vehicle unnecessarily",
+                    "Taking a separate vehicle for every short trip",
+                    "Keeping a vehicle running while waiting"
+                ],
+                ans: "A",
+                exp: "Walking and shared/public transport can reduce unnecessary fuel use and environmental impact.\nThe key idea is to avoid wasteful consumption of resources."
+            },
+            {
+                q: "Which statement about sustainable development is correct?",
+                options: [
+                    "It means stopping all development",
+                    "It means using natural resources without restrictions",
+                    "It focuses only on present needs",
+                    "It promotes development while protecting resources for the future"
+                ],
+                ans: "D",
+                exp: "Sustainable development does not mean stopping development.\nIt means achieving development responsibly while ensuring resources remain available for future generations."
+            },
+            {
+                q: "A factory treats its wastewater before releasing it. Which sustainable-development principle is being followed?",
+                options: [
+                    "Protecting water resources from pollution",
+                    "Increasing water pollution",
+                    "Increasing resource wastage",
+                    "Ignoring environmental responsibility"
+                ],
+                ans: "A",
+                exp: "Untreated industrial waste can pollute water resources and make clean water scarce.\nTreating wastewater helps reduce pollution and protect water resources."
+            },
+            {
+                q: "Which option BEST represents a sustainable lifestyle?",
+                options: [
+                    "Buying more products than necessary",
+                    "Conserving resources, reusing materials and reducing waste",
+                    "Using non-renewable resources without limits",
+                    "Ignoring environmental problems"
+                ],
+                ans: "B",
+                exp: "A sustainable lifestyle involves responsible use of resources and reducing unnecessary waste.\nConservation, reuse and responsible consumption help protect the environment for the future."
+            }
+        ];
+
+        // State variables
+        let studentName = "";
+        let currentIdx = 0;
+        let userAnswers = new Array(50).fill(null);
+        let timerInterval = null;
+        let timeLeft = 1200; // 20 minutes in seconds
+
+        const optionLabels = ["A", "B", "C", "D"];
+
+        // DOM elements
+        const views = {
+            start: document.getElementById('start-view'),
+            test: document.getElementById('test-view'),
+            result: document.getElementById('result-view')
+        };
+
+        function switchView(viewName) {
+            Object.keys(views).forEach(v => {
+                views[v].classList.remove('active');
+            });
+            views[viewName].classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function startTest() {
+            const nameInput = document.getElementById('student-name');
+            if (!nameInput.value.trim()) return;
+            
+            studentName = nameInput.value.trim();
+            currentIdx = 0;
+            userAnswers = new Array(50).fill(null);
+            timeLeft = 1200;
+
+            buildPalette();
+            renderQuestion();
+            startTimer();
+            switchView('test');
+        }
+
+        function startTimer() {
+            updateTimerDisplay();
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                if (timeLeft <= 0) {
+                    timeLeft = 0;
+                    updateTimerDisplay();
+                    clearInterval(timerInterval);
+                    processSubmit();
+                } else {
+                    updateTimerDisplay();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const m = Math.floor(timeLeft / 60);
+            const s = timeLeft % 60;
+            document.getElementById('timer-display').textContent = 
+                `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        function buildPalette() {
+            const palette = document.getElementById('q-palette');
+            palette.innerHTML = '';
+            for (let i = 0; i < 50; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'palette-btn';
+                btn.id = `palette-${i}`;
+                btn.textContent = i + 1;
+                btn.onclick = () => jumpToQuestion(i);
+                palette.appendChild(btn);
+            }
+        }
+
+        function updatePalette() {
+            for (let i = 0; i < 50; i++) {
+                const btn = document.getElementById(`palette-${i}`);
+                if (btn) {
+                    btn.className = 'palette-btn';
+                    if (userAnswers[i] !== null) btn.classList.add('answered');
+                    if (i === currentIdx) btn.classList.add('current');
+                }
+            }
+        }
+
+        function renderQuestion() {
+            const q = questionsData[currentIdx];
+            document.getElementById('q-counter').textContent = `Question ${currentIdx + 1} of 50`;
+            document.getElementById('progress-bar').style.width = `${((currentIdx + 1) / 50) * 100}%`;
+            document.getElementById('question-text').textContent = `${currentIdx + 1}. ${q.q}`;
+
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const card = document.createElement('div');
+                card.className = 'option-card';
+                if (userAnswers[currentIdx] === idx) {
+                    card.classList.add('selected');
+                }
+                card.onclick = () => selectOption(idx);
+
+                card.innerHTML = `
+                    <div class="option-label">${optionLabels[idx]}</div>
+                    <div class="option-text">${opt}</div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Update Nav Buttons
+            document.getElementById('prev-btn').style.visibility = currentIdx === 0 ? 'hidden' : 'visible';
+            const nextBtn = document.getElementById('next-btn');
+            if (currentIdx === 49) {
+                nextBtn.textContent = 'Submit';
+                nextBtn.onclick = confirmSubmit;
+            } else {
+                nextBtn.textContent = 'Next';
+                nextBtn.onclick = () => navigateQuestion(1);
+            }
+
+            updatePalette();
+        }
+
+        function selectOption(optIdx) {
+            userAnswers[currentIdx] = optIdx;
+            renderQuestion();
+        }
+
+        function navigateQuestion(direction) {
+            const target = currentIdx + direction;
+            if (target >= 0 && target < 50) {
+                currentIdx = target;
+                renderQuestion();
+            }
+        }
+
+        function jumpToQuestion(idx) {
+            currentIdx = idx;
+            renderQuestion();
+        }
+
+        function confirmSubmit() {
+            const unanswered = userAnswers.filter(a => a === null).length;
+            const msg = document.getElementById('modal-msg');
+            if (unanswered > 0) {
+                msg.textContent = `You still have ${unanswered} unanswered question(s). Do you want to submit anyway?`;
+            } else {
+                msg.textContent = `You have answered all questions. Are you ready to submit your test?`;
+            }
+            document.getElementById('submit-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('submit-modal').classList.remove('active');
+        }
+
+        function processSubmit() {
+            closeModal();
+            clearInterval(timerInterval);
+
+            // Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let unanswered = 0;
+
+            questionsData.forEach((q, i) => {
+                const userAnsIdx = userAnswers[i];
+                if (userAnsIdx === null) {
+                    unanswered++;
+                } else {
+                    const userAnsLabel = optionLabels[userAnsIdx];
+                    if (userAnsLabel === q.ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const percentage = Math.round((correct / 50) * 100);
+
+            // Fill Result UI
+            document.getElementById('res-student-name').textContent = `Student: ${studentName}`;
+            document.getElementById('res-score').textContent = `${correct} / 50`;
+            document.getElementById('res-percentage').textContent = `Percentage: ${percentage}%`;
+            document.getElementById('res-correct').textContent = correct;
+            document.getElementById('res-wrong').textContent = wrong;
+            document.getElementById('res-unanswered').textContent = unanswered;
+
+            let perf = "";
+            if (percentage >= 90) perf = "Excellent! Outstanding preparation.";
+            else if (percentage >= 75) perf = "Very Good! Keep revising.";
+            else if (percentage >= 60) perf = "Good attempt. Revise weak concepts.";
+            else perf = "Keep practicing and revise Unit 5 carefully.";
+
+            document.getElementById('res-perf-msg').textContent = perf;
+
+            // Render Detailed Review
+            renderReview();
+
+            switchView('result');
+        }
+
+        function renderReview() {
+            const container = document.getElementById('review-container');
+            container.innerHTML = '';
+
+            questionsData.forEach((q, i) => {
+                const userAnsIdx = userAnswers[i];
+                const correctAnsIdx = optionLabels.indexOf(q.ans);
+                
+                let statusClass = "unanswered-card";
+                let badgeText = "Unanswered";
+
+                if (userAnsIdx !== null) {
+                    if (optionLabels[userAnsIdx] === q.ans) {
+                        statusClass = "correct-card";
+                        badgeText = "Correct";
+                    } else {
+                        statusClass = "wrong-card";
+                        badgeText = "Incorrect";
+                    }
+                }
+
+                const card = document.createElement('div');
+                card.className = `review-card ${statusClass}`;
+
+                let optionsHtml = '';
+                q.options.forEach((opt, oIdx) => {
+                    let optClass = '';
+                    if (oIdx === correctAnsIdx) {
+                        optClass = 'is-correct';
+                    } else if (userAnsIdx === oIdx && oIdx !== correctAnsIdx) {
+                        optClass = 'user-selected';
+                    }
+
+                    optionsHtml += `
+                        <div class="review-option ${optClass}">
+                            <strong>${optionLabels[oIdx]}.</strong> ${opt}
+                            ${oIdx === correctAnsIdx ? ' ✓ (Correct Answer)' : ''}
+                            ${userAnsIdx === oIdx && oIdx !== correctAnsIdx ? ' ✗ (Your Answer)' : ''}
+                        </div>
+                    `;
+                });
+
+                const formattedExp = q.exp.replace(/\n/g, '<br>');
+
+                card.innerHTML = `
+                    <div class="review-badge">${badgeText}</div>
+                    <div class="question-text" style="font-size:1.05rem; margin-bottom:12px;">Q${i + 1}. ${q.q}</div>
+                    <div style="margin-bottom: 12px;">${optionsHtml}</div>
+                    <div class="explanation-box">
+                        <strong>Explanation:</strong><br>${formattedExp}
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function retakeTest() {
+            currentIdx = 0;
+            userAnswers = new Array(50).fill(null);
+            timeLeft = 1200;
+            buildPalette();
+            renderQuestion();
+            startTimer();
+            switchView('test');
+        }
+
+        function goHome() {
+            clearInterval(timerInterval);
+            document.getElementById('student-name').value = '';
+            switchView('start');
+        }
+    </script>
+</body>
+</html>

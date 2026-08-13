@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GOAL - CBSE Class 10 IT | Self-Management Skills-II</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #e0e7ff;
+            --secondary: #0ea5e9;
+            --bg-grad-1: #0f172a;
+            --bg-grad-2: #1e1b4b;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --success-light: #d1fae5;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --warning: #f59e0b;
+            --warning-light: #fef3c7;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2));
+            color: #ffffff;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #38bdf8;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: auto;
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .main-container {
+            flex: 1;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .screen {
+            display: none;
+            width: 100%;
+        }
+
+        .screen.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Start Screen --- */
+        .start-card {
+            text-align: center;
+            max-width: 550px;
+            margin: 1rem auto;
+            padding: 2.5rem 2rem;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .test-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .test-subtitle {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-pills {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .pill {
+            background: #f1f5f9;
+            padding: 0.5rem 0.85rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .input-group input:focus {
+            border-color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-light);
+        }
+
+        /* --- Quiz Screen --- */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .student-info {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .timer-badge {
+            background: #f1f5f9;
+            padding: 0.4rem 0.85rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-variant-numeric: tabular-nums;
+            transition: all 0.3s ease;
+        }
+
+        .timer-badge.warning {
+            background: var(--warning-light);
+            color: #d97706;
+            border-color: #fde68a;
+            animation: pulse 1s infinite alternate;
+        }
+
+        .timer-badge.danger {
+            background: var(--danger-light);
+            color: var(--danger);
+            border-color: #fca5a5;
+            animation: pulse 0.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 1; }
+            to { opacity: 0.7; }
+        }
+
+        .quiz-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 1.25rem;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .q-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .q-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .q-text {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .option-card {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem 1.1rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+            user-select: none;
+        }
+
+        .option-card:hover {
+            border-color: #cbd5e1;
+            background: #f8fafc;
+        }
+
+        .option-card.selected {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .option-key {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 0.85rem;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .option-card.selected .option-key {
+            background: var(--primary);
+            color: white;
+        }
+
+        .option-val {
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--text-dark);
+            margin-top: 0.15rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-buttons .btn {
+            width: auto;
+            min-width: 120px;
+        }
+
+        /* Question Palette */
+        .palette-card {
+            height: fit-content;
+        }
+
+        .palette-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.4rem;
+            max-height: 380px;
+            overflow-y: auto;
+            padding-right: 0.2rem;
+        }
+
+        .palette-grid::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .palette-grid::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .p-btn {
+            aspect-ratio: 1;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+
+        .p-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .p-btn.current {
+            border-color: var(--primary);
+            outline: 2px solid var(--primary);
+            outline-offset: 1px;
+            font-weight: 800;
+        }
+
+        .p-btn.answered {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .palette-legend {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1.25rem;
+            padding-top: 0.85rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.ans { background: var(--primary); }
+        .legend-dot.unans { background: white; border: 1px solid var(--border); }
+        .legend-dot.curr { border: 2px solid var(--primary); }
+
+        /* --- Result Screen --- */
+        .result-card {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .result-header h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .result-subtitle {
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
+        }
+
+        .score-val {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-max {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin-top: 0.2rem;
+        }
+
+        .perf-msg {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            padding: 1rem 0.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .stat-val {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-card.pc .stat-val { color: var(--primary); }
+        .stat-card.cor .stat-val { color: var(--success); }
+        .stat-card.incor .stat-val { color: var(--danger); }
+        .stat-card.unatt .stat-val { color: var(--warning); }
+
+        .stat-lbl {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .result-actions .btn {
+            width: 200px;
+        }
+
+        /* --- Review Screen --- */
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .review-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .review-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .review-item {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .review-item.status-correct { border-left: 5px solid var(--success); }
+        .review-item.status-incorrect { border-left: 5px solid var(--danger); }
+        .review-item.status-unattempted { border-left: 5px solid var(--warning); }
+
+        .review-q-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-q-num {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .status-badge.correct { background: var(--success-light); color: var(--success); }
+        .status-badge.incorrect { background: var(--danger-light); color: var(--danger); }
+        .status-badge.unattempted { background: var(--warning-light); color: #d97706; }
+
+        .review-q-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .review-ans-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .ans-box {
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-sm);
+            background: #f8fafc;
+            border: 1px solid var(--border);
+        }
+
+        .ans-box-lbl {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        .ans-box-val {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .ans-box.user-ans.incorrect {
+            background: var(--danger-light);
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+
+        .ans-box.user-ans.correct {
+            background: var(--success-light);
+            border-color: #a7f3d0;
+            color: #065f46;
+        }
+
+        .ans-box.correct-ans {
+            background: var(--success-light);
+            border-color: #a7f3d0;
+            color: #065f46;
+        }
+
+        .explanation-box {
+            background: #f1f5f9;
+            padding: 0.85rem 1rem;
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--primary);
+            font-size: 0.88rem;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .explanation-box strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        /* Modal Confirmation */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .modal-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 850px) {
+            .quiz-layout {
+                grid-template-columns: 1fr;
+            }
+            .palette-card {
+                order: 2;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-container {
+                padding: 1rem 0.75rem;
+            }
+            .card {
+                padding: 1.25rem;
+            }
+            .test-title {
+                font-size: 1.25rem;
+            }
+            .review-ans-grid {
+                grid-template-columns: 1fr;
+            }
+            .result-actions {
+                flex-direction: column;
+            }
+            .result-actions .btn {
+                width: 100%;
+            }
+            .nav-buttons .btn {
+                min-width: 100px;
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+            .palette-grid {
+                grid-template-columns: repeat(10, 1fr);
+            }
+        }
+
+        @media (max-width: 420px) {
+            .palette-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>THE GOAL</h1>
+        <p>CBSE Class 10 IT — Part A | Unit 2: Self-Management Skills-II</p>
+    </header>
+
+    <div class="main-container">
+        
+        <!-- START SCREEN -->
+        <div id="start-screen" class="screen active">
+            <div class="card start-card">
+                <span class="brand-badge">THE GOAL</span>
+                <h2 class="test-title">PART A — EMPLOYABILITY SKILLS</h2>
+                <div class="test-subtitle">UNIT 2 — SELF-MANAGEMENT SKILLS-II</div>
+                
+                <div class="info-pills">
+                    <span class="pill">📋 50 Questions</span>
+                    <span class="pill">⏱️ 20 Minutes</span>
+                    <span class="pill">🎯 50 Marks</span>
+                </div>
+
+                <form id="start-form" onsubmit="event.preventDefault(); startTest();">
+                    <div class="input-group">
+                        <label for="student-name">Student Name</label>
+                        <input type="text" id="student-name" placeholder="Enter Your Full Name" required autocomplete="name">
+                    </div>
+                    <button type="submit" class="btn">START TEST</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- QUIZ SCREEN -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="student-info" id="display-student-name">Student</div>
+                <div class="timer-badge" id="timer-display">⏱️ 20:00</div>
+            </div>
+
+            <div class="quiz-layout">
+                <div class="card">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    
+                    <div class="q-meta">
+                        <span class="q-number" id="q-number-text">Question 1 of 50</span>
+                    </div>
+
+                    <div class="q-text" id="q-text">Loading question...</div>
+
+                    <div class="options-grid" id="options-container">
+                        <!-- Dynamic Options -->
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn btn-secondary" id="btn-prev" onclick="navigateQuestion(-1)">PREVIOUS</button>
+                        <button class="btn btn-outline" id="btn-submit" onclick="confirmSubmit()">SUBMIT TEST</button>
+                        <button class="btn" id="btn-next" onclick="navigateQuestion(1)">NEXT</button>
+                    </div>
+                </div>
+
+                <div class="card palette-card">
+                    <div class="palette-title">
+                        <span>Question Palette</span>
+                        <span style="font-size:0.8rem; font-weight:normal; color:var(--text-muted);" id="palette-progress">0/50</span>
+                    </div>
+                    <div class="palette-grid" id="palette-grid">
+                        <!-- Dynamic Buttons -->
+                    </div>
+                    <div class="palette-legend">
+                        <div class="legend-item"><div class="legend-dot ans"></div> Answered</div>
+                        <div class="legend-item"><div class="legend-dot unans"></div> Skipped</div>
+                        <div class="legend-item"><div class="legend-dot curr"></div> Current</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="result-screen" class="screen">
+            <div class="card result-card">
+                <div class="result-header">
+                    <h2>Congratulations, <span id="res-student-name">Student</span>! 🎉</h2>
+                    <p class="result-subtitle">You have completed the test.</p>
+                </div>
+
+                <div class="score-circle">
+                    <div class="score-val" id="res-score">0</div>
+                    <div class="score-max">OUT OF 50</div>
+                </div>
+
+                <div class="perf-msg" id="res-perf-msg">Outstanding! 🔥</div>
+
+                <div class="stats-grid">
+                    <div class="stat-card pc">
+                        <div class="stat-val" id="res-percentage">0%</div>
+                        <div class="stat-lbl">Percentage</div>
+                    </div>
+                    <div class="stat-card cor">
+                        <div class="stat-val" id="res-correct">0</div>
+                        <div class="stat-lbl">Correct</div>
+                    </div>
+                    <div class="stat-card incor">
+                        <div class="stat-val" id="res-incorrect">0</div>
+                        <div class="stat-lbl">Incorrect</div>
+                    </div>
+                    <div class="stat-card unatt">
+                        <div class="stat-val" id="res-unattempted">0</div>
+                        <div class="stat-lbl">Unattempted</div>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button class="btn btn-secondary" onclick="showReviewScreen()">REVIEW ANSWERS</button>
+                    <button class="btn" onclick="retakeTest()">RETAKE TEST</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- REVIEW SCREEN -->
+        <div id="review-screen" class="screen">
+            <div class="review-header">
+                <div class="review-title">Answer Review</div>
+                <button class="btn btn-secondary" style="width: auto; padding: 0.5rem 1rem;" onclick="showResultScreen()">BACK TO RESULT</button>
+            </div>
+            <div class="review-list" id="review-list">
+                <!-- Dynamic Review Items -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL CONFIRMATION -->
+    <div class="modal-overlay" id="confirm-modal">
+        <div class="modal-card">
+            <div class="modal-title" id="modal-title">Submit Test?</div>
+            <div class="modal-body" id="modal-body">Are you sure you want to submit your test?</div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn" onclick="finalSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Made with Love ❤️ in India by Pushpender
+    </footer>
+
+    <script>
+        // MASTER QUESTION BANK (50 Questions)
+        const rawQuestionBank = [
+            {
+                id: 1,
+                question: "Self-awareness primarily helps a person to:",
+                options: [
+                    "Understand their own thoughts, emotions, strengths and weaknesses",
+                    "Avoid making decisions",
+                    "Copy successful people",
+                    "Ignore their feelings"
+                ],
+                answer: 0,
+                explanation: "Self-awareness means understanding yourself better. It helps you recognise your emotions, abilities and areas for improvement."
+            },
+            {
+                id: 2,
+                question: "Aman performs well in written exams but feels nervous while speaking in front of others. What should he do first?",
+                options: [
+                    "Avoid public speaking",
+                    "Identify his difficulty and work on improving it",
+                    "Stop participating in class",
+                    "Compare himself with confident students"
+                ],
+                answer: 1,
+                explanation: "Recognising an area that needs improvement is part of self-awareness. Once identified, Aman can practise and develop his speaking skills."
+            },
+            {
+                id: 3,
+                question: "Which activity is most useful for understanding one's strengths and weaknesses?",
+                options: [
+                    "Watching motivational videos only",
+                    "Comparing marks with classmates",
+                    "Self-reflection",
+                    "Avoiding feedback"
+                ],
+                answer: 2,
+                explanation: "Self-reflection allows a person to think about their behaviour, abilities and experiences. It helps identify both strengths and areas for improvement."
+            },
+            {
+                id: 4,
+                question: "A student accepts constructive feedback from a teacher and uses it to improve. This shows:",
+                options: [
+                    "Procrastination",
+                    "Overconfidence",
+                    "Carelessness",
+                    "Self-awareness"
+                ],
+                answer: 3,
+                explanation: "Accepting useful feedback requires understanding one's own areas for improvement. It helps a person become more aware of their abilities and behaviour."
+            },
+            {
+                id: 5,
+                question: "Which of the following is an example of a personal strength?",
+                options: [
+                    "Good problem-solving ability",
+                    "Fear of trying new things",
+                    "Constant procrastination",
+                    "Difficulty controlling anger"
+                ],
+                answer: 0,
+                explanation: "Problem-solving is a positive ability that can help a person handle challenges. Recognising such abilities helps build self-awareness."
+            },
+            {
+                id: 6,
+                question: "Why is understanding one's weaknesses important?",
+                options: [
+                    "To hide them from everyone",
+                    "To avoid challenging tasks",
+                    "To identify areas that can be improved",
+                    "To feel inferior to others"
+                ],
+                answer: 2,
+                explanation: "Knowing your weaknesses helps you identify where improvement is needed. It allows you to make a suitable plan for developing yourself."
+            },
+            {
+                id: 7,
+                question: "Which statement shows good self-regulation?",
+                options: [
+                    "“I am angry, so I will shout.”",
+                    "“I am upset, so I will take a moment and respond calmly.”",
+                    "“I will blame someone else.”",
+                    "“I will ignore the situation completely.”"
+                ],
+                answer: 1,
+                explanation: "Self-regulation involves managing thoughts, emotions and behaviour appropriately. Staying calm before responding is an example of self-control."
+            },
+            {
+                id: 8,
+                question: "During an argument, Neha controls her anger and speaks politely. Which skill is she demonstrating?",
+                options: [
+                    "Time management",
+                    "Goal setting",
+                    "Self-regulation",
+                    "Procrastination"
+                ],
+                answer: 2,
+                explanation: "Self-regulation means controlling one's emotional reactions and behaviour. Neha manages her anger instead of reacting impulsively."
+            },
+            {
+                id: 9,
+                question: "Self-motivation means:",
+                options: [
+                    "Waiting for someone to force you to work",
+                    "Working only when rewards are offered",
+                    "Avoiding difficult tasks",
+                    "Encouraging yourself to work towards a goal"
+                ],
+                answer: 3,
+                explanation: "Self-motivation comes from within a person. It encourages them to take action and continue working towards their goals."
+            },
+            {
+                id: 10,
+                question: "Riya continues practising mathematics even after making several mistakes. What does this show?",
+                options: [
+                    "Persistence",
+                    "Carelessness",
+                    "Procrastination",
+                    "Lack of motivation"
+                ],
+                answer: 0,
+                explanation: "Persistence means continuing an effort despite difficulties or setbacks. Riya keeps practising instead of giving up after mistakes."
+            },
+            {
+                id: 11,
+                question: "Which is an example of intrinsic motivation?",
+                options: [
+                    "Studying only to receive a prize",
+                    "Learning coding because you enjoy learning new skills",
+                    "Studying because your parents threaten you",
+                    "Working only for public recognition"
+                ],
+                answer: 1,
+                explanation: "Intrinsic motivation comes from internal satisfaction or interest. Enjoying the process of learning is an example of internal motivation."
+            },
+            {
+                id: 12,
+                question: "A student sets a target and reminds himself why achieving it is important. This can help develop:",
+                options: [
+                    "Stress",
+                    "Procrastination",
+                    "Self-motivation",
+                    "Distraction"
+                ],
+                answer: 2,
+                explanation: "Clear reasons and goals can strengthen motivation. Reminding yourself of the purpose behind your efforts helps you stay focused."
+            },
+            {
+                id: 13,
+                question: "Which behaviour is most likely to reduce self-motivation?",
+                options: [
+                    "Celebrating small achievements",
+                    "Setting realistic goals",
+                    "Learning from mistakes",
+                    "Constantly telling yourself that you cannot improve"
+                ],
+                answer: 3,
+                explanation: "Negative self-beliefs can reduce confidence and motivation. A positive and realistic attitude supports continued effort."
+            },
+            {
+                id: 14,
+                question: "After failing a test, Raj analyses his mistakes and prepares a better study plan. This response shows:",
+                options: [
+                    "A constructive attitude",
+                    "Avoidance",
+                    "Procrastination",
+                    "Carelessness"
+                ],
+                answer: 0,
+                explanation: "Learning from failure and changing your approach is a constructive response. It turns a setback into an opportunity for improvement."
+            },
+            {
+                id: 15,
+                question: "Which factor can help a person remain motivated during a difficult task?",
+                options: [
+                    "Ignoring the purpose of the task",
+                    "Having a clear reason for achieving the goal",
+                    "Comparing yourself negatively with others",
+                    "Expecting immediate success"
+                ],
+                answer: 1,
+                explanation: "Knowing why a goal matters gives a person a reason to continue. A meaningful purpose can increase commitment and motivation."
+            },
+            {
+                id: 16,
+                question: "Time management is the process of:",
+                options: [
+                    "Finishing every task immediately",
+                    "Avoiding all leisure activities",
+                    "Using available time effectively to complete tasks",
+                    "Working continuously without breaks"
+                ],
+                answer: 2,
+                explanation: "Time management means planning and using time effectively. It helps balance different activities and complete important work on time."
+            },
+            {
+                id: 17,
+                question: "Which activity should generally receive the highest priority?",
+                options: [
+                    "An urgent and important assignment due tomorrow",
+                    "Watching entertainment videos",
+                    "Organising old photographs",
+                    "Browsing social media"
+                ],
+                answer: 0,
+                explanation: "Urgent and important tasks require immediate attention. Prioritising them helps prevent missed deadlines and unnecessary stress."
+            },
+            {
+                id: 18,
+                question: "What is the main purpose of a to-do list?",
+                options: [
+                    "To increase the number of tasks",
+                    "To make tasks more difficult",
+                    "To avoid deadlines",
+                    "To organise and track tasks"
+                ],
+                answer: 3,
+                explanation: "A to-do list provides a clear record of tasks that need to be completed. It helps a person organise work and monitor progress."
+            },
+            {
+                id: 19,
+                question: "Which situation is an example of procrastination?",
+                options: [
+                    "Starting homework immediately",
+                    "Repeatedly postponing an assignment until the deadline is near",
+                    "Dividing a project into smaller tasks",
+                    "Preparing tomorrow's schedule"
+                ],
+                answer: 1,
+                explanation: "Procrastination means unnecessarily delaying a task. Repeatedly postponing work can create pressure and reduce the quality of the final work."
+            },
+            {
+                id: 20,
+                question: "A large project is due in two weeks. What is the most effective approach?",
+                options: [
+                    "Start on the night before submission",
+                    "Ignore it until reminded",
+                    "Divide it into smaller tasks and schedule them",
+                    "Complete only the easiest part"
+                ],
+                answer: 2,
+                explanation: "Breaking a large task into smaller steps makes it easier to manage. Scheduling those steps helps ensure steady progress before the deadline."
+            },
+            {
+                id: 21,
+                question: "Which practice can help reduce unnecessary time wastage?",
+                options: [
+                    "Setting specific periods for checking social media",
+                    "Keeping notifications on all the time",
+                    "Frequently switching between unrelated tasks",
+                    "Avoiding any schedule"
+                ],
+                answer: 0,
+                explanation: "Limiting distractions helps protect study or work time. Specific periods for social media can prevent it from interfering with important tasks."
+            },
+            {
+                id: 22,
+                question: "Why are planned breaks useful while studying?",
+                options: [
+                    "They eliminate the need to study",
+                    "They make every task take longer",
+                    "They encourage procrastination",
+                    "They can help maintain concentration and reduce fatigue"
+                ],
+                answer: 3,
+                explanation: "Short planned breaks can help refresh the mind and reduce tiredness. They are different from unnecessarily delaying work."
+            },
+            {
+                id: 23,
+                question: "A timetable is most effective when it:",
+                options: [
+                    "Contains only study activities",
+                    "Includes realistic time slots for different activities",
+                    "Has no flexibility",
+                    "Is changed every few minutes"
+                ],
+                answer: 1,
+                explanation: "A useful timetable should be realistic and balanced. It should account for study, rest and other necessary activities."
+            },
+            {
+                id: 24,
+                question: "Which student is managing time most effectively?",
+                options: [
+                    "Mohit starts everything at the last minute",
+                    "Sara studies only when she feels like it",
+                    "Kabir prioritises tasks and follows a schedule",
+                    "Tina spends most study time checking notifications"
+                ],
+                answer: 2,
+                explanation: "Prioritising tasks and following a schedule are important parts of time management. This approach helps use available time efficiently."
+            },
+            {
+                id: 25,
+                question: "When two tasks have similar deadlines, prioritisation can be based on:",
+                options: [
+                    "Importance and urgency",
+                    "Colour of the notebook",
+                    "Which task looks easier",
+                    "What friends are doing"
+                ],
+                answer: 0,
+                explanation: "Importance and urgency help determine which task needs attention first. This prevents critical work from being unnecessarily delayed."
+            },
+            {
+                id: 26,
+                question: "A goal is best described as:",
+                options: [
+                    "A random wish",
+                    "A distraction",
+                    "A problem",
+                    "Something a person aims to achieve"
+                ],
+                answer: 3,
+                explanation: "A goal is a desired result that a person works towards achieving. Clear goals provide direction and purpose."
+            },
+            {
+                id: 27,
+                question: "Which goal is more specific?",
+                options: [
+                    "“I want to improve.”",
+                    "“I will improve my English vocabulary by learning 10 new words every day.”",
+                    "“I will study more someday.”",
+                    "“I want better marks.”"
+                ],
+                answer: 1,
+                explanation: "The second goal clearly states what will be improved and how. Specific goals make it easier to understand exactly what needs to be done."
+            },
+            {
+                id: 28,
+                question: "In SMART goals, the letter “M” represents:",
+                options: [
+                    "Meaningful",
+                    "Motivational",
+                    "Measurable",
+                    "Manageable"
+                ],
+                answer: 2,
+                explanation: "Measurable means that progress towards the goal can be tracked. This helps a person know whether they are moving towards the desired result."
+            },
+            {
+                id: 29,
+                question: "Which goal is most measurable?",
+                options: [
+                    "“I will read more.”",
+                    "“I will become a better reader.”",
+                    "“I will improve my knowledge.”",
+                    "“I will read two chapters every day.”"
+                ],
+                answer: 3,
+                explanation: "The fourth goal gives a clear quantity that can be measured. This makes it possible to track progress objectively."
+            },
+            {
+                id: 30,
+                question: "A goal is “achievable” when it:",
+                options: [
+                    "Is realistic considering the person's available resources and effort",
+                    "Requires no effort",
+                    "Is impossible to complete",
+                    "Depends entirely on luck"
+                ],
+                answer: 0,
+                explanation: "An achievable goal should be realistic and possible with appropriate effort. Unrealistic goals can lead to frustration and discouragement."
+            },
+            {
+                id: 31,
+                question: "In SMART goals, “R” generally stands for:",
+                options: [
+                    "Rapid",
+                    "Relevant",
+                    "Rewarding",
+                    "Recorded"
+                ],
+                answer: 1,
+                explanation: "Relevant means the goal should be meaningful and connected to what the person actually needs or wants to achieve."
+            },
+            {
+                id: 32,
+                question: "Which goal is the best example of being time-bound?",
+                options: [
+                    "“I will learn Excel.”",
+                    "“I will become good at Excel.”",
+                    "“I will practise Excel for 30 minutes daily for the next four weeks.”",
+                    "“I will use Excel more.”"
+                ],
+                answer: 2,
+                explanation: "A time-bound goal includes a clear time period or deadline. The third option specifies both frequency and duration."
+            },
+            {
+                id: 33,
+                question: "Why is goal setting useful?",
+                options: [
+                    "It provides direction and helps track progress",
+                    "It guarantees success without effort",
+                    "It removes all challenges",
+                    "It eliminates the need for planning"
+                ],
+                answer: 0,
+                explanation: "Goals give a person a clear direction. They also provide a standard against which progress can be checked."
+            },
+            {
+                id: 34,
+                question: "Which statement best represents a SMART approach?",
+                options: [
+                    "“I will become successful.”",
+                    "“I will study whenever I have free time.”",
+                    "“I will get better marks somehow.”",
+                    "“I will revise Science for one hour every evening for the next 20 days.”"
+                ],
+                answer: 3,
+                explanation: "The goal is clear, measurable, realistic, relevant to study and limited to a specific period. These features make it SMART."
+            },
+            {
+                id: 35,
+                question: "Stress can be described as:",
+                options: [
+                    "A type of entertainment",
+                    "A response to demands or challenging situations",
+                    "A method of time management",
+                    "A learning technique"
+                ],
+                answer: 1,
+                explanation: "Stress is a response that can occur when a person faces demands or challenging situations. Managing it appropriately is important for well-being."
+            },
+            {
+                id: 36,
+                question: "Which situation is most likely to cause academic stress?",
+                options: [
+                    "Following a balanced study plan",
+                    "Taking a planned break",
+                    "Having several unfinished assignments close to their deadlines",
+                    "Getting adequate sleep"
+                ],
+                answer: 2,
+                explanation: "Multiple unfinished tasks with approaching deadlines can create pressure. Planning work in advance can help reduce such stress."
+            },
+            {
+                id: 37,
+                question: "Which is generally a healthy stress-management strategy?",
+                options: [
+                    "Regular physical activity",
+                    "Avoiding sleep",
+                    "Ignoring every problem",
+                    "Constantly checking social media"
+                ],
+                answer: 0,
+                explanation: "Regular physical activity can support overall well-being and help manage stress. Healthy routines are generally better than avoidance or excessive distractions."
+            },
+            {
+                id: 38,
+                question: "Deep breathing is useful because it can:",
+                options: [
+                    "Increase workload",
+                    "Eliminate every problem instantly",
+                    "Replace proper planning",
+                    "Promote relaxation during stressful situations"
+                ],
+                answer: 3,
+                explanation: "Slow, controlled breathing can help a person relax and regain composure. It can be useful when dealing with temporary stress."
+            },
+            {
+                id: 39,
+                question: "Which habit is most likely to support healthy stress management?",
+                options: [
+                    "Skipping meals regularly",
+                    "Maintaining adequate sleep and rest",
+                    "Studying continuously without breaks",
+                    "Avoiding all communication"
+                ],
+                answer: 1,
+                explanation: "Adequate sleep and rest support physical and mental well-being. A balanced routine can make it easier to handle everyday challenges."
+            },
+            {
+                id: 40,
+                question: "Before an important exam, which approach is most sensible?",
+                options: [
+                    "Stay awake the entire night",
+                    "Stop studying completely",
+                    "Follow a revision plan and take appropriate breaks",
+                    "Constantly think about the worst possible result"
+                ],
+                answer: 2,
+                explanation: "A planned revision schedule provides structure while breaks help manage fatigue. This is generally more effective than panic or extreme study habits."
+            },
+            {
+                id: 41,
+                question: "Talking with a trusted person when facing a stressful situation can:",
+                options: [
+                    "Provide emotional support and another perspective",
+                    "Guarantee that the problem disappears",
+                    "Replace every practical solution",
+                    "Always increase stress"
+                ],
+                answer: 0,
+                explanation: "Sharing concerns with a trusted person can provide support and perspective. It may also help a person think more clearly about possible solutions."
+            },
+            {
+                id: 42,
+                question: "Which action is least helpful for managing stress?",
+                options: [
+                    "Taking a short break",
+                    "Organising tasks",
+                    "Practising relaxation techniques",
+                    "Repeatedly worrying without taking constructive action"
+                ],
+                answer: 3,
+                explanation: "Constant worrying does not solve the underlying problem and can increase mental pressure. Constructive planning and healthy relaxation are more useful approaches."
+            },
+            {
+                id: 43,
+                question: "A growth mindset is the belief that abilities can:",
+                options: [
+                    "Never change",
+                    "Develop through learning, effort and practice",
+                    "Be inherited only",
+                    "Improve without any effort"
+                ],
+                answer: 1,
+                explanation: "A growth mindset recognises that skills can develop through practice, learning and effort. It encourages people to keep improving."
+            },
+            {
+                id: 44,
+                question: "Which statement reflects a growth mindset?",
+                options: [
+                    "“I am not good at this, so I should never try.”",
+                    "“Only naturally talented people can succeed.”",
+                    "“I cannot do it yet, but I can improve with practice.”",
+                    "“My mistakes prove that I am incapable.”"
+                ],
+                answer: 2,
+                explanation: "The word “yet” shows that the person believes improvement is possible. Practice and learning are viewed as ways to develop ability."
+            },
+            {
+                id: 45,
+                question: "Which response to failure demonstrates a growth mindset?",
+                options: [
+                    "“I failed, so I will never try again.”",
+                    "“The test was unfair, so there is nothing to learn.”",
+                    "“I should hide my mistakes.”",
+                    "“I will identify my mistakes and change my preparation.”"
+                ],
+                answer: 3,
+                explanation: "A growth mindset treats mistakes as opportunities to learn. Analysing errors and changing preparation can lead to improvement."
+            },
+            {
+                id: 46,
+                question: "Which statement shows a fixed mindset?",
+                options: [
+                    "“I can improve with practice.”",
+                    "“Feedback can help me learn.”",
+                    "“My ability is fixed, so practising will not make a difference.”",
+                    "“Mistakes can teach me something.”"
+                ],
+                answer: 2,
+                explanation: "A fixed mindset assumes that abilities cannot significantly change. It can discourage effort and learning from mistakes."
+            },
+            {
+                id: 47,
+                question: "Priya finds coding difficult. Instead of quitting, she practises daily and asks for feedback. What does this demonstrate?",
+                options: [
+                    "Growth mindset",
+                    "Procrastination",
+                    "Poor time management",
+                    "Avoidance"
+                ],
+                answer: 0,
+                explanation: "Priya believes that practice and feedback can improve her ability. This willingness to learn from difficulty is a key feature of a growth mindset."
+            },
+            {
+                id: 48,
+                question: "Arjun has many assignments. He identifies the most urgent ones, creates a schedule and divides large tasks into smaller parts. Which skills is he mainly applying?",
+                options: [
+                    "Only self-awareness",
+                    "Only stress management",
+                    "Time management and prioritisation",
+                    "Only self-motivation"
+                ],
+                answer: 2,
+                explanation: "Arjun is deciding what needs attention first and organising his available time. Breaking large tasks into smaller parts also makes work more manageable."
+            },
+            {
+                id: 49,
+                question: "Meena notices that she becomes distracted by her phone while studying. She sets a study schedule and keeps her phone away during study time. This demonstrates:",
+                options: [
+                    "Self-awareness and self-regulation",
+                    "Procrastination and avoidance",
+                    "Fixed mindset",
+                    "Lack of motivation"
+                ],
+                answer: 0,
+                explanation: "Meena first identifies a behaviour that affects her performance and then controls it. Recognising and managing one's behaviour demonstrates self-awareness and self-regulation."
+            },
+            {
+                id: 50,
+                question: "Rahul wants to improve his exam performance. He identifies weak subjects, sets measurable study targets, follows a timetable, monitors his progress and learns from mistakes. Which combination best describes his approach?",
+                options: [
+                    "Stress management only",
+                    "Self-management skills",
+                    "Procrastination",
+                    "Avoidance behaviour"
+                ],
+                answer: 1,
+                explanation: "Rahul is using several self-management skills together, including self-awareness, goal setting, time management and a growth-oriented approach. Combining these skills can improve organised and purposeful learning."
+            }
+        ];
+
+        // TEST STATE VARIABLES
+        let studentName = "";
+        let currentQuestions = []; // Processed & Randomized questions
+        let currentQuestionIndex = 0;
+        let userAnswers = {}; // Map of qIndex -> selected option index
+        let timerInterval = null;
+        let timeRemaining = 1200; // 20 mins in seconds
+        let isSubmitted = false;
+
+        const STORAGE_KEY = "THE_GOAL_IT402_TEST_STATE";
+
+        // SHUFFLE HELPER (Fisher-Yates)
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // INITIALIZATION & LOCAL STORAGE RESTORE
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedState = localStorage.getItem(STORAGE_KEY);
+            if (savedState) {
+                try {
+                    const state = JSON.parse(savedState);
+                    if (state && !state.isSubmitted && state.timeRemaining > 0) {
+                        studentName = state.studentName;
+                        currentQuestions = state.currentQuestions;
+                        currentQuestionIndex = state.currentQuestionIndex || 0;
+                        userAnswers = state.userAnswers || {};
+                        timeRemaining = state.timeRemaining;
+                        
+                        document.getElementById('student-name').value = studentName;
+                        document.getElementById('display-student-name').textContent = studentName;
+                        
+                        showScreen('quiz-screen');
+                        initQuizUI();
+                        startTimer();
+                        return;
+                    }
+                } catch(e) {
+                    console.error("Error restoring state", e);
+                    localStorage.removeItem(STORAGE_KEY);
+                }
+            }
+        });
+
+        function saveState() {
+            if (isSubmitted) return;
+            const state = {
+                studentName,
+                currentQuestions,
+                currentQuestionIndex,
+                userAnswers,
+                timeRemaining,
+                isSubmitted
+            };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        }
+
+        function clearState() {
+            localStorage.removeItem(STORAGE_KEY);
+        }
+
+        // START TEST
+        function startTest() {
+            const input = document.getElementById('student-name');
+            const name = input.value.trim();
+            if (!name) return;
+
+            studentName = name;
+            document.getElementById('display-student-name').textContent = studentName;
+
+            // Prepare Randomized Questions & Options
+            prepareQuestions();
+
+            currentQuestionIndex = 0;
+            userAnswers = {};
+            timeRemaining = 1200;
+            isSubmitted = false;
+
+            showScreen('quiz-screen');
+            initQuizUI();
+            startTimer();
+            saveState();
+        }
+
+        function prepareQuestions() {
+            // 1. Shuffle Question Order
+            const shuffled = shuffleArray(rawQuestionBank);
+
+            // 2. Shuffle Options and track Correct Index
+            currentQuestions = shuffled.map(q => {
+                const optionsObj = q.options.map((opt, idx) => ({
+                    text: opt,
+                    isCorrect: idx === q.answer
+                }));
+
+                const shuffledOptions = shuffleArray(optionsObj);
+                const newCorrectAnswerIndex = shuffledOptions.findIndex(o => o.isCorrect);
+
+                return {
+                    id: q.id,
+                    question: q.question,
+                    options: shuffledOptions.map(o => o.text),
+                    answer: newCorrectAnswerIndex,
+                    explanation: q.explanation
+                };
+            });
+        }
+
+        // NAVIGATION & SCREEN DISPLAY
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // TIMER SYSTEM
+        function startTimer() {
+            clearInterval(timerInterval);
+            updateTimerDisplay();
+            
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                saveState();
+                updateTimerDisplay();
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmitTest();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            if (timeRemaining < 0) timeRemaining = 0;
+            const mins = Math.floor(timeRemaining / 60);
+            const secs = timeRemaining % 60;
+            const displayStr = `⏱️ ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            
+            const badge = document.getElementById('timer-display');
+            badge.textContent = displayStr;
+
+            // Visual warnings
+            if (timeRemaining <= 180) { // <= 3 minutes
+                badge.className = 'timer-badge danger';
+            } else if (timeRemaining <= 300) { // <= 5 minutes
+                badge.className = 'timer-badge warning';
+            } else {
+                badge.className = 'timer-badge';
+            }
+        }
+
+        // QUIZ RENDERING
+        function initQuizUI() {
+            renderPalette();
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = currentQuestions[currentQuestionIndex];
+            
+            // Meta & Text
+            document.getElementById('q-number-text').textContent = `Question ${currentQuestionIndex + 1} of ${currentQuestions.length}`;
+            document.getElementById('q-text').textContent = q.question;
+
+            // Progress Bar
+            const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+
+            // Options
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            const keys = ['A', 'B', 'C', 'D'];
+            const selectedOpt = userAnswers[currentQuestionIndex];
+
+            q.options.forEach((optText, idx) => {
+                const card = document.createElement('div');
+                card.className = `option-card ${selectedOpt === idx ? 'selected' : ''}`;
+                card.onclick = () => selectOption(idx);
+
+                card.innerHTML = `
+                    <div class="option-key">${keys[idx]}</div>
+                    <div class="option-val">${escapeHTML(optText)}</div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Nav Buttons
+            document.getElementById('btn-prev').style.visibility = currentQuestionIndex === 0 ? 'hidden' : 'visible';
+            
+            if (currentQuestionIndex === currentQuestions.length - 1) {
+                document.getElementById('btn-next').style.display = 'none';
+            } else {
+                document.getElementById('btn-next').style.display = 'inline-flex';
+            }
+
+            // Update Palette Active State
+            updatePaletteUI();
+        }
+
+        function selectOption(optIndex) {
+            userAnswers[currentQuestionIndex] = optIndex;
+            renderQuestion();
+            updatePaletteUI();
+            saveState();
+        }
+
+        function navigateQuestion(direction) {
+            const newIndex = currentQuestionIndex + direction;
+            if (newIndex >= 0 && newIndex < currentQuestions.length) {
+                currentQuestionIndex = newIndex;
+                renderQuestion();
+                saveState();
+            }
+        }
+
+        function jumpToQuestion(index) {
+            currentQuestionIndex = index;
+            renderQuestion();
+            saveState();
+        }
+
+        function renderPalette() {
+            const grid = document.getElementById('palette-grid');
+            grid.innerHTML = '';
+
+            currentQuestions.forEach((_, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'p-btn';
+                btn.id = `palette-btn-${idx}`;
+                btn.textContent = idx + 1;
+                btn.onclick = () => jumpToQuestion(idx);
+                grid.appendChild(btn);
+            });
+
+            updatePaletteUI();
+        }
+
+        function updatePaletteUI() {
+            const total = currentQuestions.length;
+            let answeredCount = 0;
+
+            currentQuestions.forEach((_, idx) => {
+                const btn = document.getElementById(`palette-btn-${idx}`);
+                if (!btn) return;
+
+                btn.className = 'p-btn';
+                if (userAnswers[idx] !== undefined) {
+                    btn.classList.add('answered');
+                    answeredCount++;
+                }
+                if (idx === currentQuestionIndex) {
+                    btn.classList.add('current');
+                }
+            });
+
+            document.getElementById('palette-progress').textContent = `${answeredCount}/${total}`;
+        }
+
+        // SUBMIT & RESULTS
+        function confirmSubmit() {
+            const total = currentQuestions.length;
+            const answered = Object.keys(userAnswers).length;
+            const unanswered = total - answered;
+
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+
+            if (unanswered > 0) {
+                modalTitle.textContent = "Unanswered Questions!";
+                modalBody.textContent = `You have ${unanswered} unanswered question(s). Are you sure you want to submit your test?`;
+            } else {
+                modalTitle.textContent = "Submit Test?";
+                modalBody.textContent = "Are you sure you want to submit your test?";
+            }
+
+            document.getElementById('confirm-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('confirm-modal').classList.remove('active');
+        }
+
+        function autoSubmitTest() {
+            closeModal();
+            processSubmission();
+        }
+
+        function finalSubmit() {
+            closeModal();
+            processSubmission();
+        }
+
+        function processSubmission() {
+            clearInterval(timerInterval);
+            isSubmitted = true;
+            clearState();
+
+            // Calculate Score
+            let correct = 0;
+            let incorrect = 0;
+            let unattempted = 0;
+
+            currentQuestions.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                if (userAns === undefined) {
+                    unattempted++;
+                } else if (userAns === q.answer) {
+                    correct++;
+                } else {
+                    incorrect++;
+                }
+            });
+
+            const score = correct; // 1 mark per question
+            const percentage = Math.round((score / currentQuestions.length) * 100);
+
+            // Populate Result Screen
+            document.getElementById('res-student-name').textContent = studentName;
+            document.getElementById('res-score').textContent = score;
+            document.getElementById('res-percentage').textContent = `${percentage}%`;
+            document.getElementById('res-correct').textContent = correct;
+            document.getElementById('res-incorrect').textContent = incorrect;
+            document.getElementById('res-unattempted').textContent = unattempted;
+
+            // Performance Message
+            const perfEl = document.getElementById('res-perf-msg');
+            if (percentage >= 90) perfEl.textContent = "Outstanding! 🔥";
+            else if (percentage >= 75) perfEl.textContent = "Excellent Work! 👏";
+            else if (percentage >= 60) perfEl.textContent = "Good Job! 👍";
+            else if (percentage >= 40) perfEl.textContent = "Keep Practising! 💪";
+            else perfEl.textContent = "Don't Give Up! Keep Learning! 🚀";
+
+            showScreen('result-screen');
+        }
+
+        function showResultScreen() {
+            showScreen('result-screen');
+        }
+
+        // REVIEW SYSTEM
+        function showReviewScreen() {
+            const list = document.getElementById('review-list');
+            list.innerHTML = '';
+
+            const keys = ['A', 'B', 'C', 'D'];
+
+            currentQuestions.forEach((q, idx) => {
+                const userAnsIdx = userAnswers[idx];
+                const isCorrect = userAnsIdx === q.answer;
+                const isUnattempted = userAnsIdx === undefined;
+
+                let statusClass = "status-incorrect";
+                let statusBadge = '<span class="status-badge incorrect">Incorrect</span>';
+
+                if (isUnattempted) {
+                    statusClass = "status-unattempted";
+                    statusBadge = '<span class="status-badge unattempted">Not Attempted</span>';
+                } else if (isCorrect) {
+                    statusClass = "status-correct";
+                    statusBadge = '<span class="status-badge correct">Correct</span>';
+                }
+
+                const userAnsText = isUnattempted ? "Not Attempted" : `${keys[userAnsIdx]}. ${q.options[userAnsIdx]}`;
+                const correctAnsText = `${keys[q.answer]}. ${q.options[q.answer]}`;
+
+                const item = document.createElement('div');
+                item.className = `review-item ${statusClass}`;
+                item.innerHTML = `
+                    <div class="review-q-head">
+                        <span class="review-q-num">Question ${idx + 1} of 50</span>
+                        ${statusBadge}
+                    </div>
+                    <div class="review-q-text">${escapeHTML(q.question)}</div>
+                    
+                    <div class="review-ans-grid">
+                        <div class="ans-box user-ans ${isCorrect ? 'correct' : (isUnattempted ? '' : 'incorrect')}">
+                            <div class="ans-box-lbl">Your Answer</div>
+                            <div class="ans-box-val">${escapeHTML(userAnsText)}</div>
+                        </div>
+                        <div class="ans-box correct-ans">
+                            <div class="ans-box-lbl">Correct Answer</div>
+                            <div class="ans-box-val">${escapeHTML(correctAnsText)}</div>
+                        </div>
+                    </div>
+
+                    <div class="explanation-box">
+                        <strong>Explanation:</strong>
+                        ${escapeHTML(q.explanation)}
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+
+            showScreen('review-screen');
+        }
+
+        // RETAKE TEST
+        function retakeTest() {
+            clearState();
+            prepareQuestions();
+            currentQuestionIndex = 0;
+            userAnswers = {};
+            timeRemaining = 1200;
+            isSubmitted = false;
+
+            document.getElementById('display-student-name').textContent = studentName;
+            showScreen('quiz-screen');
+            initQuizUI();
+            startTimer();
+            saveState();
+        }
+
+        // UTILITY FUNCTIONS
+        function escapeHTML(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>

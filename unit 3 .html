@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GOAL - CBSE Class 10 ICT Skills Test</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #eef2ff;
+            --secondary: #0ea5e9;
+            --bg-dark: #0f172a;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --success-light: #d1fae5;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --warning: #f59e0b;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .brand-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 0.2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            flex: 1;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Screen Display Logic */
+        .screen {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Start Screen */
+        .start-card {
+            text-align: center;
+            max-width: 550px;
+            margin: 2rem auto;
+            padding: 2.5rem 2rem;
+        }
+
+        .start-card h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-group {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1.2rem 0 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e1;
+            box-shadow: none;
+        }
+
+        /* Test Top Bar */
+        .test-header {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-text {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .timer-box {
+            background: #fef3c7;
+            color: #b45309;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: 1px solid #fde68a;
+        }
+
+        .timer-box.warning {
+            background: #fee2e2;
+            color: #dc2626;
+            border-color: #fca5a5;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        /* Question Card */
+        .question-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .option-btn {
+            background: #f8fafc;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 0.9rem 1.2rem;
+            text-align: left;
+            font-size: 1rem;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .option-btn.selected {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+            box-shadow: 0 0 0 1px var(--primary);
+        }
+
+        /* Navigation Buttons */
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .nav-controls .btn {
+            width: auto;
+            min-width: 120px;
+        }
+
+        /* Question Palette Navigation */
+        .palette-container {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .palette-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .grid-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .palette-btn {
+            aspect-ratio: 1;
+            border: 1px solid var(--border-color);
+            background: #f1f5f9;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .palette-btn:hover {
+            border-color: var(--primary);
+        }
+
+        .palette-btn.active {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .palette-btn.answered {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Result Screen */
+        .result-header-card {
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            padding: 2.5rem 1.5rem;
+        }
+
+        .result-header-card h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .student-greeting {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        .score-circle .score-num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-circle .score-total {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-card .val {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-card .lbl {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .stat-card.correct .val { color: var(--success); }
+        .stat-card.wrong .val { color: var(--danger); }
+        .stat-card.unanswered .val { color: var(--warning); }
+        .stat-card.percentage .val { color: var(--primary); }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-buttons .btn {
+            width: auto;
+            padding: 0.8rem 1.5rem;
+        }
+
+        /* Review Section */
+        .review-section {
+            margin-top: 2rem;
+        }
+
+        .review-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .review-card {
+            border-left: 5px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .review-card.correct-card {
+            border-left-color: var(--success);
+        }
+
+        .review-card.wrong-card {
+            border-left-color: var(--danger);
+        }
+
+        .review-card.unanswered-card {
+            border-left-color: var(--warning);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .status-badge.correct { background: var(--success-light); color: var(--success); }
+        .status-badge.wrong { background: var(--danger-light); color: var(--danger); }
+        .status-badge.unanswered { background: #fef3c7; color: #b45309; }
+
+        .review-option {
+            padding: 0.6rem 1rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+            border: 1px solid transparent;
+        }
+
+        .review-option.opt-correct {
+            background: var(--success-light);
+            color: #065f46;
+            font-weight: 600;
+            border-color: #a7f3d0;
+        }
+
+        .review-option.opt-wrong {
+            background: var(--danger-light);
+            color: #991b1b;
+            font-weight: 600;
+            border-color: #fecaca;
+        }
+
+        .answer-box {
+            background: #f1f5f9;
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .answer-box strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .explanation {
+            margin-top: 0.5rem;
+            color: #334155;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background: white;
+            margin-top: auto;
+        }
+
+        /* Print Styling */
+        @media print {
+            body { background: white; color: black; }
+            header, .test-header, .action-buttons, footer, .palette-container { display: none !important; }
+            .container { max-width: 100%; padding: 0; }
+            .card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+            .screen { display: block !important; }
+            #startScreen, #testScreen { display: none !important; }
+            #resultScreen { display: block !important; }
+            .review-card { page-break-inside: avoid; }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 0.8rem; }
+            .card { padding: 1.2rem; }
+            .nav-controls { flex-direction: column; }
+            .nav-controls .btn { width: 100%; }
+            .test-header { padding: 0.8rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-logo">THE GOAL</div>
+        <h1>CBSE CLASS 10 — INFORMATION TECHNOLOGY (402)</h1>
+        <p>PART A — UNIT 3: INFORMATION & COMMUNICATION TECHNOLOGY SKILLS</p>
+    </header>
+
+    <div class="container">
+
+        <!-- START SCREEN -->
+        <div id="startScreen" class="screen active">
+            <div class="card start-card">
+                <h2>ICT Skills Online Test</h2>
+                <div class="badge-group">
+                    <span class="badge">📝 50 Questions</span>
+                    <span class="badge">⏱️ 20 Minutes</span>
+                    <span class="badge">🎯 CBSE Board Pattern</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentNameInput">Student Name:</label>
+                    <input type="text" id="studentNameInput" class="form-control" placeholder="Enter Your Name..." autocomplete="off">
+                </div>
+
+                <button class="btn" onclick="startTest()">START TEST 🚀</button>
+            </div>
+        </div>
+
+        <!-- TEST SCREEN -->
+        <div id="testScreen" class="screen">
+            <div class="test-header">
+                <div class="progress-text" id="progressText">Question 1 / 50</div>
+                <div class="timer-box" id="timerDisplay">⏱️ 20:00</div>
+            </div>
+
+            <div class="card question-card">
+                <h3 id="questionText">Question goes here...</h3>
+                <div class="options-grid" id="optionsContainer">
+                    <!-- Options inserted via JS -->
+                </div>
+
+                <div class="nav-controls">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="navigateQuestion(-1)">← Previous</button>
+                    <button class="btn btn-secondary" id="nextBtn" onclick="navigateQuestion(1)">Next →</button>
+                    <button class="btn" id="submitBtn" onclick="confirmSubmit()" style="background: var(--success);">SUBMIT TEST ✅</button>
+                </div>
+
+                <div class="palette-container">
+                    <div class="palette-title">Question Navigator:</div>
+                    <div class="grid-palette" id="questionPalette">
+                        <!-- Palette buttons inserted via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="resultScreen" class="screen">
+            <div class="card result-header-card">
+                <h2>🎉 TEST COMPLETED!</h2>
+                <div class="student-greeting">Student Name: <strong id="resStudentName" style="color: var(--text-main);"></strong></div>
+
+                <div class="score-circle">
+                    <div class="score-num" id="resScore">0</div>
+                    <div class="score-total">out of 50</div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card correct">
+                        <div class="val" id="resCorrect">0</div>
+                        <div class="lbl">Correct</div>
+                    </div>
+                    <div class="stat-card wrong">
+                        <div class="val" id="resWrong">0</div>
+                        <div class="lbl">Wrong</div>
+                    </div>
+                    <div class="stat-card unanswered">
+                        <div class="val" id="resUnanswered">0</div>
+                        <div class="lbl">Unanswered</div>
+                    </div>
+                    <div class="stat-card percentage">
+                        <div class="val" id="resPercentage">0%</div>
+                        <div class="lbl">Percentage</div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn" onclick="retakeTest()">🔄 RETAKE TEST</button>
+                    <button class="btn btn-secondary" onclick="window.print()">🖨️ PRINT RESULT</button>
+                </div>
+            </div>
+
+            <div class="review-section">
+                <div class="review-title">📋 Detailed Answer Review</div>
+                <div id="reviewContainer">
+                    <!-- Detailed review inserted via JS -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Made with Love ❤️ in India by Pushpender
+    </footer>
+
+    <script>
+        const questionsData = [
+            {
+                id: 1,
+                question: "Which of the following is an example of software?",
+                options: ["A. Keyboard", "B. Monitor", "C. Operating System", "D. Mouse"],
+                answer: "C. Operating System",
+                explanation: "Operating System is software that manages computer hardware and other software.
+Keyboard, mouse and monitor are hardware devices."
+            },
+            {
+                id: 2,
+                question: "Which of the following is an operating system used on desktop computers?",
+                options: ["A. Ubuntu", "B. Keyboard", "C. Printer", "D. Scanner"],
+                answer: "A. Ubuntu",
+                explanation: "Ubuntu is an operating system used to manage computer resources and applications.
+The other options are hardware devices."
+            },
+            {
+                id: 3,
+                question: "What does BIOS stand for?",
+                options: ["A. Basic Internet Operating System", "B. Basic Input/Output System", "C. Binary Input Operating Software", "D. Basic Internal Operating Service"],
+                answer: "B. Basic Input/Output System",
+                explanation: "BIOS stands for Basic Input/Output System.
+It performs essential checks and starts the computer's boot process."
+            },
+            {
+                id: 4,
+                question: "What does BIOS perform immediately after a computer is switched on?",
+                options: ["A. Opens a browser", "B. Creates a new folder", "C. Starts printing", "D. Performs a self-test"],
+                answer: "D. Performs a self-test",
+                explanation: "BIOS performs a Power-On Self-Test (POST) when the computer starts.
+This checks basic hardware components."
+            },
+            {
+                id: 5,
+                question: "If the BIOS self-test shows that the system is fine, what happens next?",
+                options: ["A. The operating system is loaded", "B. The computer shuts down", "C. The keyboard is disconnected", "D. All files are deleted"],
+                answer: "A. The operating system is loaded",
+                explanation: "After a successful self-test, the computer loads the operating system.
+The operating system then provides the working environment for the user."
+            },
+            {
+                id: 6,
+                question: "Why is a login ID and password used on a computer?",
+                options: ["A. To increase screen brightness", "B. To allow only authorised users to access the computer", "C. To clean temporary files", "D. To improve keyboard speed"],
+                answer: "B. To allow only authorised users to access the computer",
+                explanation: "Login credentials help authenticate users.
+They help prevent unauthorised access to an account or computer."
+            },
+            {
+                id: 7,
+                question: "What should a user do after finishing work on a computer to prevent unauthorised access?",
+                options: ["A. Keep the mouse moving", "B. Open another application", "C. Log out or sign out", "D. Turn up the volume"],
+                answer: "C. Log out or sign out",
+                explanation: "Logging out ends the user's active session.
+This reduces the chance of another person accessing the account."
+            },
+            {
+                id: 8,
+                question: "Which device is primarily used to type text, numbers and commands?",
+                options: ["A. Monitor", "B. Speaker", "C. Printer", "D. Keyboard"],
+                answer: "D. Keyboard",
+                explanation: "A keyboard is an input device used to enter text, numbers and commands.
+A monitor, speaker and printer are output devices."
+            },
+            {
+                id: 9,
+                question: "Keys labelled from F1 to F12 are known as:",
+                options: ["A. Function keys", "B. Navigation keys", "C. Punctuation keys", "D. Command keys"],
+                answer: "A. Function keys",
+                explanation: "F1 to F12 are called function keys.
+Their exact actions can depend on the application or operating system."
+            },
+            {
+                id: 10,
+                question: "In most programs, the F1 key is generally used to:",
+                options: ["A. Shut down the computer", "B. Open help for the program", "C. Delete a file", "D. Print a document"],
+                answer: "B. Open help for the program",
+                explanation: "F1 commonly opens Help in many applications.
+It provides assistance related to the current program."
+            },
+            {
+                id: 11,
+                question: "Which key moves the cursor to the beginning of a new line?",
+                options: ["A. Shift", "B. Delete", "C. Enter", "D. Ctrl"],
+                answer: "C. Enter",
+                explanation: "The Enter key generally starts a new line when typing.
+It is also used to confirm or execute some commands."
+            },
+            {
+                id: 12,
+                question: "Which of the following is a navigation key?",
+                options: ["A. Spacebar", "B. Caps Lock", "C. Ctrl", "D. Page Down"],
+                answer: "D. Page Down",
+                explanation: "Page Down is a navigation key used to move through a document or page.
+The other listed keys have different functions."
+            },
+            {
+                id: 13,
+                question: "Which key is used to remove typed text to the left side of the cursor?",
+                options: ["A. Backspace", "B. Delete", "C. Insert", "D. Home"],
+                answer: "A. Backspace",
+                explanation: "Backspace removes the character immediately to the left of the cursor.
+Delete generally removes the character to the right."
+            },
+            {
+                id: 14,
+                question: "What happens when the Windows key is pressed?",
+                options: ["A. The computer restarts", "B. The Start menu opens", "C. The current file is deleted", "D. The screen gets locked automatically"],
+                answer: "B. The Start menu opens",
+                explanation: "The Windows key normally opens the Start menu.
+From there, applications and system options can be accessed."
+            },
+            {
+                id: 15,
+                question: "What does hovering over an item in File Explorer generally do?",
+                options: ["A. Deletes the item", "B. Prints the item", "C. Shows details of the item", "D. Renames the item"],
+                answer: "C. Shows details of the item",
+                explanation: "Hovering means placing the pointer over an item without clicking it.
+Information or a tooltip about the item may appear."
+            },
+            {
+                id: 16,
+                question: "What is meant by drag and drop?",
+                options: ["A. Double-clicking an item", "B. Holding the mouse button while moving an item and releasing it at a new location", "C. Right-clicking an item twice", "D. Pressing Enter after selecting an item"],
+                answer: "B. Holding the mouse button while moving an item and releasing it at a new location",
+                explanation: "Drag and drop means holding the mouse button while moving an item, then releasing it at the destination.
+It is commonly used to move or place items."
+            },
+            {
+                id: 17,
+                question: "Where is information stored on a computer?",
+                options: ["A. Files", "B. Tables only", "C. Icons only", "D. Menus"],
+                answer: "A. Files",
+                explanation: "Computer information is commonly stored in files.
+Different files can contain text, images, audio and other kinds of data."
+            },
+            {
+                id: 18,
+                question: "What is the main purpose of a folder?",
+                options: ["A. To increase Internet speed", "B. To store a group of files", "C. To start the operating system", "D. To protect the keyboard"],
+                answer: "B. To store a group of files",
+                explanation: "Folders help organise and group files.
+Good file organisation makes information easier to locate and manage."
+            },
+            {
+                id: 19,
+                question: "Which extension is normally associated with a simple Notepad text file?",
+                options: ["A. .jpg", "B. .mp3", "C. .txt", "D. .xls"],
+                answer: "C. .txt",
+                explanation: "The .txt extension is commonly used for plain text files.
+Notepad can create and edit simple text files."
+            },
+            {
+                id: 20,
+                question: "Which extension is generally associated with an image file?",
+                options: ["A. .jpg", "B. .txt", "C. .mp3", "D. .xls"],
+                answer: "A. .jpg",
+                explanation: "JPG is a common image format.
+File extensions help identify the type or format of a file."
+            },
+            {
+                id: 21,
+                question: "Which file extension is associated with a sound file?",
+                options: ["A. .doc", "B. .jpg", "C. .txt", "D. .mp3"],
+                answer: "D. .mp3",
+                explanation: "MP3 is a common audio format.
+It is used to store digital sound or music."
+            },
+            {
+                id: 22,
+                question: "What separates a file name from its extension?",
+                options: ["A. Comma", "B. Dot/period", "C. Colon", "D. Slash"],
+                answer: "B. Dot/period",
+                explanation: "A dot separates the file name from its extension.
+For example, in notes.txt, 'txt' is the extension."
+            },
+            {
+                id: 23,
+                question: "Which of the following is NOT a common operation that can be performed on electronic files?",
+                options: ["A. Copy", "B. Move", "C. Rename", "D. Cook"],
+                answer: "D. Cook",
+                explanation: "Copy, move and rename are common file operations.
+'Cook' is not a computer file operation."
+            },
+            {
+                id: 24,
+                question: "In Ubuntu, which option is used to open the file explorer?",
+                options: ["A. Files", "B. Help", "C. Settings", "D. Shutdown"],
+                answer: "A. Files",
+                explanation: "In Ubuntu, the Files application is used to browse and manage files and folders.
+It works as the file explorer."
+            },
+            {
+                id: 25,
+                question: "Which sequence correctly describes creating a new folder on the Desktop?",
+                options: ["A. Right-click → New Folder → Type the folder name", "B. Type the name → Shut down → Right-click", "C. Open browser → Download → Rename", "D. Press F1 → Delete → Save"],
+                answer: "A. Right-click → New Folder → Type the folder name",
+                explanation: "A new folder can be created by right-clicking the required location, selecting New Folder, and entering its name."
+            },
+            {
+                id: 26,
+                question: "Which shortcut is used to undo the previous action?",
+                options: ["A. Ctrl + Y", "B. Ctrl + X", "C. Ctrl + Z", "D. Ctrl + A"],
+                answer: "C. Ctrl + Z",
+                explanation: "Ctrl + Z is the standard shortcut for Undo.
+It reverses the most recent compatible action."
+            },
+            {
+                id: 27,
+                question: "Which keyboard shortcut is used to redo an action?",
+                options: ["A. Ctrl + P", "B. Ctrl + Y", "C. Ctrl + C", "D. Ctrl + S"],
+                answer: "B. Ctrl + Y",
+                explanation: "Ctrl + Y is commonly used for Redo.
+It can restore an action that was previously undone."
+            },
+            {
+                id: 28,
+                question: "What does Ctrl + A do?",
+                options: ["A. Saves the file", "B. Prints the file", "C. Selects all", "D. Pastes the file"],
+                answer: "C. Selects all",
+                explanation: "Ctrl + A selects all applicable content in the current area.
+The selected content can then be copied, cut or otherwise processed."
+            },
+            {
+                id: 29,
+                question: "Which shortcut is used to cut a selected item?",
+                options: ["A. Ctrl + X", "B. Ctrl + C", "C. Ctrl + V", "D. Ctrl + P"],
+                answer: "A. Ctrl + X",
+                explanation: "Ctrl + X cuts selected content.
+The cut content can then be pasted elsewhere using Ctrl + V."
+            },
+            {
+                id: 30,
+                question: "A student wants to duplicate selected information without removing the original. Which shortcut should be used first?",
+                options: ["A. Ctrl + X", "B. Ctrl + Z", "C. Ctrl + C", "D. Ctrl + P"],
+                answer: "C. Ctrl + C",
+                explanation: "Ctrl + C copies selected information while leaving the original unchanged.
+Ctrl + V can then paste the copy."
+            },
+            {
+                id: 31,
+                question: "Which shortcut is used to paste copied or cut information?",
+                options: ["A. Ctrl + S", "B. Ctrl + V", "C. Ctrl + Y", "D. Ctrl + A"],
+                answer: "B. Ctrl + V",
+                explanation: "Ctrl + V pastes information that has been copied or cut.
+It is normally used after Ctrl + C or Ctrl + X."
+            },
+            {
+                id: 32,
+                question: "What does Ctrl + S generally do?",
+                options: ["A. Selects all", "B. Saves the file", "C. Starts the computer", "D. Opens a folder"],
+                answer: "B. Saves the file",
+                explanation: "Ctrl + S is a common Save shortcut.
+Saving regularly helps reduce the risk of losing recent work."
+            },
+            {
+                id: 33,
+                question: "Why is regular computer maintenance important?",
+                options: ["A. It makes the computer heavier", "B. It helps the computer work properly and last longer", "C. It removes the need for passwords", "D. It increases the number of files automatically"],
+                answer: "B. It helps the computer work properly and last longer",
+                explanation: "Regular maintenance helps keep a computer working properly and can extend its useful life.
+Cleaning and proper care are important parts of maintenance."
+            },
+            {
+                id: 34,
+                question: "Why should we avoid eating over a keyboard?",
+                options: ["A. Food crumbs can damage internal parts", "B. It makes typing faster", "C. It increases Internet speed", "D. It changes the file extension"],
+                answer: "A. Food crumbs can damage internal parts",
+                explanation: "Food particles can enter the keyboard and affect its components.
+Keeping food and liquids away reduces the risk of damage."
+            },
+            {
+                id: 35,
+                question: "Which part of a computer should be kept clean to ensure proper use?",
+                options: ["A. Screen", "B. Keyboard", "C. Mouse", "D. All of these"],
+                answer: "D. All of these",
+                explanation: "The screen, keyboard and mouse should all be kept clean.
+Dust and dirt can affect usability and proper functioning."
+            },
+            {
+                id: 36,
+                question: "What may happen if a device remains plugged in even after it is fully charged?",
+                options: ["A. It may over-heat", "B. It automatically creates a backup", "C. It increases storage space", "D. It improves the keyboard"],
+                answer: "A. It may over-heat",
+                explanation: "Keeping a device plugged in unnecessarily can contribute to heating and battery-related issues.
+Proper charging and ventilation are part of device care."
+            },
+            {
+                id: 37,
+                question: "Which practice can help keep a computer cool?",
+                options: ["A. Covering a laptop with a blanket", "B. Leaving it in direct sunlight", "C. Ensuring the CPU fan is working", "D. Blocking the ventilation area"],
+                answer: "C. Ensuring the CPU fan is working",
+                explanation: "A working CPU fan helps remove heat from the system.
+Ventilation openings should not be blocked because airflow is needed for cooling."
+            },
+            {
+                id: 38,
+                question: "Which of the following helps remove dust and particles from a keyboard?",
+                options: ["A. Pouring water directly on it", "B. Using a blower", "C. Leaving it outside in sunlight", "D. Applying oil to the keys"],
+                answer: "B. Using a blower",
+                explanation: "A blower can help remove dust and particles from keyboard gaps.
+Water or oil should not be applied directly to electronic components."
+            },
+            {
+                id: 39,
+                question: "Why should unnecessary files and temporary data be removed?",
+                options: ["A. They can occupy hard-disk space and reduce performance", "B. They improve the computer's performance automatically", "C. They increase the screen size", "D. They protect against identity theft"],
+                answer: "A. They can occupy hard-disk space and reduce performance",
+                explanation: "Unnecessary and temporary files use storage space.
+Cleaning them can free space and support better system performance."
+            },
+            {
+                id: 40,
+                question: "What type of software can help clean unnecessary files from a computer?",
+                options: ["A. Presentation software", "B. Disk cleaner software", "C. Drawing software", "D. Music software"],
+                answer: "B. Disk cleaner software",
+                explanation: "Disk-cleaning software is designed to remove unnecessary or temporary files.
+This can help free storage space."
+            },
+            {
+                id: 41,
+                question: "What is SPAM?",
+                options: ["A. A computer's operating system", "B. A type of keyboard key", "C. Unwanted advertising or promotional emails", "D. A type of file extension"],
+                answer: "C. Unwanted advertising or promotional emails",
+                explanation: "Spam refers to unwanted messages, often including advertising or promotional emails.
+Such messages can clutter the inbox and may sometimes be risky."
+            },
+            {
+                id: 42,
+                question: "What should you generally do with SPAM emails?",
+                options: ["A. Reply to them", "B. Forward them to friends", "C. Save every message permanently", "D. Avoid responding and delete them regularly"],
+                answer: "D. Avoid responding and delete them regularly",
+                explanation: "It is safer not to respond to unwanted spam.
+Delete or mark such messages as spam according to the email service."
+            },
+            {
+                id: 43,
+                question: "What is meant by a security breach?",
+                options: ["A. Leakage of information stored in a computer", "B. Cleaning the computer screen", "C. Creating a new folder", "D. Updating a keyboard"],
+                answer: "A. Leakage of information stored in a computer",
+                explanation: "A security breach can involve unauthorised access or leakage of protected information.
+It can compromise computer and user data."
+            },
+            {
+                id: 44,
+                question: "Which type of theft involves stealing a desktop computer or laptop physically?",
+                options: ["A. Identity theft", "B. Software piracy", "C. Physical theft", "D. Online scam"],
+                answer: "C. Physical theft",
+                explanation: "Stealing the actual computer or laptop is physical theft.
+It can also expose the data stored on the device."
+            },
+            {
+                id: 45,
+                question: "A hacker steals someone's personal information and uses their identity to access an account. This is an example of:",
+                options: ["A. Physical theft", "B. Identity theft", "C. Software maintenance", "D. File management"],
+                answer: "B. Identity theft",
+                explanation: "Using another person's personal information to act as that person is identity theft.
+Personal information should therefore be protected carefully."
+            },
+            {
+                id: 46,
+                question: "What is software piracy?",
+                options: ["A. Creating a strong password", "B. Cleaning computer software", "C. Using or distributing unauthorised copies of software", "D. Backing up personal data"],
+                answer: "C. Using or distributing unauthorised copies of software",
+                explanation: "Software piracy means using, copying or distributing software without proper authorisation.
+Genuine or properly licensed software should be used."
+            },
+            {
+                id: 47,
+                question: "Which virus replicates itself and spreads to files after attacking a computer?",
+                options: ["A. Worm", "B. Firewall", "C. Antivirus", "D. Trojan Horse"],
+                answer: "A. Worm",
+                explanation: "A worm is malicious software capable of making copies of itself and spreading.
+Firewall and antivirus are security tools, while a Trojan is a different type of malware."
+            },
+            {
+                id: 48,
+                question: "A program appears to be useful but secretly behaves like a virus after reaching the computer. What is it called?",
+                options: ["A. Worm", "B. Trojan Horse", "C. Firewall", "D. Backup"],
+                answer: "B. Trojan Horse",
+                explanation: "A Trojan Horse disguises itself as a useful or legitimate program.
+Once installed, it can perform harmful or unauthorised actions."
+            },
+            {
+                id: 49,
+                question: "Which combination represents a strong password?",
+                options: ["A. Only the user's name", "B. Only numbers", "C. Only lowercase letters", "D. Small and capital letters, numbers and special characters"],
+                answer: "D. Small and capital letters, numbers and special characters",
+                explanation: "A stronger password uses a mixture of uppercase and lowercase letters, numbers and special characters.
+Avoid simple, easily guessed information."
+            },
+            {
+                id: 50,
+                question: "While making an online payment, which website should be preferred for entering bank or card details?",
+                options: ["A. Any website offering a prize", "B. A website without the lock symbol", "C. A secure site using https:// and showing a lock symbol", "D. An unknown website asking for personal details"],
+                answer: "C. A secure site using https:// and showing a lock symbol",
+                explanation: "For sensitive transactions, prefer a secure HTTPS website and check the lock indicator.
+Do not enter financial information on suspicious or unknown sites."
+            }
+        ];
+
+        let studentName = "";
+        let currentQuestionIdx = 0;
+        let userAnswers = new Array(questionsData.length).fill(null);
+        let timerInterval = null;
+        let totalTimeSeconds = 20 * 60; // 20 Minutes
+
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function startTest() {
+            const nameInput = document.getElementById('studentNameInput').value.trim();
+            if (!nameInput) {
+                alert("Please enter your name to start the test.");
+                return;
+            }
+            studentName = nameInput;
+            userAnswers = new Array(questionsData.length).fill(null);
+            currentQuestionIdx = 0;
+            totalTimeSeconds = 20 * 60;
+
+            showScreen('testScreen');
+            renderPalette();
+            loadQuestion(0);
+            startTimer();
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            updateTimerDisplay();
+            timerInterval = setInterval(() => {
+                totalTimeSeconds--;
+                updateTimerDisplay();
+
+                if (totalTimeSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time is up! Your test will be submitted automatically.");
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(totalTimeSeconds / 60);
+            const seconds = totalTimeSeconds % 60;
+            const timerBox = document.getElementById('timerDisplay');
+            timerBox.innerText = `⏱️ ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            if (totalTimeSeconds <= 180) { // last 3 mins
+                timerBox.classList.add('warning');
+            } else {
+                timerBox.classList.remove('warning');
+            }
+        }
+
+        function loadQuestion(idx) {
+            currentQuestionIdx = idx;
+            const q = questionsData[idx];
+
+            document.getElementById('progressText').innerText = `Question ${idx + 1} / ${questionsData.length}`;
+            document.getElementById('questionText').innerText = `${q.id}. ${q.question}`;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((optText, optIdx) => {
+                const optBtn = document.createElement('button');
+                optBtn.className = 'option-btn';
+                if (userAnswers[idx] === optText) {
+                    optBtn.classList.add('selected');
+                }
+                optBtn.innerText = optText;
+                optBtn.onclick = () => selectOption(optText);
+                optionsContainer.appendChild(optBtn);
+            });
+
+            // Update Navigation Buttons
+            document.getElementById('prevBtn').style.visibility = idx === 0 ? 'hidden' : 'visible';
+            if (idx === questionsData.length - 1) {
+                document.getElementById('nextBtn').style.display = 'none';
+            } else {
+                document.getElementById('nextBtn').style.display = 'inline-flex';
+            }
+
+            updatePaletteHighlights();
+        }
+
+        function selectOption(optText) {
+            userAnswers[currentQuestionIdx] = optText;
+            loadQuestion(currentQuestionIdx);
+        }
+
+        function navigateQuestion(step) {
+            const newIdx = currentQuestionIdx + step;
+            if (newIdx >= 0 && newIdx < questionsData.length) {
+                loadQuestion(newIdx);
+            }
+        }
+
+        function renderPalette() {
+            const palette = document.getElementById('questionPalette');
+            palette.innerHTML = '';
+            questionsData.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'palette-btn';
+                btn.id = `palette-btn-${idx}`;
+                btn.innerText = idx + 1;
+                btn.onclick = () => loadQuestion(idx);
+                palette.appendChild(btn);
+            });
+        }
+
+        function updatePaletteHighlights() {
+            questionsData.forEach((q, idx) => {
+                const btn = document.getElementById(`palette-btn-${idx}`);
+                if (!btn) return;
+                
+                btn.className = 'palette-btn';
+                if (idx === currentQuestionIdx) {
+                    btn.classList.add('active');
+                }
+                if (userAnswers[idx] !== null) {
+                    btn.classList.add('answered');
+                }
+            });
+        }
+
+        function confirmSubmit() {
+            const unansweredCount = userAnswers.filter(a => a === null).length;
+            let msg = "Are you sure you want to submit the test?";
+            if (unansweredCount > 0) {
+                msg = `You have ${unansweredCount} unanswered question(s). Are you sure you want to submit?`;
+            }
+            if (confirm(msg)) {
+                submitTest();
+            }
+        }
+
+        function submitTest() {
+            clearInterval(timerInterval);
+
+            let correctCount = 0;
+            let wrongCount = 0;
+            let unansweredCount = 0;
+
+            questionsData.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                if (userAns === null) {
+                    unansweredCount++;
+                } else if (userAns === q.answer) {
+                    correctCount++;
+                } else {
+                    wrongCount++;
+                }
+            });
+
+            const score = correctCount;
+            const percentage = Math.round((correctCount / questionsData.length) * 100);
+
+            document.getElementById('resStudentName').innerText = studentName;
+            document.getElementById('resScore').innerText = score;
+            document.getElementById('resCorrect').innerText = correctCount;
+            document.getElementById('resWrong').innerText = wrongCount;
+            document.getElementById('resUnanswered').innerText = unansweredCount;
+            document.getElementById('resPercentage').innerText = `${percentage}%`;
+
+            renderReview();
+            showScreen('resultScreen');
+        }
+
+        function renderReview() {
+            const reviewContainer = document.getElementById('reviewContainer');
+            reviewContainer.innerHTML = '';
+
+            questionsData.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                const isCorrect = userAns === q.answer;
+                const isUnanswered = userAns === null;
+
+                const card = document.createElement('div');
+                card.className = 'card review-card';
+
+                if (isUnanswered) {
+                    card.classList.add('unanswered-card');
+                } else if (isCorrect) {
+                    card.classList.add('correct-card');
+                } else {
+                    card.classList.add('wrong-card');
+                }
+
+                let badgeHtml = '';
+                if (isUnanswered) {
+                    badgeHtml = '<span class="status-badge unanswered">⚪ Not Attempted</span>';
+                } else if (isCorrect) {
+                    badgeHtml = '<span class="status-badge correct">🟢 Correct</span>';
+                } else {
+                    badgeHtml = '<span class="status-badge wrong">🔴 Incorrect</span>';
+                }
+
+                let optionsHtml = '';
+                q.options.forEach(opt => {
+                    let optClass = 'review-option';
+                    if (opt === q.answer) {
+                        optClass += ' opt-correct';
+                    } else if (opt === userAns && !isCorrect) {
+                        optClass += ' opt-wrong';
+                    }
+                    optionsHtml += `<div class="${optClass}">${opt}</div>`;
+                });
+
+                card.innerHTML = `
+                    ${badgeHtml}
+                    <h4 style="font-size:1.1rem; margin-bottom:1rem; color:var(--text-main);">${q.id}. ${q.question}</h4>
+                    <div style="margin-bottom: 0.8rem;">${optionsHtml}</div>
+                    <div class="answer-box">
+                        <strong>✅ Answer: ${q.answer}</strong>
+                        <div class="explanation">
+                            <strong>Explanation:</strong>
+                            ${q.explanation.replace(/
+/g, '<br>')}
+                        </div>
+                    </div>
+                `;
+
+                reviewContainer.appendChild(card);
+            });
+        }
+
+        function retakeTest() {
+            showScreen('startScreen');
+        }
+    </script>
+</body>
+</html>
