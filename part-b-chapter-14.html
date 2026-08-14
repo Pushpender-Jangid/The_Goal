@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Chapter 14 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Shadows+Into+Light&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ---------- TOP BRAND ---------- */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    margin-top:4px;
+}
+
+.topbar p{
+    font-family:"Patrick Hand",cursive;
+    font-size:17px;
+    opacity:.85;
+}
+
+/* ---------- NOTEBOOK ---------- */
+
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #fffdf4 0px,
+        #fffdf4 31px,
+        #a9c8e7 32px
+    );
+
+    position:relative;
+
+    padding:35px 45px 70px 90px;
+
+    box-shadow:
+    0 5px 12px rgba(0,0,0,.18),
+    0 25px 55px rgba(0,0,0,.12);
+
+    min-height:100vh;
+}
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:62px;
+    width:2px;
+    background:#e28c8c;
+}
+
+/* ---------- COVER ---------- */
+
+.cover{
+    padding:12px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover .small{
+    font-size:17px;
+    color:#555;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:50px;
+    color:#183f72;
+    line-height:1;
+    margin:8px 0;
+}
+
+.cover .intro{
+    font-size:19px;
+    max-width:820px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:4px 12px;
+    border:2px solid #555;
+    transform:rotate(-1deg);
+    background:#fff2a8;
+    font-size:16px;
+}
+
+.source-note{
+    font-size:15px;
+    color:#555;
+    margin-top:12px;
+}
+
+/* ---------- SESSION ---------- */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    transform:rotate(-1deg);
+    margin-bottom:15px;
+}
+
+.session-number{
+    color:#b32d2d;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#222;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    margin:14px 0 4px;
+    color:#254d75;
+}
+
+p,li{
+    font-size:18px;
+}
+
+ul,ol{
+    margin:5px 0 12px 25px;
+}
+
+li{
+    margin:3px 0;
+}
+
+.highlight{
+    background:
+    linear-gradient(
+        transparent 25%,
+        rgba(255,226,86,.72) 25%,
+        rgba(255,226,86,.72) 82%,
+        transparent 82%
+    );
+    padding:0 3px;
+}
+
+.red{
+    color:#b42d2d;
+    font-weight:bold;
+}
+
+/* ---------- BOXES ---------- */
+
+.important{
+    margin:18px 0;
+    padding:14px 18px;
+
+    background:rgba(255,242,164,.65);
+
+    border:2px solid #5f5a43;
+    border-radius:3px;
+
+    transform:rotate(-.35deg);
+
+    position:relative;
+}
+
+.important:before{
+    content:"★ IMPORTANT";
+    position:absolute;
+    top:-15px;
+    left:12px;
+
+    background:#fff4a7;
+
+    padding:0 7px;
+
+    font-family:"Caveat",cursive;
+    font-size:17px;
+    color:#9c2929;
+}
+
+.exam{
+    margin:18px 0;
+    padding:13px 17px;
+
+    border-left:5px solid #c13c3c;
+
+    background:rgba(255,255,255,.52);
+}
+
+.exam-title{
+    color:#b52c2c;
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:12px 17px;
+
+    border:2px dashed #55718d;
+
+    background:rgba(226,239,251,.52);
+}
+
+.memory strong{
+    color:#214d75;
+    font-size:21px;
+}
+
+/* ---------- TABLE ---------- */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:700px;
+
+    background:rgba(255,255,255,.48);
+}
+
+th,td{
+    border:1.5px solid #555;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ---------- BUTTON ---------- */
+
+.btn{
+    border:2px solid #444;
+    background:#fff2a8;
+    padding:8px 16px;
+    font:20px "Patrick Hand",cursive;
+    cursor:pointer;
+    transform:rotate(-.5deg);
+}
+
+.btn:hover{
+    background:#ffe47a;
+}
+
+/* ---------- QUICK / FOOTER ---------- */
+
+.quick{
+    border:3px solid #444;
+
+    padding:18px;
+
+    margin-top:30px;
+
+    background:rgba(255,255,255,.5);
+
+    transform:rotate(.2deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.doodle{
+    text-align:center;
+
+    color:#777;
+
+    font-size:22px;
+
+    margin:25px 0;
+
+    letter-spacing:5px;
+}
+
+.footer{
+    text-align:center;
+
+    color:#555;
+
+    font-size:15px;
+
+    margin-top:45px;
+
+    border-top:1px dashed #777;
+
+    padding-top:18px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+
+    .notebook{
+        width:100%;
+        padding:28px 20px 60px 58px;
+        margin:0;
+    }
+
+    .notebook:before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .cover h2{
+        font-size:40px;
+    }
+
+    .session-title{
+        font-size:29px;
+    }
+
+    p,li{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • IT 402
+    </div>
+
+    <h1>
+        Part B — Maintain Healthy, Safe and Secure Working Environment
+    </h1>
+
+    <p>
+        Chapter 14 • Workplace Quality Measures
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+    <div class="small">
+        📖 CHAPTER 14 • COMPLETE EXAM NOTES
+    </div>
+
+    <h2>
+        Workplace Quality Measures
+    </h2>
+
+    <p class="intro">
+        Source-based revision notes for CBSE Class 10 IT (402),
+        prepared from the uploaded NCERT
+        <b>Domestic Data Entry Operator — Class X (2023–24)</b>
+        PDF.
+    </p>
+
+    <span class="tag">
+        ✍️ Read • Revise • Recall
+    </span>
+
+    <p class="source-note">
+        <b>Source check:</b>
+        Chapter 14 begins on PDF page 235 and covers
+        air and water quality, cleanliness, office ergonomics,
+        computer health and safety, musculoskeletal problems,
+        visual problems and computer workplace requirements.
+    </p>
+
+</section>
+
+
+<!-- ================= NOTES ================= -->
+
+<div id="notes">
+
+
+<!-- SESSION 01 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">01.</span>
+    Introduction to Workplace Quality Measures
+</div>
+
+<h3>Chapter Focus</h3>
+
+<p>
+    <span class="highlight">Workplace Quality Measures</span>
+    focuses on maintaining a healthy, clean, comfortable and
+    safe working environment.
+</p>
+
+<p>
+    The chapter particularly discusses
+    <span class="highlight">air quality</span>,
+    <span class="highlight">water quality</span>,
+    workplace cleanliness,
+    office ergonomics and
+    safe computer usage.
+</p>
+
+<div class="important">
+
+<h3>📌 Why Workplace Quality Matters</h3>
+
+<ul>
+
+<li>
+Good air quality improves the working capability of employees.
+</li>
+
+<li>
+Pollution-free air is an important requirement for an organisation.
+</li>
+
+<li>
+Clean water helps prevent diseases caused by polluted water.
+</li>
+
+<li>
+A clean workplace reduces hazards and makes work easier and more pleasant.
+</li>
+
+<li>
+Proper ergonomics can reduce accidents and injuries and improve
+performance and productivity.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 02 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">02.</span>
+    Air and Water Quality Monitoring
+</div>
+
+<h3>Air Quality</h3>
+
+<p>
+    Organisations should maintain good air quality because
+    polluted air can negatively affect employees and the
+    surrounding environment.
+</p>
+
+<h3>Water Quality</h3>
+
+<p>
+    Water pollution is another important concern.
+    Polluted water may cause diseases, therefore an organisation
+    should take measures to prevent water pollution.
+</p>
+
+<h3>Three Forms of Analysis</h3>
+
+<p>
+    Air and water pollution can be analysed using
+    <span class="highlight">three common forms of analysis</span>:
+</p>
+
+<ol>
+
+<li>
+<b>Physical analysis</b>
+</li>
+
+<li>
+<b>Chemical analysis</b>
+</li>
+
+<li>
+<b>Biological analysis</b>
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+<strong>🧠 EXAM MEMORY</strong>
+
+<p>
+Physical + Chemical + Biological
+</p>
+
+<p>
+= Three common forms of analysis
+</p>
+
+</div>
+
+
+<h3>Physical Analysis</h3>
+
+<p>
+    Physical properties such as temperature and the content
+    of a sample can be measured.
+</p>
+
+<h3>Chemical Analysis</h3>
+
+<p>
+    Chemical analysis can measure substances and properties
+    such as the <span class="highlight">pH value of water</span>.
+</p>
+
+<h3>Biological Analysis</h3>
+
+<p>
+    The effect of air and water on plants and animals can be studied.
+    <span class="highlight">Microbial indicators</span> are used to
+    monitor the health of the ecosystem.
+</p>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 03 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">03.</span>
+    Guidelines for Clean Air and Clean Water
+</div>
+
+<div class="important">
+
+<h3>🌱 Must Remember</h3>
+
+<ol>
+
+<li>
+Air pollution is mostly caused by dust,
+solid particles and gases in surrounding air.
+</li>
+
+<li>
+Organisations should avoid unnecessary production
+of dust, solid particles and gases.
+</li>
+
+<li>
+Excessive use of automobiles in the campus
+can contribute to air pollution.
+</li>
+
+<li>
+The organisation should use a limited number
+of vehicles and practise a
+<span class="highlight">no-vehicle day every week</span>.
+</li>
+
+<li>
+Ozone produced in air can pollute the air
+and is associated with smog.
+</li>
+
+<li>
+The generation of ozone gas should be kept
+at a low level.
+</li>
+
+<li>
+Sewage and waste water can cause water pollution.
+</li>
+
+<li>
+Waste should not be allowed to mix with
+surrounding water.
+</li>
+
+<li>
+Extensive use of fertilizers and pesticides
+should be avoided because they can pollute
+ground water.
+</li>
+
+</ol>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+Remember:
+<b>Dust → Vehicles → Ozone → Sewage → Fertilizers/Pesticides</b>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 04 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">04.</span>
+    Importance of Cleanliness at Workplace
+</div>
+
+<p>
+    Keeping the workplace clean is important for preventing
+    hazardous situations.
+</p>
+
+<p>
+    Poor handling and storage practices can result in damages.
+    A clean workstation makes work easier and more pleasant.
+</p>
+
+<div class="important">
+
+<h3>🧹 Clean Workplace Rules</h3>
+
+<ul>
+
+<li>
+All areas should be kept neat and clean.
+</li>
+
+<li>
+Each employee is responsible for the cleanliness
+of their work area and tools/equipment.
+</li>
+
+<li>
+Spills and breakage should be cleaned
+<span class="highlight">immediately</span>.
+</li>
+
+<li>
+Spaces around machines and equipment should
+remain clear and clean for free movement.
+</li>
+
+<li>
+Floors should be kept clean and clear to
+prevent slipping and collision.
+</li>
+
+<li>
+Lighting fixtures should be checked regularly
+to provide clear vision.
+</li>
+
+<li>
+Faulty lights should be reported to the administration.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 05 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">05.</span>
+    Office Ergonomics
+</div>
+
+<h3>What is Ergonomics?</h3>
+
+<p>
+    <span class="highlight">Ergonomics</span> is the science concerned
+    with designing and arranging things so that people can use
+    them easily and safely.
+</p>
+
+<p>
+    Applying ergonomics can reduce the potential for accidents
+    and injuries and can improve
+    <span class="highlight">performance and productivity</span>.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>
+Early Warning Sign
+</th>
+
+<th>
+Potential Cause
+</th>
+
+<th>
+What to Do
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+Sore lower back
+</td>
+
+<td>
+No lumbar support
+</td>
+
+<td>
+Use chair backrest, small pillow or lumbar support.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Burning in upper back
+</td>
+
+<td>
+No upper-back support
+</td>
+
+<td>
+Use a document holder or raise the document.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Stiff neck
+</td>
+
+<td>
+Head turned to side / tilted forward
+</td>
+
+<td>
+Move or raise monitor to the centre of the desk.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Sore shoulders
+</td>
+
+<td>
+Reaching forward for long periods
+</td>
+
+<td>
+Move closer to keyboard and mouse.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Arching wrists
+</td>
+
+<td>
+Wrists extended too much with repetition
+</td>
+
+<td>
+Use suitable wrist support and maintain proper position.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Dry eyes
+</td>
+
+<td>
+Forgetting to blink
+</td>
+
+<td>
+Rest eyes periodically and perform simple eye exercises.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Eye strain / sore eyes
+</td>
+
+<td>
+Glare from lights or windows
+</td>
+
+<td>
+Re-orient desk and computer to reduce direct glare.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 EXAM MEMORY</strong>
+
+<p>
+Ergonomics =
+<b>Design + Arrangement + Easy & Safe Use</b>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 06 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">06.</span>
+    Computer Health and Safety Tips
+</div>
+
+<p>
+    Increased use of computers can lead to health and safety
+    issues related to vision, musculoskeletal problems,
+    body aches and pains.
+</p>
+
+<p>
+    Many such problems are preventable and can be addressed
+    through simple corrective actions.
+</p>
+
+
+<h3>Musculoskeletal Problems</h3>
+
+<p>
+    Musculoskeletal problems can affect areas such as the
+    <span class="highlight">
+    neck, back, chest, arms, shoulders and feet
+    </span>.
+</p>
+
+<p>
+    They may occur because of wrong posture or an uncomfortable
+    chair that is not ergonomically suitable.
+</p>
+
+
+<div class="important">
+
+<h3>📌 Correct Computer Posture</h3>
+
+<ul>
+
+<li>
+Keep the end of the monitor at eye level.
+</li>
+
+<li>
+Keep the neck neutral and the monitor directly ahead.
+</li>
+
+<li>
+Keep the monitor approximately an arm's length away,
+or about 20–30 inches.
+</li>
+
+<li>
+Maximise contact of the back against the chair backrest.
+</li>
+
+<li>
+Keep elbows at an approximately 100–110° open angle.
+</li>
+
+<li>
+Keep the keyboard at a slight negative tilt when sitting upright.
+</li>
+
+<li>
+Hands should be slightly lower than elbows while typing.
+</li>
+
+<li>
+Minimise twisting of wrists.
+</li>
+
+<li>
+Do not rest wrists on the palm rest while actually typing.
+</li>
+
+<li>
+Take small breaks to stretch muscles and rest the eyes.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 07 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">07.</span>
+    Occupational Overuse Syndrome
+</div>
+
+<h3>Definition</h3>
+
+<p>
+    <span class="highlight">
+    Occupational Overuse Syndrome
+    </span>
+    is also known as
+    <span class="highlight">
+    Repetition Strain Injury (RSI)
+    </span>.
+</p>
+
+<p>
+    It is a collective term for conditions involving discomfort
+    or persistent pain in muscles, tendons and other soft tissues.
+</p>
+
+
+<h3>Main Causes</h3>
+
+<ul>
+
+<li>
+Repetitive movement
+</li>
+
+<li>
+Sustained or constrained postures
+</li>
+
+<li>
+Forceful movements
+</li>
+
+<li>
+Psycho-social factors such as workplace stress
+</li>
+
+</ul>
+
+
+<h3>Carpal Tunnel Syndrome</h3>
+
+<p>
+    Repetitive use of muscles can cause pain in the neck,
+    shoulder, wrist or fingers.
+</p>
+
+<p>
+    <span class="highlight">
+    Carpal Tunnel Syndrome
+    </span>
+    is one of the common conditions related to repetitive
+    computer use.
+</p>
+
+<p>
+    It may cause pain, numbness and tingling in the hand and arm.
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 EXAM MEMORY</strong>
+
+<p>
+Occupational Overuse Syndrome =
+<b>Repetition Strain Injury (RSI)</b>
+</p>
+
+<p>
+Repetition + Wrong posture + Forceful movement
+→ Risk of overuse problems
+</p>
+
+</div>
+
+
+<h3>Keyboard and Mouse Position</h3>
+
+<ul>
+
+<li>
+Keep fingers above the home position:
+<b>ASDF</b> and <b>JKL;</b>.
+</li>
+
+<li>
+Keep elbows by the sides.
+</li>
+
+<li>
+Avoid gripping the mouse too tightly.
+</li>
+
+<li>
+Keep keyboard and mouse at the same level.
+</li>
+
+<li>
+Ergonomic keyboard and mouse can reduce wrist-related risks.
+</li>
+
+</ul>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 08 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">08.</span>
+    Strain in Legs and Feet
+</div>
+
+<p>
+    Sitting for a long time while working can cause
+    <span class="highlight">strain in the legs</span>.
+</p>
+
+
+<div class="important">
+
+<h3>🪑 Correct Sitting Position</h3>
+
+<ul>
+
+<li>
+Sit comfortably in the desk chair.
+</li>
+
+<li>
+Keep feet flat on the floor.
+</li>
+
+<li>
+Keep lower legs vertical.
+</li>
+
+<li>
+Use a footrest when additional support is needed.
+</li>
+
+<li>
+Keep enough space to change position.
+</li>
+
+<li>
+Stretch legs from time to time.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 09 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">09.</span>
+    Eye Strain and Computer Vision Syndrome
+</div>
+
+<p>
+    Bright light, glare and flickering images from a computer
+    can cause
+    <span class="highlight">
+    eye strain and visual fatigue
+    </span>.
+</p>
+
+<p>
+    Constantly focusing on the screen can reduce blinking,
+    which may contribute to dry eyes.
+</p>
+
+
+<h3>Computer Vision Syndrome</h3>
+
+<p>
+    Computer Vision Syndrome is associated with poor lighting
+    and glare on the computer screen.
+</p>
+
+<p>
+    Possible symptoms include blurry vision, burning or watering
+    eyes, headaches and sometimes shoulder and neck pain.
+</p>
+
+
+<div class="important">
+
+<h3>👁️ How to Reduce Visual Problems</h3>
+
+<ul>
+
+<li>
+Adjust the brightness of the computer screen.
+</li>
+
+<li>
+Reposition the screen to avoid glare.
+</li>
+
+<li>
+Maintain proper viewing distance.
+</li>
+
+<li>
+Blink your eyes regularly.
+</li>
+
+<li>
+Use anti-glare glasses where appropriate.
+</li>
+
+<li>
+Keep the screen clean.
+</li>
+
+<li>
+Use a desk lamp when required.
+</li>
+
+<li>
+Ensure screen colours and characters are easy to see.
+</li>
+
+<li>
+Take periodic breaks from the screen.
+</li>
+
+<li>
+Look away into the distance to relax the eyes.
+</li>
+
+<li>
+Keep the monitor around 18–24 inches away from the face.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ VERY IMPORTANT
+</div>
+
+<p>
+The textbook suggests looking at something about
+<b>30 metres away for 30 seconds every 30 minutes</b>
+to relax the eyes.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 10 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">10.</span>
+    Headaches, Obesity and Stress Disorders
+</div>
+
+<h3>Headaches</h3>
+
+<p>
+    Headaches may occur due to muscle tension or neck pain.
+    Eye strain and vision problems can also cause headaches.
+</p>
+
+<p>
+    Regular eye examinations, maintaining a straight neck
+    position and taking breaks can help address such problems.
+</p>
+
+
+<h3>Obesity</h3>
+
+<p>
+    Spending long hours on computers can reduce physical activity
+    and exercise.
+</p>
+
+<p>
+    Prolonged use of computers or electronic devices
+    can contribute to obesity.
+</p>
+
+<p>
+    Taking breaks and including physical activity is recommended.
+</p>
+
+
+<h3>Stress Disorders</h3>
+
+<p>
+    Prolonged computer use and increased workplace pressure
+    may contribute to stress.
+</p>
+
+<p>
+    Untreated stress may contribute to more serious health
+    problems and can lead to decreased attention span,
+    lack of concentration, dizziness and burnout.
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 EXAM MEMORY</strong>
+
+<p>
+Long computer use can be associated with:
+</p>
+
+<p>
+<b>
+Eye problems + Body problems + Reduced activity + Stress
+</b>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 11 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">11.</span>
+    Injuries from Laptop Use
+</div>
+
+<p>
+    Laptops are convenient but their screen and keyboard are
+    very close together.
+</p>
+
+<p>
+    This creates an ergonomic difficulty because positioning
+    the screen correctly for the back and neck may make the
+    keyboard uncomfortable for the arms and shoulders, and
+    vice versa.
+</p>
+
+
+<div class="important">
+
+<h3>💻 Exam Point</h3>
+
+<p>
+    The textbook explains that there is
+    <span class="highlight">
+    no single right way to use a laptop
+    </span>
+    for long periods because the screen and keyboard are attached.
+</p>
+
+<p>
+    For long working hours, an ergonomically arranged
+    desktop setup may be preferable.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 12 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">12.</span>
+    Sleeping Problems
+</div>
+
+<p>
+    Artificial lighting from computer screens can affect
+    the body's release of
+    <span class="highlight">melatonin</span>,
+    a substance associated with sleeping patterns.
+</p>
+
+<p>
+    To tackle this problem, the textbook advises avoiding
+    computer use immediately before going to bed.
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+Computer screen light
+→ Melatonin suppression
+→ Possible sleeping problems.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 13 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">13.</span>
+    Health and Safety Requirements for Computer Workplace
+</div>
+
+<p>
+    The chapter gives minimum health and safety requirements
+    for desktop computers, laptops, tablets, smartphones,
+    television screens and video monitors.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>
+Area
+</th>
+
+<th>
+Important Requirement
+</th>
+
+</tr>
+
+
+<tr>
+
+<td>
+Display Screen
+</td>
+
+<td>
+Use a suitable modern LED monitor with legible characters,
+adequate spacing, stable image and no distracting glare/reflections.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Keyboard
+</td>
+
+<td>
+Keyboard should allow a comfortable working position,
+have sufficient support space and a matt surface to reduce glare.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Work Surface
+</td>
+
+<td>
+Desk should be sufficiently large, low-reflectance and allow
+flexible arrangement of equipment and documents.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Document Holder
+</td>
+
+<td>
+Should be stable and adjustable to reduce uncomfortable
+head and eye movements.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Work Chair
+</td>
+
+<td>
+Stable, movable and height-adjustable.
+Feet should rest flat on the floor or on a footrest.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Space
+</td>
+
+<td>
+Enough space should be available to change position
+and vary movements.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Lighting
+</td>
+
+<td>
+Should provide satisfactory conditions and suitable contrast
+while avoiding disturbing glare and reflections.
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+Noise & Heat
+</td>
+
+<td>
+Equipment noise should not distract attention and equipment
+should not produce excessive heat.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 14 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">14.</span>
+    Reflections, Glare, Noise and Heat
+</div>
+
+<h3>Reflections and Glare</h3>
+
+<p>
+    Workstations should be designed so that windows,
+    openings, transparent or translucent walls and bright
+    fixtures do not create direct glare or distracting reflections.
+</p>
+
+<p>
+    Windows should have suitable adjustable coverings
+    to reduce excessive daylight falling on the workstation.
+</p>
+
+
+<h3>Noise</h3>
+
+<p>
+    Noise emitted by equipment should not distract the user's
+    attention.
+</p>
+
+<p>
+    Noise-cancelling earphones may help when some noise
+    cannot be avoided.
+</p>
+
+
+<h3>Heat</h3>
+
+<p>
+    Equipment should not produce excessive heat that causes
+    discomfort to users.
+</p>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- SESSION 15 -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">15.</span>
+    Cautions While Working on the Computer
+</div>
+
+
+<div class="important">
+
+<h3>⚠️ Must Remember</h3>
+
+<ol>
+
+<li>
+Use a <span class="highlight">surge protector</span>
+when plugging the computer system into power.
+</li>
+
+<li>
+A battery backup system helps protect against
+power outages by providing constant voltage.
+</li>
+
+<li>
+Remove rings, watches and necklaces while working
+on computer because conductive metals may damage
+computer components through static electricity.
+</li>
+
+<li>
+Unplug power sources and cables before working
+inside or on computer hardware.
+</li>
+
+<li>
+Loose cords and wires can create hazards and
+electrical hazards.
+</li>
+
+<li>
+If a cord crosses a pathway, mark it with
+<span class="highlight">hazard tape</span>.
+</li>
+
+<li>
+Avoid water while working with electricity.
+</li>
+
+<li>
+Never touch or repair electrical equipment or
+circuits with wet hands.
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ================= LAST MINUTE REVISION ================= -->
+
+<section class="quick">
+
+<h3>
+⚡ CHAPTER 14 — LAST MINUTE REVISION
+</h3>
+
+<ul>
+
+<li>
+Air and water analysis =
+Physical + Chemical + Biological.
+</li>
+
+<li>
+pH value of water → Chemical analysis.
+</li>
+
+<li>
+Microbial indicators → Health of ecosystem.
+</li>
+
+<li>
+No-vehicle day every week → Helps reduce air pollution.
+</li>
+
+<li>
+Sewage/waste water → Can cause water pollution.
+</li>
+
+<li>
+Fertilizers and pesticides → Can pollute ground water.
+</li>
+
+<li>
+Clean workplace → Prevents hazards, slipping and collision.
+</li>
+
+<li>
+Ergonomics → Designing and arranging things for easy and safe use.
+</li>
+
+<li>
+Occupational Overuse Syndrome =
+Repetition Strain Injury (RSI).
+</li>
+
+<li>
+Carpal Tunnel Syndrome →
+Pain, numbness and tingling in hand/arm.
+</li>
+
+<li>
+Monitor → Eye level and approximately arm's length away.
+</li>
+
+<li>
+Keyboard and mouse → Same level.
+</li>
+
+<li>
+Eye strain → Bright light, glare and flickering images.
+</li>
+
+<li>
+Computer Vision Syndrome →
+Poor lighting + screen glare.
+</li>
+
+<li>
+Monitor distance in visual-safety section → 18–24 inches.
+</li>
+
+<li>
+Eye relaxation →
+30 metres for 30 seconds every 30 minutes.
+</li>
+
+<li>
+Laptop →
+No single ideal long-duration posture because screen and keyboard are attached.
+</li>
+
+<li>
+Sleeping problems →
+Screen light can suppress melatonin release.
+</li>
+
+<li>
+Surge protector →
+Protection against electrical disturbances.
+</li>
+
+<li>
+Hazard tape →
+Used when cords/wires cross a pathway.
+</li>
+
+<li>
+Wet hands + electricity →
+Dangerous because water increases conductivity.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= 10 SECOND RECALL ================= -->
+
+<section class="memory">
+
+<strong>
+🎯 CHAPTER 14 — 10 SECOND RECALL
+</strong>
+
+<p>
+
+<b>
+QUALITY → CLEANLINESS → ERGONOMICS → POSTURE → EYES →
+MUSCLES → SCREEN → GLARE → LAPTOP → SAFETY
+</b>
+
+</p>
+
+</section>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+THE GOAL • CBSE Class 10 IT (402) • Part B • Chapter 14
+
+<br>
+
+Made with Love ❤️ in India by Pushpender
+
+</div>
+
+</main>
+
+</body>
+</html>
