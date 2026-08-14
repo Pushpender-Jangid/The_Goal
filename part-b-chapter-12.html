@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | IT 402 | Chapter 12 Forms and Reports</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#e9e4d5;
+    color:#202020;
+    font-family:'Patrick Hand', cursive;
+    line-height:1.65;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#171717;
+    color:white;
+    padding:28px 20px;
+    text-align:center;
+    border-bottom:5px solid #c62828;
+}
+
+.brand{
+    font-family:'Caveat',cursive;
+    font-size:52px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.subtitle{
+    font-size:20px;
+    margin-top:3px;
+    color:#ddd;
+}
+
+.chapter{
+    font-family:'Caveat',cursive;
+    font-size:30px;
+    margin-top:10px;
+    color:#ffcc66;
+}
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    max-width:1100px;
+    margin:30px auto;
+    padding:35px 35px 50px 85px;
+
+    background-color:#fffdf5;
+
+    background-image:
+        linear-gradient(
+            rgba(70,130,180,.20) 1px,
+            transparent 1px
+        );
+
+    background-size:100% 31px;
+
+    border-radius:5px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.15);
+
+    position:relative;
+}
+
+/* Red margin */
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:55px;
+    width:2px;
+    background:#d9534f;
+}
+
+/* ================= TYPOGRAPHY ================= */
+
+h1,h2,h3{
+    font-family:'Caveat',cursive;
+}
+
+h1{
+    font-size:42px;
+    color:#9b2226;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:32px;
+    color:#1565c0;
+    margin-top:30px;
+    border-bottom:2px dashed #1565c0;
+    display:inline-block;
+}
+
+h3{
+    font-size:25px;
+    color:#6a1b9a;
+    margin-top:18px;
+}
+
+p,li{
+    font-size:20px;
+}
+
+ul,ol{
+    margin:8px 0 8px 25px;
+}
+
+li{
+    margin:4px 0;
+}
+
+/* ================= TITLE CARD ================= */
+
+.hero{
+    background:#fff3cd;
+    border:2px solid #e0a800;
+    padding:22px;
+    border-radius:12px;
+    margin-bottom:25px;
+    box-shadow:3px 4px 0 rgba(0,0,0,.08);
+}
+
+.hero h1{
+    margin:0;
+}
+
+/* ================= IMPORTANT BOXES ================= */
+
+.box{
+    padding:17px 20px;
+    margin:18px 0;
+    border-radius:12px;
+    border-left:6px solid;
+    background:rgba(255,255,255,.75);
+}
+
+.important{
+    border-color:#e53935;
+    background:#ffebee;
+}
+
+.exam{
+    border-color:#1565c0;
+    background:#e3f2fd;
+}
+
+.memory{
+    border-color:#6a1b9a;
+    background:#f3e5f5;
+}
+
+.tip{
+    border-color:#2e7d32;
+    background:#e8f5e9;
+}
+
+.warning{
+    border-color:#ef6c00;
+    background:#fff3e0;
+}
+
+.box-title{
+    font-family:'Caveat',cursive;
+    font-size:26px;
+    font-weight:700;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:18px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.88);
+}
+
+th,td{
+    border:2px solid #555;
+    padding:10px 12px;
+    text-align:left;
+    font-size:18px;
+}
+
+th{
+    background:#dbeafe;
+    font-family:'Caveat',cursive;
+    font-size:22px;
+}
+
+/* ================= KEYWORDS ================= */
+
+.keyword{
+    display:inline-block;
+    padding:2px 8px;
+    margin:2px;
+    border-radius:5px;
+    background:#fff176;
+    font-weight:600;
+}
+
+.red{
+    color:#c62828;
+    font-weight:700;
+}
+
+.blue{
+    color:#1565c0;
+    font-weight:700;
+}
+
+/* ================= SEPARATOR ================= */
+
+.separator{
+    text-align:center;
+    font-size:28px;
+    color:#777;
+    margin:25px 0;
+}
+
+/* ================= QUICK REVISION ================= */
+
+.quick{
+    background:#212121;
+    color:#fff;
+    border-radius:14px;
+    padding:25px;
+    margin-top:30px;
+}
+
+.quick h2{
+    color:#ffcc66;
+    border-color:#ffcc66;
+}
+
+.quick li{
+    font-size:19px;
+}
+
+/* ================= MCQ STYLE ================= */
+
+.mcq{
+    background:#f8f8f8;
+    border:2px solid #bbb;
+    border-radius:12px;
+    padding:15px 18px;
+    margin:15px 0;
+}
+
+.answer{
+    color:#2e7d32;
+    font-weight:700;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#171717;
+    color:#fff;
+    text-align:center;
+    padding:22px;
+    margin-top:30px;
+}
+
+footer .love{
+    font-family:'Caveat',cursive;
+    font-size:25px;
+    color:#ffcc66;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:700px){
+
+    .brand{
+        font-size:42px;
+    }
+
+    .chapter{
+        font-size:25px;
+    }
+
+    .notebook{
+        margin:15px 8px;
+        padding:25px 20px 40px 45px;
+    }
+
+    .notebook::before{
+        left:28px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    p,li{
+        font-size:18px;
+    }
+
+    th,td{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="brand">THE GOAL</div>
+
+    <div class="subtitle">
+        CBSE Class X • Information Technology (402)
+    </div>
+
+    <div class="chapter">
+        Part B • Unit 3 • Chapter 12
+    </div>
+
+</header>
+
+
+<main class="notebook">
+
+<!-- ===================================================== -->
+
+<div class="hero">
+
+<h1>📘 FORMS AND REPORTS</h1>
+
+<p>
+<strong>Database Management System using LibreOffice Base</strong>
+</p>
+
+<p>
+This chapter explains how <span class="keyword">Forms</span> and
+<span class="keyword">Reports</span> are used in LibreOffice Base
+to make data entry and presentation of database information
+more user-friendly.
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>1. Why Do We Need Forms and Reports?</h2>
+
+<p>
+In a database, tables store data in an organised manner.
+Data can be entered directly through the datasheet view,
+but the row-and-column format is not always user-friendly.
+</p>
+
+<div class="box important">
+
+<div class="box-title">⚠️ Exam Point</div>
+
+<p>
+A <strong>Form</strong> provides a user-friendly screen for
+entering, viewing and modifying data, whereas a
+<strong>Report</strong> presents retrieved data in an attractive,
+understandable and formatted manner.
+</p>
+
+</div>
+
+<p>
+Both <strong>Forms</strong> and <strong>Reports</strong> are
+database objects and are available in the
+<strong>Database Pane</strong> of LibreOffice Base.
+</p>
+
+
+<div class="separator">✦ ✦ ✦</div>
+
+
+<!-- ===================================================== -->
+
+<h2>2. Forms</h2>
+
+<p>
+A <strong>Form</strong> is a database object that provides a
+user-friendly interface through which data can be
+<strong>entered, viewed and modified</strong> in an attractive
+and easy-to-read format.
+</p>
+
+<div class="box exam">
+
+<div class="box-title">🎯 Definition — Learn This</div>
+
+<p>
+<strong>Form:</strong> A database object having a user-friendly
+interface for entering and viewing data in an attractive and
+easy-to-read format.
+</p>
+
+</div>
+
+<h3>Front End of Database</h3>
+
+<p>
+For a database, a form acts as the
+<strong>front end for data entry and data modification</strong>.
+</p>
+
+<p>
+Unlike a simple row-and-column datasheet, a form displays
+data according to a layout designed by the user.
+</p>
+
+
+<!-- ===================================================== -->
+
+<h2>3. Field Control</h2>
+
+<p>
+A form primarily contains
+<strong>field controls</strong> arranged in a presentable and
+user-friendly manner.
+</p>
+
+<p>
+Each field control consists of two important parts:
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><strong>Label</strong></td>
+<td>
+Text that specifies what data should be entered in the
+corresponding field.
+</td>
+</tr>
+
+<tr>
+<td><strong>Field Value Text Box</strong></td>
+<td>
+A text box linked to the respective field of the table.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="box memory">
+
+<div class="box-title">🧠 Memory Trick</div>
+
+<p>
+<strong>Field Control = Label + Field Value Text Box</strong>
+</p>
+
+</div>
+
+
+<h3>Other Elements in a Form</h3>
+
+<ul>
+
+<li>Titles</li>
+<li>Headings</li>
+<li>Names</li>
+<li>Graphics / Logos</li>
+<li>List Boxes</li>
+<li>Radio Buttons</li>
+
+</ul>
+
+
+<!-- ===================================================== -->
+
+<h2>4. Ways to Create a Form</h2>
+
+<div class="box exam">
+
+<div class="box-title">⭐ Very Important</div>
+
+<p>
+There are <strong>two ways</strong> to create a form in
+LibreOffice Base:
+</p>
+
+<ol>
+
+<li><strong>Using a Wizard</strong></li>
+
+<li><strong>Using Design View</strong></li>
+
+</ol>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>5. Creating a Form Using Wizard</h2>
+
+<p>
+The Form Wizard is the
+<strong>simplest way</strong> to create a form.
+</p>
+
+<h3>Step 1 — Open Forms</h3>
+
+<p>
+Open the database and click the
+<strong>Forms</strong> icon in the Database Pane.
+Then select:
+</p>
+
+<p class="red">
+Use Wizard to Create Form…
+</p>
+
+
+<h3>Step 2 — Select Table or Query</h3>
+
+<p>
+Select the table or query for which the form has to be created.
+For example:
+<strong>Events</strong> table.
+</p>
+
+
+<h3>Step 3 — Available Fields</h3>
+
+<p>
+After selecting the table, its fields are displayed in the
+<strong>Available Fields</strong> list box.
+</p>
+
+
+<h3>Step 4 — Select Fields</h3>
+
+<p>
+Move the required fields from
+<strong>Available Fields</strong> to
+<strong>Fields in the Form</strong>.
+</p>
+
+<div class="box tip">
+
+<div class="box-title">💡 Remember</div>
+
+<p>
+The <strong>&gt;&gt;</strong> button can be used to move all
+available fields to the form.
+</p>
+
+</div>
+
+
+<h3>Step 5 — Subform</h3>
+
+<p>
+A <strong>Subform</strong> means a
+<strong>form within a form</strong>.
+</p>
+
+<p>
+To add a subform, select the
+<strong>Add Subform</strong> checkbox.
+</p>
+
+<p>
+If no subform is required, click
+<strong>Next</strong> without selecting it.
+</p>
+
+
+<h3>Step 6 — Arrange Controls</h3>
+
+<p>
+The wizard provides different layouts for arranging the
+labels and field values.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Layout</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Columnar display with labels on the left</td>
+<td>
+Labels appear on the left of the field value.
+</td>
+</tr>
+
+<tr>
+<td>Columnar display with labels on top</td>
+<td>
+Labels appear above the field value.
+</td>
+</tr>
+
+<tr>
+<td>Display as datasheet</td>
+<td>
+Data is displayed in row-and-column format.
+</td>
+</tr>
+
+<tr>
+<td>Block display with labels on top</td>
+<td>
+Fields are arranged in blocks with labels on top.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Step 7 — Form Usage</h3>
+
+<p>
+The wizard asks whether the form will be used for:
+</p>
+
+<ul>
+
+<li>Displaying data</li>
+<li>Entering data</li>
+<li>Both displaying and entering data</li>
+
+</ul>
+
+
+<h3>Step 8 — Apply Styles</h3>
+
+<p>
+The style step allows us to choose:
+</p>
+
+<ul>
+
+<li>Background colour</li>
+<li>Border type of field value text boxes</li>
+
+</ul>
+
+<p>
+The available border styles include:
+<strong>3D, No Border and Flat</strong>.
+</p>
+
+
+<h3>Step 9 — Give Form Name</h3>
+
+<p>
+Enter a suitable name for the form, for example:
+<strong>EventsForm</strong>.
+</p>
+
+<p>
+After completion, the wizard allows us to:
+</p>
+
+<ul>
+
+<li><strong>Work with the form</strong></li>
+
+<li><strong>Modify the form</strong></li>
+
+</ul>
+
+
+<h3>Step 10 — Finish</h3>
+
+<p>
+Click <strong>Finish</strong>.
+The form is created and the first record is displayed.
+</p>
+
+
+<!-- ===================================================== -->
+
+<h2>6. Forms Controls Toolbar</h2>
+
+<p>
+The <strong>Forms Controls Toolbar</strong> contains various
+controls that can be added to or edited on a form.
+</p>
+
+<div class="box exam">
+
+<div class="box-title">🎯 Exam Question</div>
+
+<p>
+<strong>Function of Forms Controls Toolbar:</strong>
+It contains various controls/tools used to add or edit
+controls on a form.
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>7. Records Toolbar</h2>
+
+<p>
+The <strong>Records Toolbar</strong> contains navigation
+controls used to move from one record to another.
+</p>
+
+<p>
+It also contains commands for operations such as:
+</p>
+
+<ul>
+
+<li>Adding a new record</li>
+<li>Saving a record</li>
+<li>Deleting a record</li>
+<li>Navigating through records</li>
+
+</ul>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Toolbar</th>
+<th>Main Function</th>
+</tr>
+
+<tr>
+<td><strong>Forms Controls Toolbar</strong></td>
+<td>
+Add or edit controls on a form.
+</td>
+</tr>
+
+<tr>
+<td><strong>Records Toolbar</strong></td>
+<td>
+Navigate and perform record operations such as
+new, save and delete.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>8. Modifying a Form</h2>
+
+<p>
+After creating a form, it can be modified according to
+the requirement.
+</p>
+
+<p>Examples:</p>
+
+<ul>
+
+<li>Change background colour</li>
+<li>Change font size</li>
+<li>Change font colour</li>
+<li>Change position of controls</li>
+<li>Change label text</li>
+<li>Change size of text boxes</li>
+<li>Add tooltips</li>
+<li>Add calendar to date field</li>
+<li>Add titles and headings</li>
+
+</ul>
+
+
+<!-- ===================================================== -->
+
+<h2>9. Changing Background Colour</h2>
+
+<ol>
+
+<li>Open the database and select <strong>Forms</strong>.</li>
+
+<li>Right-click the form name.</li>
+
+<li>Select <strong>Edit…</strong>.</li>
+
+<li>In Design View, right-click the form.</li>
+
+<li>Select <strong>Page Style…</strong>.</li>
+
+<li>Open the <strong>Area</strong> tab.</li>
+
+<li>Select the desired colour.</li>
+
+<li>Click <strong>OK</strong>.</li>
+
+</ol>
+
+
+<!-- ===================================================== -->
+
+<h2>10. Editing Labels</h2>
+
+<ol>
+
+<li>Place the mouse pointer over the label.</li>
+
+<li>Press <strong>Ctrl + Click</strong> to select the label.</li>
+
+<li>Right-click the selected label.</li>
+
+<li>Select <strong>Control Properties…</strong>.</li>
+
+<li>Change the <strong>Label</strong> property.</li>
+
+<li>Other properties such as width, height, alignment,
+font style and font size can also be changed.</li>
+
+</ol>
+
+
+<div class="box memory">
+
+<div class="box-title">🧠 Shortcut</div>
+
+<p>
+<strong>Ctrl + Click</strong> → Select individual control
+such as a label or text box.
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>11. Moving a Control</h2>
+
+<p>
+A control can be moved to another location on the form.
+</p>
+
+<ol>
+
+<li>Click the control.</li>
+
+<li>Both label and field value text box are selected.</li>
+
+<li>Position handlers appear.</li>
+
+<li>To select only one part, use <strong>Ctrl + Click</strong>.</li>
+
+<li>Click and drag the selected control to the desired location.</li>
+
+</ol>
+
+
+<!-- ===================================================== -->
+
+<h2>12. Changing Text Box Size</h2>
+
+<ol>
+
+<li>Press <strong>Ctrl</strong> and click the text box.</li>
+
+<li>Position handlers appear around the text box.</li>
+
+<li>Place the pointer on a handler.</li>
+
+<li>The pointer changes to a double-sided arrow.</li>
+
+<li>Click and drag to change the size.</li>
+
+</ol>
+
+
+<!-- ===================================================== -->
+
+<h2>13. Tool Tip / Help Text</h2>
+
+<p>
+A <strong>tool-tip</strong> is a small piece of text displayed
+when the mouse pointer is placed over a particular control.
+</p>
+
+<div class="box exam">
+
+<div class="box-title">⭐ Definition</div>
+
+<p>
+<strong>Tool-tip / Help Text:</strong>
+A small text message that appears when the mouse pointer
+is placed over a particular control.
+</p>
+
+</div>
+
+<p>
+Example:
+</p>
+
+<p>
+<strong>Enter Event Identification Number</strong>
+</p>
+
+<h3>Steps to Add Tool Tip</h3>
+
+<ol>
+
+<li>Press <strong>Ctrl</strong> and click the EventID text box.</li>
+
+<li>Right-click and select
+<strong>Control Properties…</strong>.</li>
+
+<li>Find the <strong>Help Text</strong> property.</li>
+
+<li>Enter the required message.</li>
+
+<li>Close the Properties dialog box.</li>
+
+</ol>
+
+
+<div class="box memory">
+
+<div class="box-title">🧠 Exam Memory</div>
+
+<p>
+<strong>Tool Tip = Help Text</strong>
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>14. Adding Calendar to Date Field</h2>
+
+<p>
+A calendar makes date entry easier because the user can
+select a date instead of typing it manually.
+</p>
+
+<h3>Important Properties</h3>
+
+<ol>
+
+<li>Select the Date text box.</li>
+
+<li>Open <strong>Control Properties…</strong>.</li>
+
+<li>Find <strong>Date Format</strong>.</li>
+
+<li>Select <strong>Standard (long)</strong>.</li>
+
+<li>Find the <strong>DropDown</strong> property.</li>
+
+<li>Change its value from <strong>No</strong> to
+<strong>Yes</strong>.</li>
+
+<li>Close the dialog box.</li>
+
+</ol>
+
+
+<div class="box exam">
+
+<div class="box-title">🔥 VERY IMPORTANT MCQ</div>
+
+<p>
+To display a calendar for a Date field:
+</p>
+
+<p>
+<strong>Date Format → Standard (long)</strong>
+</p>
+
+<p>
+<strong>DropDown → Yes</strong>
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>15. Adding Text / Title to Form</h2>
+
+<p>
+Titles, headings and subheadings can be inserted while
+designing a form.
+</p>
+
+<h3>Steps</h3>
+
+<ol>
+
+<li>Select the <strong>Label</strong> tool from Forms Controls Toolbar.</li>
+
+<li>Click and drag on the form to create a label box.</li>
+
+<li>Double-click the box.</li>
+
+<li>Open <strong>Properties: Label Field</strong>.</li>
+
+<li>Enter the required text in the
+<strong>Label</strong> property.</li>
+
+<li>Use the <strong>Font</strong> property to change font type,
+style and size.</li>
+
+<li>Close the Properties dialog box.</li>
+
+</ol>
+
+
+<div class="box tip">
+
+<div class="box-title">💡 Example</div>
+
+<p>
+Title: <strong>Data Entry Form</strong>
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>16. Design View and Form View</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Design View</th>
+<th>Form View</th>
+</tr>
+
+<tr>
+<td>
+Used to create and modify the form.
+</td>
+
+<td>
+Used to display and work with records through the form.
+</td>
+</tr>
+
+<tr>
+<td>
+Controls can be added, moved and formatted.
+</td>
+
+<td>
+Records can be viewed, entered and modified.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="box exam">
+
+<div class="box-title">⭐ Important</div>
+
+<p>
+The <strong>Design Mode</strong> button on the
+Forms Controls Toolbar is used to toggle between
+<strong>Design View</strong> and <strong>Form View</strong>.
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>17. Adding a New Record Using Form</h2>
+
+<p>
+After designing the form, switch to Form View.
+</p>
+
+<ol>
+
+<li>Click the <strong>New Record</strong> button on the
+Records Toolbar.</li>
+
+<li>A blank form appears.</li>
+
+<li>Enter the required data.</li>
+
+<li>Click <strong>Save Record</strong>.</li>
+
+</ol>
+
+
+<h3>Deleting a Record</h3>
+
+<ol>
+
+<li>Navigate to the required record.</li>
+
+<li>Click the <strong>Delete</strong> button on the
+Records Toolbar.</li>
+
+<li>The next record is displayed.</li>
+
+</ol>
+
+
+<!-- ===================================================== -->
+
+<div class="separator">✦ ✦ ✦</div>
+
+
+<!-- ===================================================== -->
+
+<h2>18. Reports</h2>
+
+<p>
+A <strong>Report</strong> is another useful feature of a
+Database Management System.
+</p>
+
+<p>
+Queries display retrieved data in simple row-and-column
+format. A report presents that retrieved data in an
+<strong>attractive, understandable, formatted and customized
+manner</strong>.
+</p>
+
+
+<div class="box exam">
+
+<div class="box-title">🎯 Definition — Must Learn</div>
+
+<p>
+<strong>Report:</strong> A database object used to present
+retrieved data in an attractive and customized manner.
+</p>
+
+</div>
+
+
+<h3>Report Can Be Based On</h3>
+
+<ul>
+
+<li>Table</li>
+<li>Query</li>
+<li>Both table and query</li>
+
+</ul>
+
+
+<div class="box important">
+
+<div class="box-title">⚠️ Important</div>
+
+<p>
+If a report has to be generated from multiple tables,
+it is preferable to create a <strong>query first</strong> and
+then use that query to generate the report.
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>19. Creating a Report Using Wizard</h2>
+
+<h3>Step 1 — Open Reports</h3>
+
+<p>
+Click the <strong>Reports</strong> icon in the Database Pane.
+</p>
+
+<h3>Step 2 — Report Wizard</h3>
+
+<p>
+Select:
+<strong>Use Wizard to Create Report…</strong>
+</p>
+
+<h3>Step 3 — Windows Open</h3>
+
+<p>
+The Report Wizard opens along with:
+</p>
+
+<ul>
+
+<li><strong>Report Builder</strong></li>
+
+<li><strong>Add Fields</strong> dialog box</li>
+
+</ul>
+
+
+<div class="box exam">
+
+<div class="box-title">🔥 MCQ Alert</div>
+
+<p>
+Report Wizard opens along with
+<strong>Report Builder and Add Fields dialog box</strong>.
+</p>
+
+</div>
+
+
+<h3>Step 4 — Select Table and Fields</h3>
+
+<p>
+Select the required table or query.
+For example:
+<strong>Events</strong>.
+</p>
+
+<p>
+Move the required fields from
+<strong>Available Fields</strong> to
+<strong>Fields in report</strong>.
+</p>
+
+
+<h3>Step 5 — Label the Fields</h3>
+
+<p>
+The default field names can be changed into
+more explanatory column headings.
+</p>
+
+
+<h3>Step 6 — Group Data</h3>
+
+<p>
+Records can be grouped according to a particular field.
+</p>
+
+<p>
+Example:
+<strong>CategoryID</strong> can be used to generate
+category-wise reports.
+</p>
+
+
+<h3>Step 7 — Sort Data</h3>
+
+<p>
+Data can be sorted in:
+</p>
+
+<ul>
+
+<li><strong>Ascending</strong> order</li>
+
+<li><strong>Descending</strong> order</li>
+
+</ul>
+
+<p>
+Example:
+Records can be sorted according to
+<strong>EventID</strong>.
+</p>
+
+
+<h3>Step 8 — Select Layout</h3>
+
+<p>
+The layout determines how labels, field values and titles
+appear in the report.
+</p>
+
+<p>
+Example:
+<strong>Tabular</strong> layout.
+</p>
+
+<p>
+Header/footer and page orientation can also be selected.
+</p>
+
+<p>
+Orientation options:
+<strong>Landscape</strong> and <strong>Portrait</strong>.
+</p>
+
+
+<h3>Step 9 — Name the Report</h3>
+
+<p>
+Give a suitable name such as:
+<strong>EventsReport</strong>.
+</p>
+
+
+<!-- ===================================================== -->
+
+<h2>20. Dynamic and Static Report</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Dynamic Report</th>
+<th>Static Report</th>
+</tr>
+
+<tr>
+<td>
+Automatically reflects changes made in the underlying
+table or query.
+</td>
+
+<td>
+Does not automatically update when the underlying
+data changes.
+</td>
+</tr>
+
+<tr>
+<td>
+Useful when current data needs to be reflected.
+</td>
+
+<td>
+Useful when a fixed version of the report is required.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="box exam">
+
+<div class="box-title">🔥 MUST REMEMBER</div>
+
+<p>
+<strong>Dynamic → changes automatically with table/query data.</strong>
+</p>
+
+<p>
+<strong>Static → does not automatically update.</strong>
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>21. Report Builder</h2>
+
+<p>
+The <strong>Report Builder</strong> is used to modify and
+format a report.
+</p>
+
+<p>
+Additional controls can be inserted using the
+<strong>Report Controls Toolbar</strong>.
+</p>
+
+
+<!-- ===================================================== -->
+
+<h2>22. Inserting Titles and Headings in Report</h2>
+
+<ol>
+
+<li>Click the <strong>Label</strong> tool on the
+Report Controls Toolbar.</li>
+
+<li>Click and drag on the report to create a label box.</li>
+
+<li>Double-click the label.</li>
+
+<li>Enter the required title in the
+<strong>Label</strong> property.</li>
+
+<li>Use the <strong>Font</strong> property to change font type,
+style and size.</li>
+
+<li>Close the Properties dialog box.</li>
+
+</ol>
+
+
+<div class="box tip">
+
+<div class="box-title">💡 Example</div>
+
+<p>
+<strong>Annual Sports Day Report</strong>
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>23. Inserting Date and Time in Report</h2>
+
+<ol>
+
+<li>Click inside the <strong>Page Header</strong> area.</li>
+
+<li>Select <strong>Insert → Date and Time…</strong>.</li>
+
+<li>The Date and Time dialog box appears.</li>
+
+<li>Select the desired date/time format.</li>
+
+<li>Click <strong>OK</strong>.</li>
+
+<li>The date/time can be repositioned by dragging it.</li>
+
+</ol>
+
+
+<!-- ===================================================== -->
+
+<h2>24. Grouping Records in a Report</h2>
+
+<p>
+Reports can group retrieved data according to a particular
+field.
+</p>
+
+<p>
+Example:
+If events have to be displayed
+<strong>category-wise</strong>, move the
+<strong>CategoryID</strong> field to the
+<strong>Groupings</strong> list box.
+</p>
+
+
+<div class="box memory">
+
+<div class="box-title">🧠 Remember</div>
+
+<p>
+<strong>Grouping = arranging records according to a field.</strong>
+</p>
+
+<p>
+Example: <strong>CategoryID → Category-wise report</strong>
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>25. Form vs Report</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Form</th>
+<th>Report</th>
+</tr>
+
+<tr>
+<td>
+User-friendly interface for entering, viewing and
+modifying data.
+</td>
+
+<td>
+Presents retrieved data in an attractive and
+customized manner.
+</td>
+</tr>
+
+<tr>
+<td>
+Mainly used for data entry and modification.
+</td>
+
+<td>
+Mainly used for presentation of data.
+</td>
+</tr>
+
+<tr>
+<td>
+Works as the front end for database data entry.
+</td>
+
+<td>
+Provides formatted presentation of retrieved data.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>26. Important Properties & Tools</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Term / Tool</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td><strong>Forms Controls Toolbar</strong></td>
+<td>Add/edit controls on a form.</td>
+</tr>
+
+<tr>
+<td><strong>Records Toolbar</strong></td>
+<td>Navigate and manage records.</td>
+</tr>
+
+<tr>
+<td><strong>Control Properties</strong></td>
+<td>Modify properties of a selected control.</td>
+</tr>
+
+<tr>
+<td><strong>Help Text</strong></td>
+<td>Add tooltip/help message.</td>
+</tr>
+
+<tr>
+<td><strong>Design Mode</strong></td>
+<td>Toggle between Design View and Form View.</td>
+</tr>
+
+<tr>
+<td><strong>Date Format</strong></td>
+<td>Controls the format of date display.</td>
+</tr>
+
+<tr>
+<td><strong>DropDown</strong></td>
+<td>Allows dropdown/calendar functionality for date control.</td>
+</tr>
+
+<tr>
+<td><strong>Report Controls Toolbar</strong></td>
+<td>Add controls while editing a report.</td>
+</tr>
+
+<tr>
+<td><strong>Groupings</strong></td>
+<td>Groups records according to selected field.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>27. Most Important Exam Questions</h2>
+
+<div class="mcq">
+
+<p><strong>Q1. What is a Form?</strong></p>
+
+<p class="answer">
+Ans. A Form is a database object having a user-friendly
+interface for entering and viewing data in an attractive
+and easy-to-read format.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q2. What is a Report?</strong></p>
+
+<p class="answer">
+Ans. A Report is a database object used to present retrieved
+data in an attractive and customized manner.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q3. What is a field control?</strong></p>
+
+<p class="answer">
+Ans. A field control consists of a label and a field value
+text box. The text box is linked to the corresponding
+field of the table.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q4. Name the two ways to create a Form.</strong></p>
+
+<p class="answer">
+Ans. Using a Wizard and Using Design View.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q5. What is a Subform?</strong></p>
+
+<p class="answer">
+Ans. A Subform is a form within a form.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q6. What is a Tool Tip?</strong></p>
+
+<p class="answer">
+Ans. It is a small piece of text displayed when the mouse
+pointer is placed over a particular control.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q7. Which property is used to add tooltip text?</strong></p>
+
+<p class="answer">
+Ans. Help Text property.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q8. How can a calendar be added to a Date field?</strong></p>
+
+<p class="answer">
+Ans. Set Date Format to Standard (long) and
+DropDown property to Yes.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q9. What is the function of Records Toolbar?</strong></p>
+
+<p class="answer">
+Ans. It provides navigation and record-management controls
+such as moving between records, adding, saving and deleting
+records.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q10. What is the difference between Dynamic and Static Report?</strong></p>
+
+<p class="answer">
+Ans. A Dynamic Report automatically reflects changes in the
+underlying table/query, whereas a Static Report does not
+automatically update.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q11. On what can a report be based?</strong></p>
+
+<p class="answer">
+Ans. A report can be based on a table, query or both.
+</p>
+
+</div>
+
+
+<div class="mcq">
+
+<p><strong>Q12. Which layout can be selected for a report?</strong></p>
+
+<p class="answer">
+Ans. One available layout is Tabular. Header/footer and
+orientation such as Landscape or Portrait can also be selected.
+</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<h2>28. 🔥 MCQ FACTS — Direct Revision</h2>
+
+<ul>
+
+<li>Form is a <span class="keyword">database object</span>.</li>
+
+<li>Report is a <span class="keyword">database object</span>.</li>
+
+<li>Form provides a <span class="keyword">user-friendly interface</span>.</li>
+
+<li>Field Control = <span class="keyword">Label + Field Value Text Box</span>.</li>
+
+<li>Two methods of creating Form =
+<span class="keyword">Wizard + Design View</span>.</li>
+
+<li>Subform = <span class="keyword">Form within a form</span>.</li>
+
+<li>Tooltip property =
+<span class="keyword">Help Text</span>.</li>
+
+<li>Calendar requires
+<span class="keyword">Standard (long)</span> date format.</li>
+
+<li>Calendar requires
+<span class="keyword">DropDown = Yes</span>.</li>
+
+<li>Design Mode toggles
+<span class="keyword">Design View / Form View</span>.</li>
+
+<li>Report can be based on
+<span class="keyword">Table / Query / Both</span>.</li>
+
+<li>Report Wizard works with
+<span class="keyword">Report Builder + Add Fields</span>.</li>
+
+<li>Report data can be
+<span class="keyword">grouped</span>.</li>
+
+<li>Report data can be sorted
+<span class="keyword">Ascending / Descending</span>.</li>
+
+<li>Report orientation =
+<span class="keyword">Landscape / Portrait</span>.</li>
+
+<li>Dynamic Report reflects changes in the
+underlying data.</li>
+
+</ul>
+
+
+<!-- ===================================================== -->
+
+<div class="quick">
+
+<h2>⚡ QUICK REVISION — CHAPTER 12</h2>
+
+<ul>
+
+<li><strong>Form:</strong> User-friendly data entry/viewing interface.</li>
+
+<li><strong>Report:</strong> Attractive and formatted presentation of retrieved data.</li>
+
+<li><strong>Field Control:</strong> Label + Field Value Text Box.</li>
+
+<li><strong>Form Creation:</strong> Wizard or Design View.</li>
+
+<li><strong>Subform:</strong> Form within a form.</li>
+
+<li><strong>Forms Controls Toolbar:</strong> Add/edit form controls.</li>
+
+<li><strong>Records Toolbar:</strong> Navigate/manage records.</li>
+
+<li><strong>Tooltip:</strong> Help Text.</li>
+
+<li><strong>Date Calendar:</strong> Standard (long) + DropDown = Yes.</li>
+
+<li><strong>Design Mode:</strong> Design View ↔ Form View.</li>
+
+<li><strong>New Record:</strong> Records Toolbar.</li>
+
+<li><strong>Save Record:</strong> Records Toolbar.</li>
+
+<li><strong>Delete Record:</strong> Records Toolbar.</li>
+
+<li><strong>Report Source:</strong> Table / Query / Both.</li>
+
+<li><strong>Multiple Tables:</strong> Preferably create a query first.</li>
+
+<li><strong>Grouping:</strong> Based on selected field.</li>
+
+<li><strong>Sorting:</strong> Ascending / Descending.</li>
+
+<li><strong>Orientation:</strong> Landscape / Portrait.</li>
+
+<li><strong>Dynamic:</strong> Automatically reflects data changes.</li>
+
+<li><strong>Static:</strong> Does not automatically update.</li>
+
+</ul>
+
+</div>
+
+
+<!-- ===================================================== -->
+
+<div class="box warning">
+
+<div class="box-title">🚨 LAST-MINUTE EXAM ALERT</div>
+
+<p>
+Chapter 12 mein sabse zyada important concepts:
+</p>
+
+<p>
+<strong>
+Form vs Report • Field Control • Two methods of Form Creation
+• Forms Controls Toolbar • Records Toolbar • Tool Tip
+• Help Text • Date Format • DropDown • Design Mode
+• New/Save/Delete Record • Report Wizard • Grouping
+• Sorting • Landscape/Portrait • Dynamic vs Static Report
+</strong>
+</p>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<div class="love">
+THE GOAL — Study Smart. Revise Better. Score Better. ❤️
+</div>
+
+<p>
+CBSE Class X • Information Technology (402) • Part B
+</p>
+
+<p>
+Made with Love ❤️ in India by Pushpender
+</p>
+
+</footer>
+
+</body>
+</html>
