@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -250,6 +251,436 @@ main{
     line-height:1.5;
 }
 
+
+/* ================================================= */
+/* ================= FEEDBACK SYSTEM =============== */
+/* ================================================= */
+
+/* ================= FEEDBACK BUTTON ================= */
+
+.feedback-floating{
+
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    z-index:999;
+
+    border:none;
+    cursor:pointer;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    padding:16px 25px;
+
+    border-radius:35px;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    letter-spacing:.2px;
+
+    box-shadow:
+        0 12px 32px rgba(79,70,229,.35);
+
+    transition:.25s ease;
+}
+
+.feedback-floating:hover{
+
+    transform:translateY(-4px) scale(1.02);
+
+    box-shadow:
+        0 17px 38px rgba(79,70,229,.42);
+}
+
+
+/* ================= OVERLAY ================= */
+
+.feedback-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.68);
+
+    backdrop-filter:blur(6px);
+
+    z-index:1000;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.feedback-overlay.active{
+
+    display:flex;
+}
+
+
+/* ================= FEEDBACK BOX ================= */
+
+.feedback-box{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:450px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:32px;
+
+    box-shadow:
+        0 25px 70px rgba(15,23,42,.28);
+
+    animation:feedbackPop .25s ease;
+}
+
+@keyframes feedbackPop{
+
+    from{
+        opacity:0;
+        transform:scale(.94) translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+
+}
+
+
+/* ================= CLOSE ================= */
+
+.feedback-close{
+
+    position:absolute;
+
+    right:16px;
+    top:14px;
+
+    width:35px;
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f1f5f9;
+
+    font-size:24px;
+
+    color:#64748b;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.feedback-close:hover{
+
+    background:#e2e8f0;
+
+    transform:rotate(5deg);
+}
+
+
+/* ================= ICON ================= */
+
+.feedback-icon{
+
+    width:62px;
+    height:62px;
+
+    margin:0 auto 15px;
+
+    border-radius:19px;
+
+    background:var(--soft);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:29px;
+}
+
+.feedback-box h2{
+
+    text-align:center;
+
+    font-size:27px;
+
+    color:var(--text);
+}
+
+.feedback-subtitle{
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin:7px 0 25px;
+}
+
+
+/* ================= LABELS ================= */
+
+.feedback-box label{
+
+    display:block;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    margin:17px 0 7px;
+
+    color:#334155;
+}
+
+
+/* ================= INPUTS ================= */
+
+.feedback-box input[type="text"],
+.feedback-box input[type="email"],
+.feedback-box textarea{
+
+    width:100%;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:13px 14px;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    color:var(--text);
+
+    background:#fff;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+.feedback-box input[type="text"]:focus,
+.feedback-box input[type="email"]:focus,
+.feedback-box textarea:focus{
+
+    border-color:#818cf8;
+
+    box-shadow:
+        0 0 0 3px rgba(99,102,241,.10);
+}
+
+
+/* ================= TEXTAREA ================= */
+
+.feedback-box textarea{
+
+    min-height:115px;
+
+    resize:vertical;
+}
+
+
+/* ================= STARS ================= */
+
+.stars{
+
+    display:flex;
+
+    flex-direction:row-reverse;
+
+    justify-content:center;
+
+    gap:5px;
+
+    margin:6px 0 3px;
+}
+
+.stars input{
+
+    display:none;
+}
+
+.stars label{
+
+    font-size:34px !important;
+
+    color:#cbd5e1 !important;
+
+    cursor:pointer;
+
+    margin:0 !important;
+
+    transition:.15s;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label{
+
+    color:#f59e0b !important;
+}
+
+
+/* ================= SUBMIT ================= */
+
+.feedback-submit{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    margin-top:20px;
+
+    transition:.2s;
+}
+
+.feedback-submit:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(79,70,229,.25);
+}
+
+.feedback-submit:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+
+/* ================= SUCCESS ================= */
+
+.feedback-success{
+
+    display:none;
+
+    text-align:center;
+}
+
+.feedback-success.active{
+
+    display:block;
+}
+
+.success-check{
+
+    width:68px;
+    height:68px;
+
+    margin:10px auto 15px;
+
+    border-radius:50%;
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:33px;
+
+    font-weight:900;
+}
+
+.feedback-success h3{
+
+    font-size:25px;
+}
+
+.feedback-success p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin:8px 0 20px;
+}
+
+.feedback-success button{
+
+    border:none;
+
+    background:var(--soft);
+
+    color:var(--primary);
+
+    padding:10px 24px;
+
+    border-radius:10px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -267,6 +698,7 @@ footer strong{
 .heart{
     color:#f43f5e;
 }
+
 
 /* ================= RESPONSIVE ================= */
 
@@ -312,12 +744,36 @@ footer strong{
         grid-template-columns:1fr;
     }
 
+    .feedback-floating{
+
+        right:15px;
+        bottom:15px;
+
+        padding:14px 20px;
+
+        font-size:14px;
+    }
+
+    .feedback-box{
+
+        padding:27px 21px;
+
+        border-radius:21px;
+    }
+
+    .feedback-box h2{
+
+        font-size:23px;
+    }
+
 }
 
 </style>
 </head>
 
+
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -368,7 +824,9 @@ and structured revision.
 
 <div class="section-title">
 
-<h2>Choose Your Subject</h2>
+<h2>
+Choose Your Subject
+</h2>
 
 <p>
 Select a subject to begin your preparation.
@@ -521,11 +979,371 @@ Practice comfortably on mobile, tablet or laptop.
 </main>
 
 
+<!-- ================================================= -->
+<!-- ================= FEEDBACK BUTTON =============== -->
+<!-- ================================================= -->
+
+<button
+    class="feedback-floating"
+    onclick="openFeedback()"
+>
+    💬 Give Feedback
+</button>
+
+
+<!-- ================================================= -->
+<!-- ================= FEEDBACK POPUP ================ -->
+<!-- ================================================= -->
+
+<div
+    class="feedback-overlay"
+    id="feedbackOverlay"
+>
+
+    <div class="feedback-box">
+
+
+        <!-- CLOSE -->
+
+        <button
+            class="feedback-close"
+            onclick="closeFeedback()"
+            aria-label="Close feedback"
+        >
+            ×
+        </button>
+
+
+        <!-- ICON -->
+
+        <div class="feedback-icon">
+            💬
+        </div>
+
+
+        <h2>
+            Tell Us What You Think
+        </h2>
+
+        <p class="feedback-subtitle">
+            Your feedback helps us make THE GOAL better.
+        </p>
+
+
+        <!-- ================= FORM ================= -->
+
+        <form id="feedbackForm">
+
+
+            <!-- NAME -->
+
+            <label for="feedbackName">
+                Your Name
+            </label>
+
+            <input
+                id="feedbackName"
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+                autocomplete="name"
+            >
+
+
+            <!-- EMAIL -->
+
+            <label for="feedbackEmail">
+                Email Address
+            </label>
+
+            <input
+                id="feedbackEmail"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                autocomplete="email"
+            >
+
+
+            <!-- RATING -->
+
+            <label>
+                Your Rating
+            </label>
+
+            <div class="stars">
+
+                <input
+                    type="radio"
+                    id="star5"
+                    name="rating"
+                    value="5"
+                    required
+                >
+
+                <label for="star5">
+                    ★
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="star4"
+                    name="rating"
+                    value="4"
+                >
+
+                <label for="star4">
+                    ★
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="star3"
+                    name="rating"
+                    value="3"
+                >
+
+                <label for="star3">
+                    ★
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="star2"
+                    name="rating"
+                    value="2"
+                >
+
+                <label for="star2">
+                    ★
+                </label>
+
+
+                <input
+                    type="radio"
+                    id="star1"
+                    name="rating"
+                    value="1"
+                >
+
+                <label for="star1">
+                    ★
+                </label>
+
+            </div>
+
+
+            <!-- TELL US -->
+
+            <label for="feedbackMessage">
+                Tell Us
+            </label>
+
+            <textarea
+                id="feedbackMessage"
+                name="feedback"
+                placeholder="Tell us what you think..."
+                required
+            ></textarea>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="feedback-submit"
+                id="feedbackSubmit"
+            >
+                SEND FEEDBACK →
+            </button>
+
+        </form>
+
+
+        <!-- ================= SUCCESS ================= -->
+
+        <div
+            class="feedback-success"
+            id="feedbackSuccess"
+        >
+
+            <div class="success-check">
+                ✓
+            </div>
+
+            <h3>
+                Thank You! ❤️
+            </h3>
+
+            <p>
+                Your feedback has been received.
+                It helps us improve THE GOAL.
+            </p>
+
+            <button
+                onclick="closeFeedback()"
+            >
+                CLOSE
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= FEEDBACK SCRIPT =============== -->
+<!-- ================================================= -->
+
+<script>
+
+const FEEDBACK_URL =
+"https://script.google.com/macros/s/AKfycbz_0DPiLtm6SIT8uyn7Sw7UO8cNyZezfszdyKtfDdLPe2OcVtFspQL9UOuS5yHD57qm/exec";
+
+
+/* ================= OPEN FEEDBACK ================= */
+
+function openFeedback(){
+
+    document
+        .getElementById("feedbackOverlay")
+        .classList
+        .add("active");
+
+}
+
+
+/* ================= CLOSE FEEDBACK ================= */
+
+function closeFeedback(){
+
+    document
+        .getElementById("feedbackOverlay")
+        .classList
+        .remove("active");
+
+}
+
+
+/* ================= OUTSIDE CLICK ================= */
+
+document
+    .getElementById("feedbackOverlay")
+    .addEventListener(
+        "click",
+        function(e){
+
+            if(e.target === this){
+
+                closeFeedback();
+
+            }
+
+        }
+    );
+
+
+/* ================= SUBMIT FEEDBACK ================= */
+
+document
+    .getElementById("feedbackForm")
+    .addEventListener(
+        "submit",
+        async function(e){
+
+            e.preventDefault();
+
+
+            const form = this;
+
+            const submitButton =
+                document.getElementById(
+                    "feedbackSubmit"
+                );
+
+
+            submitButton.disabled = true;
+
+            submitButton.textContent =
+                "SENDING...";
+
+
+            const formData =
+                new FormData(form);
+
+
+            try{
+
+                await fetch(
+                    FEEDBACK_URL,
+                    {
+                        method:"POST",
+
+                        body:formData,
+
+                        mode:"no-cors"
+                    }
+                );
+
+
+                /* HIDE FORM */
+
+                form.style.display =
+                    "none";
+
+
+                /* SHOW SUCCESS */
+
+                document
+                    .getElementById(
+                        "feedbackSuccess"
+                    )
+                    .classList
+                    .add("active");
+
+
+                form.reset();
+
+
+            }
+
+            catch(error){
+
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
+
+                submitButton.disabled =
+                    false;
+
+
+                submitButton.textContent =
+                    "SEND FEEDBACK →";
+
+            }
+
+        }
+    );
+
+</script>
+
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-<strong>THE GOAL</strong>
+<strong>
+THE GOAL
+</strong>
 
 <br><br>
 
@@ -533,7 +1351,9 @@ CBSE Class 10 Learning Portal
 
 <br><br>
 
-Made with Love <span class="heart">❤️</span> in India by Pushpender
+Made with Love
+<span class="heart">❤️</span>
+in India by Pushpender
 
 </footer>
 
