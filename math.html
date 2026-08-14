@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -60,11 +61,24 @@ nav{
 }
 
 .nav-badge{
-    padding:8px 15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:7px 14px;
     border:1px solid rgba(255,255,255,.2);
     border-radius:30px;
     background:rgba(255,255,255,.08);
     font-size:13px;
+    font-weight:700;
+}
+
+.nav-badge img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+    background:white;
+    border-radius:50%;
+    padding:2px;
 }
 
 /* ================= HERO ================= */
@@ -216,6 +230,125 @@ main{
     box-shadow:0 8px 20px rgba(79,70,229,.25);
 }
 
+/* ================= PYQ SECTION ================= */
+
+.pyq-section{
+    margin-top:70px;
+}
+
+.pyq-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.pyq-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+    transition:.3s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.pyq-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg,var(--primary),var(--primary2));
+}
+
+.pyq-card:hover{
+    transform:translateY(-5px);
+    border-color:#a5b4fc;
+    box-shadow:0 18px 40px rgba(79,70,229,.12);
+}
+
+.pyq-logo{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    display:block;
+    margin-bottom:15px;
+}
+
+.pyq-year{
+    font-size:30px;
+    font-weight:900;
+    color:var(--text);
+}
+
+.pyq-title{
+    font-size:14px;
+    font-weight:700;
+    margin-top:3px;
+}
+
+.pyq-subtitle{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:4px;
+    margin-bottom:20px;
+}
+
+.pyq-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.pyq-btn{
+    flex:1;
+    text-decoration:none;
+    text-align:center;
+    padding:11px 10px;
+    border-radius:11px;
+    font-size:11px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.pyq-standard{
+    color:white;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+}
+
+.pyq-basic{
+    color:var(--primary);
+    background:var(--soft);
+    border:1px solid #c7d2fe;
+}
+
+.pyq-combined{
+    color:white;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+}
+
+.pyq-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 7px 18px rgba(79,70,229,.18);
+}
+
+.pyq-note{
+    margin-top:22px;
+    padding:18px 20px;
+    border:1px dashed #c7d2fe;
+    background:#eef2ff;
+    border-radius:16px;
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+.pyq-note strong{
+    color:var(--text);
+}
+
 /* ================= INFO ================= */
 
 .info-box{
@@ -282,6 +415,14 @@ footer strong{
 
 /* ================= RESPONSIVE ================= */
 
+@media(max-width:900px){
+
+    .pyq-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
 @media(max-width:750px){
 
     .chapter-grid{
@@ -302,6 +443,12 @@ footer strong{
 
     .nav-badge{
         font-size:11px;
+        padding:6px 10px;
+    }
+
+    .nav-badge img{
+        width:28px;
+        height:28px;
     }
 
     .hero h1{
@@ -332,12 +479,17 @@ footer strong{
         font-size:11px;
     }
 
+    .pyq-buttons{
+        flex-direction:column;
+    }
+
 }
 
 </style>
 </head>
 
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -350,10 +502,19 @@ THE GOAL
 </div>
 
 <div class="nav-badge">
+
+<img
+src="cbse-logo.png"
+alt="CBSE Logo">
+
+<span>
 CBSE CLASS 10
+</span>
+
 </div>
 
 </nav>
+
 
 <div class="hero">
 
@@ -382,6 +543,7 @@ Prepare smarter with structured revision and easy access to notes.
 <!-- ================= MAIN ================= -->
 
 <main>
+
 
 <div class="section-title">
 
@@ -425,7 +587,9 @@ Real Numbers
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -456,7 +620,9 @@ Polynomials
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -487,7 +653,9 @@ Pair of Linear Equations in Two Variables
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -518,7 +686,9 @@ Quadratic Equations
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -549,7 +719,9 @@ Arithmetic Progressions
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -580,7 +752,9 @@ Triangles
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -611,7 +785,9 @@ Coordinate Geometry
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -642,7 +818,9 @@ Introduction to Trigonometry
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -673,7 +851,9 @@ Some Applications of Trigonometry
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -704,7 +884,9 @@ Circles
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -735,7 +917,9 @@ Areas Related to Circles
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -766,7 +950,9 @@ Surface Areas and Volumes
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -797,7 +983,9 @@ Statistics
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
 
@@ -828,9 +1016,190 @@ Probability
 
 </div>
 
-<a class="notes-btn" href="YOUR_PDF_LINK_HERE" target="_blank">
+<a class="notes-btn"
+href="YOUR_PDF_LINK_HERE"
+target="_blank">
 VIEW NOTES →
 </a>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= PYQ SECTION ================= -->
+
+<section class="pyq-section">
+
+
+<div class="section-title">
+
+<h2>
+📝 CBSE Mathematics Previous Year Papers
+</h2>
+
+<p>
+Year-wise official CBSE question papers for Class 10 Mathematics.
+</p>
+
+</div>
+
+
+<div class="pyq-grid">
+
+
+<!-- ================= 2026 ================= -->
+
+<div class="pyq-card">
+
+<img
+src="cbse-logo.png"
+alt="CBSE Logo"
+class="pyq-logo">
+
+<div class="pyq-year">
+2026
+</div>
+
+<div class="pyq-title">
+Mathematics Board Examination
+</div>
+
+<div class="pyq-subtitle">
+Basic + Standard Question Papers
+</div>
+
+<div class="pyq-buttons">
+
+<a
+href="https://www.cbse.gov.in/cbsenew/question-paper/2026/X/Mathematics_Standard.zip"
+target="_blank"
+rel="noopener noreferrer"
+class="pyq-btn pyq-combined">
+
+BASIC + STANDARD →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ================= 2025 ================= -->
+
+<div class="pyq-card">
+
+<img
+src="cbse-logo.png"
+alt="CBSE Logo"
+class="pyq-logo">
+
+<div class="pyq-year">
+2025
+</div>
+
+<div class="pyq-title">
+Mathematics Board Examination
+</div>
+
+<div class="pyq-subtitle">
+Basic & Standard Question Papers
+</div>
+
+<div class="pyq-buttons">
+
+<a
+href="https://www.cbse.gov.in/cbsenew/question-paper/2025/X/041_Mathematics_Standard.zip"
+target="_blank"
+rel="noopener noreferrer"
+class="pyq-btn pyq-standard">
+
+STANDARD →
+
+</a>
+
+<a
+href="https://www.cbse.gov.in/cbsenew/question-paper/2025/X/241_Mathematics_Basic.zip"
+target="_blank"
+rel="noopener noreferrer"
+class="pyq-btn pyq-basic">
+
+BASIC →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ================= 2024 ================= -->
+
+<div class="pyq-card">
+
+<img
+src="cbse-logo.png"
+alt="CBSE Logo"
+class="pyq-logo">
+
+<div class="pyq-year">
+2024
+</div>
+
+<div class="pyq-title">
+Mathematics Board Examination
+</div>
+
+<div class="pyq-subtitle">
+Basic & Standard Question Papers
+</div>
+
+<div class="pyq-buttons">
+
+<a
+href="https://www.cbse.gov.in/cbsenew/question-paper/2024/X/MATHEMATICS_STANDARD.zip"
+target="_blank"
+rel="noopener noreferrer"
+class="pyq-btn pyq-standard">
+
+STANDARD →
+
+</a>
+
+<a
+href="https://www.cbse.gov.in/cbsenew/question-paper/2024/X/MATHEMATICS_BASIC.zip"
+target="_blank"
+rel="noopener noreferrer"
+class="pyq-btn pyq-basic">
+
+BASIC →
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="pyq-note">
+
+<strong>
+🏛️ Official CBSE Question Papers
+</strong>
+
+<br>
+
+Question papers are linked to the official CBSE
+question-paper files provided above.
+
+<br>
+
+Solve them like a real board examination for better preparation.
 
 </div>
 
@@ -847,8 +1216,9 @@ VIEW NOTES →
 </h3>
 
 <p>
-Use the chapter-wise notes for quick revision, concept building
-and better CBSE Class 10 Mathematics preparation.
+Use the chapter-wise notes and previous year papers for
+concept building, revision and better CBSE Class 10
+Mathematics preparation.
 </p>
 
 </div>
@@ -858,11 +1228,16 @@ and better CBSE Class 10 Mathematics preparation.
 
 <div class="back-section">
 
-<a class="back-btn" href="index.html">
+<a
+class="back-btn"
+href="index.html">
+
 ← BACK TO HOME
+
 </a>
 
 </div>
+
 
 </main>
 
@@ -871,7 +1246,9 @@ and better CBSE Class 10 Mathematics preparation.
 
 <footer>
 
-<strong>THE GOAL</strong>
+<strong>
+THE GOAL
+</strong>
 
 <br><br>
 
@@ -879,7 +1256,9 @@ CBSE Class 10 Learning Portal
 
 <br><br>
 
-Made with Love <span class="heart">❤️</span> in India by Pushpender
+Made with Love
+<span class="heart">❤️</span>
+in India by Pushpender
 
 </footer>
 
