@@ -373,6 +373,138 @@ main{
     font-size:14px;
 }
 
+/* ================= PYQ SECTION ================= */
+
+.pyq-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 12px 35px rgba(15,23,42,.07);
+}
+
+.pyq-header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.cbse-logo{
+    width:68px;
+    height:68px;
+    object-fit:contain;
+    border-radius:15px;
+    background:#fff;
+    border:1px solid var(--border);
+    padding:6px;
+}
+
+.pyq-heading h3{
+    font-size:25px;
+}
+
+.pyq-heading p{
+    color:var(--muted);
+    font-size:14px;
+    margin-top:5px;
+}
+
+.pyq-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.pyq-item{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:23px 18px;
+    text-align:center;
+    transition:.25s ease;
+}
+
+.pyq-item:hover{
+    transform:translateY(-5px);
+    border-color:#a5b4fc;
+    box-shadow:0 12px 28px rgba(79,70,229,.12);
+}
+
+/* CBSE LOGO INSIDE EACH PYQ CARD */
+
+.pyq-logo{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 13px;
+    padding:5px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:13px;
+}
+
+.pyq-year{
+    font-size:11px;
+    color:var(--primary);
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.pyq-icon{
+    width:52px;
+    height:52px;
+    border-radius:15px;
+    background:var(--soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    margin:0 auto 13px;
+}
+
+.pyq-item h4{
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.pyq-item p{
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:16px;
+}
+
+.download-btn{
+    display:block;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    padding:11px;
+    border-radius:10px;
+    font-size:12px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.download-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(79,70,229,.25);
+}
+
+.pyq-note{
+    margin-top:22px;
+    padding:14px 17px;
+    border-radius:15px;
+    background:#f8fafc;
+    border:1px solid var(--border);
+    color:var(--muted);
+    text-align:center;
+    font-size:12px;
+    line-height:1.6;
+}
+
 /* ================= NOTE ================= */
 
 .note{
@@ -411,6 +543,10 @@ footer strong{
         grid-template-columns:repeat(3,1fr);
     }
 
+    .pyq-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
 }
 
 @media(max-width:700px){
@@ -423,7 +559,8 @@ footer strong{
         padding-top:55px;
     }
 
-    .part-card{
+    .part-card,
+    .pyq-card{
         padding:22px;
     }
 
@@ -438,6 +575,14 @@ footer strong{
 
     .unit-grid{
         grid-template-columns:repeat(2,1fr);
+    }
+
+    .pyq-grid{
+        grid-template-columns:1fr;
+    }
+
+    .pyq-header{
+        align-items:flex-start;
     }
 
 }
@@ -475,6 +620,16 @@ footer strong{
 
     .unit h4{
         min-height:auto;
+    }
+
+    .pyq-header{
+        flex-direction:column;
+        text-align:center;
+        align-items:center;
+    }
+
+    .pyq-heading h3{
+        font-size:22px;
     }
 
 }
@@ -782,6 +937,173 @@ Part B is Under Preparation
 <p>
 Stay tuned — new tests and resources will be added soon.
 </p>
+
+</section>
+
+
+<!-- ================= PYQ SECTION ================= -->
+
+<div class="section-title">
+
+<h2>📄 Previous Year Question Papers</h2>
+
+<p>
+CBSE Class 10 Information Technology (402) — Official Question Papers
+</p>
+
+</div>
+
+
+<section class="pyq-card">
+
+<div class="pyq-header">
+
+<img
+src="cbse-logo.jpeg"
+alt="CBSE Logo"
+class="cbse-logo"
+>
+
+<div class="pyq-heading">
+
+<h3>
+CBSE IT (402) PYQs
+</h3>
+
+<p>
+Practice previous year question papers and understand the actual CBSE exam pattern.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="pyq-grid">
+
+
+<!-- ================= 2026 ================= -->
+
+<div class="pyq-item">
+
+<img
+src="cbse-logo.jpeg"
+alt="CBSE Logo"
+class="pyq-logo"
+>
+
+<div class="pyq-year">
+CBSE • 2026
+</div>
+
+<div class="pyq-icon">
+📄
+</div>
+
+<h4>
+2026 Question Paper
+</h4>
+
+<p>
+Information Technology • Code 402
+</p>
+
+<a
+class="download-btn"
+href="https://www.cbse.gov.in/cbsenew/question-paper/2026/X/Information_Technology.zip"
+target="_blank"
+rel="noopener noreferrer"
+>
+DOWNLOAD →
+</a>
+
+</div>
+
+
+<!-- ================= 2025 ================= -->
+
+<div class="pyq-item">
+
+<img
+src="cbse-logo.jpeg"
+alt="CBSE Logo"
+class="pyq-logo"
+>
+
+<div class="pyq-year">
+CBSE • 2025
+</div>
+
+<div class="pyq-icon">
+📄
+</div>
+
+<h4>
+2025 Question Paper
+</h4>
+
+<p>
+Information Technology • Code 402
+</p>
+
+<a
+class="download-btn"
+href="https://www.cbse.gov.in/cbsenew/question-paper/2025/X/89_Information_Technology.pdf"
+target="_blank"
+rel="noopener noreferrer"
+>
+DOWNLOAD →
+</a>
+
+</div>
+
+
+<!-- ================= 2024 ================= -->
+
+<div class="pyq-item">
+
+<img
+src="cbse-logo.jpeg"
+alt="CBSE Logo"
+class="pyq-logo"
+>
+
+<div class="pyq-year">
+CBSE • 2024
+</div>
+
+<div class="pyq-icon">
+📄
+</div>
+
+<h4>
+2024 Question Paper
+</h4>
+
+<p>
+Information Technology • Code 402
+</p>
+
+<a
+class="download-btn"
+href="https://www.cbse.gov.in/cbsenew/question-paper/2024/X/Information_Technology.zip"
+target="_blank"
+rel="noopener noreferrer"
+>
+DOWNLOAD →
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="pyq-note">
+🏛️ These links redirect to the official CBSE website.
+<br>
+Use PYQs to understand question patterns, difficulty level and important topics.
+</div>
 
 </section>
 
