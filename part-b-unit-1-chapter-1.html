@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Unit 1 | Chapter 1 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Shadows+Into+Light&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ---------- TOP BRAND ---------- */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    margin-top:4px;
+}
+
+.topbar p{
+    font-family:"Patrick Hand",cursive;
+    font-size:17px;
+    opacity:.85;
+}
+
+/* ---------- NOTEBOOK ---------- */
+
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+    position:relative;
+    padding:35px 45px 70px 90px;
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.18),
+        0 25px 55px rgba(0,0,0,.12);
+    min-height:100vh;
+}
+
+/* red margin */
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:62px;
+    width:2px;
+    background:#e28c8c;
+}
+
+/* ---------- PAGE TITLE ---------- */
+
+.cover{
+    padding:12px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover .small{
+    font-size:17px;
+    color:#555;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:50px;
+    color:#183f72;
+    line-height:1;
+    margin:8px 0;
+}
+
+.cover .chapter-name{
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#b32d2d;
+    margin:8px 0 12px;
+}
+
+.cover .intro{
+    font-size:19px;
+    max-width:800px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:4px 12px;
+    border:2px solid #555;
+    transform:rotate(-1deg);
+    background:#fff2a8;
+    font-size:16px;
+}
+
+/* ---------- SESSION ---------- */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    transform:rotate(-1deg);
+    margin-bottom:15px;
+}
+
+.session-number{
+    color:#b32d2d;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    margin-right:6px;
+}
+
+/* ---------- HEADINGS ---------- */
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#222;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    margin:14px 0 4px;
+    color:#254d75;
+}
+
+/* ---------- TEXT ---------- */
+
+p,li{
+    font-size:18px;
+}
+
+ul,ol{
+    margin:5px 0 12px 25px;
+}
+
+li{
+    margin:3px 0;
+}
+
+/* ---------- HIGHLIGHT ---------- */
+
+.highlight{
+    background:
+      linear-gradient(
+        transparent 25%,
+        rgba(255,226,86,.72) 25%,
+        rgba(255,226,86,.72) 82%,
+        transparent 82%
+      );
+    padding:0 3px;
+}
+
+.red{
+    color:#b42d2d;
+    font-weight:bold;
+}
+
+/* ---------- IMPORTANT BOX ---------- */
+
+.important{
+    margin:18px 0;
+    padding:14px 18px;
+    background:rgba(255,242,164,.65);
+    border:2px solid #5f5a43;
+    border-radius:3px;
+    transform:rotate(-.35deg);
+    position:relative;
+}
+
+.important:before{
+    content:"★ IMPORTANT";
+    position:absolute;
+    top:-15px;
+    left:12px;
+    background:#fff4a7;
+    padding:0 7px;
+    font-family:"Caveat",cursive;
+    font-size:17px;
+    color:#9c2929;
+}
+
+.important p{
+    margin-top:5px;
+}
+
+/* ---------- EXAM BOX ---------- */
+
+.exam{
+    margin:18px 0;
+    padding:13px 17px;
+    border-left:5px solid #c13c3c;
+    background:rgba(255,255,255,.52);
+}
+
+.exam-title{
+    color:#b52c2c;
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* ---------- MEMORY ---------- */
+
+.memory{
+    margin:18px 0;
+    padding:12px 17px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.52);
+}
+
+.memory strong{
+    color:#214d75;
+    font-size:21px;
+}
+
+/* ---------- TABLE ---------- */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.48);
+}
+
+th,td{
+    border:1.5px solid #555;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ---------- DEFINITIONS ---------- */
+
+.definition{
+    margin:8px 0;
+}
+
+.term{
+    color:#183f72;
+    font-weight:bold;
+}
+
+/* ---------- MINI NOTE ---------- */
+
+.note{
+    font-size:16px;
+    color:#555;
+    margin-top:5px;
+    transform:rotate(-.3deg);
+}
+
+/* ---------- DIVIDER ---------- */
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+    margin:25px 0;
+    letter-spacing:5px;
+}
+
+/* ---------- QUICK REVISION ---------- */
+
+.quick{
+    border:3px solid #444;
+    padding:18px;
+    margin-top:30px;
+    background:rgba(255,255,255,.5);
+    transform:rotate(.2deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    margin-top:45px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:650px){
+
+    .notebook{
+        width:100%;
+        padding:28px 20px 60px 58px;
+        margin:0;
+    }
+
+    .notebook:before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .cover h2{
+        font-size:40px;
+    }
+
+    .cover .chapter-name{
+        font-size:29px;
+    }
+
+    .session-title{
+        font-size:29px;
+    }
+
+    p,li{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • IT 402
+    </div>
+
+    <h1>
+        Part B — Subject Specific Skills
+    </h1>
+
+    <p>
+        Unit 1 • Digital Documentation (Advanced)
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ===================================================== -->
+<!-- COVER -->
+<!-- ===================================================== -->
+
+<section class="cover">
+
+    <div class="small">
+        📖 UNIT 1 • CHAPTER 1 • COMPLETE EXAM NOTES
+    </div>
+
+    <h2>
+        Digital Documentation
+    </h2>
+
+    <div class="chapter-name">
+        Chapter 1 — Introduction to Styles
+    </div>
+
+    <p class="intro">
+        Styles in LibreOffice Writer help us format a document
+        consistently and efficiently. Instead of formatting every
+        heading, paragraph or page separately, we can create and
+        apply styles whenever required.
+    </p>
+
+    <span class="tag">
+        ✍️ Read • Revise • Recall
+    </span>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 1 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">01.</span>
+Introduction to Styles
+</div>
+
+
+<h3>What is a Style?</h3>
+
+<p>
+A <span class="highlight">Style</span> is a collection of formatting
+information that can be saved and applied to different parts of a
+document.
+</p>
+
+<p>
+In LibreOffice Writer, a style can contain several formatting
+properties such as font, font size, font colour, alignment,
+spacing, indentation and other formatting settings.
+</p>
+
+<div class="important">
+
+<p>
+<b>Example:</b>
+</p>
+
+<p>
+Suppose all chapter headings in a document should have
+<b>Bookman Old Style, size 18, bold and left aligned</b>.
+Instead of applying these settings separately to every heading,
+we can save them as a style such as <b>"Heading Style"</b>.
+</p>
+
+</div>
+
+
+<h3>Manual Formatting vs Styles</h3>
+
+<p>
+There are two common ways of formatting a document in Writer:
+<b>manual formatting</b> and <b>using styles</b>.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Manual Formatting</th>
+<th>Using Styles</th>
+</tr>
+
+<tr>
+<td>
+Formatting is applied directly to selected text or paragraphs.
+</td>
+
+<td>
+Formatting properties are saved together as a reusable style.
+</td>
+</tr>
+
+<tr>
+<td>
+The same formatting may need to be repeated again and again.
+</td>
+
+<td>
+The same style can be applied wherever required.
+</td>
+</tr>
+
+<tr>
+<td>
+Changing a large document can take more time.
+</td>
+
+<td>
+Major formatting changes become easier.
+</td>
+</tr>
+
+<tr>
+<td>
+Consistency can become difficult to maintain.
+</td>
+
+<td>
+Helps maintain consistent formatting throughout the document.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Remember:</strong>
+
+<p>
+<b>
+Style = Saved collection of formatting information
+</b>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 2 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">02.</span>
+Advantages of Using Styles
+</div>
+
+
+<h3>Why are Styles Useful?</h3>
+
+<p>
+Styles are especially useful when working with long or
+well-structured documents.
+</p>
+
+<ul>
+
+<li>
+They provide <span class="highlight">consistent formatting</span>
+throughout the document.
+</li>
+
+<li>
+They reduce the time and effort required for formatting.
+</li>
+
+<li>
+A single style can be applied to many parts of the document.
+</li>
+
+<li>
+Major formatting changes can be made more easily.
+</li>
+
+<li>
+Styles help organise the structure of a document.
+</li>
+
+<li>
+Heading styles can help in creating a Table of Contents.
+</li>
+
+<li>
+They allow the user to focus more on the content rather than
+formatting every individual part.
+</li>
+
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+The most important advantages of styles are
+<b>consistency, time saving and easy modification</b>
+of document formatting.
+</p>
+
+</div>
+
+
+<div class="important">
+
+<p>
+<b>Key idea:</b>
+</p>
+
+<p>
+When the same formatting has to be used repeatedly,
+using a style is usually more efficient than formatting
+each item manually.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 3 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">03.</span>
+Styles and Formatting Window
+</div>
+
+
+<h3>What is Styles and Formatting?</h3>
+
+<p>
+The <span class="highlight">Styles and Formatting</span> area in
+LibreOffice Writer is used to manage the styles available in
+the document.
+</p>
+
+<p>
+It allows the user to view, apply, create, modify and manage
+styles.
+</p>
+
+
+<h3>Opening the Styles Interface</h3>
+
+<p>
+The Styles interface can be opened in different ways.
+</p>
+
+<ol>
+
+<li>
+Use the <b>Styles</b> option from the menu.
+</li>
+
+<li>
+Use the <b>Styles</b> icon in the Sidebar.
+</li>
+
+<li>
+Use the keyboard shortcut <span class="highlight"><b>F11</b></span>.
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+<strong>🧠 Shortcut to Remember:</strong>
+
+<p>
+<b>F11 → Styles</b>
+</p>
+
+</div>
+
+
+<h3>What can we do using Styles?</h3>
+
+<ul>
+
+<li>View available styles.</li>
+
+<li>Apply a style.</li>
+
+<li>Create a new style.</li>
+
+<li>Modify an existing style.</li>
+
+<li>Update a style.</li>
+
+<li>Manage different categories of styles.</li>
+
+</ul>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 4 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">04.</span>
+Categories of Styles
+</div>
+
+
+<h3>Six Important Style Categories</h3>
+
+<p>
+LibreOffice Writer provides different categories of styles.
+For Class 10 IT, the important categories are:
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Style Category</th>
+<th>Used For</th>
+</tr>
+
+<tr>
+
+<td>
+<b>Page Style</b>
+</td>
+
+<td>
+Controls page-level formatting such as page size, margins,
+orientation, headers, footers, borders and background.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Paragraph Style</b>
+</td>
+
+<td>
+Controls formatting of paragraphs such as alignment,
+line spacing, indentation, spacing and related settings.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Character Style</b>
+</td>
+
+<td>
+Controls formatting of selected characters or portions
+of text such as font, size, colour, bold and italic.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Frame Style</b>
+</td>
+
+<td>
+Used for formatting frames containing text, graphics
+or other objects.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>List Style</b>
+</td>
+
+<td>
+Controls formatting of numbered and bulleted lists.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Table Style</b>
+</td>
+
+<td>
+Controls formatting of tables, including borders,
+backgrounds, alignment and related table formatting.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>
+🧠 Six Categories — Must Remember
+</strong>
+
+<p>
+<b>
+Page • Paragraph • Character • Frame • List • Table
+</b>
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+⭐ VERY IMPORTANT FOR MCQs
+</div>
+
+<p>
+If a question asks which style categories are available in
+Writer, remember that <b>all six categories</b> are important:
+Page, Paragraph, Character, Frame, List and Table.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 5 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">05.</span>
+Page Style
+</div>
+
+
+<h3>Meaning</h3>
+
+<p>
+A <span class="highlight">Page Style</span> controls the layout
+and appearance of a page.
+</p>
+
+
+<h3>Important Page Style Properties</h3>
+
+<ul>
+
+<li>Page size</li>
+
+<li>Page orientation</li>
+
+<li>Margins</li>
+
+<li>Headers</li>
+
+<li>Footers</li>
+
+<li>Borders</li>
+
+<li>Background</li>
+
+</ul>
+
+
+<div class="important">
+
+<p>
+<b>Example:</b>
+</p>
+
+<p>
+If a document needs landscape orientation and specific page
+margins, these settings can be managed through the
+<b>Page Style</b>.
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM LINE
+</div>
+
+<p>
+<b>Page Style → Page Layout</b>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 6 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">06.</span>
+Paragraph Style
+</div>
+
+
+<h3>Meaning</h3>
+
+<p>
+A <span class="highlight">Paragraph Style</span> controls the
+formatting and appearance of a complete paragraph.
+</p>
+
+
+<h3>Important Properties</h3>
+
+<ul>
+
+<li>Text alignment</li>
+
+<li>Line spacing</li>
+
+<li>Indentation</li>
+
+<li>Spacing</li>
+
+<li>Tab stops</li>
+
+<li>Borders and related paragraph formatting</li>
+
+</ul>
+
+
+<div class="memory">
+
+<strong>🧠 Remember:</strong>
+
+<p>
+<b>
+Paragraph Style → Paragraph Formatting
+</b>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 7 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">07.</span>
+Character Style
+</div>
+
+
+<h3>Meaning</h3>
+
+<p>
+A <span class="highlight">Character Style</span> is used for
+formatting selected characters or a portion of text inside
+a paragraph.
+</p>
+
+
+<h3>Examples of Character Formatting</h3>
+
+<ul>
+
+<li>Font type</li>
+
+<li>Font size</li>
+
+<li>Bold</li>
+
+<li>Italic</li>
+
+<li>Underline</li>
+
+<li>Text colour</li>
+
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM DIFFERENCE
+</div>
+
+<p>
+<b>Paragraph Style</b> → complete paragraph
+</p>
+
+<p>
+<b>Character Style</b> → selected characters/text
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 8 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">08.</span>
+Frame, List and Table Styles
+</div>
+
+
+<h3>Frame Style</h3>
+
+<p>
+Frame Styles are used to format frames that may contain text,
+graphics or other objects.
+</p>
+
+
+<h3>List Style</h3>
+
+<p>
+List Styles are used for controlling the appearance and
+formatting of <span class="highlight">bulleted and numbered lists</span>.
+</p>
+
+
+<h3>Table Style</h3>
+
+<p>
+Table Styles are used to manage formatting related to tables.
+They can control features such as borders, background,
+alignment and other table formatting.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Style</th>
+<th>Quick Meaning</th>
+</tr>
+
+<tr>
+<td><b>Frame</b></td>
+<td>Frames and objects</td>
+</tr>
+
+<tr>
+<td><b>List</b></td>
+<td>Bullets and numbering</td>
+</tr>
+
+<tr>
+<td><b>Table</b></td>
+<td>Table formatting</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 9 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">09.</span>
+Applying Styles
+</div>
+
+
+<h3>How to Apply a Style?</h3>
+
+<p>
+An existing style can be applied to the required part of a
+document.
+</p>
+
+
+<ol>
+
+<li>
+Select the text or place the cursor in the required paragraph.
+</li>
+
+<li>
+Open the Styles interface.
+</li>
+
+<li>
+Select the required style category.
+</li>
+
+<li>
+Choose the desired style.
+</li>
+
+<li>
+The selected content gets the formatting defined by that style.
+</li>
+
+</ol>
+
+
+<div class="important">
+
+<p>
+<b>Important:</b>
+</p>
+
+<p>
+Applying a style does not mean manually setting every formatting
+property again. The properties already stored in the style are
+applied together.
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+⭐ EXAM FOCUS
+</div>
+
+<p>
+Styles are useful because one saved formatting scheme can be
+applied repeatedly to different parts of a document.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 10 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">10.</span>
+Fill Format Mode
+</div>
+
+
+<h3>What is Fill Format?</h3>
+
+<p>
+The <span class="highlight">Fill Format</span> feature allows
+a selected style to be applied quickly to multiple areas
+of a document.
+</p>
+
+
+<h3>Basic Steps</h3>
+
+<ol>
+
+<li>
+Open the Styles interface.
+</li>
+
+<li>
+Select the required style.
+</li>
+
+<li>
+Activate the <b>Fill Format</b> mode.
+</li>
+
+<li>
+Click or select the areas where the style needs to be applied.
+</li>
+
+<li>
+Repeat for the required areas.
+</li>
+
+<li>
+Turn off Fill Format mode after completing the task.
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+<strong>🧠 Easy Meaning:</strong>
+
+<p>
+<b>
+Fill Format = Apply the same style quickly at multiple places.
+</b>
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ PRACTICAL QUESTION
+</div>
+
+<p>
+If the same style has to be applied to many different areas
+of a document, <b>Fill Format</b> can save time.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 11 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">11.</span>
+Creating a New Style
+</div>
+
+
+<h3>Why Create a New Style?</h3>
+
+<p>
+Sometimes the existing styles do not provide the exact formatting
+required. In such a situation, a <span class="highlight">custom
+style</span> can be created.
+</p>
+
+
+<h3>Method 1 — From Selection</h3>
+
+<p>
+A new style can be created from text that has already been
+formatted according to the required design.
+</p>
+
+
+<ol>
+
+<li>
+Format a piece of text according to your requirement.
+</li>
+
+<li>
+Select the formatted text.
+</li>
+
+<li>
+Open the Styles interface.
+</li>
+
+<li>
+Choose the option to create a new style from the selection.
+</li>
+
+<li>
+Give the new style a suitable name.
+</li>
+
+<li>
+Save the style.
+</li>
+
+</ol>
+
+
+<div class="important">
+
+<p>
+<b>Example:</b>
+</p>
+
+<p>
+Suppose you create a special format for important definitions.
+Instead of recreating that format every time, save it as a style
+and reuse it.
+</p>
+
+</div>
+
+
+<h3>Method 2 — Drag and Drop</h3>
+
+<p>
+Another way to create a new style is by using the
+<b>drag-and-drop method</b>.
+</p>
+
+<ol>
+
+<li>
+Format the text according to your requirement.
+</li>
+
+<li>
+Select the formatted text.
+</li>
+
+<li>
+Drag the selected text into the Styles list/panel.
+</li>
+
+<li>
+A new style can be created from that formatting.
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+<strong>🧠 Two Creation Methods</strong>
+
+<p>
+<b>
+From Selection + Drag and Drop
+</b>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 12 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">12.</span>
+Updating a Style
+</div>
+
+
+<h3>Meaning of Updating a Style</h3>
+
+<p>
+A style can be updated when its formatting needs to be changed
+according to a new requirement.
+</p>
+
+<p>
+For example, if the font or colour of a particular style needs
+to change, the style can be updated rather than manually changing
+each occurrence.
+</p>
+
+
+<h3>Why is Updating Useful?</h3>
+
+<ul>
+
+<li>
+It saves time.
+</li>
+
+<li>
+It maintains consistency.
+</li>
+
+<li>
+Changes to the style can affect the content using that style.
+</li>
+
+<li>
+It avoids repeated manual formatting.
+</li>
+
+</ul>
+
+
+<div class="important">
+
+<p>
+<b>Remember:</b>
+</p>
+
+<p>
+If many headings use the same style and that style is updated,
+the formatting can be changed consistently instead of editing
+each heading separately.
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+⭐ EXAM POINT
+</div>
+
+<p>
+<b>
+Updating a style is useful for making consistent formatting
+changes throughout a document.
+</b>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 13 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">13.</span>
+Loading Styles
+</div>
+
+
+<h3>Loading a Style from a Template or Document</h3>
+
+<p>
+Writer allows styles to be loaded from an existing
+<b>template or another document</b>.
+</p>
+
+<p>
+This is useful when a particular formatting scheme has already
+been created and needs to be reused in another document.
+</p>
+
+
+<h3>Why Load Styles?</h3>
+
+<ul>
+
+<li>
+Avoid creating the same styles repeatedly.
+</li>
+
+<li>
+Reuse an existing formatting design.
+</li>
+
+<li>
+Maintain consistency between related documents.
+</li>
+
+<li>
+Save time while preparing documents.
+</li>
+
+</ul>
+
+
+<div class="memory">
+
+<strong>🧠 Remember:</strong>
+
+<p>
+<b>
+Existing document/template → Load Styles → Reuse formatting
+</b>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 14 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">14.</span>
+Important Differences
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Concept</th>
+<th>Difference / Meaning</th>
+</tr>
+
+<tr>
+<td><b>Manual Formatting</b></td>
+<td>
+Formatting is directly applied to selected content.
+</td>
+</tr>
+
+<tr>
+<td><b>Style</b></td>
+<td>
+A saved collection of formatting information that can be reused.
+</td>
+</tr>
+
+<tr>
+<td><b>Page Style</b></td>
+<td>
+Controls page layout and page-level properties.
+</td>
+</tr>
+
+<tr>
+<td><b>Paragraph Style</b></td>
+<td>
+Controls formatting of a complete paragraph.
+</td>
+</tr>
+
+<tr>
+<td><b>Character Style</b></td>
+<td>
+Controls selected characters or text.
+</td>
+</tr>
+
+<tr>
+<td><b>Frame Style</b></td>
+<td>
+Controls formatting of frames.
+</td>
+</tr>
+
+<tr>
+<td><b>List Style</b></td>
+<td>
+Controls numbered and bulleted lists.
+</td>
+</tr>
+
+<tr>
+<td><b>Table Style</b></td>
+<td>
+Controls table formatting.
+</td>
+</tr>
+
+<tr>
+<td><b>Fill Format</b></td>
+<td>
+Quickly applies a selected style to multiple areas.
+</td>
+</tr>
+
+<tr>
+<td><b>Update Style</b></td>
+<td>
+Updates an existing style with changed formatting.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 15 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">15.</span>
+CBSE Exam Points
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+🔥 MUST LEARN
+</div>
+
+<ul>
+
+<li>
+A style is a collection of formatting information.
+</li>
+
+<li>
+Styles help maintain consistency.
+</li>
+
+<li>
+Styles save time and effort.
+</li>
+
+<li>
+The Styles interface is used to manage styles.
+</li>
+
+<li>
+<b>F11</b> is an important shortcut for opening Styles.
+</li>
+
+<li>
+There are six important categories:
+<b>Page, Paragraph, Character, Frame, List and Table.</b>
+</li>
+
+<li>
+Page Style controls page-level formatting.
+</li>
+
+<li>
+Paragraph Style controls paragraph formatting.
+</li>
+
+<li>
+Character Style controls selected text/characters.
+</li>
+
+<li>
+List Style is related to bullets and numbering.
+</li>
+
+<li>
+Fill Format helps apply a style quickly to multiple areas.
+</li>
+
+<li>
+A new style can be created using the
+<b>From Selection</b> method.
+</li>
+
+<li>
+A new style can also be created using
+<b>Drag and Drop</b>.
+</li>
+
+<li>
+Existing styles can be updated.
+</li>
+
+<li>
+Styles can be loaded from a template or another document.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- QUICK REVISION -->
+<!-- ===================================================== -->
+
+<section class="quick">
+
+<h3>
+⚡ CHAPTER 1 — LAST MINUTE REVISION
+</h3>
+
+
+<ul>
+
+<li>
+<b>Style</b> = Collection of saved formatting information.
+</li>
+
+<li>
+Main benefit = <b>Consistency + Time Saving + Easy Modification</b>.
+</li>
+
+<li>
+Open Styles = <b>F11</b>.
+</li>
+
+<li>
+Six categories =
+<b>Page, Paragraph, Character, Frame, List, Table.</b>
+</li>
+
+<li>
+<b>Page</b> → Page layout.
+</li>
+
+<li>
+<b>Paragraph</b> → Paragraph formatting.
+</li>
+
+<li>
+<b>Character</b> → Selected characters/text.
+</li>
+
+<li>
+<b>Frame</b> → Frames.
+</li>
+
+<li>
+<b>List</b> → Bullets and numbering.
+</li>
+
+<li>
+<b>Table</b> → Table formatting.
+</li>
+
+<li>
+<b>Fill Format</b> → Apply one style to multiple areas quickly.
+</li>
+
+<li>
+New style methods →
+<b>From Selection + Drag and Drop.</b>
+</li>
+
+<li>
+Styles can be <b>applied, modified and updated</b>.
+</li>
+
+<li>
+Styles can be loaded from a
+<b>template or another document</b>.
+</li>
+
+</ul>
+
+
+<div class="memory">
+
+<strong>🧠 10-Second Recall</strong>
+
+<p>
+<b>
+STYLE → CATEGORIES → APPLY → FILL → CREATE → UPDATE → LOAD
+</b>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<div class="footer">
+
+    THE GOAL • CBSE Class 10 IT (402)
+    • Part B • Unit 1 • Chapter 1
+
+    <br>
+
+    Digital Documentation (Advanced)
+
+    <br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</div>
+
+
+</main>
+
+</body>
+</html>
