@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -312,19 +313,24 @@ main{
 
 /* ================= PART B ================= */
 
-.coming-card{
+.part-b-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.part-b-card{
     background:
         linear-gradient(135deg,#ffffff,#f8f7ff);
     border:1px solid var(--border);
     border-radius:25px;
-    padding:45px 25px;
-    text-align:center;
+    padding:30px;
     box-shadow:0 12px 35px rgba(15,23,42,.06);
     position:relative;
     overflow:hidden;
 }
 
-.coming-card::before{
+.part-b-card::before{
     content:"";
     position:absolute;
     width:220px;
@@ -333,43 +339,172 @@ main{
     background:#eef2ff;
     top:-120px;
     right:-80px;
+    pointer-events:none;
 }
 
-.coming-icon{
-    width:70px;
-    height:70px;
-    border-radius:22px;
+.part-b-header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-bottom:25px;
+    position:relative;
+    z-index:1;
+}
+
+.part-b-icon{
+    width:62px;
+    height:62px;
+    border-radius:18px;
     background:var(--soft);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:34px;
-    margin:0 auto 18px;
+    font-size:29px;
+    flex-shrink:0;
 }
 
-.coming-card h3{
-    font-size:28px;
+.part-b-heading{
+    flex:1;
+}
+
+.part-b-heading h3{
+    font-size:25px;
+    line-height:1.35;
+}
+
+.part-b-heading p{
+    color:var(--muted);
+    font-size:14px;
+    margin-top:6px;
+    line-height:1.6;
+}
+
+.live-badge{
+    display:inline-block;
+    background:#dcfce7;
+    color:#15803d;
+    padding:7px 13px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:900;
+    margin-bottom:9px;
+}
+
+.soon-badge{
+    display:inline-block;
+    background:#fef3c7;
+    color:#b45309;
+    padding:7px 13px;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:900;
+    margin-bottom:9px;
+}
+
+/* ================= CHAPTER GRID ================= */
+
+.chapter-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    position:relative;
+    z-index:1;
+}
+
+.chapter-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px 18px;
+    transition:.25s ease;
+}
+
+.chapter-card:hover{
+    transform:translateY(-6px);
+    border-color:#a5b4fc;
+    box-shadow:0 12px 28px rgba(79,70,229,.12);
+}
+
+.chapter-number{
+    font-size:11px;
+    color:var(--primary);
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.chapter-icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:var(--soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    margin-bottom:13px;
+}
+
+.chapter-card h4{
+    font-size:16px;
+    line-height:1.45;
+    min-height:47px;
     margin-bottom:8px;
 }
 
-.coming-card .soon{
-    display:inline-block;
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
-    color:white;
-    padding:8px 17px;
-    border-radius:30px;
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:.5px;
+.chapter-info{
+    color:var(--muted);
+    font-size:11px;
     margin-bottom:15px;
+    line-height:1.5;
 }
 
-.coming-card p{
-    max-width:600px;
-    margin:auto;
+.chapter-btn{
+    display:block;
+    text-decoration:none;
+    text-align:center;
+    color:white;
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    padding:11px;
+    border-radius:10px;
+    font-size:12px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.chapter-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(79,70,229,.25);
+}
+
+.coming-btn{
+    display:block;
+    text-decoration:none;
+    text-align:center;
+    color:#92400e;
+    background:#fffbeb;
+    border:1px solid #fde68a;
+    padding:11px;
+    border-radius:10px;
+    font-size:12px;
+    font-weight:800;
+    cursor:default;
+}
+
+/* ================= PART B NOTE ================= */
+
+.part-b-note{
+    margin-top:22px;
+    padding:14px 17px;
+    border-radius:15px;
+    background:#f8fafc;
+    border:1px solid var(--border);
     color:var(--muted);
-    line-height:1.7;
-    font-size:14px;
+    text-align:center;
+    font-size:12px;
+    line-height:1.6;
+    position:relative;
+    z-index:1;
 }
 
 /* ================= PYQ SECTION ================= */
@@ -429,8 +564,6 @@ main{
     border-color:#a5b4fc;
     box-shadow:0 12px 28px rgba(79,70,229,.12);
 }
-
-/* ================= CBSE LOGO INSIDE PYQ CARD ================= */
 
 .pyq-logo{
     width:55px;
@@ -530,6 +663,10 @@ footer strong{
         grid-template-columns:repeat(3,1fr);
     }
 
+    .chapter-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
     .pyq-grid{
         grid-template-columns:repeat(3,1fr);
     }
@@ -547,12 +684,17 @@ footer strong{
     }
 
     .part-card,
+    .part-b-card,
     .pyq-card{
         padding:22px;
     }
 
     .part-header{
         display:block;
+    }
+
+    .part-b-header{
+        align-items:flex-start;
     }
 
     .part-badge{
@@ -564,12 +706,12 @@ footer strong{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .pyq-grid{
+    .chapter-grid{
         grid-template-columns:1fr;
     }
 
-    .pyq-header{
-        align-items:flex-start;
+    .pyq-grid{
+        grid-template-columns:1fr;
     }
 
 }
@@ -607,6 +749,16 @@ footer strong{
 
     .unit h4{
         min-height:auto;
+    }
+
+    .part-b-header{
+        flex-direction:column;
+        text-align:center;
+        align-items:center;
+    }
+
+    .part-b-heading h3{
+        font-size:22px;
     }
 
     .pyq-header{
@@ -650,7 +802,6 @@ CBSE CLASS 10
 
 </nav>
 
-
 <div class="hero">
 
 <div class="hero-label">
@@ -668,7 +819,8 @@ Learn • Practice • Improve • Achieve
 <p>
 Complete exam-oriented preparation for CBSE Class 10
 Information Technology. Choose Part A for Employability
-Skills practice or explore Part B when it becomes available.
+Skills practice or explore Part B for subject-specific
+skills and chapter-wise preparation.
 </p>
 
 </div>
@@ -728,7 +880,7 @@ Employability Skills • 5 Units • 250 MCQs
 <div class="unit-grid">
 
 
-<!-- ================= UNIT 1 ================= -->
+<!-- UNIT 1 -->
 
 <div class="unit">
 
@@ -759,7 +911,7 @@ VIEW NOTES →
 </div>
 
 
-<!-- ================= UNIT 2 ================= -->
+<!-- UNIT 2 -->
 
 <div class="unit">
 
@@ -790,7 +942,7 @@ VIEW NOTES →
 </div>
 
 
-<!-- ================= UNIT 3 ================= -->
+<!-- UNIT 3 -->
 
 <div class="unit">
 
@@ -821,7 +973,7 @@ VIEW NOTES →
 </div>
 
 
-<!-- ================= UNIT 4 ================= -->
+<!-- UNIT 4 -->
 
 <div class="unit">
 
@@ -852,7 +1004,7 @@ VIEW NOTES →
 </div>
 
 
-<!-- ================= UNIT 5 ================= -->
+<!-- UNIT 5 -->
 
 <div class="unit">
 
@@ -901,31 +1053,598 @@ and explanations for better revision.
 <h2>💻 Part B — Subject Specific Skills</h2>
 
 <p>
-Practical and subject-specific IT preparation.
+Complete chapter-wise preparation for all four units.
 </p>
 
 </div>
 
 
-<section class="coming-card">
+<div class="part-b-wrapper">
 
-<div class="coming-icon">
-🚧
+
+<!-- ========================================================= -->
+<!-- UNIT 1 -->
+<!-- ========================================================= -->
+
+<section class="part-b-card">
+
+<div class="part-b-header">
+
+<div class="part-b-icon">
+📝
 </div>
 
-<div class="soon">
+<div class="part-b-heading">
+
+<div class="soon-badge">
 COMING SOON
 </div>
 
 <h3>
-Part B is Under Preparation
+Unit 1 — Digital Documentation (Advanced) using LibreOffice Writer
 </h3>
 
 <p>
-Stay tuned — new tests and resources will be added soon.
+3 Chapters • Chapter-wise Notes & Exam-Oriented Preparation
 </p>
 
+</div>
+
+</div>
+
+
+<div class="chapter-grid">
+
+
+<!-- CHAPTER 1 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 01
+</div>
+
+<div class="chapter-icon">
+🎨
+</div>
+
+<h4>
+Introduction to Styles
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 1<br>
+Digital Documentation
+</div>
+
+<div class="coming-btn">
+COMING SOON
+</div>
+
+</div>
+
+
+<!-- CHAPTER 2 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 02
+</div>
+
+<div class="chapter-icon">
+🖼️
+</div>
+
+<h4>
+Working with Images
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 1<br>
+Digital Documentation
+</div>
+
+<div class="coming-btn">
+COMING SOON
+</div>
+
+</div>
+
+
+<!-- CHAPTER 3 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 03
+</div>
+
+<div class="chapter-icon">
+⚙️
+</div>
+
+<h4>
+Advanced Features of Writer
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 1<br>
+Digital Documentation
+</div>
+
+<div class="coming-btn">
+COMING SOON
+</div>
+
+</div>
+
+
+</div>
+
 </section>
+
+
+<!-- ========================================================= -->
+<!-- UNIT 2 -->
+<!-- ========================================================= -->
+
+<section class="part-b-card">
+
+<div class="part-b-header">
+
+<div class="part-b-icon">
+📊
+</div>
+
+<div class="part-b-heading">
+
+<div class="soon-badge">
+COMING SOON
+</div>
+
+<h3>
+Unit 2 — Electronic Spreadsheet (Advanced) using LibreOffice Calc
+</h3>
+
+<p>
+4 Chapters • Chapter-wise Notes & Exam-Oriented Preparation
+</p>
+
+</div>
+
+</div>
+
+
+<div class="chapter-grid">
+
+
+<!-- CHAPTER 4 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 04
+</div>
+
+<div class="chapter-icon">
+🎯
+</div>
+
+<h4>
+Analyse Data using Scenarios and Goal Seek
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 2<br>
+Electronic Spreadsheet
+</div>
+
+<div class="coming-btn">
+COMING SOON
+</div>
+
+</div>
+
+
+<!-- CHAPTER 5 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 05
+</div>
+
+<div class="chapter-icon">
+⚡
+</div>
+
+<h4>
+Using Macros in Spreadsheet
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 2<br>
+Electronic Spreadsheet
+</div>
+
+<div class="coming-btn">
+COMING SOON
+</div>
+
+</div>
+
+
+<!-- CHAPTER 6 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 06
+</div>
+
+<div class="chapter-icon">
+🔗
+</div>
+
+<h4>
+Linking Spreadsheet Data
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 2<br>
+Electronic Spreadsheet
+</div>
+
+<div class="coming-btn">
+COMING SOON
+</div>
+
+</div>
+
+
+<!-- CHAPTER 7 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 07
+</div>
+
+<div class="chapter-icon">
+🤝
+</div>
+
+<h4>
+Share and Review a Spreadsheet
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 2<br>
+Electronic Spreadsheet
+</div>
+
+<div class="coming-btn">
+COMING SOON
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- UNIT 3 -->
+<!-- ========================================================= -->
+
+<section class="part-b-card">
+
+<div class="part-b-header">
+
+<div class="part-b-icon">
+🗄️
+</div>
+
+<div class="part-b-heading">
+
+<div class="live-badge">
+● AVAILABLE NOW
+</div>
+
+<h3>
+Unit 3 — Database Management System using LibreOffice Base
+</h3>
+
+<p>
+5 Chapters • Chapter-wise Notes & Exam-Oriented Preparation
+</p>
+
+</div>
+
+</div>
+
+
+<div class="chapter-grid">
+
+
+<!-- CHAPTER 8 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 08
+</div>
+
+<div class="chapter-icon">
+🗃️
+</div>
+
+<h4>
+Introduction to Database Management System
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 3<br>
+Database Management System
+</div>
+
+<a class="chapter-btn" href="part-b-chapter-8.html">
+VIEW NOTES →
+</a>
+
+</div>
+
+
+<!-- CHAPTER 9 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 09
+</div>
+
+<div class="chapter-icon">
+💾
+</div>
+
+<h4>
+Starting with LibreOffice Base
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 3<br>
+Database Management System
+</div>
+
+<a class="chapter-btn" href="part-b-chapter-9.html">
+VIEW NOTES →
+</a>
+
+</div>
+
+
+<!-- CHAPTER 10 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 10
+</div>
+
+<div class="chapter-icon">
+🔗
+</div>
+
+<h4>
+Working with Multiple Tables
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 3<br>
+Database Management System
+</div>
+
+<a class="chapter-btn" href="part-b-chapter-10.html">
+VIEW NOTES →
+</a>
+
+</div>
+
+
+<!-- CHAPTER 11 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 11
+</div>
+
+<div class="chapter-icon">
+🔎
+</div>
+
+<h4>
+Queries in Base
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 3<br>
+Database Management System
+</div>
+
+<a class="chapter-btn" href="part-b-chapter-11.html">
+VIEW NOTES →
+</a>
+
+</div>
+
+
+<!-- CHAPTER 12 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 12
+</div>
+
+<div class="chapter-icon">
+📋
+</div>
+
+<h4>
+Forms and Reports
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 3<br>
+Database Management System
+</div>
+
+<a class="chapter-btn" href="part-b-chapter-12.html">
+VIEW NOTES →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- UNIT 4 -->
+<!-- ========================================================= -->
+
+<section class="part-b-card">
+
+<div class="part-b-header">
+
+<div class="part-b-icon">
+🛡️
+</div>
+
+<div class="part-b-heading">
+
+<div class="live-badge">
+● AVAILABLE NOW
+</div>
+
+<h3>
+Unit 4 — Maintain Healthy, Safe and Secure Working Environment
+</h3>
+
+<p>
+3 Chapters • Chapter-wise Notes & Exam-Oriented Preparation
+</p>
+
+</div>
+
+</div>
+
+
+<div class="chapter-grid">
+
+
+<!-- CHAPTER 13 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 13
+</div>
+
+<div class="chapter-icon">
+🏥
+</div>
+
+<h4>
+Health, Safety and Security at Workplace
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 4<br>
+Healthy, Safe & Secure Workplace
+</div>
+
+<a class="chapter-btn" href="part-b-chapter-13.html">
+VIEW NOTES →
+</a>
+
+</div>
+
+
+<!-- CHAPTER 14 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 14
+</div>
+
+<div class="chapter-icon">
+✅
+</div>
+
+<h4>
+Workplace Quality Measures
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 4<br>
+Healthy, Safe & Secure Workplace
+</div>
+
+<a class="chapter-btn" href="part-b-chapter-14.html">
+VIEW NOTES →
+</a>
+
+</div>
+
+
+<!-- CHAPTER 15 -->
+
+<div class="chapter-card">
+
+<div class="chapter-number">
+CHAPTER 15
+</div>
+
+<div class="chapter-icon">
+🚨
+</div>
+
+<h4>
+Prevent Accidents and Emergencies
+</h4>
+
+<div class="chapter-info">
+Part B • Unit 4<br>
+Healthy, Safe & Secure Workplace
+</div>
+
+<a class="chapter-btn" href="part-b-chapter-15.html">
+VIEW NOTES →
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="part-b-note">
+📚 Part B covers <b>4 Units and 15 Chapters</b> for CBSE Class 10
+Information Technology (402). Units 3 and 4 are currently available.
+</div>
+
+</section>
+
+
+</div>
 
 
 <!-- ================= PYQ SECTION ================= -->
@@ -969,7 +1688,7 @@ Practice previous year question papers and understand the actual CBSE exam patte
 <div class="pyq-grid">
 
 
-<!-- ================= 2026 ================= -->
+<!-- 2026 -->
 
 <div class="pyq-item">
 
@@ -1003,7 +1722,7 @@ DOWNLOAD →
 </div>
 
 
-<!-- ================= 2025 ================= -->
+<!-- 2025 -->
 
 <div class="pyq-item">
 
@@ -1037,7 +1756,7 @@ DOWNLOAD →
 </div>
 
 
-<!-- ================= 2024 ================= -->
+<!-- 2024 -->
 
 <div class="pyq-item">
 
