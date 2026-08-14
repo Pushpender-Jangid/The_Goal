@@ -1,0 +1,2420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Chapter 8 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ---------- TOP BRAND ---------- */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    margin-top:4px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.85;
+}
+
+/* ---------- NOTEBOOK ---------- */
+
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #fffdf4 0px,
+        #fffdf4 31px,
+        #a9c8e7 32px
+    );
+
+    position:relative;
+
+    padding:35px 45px 70px 90px;
+
+    box-shadow:
+    0 5px 12px rgba(0,0,0,.18),
+    0 25px 55px rgba(0,0,0,.12);
+
+    min-height:100vh;
+}
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:62px;
+    width:2px;
+    background:#e28c8c;
+}
+
+/* ---------- COVER ---------- */
+
+.cover{
+    padding:12px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover .small{
+    font-size:17px;
+    color:#555;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:50px;
+    color:#183f72;
+    line-height:1;
+    margin:8px 0;
+}
+
+.cover .intro{
+    font-size:19px;
+    max-width:820px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:4px 12px;
+    border:2px solid #555;
+    transform:rotate(-1deg);
+    background:#fff2a8;
+    font-size:16px;
+}
+
+.source-note{
+    font-size:15px;
+    color:#555;
+    margin-top:12px;
+}
+
+/* ---------- SESSION ---------- */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    transform:rotate(-1deg);
+    margin-bottom:15px;
+}
+
+.session-number{
+    color:#b32d2d;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#222;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    margin:14px 0 4px;
+    color:#254d75;
+}
+
+p,li{
+    font-size:18px;
+}
+
+ul,ol{
+    margin:5px 0 12px 25px;
+}
+
+li{
+    margin:4px 0;
+}
+
+.highlight{
+    background:
+    linear-gradient(
+        transparent 25%,
+        rgba(255,226,86,.72) 25%,
+        rgba(255,226,86,.72) 82%,
+        transparent 82%
+    );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b42d2d;
+    font-weight:bold;
+}
+
+/* ---------- BOXES ---------- */
+
+.important{
+    margin:18px 0;
+    padding:14px 18px;
+    background:rgba(255,242,164,.65);
+    border:2px solid #5f5a43;
+    border-radius:3px;
+    transform:rotate(-.35deg);
+    position:relative;
+}
+
+.important:before{
+    content:"★ IMPORTANT";
+    position:absolute;
+    top:-15px;
+    left:12px;
+    background:#fff4a7;
+    padding:0 7px;
+    font-family:"Caveat",cursive;
+    font-size:17px;
+    color:#9c2929;
+}
+
+.exam{
+    margin:18px 0;
+    padding:13px 17px;
+    border-left:5px solid #c13c3c;
+    background:rgba(255,255,255,.52);
+}
+
+.exam-title{
+    color:#b52c2c;
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:12px 17px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.52);
+}
+
+.memory strong{
+    color:#214d75;
+    font-size:21px;
+}
+
+/* ---------- TABLE ---------- */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.48);
+}
+
+th,td{
+    border:1.5px solid #555;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ---------- FLOW ---------- */
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:20px 0;
+}
+
+.flow span{
+    padding:9px 14px;
+    border:2px solid #555;
+    background:rgba(255,242,164,.75);
+    font-size:18px;
+    transform:rotate(-1deg);
+}
+
+.arrow{
+    font-size:25px;
+    color:#9d3030;
+}
+
+/* ---------- QUICK ---------- */
+
+.quick{
+    border:3px solid #444;
+    padding:18px;
+    margin-top:30px;
+    background:rgba(255,255,255,.5);
+    transform:rotate(.2deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+    margin:25px 0;
+    letter-spacing:5px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    margin-top:45px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+
+    .notebook{
+        width:100%;
+        padding:28px 20px 60px 58px;
+        margin:0;
+    }
+
+    .notebook:before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .cover h2{
+        font-size:40px;
+    }
+
+    .session-title{
+        font-size:29px;
+    }
+
+    p,li{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+    }
+
+    .flow{
+        flex-direction:column;
+    }
+
+    .arrow{
+        transform:rotate(90deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • IT 402
+    </div>
+
+    <h1>
+        Part B — Database Management System using LibreOffice Base
+    </h1>
+
+    <p>
+        Unit 3 • Chapter 8 • Introduction to Database Management System
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ===================================================== -->
+<!-- COVER -->
+<!-- ===================================================== -->
+
+<section class="cover">
+
+    <div class="small">
+        📖 CHAPTER 8 • SOURCE-BASED EXAM NOTES
+    </div>
+
+    <h2>
+        Introduction to Database Management System
+    </h2>
+
+    <p class="intro">
+
+        Complete exam-oriented revision notes for CBSE Class 10
+        Information Technology (402), prepared by matching the
+        uploaded NCERT
+        <b>Domestic Data Entry Operator — Class X (2023–24)</b>
+        textbook.
+
+    </p>
+
+    <span class="tag">
+        ✍️ Read • Revise • Recall
+    </span>
+
+    <p class="source-note">
+
+        <b>Source check:</b>
+        Chapter 8 is part of Unit 3 —
+        <b>Database Management System using LibreOffice Base</b>.
+        The chapter introduces databases, DBMS, data models,
+        relational database terminology and RDBMS objects.
+
+    </p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 01 DATA AND INFORMATION -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">01.</span>
+    Data and Information
+</div>
+
+
+<h3>What is Data?</h3>
+
+<p>
+
+<b>Data</b> refers to
+<span class="highlight">raw facts</span>.
+
+These facts may be related to a person, place, activity
+or thing.
+
+</p>
+
+<p>
+
+Data can be stored in different forms such as
+<span class="highlight">text, graphics, audio and video</span>.
+
+</p>
+
+
+<h3>Examples of Data</h3>
+
+<ul>
+
+<li>Marks scored by students</li>
+<li>Weight of a person</li>
+<li>Price of a product</li>
+<li>Number of items sold</li>
+<li>Name of an employee</li>
+<li>Name of a product</li>
+<li>Address</li>
+<li>Tax code</li>
+
+</ul>
+
+
+<h3>What is Information?</h3>
+
+<p>
+
+<b>Information</b> is the
+<span class="highlight">processed or organised form of data</span>.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Example</h3>
+
+<p>
+
+Marks obtained by students and their roll numbers are
+<b>data</b>.
+
+When these values are organised into a report card or sheet,
+they become <b>information</b>.
+
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Data → Raw facts</b>
+
+<br>
+
+<b>Information → Processed / organised data</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 02 DATABASE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">02.</span>
+    Database
+</div>
+
+
+<h3>Definition of Database</h3>
+
+<p>
+
+A <b>database</b> is a
+<span class="highlight">
+collection of logically related data items
+</span>
+stored in an organised manner.
+
+</p>
+
+
+<h3>Examples of Databases</h3>
+
+<ul>
+
+<li>Railway ticket booking system</li>
+
+<li>Library records</li>
+
+<li>Salary details</li>
+
+<li>ATM transaction records</li>
+
+</ul>
+
+
+<p>
+
+A database can contain different types of data such as
+<span class="highlight">text, images, audio and video</span>.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Remember</strong>
+
+<p>
+
+<b>Database = Collection of logically related data items
+stored in an organised manner.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 03 DBMS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">03.</span>
+    Database Management System
+</div>
+
+
+<h3>What is DBMS?</h3>
+
+<p>
+
+<b>DBMS</b> stands for
+<span class="highlight">Database Management System</span>.
+
+</p>
+
+<p>
+
+A DBMS is software used to
+<span class="highlight">
+create, update and retrieve data
+</span>
+from a database.
+
+</p>
+
+
+<h3>Examples of DBMS</h3>
+
+<ul>
+
+<li>MS Access</li>
+<li>OpenOffice Base</li>
+<li>LibreOffice Base</li>
+<li>Oracle</li>
+<li>Ingres</li>
+<li>MySQL</li>
+
+</ul>
+
+
+<div class="important">
+
+<h3>🎯 Full Form — Must Remember</h3>
+
+<p>
+
+<b>DBMS = Database Management System</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 04 DATA MODEL -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">04.</span>
+    Data Model
+</div>
+
+
+<h3>Definition</h3>
+
+<p>
+
+A <b>Data Model</b> is the
+<span class="highlight">structure of a database</span>.
+
+It describes the manner in which data will be
+<span class="highlight">stored and retrieved</span>.
+
+</p>
+
+
+<h3>Types of Data Models</h3>
+
+<ol>
+
+<li>Hierarchical Data Model</li>
+
+<li>Network Data Model</li>
+
+<li>Relational Data Model</li>
+
+</ol>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Data Model</th>
+
+<th>Main Feature</th>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Hierarchical</b>
+</td>
+
+<td>
+Data is organised in a tree-like structure.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Network</b>
+</td>
+
+<td>
+Multiple records are linked to the same master file.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Relational</b>
+</td>
+
+<td>
+Relationships are established between two or more tables.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 05 HIERARCHICAL -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">05.</span>
+    Hierarchical Data Model
+</div>
+
+
+<p>
+
+In the <b>Hierarchical Data Model</b>, data is organised
+into a
+<span class="highlight">tree-like structure</span>.
+
+</p>
+
+<p>
+
+The data is stored in the form of
+<span class="highlight">linked records</span>.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Hierarchical Data Model → Tree-like structure</b>
+
+<br>
+
+<b>Data → Linked records</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 06 NETWORK -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">06.</span>
+    Network Data Model
+</div>
+
+
+<p>
+
+In the <b>Network Data Model</b>, multiple records are linked
+to the same
+<span class="highlight">master file</span>.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Easy Recall</strong>
+
+<p>
+
+<b>Network → Multiple records → Same master file</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 07 RELATIONAL -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">07.</span>
+    Relational Data Model
+</div>
+
+
+<p>
+
+The <b>Relational Data Model</b> is based on the principle
+of setting relationships between
+<span class="highlight">
+two or more tables
+</span>
+of the same database.
+
+</p>
+
+<p>
+
+Data in a relational database is organised into
+<span class="highlight">tables</span> containing
+rows and columns.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Exam Definition</h3>
+
+<p>
+
+<b>
+
+Relational Data Model is based on setting relationships
+between two or more tables of the same database.
+
+</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 08 RDBMS TERMINOLOGY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">08.</span>
+    Relational Database Terminology
+</div>
+
+
+<p>
+
+The relational database model uses several important terms
+which are very important for examination.
+
+</p>
+
+
+<div class="flow">
+
+<span>Entity</span>
+
+<div class="arrow">→</div>
+
+<span>Attribute</span>
+
+<div class="arrow">→</div>
+
+<span>Table</span>
+
+<div class="arrow">→</div>
+
+<span>Field</span>
+
+<div class="arrow">→</div>
+
+<span>Record</span>
+
+</div>
+
+
+<p>
+
+Other important terms include:
+
+</p>
+
+<ul>
+
+<li>Data Value</li>
+
+<li>Primary Key</li>
+
+<li>Foreign Key</li>
+
+<li>Candidate Key</li>
+
+<li>Alternate Key</li>
+
+</ul>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 09 ENTITY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">09.</span>
+    Entity
+</div>
+
+
+<h3>Definition</h3>
+
+<p>
+
+An <b>Entity</b> is a
+<span class="highlight">
+real-world object
+</span>
+about which information is to be stored in a database.
+
+</p>
+
+
+<h3>Examples</h3>
+
+<ul>
+
+<li>Student</li>
+
+<li>Employee</li>
+
+<li>Customer</li>
+
+<li>Product</li>
+
+<li>Book</li>
+
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Entity → Real-world object about which information is stored.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 10 ATTRIBUTE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">10.</span>
+    Attribute
+</div>
+
+
+<p>
+
+The details associated with an entity are called
+<span class="highlight"><b>attributes</b></span>.
+
+</p>
+
+
+<h3>Example</h3>
+
+<p>
+
+For a <b>Student</b> entity, possible attributes may include:
+
+</p>
+
+<ul>
+
+<li>Name</li>
+
+<li>Roll Number</li>
+
+<li>Class</li>
+
+<li>Address</li>
+
+</ul>
+
+
+<div class="memory">
+
+<strong>🧠 Remember</strong>
+
+<p>
+
+<b>Entity = Object</b>
+
+<br>
+
+<b>Attribute = Details of the object</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 11 TABLE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">11.</span>
+    Table
+</div>
+
+
+<p>
+
+A <b>table</b> is a
+<span class="highlight">
+collection of logically related records
+</span>.
+
+</p>
+
+<p>
+
+A table is organised as a set of
+<span class="highlight">columns</span>
+and can contain
+<span class="highlight">rows</span>.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Roll No.</th>
+
+<th>Name</th>
+
+<th>Class</th>
+
+</tr>
+
+<tr>
+
+<td>101</td>
+
+<td>Rahul</td>
+
+<td>X</td>
+
+</tr>
+
+<tr>
+
+<td>102</td>
+
+<td>Priya</td>
+
+<td>X</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<p>
+
+In the above example, the complete table contains
+logically related student records.
+
+</p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 12 FIELD -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">12.</span>
+    Field
+</div>
+
+
+<p>
+
+A <b>field</b> is the
+<span class="highlight">
+smallest entity in the database
+</span>.
+
+</p>
+
+<p>
+
+Fields represent individual record characteristics and are
+presented as
+<span class="highlight">columns</span>
+within a table.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Field → Column of a table</b>
+
+<br>
+
+<b>Field → Smallest entity in the database</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 13 DATA VALUE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">13.</span>
+    Data Value
+</div>
+
+
+<p>
+
+Data values are the raw data represented in
+<span class="highlight">
+numeric, character or alphanumeric
+</span>
+form.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Data Value Forms</strong>
+
+<p>
+
+Numeric • Character • Alphanumeric
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 14 RECORD -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">14.</span>
+    Record
+</div>
+
+
+<p>
+
+The data values for all the fields related to a person
+or object are called a
+<span class="highlight"><b>record</b></span>.
+
+</p>
+
+<p>
+
+A record is presented as a
+<span class="highlight">row</span>
+within a table.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Roll No.</th>
+
+<th>Name</th>
+
+<th>Class</th>
+
+</tr>
+
+<tr>
+
+<td>101</td>
+
+<td>Rahul</td>
+
+<td>X</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<p>
+
+The complete row containing Roll No., Name and Class
+represents one <b>record</b>.
+
+</p>
+
+
+<div class="important">
+
+<h3>🔥 Field vs Record</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Field</th>
+
+<th>Record</th>
+
+</tr>
+
+<tr>
+
+<td>Presented as a column</td>
+
+<td>Presented as a row</td>
+
+</tr>
+
+<tr>
+
+<td>Smallest entity in database</td>
+
+<td>Collection of data values for all fields</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 15 PRIMARY KEY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">15.</span>
+    Primary Key
+</div>
+
+
+<p>
+
+A <b>Primary Key</b> is a field that
+<span class="highlight">
+uniquely identifies a row
+</span>
+in a table.
+
+</p>
+
+
+<h3>Example</h3>
+
+<p>
+
+If every student has a unique Roll Number, then
+<b>Roll Number</b> can be used as the Primary Key.
+
+</p>
+
+
+<div class="important">
+
+<h3>⭐ Must Remember</h3>
+
+<p>
+
+<b>Primary Key → Uniquely identifies a row.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 16 FOREIGN KEY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">16.</span>
+    Foreign Key
+</div>
+
+
+<p>
+
+A <b>Foreign Key</b> helps to build a
+<span class="highlight">
+relation between two or more tables
+</span>
+in a database.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Foreign Key → Helps establish relation between tables.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 17 CANDIDATE KEY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">17.</span>
+    Candidate Key
+</div>
+
+
+<p>
+
+All the field values that are eligible to be the
+<span class="highlight">Primary Key</span>
+are called
+<b>Candidate Keys</b>.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Easy Recall</strong>
+
+<p>
+
+<b>Candidate Key = Eligible to become Primary Key</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 18 ALTERNATE KEY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">18.</span>
+    Alternate Key
+</div>
+
+
+<p>
+
+Out of the candidate keys, one or more are selected
+as the
+<span class="highlight">Primary Key</span>.
+
+</p>
+
+<p>
+
+The remaining candidate keys are called
+<span class="highlight"><b>Alternate Keys</b></span>.
+
+</p>
+
+
+<div class="important">
+
+<h3>🎯 Key Concept</h3>
+
+<p>
+
+<b>Candidate Keys</b> → Keys eligible to become Primary Key.
+
+<br><br>
+
+<b>Selected Candidate Key</b> → Primary Key.
+
+<br><br>
+
+<b>Remaining Candidate Keys</b> → Alternate Keys.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 19 KEY COMPARISON -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">19.</span>
+    Important Keys — Quick Comparison
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Key</th>
+
+<th>Meaning</th>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Primary Key</b>
+</td>
+
+<td>
+Uniquely identifies a row in a table.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Foreign Key</b>
+</td>
+
+<td>
+Helps build a relation between two or more tables.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Candidate Key</b>
+</td>
+
+<td>
+Field values eligible to become Primary Key.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Alternate Key</b>
+</td>
+
+<td>
+Candidate Key not selected as Primary Key.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 20 RDBMS OBJECTS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">20.</span>
+    Objects of RDBMS
+</div>
+
+
+<p>
+
+An object in a database is a structure or feature used
+to
+<span class="highlight">
+store, represent or retrieve data
+</span>.
+
+</p>
+
+
+<h3>Important RDBMS Objects</h3>
+
+<ul>
+
+<li><b>Tables</b></li>
+
+<li><b>Forms</b></li>
+
+<li><b>Reports</b></li>
+
+<li><b>Queries</b></li>
+
+</ul>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Object</th>
+
+<th>Main Purpose</th>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Table</b>
+</td>
+
+<td>
+Stores logically related records.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Form</b>
+</td>
+
+<td>
+Provides easy and user-friendly data entry.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Query</b>
+</td>
+
+<td>
+Retrieves desired information from the database.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<b>Report</b>
+</td>
+
+<td>
+Presents retrieved/query output in a formal layout.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 21 FORMS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">21.</span>
+    Forms
+</div>
+
+
+<p>
+
+A <b>Form</b> is a database feature used to
+<span class="highlight">
+enter data into a table
+</span>
+in an easy and user-friendly manner.
+
+</p>
+
+<p>
+
+The data entered through forms is stored in
+<span class="highlight">tables</span>.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Form → Easy and user-friendly data entry.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 22 QUERIES -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">22.</span>
+    Queries
+</div>
+
+
+<p>
+
+A <b>Query</b> is used to
+<span class="highlight">
+retrieve the desired information
+</span>
+from the database.
+
+</p>
+
+
+<h3>Easy Definition</h3>
+
+<p>
+
+A query can be understood as a
+<span class="highlight">
+question asked from a database
+</span>.
+
+</p>
+
+
+<h3>Example</h3>
+
+<p>
+
+Suppose a student database contains marks of students.
+
+A query can be used to retrieve the names of students
+who scored more than 50 marks.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Remember</strong>
+
+<p>
+
+<b>Query → Retrieves desired information.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 23 REPORTS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">23.</span>
+    Reports
+</div>
+
+
+<p>
+
+The output of a query may be displayed in the form of
+<span class="highlight"><b>Reports</b></span>.
+
+</p>
+
+<p>
+
+Reports present retrieved data in a more
+<span class="highlight">
+formal and properly formatted layout
+</span>.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Query → Retrieves information</b>
+
+<br>
+
+<b>Report → Presents retrieved information formally</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 24 COMPLETE FLOW -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">24.</span>
+    Chapter 8 — Complete Concept Flow
+</div>
+
+
+<div class="flow">
+
+<span>Data</span>
+
+<div class="arrow">→</div>
+
+<span>Database</span>
+
+<div class="arrow">→</div>
+
+<span>DBMS</span>
+
+<div class="arrow">→</div>
+
+<span>Tables</span>
+
+<div class="arrow">→</div>
+
+<span>Queries</span>
+
+<div class="arrow">→</div>
+
+<span>Reports</span>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Relational Database Recall</strong>
+
+<p>
+
+<b>
+
+Entity → Attributes → Table → Fields + Records →
+Keys → Forms / Queries / Reports
+
+</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 25 CHECK YOUR PROGRESS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">25.</span>
+    Check Your Progress — Exam Focus
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+📌 IMPORTANT QUESTIONS
+</div>
+
+
+<h3>Very Short Answer / MCQ Concepts</h3>
+
+<ol>
+
+<li>
+What is a database?
+</li>
+
+<li>
+What is DBMS?
+</li>
+
+<li>
+What is a Data Model?
+</li>
+
+<li>
+Which data model uses a tree-like structure?
+</li>
+
+<li>
+Which data model establishes relationships between tables?
+</li>
+
+<li>
+What is an Entity?
+</li>
+
+<li>
+What is an Attribute?
+</li>
+
+<li>
+What is a Field?
+</li>
+
+<li>
+What is a Record?
+</li>
+
+<li>
+What is a Primary Key?
+</li>
+
+<li>
+What is a Foreign Key?
+</li>
+
+<li>
+What is a Candidate Key?
+</li>
+
+<li>
+What is an Alternate Key?
+</li>
+
+<li>
+What is a Form?
+</li>
+
+<li>
+What is a Query?
+</li>
+
+<li>
+What is a Report?
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 26 DIFFERENCES -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">26.</span>
+    Most Important Differences
+</div>
+
+
+<h3>Data vs Information</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Data</th>
+
+<th>Information</th>
+
+</tr>
+
+<tr>
+
+<td>
+Raw facts.
+</td>
+
+<td>
+Processed or organised form of data.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Example: Marks and roll numbers.
+</td>
+
+<td>
+Example: Report card.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Field vs Record</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Field</th>
+
+<th>Record</th>
+
+</tr>
+
+<tr>
+
+<td>
+Presented as a column.
+</td>
+
+<td>
+Presented as a row.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Smallest entity in database.
+</td>
+
+<td>
+Data values for all fields related to a person/object.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Primary Key vs Foreign Key</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Primary Key</th>
+
+<th>Foreign Key</th>
+
+</tr>
+
+<tr>
+
+<td>
+Uniquely identifies a row.
+</td>
+
+<td>
+Helps establish relation between tables.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 27 LAST MINUTE REVISION -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">27.</span>
+    Last-Minute Revision
+</div>
+
+
+<div class="quick">
+
+<h3>
+⚡ CHAPTER 8 — RAPID REVISION
+</h3>
+
+
+<ul>
+
+<li>
+<b>Data:</b>
+Raw facts.
+</li>
+
+<li>
+<b>Information:</b>
+Processed or organised data.
+</li>
+
+<li>
+<b>Database:</b>
+Collection of logically related data items stored in an organised manner.
+</li>
+
+<li>
+<b>DBMS:</b>
+Database Management System.
+</li>
+
+<li>
+<b>DBMS Function:</b>
+Create, update and retrieve data.
+</li>
+
+<li>
+<b>Data Model:</b>
+Structure of a database describing how data is stored and retrieved.
+</li>
+
+<li>
+<b>Hierarchical Model:</b>
+Tree-like structure.
+</li>
+
+<li>
+<b>Network Model:</b>
+Multiple records linked to the same master file.
+</li>
+
+<li>
+<b>Relational Model:</b>
+Relationships between two or more tables.
+</li>
+
+<li>
+<b>Entity:</b>
+Real-world object.
+</li>
+
+<li>
+<b>Attribute:</b>
+Details associated with an entity.
+</li>
+
+<li>
+<b>Table:</b>
+Collection of logically related records.
+</li>
+
+<li>
+<b>Field:</b>
+Column / smallest entity in the database.
+</li>
+
+<li>
+<b>Record:</b>
+Row containing data values for all fields.
+</li>
+
+<li>
+<b>Primary Key:</b>
+Uniquely identifies a row.
+</li>
+
+<li>
+<b>Foreign Key:</b>
+Helps build relation between tables.
+</li>
+
+<li>
+<b>Candidate Key:</b>
+Eligible to become Primary Key.
+</li>
+
+<li>
+<b>Alternate Key:</b>
+Candidate Key not selected as Primary Key.
+</li>
+
+<li>
+<b>Form:</b>
+Easy and user-friendly data entry.
+</li>
+
+<li>
+<b>Query:</b>
+Retrieves desired information.
+</li>
+
+<li>
+<b>Report:</b>
+Presents retrieved information in a formal layout.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 28 EXAM MEMORY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">28.</span>
+    One-Minute Exam Memory
+</div>
+
+
+<div class="important">
+
+<h3>🔥 If You Remember Only This...</h3>
+
+<p>
+
+<b>Data</b> = Raw facts
+
+<br><br>
+
+<b>Information</b> = Processed data
+
+<br><br>
+
+<b>DBMS</b> = Creates, updates and retrieves data
+
+<br><br>
+
+<b>Hierarchical</b> = Tree
+
+<br><br>
+
+<b>Network</b> = Master file connection
+
+<br><br>
+
+<b>Relational</b> = Tables + Relationships
+
+<br><br>
+
+<b>Field</b> = Column
+
+<br><br>
+
+<b>Record</b> = Row
+
+<br><br>
+
+<b>Primary Key</b> = Unique identification
+
+<br><br>
+
+<b>Foreign Key</b> = Relationship between tables
+
+<br><br>
+
+<b>Candidate Key</b> = Eligible Primary Key
+
+<br><br>
+
+<b>Alternate Key</b> = Candidate Key not selected
+
+<br><br>
+
+<b>Form</b> = Data Entry
+
+<br><br>
+
+<b>Query</b> = Information Retrieval
+
+<br><br>
+
+<b>Report</b> = Formal Output
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<div class="footer">
+
+    THE GOAL • CBSE Class 10 IT (402) • Part B • Unit 3 • Chapter 8
+
+    <br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</div>
+
+
+</main>
+
+</body>
+</html>
