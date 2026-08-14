@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE GOAL | Part B | Chapter 13 Notes</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Shadows+Into+Light&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#d8d1c3;color:#242424;font-family:"Patrick Hand",cursive;line-height:1.55}
+
+/* ---------- TOP BRAND ---------- */
+.topbar{background:#172033;color:white;padding:18px 15px;text-align:center}
+.brand{font-family:Arial,sans-serif;font-size:12px;letter-spacing:4px;font-weight:bold;opacity:.8}
+.topbar h1{font-family:"Caveat",cursive;font-size:42px;margin-top:4px}
+.topbar p{font-family:"Patrick Hand",cursive;font-size:17px;opacity:.85}
+
+/* ---------- NOTEBOOK ---------- */
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+    background:repeating-linear-gradient(to bottom,#fffdf4 0px,#fffdf4 31px,#a9c8e7 32px);
+    position:relative;
+    padding:35px 45px 70px 90px;
+    box-shadow:0 5px 12px rgba(0,0,0,.18),0 25px 55px rgba(0,0,0,.12);
+    min-height:100vh;
+}
+.notebook:before{content:"";position:absolute;top:0;bottom:0;left:62px;width:2px;background:#e28c8c}
+
+/* ---------- COVER ---------- */
+.cover{padding:12px 10px 28px;border-bottom:2px dashed #777;margin-bottom:30px}
+.cover .small{font-size:17px;color:#555}
+.cover h2{font-family:"Caveat",cursive;font-size:50px;color:#183f72;line-height:1;margin:8px 0}
+.cover .intro{font-size:19px;max-width:780px}
+.tag{display:inline-block;margin-top:13px;padding:4px 12px;border:2px solid #555;transform:rotate(-1deg);background:#fff2a8;font-size:16px}
+
+/* ---------- SESSION ---------- */
+.session{margin:42px 0}
+.session-title{display:inline-block;font-family:"Caveat",cursive;font-size:34px;color:#173f70;border-bottom:3px solid #173f70;transform:rotate(-1deg);margin-bottom:15px}
+.session-number{color:#b32d2d;font-family:"Caveat",cursive;font-size:21px;margin-right:6px}
+h3{font-family:"Caveat",cursive;font-size:27px;color:#222;margin:20px 0 7px}
+h4{font-family:"Caveat",cursive;font-size:23px;margin:14px 0 4px;color:#254d75}
+p,li{font-size:18px}
+ul,ol{margin:5px 0 12px 25px}
+li{margin:3px 0}
+.highlight{background:linear-gradient(transparent 25%,rgba(255,226,86,.72) 25%,rgba(255,226,86,.72) 82%,transparent 82%);padding:0 3px}
+.red{color:#b42d2d;font-weight:bold}
+
+/* ---------- BOXES ---------- */
+.important{margin:18px 0;padding:14px 18px;background:rgba(255,242,164,.65);border:2px solid #5f5a43;border-radius:3px;transform:rotate(-.35deg);position:relative}
+.important:before{content:"★ IMPORTANT";position:absolute;top:-15px;left:12px;background:#fff4a7;padding:0 7px;font-family:"Caveat",cursive;font-size:17px;color:#9c2929}
+.exam{margin:18px 0;padding:13px 17px;border-left:5px solid #c13c3c;background:rgba(255,255,255,.52)}
+.exam-title{color:#b52c2c;font-family:"Caveat",cursive;font-size:24px;font-weight:bold}
+.memory{margin:18px 0;padding:12px 17px;border:2px dashed #55718d;background:rgba(226,239,251,.52)}
+.memory strong{color:#214d75;font-size:21px}
+
+/* ---------- TABLE ---------- */
+.table-wrap{overflow-x:auto;margin:15px 0}
+table{width:100%;border-collapse:collapse;min-width:650px;background:rgba(255,255,255,.48)}
+th,td{border:1.5px solid #555;padding:9px 11px;text-align:left;vertical-align:top;font-size:17px}
+th{background:rgba(213,225,238,.65);font-family:"Caveat",cursive;font-size:21px}
+
+/* ---------- TEST ---------- */
+.test-panel{display:none}
+.test-panel.active{display:block}
+.test-card{margin:25px 0;padding:20px 18px;background:rgba(255,255,255,.62);border:2px solid #555;transform:rotate(.1deg)}
+.test-head{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;border-bottom:2px dashed #777;padding-bottom:12px}
+.test-head h2{font-family:"Caveat",cursive;font-size:34px;color:#173f70}
+.timer{font-family:"Caveat",cursive;font-size:27px;color:#b32d2d;font-weight:bold;border:2px solid #b32d2d;padding:3px 12px;background:#fff1ef;transform:rotate(-1deg)}
+.progress-wrap{margin:12px 0}.progress-line{height:9px;background:#d5d0c5;border:1px solid #777}.progress-line i{display:block;height:100%;width:0;background:#173f70;transition:.2s}
+.q{margin:18px 0;padding:15px 16px;border-left:5px solid #55718d;background:rgba(255,255,255,.5)}
+.q h3{font-size:24px;margin:0 0 10px}
+.option{display:block;width:100%;text-align:left;border:1.5px solid #777;background:rgba(255,255,255,.7);padding:9px 12px;margin:7px 0;font:18px "Patrick Hand",cursive;cursor:pointer}
+.option:hover{background:#fff2a8}
+.option.correct{background:#dff1dc;border-color:#39723b}
+.option.wrong{background:#f7d9d9;border-color:#a33}
+.q.done .option{cursor:default}
+.explain{display:none;margin-top:10px;padding:10px 12px;background:rgba(226,239,251,.65);border:1px dashed #55718d;font-size:17px}
+.q.done .explain{display:block}
+.result{display:none;margin-top:25px;padding:20px;text-align:center;border:3px solid #444;background:rgba(255,242,164,.65)}
+.result.show{display:block}
+.score{font-family:"Caveat",cursive;font-size:55px;color:#173f70}
+.btn{border:2px solid #444;background:#fff2a8;padding:8px 16px;font:20px "Patrick Hand",cursive;cursor:pointer;transform:rotate(-.5deg)}
+.btn:hover{background:#ffe47a}
+
+/* ---------- QUICK / FOOTER ---------- */
+.quick{border:3px solid #444;padding:18px;margin-top:30px;background:rgba(255,255,255,.5);transform:rotate(.2deg)}
+.quick h3{color:#9f2929;margin-top:0}
+.doodle{text-align:center;color:#777;font-size:22px;margin:25px 0;letter-spacing:5px}
+.footer{text-align:center;color:#555;font-size:15px;margin-top:45px;border-top:1px dashed #777;padding-top:18px}
+.source-note{font-size:15px;color:#555;margin-top:12px}
+
+@media(max-width:650px){
+    .notebook{width:100%;padding:28px 20px 60px 58px;margin:0}
+    .notebook:before{left:39px}
+    .topbar h1{font-size:34px}
+    .cover h2{font-size:40px}
+    .session-title{font-size:29px}
+    p,li{font-size:17px}
+    th,td{font-size:15px}
+    .test-head h2{font-size:29px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">THE GOAL • CBSE CLASS 10 • IT 402</div>
+  <h1>Part B — Maintain Healthy, Safe and Secure Working Environment</h1>
+  <p>Chapter 13 • Health, Safety and Security at Workplace</p>
+</header>
+
+<main class="notebook">
+
+<section class="cover">
+  <div class="small">📖 CHAPTER 13 • COMPLETE EXAM NOTES + TOP 50 TEST</div>
+  <h2>Health, Safety and Security at Workplace</h2>
+  <p class="intro">Source-based revision notes for CBSE Class 10 IT (402), prepared from the uploaded NCERT <b>Domestic Data Entry Operator — Class X (2023–24)</b> PDF.</p>
+  <span class="tag">✍️ Read • Revise • Recall</span>
+  <p class="source-note"><b>Source check:</b> Chapter 13 begins on PDF page 223; Check Your Progress appears on PDF pages 233–234. Content and terminology are kept aligned with the uploaded source.</p>
+</section>
+
+<div style="text-align:center;margin:18px 0">
+  <button class="btn" onclick="openTab('notes')">📖 VIEW NOTES</button>
+  <button class="btn" onclick="openTab('test')">📝 TOP 50 TEST</button>
+</div>
+
+<div id="notes">
+
+<section class="session">
+<div class="session-title"><span class="session-number">01.</span>Introduction to Health, Safety and Security</div>
+<h3>Chapter Focus</h3><p><span class="highlight">Health</span>, <span class="highlight">Safety</span> and <span class="highlight">Security</span> at Workplace focuses on creating a safe workplace, protecting employees, identifying hazards and applying control measures.</p><h3>Health</h3><p>The textbook defines employee <span class="highlight">health</span> as physical, mental and social well-being. Workplace cleanliness, proper air conditioning, filtered water, fresh food and clean washrooms are highlighted.</p><h3>Safety</h3><p>The workplace should be free from hazards and <span class="highlight">risk</span>. A <span class="highlight">hazard</span> can cause harm, while <span class="highlight">risk</span> is the probability of causing harm. <span class="highlight">Safety</span> guidelines should be prepared, followed and practised regularly.</p><h3>Security</h3><p><span class="highlight">Security</span> means freedom from potential harm. The <span class="highlight">security</span> department is responsible for areas such as personal <span class="highlight">safety</span>, computer system <span class="highlight">safety</span>, <span class="highlight">electrical</span> <span class="highlight">safety</span>, transport <span class="highlight">safety</span> and equipment <span class="highlight">safety</span>.</p>
+</section>
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+<section class="session">
+<div class="session-title"><span class="session-number">02.</span>Policies and Procedures</div>
+<h3>Policies and Procedures</h3><p>A <span class="highlight">health</span>, <span class="highlight">safety</span> and <span class="highlight">security</span> policy is a written statement of an employer&#x27;s commitment. Organisations should identify hazards and specify control measures.</p><h3>Reasons for Policies</h3><p>Policies show commitment to employee <span class="highlight">health</span> and <span class="highlight">safety</span>, outline accountability, support compliance with Occupational <span class="highlight">Health</span> and <span class="highlight">Safety</span> policy, and help prevent injuries and illness.</p>
+</section>
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+<section class="session">
+<div class="session-title"><span class="session-number">03.</span>Workplace Safety Hazards</div>
+<h3>Workplace Safety Hazards</h3><p>The chapter discusses biological, chemical, physical, ergonomic and <span class="highlight">safety</span> hazards. Physical hazards can arise from the physical work environment.</p><h3>Physical Hazards</h3><p>Falls, slips, unsafe surfaces, machinery and electricity can create physical hazards. Spills should be cleaned immediately, lighting should be adequate and damaged equipment should be repaired.</p><h3>Electrical Hazards</h3><p><span class="highlight">Electrical</span> accidents can involve live wires, conductors, exposed or worn-out wiring, overloaded outlets, ungrounded/faulty equipment and unsafe use. Keep water and food away from <span class="highlight">electrical</span> equipment.</p><h3>Fire Hazards</h3><p><span class="highlight">Fire</span> <span class="highlight">safety</span> requires proper housekeeping, emergency systems and awareness of exits, escape routes, <span class="highlight">fire</span> extinguishers and alarms.</p>
+</section>
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+<section class="session">
+<div class="session-title"><span class="session-number">04.</span>Health &amp; Computer Workplace Hazards</div>
+<h3>Health Hazards</h3><p>Workplace hazards can affect body parts and systems. Noise may affect hearing; bright lights and toxic fumes/vapours may affect eyes and nose; harmful chemicals may affect lungs.</p><h3>Computer Hazards</h3><p>Poor sitting posture, prolonged sitting, repetitive movements and screen glare can cause pain, strain, muscle fatigue and eye problems. Regular stretching can help mitigate these hazards.</p><h3>Office Equipment</h3><p>Improper handling of office equipment can cause injuries such as cuts from sharp-edged equipment. Proper training and relevant manuals are recommended.</p>
+</section>
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+<section class="session">
+<div class="session-title"><span class="session-number">05.</span>Stress, Working Environment &amp; Hazard Control</div>
+<h3>Handling Objects</h3><p>Heavy objects should be lifted or moved using approved procedures and proper posture.</p><h3>Stress at Work</h3><p>Long working hours and aggressive conflicts or arguments can create stress. Conflict resolution and relaxing hobbies are suggested in the textbook.</p><h3>Working Environment</h3><p>Poor ventilation, inappropriate chair/table height, hard furniture, poor lighting, lack of emergency awareness and poor housekeeping can be hazards. Physical or emotional intimidation is also mentioned.</p><h3>Hazard Control</h3><p>Control measures follow a hierarchy: eliminate the <span class="highlight">hazard</span> where possible; if not, isolate it; if neither is possible, minimise the likelihood of injury using effective controls such as exhaust ventilation and <span class="highlight">PPE</span>.</p>
+</section>
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+<section class="session">
+<div class="session-title"><span class="session-number">06.</span>Safety Guidelines Checklist</div>
+<div class="important">
+<h3>📌 Must Remember</h3>
+<ol>
+<li>Store cleaning chemicals in tightly closed containers in separate cupboards.</li>
+<li>Throw garbage daily and make sure areas have proper lighting.</li>
+<li>Do not wear loose clothing or jewellery while working with machines.</li>
+<li>Where required, wear protective items such as goggles, safety glasses, masks, gloves and hair nets.</li>
+<li>Shut down machines before leaving.</li>
+<li>Do not play with electrical controls or switches.</li>
+<li>Do not operate machines/equipment until properly trained and allowed by the supervisor.</li>
+<li>Repair torn wires or broken plugs before use.</li>
+<li>Do not use equipment if it smokes, sparks or looks unsafe.</li>
+<li>Cover food, follow No Smoking areas and report unsafe conditions or acts to the supervisor.</li>
+</ol>
+</div>
+<div class="exam"><div class="exam-title">✏️ EXAM POINT</div>
+<p>The chapter's Check Your Progress directly asks about workplace safety, health, hazards, IT workplace hazards and safety guidelines.</p></div>
+</section>
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+<section class="quick">
+<h3>⚡ CHAPTER 13 — LAST MINUTE REVISION</h3>
+<ul>
+<li>Health = physical, mental and social well-being.</li>
+<li>Safety = workplace free from hazards and risk.</li>
+<li>Security = freedom from potential harm.</li>
+<li>Security department areas include personal safety, computer system safety, electrical safety, transport safety and equipment safety.</li>
+<li>Common hazard classifications in the chapter include biological, chemical, physical, ergonomic and safety hazards.</li>
+<li>Electrical hazards include direct contact with live wires and indirect contact through a conductor.</li>
+<li>Computer hazards include poor sitting posture, excessive duration of sitting, repetitive movement and screen glare.</li>
+<li>Hazard control: eliminate at source → isolate → minimise likelihood of injury with effective controls.</li>
+<li>Safety checklist: chemicals, garbage, lighting, clothing/jewellery, protective items, machines, electrical controls, training, wires/plugs and reporting unsafe conditions.</li>
+</ul>
+</section>
+</div>
+
+<section id="test" class="test-panel">
+<div class="test-card">
+<div class="test-head">
+  <div><h2>📝 Top 50 MCQ Challenge</h2><p>50 Questions • 20 Minutes • Source Based</p></div>
+  <div class="timer" id="timer">20:00</div>
+</div>
+<div class="progress-wrap"><b id="progressText">0 / 50 answered</b><div class="progress-line"><i id="progress"></i></div></div>
+<div id="questions"></div>
+<div class="result" id="result">
+  <div class="score" id="score">0/50</div>
+  <h2 id="resultText"></h2>
+  <button class="btn" onclick="location.reload()">↻ RESTART TEST</button>
+</div>
+</div>
+</section>
+
+<div class="footer">
+THE GOAL • CBSE Class 10 IT (402) • Part B • Chapter 13
+<br>Made with Love ❤️ in India by Pushpender
+</div>
+
+</main>
+
+<script>
+const questions=[{"q": "Health of an employee is the state of physical, mental and ____ well-being.", "o": ["financial", "social", "technical", "professional"], "a": 1, "e": "The chapter defines health as physical, mental and social well-being."}, {"q": "Before people start working, workplaces must be cleaned in the ____.", "o": ["evening", "afternoon", "morning", "night"], "a": 2, "e": "The textbook specifically states that workplaces must be cleaned in the morning."}, {"q": "A proper ____ provides clean and cool air at the workplace.", "o": ["generator", "air conditioning", "fire alarm", "security system"], "a": 1, "e": "The chapter lists proper air conditioning as a workplace health requirement."}, {"q": "A fresh food cafeteria helps maintain the ____ of employees.", "o": ["security", "productivity", "health", "attendance"], "a": 2, "e": "The textbook connects good-quality food in a fresh food cafeteria with employee health."}, {"q": "A work environment should be free from hazards and ____.", "o": ["profits", "risk", "computers", "training"], "a": 1, "e": "The chapter says the work environment must be safe and free from hazards and risk."}, {"q": "A hazard is something that can ____ people.", "o": ["reward", "harm", "train", "promote"], "a": 1, "e": "The textbook defines a hazard as something that can cause harm to people."}, {"q": "A risk is the ____ of causing harm to people.", "o": ["probability", "guarantee", "method", "result"], "a": 0, "e": "Risk is defined in the chapter as the probability of causing harm."}, {"q": "Security is a kind of freedom from potential ____.", "o": ["profit", "harm", "training", "pollution"], "a": 1, "e": "The chapter describes security as freedom from any potential harm."}, {"q": "Which department is responsible for personal safety, computer system safety and electrical safety?", "o": ["Accounts department", "Security department", "Sales department", "Training department"], "a": 1, "e": "The security department is described as responsible for these safety areas."}, {"q": "Proper security procedures will increase business ____.", "o": ["revenue", "risk", "liability", "damage"], "a": 0, "e": "The chapter says proper security procedures increase business revenue and reduce operational charges."}, {"q": "A health, safety and security policy is a ____ statement by an employer.", "o": ["verbal", "written", "temporary", "personal"], "a": 1, "e": "The textbook defines the policy as a written statement of the employer's commitment."}, {"q": "The health, safety and security policy is an endorsed commitment by ____.", "o": ["customers", "management", "visitors", "suppliers"], "a": 1, "e": "The chapter describes it as management's endorsed commitment to employees."}, {"q": "A health, safety and security committee helps determine workplace ____.", "o": ["profits", "hazards", "holidays", "sales"], "a": 1, "e": "The committee identifies hazards and then control measures are specified."}, {"q": "The national policy mentioned in the chapter is Occupational Health and ____.", "o": ["Safety", "Security", "Education", "Training"], "a": 0, "e": "The chapter refers to the Government of India's national policy on Occupational Health and Safety (OH&S)."}, {"q": "One reason for a safety policy is to show the company's commitment to employee ____.", "o": ["health and safety", "sales and marketing", "attendance", "software"], "a": 0, "e": "The textbook lists commitment to employee health and safety as a reason for the policy."}, {"q": "A workplace hazard can cause damage to the work environment and ____.", "o": ["everything else in it", "only computers", "only furniture", "only documents"], "a": 0, "e": "The chapter states hazards can harm people, the environment and property/equipment."}, {"q": "Which hazard classification is associated with repetitive movements and poorly arranged workstations?", "o": ["Chemical", "Ergonomic", "Biological", "Financial"], "a": 1, "e": "Ergonomic hazards are linked with repetitive movements and poorly arranged workstations."}, {"q": "Physical hazards arise from the physical work environment such as floors, facilities, walls and ____.", "o": ["ceilings", "software", "databases", "emails"], "a": 0, "e": "The chapter gives floors, facilities, walls and ceilings as examples of the physical work environment."}, {"q": "A common cause of falls and slips is a ____ surface.", "o": ["clean", "uneven", "digital", "wireless"], "a": 1, "e": "The chapter identifies uneven surfaces as a cause of trips and slips."}, {"q": "Spilled liquid should be ____ to avoid accidents.", "o": ["ignored", "immediately cleaned", "covered with paper", "left for later"], "a": 1, "e": "The safety guidance says spills should be cleaned immediately."}, {"q": "Proper ____ is important to avoid falls and slips.", "o": ["lighting", "advertising", "printing", "typing"], "a": 0, "e": "The chapter recommends proper lighting and repair of damaged equipment to prevent falls and slips."}, {"q": "Electrical hazards can result from direct contact with ____.", "o": ["live wires", "tables", "paper", "chairs"], "a": 0, "e": "The chapter says electric shock often occurs through direct contact with live wires."}, {"q": "Indirect electrical contact can occur through a ____.", "o": ["conductor", "keyboard", "wall clock", "document"], "a": 0, "e": "The textbook identifies a conductor as the route for indirect contact."}, {"q": "Which is a common cause of electrical accidents?", "o": ["Exposed wiring", "Clean floors", "Filtered water", "Good lighting"], "a": 0, "e": "The chapter lists exposed/worn-out wiring among common causes of electrical accidents."}, {"q": "Water and food items should be kept ____ electrical equipment.", "o": ["near", "away from", "on top of", "inside"], "a": 1, "e": "The chapter specifically instructs employees to keep water and food away from electrical equipment."}, {"q": "Fire safety requires employees to know the locations of fire extinguishers and ____.", "o": ["alarms", "cafeteria", "printers", "desks"], "a": 0, "e": "Employees should know emergency exits, fire escape routes, extinguishers and alarms."}, {"q": "Health hazards may affect the skin, eyes, ears and other ____ parts.", "o": ["body", "machine", "building", "software"], "a": 0, "e": "The chapter explains health hazards in relation to parts and systems of the human body."}, {"q": "Exposure to bright lights and toxic fumes can damage the eyes and ____.", "o": ["nose", "keyboard", "chair", "feet"], "a": 0, "e": "The textbook gives eyes and nose as examples of affected body parts."}, {"q": "Harmful chemicals may cause long-term damage to the ____.", "o": ["lungs", "keyboard", "floor", "screen"], "a": 0, "e": "The chapter gives lung damage from exposure to harmful chemicals as a long-term health issue."}, {"q": "Bright light behind a display screen can create ____ problems.", "o": ["contrast", "database", "network", "printing"], "a": 0, "e": "The chapter says bright light sources behind the display can create contrast problems."}, {"q": "To reduce bright light entering a workstation, the chapter suggests using ____ or drapes.", "o": ["blinds", "mirrors", "fans", "speakers"], "a": 0, "e": "Blinds or drapes can reduce direct bright light from windows."}, {"q": "Bright lights from open windows should ideally be at ____ angles with the computer screen.", "o": ["right", "zero", "parallel", "random"], "a": 0, "e": "The chapter recommends orienting the workstation so bright lights are at right angles to the screen."}, {"q": "Poor sitting posture or excessive sitting in one position can cause pain and ____.", "o": ["strain", "profit", "security", "pollution"], "a": 0, "e": "Computer-use hazards include poor posture and prolonged sitting, which can cause pain and strain."}, {"q": "Repeating the same movement can cause muscle ____.", "o": ["fatigue", "growth", "security", "training"], "a": 0, "e": "The chapter states repetitive movement can cause muscle fatigue."}, {"q": "Glare from a computer screen can be harmful to the ____.", "o": ["eyes", "printer", "floor", "keyboard"], "a": 0, "e": "The textbook identifies screen glare as a potential eye hazard."}, {"q": "Stretching at regular intervals can help mitigate hazards related to ____ use.", "o": ["computer", "cafeteria", "elevator", "transport"], "a": 0, "e": "The chapter recommends regular stretching or simple yoga in the seat for computer-use hazards."}, {"q": "Improper handling of sharp-edged office equipment can cause ____.", "o": ["cuts", "pollution", "revenue", "glare"], "a": 0, "e": "The textbook gives cuts as an example of injury from improperly handled sharp-edged equipment."}, {"q": "Staff should be trained to handle office equipment ____.", "o": ["properly", "secretly", "quickly only", "without manuals"], "a": 0, "e": "The chapter says staff should be trained properly and a relevant manual should be available."}, {"q": "Heavy objects should be lifted or moved using approved procedures and proper ____.", "o": ["posture", "software", "lighting", "passwords"], "a": 0, "e": "The chapter specifically recommends approved procedures and proper posture."}, {"q": "Long working hours can be a cause of ____ at work.", "o": ["stress", "security", "revenue", "lighting"], "a": 0, "e": "Long working hours are listed as a stress-causing hazard."}, {"q": "Aggressive conflicts or arguments with colleagues can create ____ hazards.", "o": ["stress-causing", "chemical", "database", "financial"], "a": 0, "e": "The chapter identifies aggressive conflicts or arguments as stress-causing hazards."}, {"q": "A workplace with poor ventilation, inappropriate furniture height and poor lighting may contain ____.", "o": ["potential hazards", "profits", "templates", "databases"], "a": 0, "e": "These are explicitly listed as potential workplace hazards."}, {"q": "Staff should be made aware of organisational policies to fight hazards related to the ____.", "o": ["working environment", "database", "internet", "printer"], "a": 0, "e": "The chapter says staff should know policies addressing working-environment hazards."}, {"q": "Hazard control should strongly emphasise eliminating hazards at the ____.", "o": ["source", "end of the day", "desk", "computer"], "a": 0, "e": "The hierarchy of control begins with eliminating the hazard at its source whenever possible."}, {"q": "If elimination is impractical, hazards may be ____ using engineering controls.", "o": ["isolated", "ignored", "increased", "duplicated"], "a": 0, "e": "The textbook gives isolation as the next control approach, such as insulating noise."}, {"q": "Personal protective clothing and equipment are examples of ____ measures.", "o": ["control", "financial", "marketing", "database"], "a": 0, "e": "PPE is mentioned as an effective control measure when hazards cannot be eliminated or isolated."}, {"q": "Cleaning chemicals should be stored in tightly closed containers in separate ____.", "o": ["cupboards", "drawers of desks", "computers", "open trays"], "a": 0, "e": "This is the first item in the chapter's Safety Guidelines Checklist."}, {"q": "Employees should not operate machines until they are properly trained and allowed by their ____.", "o": ["supervisor", "customer", "visitor", "friend"], "a": 0, "e": "The safety checklist requires proper training and permission from the supervisor."}, {"q": "Unsafe conditions or acts should be reported to the ____.", "o": ["supervisor", "cafeteria", "customer", "printer"], "a": 0, "e": "The final item of the chapter's safety checklist says to report unsafe conditions or acts to the supervisor."}];
+let score=0,answered=0,time=1200,finished=false;
+
+function openTab(id){
+  document.getElementById('notes').style.display=id==='notes'?'block':'none';
+  document.getElementById('test').classList.toggle('active',id==='test');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+const wrap=document.getElementById('questions');
+questions.forEach((item,i)=>{
+  const q=document.createElement('div');q.className='q';q.id='q'+i;
+  q.innerHTML='<h3>'+(i+1)+'. '+item.q+'</h3>';
+  item.o.forEach((opt,j)=>{
+    const b=document.createElement('button');b.className='option';
+    b.textContent=String.fromCharCode(65+j)+'. '+opt;
+    b.onclick=()=>answer(i,j,b);q.appendChild(b);
+  });
+  const ex=document.createElement('div');ex.className='explain';
+  ex.innerHTML='<b>Explanation:</b> '+item.e;q.appendChild(ex);wrap.appendChild(q);
+});
+
+function answer(i,j,btn){
+  const q=document.getElementById('q'+i);
+  if(q.classList.contains('done')||finished)return;
+  q.classList.add('done');answered++;
+  const buttons=q.querySelectorAll('.option');
+  if(j===questions[i].a){score++;btn.classList.add('correct')}
+  else{btn.classList.add('wrong');buttons[questions[i].a].classList.add('correct')}
+  document.getElementById('progress').style.width=(answered/50*100)+'%';
+  document.getElementById('progressText').textContent=answered+' / 50 answered';
+  if(answered===50)finish();
+}
+
+function finish(){
+  if(finished)return;finished=true;
+  document.getElementById('result').classList.add('show');
+  document.getElementById('score').textContent=score+'/50';
+  document.getElementById('resultText').textContent=
+    score>=45?'Excellent! 🔥':score>=30?'Avg — revise the weak concepts.':'Need to revise concept again.';
+  document.getElementById('result').scrollIntoView({behavior:'smooth'});
+}
+
+const interval=setInterval(()=>{
+  if(finished){clearInterval(interval);return}
+  time--;
+  if(time<=0){time=0;finish();clearInterval(interval)}
+  const m=String(Math.floor(time/60)).padStart(2,'0');
+  const s=String(time%60).padStart(2,'0');
+  document.getElementById('timer').textContent=m+':'+s;
+},1000);
+</script>
+</body>
+</html>
