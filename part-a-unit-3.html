@@ -1,0 +1,1693 @@
+# `part-a-unit-3.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part A | Unit 3 Notes</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Shadows+Into+Light&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ================= TOP BRAND ================= */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:4px;
+    font-weight:700;
+}
+
+.topbar p{
+    margin-top:5px;
+    font-size:15px;
+    opacity:.85;
+}
+
+/* ================= NOTEBOOK PAGE ================= */
+
+.page{
+    max-width:950px;
+    margin:25px auto;
+    background:#fffdf5;
+    min-height:100vh;
+    position:relative;
+
+    padding:42px 55px 70px 90px;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 31px,
+            rgba(72,120,170,.20) 32px
+        );
+
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+/* Red notebook margin */
+
+.page:before{
+    content:"";
+    position:absolute;
+    left:58px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:rgba(210,65,65,.55);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:20px 0 35px;
+}
+
+.cover small{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:2px;
+    color:#555;
+}
+
+.cover h1{
+    font-family:"Caveat",cursive;
+    font-size:58px;
+    line-height:1;
+    color:#172033;
+    margin:12px 0 5px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    font-weight:600;
+    color:#333;
+}
+
+.cover .underline{
+    width:260px;
+    height:5px;
+    background:#e5c84a;
+    transform:rotate(-1deg);
+    margin:12px 0 18px;
+}
+
+.cover p{
+    font-size:20px;
+}
+
+/* ================= SESSION ================= */
+
+.session{
+    margin:45px 0;
+    position:relative;
+}
+
+.session-number{
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    color:#777;
+}
+
+.session h2{
+    font-family:"Caveat",cursive;
+    font-size:36px;
+    line-height:1.1;
+    color:#172033;
+    margin-bottom:12px;
+}
+
+.session h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#303030;
+    margin:24px 0 5px;
+}
+
+.session p{
+    font-size:19px;
+    margin:7px 0;
+}
+
+.session ul{
+    margin:8px 0 10px 24px;
+}
+
+.session li{
+    font-size:18px;
+    margin:4px 0;
+}
+
+/* ================= NOTE BOX ================= */
+
+.note{
+    background:#fff7b8;
+    border-left:5px solid #d9bf38;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+    transform:rotate(-.25deg);
+    box-shadow:2px 3px 0 rgba(0,0,0,.08);
+}
+
+.exam{
+    background:#f9eeee;
+    border-left:5px solid #c74b4b;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+}
+
+.blue{
+    background:#edf4fa;
+    border-left:5px solid #4878a8;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0 22px;
+    background:rgba(255,255,255,.55);
+}
+
+th,
+td{
+    border:1.5px solid #6c6c6c;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(230,220,170,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ================= SHORTCUT BOX ================= */
+
+.shortcut{
+    background:#f4f1e7;
+    border:1px dashed #777;
+    padding:15px 18px;
+    margin:18px 0;
+}
+
+.shortcut p{
+    font-size:18px;
+    margin:3px 0;
+}
+
+kbd{
+    background:#fff;
+    border:1px solid #aaa;
+    border-bottom:3px solid #888;
+    border-radius:4px;
+    padding:2px 7px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+}
+
+/* ================= RECALL ================= */
+
+.recall{
+    margin-top:25px;
+    padding:16px 20px;
+    border:2px dashed #666;
+    background:rgba(255,255,255,.55);
+}
+
+.recall h3{
+    margin:0 0 8px;
+    font-size:28px;
+}
+
+/* ================= TAG ================= */
+
+.tag{
+    display:inline-block;
+    background:#172033;
+    color:white;
+    padding:4px 12px;
+    border-radius:3px;
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    margin-top:55px;
+    padding-top:20px;
+    border-top:2px dashed #777;
+    text-align:center;
+    font-size:16px;
+    color:#555;
+}
+
+.footer strong{
+    color:#172033;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:700px){
+
+    .page{
+        margin:10px;
+        padding:30px 24px 55px 55px;
+    }
+
+    .page:before{
+        left:34px;
+    }
+
+    .cover h1{
+        font-size:47px;
+    }
+
+    .cover h2{
+        font-size:28px;
+    }
+
+    .session h2{
+        font-size:31px;
+    }
+
+    .session p,
+    .session li,
+    .note,
+    .exam,
+    .blue{
+        font-size:17px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+        padding:7px;
+    }
+
+    .brand{
+        letter-spacing:2px;
+    }
+}
+
+@media(max-width:450px){
+
+    .page{
+        padding-left:48px;
+        padding-right:17px;
+    }
+
+    .page:before{
+        left:28px;
+    }
+
+    .cover h1{
+        font-size:42px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="topbar">
+
+    <div class="brand">THE GOAL</div>
+
+    <p>CBSE Class X • Information Technology 402</p>
+
+</div>
+
+
+<main class="page">
+
+
+<!-- ===================================================== -->
+<!-- COVER -->
+<!-- ===================================================== -->
+
+<section class="cover">
+
+    <small>PART A • EMPLOYABILITY SKILLS</small>
+
+    <h1>Unit 3</h1>
+
+    <h2>Information &amp; Communication Technology Skills-II</h2>
+
+    <div class="underline"></div>
+
+    <p>
+        <strong>Exam-Oriented Revision Notes</strong>
+    </p>
+
+    <p>
+        Computer Operations • Files &amp; Folders • Maintenance • Security
+    </p>
+
+    <div class="note">
+
+        <strong>★ UNIT AT A GLANCE</strong><br>
+
+        ICT skills help us use digital devices effectively,
+        manage files, maintain computers and protect information.
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 1 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+    <div class="session-number">SESSION 01</div>
+
+    <h2>Basic Computer Operations</h2>
+
+    <span class="tag">EXAM IMPORTANT</span>
+
+
+    <h3>What is ICT?</h3>
+
+    <p>
+
+        <strong>ICT</strong> stands for
+        <strong>Information and Communication Technology</strong>.
+
+    </p>
+
+    <p>
+
+        ICT refers to the methods, tools and concepts used for
+        storing, recording and sending digital information.
+
+    </p>
+
+    <div class="note">
+
+        <strong>★ ICT Devices:</strong><br>
+
+        Smartphones • Tablets • Laptops • Desktop Computers
+
+    </div>
+
+
+    <h3>Hardware and Software</h3>
+
+    <table>
+
+        <tr>
+            <th>Hardware</th>
+            <th>Software</th>
+        </tr>
+
+        <tr>
+
+            <td>
+
+                Physical parts of a computer that can be
+                seen and touched.
+
+                <br><br>
+
+                Examples: Keyboard, monitor, CPU.
+
+            </td>
+
+            <td>
+
+                Programs that make the hardware work
+                and perform particular functions.
+
+                <br><br>
+
+                Examples: Operating system, browser,
+                games and office applications.
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <div class="exam">
+
+        <strong>★ Remember:</strong><br>
+
+        Hardware = physical parts<br>
+
+        Software = programs/instructions
+
+    </div>
+
+
+    <h3>Operating System (OS)</h3>
+
+    <p>
+
+        An <strong>Operating System</strong> is the most important
+        software in a computer. It starts working when the computer
+        is switched on and provides the environment through which
+        the user can operate the computer.
+
+    </p>
+
+    <p>
+
+        Examples mentioned in the textbook include
+        <strong>Ubuntu, Microsoft Windows and Mac OS</strong>
+        for computers and <strong>Apple iOS and Google Android</strong>
+        for mobile devices.
+
+    </p>
+
+
+    <h3>Starting a Computer</h3>
+
+    <p>
+
+        When a computer is switched on, it performs basic processes
+        before it is ready to accept instructions from the user.
+
+    </p>
+
+    <div class="blue">
+
+        <strong>Starting sequence:</strong><br><br>
+
+        Power ON → POST/BIOS check → Operating System starts
+        → Login/Welcome screen → Desktop
+
+    </div>
+
+
+    <h3>BIOS</h3>
+
+    <p>
+
+        <strong>BIOS</strong> stands for
+        <strong>Basic Input/Output System</strong>.
+
+    </p>
+
+    <p>
+
+        BIOS runs automatically when the computer is switched on.
+        It performs a self-test and, if the system is fine,
+        loads the Operating System.
+
+    </p>
+
+
+    <h3>Login and Logout</h3>
+
+    <p>
+
+        A login ID and password help identify an authorised user
+        and restrict unauthorised access.
+
+    </p>
+
+    <p>
+
+        After finishing work, the user should
+        <strong>log out/sign out</strong> so that another person
+        cannot access the user's work.
+
+    </p>
+
+
+    <h3>Shutting Down</h3>
+
+    <p>
+
+        A computer should be shut down using the operating system's
+        <strong>Shut Down</strong> option. The operating system closes
+        applications before turning the computer off.
+
+    </p>
+
+
+    <h3>Keyboard</h3>
+
+    <p>
+
+        A keyboard is an <strong>input device</strong> used to enter
+        text, numbers and commands into a computer.
+
+    </p>
+
+    <table>
+
+        <tr>
+            <th>Key / Group</th>
+            <th>Function</th>
+        </tr>
+
+        <tr>
+            <td>Function Keys F1–F12</td>
+            <td>Perform specific functions depending on the program.</td>
+        </tr>
+
+        <tr>
+            <td>Enter</td>
+            <td>Confirms an instruction or moves to a new line while typing.</td>
+        </tr>
+
+        <tr>
+            <td>Spacebar</td>
+            <td>Inserts a space between words.</td>
+        </tr>
+
+        <tr>
+            <td>Backspace</td>
+            <td>Deletes the character to the left of the cursor.</td>
+        </tr>
+
+        <tr>
+            <td>Arrow Keys</td>
+            <td>Move the cursor in different directions.</td>
+        </tr>
+
+    </table>
+
+
+    <h3>Mouse Functions</h3>
+
+    <table>
+
+        <tr>
+            <th>Function</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Click</td>
+            <td>Press and release the mouse button.</td>
+        </tr>
+
+        <tr>
+            <td>Double-click</td>
+            <td>Click twice quickly.</td>
+        </tr>
+
+        <tr>
+            <td>Right-click</td>
+            <td>Opens a context menu.</td>
+        </tr>
+
+        <tr>
+            <td>Drag and Drop</td>
+            <td>Press and hold the mouse button, move the item and release it.</td>
+        </tr>
+
+        <tr>
+            <td>Hover</td>
+            <td>Move the pointer over an item without clicking.</td>
+        </tr>
+
+    </table>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                ICT → Hardware + Software → OS → BIOS → Login → Work → Logout
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 2 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+    <div class="session-number">SESSION 02</div>
+
+    <h2>Performing Basic File Operations</h2>
+
+    <span class="tag">VERY IMPORTANT</span>
+
+
+    <h3>What is a File?</h3>
+
+    <p>
+
+        A <strong>file</strong> is a collection of information stored
+        electronically on a computer.
+
+    </p>
+
+    <p>
+
+        Different types of files store different types of information.
+
+    </p>
+
+
+    <h3>What is a Folder?</h3>
+
+    <p>
+
+        A <strong>folder</strong> is a location where a group of files
+        can be stored.
+
+    </p>
+
+    <div class="note">
+
+        <strong>Easy example:</strong><br>
+
+        School cupboard → Folder<br>
+
+        Student file → Computer file
+
+    </div>
+
+
+    <h3>File Name and Extension</h3>
+
+    <p>
+
+        A file has a name and a file-name extension.
+        The extension identifies the type of file and is separated
+        from the file name by a dot.
+
+    </p>
+
+    <table>
+
+        <tr>
+            <th>Extension</th>
+            <th>Common File Type</th>
+        </tr>
+
+        <tr>
+            <td>.txt</td>
+            <td>Text file</td>
+        </tr>
+
+        <tr>
+            <td>.doc</td>
+            <td>Document file</td>
+        </tr>
+
+        <tr>
+            <td>.xls</td>
+            <td>Spreadsheet file</td>
+        </tr>
+
+        <tr>
+            <td>.jpg</td>
+            <td>Image file</td>
+        </tr>
+
+        <tr>
+            <td>.mp3</td>
+            <td>Sound/audio file</td>
+        </tr>
+
+    </table>
+
+
+    <h3>Basic File Operations</h3>
+
+    <ul>
+
+        <li><strong>Create</strong> — make a new file or folder.</li>
+
+        <li><strong>Save</strong> — store the file.</li>
+
+        <li><strong>Copy</strong> — make another copy of the file.</li>
+
+        <li><strong>Move</strong> — change the location of a file.</li>
+
+        <li><strong>Rename</strong> — change the name of a file or folder.</li>
+
+        <li><strong>Delete</strong> — remove a file or folder.</li>
+
+    </ul>
+
+
+    <h3>Important Keyboard Shortcuts</h3>
+
+    <div class="shortcut">
+
+        <p><kbd>Ctrl + Z</kbd> → Undo</p>
+
+        <p><kbd>Ctrl + Y</kbd> → Redo</p>
+
+        <p><kbd>Ctrl + A</kbd> → Select All</p>
+
+        <p><kbd>Ctrl + X</kbd> → Cut</p>
+
+        <p><kbd>Ctrl + C</kbd> → Copy</p>
+
+        <p><kbd>Ctrl + V</kbd> → Paste</p>
+
+        <p><kbd>Ctrl + P</kbd> → Print</p>
+
+        <p><kbd>Ctrl + S</kbd> → Save</p>
+
+    </div>
+
+
+    <div class="exam">
+
+        <strong>★ MCQ Favourite:</strong><br><br>
+
+        Ctrl + C = Copy<br>
+
+        Ctrl + X = Cut<br>
+
+        Ctrl + V = Paste<br>
+
+        Ctrl + S = Save<br>
+
+        Ctrl + Z = Undo<br>
+
+        Ctrl + Y = Redo
+
+    </div>
+
+
+    <h3>Creating a Text File</h3>
+
+    <ol>
+
+        <li>Open a text editor.</li>
+
+        <li>Type the required information.</li>
+
+        <li>Choose the Save option.</li>
+
+        <li>Select the location where the file should be stored.</li>
+
+        <li>Enter the file name.</li>
+
+        <li>Save the file.</li>
+
+    </ol>
+
+
+    <h3>Creating a Folder</h3>
+
+    <ol>
+
+        <li>Open the file explorer.</li>
+
+        <li>Choose the location where the folder is required.</li>
+
+        <li>Right-click and choose <strong>New Folder</strong>.</li>
+
+        <li>Enter the folder name.</li>
+
+    </ol>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                File = Information<br>
+                Folder = Collection of files<br>
+                Extension = Identifies file type
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 3 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+    <div class="session-number">SESSION 03</div>
+
+    <h2>Computer Care and Maintenance</h2>
+
+    <span class="tag">EXAM IMPORTANT</span>
+
+
+    <h3>Importance of Computer Care</h3>
+
+    <p>
+
+        Regular care and maintenance helps computers and mobile devices
+        work properly for a longer time and helps prevent unnecessary
+        damage and expenses.
+
+    </p>
+
+
+    <h3>Keeping a Device Clean</h3>
+
+    <table>
+
+        <tr>
+            <th>Part</th>
+            <th>Care</th>
+        </tr>
+
+        <tr>
+            <td>Keyboard</td>
+            <td>
+                Avoid eating over it. Remove dust and crumbs carefully.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Screen</td>
+            <td>
+                Wipe fingerprints and dust using a soft cloth.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Food &amp; Drinks</td>
+            <td>
+                Keep liquids away from electronic devices.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Laptop/Mobile</td>
+            <td>
+                Handle carefully and protect from falls and hard impacts.
+            </td>
+        </tr>
+
+    </table>
+
+
+    <h3>Keep the Computer Cool</h3>
+
+    <ul>
+
+        <li>Make sure the CPU fan is working properly.</li>
+
+        <li>Do not cover laptop ventilation areas.</li>
+
+        <li>Avoid using devices in direct sunlight for long periods.</li>
+
+        <li>Do not leave a device inside a closed hot car.</li>
+
+        <li>Do not block the laptop fan while using it.</li>
+
+    </ul>
+
+
+    <div class="exam">
+
+        <strong>★ Important:</strong><br>
+
+        Overheating can damage the internal parts of a computer.
+
+    </div>
+
+
+    <h3>Battery Care</h3>
+
+    <p>
+
+        Avoid keeping a device plugged in for a long time after it is
+        fully charged because excessive charging can cause the battery
+        to overheat.
+
+    </p>
+
+
+    <h3>Backup Data</h3>
+
+    <p>
+
+        <strong>Backup</strong> means making a copy of important data
+        on another storage location so that the data can be recovered
+        if the original computer or storage fails.
+
+    </p>
+
+    <div class="note">
+
+        <strong>Why backup?</strong><br>
+
+        Computers can crash, people can make mistakes and natural
+        disasters can damage equipment. A backup helps recover important data.
+
+    </div>
+
+
+    <h3>Scanning and Cleaning Viruses</h3>
+
+    <p>
+
+        Anti-virus software can scan a computer for viruses,
+        help prevent infections and clean viruses that have entered
+        the system.
+
+    </p>
+
+
+    <h3>Improving Computer Performance</h3>
+
+    <p>
+
+        Unnecessary files such as temporary files and unused data
+        can occupy hard-disk space. Removing unnecessary files
+        can help maintain computer performance.
+
+    </p>
+
+
+    <h3>SPAM</h3>
+
+    <p>
+
+        <strong>SPAM</strong> refers to unwanted emails, often sent
+        for advertising or attracting users to websites.
+
+    </p>
+
+    <ul>
+
+        <li>Do not respond to suspicious spam.</li>
+
+        <li>Delete unwanted spam.</li>
+
+        <li>Use spam filters where available.</li>
+
+    </ul>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                Clean → Cool → Handle Carefully → Battery Care → Backup
+                → Anti-virus → Remove Unnecessary Files → Control Spam
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 4 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+    <div class="session-number">SESSION 04</div>
+
+    <h2>Computer Security and Privacy</h2>
+
+    <span class="tag">HIGH PRIORITY</span>
+
+
+    <h3>Why is Computer Security Important?</h3>
+
+    <p>
+
+        Computers and electronic devices store important information,
+        including personal, educational, financial and other sensitive data.
+
+    </p>
+
+    <p>
+
+        Computer security and privacy involve measures used to protect
+        computers and restrict unauthorised access to personal data.
+
+    </p>
+
+
+    <h3>Security Breach</h3>
+
+    <p>
+
+        A <strong>security breach</strong> is the leakage or unauthorised
+        access of information stored on a computer.
+
+    </p>
+
+
+    <h3>Threats to Computer Security</h3>
+
+    <table>
+
+        <tr>
+            <th>Threat</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+
+            <td>Physical Theft</td>
+
+            <td>
+                Stealing the physical computer or device.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Identity Theft</td>
+
+            <td>
+                Stealing personal information and using it
+                to assume another person's identity.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Software Piracy</td>
+
+            <td>
+                Using or distributing unauthorised or
+                unlicensed copies of software.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Virus</td>
+
+            <td>
+                A harmful computer program that can damage
+                data/software or steal information.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Online Predator</td>
+
+            <td>
+                A person who may attempt to trap or manipulate
+                others through inappropriate online interactions.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Internet Scam</td>
+
+            <td>
+                A deceptive online scheme designed to obtain
+                money or personal/account information.
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <h3>How Personal Information Can Be Lost or Leaked</h3>
+
+    <ul>
+
+        <li>
+            Sharing account details or passwords on unsafe websites.
+        </li>
+
+        <li>
+            Allowing unauthorised people to access the computer.
+        </li>
+
+        <li>
+            Leaving a computer without logging out.
+        </li>
+
+    </ul>
+
+
+    <h3>Computer Viruses</h3>
+
+    <p>
+
+        A computer virus is a harmful program that may damage
+        data or software and may steal information.
+
+    </p>
+
+
+    <table>
+
+        <tr>
+            <th>Type</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+
+            <td>Worm</td>
+
+            <td>
+                A type of malicious program that can replicate itself
+                and spread to other files or systems.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Trojan Horse</td>
+
+            <td>
+                A malicious program that disguises itself as
+                useful or legitimate software.
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <h3>Protecting Your Data</h3>
+
+    <table>
+
+        <tr>
+            <th>Protection Method</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+
+            <td>Strong Password</td>
+
+            <td>
+                Helps prevent unauthorised access.
+                A strong password can combine letters,
+                numbers and special characters.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Anti-virus</td>
+
+            <td>
+                Detects, prevents and helps remove viruses.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Firewall</td>
+
+            <td>
+                Monitors data entering and leaving a computer
+                and helps block harmful or unauthorised access.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Encryption</td>
+
+            <td>
+                Converts data into a protected form that requires
+                a key/password for authorised access.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Secure Websites</td>
+
+            <td>
+                Sensitive information such as banking details
+                should only be entered on trustworthy secure sites.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Logout</td>
+
+            <td>
+                Prevents another person from accessing an account
+                or computer after you finish your work.
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <div class="exam">
+
+        <strong>★ Exam Favourite:</strong><br><br>
+
+        Password → Prevent unauthorised access<br>
+
+        Anti-virus → Detect/remove viruses<br>
+
+        Firewall → Controls incoming/outgoing network data<br>
+
+        Encryption → Protects data by converting it into a coded form
+
+    </div>
+
+
+    <h3>Safe Internet Habits</h3>
+
+    <ul>
+
+        <li>Do not share passwords with others.</li>
+
+        <li>Do not enter personal or banking information on suspicious sites.</li>
+
+        <li>Log out after using a shared computer.</li>
+
+        <li>Be careful with attractive online offers and unknown messages.</li>
+
+        <li>Keep security software updated.</li>
+
+        <li>Keep important data backed up.</li>
+
+    </ul>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                Security → Threats → Virus → Password → Anti-virus
+                → Firewall → Encryption → Secure Sites
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- ONE PAGE REVISION -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+    <div class="session-number">LAST MINUTE REVISION</div>
+
+    <h2>Unit 3 — One Page Recall</h2>
+
+
+    <table>
+
+        <tr>
+            <th>Topic</th>
+            <th>Must Remember</th>
+        </tr>
+
+        <tr>
+
+            <td>ICT</td>
+
+            <td>
+                Information and Communication Technology;
+                methods/tools related to digital information.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Hardware</td>
+
+            <td>
+                Physical parts of a computer.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Software</td>
+
+            <td>
+                Programs that make hardware work.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>OS</td>
+
+            <td>
+                Main software that starts when the computer is switched on.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>BIOS</td>
+
+            <td>
+                Basic Input/Output System; performs initial self-test
+                and loads the operating system.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>File</td>
+
+            <td>
+                Collection of information stored electronically.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Folder</td>
+
+            <td>
+                Location used to store a group of files.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>File Extension</td>
+
+            <td>
+                Identifies the type of a file.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Backup</td>
+
+            <td>
+                Copy of data kept for recovery.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>SPAM</td>
+
+            <td>
+                Unwanted email, often advertising or promotional.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Security Breach</td>
+
+            <td>
+                Leakage or unauthorised access to stored information.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Virus</td>
+
+            <td>
+                Harmful program that can damage data/software
+                or steal information.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Worm</td>
+
+            <td>
+                Malware that can replicate and spread.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Trojan Horse</td>
+
+            <td>
+                Malicious software disguised as useful software.
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>Encryption</td>
+
+            <td>
+                Protecting data by converting it into a coded form.
+            </td>
+
+        </tr>
+
+    </table>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IMPORTANT SHORTCUT REVISION -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+    <div class="session-number">1-MINUTE REVISION</div>
+
+    <h2>Keyboard Shortcut Sheet</h2>
+
+    <div class="shortcut">
+
+        <p><kbd>Ctrl + A</kbd> — Select All</p>
+
+        <p><kbd>Ctrl + C</kbd> — Copy</p>
+
+        <p><kbd>Ctrl + X</kbd> — Cut</p>
+
+        <p><kbd>Ctrl + V</kbd> — Paste</p>
+
+        <p><kbd>Ctrl + S</kbd> — Save</p>
+
+        <p><kbd>Ctrl + P</kbd> — Print</p>
+
+        <p><kbd>Ctrl + Z</kbd> — Undo</p>
+
+        <p><kbd>Ctrl + Y</kbd> — Redo</p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- EXAM CORNER -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+    <div class="session-number">EXAM CORNER</div>
+
+    <h2>Questions You Should Know</h2>
+
+
+    <div class="exam">
+
+        <p>
+            <strong>1.</strong>
+            What is ICT?
+        </p>
+
+        <p>
+            <strong>2.</strong>
+            Differentiate between hardware and software.
+        </p>
+
+        <p>
+            <strong>3.</strong>
+            What is an Operating System?
+        </p>
+
+        <p>
+            <strong>4.</strong>
+            What is BIOS and what does it do?
+        </p>
+
+        <p>
+            <strong>5.</strong>
+            Why are login and logout important?
+        </p>
+
+        <p>
+            <strong>6.</strong>
+            What is a computer file?
+        </p>
+
+        <p>
+            <strong>7.</strong>
+            What is a folder?
+        </p>
+
+        <p>
+            <strong>8.</strong>
+            What is a file extension? Give examples.
+        </p>
+
+        <p>
+            <strong>9.</strong>
+            Write any five keyboard shortcuts.
+        </p>
+
+        <p>
+            <strong>10.</strong>
+            What is backup and why is it important?
+        </p>
+
+        <p>
+            <strong>11.</strong>
+            What is SPAM?
+        </p>
+
+        <p>
+            <strong>12.</strong>
+            What is a security breach?
+        </p>
+
+        <p>
+            <strong>13.</strong>
+            Explain any three threats to computer security.
+        </p>
+
+        <p>
+            <strong>14.</strong>
+            Differentiate between a Worm and a Trojan Horse.
+        </p>
+
+        <p>
+            <strong>15.</strong>
+            Write measures to protect personal data.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<div class="footer">
+
+    <strong>THE GOAL</strong><br>
+
+    CBSE Class X • Information Technology 402<br>
+
+    Part A • Information and Communication Technology Skills-II<br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</div>
+
+
+</main>
+
+</body>
+
+</html>
+```
