@@ -1,0 +1,2712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Chapter 11 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ---------- TOP BRAND ---------- */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    margin-top:4px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.85;
+}
+
+/* ---------- NOTEBOOK ---------- */
+
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #fffdf4 0px,
+        #fffdf4 31px,
+        #a9c8e7 32px
+    );
+
+    position:relative;
+
+    padding:35px 45px 70px 90px;
+
+    box-shadow:
+    0 5px 12px rgba(0,0,0,.18),
+    0 25px 55px rgba(0,0,0,.12);
+
+    min-height:100vh;
+}
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:62px;
+    width:2px;
+    background:#e28c8c;
+}
+
+/* ---------- COVER ---------- */
+
+.cover{
+    padding:12px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover .small{
+    font-size:17px;
+    color:#555;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:50px;
+    color:#183f72;
+    line-height:1;
+    margin:8px 0;
+}
+
+.cover .intro{
+    font-size:19px;
+    max-width:820px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:4px 12px;
+    border:2px solid #555;
+    transform:rotate(-1deg);
+    background:#fff2a8;
+    font-size:16px;
+}
+
+.source-note{
+    font-size:15px;
+    color:#555;
+    margin-top:12px;
+}
+
+/* ---------- SESSION ---------- */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    transform:rotate(-1deg);
+    margin-bottom:15px;
+}
+
+.session-number{
+    color:#b32d2d;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#222;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    margin:14px 0 4px;
+    color:#254d75;
+}
+
+p,li{
+    font-size:18px;
+}
+
+ul,ol{
+    margin:5px 0 12px 25px;
+}
+
+li{
+    margin:4px 0;
+}
+
+.highlight{
+    background:
+    linear-gradient(
+        transparent 25%,
+        rgba(255,226,86,.72) 25%,
+        rgba(255,226,86,.72) 82%,
+        transparent 82%
+    );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b42d2d;
+    font-weight:bold;
+}
+
+/* ---------- BOXES ---------- */
+
+.important{
+    margin:18px 0;
+    padding:14px 18px;
+    background:rgba(255,242,164,.65);
+    border:2px solid #5f5a43;
+    border-radius:3px;
+    transform:rotate(-.35deg);
+    position:relative;
+}
+
+.important:before{
+    content:"★ IMPORTANT";
+    position:absolute;
+    top:-15px;
+    left:12px;
+    background:#fff4a7;
+    padding:0 7px;
+    font-family:"Caveat",cursive;
+    font-size:17px;
+    color:#9c2929;
+}
+
+.exam{
+    margin:18px 0;
+    padding:13px 17px;
+    border-left:5px solid #c13c3c;
+    background:rgba(255,255,255,.52);
+}
+
+.exam-title{
+    color:#b52c2c;
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:12px 17px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.52);
+}
+
+.memory strong{
+    color:#214d75;
+    font-size:21px;
+}
+
+/* ---------- TABLE ---------- */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.48);
+}
+
+th,td{
+    border:1.5px solid #555;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ---------- FLOW ---------- */
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:20px 0;
+}
+
+.flow span{
+    padding:9px 14px;
+    border:2px solid #555;
+    background:rgba(255,242,164,.75);
+    font-size:18px;
+    transform:rotate(-1deg);
+}
+
+.arrow{
+    font-size:25px;
+    color:#9d3030;
+}
+
+/* ---------- QUICK ---------- */
+
+.quick{
+    border:3px solid #444;
+    padding:18px;
+    margin-top:30px;
+    background:rgba(255,255,255,.5);
+    transform:rotate(.2deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+    margin:25px 0;
+    letter-spacing:5px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    margin-top:45px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+
+    .notebook{
+        width:100%;
+        padding:28px 20px 60px 58px;
+        margin:0;
+    }
+
+    .notebook:before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .cover h2{
+        font-size:40px;
+    }
+
+    .session-title{
+        font-size:29px;
+    }
+
+    p,li{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+    }
+
+    .flow{
+        flex-direction:column;
+    }
+
+    .arrow{
+        transform:rotate(90deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • IT 402
+    </div>
+
+    <h1>
+        Part B — Database Management System using LibreOffice Base
+    </h1>
+
+    <p>
+        Chapter 11 • Queries in Base
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ===================================================== -->
+<!-- COVER -->
+<!-- ===================================================== -->
+
+<section class="cover">
+
+    <div class="small">
+        📖 CHAPTER 11 • SOURCE-BASED EXAM NOTES
+    </div>
+
+    <h2>
+        Queries in Base
+    </h2>
+
+    <p class="intro">
+
+        Complete exam-oriented revision notes for CBSE Class 10
+        Information Technology (402), prepared from the uploaded
+        NCERT <b>Domestic Data Entry Operator — Class X (2023–24)</b>
+        textbook.
+
+    </p>
+
+    <span class="tag">
+        ✍️ Read • Revise • Recall
+    </span>
+
+    <p class="source-note">
+
+        <b>Source check:</b>
+        Chapter 11 “Queries in Base” starts on printed page 186
+        of the uploaded textbook. The notes below follow the
+        chapter content, examples, summary and Check Your Progress.
+
+    </p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 01 INTRODUCTION -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">01.</span>
+    Introduction to Queries
+</div>
+
+
+<h3>What is a Query?</h3>
+
+<p>
+
+A <span class="highlight">query</span> is a sort of question
+asked from a database.
+
+It is used to search for desired records and retrieve the
+required data from one or more tables according to specified
+conditions.
+
+</p>
+
+
+<h3>Why are Queries Required?</h3>
+
+<p>
+
+As the number of records in a database increases, finding
+specific information by manually going through each record
+becomes difficult.
+
+A query allows us to retrieve the required information without
+individually checking every record.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Key Definition</h3>
+
+<p>
+
+<b>Query:</b> A query is a feature of a DBMS used to
+<span class="highlight">retrieve and display data</span>
+from one or more tables by providing specific search criteria.
+
+</p>
+
+</div>
+
+
+<h3>What can be specified in a Query?</h3>
+
+<ul>
+
+<li>The <span class="highlight">fields</span> that we want to display.</li>
+
+<li>The <span class="highlight">criteria</span> based on which records are to be filtered.</li>
+
+<li>The table or tables from which the information is required.</li>
+
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+A query is mainly used to
+<b>retrieve and display desired information</b>
+from a database using specific search criteria.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 02 QUERY OUTPUT -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">02.</span>
+    Query Result and Structure
+</div>
+
+
+<h3>How is Query Result Displayed?</h3>
+
+<p>
+
+The result of a query is displayed in
+<span class="highlight">tabular form</span>.
+
+The field names are displayed in
+<span class="highlight">columns</span>
+and the records are displayed in
+<span class="highlight">rows</span>.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>Columns</b></td>
+<td>Contain field names / column headings.</td>
+</tr>
+
+<tr>
+<td><b>Rows</b></td>
+<td>Contain the records retrieved by the query.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Example — Student Database</h3>
+
+<p>
+
+Suppose a Student database contains a
+<b>Result</b> table.
+
+We want to display the names and marks of students who have
+scored less than <b>320 aggregate marks</b>.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Requirement</th>
+<th>Specification</th>
+</tr>
+
+<tr>
+<td>Name of Table</td>
+<td>Result</td>
+</tr>
+
+<tr>
+<td>Fields</td>
+<td>Name, Marks</td>
+</tr>
+
+<tr>
+<td>Criterion</td>
+<td>Aggregate marks should be less than 320</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Remember</strong>
+
+<p>
+
+<b>Query = Fields to display + Criteria to filter records</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 03 WAYS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">03.</span>
+    Ways to Create a Query
+</div>
+
+
+<h3>Three Ways</h3>
+
+<p>
+
+A query in LibreOffice Base can be created in
+<span class="highlight">three ways</span>:
+
+</p>
+
+
+<div class="flow">
+
+<span>Using a Wizard</span>
+
+<div class="arrow">→</div>
+
+<span>Design View</span>
+
+<div class="arrow">→</div>
+
+<span>SQL View</span>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Method</th>
+<th>Important Point</th>
+</tr>
+
+<tr>
+<td><b>Query Wizard</b></td>
+<td>Provides a step-by-step method to create a query.</td>
+</tr>
+
+<tr>
+<td><b>Design View</b></td>
+<td>A more flexible method for creating queries.</td>
+</tr>
+
+<tr>
+<td><b>SQL View</b></td>
+<td>Query can also be created using SQL view.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ VERY IMPORTANT MCQ
+</div>
+
+<p>
+
+<b>Q. How many ways can a query be created in LibreOffice Base?</b>
+
+<br>
+
+<b>Answer: Three</b>
+
+<br><br>
+
+<b>Q. Name the three ways.</b>
+
+<br>
+
+Using Wizard, Design View and SQL View.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 04 QUERY WIZARD INTRO -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">04.</span>
+    Creating a Query Using Wizard
+</div>
+
+
+<h3>Example Used in the Textbook</h3>
+
+<p>
+
+The textbook uses the
+<span class="highlight">Sports Day database</span>
+containing two tables:
+
+</p>
+
+<ul>
+
+<li><b>Events</b></li>
+
+<li><b>EventCategory</b></li>
+
+</ul>
+
+
+<p>
+
+The example query displays
+<span class="highlight">Event Name</span>
+and
+<span class="highlight">Winner</span>
+for events whose
+<span class="highlight">CategoryID is C001</span>.
+
+</p>
+
+
+<div class="important">
+
+<h3>🎯 Query Requirement</h3>
+
+<p>
+
+<b>Table:</b> Events
+
+<br>
+
+<b>Fields:</b> Event Name, Winner, CategoryID
+
+<br>
+
+<b>Criterion:</b> CategoryID = C001
+
+</p>
+
+</div>
+
+
+<h3>Step 1 — Open the Database</h3>
+
+<p>
+
+Open the <b>Sports Day</b> database.
+
+In the Database Design window, click the
+<span class="highlight">Queries</span>
+button present in the Database Pane on the left.
+
+</p>
+
+
+<h3>Step 2 — Start Query Wizard</h3>
+
+<p>
+
+In the Tasks Area, click
+<span class="highlight">Use Wizard to Create Query…</span>.
+
+The Query Wizard will start.
+
+</p>
+
+
+<h3>Step 3 — Select the Table</h3>
+
+<p>
+
+The first step of the wizard is to select fields from the
+respective table.
+
+Select the
+<span class="highlight">Events</span>
+table from the Tables list box.
+
+The corresponding fields are displayed in the
+<span class="highlight">Available Fields</span>
+list box.
+
+</p>
+
+
+<h3>Step 4 — Select Fields</h3>
+
+<p>
+
+Select the required fields and click the
+<span class="highlight">right arrow ( &gt; )</span>
+button to move them into
+<b>Fields in the Query</b>.
+
+For the textbook example, select:
+
+</p>
+
+<ul>
+
+<li>Event Name</li>
+<li>Winner</li>
+<li>CategoryID</li>
+
+</ul>
+
+
+<div class="memory">
+
+<strong>🧠 Wizard Buttons</strong>
+
+<ul>
+
+<li><b>&gt;</b> → Moves selected field to Fields in the Query.</li>
+
+<li><b>&lt;</b> → Moves field back to Available Fields.</li>
+
+<li><b>»</b> → Moves all fields to Fields in the Query.</li>
+
+<li><b>«</b> → Moves all fields back to Available Fields.</li>
+
+<li><b>∧ / ∨</b> → Changes the order of fields.</li>
+
+</ul>
+
+</div>
+
+
+<h3>Step 5 — Set Sorting Order</h3>
+
+<p>
+
+The next step is to select the sorting order.
+
+The result of a query can be displayed in
+<span class="highlight">ascending</span>
+or
+<span class="highlight">descending</span>
+order of a particular field.
+
+If no particular sorting order is required, click
+<b>Next</b>.
+
+</p>
+
+
+<h3>Step 6 — Set Search Criteria</h3>
+
+<p>
+
+The next step is to set the search condition or
+<span class="highlight">criterion</span>
+on the basis of which records will be filtered.
+
+For the textbook example:
+
+</p>
+
+<p>
+
+<b>Field:</b> Events.CategoryID
+
+<br>
+
+<b>Condition:</b> is equal to
+
+<br>
+
+<b>Value:</b> C001
+
+</p>
+
+
+<h3>Match All / Match Any</h3>
+
+<p>
+
+By default,
+<span class="highlight">Match all of the following</span>
+is selected.
+
+If any one of the given conditions should be matched,
+select
+<span class="highlight">Match any of the following</span>.
+
+</p>
+
+
+<div class="important">
+
+<h3>⚠️ Important Exam Fact</h3>
+
+<p>
+
+A maximum of
+<span class="highlight">three search conditions</span>
+can be given in the Query Wizard.
+
+</p>
+
+</div>
+
+
+<h3>Step 7 — Numerical/Summarizing Steps</h3>
+
+<p>
+
+The wizard contains steps for tasks such as
+summarizing and performing numerical calculations.
+
+If there is
+<span class="highlight">no numeric field</span>
+involved in the query, these steps are not required and can be
+skipped.
+
+</p>
+
+
+<h3>Step 8 — Give Alias</h3>
+
+<p>
+
+An
+<span class="highlight">Alias</span>
+is an alternative, more readable name used as the column
+heading in the query output.
+
+For example, instead of displaying the field name
+<b>Winner</b>, we can give the alias
+<b>Winner Name</b>.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Alias = Alternative / meaningful name of a field displayed
+as the column heading in query output.</b>
+
+</p>
+
+</div>
+
+
+<h3>Step 9 — Query Overview</h3>
+
+<p>
+
+The last step of the Query Wizard displays the
+<span class="highlight">entire overview</span>
+of the query.
+
+It shows the work performed during the previous steps in
+summarised form.
+
+</p>
+
+
+<h3>Information Shown in Overview</h3>
+
+<ul>
+
+<li><b>Name of the Query</b></li>
+
+<li><b>Action after Wizard finishes</b></li>
+
+<li><b>Complete detail/summary of the query</b></li>
+
+</ul>
+
+
+<p>
+
+By default, the query name may be displayed as
+<b>Query_Events</b>.
+
+The default action is
+<span class="highlight">Display Query</span>.
+
+The
+<b>Modify Query</b>
+option can be selected if the query has to be edited in
+Design View.
+
+</p>
+
+
+<h3>Step 10 — Finish</h3>
+
+<p>
+
+Click the
+<span class="highlight">Finish</span>
+button.
+
+The records satisfying
+<b>CategoryID = C001</b>
+will be displayed.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Wizard Flow</strong>
+
+<p>
+
+Table → Fields → Sorting → Criteria →
+Numerical/Summary → Alias → Overview → Finish
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 05 DESIGN VIEW -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">05.</span>
+    Creating a Query in Design View
+</div>
+
+
+<h3>Why Design View?</h3>
+
+<p>
+
+Design View is a
+<span class="highlight">more flexible method</span>
+for creating a query.
+
+It can be used to create a query using
+a single table or
+<span class="highlight">multiple tables</span>.
+
+</p>
+
+
+<h3>Example from the Textbook</h3>
+
+<p>
+
+The textbook creates a query to display records of the
+<b>Athletics</b> category using:
+
+</p>
+
+<ul>
+
+<li>Events table</li>
+
+<li>EventCategory table</li>
+
+</ul>
+
+
+<h3>Step 1 — Open Queries</h3>
+
+<p>
+
+Click the
+<span class="highlight">Queries</span>
+icon in the Objects Pane of the Database Window.
+
+</p>
+
+
+<h3>Step 2 — Create Query in Design View</h3>
+
+<p>
+
+Click
+<span class="highlight">Create Query in Design View…</span>
+in the Tasks Pane.
+
+The Query Design Window appears.
+
+The
+<span class="highlight">Add Table or Query</span>
+dialog box is displayed.
+
+</p>
+
+
+<h3>Step 3 — Add Events Table</h3>
+
+<p>
+
+Select the
+<b>Events</b>
+table and click
+<b>Add</b>.
+
+Alternatively, double-click the Events table.
+
+The table is added to the Tables Pane.
+
+</p>
+
+
+<h3>Step 4 — Add EventCategory Table</h3>
+
+<p>
+
+Similarly, add the
+<span class="highlight">EventCategory</span>
+table to the Tables Pane.
+
+</p>
+
+
+<h3>Step 5 — Close Dialog Box</h3>
+
+<p>
+
+Click the
+<b>Close</b>
+button in the Add Table or Query dialog box.
+
+Both tables are now visible in the Table Pane.
+
+</p>
+
+
+<h3>Step 6 — Select Fields</h3>
+
+<p>
+
+For the textbook example, select:
+
+</p>
+
+<ul>
+
+<li>EventName from Events</li>
+
+<li>Winner from Events</li>
+
+<li>CategoryName from EventCategory</li>
+
+</ul>
+
+
+<p>
+
+The selected fields appear in the
+<span class="highlight">Design Grid</span>
+in the lower part of the Query Design Window.
+
+</p>
+
+
+<h3>Visible Check Box</h3>
+
+<p>
+
+The
+<span class="highlight">Visible</span>
+check box is selected by default.
+
+This means that the field will be displayed when the query is
+run.
+
+If a field should not be displayed in the output, deselect its
+Visible check box.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ MCQ ALERT
+</div>
+
+<p>
+
+<b>Q. Is the Visible check box selected by default?</b>
+
+<br>
+
+<b>Answer: Yes.</b>
+
+</p>
+
+</div>
+
+
+<h3>Step 7 — Alias Row</h3>
+
+<p>
+
+The Design Grid contains an
+<span class="highlight">Alias</span>
+row.
+
+It is used to display a meaningful column heading instead of
+the original field name.
+
+Example:
+
+<br>
+
+<b>Winner</b> → <b>Winner Name</b>
+
+</p>
+
+
+<h3>Step 8 — Sort Row</h3>
+
+<p>
+
+By default, query data is not sorted.
+
+The
+<span class="highlight">Sort</span>
+row is used to arrange records in ascending or descending order.
+
+For example, to display Event Name alphabetically, select
+<b>Ascending</b>
+under the Event Name column.
+
+</p>
+
+
+<h3>Step 9 — Run the Query</h3>
+
+<p>
+
+After designing the query, click the
+<span class="highlight">Run Query</span>
+button on the toolbar.
+
+The shortcut key to run a query is:
+
+</p>
+
+
+<div class="important">
+
+<h3>⌨️ Shortcut Key</h3>
+
+<p>
+
+<span class="highlight">F5 = Run Query</span>
+
+</p>
+
+</div>
+
+
+<h3>Step 10 — Save the Query</h3>
+
+<p>
+
+Click the
+<span class="highlight">Save</span>
+button.
+
+The Save As dialog box appears.
+
+By default, the query name may be
+<b>Query1</b>.
+
+Enter a different name if required and click
+<b>OK</b>.
+
+</p>
+
+
+<h3>Running a Saved Query Again</h3>
+
+<p>
+
+The saved query appears in the Objects Area of the Database
+Window.
+
+To run the query again, simply
+<span class="highlight">double-click the query name</span>.
+
+The result will be displayed in a separate window.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Design View Flow</strong>
+
+<p>
+
+Queries → Create Query in Design View →
+Add Table or Query → Add Tables →
+Select Fields → Alias/Sort/Criteria →
+Run with F5 → Save
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 06 QUERY DESIGN WINDOW -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">06.</span>
+    Query Design Window
+</div>
+
+
+<h3>Two Main Sections</h3>
+
+<p>
+
+The Query Design Window is divided into
+<span class="highlight">two sections</span>.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Section</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+
+<td><b>Upper Section / Table Pane</b></td>
+
+<td>
+Displays the tables or queries added for designing the query.
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Lower Section / Design Grid</b></td>
+
+<td>
+Used to select fields and specify properties such as
+Alias, Sort, Visible and Criterion.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ VERY IMPORTANT
+</div>
+
+<p>
+
+<b>Query Design Window → Two sections.</b>
+
+<br>
+
+This is directly asked in the textbook's Check Your Progress.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 07 EDITING QUERY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">07.</span>
+    Editing a Query
+</div>
+
+
+<h3>Why Edit a Query?</h3>
+
+<p>
+
+After creating a query, its design can be modified.
+
+For example, a criterion can be added or changed to display
+different records.
+
+</p>
+
+
+<h3>Steps to Edit a Query</h3>
+
+<ol>
+
+<li>Click the <b>Queries</b> icon in the Database Window.</li>
+
+<li>The list of created queries will appear in the Objects Area.</li>
+
+<li>Right-click the required query.</li>
+
+<li>Select <span class="highlight">Edit</span> from the drop-down menu.</li>
+
+<li>The Query Design Window will appear.</li>
+
+</ol>
+
+
+<h3>Example — Athletics Category</h3>
+
+<p>
+
+To display only records belonging to the Athletics category,
+type:
+
+</p>
+
+<div class="important">
+
+<p>
+
+<b>Criterion row under Category Name:</b>
+
+<br><br>
+
+<span class="highlight">Athletics</span>
+
+</p>
+
+</div>
+
+
+<h3>Applying Numerical Criteria</h3>
+
+<p>
+
+Suppose we want to display records where the
+<b>Points</b>
+scored are more than 10.
+
+Add the Points field to the Design Grid and enter:
+
+</p>
+
+<div class="memory">
+
+<strong>Criterion:</strong>
+
+<p>
+
+<span class="highlight">&gt;10</span>
+
+</p>
+
+</div>
+
+
+<h3>Relational Operators</h3>
+
+<p>
+
+The Criterion row can use relational operators such as:
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>&lt;</b></td>
+<td>Less than</td>
+</tr>
+
+<tr>
+<td><b>&gt;</b></td>
+<td>Greater than</td>
+</tr>
+
+<tr>
+<td><b>&lt;=</b></td>
+<td>Less than or equal to</td>
+</tr>
+
+<tr>
+<td><b>&gt;=</b></td>
+<td>Greater than or equal to</td>
+</tr>
+
+<tr>
+<td><b>!=</b></td>
+<td>Not equal to</td>
+</tr>
+
+<tr>
+<td><b>=</b></td>
+<td>Equal to</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+The
+<span class="highlight">Criterion row</span>
+is used to apply conditions for filtering records.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 08 CRITERIA -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">08.</span>
+    Criteria in a Query
+</div>
+
+
+<h3>What is a Criterion?</h3>
+
+<p>
+
+A
+<span class="highlight">criterion</span>
+is a condition specified in a query to filter the records
+according to the required value.
+
+</p>
+
+
+<h3>Examples</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Requirement</th>
+<th>Criterion</th>
+</tr>
+
+<tr>
+<td>Points more than 10</td>
+<td><b>&gt;10</b></td>
+</tr>
+
+<tr>
+<td>Points less than 10</td>
+<td><b>&lt;10</b></td>
+</tr>
+
+<tr>
+<td>Points equal to 10</td>
+<td><b>=10</b></td>
+</tr>
+
+<tr>
+<td>Points not equal to 10</td>
+<td><b>!=10</b></td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Multiple Conditions</h3>
+
+<p>
+
+The Criterion row can also be used to apply
+<span class="highlight">multiple conditions</span>.
+
+The required conditions are entered in the appropriate fields
+of the query design.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Remember</h3>
+
+<p>
+
+<b>Criterion = condition used to filter records.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 09 NUMERICAL DATA -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">09.</span>
+    Working with Numerical Data
+</div>
+
+
+<h3>Numerical Functions in Queries</h3>
+
+<p>
+
+A query can do more than simply display records.
+
+When numerical data is involved, mathematical functions can be
+used to calculate values.
+
+</p>
+
+
+<p>
+
+The textbook mentions functions to find:
+
+</p>
+
+<ul>
+
+<li><span class="highlight">Count</span></li>
+
+<li><span class="highlight">Sum</span></li>
+
+<li><span class="highlight">Minimum</span></li>
+
+<li><span class="highlight">Maximum</span></li>
+
+<li><span class="highlight">Average</span></li>
+
+</ul>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td><b>Count</b></td>
+<td>Finds the count of data values/records.</td>
+</tr>
+
+<tr>
+<td><b>Sum</b></td>
+<td>Calculates the total of numerical values.</td>
+</tr>
+
+<tr>
+<td><b>Minimum</b></td>
+<td>Finds the smallest value.</td>
+</tr>
+
+<tr>
+<td><b>Maximum</b></td>
+<td>Finds the largest value.</td>
+</tr>
+
+<tr>
+<td><b>Average</b></td>
+<td>Calculates the average value.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Example — Average Points for Each Category</h3>
+
+<p>
+
+The textbook designs a query to display the
+<span class="highlight">average points for each category of events</span>.
+
+The required tables are:
+
+</p>
+
+<ul>
+
+<li>Events</li>
+
+<li>EventCategory</li>
+
+</ul>
+
+
+<h3>Step 1 — Add Fields</h3>
+
+<p>
+
+Add:
+
+<br>
+
+<b>CategoryName</b> from EventCategory
+
+<br>
+
+<b>Points</b> from Events
+
+</p>
+
+
+<h3>Step 2 — Group CategoryName</h3>
+
+<p>
+
+Under CategoryName, click the down arrow in the
+<span class="highlight">Function</span>
+row.
+
+Select
+<span class="highlight">Group</span>.
+
+The Group option forms groups for each different data value in
+the CategoryName column.
+
+</p>
+
+
+<h3>Step 3 — Apply Average to Points</h3>
+
+<p>
+
+Under the Points column, select the
+<span class="highlight">Average</span>
+function.
+
+</p>
+
+
+<h3>Step 4 — Run Query</h3>
+
+<p>
+
+Press
+<span class="highlight">F5</span>
+to run the query.
+
+The query result will show the average points for the
+categories.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Numerical Query Flow</strong>
+
+<p>
+
+CategoryName → <b>Group</b>
+
+<br>
+
+Points → <b>Average</b>
+
+<br>
+
+Run → <b>F5</b>
+
+</p>
+
+</div>
+
+
+<h3>Applying a Condition on Groups</h3>
+
+<p>
+
+A criterion can also be applied to groups.
+
+For example, to display the average of only the
+<b>Athletics</b>
+category, type
+<span class="highlight">Athletics</span>
+in the Criterion row under Category Name.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM ALERT
+</div>
+
+<p>
+
+<b>Q. Name any four mathematical functions that can be applied
+to numerical data in a query.</b>
+
+<br><br>
+
+<b>Answer:</b> Count, Sum, Minimum and Maximum.
+
+<br>
+
+Average can also be used.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 10 IMPORTANT TERMS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">10.</span>
+    Important Terms — One Line Definitions
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Term</th>
+<th>Exam-Oriented Meaning</th>
+</tr>
+
+<tr>
+<td><b>Query</b></td>
+<td>A sort of question asked from a database to retrieve desired information.</td>
+</tr>
+
+<tr>
+<td><b>Criterion</b></td>
+<td>A condition used to filter records.</td>
+</tr>
+
+<tr>
+<td><b>Alias</b></td>
+<td>An alternative/meaningful name used as a column heading.</td>
+</tr>
+
+<tr>
+<td><b>Design View</b></td>
+<td>A flexible method of creating a query from one or multiple tables.</td>
+</tr>
+
+<tr>
+<td><b>Query Wizard</b></td>
+<td>A step-by-step method for creating a query.</td>
+</tr>
+
+<tr>
+<td><b>Visible</b></td>
+<td>Determines whether a selected field will be displayed in the query result.</td>
+</tr>
+
+<tr>
+<td><b>Sort</b></td>
+<td>Used to arrange query results in ascending or descending order.</td>
+</tr>
+
+<tr>
+<td><b>Criterion Row</b></td>
+<td>Row used to specify conditions for filtering records.</td>
+</tr>
+
+<tr>
+<td><b>Function Row</b></td>
+<td>Used to apply functions such as Group and Average while working with numerical data.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 11 WIZARD VS DESIGN VIEW -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">11.</span>
+    Wizard vs Design View
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Query Wizard</th>
+<th>Design View</th>
+</tr>
+
+<tr>
+
+<td>
+
+Provides a step-by-step procedure for creating a query.
+
+</td>
+
+<td>
+
+Provides a more flexible method for creating a query.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Fields are selected through the wizard's list boxes.
+
+</td>
+
+<td>
+
+Fields are selected directly in the Query Design Window.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Search conditions are specified through wizard steps.
+
+</td>
+
+<td>
+
+Criteria can be entered directly in the Criterion row.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Alias can be assigned through the wizard.
+
+</td>
+
+<td>
+
+Alias can be entered in the Alias row.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Suitable for guided query creation.
+
+</td>
+
+<td>
+
+Useful when more flexibility is required.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ MCQ ALERT
+</div>
+
+<p>
+
+<b>Q. Which is a flexible way to create a query?</b>
+
+<br>
+
+<b>Answer: Design View.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 12 EXAM QUESTIONS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">12.</span>
+    Most Important Exam Questions
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+📌 MUST PREPARE
+</div>
+
+
+<ol>
+
+<li>
+Define a query. What is the need of creating a query in a
+database?
+</li>
+
+<li>
+Name the three ways of creating a query in LibreOffice Base.
+</li>
+
+<li>
+Explain the steps to create a query using Query Wizard.
+</li>
+
+<li>
+What is the use of the Available Fields list box?
+</li>
+
+<li>
+What is the use of the Fields in the Query list box?
+</li>
+
+<li>
+What is the purpose of setting the sorting order?
+</li>
+
+<li>
+What is a criterion in a query?
+</li>
+
+<li>
+How many search conditions can be given at the most in the
+Query Wizard?
+</li>
+
+<li>
+What is an Alias? Why is it used?
+</li>
+
+<li>
+What information is displayed in the last step of the Query
+Wizard?
+</li>
+
+<li>
+Why are numerical/summarizing steps skipped when no numeric
+field is involved?
+</li>
+
+<li>
+Why is Design View considered a flexible method of creating
+queries?
+</li>
+
+<li>
+What is the use of the Visible check box?
+</li>
+
+<li>
+What is the use of the Alias row in the Design Grid?
+</li>
+
+<li>
+What is the use of the Criterion row?
+</li>
+
+<li>
+Name the relational operators that can be used in the
+Criterion row.
+</li>
+
+<li>
+What is the shortcut key to run a query?
+</li>
+
+<li>
+Name any four mathematical functions that can be applied to
+numerical data in a query.
+</li>
+
+<li>
+Explain how the Group function and Average function are used
+in a numerical query.
+</li>
+
+<li>
+How can a saved query be run again?
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 13 TEXTBOOK CHECK YOUR PROGRESS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">13.</span>
+    Textbook Check Your Progress — Focus
+</div>
+
+
+<h3>MCQ Topics Directly Asked</h3>
+
+<ul>
+
+<li>Meaning of Query</li>
+
+<li>Ways of designing a Query</li>
+
+<li>Flexibility of Design View</li>
+
+<li>Number of sections in Query Design Window</li>
+
+<li>What is NOT true about queries</li>
+
+<li>Shortcut key F5</li>
+
+<li>Numerical functions</li>
+
+<li>Moving fields using the <b>&gt;</b> button</li>
+
+<li>Relational operators</li>
+
+<li>Add Table or Query dialog box</li>
+
+<li>Numerical/summarizing step</li>
+
+</ul>
+
+
+<h3>True / False Concepts</h3>
+
+<ul>
+
+<li>A query can be run more than once.</li>
+
+<li>A query can be created from multiple tables.</li>
+
+<li>F5 is used to run a query.</li>
+
+<li>A query can contain numerical data.</li>
+
+<li>By default, query results are not sorted.</li>
+
+<li>A query can display the average value of a numerical field.</li>
+
+<li>Criterion can be applied to fields.</li>
+
+<li>Alias is an alternative name for a field.</li>
+
+<li>Visible check box is selected by default.</li>
+
+<li>A query created using a wizard can be edited in Design View.</li>
+
+</ul>
+
+
+<h3>Fill in the Blanks — Key Answers</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Question Concept</th>
+<th>Answer</th>
+</tr>
+
+<tr>
+<td>A sort of question asked from a database</td>
+<td><b>Query</b></td>
+</tr>
+
+<tr>
+<td>Query result displayed in ______ form</td>
+<td><b>Tabular</b></td>
+</tr>
+
+<tr>
+<td>Number of ways to create a query</td>
+<td><b>Three</b></td>
+</tr>
+
+<tr>
+<td>Query Design Window sections</td>
+<td><b>Two</b></td>
+</tr>
+
+<tr>
+<td>Shortcut key to run query</td>
+<td><b>F5</b></td>
+</tr>
+
+<tr>
+<td>Conditions are set in the ______ row</td>
+<td><b>Criterion</b></td>
+</tr>
+
+<tr>
+<td>Fields displayed after selecting a table in Wizard</td>
+<td><b>Available Fields</b></td>
+</tr>
+
+<tr>
+<td>Sorting order</td>
+<td><b>Ascending / Descending</b></td>
+</tr>
+
+<tr>
+<td>Maximum search conditions in Wizard</td>
+<td><b>Three</b></td>
+</tr>
+
+<tr>
+<td>Last Wizard step displays entire ______</td>
+<td><b>Overview</b></td>
+</tr>
+
+<tr>
+<td>More flexible method</td>
+<td><b>Design View</b></td>
+</tr>
+
+<tr>
+<td>Column heading instead of field name</td>
+<td><b>Alias row</b></td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 14 PRACTICAL EXAM POINTS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">14.</span>
+    Practical + Viva Focus
+</div>
+
+
+<h3>Remember These Actions</h3>
+
+<ul>
+
+<li>Queries icon → opens query-related options.</li>
+
+<li>Use Wizard to Create Query → starts Query Wizard.</li>
+
+<li>Create Query in Design View → opens Query Design Window.</li>
+
+<li>Add Table or Query → appears when Design View is opened for the first time.</li>
+
+<li><b>&gt;</b> → moves selected field into Fields in the Query.</li>
+
+<li><b>∧ / ∨</b> → changes field order.</li>
+
+<li><b>Visible</b> → controls whether the field appears in output.</li>
+
+<li><b>Alias</b> → changes displayed column heading.</li>
+
+<li><b>Sort</b> → arranges records.</li>
+
+<li><b>Criterion</b> → filters records.</li>
+
+<li><b>F5</b> → runs the query.</li>
+
+<li><b>Save</b> → saves the query for future use.</li>
+
+<li>Double-click saved query → runs the saved query again.</li>
+
+</ul>
+
+
+<div class="important">
+
+<h3>🎯 Practical Recall</h3>
+
+<p>
+
+<b>Fields</b> decide <span class="highlight">what to display</span>.
+
+<br>
+
+<b>Criterion</b> decides <span class="highlight">which records to display</span>.
+
+<br>
+
+<b>Alias</b> decides <span class="highlight">what column heading to show</span>.
+
+<br>
+
+<b>Sort</b> decides <span class="highlight">the order of records</span>.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 15 RAPID REVISION -->
+<!-- ===================================================== -->
+
+<section class="quick">
+
+<h3>
+⚡ CHAPTER 11 — LAST MINUTE RAPID REVISION
+</h3>
+
+
+<ul>
+
+<li>
+<b>Query:</b>
+A sort of question asked from a database.
+</li>
+
+<li>
+<b>Purpose:</b>
+Retrieve and display desired data from one or more tables.
+</li>
+
+<li>
+<b>Query Result:</b>
+Displayed in tabular form — field names in columns and records
+in rows.
+</li>
+
+<li>
+<b>Three methods:</b>
+Wizard, Design View and SQL View.
+</li>
+
+<li>
+<b>Design View:</b>
+More flexible method of creating a query.
+</li>
+
+<li>
+<b>Wizard:</b>
+Step-by-step method of creating a query.
+</li>
+
+<li>
+<b>Maximum Wizard search conditions:</b>
+Three.
+</li>
+
+<li>
+<b>Match all:</b>
+All specified conditions should be matched.
+</li>
+
+<li>
+<b>Match any:</b>
+Any one of the specified conditions can be matched.
+</li>
+
+<li>
+<b>Alias:</b>
+Alternative/meaningful name displayed as the column heading.
+</li>
+
+<li>
+<b>Criterion:</b>
+Condition used to filter records.
+</li>
+
+<li>
+<b>Criterion row:</b>
+Used to enter filtering conditions.
+</li>
+
+<li>
+<b>Sort row:</b>
+Used to arrange records in ascending or descending order.
+</li>
+
+<li>
+<b>Visible check box:</b>
+Selected by default; controls whether a field is displayed.
+</li>
+
+<li>
+<b>Query Design Window:</b>
+Divided into two sections.
+</li>
+
+<li>
+<b>Add Table or Query:</b>
+Dialog box shown when Query Design Window is opened initially.
+</li>
+
+<li>
+<b>F5:</b>
+Run Query.
+</li>
+
+<li>
+<b>Relational operators:</b>
+&lt;, &gt;, &lt;=, &gt;=, != and =.
+</li>
+
+<li>
+<b>Numerical functions:</b>
+Count, Sum, Minimum, Maximum and Average.
+</li>
+
+<li>
+<b>Group:</b>
+Forms groups for each data value in a field.
+</li>
+
+<li>
+<b>Average:</b>
+Calculates average numerical value.
+</li>
+
+<li>
+<b>Saved query:</b>
+Can be run again by double-clicking its name.
+</li>
+
+<li>
+<b>Editing:</b>
+Right-click the query and select Edit.
+</li>
+
+</ul>
+
+
+<div class="memory">
+
+<strong>🧠 SUPER SHORT FORMULA</strong>
+
+<p>
+
+<b>QUERY = SELECT → FILTER → SORT → DISPLAY</b>
+
+<br><br>
+
+<b>FIELD</b> → What to display
+
+<br>
+
+<b>CRITERION</b> → Which records
+
+<br>
+
+<b>ALIAS</b> → Column heading
+
+<br>
+
+<b>SORT</b> → Order
+
+<br>
+
+<b>F5</b> → Run
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SOURCE NOTE -->
+<!-- ===================================================== -->
+
+<div class="footer">
+
+THE GOAL • CBSE Class 10 IT (402) • Part B • Chapter 11
+
+<br>
+
+Queries in Base
+
+<br><br>
+
+Made with Love ❤️ in India by Pushpender
+
+</div>
+
+
+</main>
+
+</body>
+</html>
