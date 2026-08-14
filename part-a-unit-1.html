@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part A | Unit 1 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Shadows+Into+Light&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ---------- TOP BRAND ---------- */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    margin-top:4px;
+}
+
+.topbar p{
+    font-family:"Patrick Hand",cursive;
+    font-size:17px;
+    opacity:.85;
+}
+
+/* ---------- NOTEBOOK ---------- */
+
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+    position:relative;
+    padding:35px 45px 70px 90px;
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.18),
+        0 25px 55px rgba(0,0,0,.12);
+    min-height:100vh;
+}
+
+/* red margin */
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:62px;
+    width:2px;
+    background:#e28c8c;
+}
+
+/* ---------- PAGE TITLE ---------- */
+
+.cover{
+    padding:12px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover .small{
+    font-size:17px;
+    color:#555;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:50px;
+    color:#183f72;
+    line-height:1;
+    margin:8px 0;
+}
+
+.cover .intro{
+    font-size:19px;
+    max-width:780px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:4px 12px;
+    border:2px solid #555;
+    transform:rotate(-1deg);
+    background:#fff2a8;
+    font-size:16px;
+}
+
+/* ---------- SESSION ---------- */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    transform:rotate(-1deg);
+    margin-bottom:15px;
+}
+
+.session-number{
+    color:#b32d2d;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    margin-right:6px;
+}
+
+/* ---------- HEADINGS ---------- */
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#222;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    margin:14px 0 4px;
+    color:#254d75;
+}
+
+/* ---------- TEXT ---------- */
+
+p,li{
+    font-size:18px;
+}
+
+ul,ol{
+    margin:5px 0 12px 25px;
+}
+
+li{
+    margin:3px 0;
+}
+
+/* ---------- HIGHLIGHT ---------- */
+
+.highlight{
+    background:
+      linear-gradient(
+        transparent 25%,
+        rgba(255,226,86,.72) 25%,
+        rgba(255,226,86,.72) 82%,
+        transparent 82%
+      );
+    padding:0 3px;
+}
+
+.red{
+    color:#b42d2d;
+    font-weight:bold;
+}
+
+/* ---------- IMPORTANT BOX ---------- */
+
+.important{
+    margin:18px 0;
+    padding:14px 18px;
+    background:rgba(255,242,164,.65);
+    border:2px solid #5f5a43;
+    border-radius:3px;
+    transform:rotate(-.35deg);
+    position:relative;
+}
+
+.important:before{
+    content:"★ IMPORTANT";
+    position:absolute;
+    top:-15px;
+    left:12px;
+    background:#fff4a7;
+    padding:0 7px;
+    font-family:"Caveat",cursive;
+    font-size:17px;
+    color:#9c2929;
+}
+
+.important p{
+    margin-top:5px;
+}
+
+/* ---------- EXAM BOX ---------- */
+
+.exam{
+    margin:18px 0;
+    padding:13px 17px;
+    border-left:5px solid #c13c3c;
+    background:rgba(255,255,255,.52);
+}
+
+.exam-title{
+    color:#b52c2c;
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* ---------- MEMORY ---------- */
+
+.memory{
+    margin:18px 0;
+    padding:12px 17px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.52);
+}
+
+.memory strong{
+    color:#214d75;
+    font-size:21px;
+}
+
+/* ---------- TABLE ---------- */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.48);
+}
+
+th,td{
+    border:1.5px solid #555;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ---------- DEFINITIONS ---------- */
+
+.definition{
+    margin:8px 0;
+}
+
+.term{
+    color:#183f72;
+    font-weight:bold;
+}
+
+/* ---------- MINI NOTE ---------- */
+
+.note{
+    font-size:16px;
+    color:#555;
+    margin-top:5px;
+    transform:rotate(-.3deg);
+}
+
+/* ---------- DIVIDER ---------- */
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+    margin:25px 0;
+    letter-spacing:5px;
+}
+
+/* ---------- QUICK REVISION ---------- */
+
+.quick{
+    border:3px solid #444;
+    padding:18px;
+    margin-top:30px;
+    background:rgba(255,255,255,.5);
+    transform:rotate(.2deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    margin-top:45px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:650px){
+
+    .notebook{
+        width:100%;
+        padding:28px 20px 60px 58px;
+        margin:0;
+    }
+
+    .notebook:before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .cover h2{
+        font-size:40px;
+    }
+
+    .session-title{
+        font-size:29px;
+    }
+
+    p,li{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">THE GOAL • CBSE CLASS 10 • IT 402</div>
+    <h1>Part A — Employability Skills</h1>
+    <p>Unit 1 • Communication Skills</p>
+</header>
+
+
+<main class="notebook">
+
+<!-- COVER -->
+
+<section class="cover">
+
+    <div class="small">📖 UNIT 1 • COMPLETE EXAM NOTES</div>
+
+    <h2>Communication Skills</h2>
+
+    <p class="intro">
+        Communication skills are important for communicating effectively
+        with people and customers in daily life, education and work.
+    </p>
+
+    <span class="tag">
+        ✍️ Read • Revise • Recall
+    </span>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 1 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">01.</span>
+Methods of Communication
+</div>
+
+<h3>Meaning of Communication</h3>
+
+<p>
+The word <span class="highlight">communication</span> comes from the
+Latin word <b>commūnicāre</b>, meaning <b>“to share”</b>.
+</p>
+
+<p>
+Communication is one of the most important life skills. It helps us
+exchange information, ideas, thoughts and feelings with others.
+</p>
+
+
+<div class="important">
+
+<p>
+<b>Communication has three important parts:</b>
+</p>
+
+<ol>
+<li><b>Transmitting</b> — The sender transmits the message through a medium.</li>
+<li><b>Listening</b> — The receiver listens to or understands the message.</li>
+<li><b>Feedback</b> — The receiver conveys their understanding to the sender.</li>
+</ol>
+
+</div>
+
+
+<h3>Communication Process</h3>
+
+<p>
+The communication process starts with a <b>sender</b> who sends a
+message through a <b>channel</b>. The receiver receives and understands
+the message and provides <b>feedback</b>.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Element</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>Sender</b></td>
+<td>The person beginning the communication.</td>
+</tr>
+
+<tr>
+<td><b>Message</b></td>
+<td>The information that the sender wants to convey.</td>
+</tr>
+
+<tr>
+<td><b>Channel</b></td>
+<td>The means through which the information is sent.</td>
+</tr>
+
+<tr>
+<td><b>Receiver</b></td>
+<td>The person to whom the message is sent.</td>
+</tr>
+
+<tr>
+<td><b>Feedback</b></td>
+<td>The receiver's acknowledgement and response to the message.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Remember the order:</strong>
+
+<p>
+<b>Sender → Message → Channel → Receiver → Feedback</b>
+</p>
+
+</div>
+
+
+<h3>Common Methods of Communication</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Method</th>
+<th>Important Point</th>
+</tr>
+
+<tr>
+<td><b>Face-to-face informal communication</b></td>
+<td>
+Helps the message to be understood clearly and quickly.
+Body language can also be seen.
+</td>
+</tr>
+
+<tr>
+<td><b>E-mail</b></td>
+<td>
+Can communicate quickly with one or many people at different
+locations. It offers flexibility, convenience and low cost.
+</td>
+</tr>
+
+<tr>
+<td><b>Notices / Posters</b></td>
+<td>
+Useful when the same message has to be communicated to a large group.
+</td>
+</tr>
+
+<tr>
+<td><b>Business Meetings</b></td>
+<td>
+Communication addressed to a group regarding business,
+management and organisational decisions.
+</td>
+</tr>
+
+<tr>
+<td><b>Other Methods</b></td>
+<td>
+Social networks, messages, phone calls, newsletters, blogs, etc.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Choosing the Right Method</h3>
+
+<p>The choice of communication method depends on:</p>
+
+<ul>
+<li><span class="highlight">Target audience</span></li>
+<li><span class="highlight">Costs</span></li>
+<li><span class="highlight">Kind / type of information</span></li>
+<li><span class="highlight">Urgency / priority</span></li>
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">✏️ EXAM POINT</div>
+
+<p>
+The method of communication selected can affect relationships
+with peers, supervisors and customers.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 2 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">02.</span>
+Verbal Communication
+</div>
+
+<h3>Meaning</h3>
+
+<p>
+Verbal communication means communicating through
+<span class="highlight">spoken or written words</span>.
+</p>
+
+
+<h3>Types of Verbal Communication</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Meaning / Examples</th>
+</tr>
+
+<tr>
+<td><b>Interpersonal Communication</b></td>
+<td>
+Communication between two people.<br>
+Examples: telephone conversation, interview.
+</td>
+</tr>
+
+<tr>
+<td><b>Small Group Communication</b></td>
+<td>
+Communication involving more than two people where participants
+can interact with one another.<br>
+Examples: press conferences, board meetings, team meetings.
+</td>
+</tr>
+
+<tr>
+<td><b>Public Communication</b></td>
+<td>
+One individual addresses a large gathering.<br>
+Examples: election campaigns, public speeches.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Advantages of Verbal Communication</h3>
+
+<ul>
+<li>Easy mode of communication.</li>
+<li>Ideas can be exchanged by saying what you want.</li>
+<li>Quick response can be obtained.</li>
+<li>Interaction can be changed according to the other person's response.</li>
+</ul>
+
+
+<h3>Disadvantages</h3>
+
+<ul>
+<li>Meaning may become confusing if the right words are not used.</li>
+<li>Spoken or written words may sometimes be difficult to understand.</li>
+</ul>
+
+
+<h3>Mastering Verbal Communication</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Point</th>
+<th>What to do</th>
+</tr>
+
+<tr>
+<td><b>Think Before You Speak</b></td>
+<td>
+Think about the topic and the best way to make listeners understand.
+Note down important points before speaking.
+</td>
+</tr>
+
+<tr>
+<td><b>Concise and Clear</b></td>
+<td>
+Speak clearly, loudly and at moderate speed. Stay to the point.
+Avoid unnecessary repetition.
+</td>
+</tr>
+
+<tr>
+<td><b>Confidence and Body Language</b></td>
+<td>
+Be confident, maintain eye contact, stand straight, be attentive
+and friendly.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 3 rules for good verbal communication:</strong>
+
+<p>
+<b>Think → Speak Clearly → Be Confident</b>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 3 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">03.</span>
+Non-verbal Communication
+</div>
+
+<h3>Meaning</h3>
+
+<p>
+Non-verbal communication is communication through
+<span class="highlight">body movements, facial expressions, gestures,
+postures, eye contact, touch, space and paralanguage</span>.
+</p>
+
+
+<div class="important">
+
+<p>
+According to the textbook, approximately <b>93%</b> of communication
+is non-verbal: <b>55%</b> through body movements, face, arms etc.,
+<b>38%</b> through voice, tone and pauses, and <b>7%</b> through words.
+</p>
+
+</div>
+
+
+<h3>Types of Non-verbal Communication</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Effective Use</th>
+</tr>
+
+<tr>
+<td><b>Facial Expressions</b></td>
+<td>
+Show feelings such as happiness, sadness, anger, surprise and fear.
+</td>
+<td>
+Smile when meeting someone, keep face relaxed and match expressions
+with words.
+</td>
+</tr>
+
+<tr>
+<td><b>Posture</b></td>
+<td>
+Shows confidence and feelings. Straight posture shows confidence;
+slumped posture may show weakness.
+</td>
+<td>
+Keep shoulders straight and body relaxed. Sit straight.
+</td>
+</tr>
+
+<tr>
+<td><b>Gestures / Body Language</b></td>
+<td>
+Body movements that express an idea or meaning.
+</td>
+<td>
+Keep hands open, avoid pointing at people and tilt head slightly
+to show attentiveness.
+</td>
+</tr>
+
+<tr>
+<td><b>Touch</b></td>
+<td>
+Touch can communicate confidence or encouragement.
+</td>
+<td>
+A firm handshake can display confidence. Avoid unnecessary touch
+during formal communication.
+</td>
+</tr>
+
+<tr>
+<td><b>Space</b></td>
+<td>
+Physical distance between two people.
+</td>
+<td>
+Maintain suitable space according to the relationship and situation.
+</td>
+</tr>
+
+<tr>
+<td><b>Eye Contact</b></td>
+<td>
+Shows attention towards the speaker.
+</td>
+<td>
+Look directly at the speaker, avoid staring and take intermittent breaks.
+</td>
+</tr>
+
+<tr>
+<td><b>Paralanguage</b></td>
+<td>
+How we speak, including tone, speed and volume.
+</td>
+<td>
+Use suitable tone and volume and maintain moderate speaking speed.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Visual Communication</h3>
+
+<p>
+Visual communication means exchanging information through
+<span class="highlight">images or pictures</span>.
+It can be understood without knowing a particular language and
+can remain consistent across different places.
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">📌 Examples of Visual Communication</div>
+
+<p>
+Under construction • No pets allowed • No parking • No entry •
+Danger warning • Radiation / biohazard warning • CCTV surveillance •
+No mobile phone
+</p>
+
+</div>
+
+
+<div class="memory">
+
+<strong>⚠️ Common Bad Body Language</strong>
+
+<ul>
+<li>Yawning while listening</li>
+<li>Biting nails</li>
+<li>Looking away when someone is speaking</li>
+<li>Intense staring</li>
+<li>Clenching jaws</li>
+<li>Laughing during formal communication</li>
+</ul>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 4 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">04.</span>
+Communication Cycle & Feedback
+</div>
+
+<h3>Meaning of Feedback</h3>
+
+<p>
+Feedback is the <span class="highlight">response given by the receiver
+to the sender</span>.
+It completes the communication cycle.
+</p>
+
+
+<h3>Types of Feedback</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>Positive Feedback</b></td>
+<td>
+Appreciates good work and may also suggest further improvement.
+</td>
+</tr>
+
+<tr>
+<td><b>Negative Feedback</b></td>
+<td>
+Points out a problem or area that needs improvement.
+</td>
+</tr>
+
+<tr>
+<td><b>No Feedback</b></td>
+<td>
+Absence of response can itself indicate disagreement with ideas.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Qualities of Good Feedback</h3>
+
+<ul>
+<li><b>Specific</b> — avoid general comments; give examples.</li>
+<li><b>Timely</b> — feedback should be given promptly.</li>
+<li><b>Polite</b> — language should not offend the recipient.</li>
+<li><b>Continuing support</b> — feedback should be a continuous process.</li>
+</ul>
+
+
+<div class="important">
+
+<p>
+A good feedback should be <b>specific, helpful and kind</b>.
+</p>
+
+</div>
+
+
+<h3>Importance of Feedback</h3>
+
+<ul>
+<li>Validates effective listening.</li>
+<li>Motivates people.</li>
+<li>Helps maintain better work relationships.</li>
+<li>Boosts learning.</li>
+<li>Helps remain focused on goals.</li>
+<li>Improves performance and decision-making.</li>
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">✏️ EXAM LINE</div>
+
+<p>
+Feedback is the final component and one of the most important
+factors in the communication process.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 5 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">05.</span>
+Barriers to Effective Communication
+</div>
+
+<h3>7 Cs of Effective Communication</h3>
+
+<p>
+Effective communication follows the basic principles known as the
+<span class="highlight">7 Cs</span>.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>7 C</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>Clear</b></td>
+<td>Message should be easy to understand.</td>
+</tr>
+
+<tr>
+<td><b>Concise</b></td>
+<td>Message should be brief and to the point.</td>
+</tr>
+
+<tr>
+<td><b>Concrete</b></td>
+<td>Message should contain clear and definite information.</td>
+</tr>
+
+<tr>
+<td><b>Correct</b></td>
+<td>Information should be accurate.</td>
+</tr>
+
+<tr>
+<td><b>Coherent</b></td>
+<td>Ideas should be logically connected.</td>
+</tr>
+
+<tr>
+<td><b>Complete</b></td>
+<td>All necessary information should be included.</td>
+</tr>
+
+<tr>
+<td><b>Courteous</b></td>
+<td>Communication should be polite and respectful.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 7 Cs:</strong>
+
+<p>
+<b>
+Clear • Concise • Concrete • Correct • Coherent • Complete • Courteous
+</b>
+</p>
+
+</div>
+
+
+<h3>Types of Communication Barriers</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Barrier</th>
+<th>Meaning / Example</th>
+</tr>
+
+<tr>
+<td><b>Physical</b></td>
+<td>
+Environmental or natural conditions that affect communication.
+Example: not being able to see gestures or body language.
+</td>
+</tr>
+
+<tr>
+<td><b>Linguistic</b></td>
+<td>
+Difficulty caused by language differences, slang, professional
+jargon or regional colloquialisms.
+</td>
+</tr>
+
+<tr>
+<td><b>Interpersonal</b></td>
+<td>
+Occurs when the receiver understands the message differently
+from what the sender intended. Stage fear, lack of willingness
+and personal differences can contribute.
+</td>
+</tr>
+
+<tr>
+<td><b>Organisational</b></td>
+<td>
+Formal hierarchy, rules, procedures and superior-subordinate
+relationships may restrict free flow of communication.
+</td>
+</tr>
+
+<tr>
+<td><b>Cultural</b></td>
+<td>
+Differences in customs and cultural background can cause
+misunderstanding and stereotypical assumptions.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Ways to Overcome Communication Barriers</h3>
+
+<ul>
+<li>Use simple language.</li>
+<li>Do not form assumptions about culture, religion or geography.</li>
+<li>Communicate in person whenever possible.</li>
+<li>Use visuals.</li>
+<li>Take help of a translator for language differences.</li>
+<li>Respect other people's opinions.</li>
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">⭐ MOST IMPORTANT</div>
+
+<p>
+If a question asks for the <b>common barriers</b>, remember:
+<br>
+<b>Physical + Linguistic + Interpersonal + Organisational + Cultural</b>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 6 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">06.</span>
+Writing Skills — Parts of Speech
+</div>
+
+<h3>Capitalisation</h3>
+
+<p>
+The textbook gives the mnemonic <span class="highlight">TINS</span>
+to remember important capitalisation rules.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>TINS</th>
+<th>Rule</th>
+</tr>
+
+<tr>
+<td><b>T — Titles</b></td>
+<td>
+Capitalise the first letter in titles used before people's names.
+<br>Example: <b>Dr Malik</b>, <b>Mr Pandey</b>
+</td>
+</tr>
+
+<tr>
+<td><b>I — I</b></td>
+<td>
+The pronoun <b>I</b> is always written in capital form.
+</td>
+</tr>
+
+<tr>
+<td><b>N — Names</b></td>
+<td>
+Capitalise names of people, places, days and months.
+</td>
+</tr>
+
+<tr>
+<td><b>S — Starting sentence</b></td>
+<td>
+Capitalise the first letter of every sentence.
+</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Punctuation Marks</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Mark</th>
+<th>Use</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td><b>.</b> Full stop</td>
+<td>End of a sentence; also used with some short forms.</td>
+<td>Omar is a professor.</td>
+</tr>
+
+<tr>
+<td><b>,</b> Comma</td>
+<td>Indicates a pause or separates items in a list.</td>
+<td>Apples, bananas and mangoes.</td>
+</tr>
+
+<tr>
+<td><b>?</b> Question mark</td>
+<td>Used at the end of a question.</td>
+<td>Where is your book?</td>
+</tr>
+
+<tr>
+<td><b>!</b> Exclamation mark</td>
+<td>Shows strong feeling or emotion.</td>
+<td>What a beautiful dress!</td>
+</tr>
+
+<tr>
+<td><b>'</b> Apostrophe</td>
+<td>
+Shows possession or a shortened form of words in informal speech.
+</td>
+<td>Shobha's cat. / Let's go.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Basic Parts of Speech</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Part of Speech</th>
+<th>Meaning</th>
+<th>Examples</th>
+</tr>
+
+<tr>
+<td><b>Noun</b></td>
+<td>Naming word for a person, place, thing or idea.</td>
+<td>Tiger, India, Raj, Truth</td>
+</tr>
+
+<tr>
+<td><b>Pronoun</b></td>
+<td>Word used in place of a noun.</td>
+<td>I, You, They, Us, She, He</td>
+</tr>
+
+<tr>
+<td><b>Adjective</b></td>
+<td>Word that describes another word.</td>
+<td>Large, Red, Naughty, Weak</td>
+</tr>
+
+<tr>
+<td><b>Verb</b></td>
+<td>Word that shows an action.</td>
+<td>Run, Eat, Think, Sit</td>
+</tr>
+
+<tr>
+<td><b>Adverb</b></td>
+<td>
+Adds meaning to verbs by answering how, how often, when or where.
+</td>
+<td>Easily, Always, Before, Fast, Carefully</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Supporting Parts of Speech</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Use</th>
+<th>Examples</th>
+</tr>
+
+<tr>
+<td><b>Articles</b></td>
+<td>Generally used before nouns.</td>
+<td>a, an, the</td>
+</tr>
+
+<tr>
+<td><b>Conjunctions</b></td>
+<td>Join nouns, phrases or sentences.</td>
+<td>and, but, because</td>
+</tr>
+
+<tr>
+<td><b>Prepositions</b></td>
+<td>
+Connect one word with another and usually answer where, when or how.
+</td>
+<td>on, over, in, under</td>
+</tr>
+
+<tr>
+<td><b>Interjections</b></td>
+<td>Express strong emotions.</td>
+<td>Wow!, Help!, Oh no!</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Quick Recall</strong>
+
+<p>
+<b>
+Noun = Name &nbsp; | &nbsp;
+Pronoun = Replaces noun &nbsp; | &nbsp;
+Adjective = Describes &nbsp; | &nbsp;
+Verb = Action &nbsp; | &nbsp;
+Adverb = Adds meaning to verb
+</b>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 7 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">07.</span>
+Writing Skills — Sentences
+</div>
+
+<h3>Parts of a Sentence</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>Subject</b></td>
+<td>Person or thing that performs an action.</td>
+</tr>
+
+<tr>
+<td><b>Verb</b></td>
+<td>Describes the action.</td>
+</tr>
+
+<tr>
+<td><b>Object</b></td>
+<td>Person or thing that receives the action.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Direct and Indirect Objects</h3>
+
+<p>
+A sentence may have two types of objects:
+<b>Direct Object</b> and <b>Indirect Object</b>.
+</p>
+
+<div class="important">
+
+<p>
+<b>Direct Object:</b> directly receives the action of the verb.
+</p>
+
+<p>
+<b>Indirect Object:</b> answers questions such as
+<b>“to whom?”</b> or <b>“for whom?”</b>.
+</p>
+
+</div>
+
+
+<p>
+Example:
+<b>She bought a bicycle for her son.</b>
+</p>
+
+<ul>
+<li>Verb = bought</li>
+<li>Direct Object = bicycle</li>
+<li>Indirect Object = her son</li>
+</ul>
+
+
+<h3>Active and Passive Voice</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Active Voice</th>
+<th>Passive Voice</th>
+</tr>
+
+<tr>
+<td>Radha is reading a book.</td>
+<td>A book is being read by Radha.</td>
+</tr>
+
+<tr>
+<td>Ali changed the flat tire.</td>
+<td>The flat tire was changed by Ali.</td>
+</tr>
+
+<tr>
+<td>Ravi painted the entire house.</td>
+<td>The entire house was painted by Ravi.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Easy Rule</strong>
+
+<p>
+<b>Active Voice:</b> Subject does the action.
+</p>
+
+<p>
+<b>Passive Voice:</b> Subject receives the action.
+</p>
+
+</div>
+
+
+<h3>Types of Sentences</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Type</th>
+<th>Purpose</th>
+<th>Ending</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td><b>Declarative / Statement</b></td>
+<td>Provides information or states a fact.</td>
+<td>.</td>
+<td>Blue is my favourite colour.</td>
+</tr>
+
+<tr>
+<td><b>Interrogative / Question</b></td>
+<td>Asks a question.</td>
+<td>?</td>
+<td>Have you had lunch?</td>
+</tr>
+
+<tr>
+<td><b>Exclamatory</b></td>
+<td>Expresses strong emotion.</td>
+<td>!</td>
+<td>This is the best day of my life!</td>
+</tr>
+
+<tr>
+<td><b>Imperative / Order</b></td>
+<td>Shows order, command, request or advice.</td>
+<td>. or !</td>
+<td>Please lower your voice.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Paragraph</h3>
+
+<p>
+A group of sentences forms a paragraph. However, all sentences
+within a paragraph should have a <span class="highlight">common idea
+or theme</span>.
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">✏️ EXAM DIFFERENCE</div>
+
+<p>
+<b>Statement</b> → gives information<br>
+<b>Interrogative</b> → asks a question<br>
+<b>Exclamatory</b> → expresses strong emotion<br>
+<b>Imperative</b> → order / command / request / advice
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FINAL REVISION -->
+<!-- ===================================================== -->
+
+<section class="quick">
+
+<h3>⚡ UNIT 1 — LAST MINUTE REVISION</h3>
+
+<ul>
+
+<li>
+Communication = sharing information, ideas, thoughts or feelings.
+</li>
+
+<li>
+Communication cycle: <b>Sender → Message → Channel → Receiver → Feedback</b>.
+</li>
+
+<li>
+Four factors for choosing a communication method:
+<b>target audience, cost, type of information, urgency/priority.</b>
+</li>
+
+<li>
+Verbal communication uses spoken or written words.
+</li>
+
+<li>
+Important non-verbal forms:
+<b>facial expressions, posture, gestures, touch, space,
+eye contact and paralanguage.</b>
+</li>
+
+<li>
+Visual communication uses images or pictures.
+</li>
+
+<li>
+Good feedback should be <b>specific, timely, polite</b> and
+offer <b>continuing support</b>.
+</li>
+
+<li>
+7 Cs:
+<b>Clear, Concise, Concrete, Correct, Coherent, Complete, Courteous.</b>
+</li>
+
+<li>
+Five major barriers:
+<b>Physical, Linguistic, Interpersonal, Organisational, Cultural.</b>
+</li>
+
+<li>
+TINS = <b>Titles, I, Names, Starting sentences.</b>
+</li>
+
+<li>
+Basic parts of speech:
+<b>Noun, Pronoun, Adjective, Verb, Adverb.</b>
+</li>
+
+<li>
+Supporting parts:
+<b>Articles, Conjunctions, Prepositions, Interjections.</b>
+</li>
+
+<li>
+Subject performs the action; verb describes the action;
+object receives the action.
+</li>
+
+<li>
+Active voice → subject does the action.
+Passive voice → subject receives the action.
+</li>
+
+<li>
+Sentence types:
+<b>Declarative, Interrogative, Exclamatory, Imperative.</b>
+</li>
+
+<li>
+A paragraph contains sentences based on a common idea or theme.
+</li>
+
+</ul>
+
+</section>
+
+
+<div class="footer">
+    THE GOAL • CBSE Class 10 IT (402) • Part A • Unit 1
+    <br>
+    Made with Love ❤️ in India by Pushpender
+</div>
+
+</main>
+
+</body>
+</html>
