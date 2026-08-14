@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Unit 5 | Green Skills-II</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#d7d0c2;
+    color:#252525;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ================= TOP HEADER ================= */
+
+.topbar{
+    background:#172033;
+    color:#fff;
+    text-align:center;
+    padding:18px 12px;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:4px;
+}
+
+.topbar p{
+    margin-top:4px;
+    font-size:15px;
+    opacity:.85;
+}
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    width:min(950px,calc(100% - 24px));
+    margin:25px auto;
+    padding:45px 55px 70px 90px;
+
+    position:relative;
+
+    background-color:#fffdf5;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 31px,
+            rgba(65,110,160,.20) 32px
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.18);
+
+    min-height:100vh;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:58px;
+    width:2px;
+    background:rgba(210,65,65,.58);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:10px 0 35px;
+}
+
+.cover-small{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#666;
+}
+
+.cover h1{
+    font-family:"Caveat",cursive;
+    font-size:62px;
+    line-height:1;
+    color:#172033;
+    margin-top:10px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    font-weight:600;
+    line-height:1.15;
+    margin-top:5px;
+}
+
+.hand-line{
+    width:260px;
+    height:5px;
+    background:#e6ca45;
+    margin:13px 0 18px;
+    transform:rotate(-1deg);
+}
+
+.cover-text{
+    font-size:20px;
+}
+
+/* ================= SESSION ================= */
+
+.session{
+    margin:48px 0;
+}
+
+.session-no{
+    color:#777;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+.session h2{
+    color:#172033;
+    font-family:"Caveat",cursive;
+    font-size:38px;
+    line-height:1.1;
+    margin-bottom:12px;
+}
+
+.session h3{
+    color:#292929;
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    margin:24px 0 5px;
+}
+
+.session p{
+    font-size:19px;
+    margin:6px 0;
+}
+
+.session ul,
+.session ol{
+    margin:8px 0 10px 27px;
+}
+
+.session li{
+    font-size:18px;
+    margin:3px 0;
+}
+
+/* ================= NOTE BOXES ================= */
+
+.note{
+    background:#fff6ad;
+    border-left:5px solid #d6bd35;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+
+    box-shadow:2px 3px 0 rgba(0,0,0,.08);
+
+    transform:rotate(-.25deg);
+}
+
+.exam{
+    background:#faeeee;
+    border-left:5px solid #c64b4b;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+}
+
+.tip{
+    background:#edf4fa;
+    border-left:5px solid #4779a8;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0 22px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.60);
+}
+
+th,
+td{
+    border:1.5px solid #6b6b6b;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(231,221,172,.70);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ================= LABEL ================= */
+
+.label{
+    display:inline-block;
+    background:#172033;
+    color:#fff;
+    padding:4px 11px;
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:1px;
+    margin-bottom:9px;
+}
+
+/* ================= RECALL ================= */
+
+.recall{
+    border:2px dashed #666;
+    background:rgba(255,255,255,.55);
+    padding:15px 18px;
+    margin-top:24px;
+}
+
+.recall h3{
+    margin:0 0 7px;
+    font-size:28px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    margin-top:55px;
+    padding-top:20px;
+    border-top:2px dashed #777;
+    text-align:center;
+    font-size:16px;
+    color:#555;
+}
+
+.footer strong{
+    color:#172033;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .notebook{
+        margin:10px auto;
+        padding:32px 22px 55px 57px;
+    }
+
+    .notebook::before{
+        left:35px;
+    }
+
+    .cover h1{
+        font-size:48px;
+    }
+
+    .cover h2{
+        font-size:28px;
+    }
+
+    .session h2{
+        font-size:32px;
+    }
+
+    .session p,
+    .session li,
+    .note,
+    .exam,
+    .tip{
+        font-size:17px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+        padding:7px;
+    }
+}
+
+@media(max-width:450px){
+
+    .notebook{
+        padding-left:48px;
+        padding-right:15px;
+    }
+
+    .notebook::before{
+        left:28px;
+    }
+
+    .cover h1{
+        font-size:43px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="topbar">
+
+    <div class="brand">THE GOAL</div>
+
+    <p>CBSE Class X • Information Technology 402</p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- =====================================================
+     COVER
+===================================================== -->
+
+<section class="cover">
+
+    <div class="cover-small">
+        PART A • EMPLOYABILITY SKILLS
+    </div>
+
+    <h1>Unit 5</h1>
+
+    <h2>
+        Green Skills-II
+    </h2>
+
+    <div class="hand-line"></div>
+
+    <p class="cover-text">
+        <strong>Exam-Oriented Revision Notes</strong>
+    </p>
+
+    <p class="cover-text">
+        Sustainable Development • Environment • Green Economy
+    </p>
+
+
+    <div class="note">
+
+        <strong>★ UNIT AT A GLANCE</strong><br>
+
+        This unit focuses on sustainable development,
+        environmental protection, natural resources,
+        pollution, waste management, green economy and
+        sustainable practices.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SESSION 01
+===================================================== -->
+
+<section class="session">
+
+    <div class="session-no">
+        SESSION 01
+    </div>
+
+    <h2>
+        Sustainable Development
+    </h2>
+
+    <span class="label">
+        EXAM IMPORTANT
+    </span>
+
+
+    <h3>
+        What is Environment?
+    </h3>
+
+    <p>
+
+        The <strong>environment</strong> includes all the
+        living and non-living things around us and their
+        interactions.
+
+    </p>
+
+
+    <h3>
+        What is Sustainable Development?
+    </h3>
+
+    <p>
+
+        <strong>Sustainable development</strong> means
+        development that meets the needs of the present
+        without compromising the ability of future
+        generations to meet their own needs.
+
+    </p>
+
+
+    <div class="note">
+
+        <strong>★ Easy Definition</strong><br><br>
+
+        Sustainable Development =
+        Development + Present Needs + Future Needs
+
+    </div>
+
+
+    <h3>
+        Three Main Dimensions
+    </h3>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+            <th>Dimension</th>
+            <th>Focus</th>
+        </tr>
+
+        <tr>
+            <td>Economic</td>
+            <td>
+                Economic growth, employment and responsible
+                use of resources.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Social</td>
+            <td>
+                Human well-being, equality and quality of life.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Environmental</td>
+            <td>
+                Protection and conservation of the natural environment.
+            </td>
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <div class="exam">
+
+        <strong>★ Remember</strong><br><br>
+
+        Sustainable development tries to maintain a balance
+        between economic, social and environmental needs.
+
+    </div>
+
+
+    <h3>
+        Why is Sustainable Development Needed?
+    </h3>
+
+    <ul>
+
+        <li>
+            Natural resources are limited.
+        </li>
+
+        <li>
+            Pollution can damage human health and ecosystems.
+        </li>
+
+        <li>
+            Future generations also need natural resources.
+        </li>
+
+        <li>
+            It helps maintain environmental balance.
+        </li>
+
+        <li>
+            It promotes responsible use of resources.
+        </li>
+
+    </ul>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                Present Needs + Future Needs + Environment
+                = Sustainable Development
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SESSION 02
+===================================================== -->
+
+<section class="session">
+
+    <div class="session-no">
+        SESSION 02
+    </div>
+
+    <h2>
+        Natural Resources
+    </h2>
+
+    <span class="label">
+        VERY IMPORTANT
+    </span>
+
+
+    <h3>
+        What are Natural Resources?
+    </h3>
+
+    <p>
+
+        <strong>Natural resources</strong> are resources
+        obtained from nature and used by humans for
+        their needs.
+
+    </p>
+
+
+    <h3>
+        Types of Natural Resources
+    </h3>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+            <th>Type</th>
+            <th>Examples</th>
+        </tr>
+
+        <tr>
+            <td>Renewable Resources</td>
+            <td>
+                Solar energy, wind, water and biomass.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Non-renewable Resources</td>
+            <td>
+                Coal, petroleum and natural gas.
+            </td>
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <h3>
+        Renewable Resources
+    </h3>
+
+    <p>
+
+        Renewable resources can naturally be replenished
+        over time when they are managed responsibly.
+
+    </p>
+
+
+    <h3>
+        Non-renewable Resources
+    </h3>
+
+    <p>
+
+        Non-renewable resources are available in limited
+        quantities and take a very long time to form.
+
+    </p>
+
+
+    <div class="exam">
+
+        <strong>★ MCQ Difference</strong><br><br>
+
+        Renewable → Can be replenished naturally.<br>
+
+        Non-renewable → Limited and cannot be quickly replaced.
+
+    </div>
+
+
+    <h3>
+        Conservation of Resources
+    </h3>
+
+    <p>
+
+        <strong>Conservation</strong> means protecting,
+        preserving and using natural resources carefully
+        so that they remain available for the future.
+
+    </p>
+
+
+    <ul>
+
+        <li>
+            Save electricity.
+        </li>
+
+        <li>
+            Avoid unnecessary wastage of water.
+        </li>
+
+        <li>
+            Reduce unnecessary use of fuel.
+        </li>
+
+        <li>
+            Reuse useful materials.
+        </li>
+
+        <li>
+            Protect forests and biodiversity.
+        </li>
+
+    </ul>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                Use Less → Waste Less → Reuse → Conserve
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SESSION 03
+===================================================== -->
+
+<section class="session">
+
+    <div class="session-no">
+        SESSION 03
+    </div>
+
+    <h2>
+        Environmental Problems
+    </h2>
+
+    <span class="label">
+        HIGH PRIORITY
+    </span>
+
+
+    <h3>
+        Pollution
+    </h3>
+
+    <p>
+
+        <strong>Pollution</strong> is the introduction of
+        harmful substances or energy into the environment
+        that causes undesirable changes.
+
+    </p>
+
+
+    <h3>
+        Types of Pollution
+    </h3>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+            <th>Type</th>
+            <th>Examples / Causes</th>
+        </tr>
+
+        <tr>
+            <td>Air Pollution</td>
+            <td>
+                Smoke, harmful gases and vehicle emissions.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Water Pollution</td>
+            <td>
+                Sewage, chemicals and waste entering water bodies.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Soil Pollution</td>
+            <td>
+                Improper disposal of waste and harmful chemicals.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Noise Pollution</td>
+            <td>
+                Excessive or unwanted sound from vehicles,
+                machines and other sources.
+            </td>
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <h3>
+        Effects of Pollution
+    </h3>
+
+    <ul>
+
+        <li>
+            Can cause health problems.
+        </li>
+
+        <li>
+            Damages ecosystems.
+        </li>
+
+        <li>
+            Reduces environmental quality.
+        </li>
+
+        <li>
+            Can affect plants and animals.
+        </li>
+
+        <li>
+            Contaminates natural resources.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Climate Change
+    </h3>
+
+    <p>
+
+        <strong>Climate change</strong> refers to long-term
+        changes in temperature and weather patterns.
+
+    </p>
+
+
+    <h3>
+        Global Warming
+    </h3>
+
+    <p>
+
+        <strong>Global warming</strong> is the long-term
+        increase in the average temperature of the Earth,
+        largely associated with increased greenhouse gases.
+
+    </p>
+
+
+    <div class="note">
+
+        <strong>★ Remember the difference</strong><br><br>
+
+        Global Warming → Rise in Earth's average temperature.<br>
+
+        Climate Change → Broader long-term changes in
+        climate patterns.
+
+    </div>
+
+
+    <h3>
+        Greenhouse Effect
+    </h3>
+
+    <p>
+
+        The <strong>greenhouse effect</strong> is the process
+        by which certain gases in the atmosphere trap heat
+        and help keep the Earth warm.
+
+    </p>
+
+
+    <div class="exam">
+
+        <strong>★ Exam Point</strong><br><br>
+
+        Greenhouse gases in excessive amounts can contribute
+        to global warming and climate change.
+
+    </div>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                Pollution → Environmental Damage →
+                Health &amp; Ecosystem Problems
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SESSION 04
+===================================================== -->
+
+<section class="session">
+
+    <div class="session-no">
+        SESSION 04
+    </div>
+
+    <h2>
+        Waste Management
+    </h2>
+
+    <span class="label">
+        EXAM IMPORTANT
+    </span>
+
+
+    <h3>
+        What is Waste Management?
+    </h3>
+
+    <p>
+
+        <strong>Waste management</strong> involves the
+        collection, handling, treatment, recovery and
+        disposal of waste in a responsible manner.
+
+    </p>
+
+
+    <h3>
+        The 3Rs</h3>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+            <th>R</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Reduce</td>
+            <td>
+                Use fewer resources and produce less waste.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Reuse</td>
+            <td>
+                Use an item again instead of throwing it away.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Recycle</td>
+            <td>
+                Process waste materials to make useful
+                new materials or products.
+            </td>
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <div class="exam">
+
+        <strong>★ Remember the order:</strong><br><br>
+
+        <strong>Reduce → Reuse → Recycle</strong>
+
+    </div>
+
+
+    <h3>
+        Biodegradable Waste
+    </h3>
+
+    <p>
+
+        <strong>Biodegradable waste</strong> can be broken
+        down naturally by microorganisms.
+
+    </p>
+
+    <p>
+
+        Examples: food waste, vegetable peels and leaves.
+
+    </p>
+
+
+    <h3>
+        Non-biodegradable Waste
+    </h3>
+
+    <p>
+
+        <strong>Non-biodegradable waste</strong> does not
+        break down easily through natural processes.
+
+    </p>
+
+    <p>
+
+        Examples: many plastics, glass and certain synthetic materials.
+
+    </p>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+            <th>Biodegradable</th>
+            <th>Non-biodegradable</th>
+        </tr>
+
+        <tr>
+            <td>
+                Breaks down naturally.
+            </td>
+
+            <td>
+                Does not break down easily.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Food waste, leaves.
+            </td>
+
+            <td>
+                Many plastics, glass.
+            </td>
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <h3>
+        E-waste
+    </h3>
+
+    <p>
+
+        <strong>E-waste</strong> means discarded electrical
+        and electronic equipment and their components.
+
+    </p>
+
+
+    <div class="tip">
+
+        <strong>Examples:</strong><br><br>
+
+        Old computers • Mobile phones • Keyboards •
+        Printers • Electronic components
+
+    </div>
+
+
+    <h3>
+        Responsible E-waste Management
+    </h3>
+
+    <ul>
+
+        <li>
+            Avoid unnecessary replacement of working devices.
+        </li>
+
+        <li>
+            Repair or reuse devices where possible.
+        </li>
+
+        <li>
+            Give electronic waste to authorised recycling
+            or collection facilities.
+        </li>
+
+        <li>
+            Do not mix electronic waste carelessly with
+            ordinary household waste.
+        </li>
+
+    </ul>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                Reduce → Reuse → Recycle → Responsible Disposal
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SESSION 05
+===================================================== -->
+
+<section class="session">
+
+    <div class="session-no">
+        SESSION 05
+    </div>
+
+    <h2>
+        Green Economy &amp; Green Skills
+    </h2>
+
+    <span class="label">
+        VERY IMPORTANT
+    </span>
+
+
+    <h3>
+        What is a Green Economy?
+    </h3>
+
+    <p>
+
+        A <strong>green economy</strong> is an economy that
+        aims for economic well-being while reducing
+        environmental risks and promoting efficient use
+        of natural resources.
+
+    </p>
+
+
+    <div class="note">
+
+        <strong>★ Simple Meaning</strong><br><br>
+
+        Green Economy =
+        Economic Development + Environmental Protection
+
+    </div>
+
+
+    <h3>
+        Features of a Green Economy
+    </h3>
+
+    <ul>
+
+        <li>
+            Efficient use of natural resources.
+        </li>
+
+        <li>
+            Reduction of pollution and waste.
+        </li>
+
+        <li>
+            Promotion of renewable energy.
+        </li>
+
+        <li>
+            Encouragement of sustainable production.
+        </li>
+
+        <li>
+            Creation of green jobs and skills.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        What are Green Skills?
+    </h3>
+
+    <p>
+
+        <strong>Green skills</strong> are the knowledge,
+        abilities, values and attitudes needed to support
+        environmentally sustainable practices.
+
+    </p>
+
+
+    <h3>
+        Examples of Green Skills
+    </h3>
+
+    <ul>
+
+        <li>
+            Efficient use of energy and resources.
+        </li>
+
+        <li>
+            Waste reduction and management.
+        </li>
+
+        <li>
+            Environmental awareness.
+        </li>
+
+        <li>
+            Sustainable use of technology.
+        </li>
+
+        <li>
+            Knowledge of renewable energy and
+            environmentally responsible practices.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Green Jobs
+    </h3>
+
+    <p>
+
+        <strong>Green jobs</strong> are jobs that contribute
+        to preserving or restoring the environment and
+        supporting sustainable development.
+
+    </p>
+
+
+    <div class="exam">
+
+        <strong>★ Exam Point</strong><br><br>
+
+        Green skills are useful not only in specialised
+        environmental jobs but also in many occupations
+        where resources, energy and waste need to be managed
+        responsibly.
+
+    </div>
+
+
+    <h3>
+        Sustainable Practices in Daily Life
+    </h3>
+
+    <ul>
+
+        <li>
+            Switch off lights and devices when not required.
+        </li>
+
+        <li>
+            Save water.
+        </li>
+
+        <li>
+            Reduce unnecessary paper use.
+        </li>
+
+        <li>
+            Prefer reusable products where practical.
+        </li>
+
+        <li>
+            Separate waste appropriately.
+        </li>
+
+        <li>
+            Use public transport, walking or cycling where practical.
+        </li>
+
+    </ul>
+
+
+    <div class="recall">
+
+        <h3>Quick Recall</h3>
+
+        <p>
+
+            <strong>
+                Green Skills → Green Jobs → Green Economy
+                → Sustainable Development
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LAST MINUTE REVISION
+===================================================== -->
+
+<section class="session">
+
+    <div class="session-no">
+        LAST MINUTE REVISION
+    </div>
+
+    <h2>
+        Unit 5 — Must Remember
+    </h2>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+            <th>Term</th>
+            <th>Exam Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Environment</td>
+            <td>
+                Living and non-living surroundings and their interactions.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Sustainable Development</td>
+            <td>
+                Development that meets present needs without
+                compromising future generations.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Natural Resources</td>
+            <td>
+                Resources obtained from nature and used by humans.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Renewable Resources</td>
+            <td>
+                Resources that can be naturally replenished.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Non-renewable Resources</td>
+            <td>
+                Limited resources that take a very long time to form.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Pollution</td>
+            <td>
+                Harmful contamination or change in the environment.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Global Warming</td>
+            <td>
+                Long-term increase in Earth's average temperature.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Climate Change</td>
+            <td>
+                Long-term changes in climate patterns.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Waste Management</td>
+            <td>
+                Responsible handling, treatment, recovery
+                and disposal of waste.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Reduce</td>
+            <td>
+                Use fewer resources and produce less waste.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Reuse</td>
+            <td>
+                Use an item again.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Recycle</td>
+            <td>
+                Process waste into useful material/products.
+            </td>
+        </tr>
+
+        <tr>
+            <td>E-waste</td>
+            <td>
+                Discarded electrical and electronic equipment.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Green Economy</td>
+            <td>
+                Economy focused on well-being while reducing
+                environmental risks and using resources efficiently.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Green Skills</td>
+            <td>
+                Skills that support environmentally sustainable practices.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Green Jobs</td>
+            <td>
+                Jobs that contribute to environmental protection
+                and sustainable development.
+            </td>
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <div class="exam">
+
+        <strong>★ EXAM CHECKLIST</strong>
+
+        <br><br>
+
+        ✓ Environment<br>
+
+        ✓ Sustainable development<br>
+
+        ✓ Three dimensions of sustainability<br>
+
+        ✓ Natural resources<br>
+
+        ✓ Renewable vs non-renewable resources<br>
+
+        ✓ Conservation of resources<br>
+
+        ✓ Types of pollution<br>
+
+        ✓ Global warming<br>
+
+        ✓ Climate change<br>
+
+        ✓ Greenhouse effect<br>
+
+        ✓ Waste management<br>
+
+        ✓ 3Rs — Reduce, Reuse, Recycle<br>
+
+        ✓ Biodegradable vs non-biodegradable waste<br>
+
+        ✓ E-waste<br>
+
+        ✓ Green economy<br>
+
+        ✓ Green skills<br>
+
+        ✓ Green jobs<br>
+
+        ✓ Sustainable daily practices
+
+    </div>
+
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <strong>THE GOAL</strong><br>
+
+    CBSE Class X • Information Technology 402<br>
+
+    Part A • Green Skills-II<br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</footer>
+
+
+</main>
+
+</body>
+
+</html>
