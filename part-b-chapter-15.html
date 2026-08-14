@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Chapter 15 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ---------- TOP BRAND ---------- */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    margin-top:4px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.85;
+}
+
+/* ---------- NOTEBOOK ---------- */
+
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #fffdf4 0px,
+        #fffdf4 31px,
+        #a9c8e7 32px
+    );
+
+    position:relative;
+
+    padding:35px 45px 70px 90px;
+
+    box-shadow:
+    0 5px 12px rgba(0,0,0,.18),
+    0 25px 55px rgba(0,0,0,.12);
+
+    min-height:100vh;
+}
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:62px;
+    width:2px;
+    background:#e28c8c;
+}
+
+/* ---------- COVER ---------- */
+
+.cover{
+    padding:12px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover .small{
+    font-size:17px;
+    color:#555;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:50px;
+    color:#183f72;
+    line-height:1;
+    margin:8px 0;
+}
+
+.cover .intro{
+    font-size:19px;
+    max-width:820px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:4px 12px;
+    border:2px solid #555;
+    transform:rotate(-1deg);
+    background:#fff2a8;
+    font-size:16px;
+}
+
+.source-note{
+    font-size:15px;
+    color:#555;
+    margin-top:12px;
+}
+
+/* ---------- SESSION ---------- */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    transform:rotate(-1deg);
+    margin-bottom:15px;
+}
+
+.session-number{
+    color:#b32d2d;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#222;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    margin:14px 0 4px;
+    color:#254d75;
+}
+
+p,li{
+    font-size:18px;
+}
+
+ul,ol{
+    margin:5px 0 12px 25px;
+}
+
+li{
+    margin:4px 0;
+}
+
+.highlight{
+    background:
+    linear-gradient(
+        transparent 25%,
+        rgba(255,226,86,.72) 25%,
+        rgba(255,226,86,.72) 82%,
+        transparent 82%
+    );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b42d2d;
+    font-weight:bold;
+}
+
+/* ---------- BOXES ---------- */
+
+.important{
+    margin:18px 0;
+    padding:14px 18px;
+    background:rgba(255,242,164,.65);
+    border:2px solid #5f5a43;
+    border-radius:3px;
+    transform:rotate(-.35deg);
+    position:relative;
+}
+
+.important:before{
+    content:"★ IMPORTANT";
+    position:absolute;
+    top:-15px;
+    left:12px;
+    background:#fff4a7;
+    padding:0 7px;
+    font-family:"Caveat",cursive;
+    font-size:17px;
+    color:#9c2929;
+}
+
+.exam{
+    margin:18px 0;
+    padding:13px 17px;
+    border-left:5px solid #c13c3c;
+    background:rgba(255,255,255,.52);
+}
+
+.exam-title{
+    color:#b52c2c;
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:12px 17px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.52);
+}
+
+.memory strong{
+    color:#214d75;
+    font-size:21px;
+}
+
+/* ---------- TABLE ---------- */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.48);
+}
+
+th,td{
+    border:1.5px solid #555;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ---------- FLOW ---------- */
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:20px 0;
+}
+
+.flow span{
+    padding:9px 14px;
+    border:2px solid #555;
+    background:rgba(255,242,164,.75);
+    font-size:18px;
+    transform:rotate(-1deg);
+}
+
+.arrow{
+    font-size:25px;
+    color:#9d3030;
+}
+
+/* ---------- QUICK ---------- */
+
+.quick{
+    border:3px solid #444;
+    padding:18px;
+    margin-top:30px;
+    background:rgba(255,255,255,.5);
+    transform:rotate(.2deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+    margin:25px 0;
+    letter-spacing:5px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    margin-top:45px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+
+    .notebook{
+        width:100%;
+        padding:28px 20px 60px 58px;
+        margin:0;
+    }
+
+    .notebook:before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .cover h2{
+        font-size:40px;
+    }
+
+    .session-title{
+        font-size:29px;
+    }
+
+    p,li{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+    }
+
+    .flow{
+        flex-direction:column;
+    }
+
+    .arrow{
+        transform:rotate(90deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • IT 402
+    </div>
+
+    <h1>
+        Part B — Maintain Healthy, Safe and Secure Working Environment
+    </h1>
+
+    <p>
+        Chapter 15 • Prevent Accidents and Emergencies
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<section class="cover">
+
+    <div class="small">
+        📖 CHAPTER 15 • SOURCE-BASED EXAM NOTES
+    </div>
+
+    <h2>
+        Prevent Accidents and Emergencies
+    </h2>
+
+    <p class="intro">
+
+        Complete exam-oriented revision notes for CBSE Class 10
+        Information Technology (402), prepared by matching the
+        uploaded NCERT
+        <b>Domestic Data Entry Operator — Class X (2023–24)</b>
+        textbook.
+
+    </p>
+
+    <span class="tag">
+        ✍️ Read • Revise • Recall
+    </span>
+
+    <p class="source-note">
+
+        <b>Source check:</b>
+        Chapter 15 starts on printed page 247 of the uploaded
+        textbook. The chapter covers accidents and emergencies,
+        handling accidents, evacuation, fire safety, first aid
+        and electrical rescue techniques.
+
+    </p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 01 INTRODUCTION -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">01.</span>
+    Introduction to Accidents and Emergencies
+</div>
+
+
+<h3>Chapter Focus</h3>
+
+<p>
+
+In an organisation, a small accident or unforeseen situation
+may turn into an <span class="highlight">emergency</span> if it
+does not receive proper attention.
+
+Emergencies may be
+<span class="highlight">natural</span> or
+<span class="highlight">man-made</span> and can disrupt
+operations or cause physical and environmental damage.
+
+</p>
+
+
+<h3>Natural Emergencies</h3>
+
+<ul>
+
+<li>Floods</li>
+<li>Hurricanes</li>
+<li>Earthquakes</li>
+
+</ul>
+
+
+<h3>Man-made Emergencies</h3>
+
+<ul>
+
+<li>Fire</li>
+<li>Toxic gas releases</li>
+<li>Chemical spills</li>
+<li>Illness</li>
+<li>Explosions</li>
+<li>Civil disturbances</li>
+
+</ul>
+
+
+<div class="important">
+
+<h3>📌 Emergency Action Plan</h3>
+
+<p>
+
+The textbook recommends developing a
+<span class="highlight">well-thought-out emergency action plan</span>
+to guide employees during an emergency.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 02 ACCIDENT VS EMERGENCY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">02.</span>
+    Accident and Emergency
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Accident</th>
+<th>Emergency</th>
+</tr>
+
+<tr>
+
+<td>
+
+An accident is an
+<span class="highlight">
+unplanned, uncontrolled or unforeseen event
+</span>
+resulting in injury or harm to people and damage to goods.
+
+</td>
+
+<td>
+
+An emergency is a
+<span class="highlight">
+serious or crisis situation
+</span>
+that needs immediate attention and action.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Example: A person falling down and getting injured.
+</td>
+
+<td>
+Example: A customer having a heart attack or sudden outbreak of fire.
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Accident</b> → unplanned/uncontrolled/unforeseen event causing
+injury, harm or damage.
+
+<br>
+
+<b>Emergency</b> → serious or crisis situation requiring
+immediate attention and action.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 03 GUIDELINES -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">03.</span>
+    Guidelines for Accidents and Emergencies
+</div>
+
+
+<h3>1. Notice and Correctly Identify</h3>
+
+<p>
+
+Employees should know what constitutes an accident and what
+constitutes an emergency.
+
+The organisation's
+<span class="highlight">policies and guidelines</span>
+are the best guide for identifying and handling such situations.
+
+</p>
+
+
+<h3>2. Get Help Promptly</h3>
+
+<p>
+
+Follow the procedure for handling the particular accident or
+emergency and provide the required help and support according
+to organisational policies.
+
+Do not act outside the guidelines of your role.
+
+</p>
+
+
+<h3>3. Prevent Further Injury</h3>
+
+<p>
+
+If someone is injured, do not act according to impulse or
+gut feeling.
+
+<span class="highlight">Stay calm</span> and follow the
+prescribed organisational procedure while waiting for help.
+
+</p>
+
+
+<h3>4. Act Within Responsibility and Authority</h3>
+
+<p>
+
+Provide help and support only within your authorised limits.
+
+Medical help should be provided by a person who is
+<span class="highlight">certified</span> to provide the necessary aid.
+
+</p>
+
+
+<h3>5. Follow Instructions</h3>
+
+<p>
+
+Follow instructions given by
+<span class="highlight">senior staff</span>
+and
+<span class="highlight">emergency services</span>.
+
+When handling accidents or emergencies, work under the
+supervision of trained personnel.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Remember the sequence:</strong>
+
+<p>
+
+Identify → Get Help → Prevent Further Injury →
+Act Within Authority → Follow Instructions
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 04 TYPES OF ACCIDENTS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">04.</span>
+    Types of Accidents
+</div>
+
+
+<h3>1. Trip and Fall</h3>
+
+<p>
+
+A person may trip on carelessly left loose material such as
+<span class="highlight">loose wires</span>,
+goods left in aisles or an elevated threshold.
+
+Such accidents may result in bruises or serious fractures.
+
+</p>
+
+
+<h3>2. Slip and Fall</h3>
+
+<p>
+
+Slippery surfaces or substances on the floor can cause a person
+to lose balance and fall.
+
+</p>
+
+
+<h3>3. Injuries Caused by Escalators or Elevators</h3>
+
+<p>
+
+Accidents may occur while using
+<span class="highlight">escalators, elevators or lifts</span>.
+
+Proper care and organisational procedures should be followed.
+
+</p>
+
+
+<h3>4. Accidents Due to Falling Goods</h3>
+
+<p>
+
+Goods or materials that are not properly stored may fall and
+cause injury to people or damage to property.
+
+</p>
+
+
+<h3>5. Accidents Due to Moving Objects</h3>
+
+<p>
+
+Moving objects or equipment can cause accidents when people
+come into their path or when safe operating procedures are
+not followed.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+The textbook specifically identifies five common accident types:
+
+</p>
+
+<ol>
+
+<li>Trip and Fall</li>
+<li>Slip and Fall</li>
+<li>Injuries caused due to Escalators or Elevators (lifts)</li>
+<li>Accidents due to Falling of Goods</li>
+<li>Accidents due to Moving Objects</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 05 HANDLING ACCIDENTS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">05.</span>
+    Handling Accidents
+</div>
+
+
+<div class="flow">
+
+<span>Attend to Injured Person</span>
+
+<div class="arrow">→</div>
+
+<span>Inform Supervisor</span>
+
+<div class="arrow">→</div>
+
+<span>Assist Supervisor</span>
+
+</div>
+
+
+<h3>Attend to the Injured Person Immediately</h3>
+
+<p>
+
+The injured person should receive immediate attention
+according to the organisation's prescribed procedure and
+within the helper's authorised limits.
+
+</p>
+
+
+<h3>Inform Your Supervisor</h3>
+
+<p>
+
+The supervisor should be informed promptly about the accident.
+
+</p>
+
+
+<h3>Assist Your Supervisor</h3>
+
+<p>
+
+Provide necessary assistance to the supervisor while following
+the organisation's procedures and your authorised responsibilities.
+
+</p>
+
+
+<div class="important">
+
+<h3>⚠️ Important</h3>
+
+<p>
+
+Do not provide medical assistance beyond your qualification
+or authorisation. Properly trained and certified professionals
+should handle situations requiring specialised decisions.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 06 TYPES OF EMERGENCIES -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">06.</span>
+    Types of Emergencies
+</div>
+
+
+<h3>Three Major Areas</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Emergency Area</th>
+<th>Main Focus</th>
+</tr>
+
+<tr>
+<td><b>First Aid</b></td>
+<td>Immediate care according to training and authorised procedures.</td>
+</tr>
+
+<tr>
+<td><b>Electrical Safety</b></td>
+<td>Safe response to electrical emergencies and electrical hazards.</td>
+</tr>
+
+<tr>
+<td><b>Evacuation</b></td>
+<td>Moving people safely out of a dangerous workplace area.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 07 EVACUATION -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">07.</span>
+    General Evacuation Procedures
+</div>
+
+
+<h3>What is Evacuation?</h3>
+
+<p>
+
+Evacuation means moving people away from a dangerous situation
+or workplace area to a
+<span class="highlight">safe location</span>.
+
+</p>
+
+
+<h3>Emergency Evacuation Planning</h3>
+
+<p>
+
+An organisation should have an emergency action plan that
+guides employees during emergencies.
+
+Employees should be aware of the evacuation procedures
+applicable to their workplace.
+
+</p>
+
+
+<h3>Evacuation Routes and Exits</h3>
+
+<ul>
+
+<li>Know the available emergency exits.</li>
+
+<li>Be aware of evacuation routes.</li>
+
+<li>Follow the organisation's evacuation instructions.</li>
+
+<li>Do not obstruct emergency exits or routes.</li>
+
+<li>Follow instructions of trained staff and emergency services.</li>
+
+</ul>
+
+
+<div class="important">
+
+<h3>🚪 Remember</h3>
+
+<p>
+
+During an emergency, follow the established evacuation
+procedure instead of acting according to personal impulse.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 08 FIRE HAZARDS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">08.</span>
+    Fire Hazards in the Workplace
+</div>
+
+
+<h3>Fire Hazard</h3>
+
+<p>
+
+Fire can become a major workplace emergency and can cause
+injury, property damage and disruption of operations.
+
+</p>
+
+
+<h3>Fire Prevention</h3>
+
+<p>
+
+Fire prevention requires identification and control of
+potential fire hazards.
+
+Employees should know the organisation's fire safety
+procedures and emergency arrangements.
+
+</p>
+
+
+<h3>Material and Ignition Sources</h3>
+
+<p>
+
+Fire requires combustible material and a source capable of
+igniting it.
+
+The textbook therefore emphasises identifying
+<span class="highlight">material</span> and
+<span class="highlight">ignition sources</span>
+when preventing workplace fires.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+Workplace fires are commonly associated with improper storage
+of combustible material and combustible dust.
+
+</p>
+
+</div>
+
+
+<h3>Fire Extinguisher</h3>
+
+<p>
+
+A <span class="highlight">fire extinguisher</span> is a protection
+device containing an extinguishing agent that can be discharged
+to extinguish a fire.
+
+</p>
+
+
+<div class="memory">
+
+<strong>🧠 Fire Safety Recall</strong>
+
+<ul>
+
+<li>Identify fire hazards.</li>
+
+<li>Identify combustible materials.</li>
+
+<li>Identify ignition sources.</li>
+
+<li>Follow workplace fire procedures.</li>
+
+<li>Use fire protection equipment only as trained.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 09 FIRST AID -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">09.</span>
+    First Aid for Emergencies
+</div>
+
+
+<h3>First Aid</h3>
+
+<p>
+
+First aid refers to immediate care provided to an injured or
+ill person before professional medical assistance is available,
+within the limits of the person's training and authority.
+
+</p>
+
+
+<h3>Important Principle</h3>
+
+<p>
+
+If you are not certified or trained to provide a particular
+medical aid, do not attempt procedures beyond your
+authorisation.
+
+Wait for the appropriate professionals and provide assistance
+as instructed.
+
+</p>
+
+
+<div class="important">
+
+<h3>⚠️ Safety Rule</h3>
+
+<p>
+
+Stay calm → follow organisational procedure →
+get appropriate help → do not exceed your authority.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 10 ELECTRICAL EMERGENCIES -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">10.</span>
+    Electrical Safety and Emergencies
+</div>
+
+
+<h3>Electrical Emergency</h3>
+
+<p>
+
+Electrical emergencies require careful action because contact
+with electricity can cause serious injury.
+
+The organisation's electrical safety procedures must be
+followed.
+
+</p>
+
+
+<h3>Basic Safety Principles</h3>
+
+<ul>
+
+<li>Follow the organisation's electrical safety procedure.</li>
+
+<li>Do not take unauthorised action.</li>
+
+<li>Switch off electrical circuits when instructed and when it
+is safe and authorised to do so.</li>
+
+<li>Keep away from electrical hazards.</li>
+
+<li>Seek help from trained personnel.</li>
+
+</ul>
+
+
+<h3>First Aid for Electrical Emergencies</h3>
+
+<p>
+
+The textbook includes first aid for electrical emergencies
+as an important part of this chapter.
+
+If a person is affected by an electrical emergency, the
+appropriate electrical rescue procedure and first-aid
+procedure should be followed.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+The chapter's Check Your Progress specifically asks:
+
+<b>“What is the first aid for electrical emergencies?”</b>
+
+and
+
+<b>“List out electrical rescue techniques.”</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 11 ELECTRICAL RESCUE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">11.</span>
+    Electrical Rescue Techniques
+</div>
+
+
+<h3>Why Electrical Rescue Requires Care</h3>
+
+<p>
+
+An electrical emergency must be handled carefully to prevent
+additional injury.
+
+The first priority is to follow the prescribed organisational
+procedure and obtain appropriate assistance.
+
+</p>
+
+
+<div class="important">
+
+<h3>⚠️ Exam Safety Concept</h3>
+
+<p>
+
+A person should not take actions beyond their training,
+certification or authority during an electrical emergency.
+
+Trained professionals should handle specialised rescue and
+medical procedures.
+
+</p>
+
+</div>
+
+
+<h3>Remember the Chapter Focus</h3>
+
+<ul>
+
+<li>Electrical Safety</li>
+
+<li>First Aid for Electrical Emergencies</li>
+
+<li>Electrical Rescue Techniques</li>
+
+</ul>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 12 EMERGENCY ACTION PLAN -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">12.</span>
+    Emergency Action Plan
+</div>
+
+
+<h3>Why is an Emergency Action Plan Needed?</h3>
+
+<p>
+
+An emergency action plan provides employees with a planned
+course of action during an emergency.
+
+It helps an organisation respond systematically instead of
+depending on confusion or personal impulse.
+
+</p>
+
+
+<h3>Key Areas to Remember</h3>
+
+<ol>
+
+<li>Identify possible emergencies.</li>
+
+<li>Know organisational policies and procedures.</li>
+
+<li>Know how to report accidents and emergencies.</li>
+
+<li>Know emergency exits and evacuation routes.</li>
+
+<li>Know whom to contact for help.</li>
+
+<li>Follow instructions of trained personnel and emergency services.</li>
+
+<li>Act only within your responsibility and authority.</li>
+
+</ol>
+
+
+<div class="memory">
+
+<strong>🧠 One-Line Revision</strong>
+
+<p>
+
+<b>Emergency Action Plan = Planned procedure to guide employees
+during an emergency.</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 13 CHECK YOUR PROGRESS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">13.</span>
+    Check Your Progress — Exam Focus
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+📌 QUESTIONS YOU MUST PREPARE
+</div>
+
+<ol>
+
+<li>What is a workplace emergency?</li>
+
+<li>How do you protect yourself, your employees and your business?</li>
+
+<li>What is an emergency action plan?</li>
+
+<li>What should your emergency action plan include?</li>
+
+<li>How do you develop an evacuation policy and procedures?</li>
+
+<li>How do you establish evacuation routes and exits?</li>
+
+<li>What are the various types of fire extinguisher and their extinguishing material?</li>
+
+<li>What are the steps for operating a fire extinguisher in case of a fire emergency?</li>
+
+<li>Compare the different types of fire extinguisher.</li>
+
+<li>List the different classes of fire.</li>
+
+<li>List out electrical rescue techniques.</li>
+
+<li>What is the first aid for electrical emergencies?</li>
+
+</ol>
+
+</div>
+
+<p>
+
+These questions are taken from the chapter's own
+<b>Check Your Progress</b> section in the uploaded textbook,
+so they are especially useful for revision.
+
+</p>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 14 LAST MINUTE -->
+<!-- ===================================================== -->
+
+<section class="quick">
+
+<h3>
+⚡ CHAPTER 15 — RAPID REVISION
+</h3>
+
+
+<ul>
+
+<li>
+<b>Accident:</b>
+Unplanned, uncontrolled or unforeseen event causing injury,
+harm or damage to goods.
+</li>
+
+<li>
+<b>Emergency:</b>
+Serious or crisis situation requiring immediate attention
+and action.
+</li>
+
+<li>
+<b>Emergency types:</b>
+Natural and man-made emergencies.
+</li>
+
+<li>
+<b>Natural examples:</b>
+Floods, hurricanes and earthquakes.
+</li>
+
+<li>
+<b>Man-made examples:</b>
+Fire, toxic gas releases, chemical spills, illness,
+explosions and civil disturbances.
+</li>
+
+<li>
+<b>Five accident types:</b>
+Trip and Fall, Slip and Fall, Escalator/Elevator injuries,
+Falling Goods and Moving Objects.
+</li>
+
+<li>
+<b>Handling accidents:</b>
+Attend to injured person → Inform supervisor → Assist supervisor.
+</li>
+
+<li>
+<b>Three major emergency areas:</b>
+First Aid, Electrical Safety and Evacuation.
+</li>
+
+<li>
+<b>Evacuation:</b>
+Follow the organisation's established evacuation procedures,
+routes and exits.
+</li>
+
+<li>
+<b>Fire prevention:</b>
+Identify combustible materials and ignition sources and follow
+fire safety procedures.
+</li>
+
+<li>
+<b>Fire extinguisher:</b>
+A protection device containing an agent that can be discharged
+to extinguish a fire.
+</li>
+
+<li>
+<b>Electrical emergencies:</b>
+Follow electrical safety procedures and seek trained help.
+</li>
+
+<li>
+<b>Golden rule:</b>
+Never act beyond your training, certification or authorised
+responsibility.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SOURCE NOTE -->
+<!-- ===================================================== -->
+
+<div class="footer">
+
+THE GOAL • CBSE Class 10 IT (402) • Part B • Chapter 15
+
+<br>
+
+Made with Love ❤️ in India by Pushpender
+
+</div>
+
+
+</main>
+
+</body>
+</html>
