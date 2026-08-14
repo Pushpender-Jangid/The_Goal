@@ -1,0 +1,1830 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Unit 4 | Entrepreneurial Skills-II</title>
+
+
+<style>
+
+/* =========================================================
+   THE GOAL — DIGITAL HANDWRITTEN NOTEBOOK
+   UNIT 4
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    background:#d7d0c2;
+    color:#252525;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+
+/* ================= TOP HEADER ================= */
+
+.topbar{
+    background:#172033;
+    color:#fff;
+    text-align:center;
+    padding:18px 12px;
+}
+
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:4px;
+}
+
+
+.topbar p{
+    margin-top:4px;
+    font-size:15px;
+    opacity:.85;
+}
+
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    width:min(950px,calc(100% - 24px));
+    margin:25px auto;
+    padding:45px 55px 70px 90px;
+
+    position:relative;
+
+    background-color:#fffdf5;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 31px,
+            rgba(65,110,160,.20) 32px
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.18);
+
+    min-height:100vh;
+}
+
+
+/* red notebook margin */
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:58px;
+    width:2px;
+    background:rgba(210,65,65,.58);
+}
+
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:10px 0 35px;
+}
+
+
+.cover-small{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#666;
+}
+
+
+.cover h1{
+    font-family:"Caveat",cursive;
+    font-size:62px;
+    line-height:1;
+    color:#172033;
+    margin-top:10px;
+}
+
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    font-weight:600;
+    line-height:1.15;
+    margin-top:5px;
+}
+
+
+.hand-line{
+    width:260px;
+    height:5px;
+    background:#e6ca45;
+    margin:13px 0 18px;
+    transform:rotate(-1deg);
+}
+
+
+.cover-text{
+    font-size:20px;
+}
+
+
+/* ================= SESSION ================= */
+
+.session{
+    margin:48px 0;
+}
+
+
+.session-no{
+    color:#777;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+
+.session h2{
+    color:#172033;
+    font-family:"Caveat",cursive;
+    font-size:38px;
+    line-height:1.1;
+    margin-bottom:12px;
+}
+
+
+.session h3{
+    color:#292929;
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    margin:24px 0 5px;
+}
+
+
+.session p{
+    font-size:19px;
+    margin:6px 0;
+}
+
+
+.session ul,
+.session ol{
+    margin:8px 0 10px 27px;
+}
+
+
+.session li{
+    font-size:18px;
+    margin:3px 0;
+}
+
+
+/* ================= NOTE BOXES ================= */
+
+.note{
+    background:#fff6ad;
+    border-left:5px solid #d6bd35;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+
+    box-shadow:2px 3px 0 rgba(0,0,0,.08);
+
+    transform:rotate(-.25deg);
+}
+
+
+.exam{
+    background:#faeeee;
+    border-left:5px solid #c64b4b;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+}
+
+
+.tip{
+    background:#edf4fa;
+    border-left:5px solid #4779a8;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0 22px;
+}
+
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.60);
+}
+
+
+th,
+td{
+    border:1.5px solid #6b6b6b;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+
+th{
+    background:rgba(231,221,172,.70);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+
+/* ================= IMPORTANT LABEL ================= */
+
+.label{
+    display:inline-block;
+    background:#172033;
+    color:#fff;
+    padding:4px 11px;
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:1px;
+    margin-bottom:9px;
+}
+
+
+/* ================= RECALL ================= */
+
+.recall{
+    border:2px dashed #666;
+    background:rgba(255,255,255,.55);
+    padding:15px 18px;
+    margin-top:24px;
+}
+
+
+.recall h3{
+    margin:0 0 7px;
+    font-size:28px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+    margin-top:55px;
+    padding-top:20px;
+    border-top:2px dashed #777;
+    text-align:center;
+    font-size:16px;
+    color:#555;
+}
+
+
+.footer strong{
+    color:#172033;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .notebook{
+        margin:10px auto;
+        padding:32px 22px 55px 57px;
+    }
+
+    .notebook::before{
+        left:35px;
+    }
+
+    .cover h1{
+        font-size:48px;
+    }
+
+    .cover h2{
+        font-size:28px;
+    }
+
+    .session h2{
+        font-size:32px;
+    }
+
+    .session p,
+    .session li,
+    .note,
+    .exam,
+    .tip{
+        font-size:17px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+        padding:7px;
+    }
+
+}
+
+
+@media(max-width:450px){
+
+    .notebook{
+        padding-left:48px;
+        padding-right:15px;
+    }
+
+    .notebook::before{
+        left:28px;
+    }
+
+    .cover h1{
+        font-size:43px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="brand">THE GOAL</div>
+
+    <p>CBSE Class X • Information Technology 402</p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- =========================================================
+     COVER
+========================================================= -->
+
+<section class="cover">
+
+    <div class="cover-small">
+        PART A • EMPLOYABILITY SKILLS
+    </div>
+
+
+    <h1>Unit 4</h1>
+
+
+    <h2>
+        Entrepreneurial<br>
+        Skills-II
+    </h2>
+
+
+    <div class="hand-line"></div>
+
+
+    <p class="cover-text">
+        <strong>Exam-Oriented Revision Notes</strong>
+    </p>
+
+
+    <p class="cover-text">
+        Entrepreneur • Entrepreneurship • Opportunities • Business Idea
+    </p>
+
+
+    <div class="note">
+
+        <strong>★ UNIT AT A GLANCE</strong><br>
+
+        This unit explains the meaning of entrepreneur and
+        entrepreneurship, entrepreneurial qualities and functions,
+        common myths, entrepreneurship as a career, and identifying
+        business opportunities.
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SESSION 01
+========================================================= -->
+
+<section class="session">
+
+
+    <div class="session-no">
+        SESSION 01
+    </div>
+
+
+    <h2>
+        Introduction to Entrepreneurship
+    </h2>
+
+
+    <span class="label">
+        EXAM IMPORTANT
+    </span>
+
+
+    <h3>
+        Who is an Entrepreneur?
+    </h3>
+
+
+    <p>
+
+        An <strong>entrepreneur</strong> is a person who
+        identifies an opportunity, develops an idea and
+        takes the initiative and risk to start and manage
+        a business or venture.
+
+    </p>
+
+
+    <div class="note">
+
+        <strong>★ Easy Definition</strong><br><br>
+
+        Entrepreneur = A person who starts and manages
+        a business by identifying an opportunity and
+        taking calculated risks.
+
+    </div>
+
+
+    <h3>
+        What is Entrepreneurship?
+    </h3>
+
+
+    <p>
+
+        <strong>Entrepreneurship</strong> is the process of
+        identifying opportunities, developing business ideas,
+        arranging resources and taking risks to create and
+        manage a business.
+
+    </p>
+
+
+    <h3>
+        Entrepreneur vs Entrepreneurship
+    </h3>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+
+            <th>
+                Entrepreneur
+            </th>
+
+            <th>
+                Entrepreneurship
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                The person who starts and manages
+                the venture.
+            </td>
+
+            <td>
+                The process of creating and managing
+                the venture.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                An individual.
+            </td>
+
+            <td>
+                A process/activity.
+            </td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <h3>
+        Why is Entrepreneurship Important?
+    </h3>
+
+
+    <ul>
+
+        <li>
+            Creates employment opportunities.
+        </li>
+
+        <li>
+            Encourages innovation and new ideas.
+        </li>
+
+        <li>
+            Helps in economic development.
+        </li>
+
+        <li>
+            Provides goods and services to society.
+        </li>
+
+        <li>
+            Encourages people to become self-reliant.
+        </li>
+
+    </ul>
+
+
+    <div class="exam">
+
+        <strong>
+            ★ Exam Point
+        </strong><br><br>
+
+        Entrepreneurship is not only about earning profit.
+        It also creates employment, encourages innovation
+        and contributes to economic development.
+
+    </div>
+
+
+    <div class="recall">
+
+        <h3>
+            Quick Recall
+        </h3>
+
+
+        <p>
+
+            <strong>
+                Opportunity → Idea → Resources → Risk → Business
+            </strong>
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SESSION 02
+========================================================= -->
+
+<section class="session">
+
+
+    <div class="session-no">
+        SESSION 02
+    </div>
+
+
+    <h2>
+        Qualities and Functions of an Entrepreneur
+    </h2>
+
+
+    <span class="label">
+        VERY IMPORTANT
+    </span>
+
+
+    <h3>
+        Qualities of a Successful Entrepreneur
+    </h3>
+
+
+    <p>
+
+        A successful entrepreneur needs a combination of
+        personal qualities, skills and the ability to take
+        appropriate decisions.
+
+    </p>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+
+            <th>
+                Quality
+            </th>
+
+            <th>
+                Meaning
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Self-confidence
+            </td>
+
+            <td>
+                Believing in one's abilities and decisions.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Initiative
+            </td>
+
+            <td>
+                Taking action without always waiting for others.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Creativity
+            </td>
+
+            <td>
+                Thinking of new ideas and solutions.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Risk-taking
+            </td>
+
+            <td>
+                Taking calculated risks after considering
+                possible outcomes.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Decision-making
+            </td>
+
+            <td>
+                Selecting a suitable course of action
+                after considering available information.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Persistence
+            </td>
+
+            <td>
+                Continuing efforts even when difficulties occur.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Leadership
+            </td>
+
+            <td>
+                Guiding and motivating people towards a goal.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Problem-solving
+            </td>
+
+            <td>
+                Finding practical solutions to difficulties.
+            </td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <h3>
+        Functions of an Entrepreneur
+    </h3>
+
+
+    <ul>
+
+        <li>
+            Identifies business opportunities.
+        </li>
+
+        <li>
+            Develops and implements business ideas.
+        </li>
+
+        <li>
+            Arranges and manages resources.
+        </li>
+
+        <li>
+            Takes calculated risks.
+        </li>
+
+        <li>
+            Makes important business decisions.
+        </li>
+
+        <li>
+            Organises and manages business activities.
+        </li>
+
+        <li>
+            Creates employment opportunities.
+        </li>
+
+    </ul>
+
+
+    <div class="tip">
+
+        <strong>
+            ★ Remember
+        </strong><br><br>
+
+        Entrepreneurial success requires both
+        <strong>qualities</strong> and <strong>functions</strong>.
+
+    </div>
+
+
+    <h3>
+        Risk-Taking Does NOT Mean Gambling
+    </h3>
+
+
+    <p>
+
+        An entrepreneur should take a
+        <strong>calculated risk</strong>. This means
+        studying the situation, estimating possible
+        benefits and losses, and then making a decision.
+
+    </p>
+
+
+    <div class="exam">
+
+        <strong>
+            ★ Important Difference
+        </strong><br><br>
+
+        Calculated Risk → Based on analysis and planning.<br>
+
+        Gambling → Depends mainly on chance.
+
+    </div>
+
+
+    <div class="recall">
+
+        <h3>
+            Quick Recall
+        </h3>
+
+
+        <p>
+
+            <strong>
+                Confidence + Creativity + Initiative +
+                Risk-taking + Persistence + Leadership
+            </strong>
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SESSION 03
+========================================================= -->
+
+<section class="session">
+
+
+    <div class="session-no">
+        SESSION 03
+    </div>
+
+
+    <h2>
+        Myths About Entrepreneurship
+    </h2>
+
+
+    <span class="label">
+        MCQ FRIENDLY
+    </span>
+
+
+    <h3>
+        What is a Myth?
+    </h3>
+
+
+    <p>
+
+        A <strong>myth</strong> is a commonly believed idea
+        that may not actually be true.
+
+    </p>
+
+
+    <h3>
+        Common Myths About Entrepreneurs
+    </h3>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+
+            <th>
+                Myth
+            </th>
+
+            <th>
+                Reality
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Entrepreneurs are born, not made.
+            </td>
+
+            <td>
+                Entrepreneurial skills can be developed
+                through learning, experience and practice.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Entrepreneurs are always gamblers.
+            </td>
+
+            <td>
+                Good entrepreneurs take calculated risks,
+                not blind risks.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Entrepreneurs only care about money.
+            </td>
+
+            <td>
+                Entrepreneurs may also be motivated by
+                independence, innovation, solving problems
+                and creating value.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Entrepreneurs need a lot of money to start.
+            </td>
+
+            <td>
+                The amount of resources required depends
+                on the type and scale of the business.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Only young people can become entrepreneurs.
+            </td>
+
+            <td>
+                People from different age groups can
+                become entrepreneurs.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Entrepreneurs work alone.
+            </td>
+
+            <td>
+                Successful businesses often require
+                teamwork and support from others.
+            </td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <div class="note">
+
+        <strong>
+            ★ Main Idea
+        </strong><br><br>
+
+        Entrepreneurship can be learned and developed.
+        It is not limited to a particular age, background
+        or personality.
+
+    </div>
+
+
+    <h3>
+        Entrepreneurial Mindset
+    </h3>
+
+
+    <p>
+
+        An entrepreneurial mindset means being willing to
+        identify opportunities, solve problems, learn from
+        mistakes and take responsible action.
+
+    </p>
+
+
+    <div class="recall">
+
+        <h3>
+            Quick Recall
+        </h3>
+
+
+        <p>
+
+            <strong>
+                Myth ≠ Fact
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            Skills + Learning + Experience + Practice
+            can develop entrepreneurship.
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SESSION 04
+========================================================= -->
+
+<section class="session">
+
+
+    <div class="session-no">
+        SESSION 04
+    </div>
+
+
+    <h2>
+        Entrepreneurship as a Career
+    </h2>
+
+
+    <span class="label">
+        EXAM IMPORTANT
+    </span>
+
+
+    <h3>
+        Entrepreneurship as a Career Option
+    </h3>
+
+
+    <p>
+
+        Entrepreneurship can be chosen as a career option
+        where a person creates and manages a business or
+        venture instead of working only as an employee.
+
+    </p>
+
+
+    <h3>
+        Why Choose Entrepreneurship?
+    </h3>
+
+
+    <ul>
+
+        <li>
+            Opportunity to work independently.
+        </li>
+
+        <li>
+            Freedom to develop and implement ideas.
+        </li>
+
+        <li>
+            Opportunity to create employment.
+        </li>
+
+        <li>
+            Possibility of creating new products or services.
+        </li>
+
+        <li>
+            Opportunity to solve real-world problems.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Challenges of Entrepreneurship
+    </h3>
+
+
+    <ul>
+
+        <li>
+            Business involves uncertainty and risk.
+        </li>
+
+        <li>
+            Income may not be fixed.
+        </li>
+
+        <li>
+            Starting and managing a business requires effort.
+        </li>
+
+        <li>
+            Entrepreneurs have to make important decisions.
+        </li>
+
+        <li>
+            Competition can affect business success.
+        </li>
+
+    </ul>
+
+
+    <div class="exam">
+
+        <strong>
+            ★ Exam Point
+        </strong><br><br>
+
+        Entrepreneurship provides independence and
+        opportunities, but it also involves responsibility,
+        uncertainty and calculated risk.
+
+    </div>
+
+
+    <h3>
+        Entrepreneur vs Employee
+    </h3>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+
+            <th>
+                Entrepreneur
+            </th>
+
+            <th>
+                Employee
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Creates or manages a business.
+            </td>
+
+            <td>
+                Works for an organisation or employer.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Takes business risks.
+            </td>
+
+            <td>
+                Usually does not bear the same level
+                of business ownership risk.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Makes business decisions.
+            </td>
+
+            <td>
+                Performs assigned responsibilities.
+            </td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <div class="recall">
+
+        <h3>
+            Quick Recall
+        </h3>
+
+
+        <p>
+
+            <strong>
+                Entrepreneurship = Independence + Opportunity
+                + Responsibility + Risk
+            </strong>
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SESSION 05
+========================================================= -->
+
+<section class="session">
+
+
+    <div class="session-no">
+        SESSION 05
+    </div>
+
+
+    <h2>
+        Identify Opportunities &amp; Business Idea
+    </h2>
+
+
+    <span class="label">
+        HIGH PRIORITY
+    </span>
+
+
+    <h3>
+        What is a Business Opportunity?
+    </h3>
+
+
+    <p>
+
+        A <strong>business opportunity</strong> is a situation
+        where a product or service can be offered to satisfy
+        a need or solve a problem and create value.
+
+    </p>
+
+
+    <div class="note">
+
+        <strong>
+            ★ Think like an entrepreneur:
+        </strong><br><br>
+
+        "What problem do people have?"<br>
+
+        "Can I provide a useful solution?"
+
+    </div>
+
+
+    <h3>
+        Sources of Business Ideas
+    </h3>
+
+
+    <ul>
+
+        <li>
+            Problems faced by people.
+        </li>
+
+        <li>
+            Unmet customer needs.
+        </li>
+
+        <li>
+            Changes in technology.
+        </li>
+
+        <li>
+            Changes in lifestyle and preferences.
+        </li>
+
+        <li>
+            Local resources and skills.
+        </li>
+
+        <li>
+            Existing products that can be improved.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        Identifying a Good Business Opportunity
+    </h3>
+
+
+    <ol>
+
+        <li>
+            Identify a need or problem.
+        </li>
+
+        <li>
+            Think of possible solutions.
+        </li>
+
+        <li>
+            Identify the target customers.
+        </li>
+
+        <li>
+            Check availability of resources.
+        </li>
+
+        <li>
+            Study competitors and market conditions.
+        </li>
+
+        <li>
+            Estimate cost and possible returns.
+        </li>
+
+        <li>
+            Select the most practical idea.
+        </li>
+
+    </ol>
+
+
+    <h3>
+        Resources Required for a Business
+    </h3>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+
+            <th>
+                Resource
+            </th>
+
+            <th>
+                Example
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Human Resources
+            </td>
+
+            <td>
+                People, workers, skilled staff.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Financial Resources
+            </td>
+
+            <td>
+                Money or capital required to start and run
+                the business.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Physical Resources
+            </td>
+
+            <td>
+                Land, building, machines, tools and equipment.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Technological Resources
+            </td>
+
+            <td>
+                Computers, software, internet and other technology.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Information
+            </td>
+
+            <td>
+                Market, customer and product-related knowledge.
+            </td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <h3>
+        Business Idea
+    </h3>
+
+
+    <p>
+
+        A <strong>business idea</strong> is a proposed concept
+        for a product or service that can satisfy a customer
+        need or solve a problem.
+
+    </p>
+
+
+    <div class="tip">
+
+        <strong>
+            ★ Simple Formula
+        </strong><br><br>
+
+        Problem / Need → Solution → Customer → Resources
+        → Business Idea
+
+    </div>
+
+
+    <h3>
+        Example
+    </h3>
+
+
+    <p>
+
+        Suppose students in an area need affordable study
+        material but cannot easily access it.
+
+    </p>
+
+
+    <p>
+
+        An entrepreneur may identify this need and develop
+        a service that provides useful and affordable
+        study resources.
+
+    </p>
+
+
+    <div class="exam">
+
+        <strong>
+            ★ Remember
+        </strong><br><br>
+
+        A good business idea should solve a real problem,
+        satisfy a need and be practical with the available
+        resources.
+
+    </div>
+
+
+    <div class="recall">
+
+        <h3>
+            Quick Recall
+        </h3>
+
+
+        <p>
+
+            <strong>
+                Need → Problem → Solution → Customer →
+                Resources → Business Opportunity
+            </strong>
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     LAST MINUTE REVISION
+========================================================= -->
+
+<section class="session">
+
+
+    <div class="session-no">
+        LAST MINUTE REVISION
+    </div>
+
+
+    <h2>
+        Unit 4 — Must Remember
+    </h2>
+
+
+    <div class="table-wrap">
+
+    <table>
+
+        <tr>
+
+            <th>
+                Term
+            </th>
+
+            <th>
+                Exam Meaning
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Entrepreneur
+            </td>
+
+            <td>
+                Person who identifies an opportunity and
+                starts/manages a business by taking calculated risks.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Entrepreneurship
+            </td>
+
+            <td>
+                Process of creating and managing a business venture.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Business Opportunity
+            </td>
+
+            <td>
+                A situation where a need/problem can be addressed
+                through a useful product or service.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Business Idea
+            </td>
+
+            <td>
+                A proposed concept for a product or service.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Calculated Risk
+            </td>
+
+            <td>
+                Risk taken after analysing possible outcomes.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Creativity
+            </td>
+
+            <td>
+                Ability to generate new ideas and solutions.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Initiative
+            </td>
+
+            <td>
+                Taking action without waiting unnecessarily.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Persistence
+            </td>
+
+            <td>
+                Continuing efforts despite difficulties.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Innovation
+            </td>
+
+            <td>
+                Developing or improving ideas, products,
+                services or methods.
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Resources
+            </td>
+
+            <td>
+                Human, financial, physical, technological
+                and information resources used in business.
+            </td>
+
+        </tr>
+
+    </table>
+
+    </div>
+
+
+    <div class="exam">
+
+        <strong>
+            ★ EXAM CHECKLIST
+        </strong>
+
+        <br><br>
+
+        ✓ Entrepreneur meaning<br>
+
+        ✓ Entrepreneurship meaning<br>
+
+        ✓ Entrepreneur vs Entrepreneurship<br>
+
+        ✓ Importance of entrepreneurship<br>
+
+        ✓ Qualities of an entrepreneur<br>
+
+        ✓ Functions of an entrepreneur<br>
+
+        ✓ Calculated risk<br>
+
+        ✓ Myths about entrepreneurship<br>
+
+        ✓ Entrepreneurship as a career<br>
+
+        ✓ Advantages and challenges<br>
+
+        ✓ Business opportunity<br>
+
+        ✓ Sources of business ideas<br>
+
+        ✓ Resources required for business<br>
+
+        ✓ Business idea
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+
+    <strong>
+        THE GOAL
+    </strong>
+
+    <br>
+
+    CBSE Class X • Information Technology 402
+
+    <br>
+
+    Part A • Entrepreneurial Skills-II
+
+    <br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+
+</footer>
+
+
+</main>
+
+
+</body>
+
+</html>
+```
