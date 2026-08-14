@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part A | Unit 2 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Shadows+Into+Light&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ================= TOP BRAND ================= */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:4px;
+    font-weight:700;
+}
+
+.topbar p{
+    margin-top:5px;
+    font-size:15px;
+    opacity:.85;
+}
+
+/* ================= PAGE ================= */
+
+.page{
+    max-width:950px;
+    margin:25px auto;
+    background:#fffdf5;
+    min-height:100vh;
+    position:relative;
+    padding:42px 55px 70px 90px;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 31px,
+            rgba(72,120,170,.20) 32px
+        );
+
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+/* red notebook margin */
+
+.page:before{
+    content:"";
+    position:absolute;
+    left:58px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:rgba(210,65,65,.55);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:20px 0 35px;
+}
+
+.cover small{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:2px;
+    color:#555;
+}
+
+.cover h1{
+    font-family:"Caveat",cursive;
+    font-size:58px;
+    line-height:1;
+    color:#172033;
+    margin:12px 0 5px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    font-weight:600;
+    color:#333;
+}
+
+.cover .underline{
+    width:230px;
+    height:5px;
+    background:#e5c84a;
+    transform:rotate(-1deg);
+    margin:12px 0 18px;
+}
+
+.cover p{
+    font-size:20px;
+}
+
+/* ================= SESSION ================= */
+
+.session{
+    margin:45px 0;
+    position:relative;
+}
+
+.session-number{
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    color:#777;
+    margin-bottom:0;
+}
+
+.session h2{
+    font-family:"Caveat",cursive;
+    font-size:36px;
+    line-height:1.1;
+    color:#172033;
+    margin-bottom:12px;
+}
+
+.session h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#303030;
+    margin:24px 0 5px;
+}
+
+.session p{
+    font-size:19px;
+    margin:7px 0;
+}
+
+.session ul{
+    margin:8px 0 10px 24px;
+}
+
+.session li{
+    font-size:18px;
+    margin:4px 0;
+}
+
+/* ================= HANDWRITTEN BOX ================= */
+
+.note{
+    background:#fff7b8;
+    border-left:5px solid #d9bf38;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+    transform:rotate(-.25deg);
+    box-shadow:2px 3px 0 rgba(0,0,0,.08);
+}
+
+.exam{
+    background:#f9eeee;
+    border-left:5px solid #c74b4b;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+}
+
+.blue{
+    background:#edf4fa;
+    border-left:5px solid #4878a8;
+    padding:13px 17px;
+    margin:18px 0;
+    font-size:19px;
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:15px 0 22px;
+    background:rgba(255,255,255,.55);
+}
+
+th,td{
+    border:1.5px solid #6c6c6c;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(230,220,170,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ================= QUICK RECALL ================= */
+
+.recall{
+    margin-top:25px;
+    padding:16px 20px;
+    border:2px dashed #666;
+    background:rgba(255,255,255,.55);
+}
+
+.recall h3{
+    margin:0 0 8px;
+    font-size:28px;
+}
+
+/* ================= TAG ================= */
+
+.tag{
+    display:inline-block;
+    background:#172033;
+    color:white;
+    padding:4px 12px;
+    border-radius:3px;
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+/* ================= BUTTONS ================= */
+
+.actions{
+    margin:40px 0 10px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:5px;
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.5px;
+    transition:.2s;
+}
+
+.test{
+    background:#172033;
+    color:white;
+}
+
+.notes{
+    background:#d8bd43;
+    color:#172033;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    margin-top:55px;
+    padding-top:20px;
+    border-top:2px dashed #777;
+    text-align:center;
+    font-size:16px;
+    color:#555;
+}
+
+.footer strong{
+    color:#172033;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:700px){
+
+    .page{
+        margin:10px;
+        padding:30px 24px 55px 55px;
+    }
+
+    .page:before{
+        left:34px;
+    }
+
+    .cover h1{
+        font-size:47px;
+    }
+
+    .cover h2{
+        font-size:28px;
+    }
+
+    .session h2{
+        font-size:31px;
+    }
+
+    .session p,
+    .session li,
+    .note,
+    .exam,
+    .blue{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+        padding:7px;
+    }
+
+    .brand{
+        letter-spacing:2px;
+    }
+}
+
+@media(max-width:450px){
+
+    .page{
+        padding-left:48px;
+        padding-right:17px;
+    }
+
+    .page:before{
+        left:28px;
+    }
+
+    .cover h1{
+        font-size:42px;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+    .btn{
+        text-align:center;
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">THE GOAL</div>
+    <p>CBSE Class X • Information Technology 402</p>
+</div>
+
+
+<main class="page">
+
+    <!-- ================= COVER ================= -->
+
+    <section class="cover">
+
+        <small>PART A • EMPLOYABILITY SKILLS</small>
+
+        <h1>Unit 2</h1>
+
+        <h2>Self-Management Skills-II</h2>
+
+        <div class="underline"></div>
+
+        <p>
+            <strong>Exam-Oriented Revision Notes</strong>
+        </p>
+
+        <p>
+            Stress • Self-awareness • Self-motivation • Goal Setting • Time Management
+        </p>
+
+        <div class="note">
+            <strong>★ UNIT AT A GLANCE</strong><br>
+            Self-management means managing yourself effectively —
+            your emotions, thoughts, behaviour, time, goals and responsibilities.
+        </div>
+
+    </section>
+
+
+    <!-- ================= SESSION 1 ================= -->
+
+    <section class="session">
+
+        <div class="session-number">SESSION 01</div>
+
+        <h2>Stress Management</h2>
+
+        <span class="tag">EXAM IMPORTANT</span>
+
+        <h3>What is Stress?</h3>
+
+        <p>
+            Stress is our <strong>emotional, mental, physical and social reaction</strong>
+            to perceived demands or threats.
+        </p>
+
+        <div class="note">
+            <strong>Stressors</strong> are the demands or threats that cause stress.
+        </div>
+
+        <h3>Examples of Stressors</h3>
+
+        <ul>
+            <li>Feeling unprepared when examinations are near.</li>
+            <li>Loss of someone close in the family.</li>
+            <li>Worrying about what other people think.</li>
+            <li>Lack of sleep.</li>
+        </ul>
+
+        <h3>Stress Management</h3>
+
+        <p>
+            Stress management means making a plan to cope effectively with
+            daily pressures and maintaining a balance between work, relationships,
+            relaxation and fun.
+        </p>
+
+        <div class="exam">
+            <strong>★ Remember:</strong><br>
+            Stress may sometimes motivate us, but excessive or prolonged stress
+            can negatively affect our emotional and physical health and our ability
+            to function effectively.
+        </div>
+
+        <h3>ABC of Stress Management</h3>
+
+        <table>
+            <tr>
+                <th>Letter</th>
+                <th>Meaning</th>
+                <th>Exam Point</th>
+            </tr>
+
+            <tr>
+                <td>A</td>
+                <td>Adversity</td>
+                <td>The stressful event or situation.</td>
+            </tr>
+
+            <tr>
+                <td>B</td>
+                <td>Beliefs</td>
+                <td>The way we respond to the event.</td>
+            </tr>
+
+            <tr>
+                <td>C</td>
+                <td>Consequences</td>
+                <td>Actions and outcomes resulting from the response.</td>
+            </tr>
+        </table>
+
+        <h3>Three Steps to Manage Stress</h3>
+
+        <table>
+            <tr>
+                <th>Step</th>
+                <th>What to do?</th>
+            </tr>
+
+            <tr>
+                <td>1. Be aware</td>
+                <td>Recognise signs of stress such as headache, sleeplessness,
+                    sadness, excessive worrying and nervousness.</td>
+            </tr>
+
+            <tr>
+                <td>2. Identify the cause</td>
+                <td>Find out what is causing the stress.</td>
+            </tr>
+
+            <tr>
+                <td>3. Apply management methods</td>
+                <td>Use suitable methods such as time management,
+                    talking to someone, exercise and relaxation.</td>
+            </tr>
+        </table>
+
+        <h3>Stress Management Techniques</h3>
+
+        <ul>
+            <li><strong>Time management</strong> — plan and use time properly.</li>
+            <li><strong>Physical exercise and fresh air</strong> — maintain a healthy routine.</li>
+            <li><strong>Yoga, meditation and deep breathing</strong> — help the body relax.</li>
+            <li><strong>Relaxation activities</strong> — take time to relax.</li>
+            <li><strong>Talk to someone close</strong> when a problem is difficult to handle alone.</li>
+        </ul>
+
+        <div class="recall">
+            <h3>Quick Recall</h3>
+            <p><strong>Stress → Stressor → ABC → 3 Steps → Management Techniques</strong></p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= SESSION 2 ================= -->
+
+    <section class="session">
+
+        <div class="session-number">SESSION 02</div>
+
+        <h2>Self-awareness — Strength and Weakness Analysis</h2>
+
+        <span class="tag">EXAM IMPORTANT</span>
+
+        <h3>Meaning of Self-awareness</h3>
+
+        <p>
+            Self-awareness means being able to identify and understand
+            your own <strong>strengths and weaknesses</strong>.
+        </p>
+
+        <p>
+            It involves understanding who you are, your likes and dislikes,
+            values, beliefs, opinions, background, abilities and areas where
+            you need improvement.
+        </p>
+
+        <div class="note">
+            <strong>★ Main idea:</strong>
+            Self-awareness helps us know what we can and cannot do,
+            plan how to improve, and become more confident.
+        </div>
+
+        <h3>Strengths</h3>
+
+        <p>
+            Strengths are abilities or qualities in which a person performs well.
+        </p>
+
+        <p><strong>Examples:</strong></p>
+
+        <ul>
+            <li>Good at creative writing.</li>
+            <li>Confident while speaking before an audience.</li>
+            <li>Good at playing a musical instrument.</li>
+        </ul>
+
+        <h3>Weaknesses</h3>
+
+        <p>
+            Weaknesses are areas where a person struggles or needs improvement.
+        </p>
+
+        <p><strong>Examples:</strong></p>
+
+        <ul>
+            <li>Difficulty in solving certain mathematics problems.</li>
+            <li>Wanting to improve English speaking skills.</li>
+            <li>Difficulty accepting loss in games or sports.</li>
+        </ul>
+
+        <h3>How to Identify Strengths?</h3>
+
+        <ul>
+            <li>Think about things you are always successful at.</li>
+            <li>Think about what others like or appreciate in you.</li>
+            <li>Take time to think about what you do well.</li>
+        </ul>
+
+        <h3>How to Identify Weaknesses?</h3>
+
+        <ul>
+            <li>Identify areas where you struggle.</li>
+            <li>Consider the feedback others usually give you.</li>
+            <li>Accept weaknesses without feeling low.</li>
+            <li>Treat weaknesses as areas for improvement.</li>
+        </ul>
+
+        <div class="exam">
+            <strong>★ Important:</strong><br>
+            A weakness should not simply be considered a negative quality.
+            It can be treated as an area that needs improvement.
+        </div>
+
+        <h3>Questions for Strength & Weakness Analysis</h3>
+
+        <ul>
+            <li>How am I different from others?</li>
+            <li>What do I do better than others?</li>
+            <li>What do other people admire in me?</li>
+            <li>What makes me stand out?</li>
+            <li>Where do I struggle?</li>
+            <li>What advice for improvement do I receive from others?</li>
+        </ul>
+
+        <h3>Interests vs Abilities</h3>
+
+        <table>
+            <tr>
+                <th>Interests</th>
+                <th>Abilities</th>
+            </tr>
+
+            <tr>
+                <td>Things that you like to do in your free time.</td>
+                <td>An acquired or natural capacity.</td>
+            </tr>
+
+            <tr>
+                <td>Things you are curious about or want to learn.</td>
+                <td>Enable you to perform a task with considerable proficiency.</td>
+            </tr>
+
+            <tr>
+                <td>Things you enjoy or would like to do in the future.</td>
+                <td>Skills or capacities that help you perform a particular job or task.</td>
+            </tr>
+        </table>
+
+        <div class="blue">
+            <strong>Example:</strong><br>
+            A student may be interested in music but may not currently
+            have the ability to sing well. The student can either improve
+            the required ability or consider another suitable path.
+        </div>
+
+        <div class="recall">
+            <h3>Quick Recall</h3>
+            <p>
+                <strong>Self-awareness = Knowing yourself + Strengths + Weaknesses + Interests + Abilities</strong>
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= SESSION 3 ================= -->
+
+    <section class="session">
+
+        <div class="session-number">SESSION 03</div>
+
+        <h2>Self-motivation</h2>
+
+        <span class="tag">VERY IMPORTANT</span>
+
+        <h3>Meaning of Self-motivation</h3>
+
+        <p>
+            Self-motivation is the <strong>force within us that drives us to do things</strong>.
+        </p>
+
+        <p>
+            It is the ability to do the things that need to be done
+            without someone or something influencing us.
+        </p>
+
+        <div class="note">
+            <strong>Exam definition:</strong><br>
+            Self-motivation is the ability to motivate oneself and continue
+            working towards goals without depending on external influence.
+        </div>
+
+        <h3>Types of Motivation</h3>
+
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Meaning</th>
+                <th>Example</th>
+            </tr>
+
+            <tr>
+                <td>Internal Motivation</td>
+                <td>We do something because it makes us happy,
+                    healthy or feel good.</td>
+                <td>Learning a new skill because you enjoy learning it.</td>
+            </tr>
+
+            <tr>
+                <td>External Motivation</td>
+                <td>We do something because it gives us
+                    respect, recognition, appreciation or a reward.</td>
+                <td>Practising hard to win a prize in a competition.</td>
+            </tr>
+        </table>
+
+        <div class="exam">
+            <strong>★ Memory Trick:</strong><br>
+            Internal = <strong>LOVE</strong><br>
+            External = <strong>REWARD</strong>
+        </div>
+
+        <h3>Qualities of Self-motivated People</h3>
+
+        <ul>
+            <li>Know what they want from life.</li>
+            <li>Know what is important to them.</li>
+            <li>Are focused.</li>
+            <li>Are dedicated to fulfilling their dreams.</li>
+        </ul>
+
+        <h3>Building Self-motivation — Four Steps</h3>
+
+        <table>
+            <tr>
+                <th>Step</th>
+                <th>What it means</th>
+            </tr>
+
+            <tr>
+                <td>1. Find out your strengths</td>
+                <td>Identify your likes, dislikes and strengths.</td>
+            </tr>
+
+            <tr>
+                <td>2. Set and focus on your goals</td>
+                <td>Define the goals you want to achieve and focus your energy on them.</td>
+            </tr>
+
+            <tr>
+                <td>3. Develop a plan</td>
+                <td>Set timelines and list activities needed to achieve each goal.</td>
+            </tr>
+
+            <tr>
+                <td>4. Stay loyal to your goals</td>
+                <td>Continue working towards the goal even during difficult times.</td>
+            </tr>
+        </table>
+
+        <div class="recall">
+            <h3>Quick Recall</h3>
+            <p>
+                <strong>Strengths → Goals → Plan → Stay Loyal</strong>
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= SESSION 4 ================= -->
+
+    <section class="session">
+
+        <div class="session-number">SESSION 04</div>
+
+        <h2>Self-regulation — Goal Setting</h2>
+
+        <span class="tag">HIGH SCORING TOPIC</span>
+
+        <h3>What is a Goal?</h3>
+
+        <p>
+            A goal is a set of dreams with a <strong>deadline</strong>
+            to achieve them.
+        </p>
+
+        <p>
+            Example: Saving pocket money to buy something by a particular date.
+        </p>
+
+        <h3>What is Goal Setting?</h3>
+
+        <p>
+            Goal setting is the process of finding and listing your goals
+            and planning how to achieve them.
+        </p>
+
+        <div class="note">
+            <strong>★ Why are goals important?</strong><br>
+            Goals help us separate important work from less important work
+            and focus on the final result.
+        </div>
+
+        <h3>SMART Goals</h3>
+
+        <table>
+            <tr>
+                <th>Letter</th>
+                <th>Meaning</th>
+                <th>Exam Understanding</th>
+            </tr>
+
+            <tr>
+                <td>S</td>
+                <td>Specific</td>
+                <td>The goal should be clear and specific.</td>
+            </tr>
+
+            <tr>
+                <td>M</td>
+                <td>Measurable</td>
+                <td>There should be a way to measure progress or achievement.</td>
+            </tr>
+
+            <tr>
+                <td>A</td>
+                <td>Achievable</td>
+                <td>The goal should be possible to accomplish.</td>
+            </tr>
+
+            <tr>
+                <td>R</td>
+                <td>Realistic</td>
+                <td>The goal should be practical and appropriate.</td>
+            </tr>
+
+            <tr>
+                <td>T</td>
+                <td>Time-bound</td>
+                <td>The goal should have a definite time limit or deadline.</td>
+            </tr>
+        </table>
+
+        <div class="exam">
+            <strong>★ Most Important MCQ:</strong><br>
+            SMART = <strong>Specific + Measurable + Achievable + Realistic + Time-bound</strong>
+        </div>
+
+        <h3>Example of a Time-bound Goal</h3>
+
+        <p>
+            “I want to improve my performance in the next six months.”
+        </p>
+
+        <p>
+            A goal without a time limit is not time-bound.
+        </p>
+
+        <h3>Short-term and Long-term Goals</h3>
+
+        <table>
+            <tr>
+                <th>Short-term Goals</th>
+                <th>Long-term Goals</th>
+            </tr>
+
+            <tr>
+                <td>Goals planned for a comparatively shorter period,
+                    such as the next few months or up to a couple of years.</td>
+                <td>Goals planned for a longer period, such as several years.</td>
+            </tr>
+        </table>
+
+        <div class="blue">
+            <strong>Exam Tip:</strong><br>
+            While setting a goal, make sure it is clear, measurable,
+            possible, practical and has a deadline.
+        </div>
+
+        <div class="recall">
+            <h3>Quick Recall</h3>
+            <p>
+                <strong>Goal → Plan → SMART → Short-term / Long-term</strong>
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= SESSION 5 ================= -->
+
+    <section class="session">
+
+        <div class="session-number">SESSION 05</div>
+
+        <h2>Self-regulation — Time Management</h2>
+
+        <span class="tag">VERY IMPORTANT</span>
+
+        <h3>What is Time Management?</h3>
+
+        <p>
+            Time management is the ability to <strong>plan and control how
+            you spend the hours of your day</strong> so that you can complete
+            the things you want to do effectively.
+        </p>
+
+        <h3>Time Management Helps Us To:</h3>
+
+        <ul>
+            <li>Complete tasks on time.</li>
+            <li>Prepare and follow a daily timetable.</li>
+            <li>Estimate how long a task may take.</li>
+            <li>Submit homework and assignments on time.</li>
+            <li>Avoid wasting time.</li>
+        </ul>
+
+        <div class="exam">
+            <strong>★ Exam Point:</strong><br>
+            Good time management includes planning, prioritising,
+            controlling distractions and tracking how time is spent.
+        </div>
+
+        <h3>Four Steps for Effective Time Management</h3>
+
+        <table>
+            <tr>
+                <th>Step</th>
+                <th>Meaning</th>
+            </tr>
+
+            <tr>
+                <td>1. Organise</td>
+                <td>
+                    Plan day-to-day activities, make a timetable,
+                    keep surroundings and study table organised,
+                    and put things back where they belong.
+                </td>
+            </tr>
+
+            <tr>
+                <td>2. Prioritise</td>
+                <td>
+                    Make a to-do list and rank activities according
+                    to their importance. Complete important tasks first.
+                </td>
+            </tr>
+
+            <tr>
+                <td>3. Control</td>
+                <td>
+                    Control activities and time. Avoid time-wasters
+                    and focus on important work.
+                </td>
+            </tr>
+
+            <tr>
+                <td>4. Track</td>
+                <td>
+                    Note where you spend your time. Analyse whether
+                    your time was used effectively and identify
+                    time-wasting activities.
+                </td>
+            </tr>
+        </table>
+
+        <div class="note">
+            <strong>★ Four-step sequence:</strong><br><br>
+            ORGANISE → PRIORITISE → CONTROL → TRACK
+        </div>
+
+        <h3>Tips for Effective Time Management</h3>
+
+        <ul>
+            <li>Avoid delaying or postponing planned activities.</li>
+            <li>Keep your room and study desk organised.</li>
+            <li>Create a “No Disturbance Zone” for important work.</li>
+            <li>Use waiting time productively.</li>
+            <li>Prepare a to-do list.</li>
+            <li>Prioritise important tasks.</li>
+            <li>Replace useless activities with productive activities.</li>
+        </ul>
+
+        <div class="blue">
+            <strong>Relatable Example:</strong><br>
+            If you have homework, revision and entertainment to manage,
+            first list the tasks, give priority to important study work,
+            control distractions such as unnecessary phone use, and later
+            check where your time was actually spent.
+        </div>
+
+        <div class="recall">
+            <h3>Quick Recall</h3>
+            <p>
+                <strong>Organise → Prioritise → Control → Track</strong>
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= ONE PAGE REVISION ================= -->
+
+    <section class="session">
+
+        <div class="session-number">LAST MINUTE REVISION</div>
+
+        <h2>Unit 2 — One Page Recall</h2>
+
+        <table>
+
+            <tr>
+                <th>Topic</th>
+                <th>Must Remember</th>
+            </tr>
+
+            <tr>
+                <td>Stress</td>
+                <td>Emotional, mental, physical and social reaction to perceived demands or threats.</td>
+            </tr>
+
+            <tr>
+                <td>Stressors</td>
+                <td>Demands or threats that cause stress.</td>
+            </tr>
+
+            <tr>
+                <td>ABC</td>
+                <td>Adversity → Beliefs → Consequences.</td>
+            </tr>
+
+            <tr>
+                <td>Self-awareness</td>
+                <td>Understanding your strengths, weaknesses, interests and abilities.</td>
+            </tr>
+
+            <tr>
+                <td>Self-motivation</td>
+                <td>Internal force that drives a person to do things.</td>
+            </tr>
+
+            <tr>
+                <td>Internal Motivation</td>
+                <td>Doing something because it makes you happy, healthy or feel good.</td>
+            </tr>
+
+            <tr>
+                <td>External Motivation</td>
+                <td>Doing something for respect, recognition, appreciation or reward.</td>
+            </tr>
+
+            <tr>
+                <td>Goal Setting</td>
+                <td>Finding/listing goals and planning how to achieve them.</td>
+            </tr>
+
+            <tr>
+                <td>SMART</td>
+                <td>Specific, Measurable, Achievable, Realistic, Time-bound.</td>
+            </tr>
+
+            <tr>
+                <td>Time Management</td>
+                <td>Planning and controlling how time is spent.</td>
+            </tr>
+
+            <tr>
+                <td>4 Steps</td>
+                <td>Organise → Prioritise → Control → Track.</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ================= EXAM QUESTIONS ================= -->
+
+    <section class="session">
+
+        <div class="session-number">EXAM CORNER</div>
+
+        <h2>Questions You Should Know</h2>
+
+        <div class="exam">
+
+            <p><strong>1.</strong> What is stress?</p>
+
+            <p><strong>2.</strong> What are stressors?</p>
+
+            <p><strong>3.</strong> Explain the ABC of stress management.</p>
+
+            <p><strong>4.</strong> Write the three steps to manage stress.</p>
+
+            <p><strong>5.</strong> What is self-awareness?</p>
+
+            <p><strong>6.</strong> Differentiate between strengths and weaknesses.</p>
+
+            <p><strong>7.</strong> Differentiate between interests and abilities.</p>
+
+            <p><strong>8.</strong> What is self-motivation?</p>
+
+            <p><strong>9.</strong> Differentiate between internal and external motivation.</p>
+
+            <p><strong>10.</strong> Write the four steps for building self-motivation.</p>
+
+            <p><strong>11.</strong> What is goal setting?</p>
+
+            <p><strong>12.</strong> What does SMART stand for?</p>
+
+            <p><strong>13.</strong> Explain the five characteristics of SMART goals.</p>
+
+            <p><strong>14.</strong> What is time management?</p>
+
+            <p><strong>15.</strong> Explain the four steps for effective time management.</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ACTION BUTTONS ================= -->
+
+    <div class="footer">
+
+        <strong>THE GOAL</strong><br>
+
+        CBSE Class X • Information Technology 402<br>
+
+        Part A • Self-Management Skills-II<br><br>
+
+        Made with Love ❤️ in India by Pushpender
+
+    </div>
+
+</main>
+
+</body>
+</html>
