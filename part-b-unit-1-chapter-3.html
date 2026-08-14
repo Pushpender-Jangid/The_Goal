@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Unit 1 | Chapter 3 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Shadows+Into+Light&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* TOP BRAND */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    margin-top:4px;
+}
+
+.topbar p{
+    font-family:"Patrick Hand",cursive;
+    font-size:17px;
+    opacity:.85;
+}
+
+/* NOTEBOOK */
+
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+
+    position:relative;
+
+    padding:35px 45px 70px 90px;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.18),
+        0 25px 55px rgba(0,0,0,.12);
+
+    min-height:100vh;
+}
+
+/* RED MARGIN */
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:62px;
+    width:2px;
+    background:#e28c8c;
+}
+
+/* COVER */
+
+.cover{
+    padding:12px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover .small{
+    font-size:17px;
+    color:#555;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:48px;
+    color:#183f72;
+    line-height:1;
+    margin:8px 0;
+}
+
+.cover .intro{
+    font-size:19px;
+    max-width:800px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:4px 12px;
+    border:2px solid #555;
+    transform:rotate(-1deg);
+    background:#fff2a8;
+    font-size:16px;
+}
+
+/* SESSION */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    transform:rotate(-1deg);
+    margin-bottom:15px;
+}
+
+.session-number{
+    color:#b32d2d;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    margin-right:6px;
+}
+
+/* HEADINGS */
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#222;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    margin:14px 0 4px;
+    color:#254d75;
+}
+
+/* TEXT */
+
+p,li{
+    font-size:18px;
+}
+
+ul,ol{
+    margin:5px 0 12px 25px;
+}
+
+li{
+    margin:3px 0;
+}
+
+/* HIGHLIGHT */
+
+.highlight{
+    background:
+      linear-gradient(
+        transparent 25%,
+        rgba(255,226,86,.72) 25%,
+        rgba(255,226,86,.72) 82%,
+        transparent 82%
+      );
+    padding:0 3px;
+}
+
+.red{
+    color:#b42d2d;
+    font-weight:bold;
+}
+
+/* IMPORTANT */
+
+.important{
+    margin:18px 0;
+    padding:14px 18px;
+    background:rgba(255,242,164,.65);
+    border:2px solid #5f5a43;
+    border-radius:3px;
+    transform:rotate(-.35deg);
+    position:relative;
+}
+
+.important:before{
+    content:"★ IMPORTANT";
+    position:absolute;
+    top:-15px;
+    left:12px;
+    background:#fff4a7;
+    padding:0 7px;
+    font-family:"Caveat",cursive;
+    font-size:17px;
+    color:#9c2929;
+}
+
+/* EXAM */
+
+.exam{
+    margin:18px 0;
+    padding:13px 17px;
+    border-left:5px solid #c13c3c;
+    background:rgba(255,255,255,.52);
+}
+
+.exam-title{
+    color:#b52c2c;
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* MEMORY */
+
+.memory{
+    margin:18px 0;
+    padding:12px 17px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.52);
+}
+
+.memory strong{
+    color:#214d75;
+    font-size:21px;
+}
+
+/* PRACTICAL */
+
+.practical{
+    margin:20px 0;
+    padding:16px 18px;
+    background:rgba(235,235,235,.55);
+    border:2px solid #555;
+    position:relative;
+}
+
+.practical:before{
+    content:"💻 PRACTICAL";
+    position:absolute;
+    top:-15px;
+    left:12px;
+    background:#e8edf2;
+    border:1px solid #555;
+    padding:1px 8px;
+    font-family:"Caveat",cursive;
+    font-size:18px;
+    color:#214d75;
+}
+
+.step{
+    margin:9px 0;
+    padding-left:10px;
+    border-left:3px solid #6d8195;
+}
+
+.step b{
+    color:#173f70;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.48);
+}
+
+th,td{
+    border:1.5px solid #555;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* DEFINITION */
+
+.definition{
+    margin:8px 0;
+}
+
+.term{
+    color:#183f72;
+    font-weight:bold;
+}
+
+/* DOODLE */
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+    margin:25px 0;
+    letter-spacing:5px;
+}
+
+/* RAPID REVISION */
+
+.quick{
+    border:3px solid #444;
+    padding:18px;
+    margin-top:30px;
+    background:rgba(255,255,255,.5);
+    transform:rotate(.2deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    margin-top:45px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:650px){
+
+    .notebook{
+        width:100%;
+        padding:28px 20px 60px 58px;
+        margin:0;
+    }
+
+    .notebook:before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .cover h2{
+        font-size:40px;
+    }
+
+    .session-title{
+        font-size:29px;
+    }
+
+    p,li{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • IT 402
+    </div>
+
+    <h1>Part B — Subject Specific Skills</h1>
+
+    <p>
+        Unit 1 • Digital Documentation (Advanced) • Chapter 3
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- COVER -->
+
+<section class="cover">
+
+    <div class="small">
+        📖 UNIT 1 • CHAPTER 3 • COMPLETE EXAM NOTES
+    </div>
+
+    <h2>Advanced Features of Writer</h2>
+
+    <p class="intro">
+        LibreOffice Writer provides advanced features that help us
+        create, organize, update and review professional documents.
+        This chapter focuses on Table of Contents, Templates and
+        Track Changes.
+    </p>
+
+    <span class="tag">
+        ✍️ Learn • Practise • Revise
+    </span>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 1 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">01.</span>
+Table of Contents
+</div>
+
+
+<h3>What is a Table of Contents?</h3>
+
+<p>
+A <span class="highlight">Table of Contents (ToC)</span> is a list of
+the topics and subtopics present in a document along with their
+corresponding page numbers.
+</p>
+
+<p>
+In LibreOffice Writer, a ToC can be created automatically from the
+<strong>headings and subheadings</strong> used in the document.
+The entries can also work as hyperlinks, allowing the user to move
+directly to a selected topic.
+</p>
+
+
+<div class="important">
+
+<p>
+<b>Remember:</b> A Table of Contents is not created by simply typing
+the topic names manually. It is generated using the document's
+<strong>heading structure</strong>.
+</p>
+
+</div>
+
+
+<h3>Why is Table of Contents Useful?</h3>
+
+<ul>
+
+<li>Provides an overview of the document.</li>
+
+<li>Helps the reader locate a topic quickly.</li>
+
+<li>Shows the structure of a long document.</li>
+
+<li>Reduces the need to search page by page.</li>
+
+<li>Can be updated when headings or page numbers change.</li>
+
+<li>Provides navigation through hyperlinks.</li>
+
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+The entries of an automatic ToC are taken from the
+<strong>headings and subheadings</strong> of the document.
+</p>
+
+</div>
+
+
+<h3>Hierarchy of Headings</h3>
+
+<p>
+A long document is normally divided into different levels of headings.
+This arrangement is called the <span class="highlight">hierarchy of
+headings</span>.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Heading Level</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td><b>Heading 1</b></td>
+<td>Main topic or chapter</td>
+<td>Chapter 3: Advanced Features</td>
+</tr>
+
+<tr>
+<td><b>Heading 2</b></td>
+<td>Major section inside the chapter</td>
+<td>Table of Contents</td>
+</tr>
+
+<tr>
+<td><b>Heading 3</b></td>
+<td>Subsection inside a section</td>
+<td>Creating a Table of Contents</td>
+</tr>
+
+<tr>
+<td><b>Heading 4+</b></td>
+<td>Further levels of subtopics</td>
+<td>Customization Options</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Easy Rule</strong>
+
+<p>
+<strong>Heading 1 → Main Topic</strong><br>
+<strong>Heading 2 → Section</strong><br>
+<strong>Heading 3 → Subsection</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 2 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">02.</span>
+Creating a Table of Contents
+</div>
+
+
+<h3>Before Creating a ToC</h3>
+
+<p>
+Before inserting a Table of Contents, the document should have a
+proper heading structure.
+</p>
+
+<ol>
+
+<li>Apply appropriate heading styles to chapter titles.</li>
+
+<li>Use lower-level headings for sections and subsections.</li>
+
+<li>Maintain a logical order of headings.</li>
+
+</ol>
+
+
+<div class="practical">
+
+<h3>Steps to Create a Table of Contents</h3>
+
+<div class="step">
+<b>Step 1:</b> Apply heading styles such as Heading 1,
+Heading 2 and Heading 3 to the document headings.
+</div>
+
+<div class="step">
+<b>Step 2:</b> Place the cursor at the location where the
+Table of Contents is required.
+</div>
+
+<div class="step">
+<b>Step 3:</b> Choose
+<strong>Insert → Table of Contents and Index → Table of Contents</strong>.
+</div>
+
+<div class="step">
+<b>Step 4:</b> Configure the required options in the dialog box.
+</div>
+
+<div class="step">
+<b>Step 5:</b> Click <strong>OK</strong>.
+</div>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+⭐ PRACTICAL EXAM QUESTION
+</div>
+
+<p>
+<strong>Q. How do you create an automatic Table of Contents?</strong>
+</p>
+
+<p>
+<strong>Ans:</strong> Apply heading styles to the document, place the
+cursor at the desired location, use the Table of Contents command
+from the Insert menu, configure the options and click OK.
+</p>
+
+</div>
+
+
+<h3>Important Point</h3>
+
+<p>
+If the headings are changed after creating the ToC, the ToC should be
+<strong>updated</strong> so that the latest headings and page numbers
+are displayed.
+</p>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 3 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">03.</span>
+Customizing Table of Contents
+</div>
+
+
+<h3>Why Customize a ToC?</h3>
+
+<p>
+LibreOffice Writer allows the appearance and structure of a Table of
+Contents to be changed according to the requirements of the document.
+</p>
+
+
+<h3>Common Customization Options</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Option</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td><b>Title</b></td>
+<td>Changes the heading/title displayed above the ToC.</td>
+</tr>
+
+<tr>
+<td><b>Levels</b></td>
+<td>Controls how many heading levels appear in the ToC.</td>
+</tr>
+
+<tr>
+<td><b>Entries</b></td>
+<td>Controls the structure and information displayed for each entry.</td>
+</tr>
+
+<tr>
+<td><b>Styles</b></td>
+<td>Controls the formatting of different ToC levels.</td>
+</tr>
+
+<tr>
+<td><b>Background</b></td>
+<td>Allows background formatting for the ToC.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="important">
+
+<p>
+The number of heading levels displayed in the ToC can be controlled
+according to the required document structure.
+</p>
+
+</div>
+
+
+<h3>Changing ToC Settings</h3>
+
+<div class="practical">
+
+<div class="step">
+<b>Step 1:</b> Right-click inside the existing Table of Contents.
+</div>
+
+<div class="step">
+<b>Step 2:</b> Select
+<strong>Edit Table of Contents</strong>.
+</div>
+
+<div class="step">
+<b>Step 3:</b> Make the required changes in the dialog box.
+</div>
+
+<div class="step">
+<b>Step 4:</b> Click <strong>OK</strong> to apply the changes.
+</div>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+📌 EXAM DIFFERENCE
+</div>
+
+<p>
+<strong>Creating ToC</strong> → Generates the Table of Contents.
+</p>
+
+<p>
+<strong>Customizing ToC</strong> → Changes its appearance,
+levels or structure.
+</p>
+
+<p>
+<strong>Updating ToC</strong> → Refreshes entries and page numbers.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 4 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">04.</span>
+Maintaining a Table of Contents
+</div>
+
+
+<h3>Updating the Table of Contents</h3>
+
+<p>
+When a document is edited, headings may be added, deleted or moved.
+Page numbers may also change. Therefore, the Table of Contents should
+be updated.
+</p>
+
+
+<div class="practical">
+
+<h3>Steps to Update ToC</h3>
+
+<div class="step">
+<b>Step 1:</b> Right-click inside the Table of Contents.
+</div>
+
+<div class="step">
+<b>Step 2:</b> Select
+<strong>Update Table of Contents</strong>.
+</div>
+
+<div class="step">
+<b>Step 3:</b> Writer refreshes the entries and page numbers.
+</div>
+
+</div>
+
+
+<h3>Deleting a Table of Contents</h3>
+
+<div class="practical">
+
+<div class="step">
+<b>Step 1:</b> Right-click inside the Table of Contents.
+</div>
+
+<div class="step">
+<b>Step 2:</b> Select
+<strong>Delete Table of Contents</strong>.
+</div>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 ToC Maintenance</strong>
+
+<p>
+<strong>Add / Change Heading → Update ToC</strong>
+</p>
+
+<p>
+<strong>No longer required → Delete ToC</strong>
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ VERY IMPORTANT
+</div>
+
+<p>
+If the contents or page numbers of a document change after creating
+the ToC, the correct action is to <strong>update the Table of
+Contents</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 5 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">05.</span>
+Templates
+</div>
+
+
+<h3>What is a Template?</h3>
+
+<p>
+A <span class="highlight">template</span> is a pre-designed document
+that can be used as a starting point for creating new documents.
+</p>
+
+<p>
+Templates may contain predefined text, styles, formatting, page
+layout and other document settings.
+</p>
+
+
+<h3>Why Use Templates?</h3>
+
+<ul>
+
+<li>Saves time while creating documents.</li>
+
+<li>Provides a consistent appearance.</li>
+
+<li>Reduces repeated formatting work.</li>
+
+<li>Helps create professional-looking documents.</li>
+
+<li>Can be reused for similar documents.</li>
+
+</ul>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Template Example</th>
+<th>Possible Use</th>
+</tr>
+
+<tr>
+<td>Resume template</td>
+<td>Creating a professional resume.</td>
+</tr>
+
+<tr>
+<td>Report template</td>
+<td>Preparing repeated reports.</td>
+</tr>
+
+<tr>
+<td>Letter template</td>
+<td>Creating formal letters with a fixed layout.</td>
+</tr>
+
+<tr>
+<td>Invoice template</td>
+<td>Preparing documents with a standard structure.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="important">
+
+<p>
+<b>Key Idea:</b> A template is a
+<strong>ready-made starting structure</strong>, not merely a blank
+document.
+</p>
+
+</div>
+
+
+<h3>Using a Template</h3>
+
+<p>
+A template can be used when a user wants to create a new document
+based on an existing design and formatting.
+</p>
+
+
+<div class="practical">
+
+<h3>Basic Workflow</h3>
+
+<div class="step">
+<b>1.</b> Open the Template area in LibreOffice.
+</div>
+
+<div class="step">
+<b>2.</b> Select a suitable template.
+</div>
+
+<div class="step">
+<b>3.</b> Create a new document from that template.
+</div>
+
+<div class="step">
+<b>4.</b> Replace or edit the sample content according to requirements.
+</div>
+
+</div>
+
+
+<h3>Template vs Normal Document</h3>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Template</th>
+<th>Normal Document</th>
+</tr>
+
+<tr>
+<td>Used as a starting structure.</td>
+<td>Contains the actual document content.</td>
+</tr>
+
+<tr>
+<td>Designed for reuse.</td>
+<td>Usually created for a particular purpose.</td>
+</tr>
+
+<tr>
+<td>Can contain predefined formatting and styles.</td>
+<td>Formatting is applied according to the document requirements.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+⭐ EXAM POINT
+</div>
+
+<p>
+The main advantage of templates is
+<strong>saving time and maintaining consistency</strong> in documents.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 6 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">06.</span>
+Track Changes
+</div>
+
+
+<h3>Meaning of Track Changes</h3>
+
+<p>
+The <span class="highlight">Track Changes</span> feature is used to
+record and review modifications made to a document.
+</p>
+
+<p>
+It is especially useful when more than one person is working on a
+document and changes need to be reviewed before they become final.
+</p>
+
+
+<div class="important">
+
+<p>
+Track Changes can show changes such as
+<strong>insertions, deletions and formatting changes</strong>.
+The changes can later be <strong>accepted or rejected</strong>.
+</p>
+
+</div>
+
+
+<h3>Why Track Changes is Useful?</h3>
+
+<ul>
+
+<li>Records editing made by users.</li>
+
+<li>Helps reviewers identify modifications.</li>
+
+<li>Allows changes to be accepted or rejected.</li>
+
+<li>Useful when documents are reviewed by multiple people.</li>
+
+<li>Helps maintain control over document editing.</li>
+
+</ul>
+
+
+<h3>Recording Changes</h3>
+
+<div class="practical">
+
+<h3>Steps</h3>
+
+<div class="step">
+<b>Step 1:</b> Open the document.
+</div>
+
+<div class="step">
+<b>Step 2:</b> Go to
+<strong>Edit → Track Changes → Record</strong>.
+</div>
+
+<div class="step">
+<b>Step 3:</b> Make the required changes in the document.
+</div>
+
+<div class="step">
+<b>Step 4:</b> Writer records the modifications.
+</div>
+
+<div class="step">
+<b>Step 5:</b> Review the recorded changes.
+</div>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM LINE
+</div>
+
+<p>
+To start recording changes in Writer:
+<strong>Edit → Track Changes → Record</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 7 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">07.</span>
+Accepting and Rejecting Changes
+</div>
+
+
+<h3>Reviewing Changes</h3>
+
+<p>
+After changes have been recorded, the reviewer can examine every
+modification and decide whether it should remain in the document.
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Action</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>Accept Change</b></td>
+<td>Keeps the selected modification in the document.</td>
+</tr>
+
+<tr>
+<td><b>Reject Change</b></td>
+<td>Removes the selected modification and restores the earlier content.</td>
+</tr>
+
+<tr>
+<td><b>Accept All</b></td>
+<td>Accepts all recorded changes.</td>
+</tr>
+
+<tr>
+<td><b>Reject All</b></td>
+<td>Rejects all recorded changes.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="practical">
+
+<h3>Manage Changes</h3>
+
+<div class="step">
+<b>Step 1:</b> Open
+<strong>Edit → Track Changes → Manage</strong>.
+</div>
+
+<div class="step">
+<b>Step 2:</b> Review the list of recorded changes.
+</div>
+
+<div class="step">
+<b>Step 3:</b> Select a change.
+</div>
+
+<div class="step">
+<b>Step 4:</b> Choose <strong>Accept</strong> or
+<strong>Reject</strong>.
+</div>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Remember</strong>
+
+<p>
+<strong>Accept = Keep the change</strong>
+</p>
+
+<p>
+<strong>Reject = Remove the change</strong>
+</p>
+
+</div>
+
+
+<h3>Show / Hide Changes</h3>
+
+<p>
+The display of recorded changes can be shown or hidden without
+removing the recorded changes themselves.
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+📌 EXAM TRICK
+</div>
+
+<p>
+<strong>Show/Hide Changes</strong> does NOT mean
+<strong>Accept/Reject Changes</strong>.
+</p>
+
+<p>
+Showing or hiding only changes their display. Accepting or rejecting
+actually determines whether the modification remains in the document.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 8 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">08.</span>
+Comments and Track Changes
+</div>
+
+
+<h3>Comments</h3>
+
+<p>
+Comments can be added to a document to provide suggestions,
+instructions, explanations or remarks without directly changing the
+main text.
+</p>
+
+
+<h3>Why Add Comments?</h3>
+
+<ul>
+
+<li>To suggest an improvement.</li>
+
+<li>To ask another reviewer a question.</li>
+
+<li>To explain why a change is required.</li>
+
+<li>To provide additional information.</li>
+
+</ul>
+
+
+<div class="important">
+
+<p>
+A <strong>comment</strong> is used for discussion or explanation,
+while <strong>Track Changes</strong> records an actual modification
+made to the document.
+</p>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Comments</th>
+<th>Track Changes</th>
+</tr>
+
+<tr>
+<td>Used to add remarks or suggestions.</td>
+<td>Records modifications made to the document.</td>
+</tr>
+
+<tr>
+<td>Does not itself modify the original text.</td>
+<td>Records changes such as insertion or deletion.</td>
+</tr>
+
+<tr>
+<td>Useful for communication between reviewers.</td>
+<td>Useful for reviewing document edits.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+⭐ EXAM DIFFERENCE
+</div>
+
+<p>
+If the question asks
+<strong>“Which feature records editing?”</strong> →
+<strong>Track Changes</strong>.
+</p>
+
+<p>
+If the question asks
+<strong>“Which feature allows suggestions/remarks?”</strong> →
+<strong>Comments</strong>.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 9 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">09.</span>
+Compare and Merge Documents
+</div>
+
+
+<h3>Compare Documents</h3>
+
+<p>
+Sometimes a person may edit a copy of a document without turning on
+Track Changes. LibreOffice Writer can compare the edited document
+with the original document to identify differences.
+</p>
+
+
+<div class="practical">
+
+<h3>Basic Steps to Compare</h3>
+
+<div class="step">
+<b>Step 1:</b> Open the edited document.
+</div>
+
+<div class="step">
+<b>Step 2:</b> Select
+<strong>Edit → Track Changes → Compare Document</strong>.
+</div>
+
+<div class="step">
+<b>Step 3:</b> Select the original document.
+</div>
+
+<div class="step">
+<b>Step 4:</b> Writer identifies and marks the differences.
+</div>
+
+<div class="step">
+<b>Step 5:</b> Review the detected changes.
+</div>
+
+</div>
+
+
+<h3>Merge Documents</h3>
+
+<p>
+The <span class="highlight">Merge Document</span> feature is useful
+when multiple edited copies of the same document have to be combined
+into the original document.
+</p>
+
+
+<div class="important">
+
+<p>
+For merging tracked copies, the documents must have the same original
+content apart from the recorded changes.
+</p>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Compare Document</th>
+<th>Merge Document</th>
+</tr>
+
+<tr>
+<td>Finds differences between two documents.</td>
+<td>Combines recorded changes from edited copies.</td>
+</tr>
+
+<tr>
+<td>Useful when changes were not tracked.</td>
+<td>Useful when multiple reviewers have edited copies.</td>
+</tr>
+
+<tr>
+<td>Helps identify modifications.</td>
+<td>Brings changes into the original document.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+<strong>Compare = Find differences</strong>
+</p>
+
+<p>
+<strong>Merge = Combine changes</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SESSION 10 -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+<span class="session-number">10.</span>
+Protecting Tracked Changes
+</div>
+
+
+<h3>Protect Changes</h3>
+
+<p>
+Writer provides an option to protect recorded changes so that a user
+cannot simply turn off change recording or accept/reject changes
+without the required password.
+</p>
+
+
+<div class="practical">
+
+<h3>Concept</h3>
+
+<div class="step">
+<b>Record Changes:</b> Starts recording modifications.
+</div>
+
+<div class="step">
+<b>Protect Changes:</b> Restricts users from disabling or modifying
+the review process without authorization.
+</div>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Easy Recall</strong>
+
+<p>
+<strong>Record → Track the edits</strong>
+</p>
+
+<p>
+<strong>Protect → Protect the tracking process</strong>
+</p>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+📌 IMPORTANT
+</div>
+
+<p>
+Protecting changes is different from accepting or rejecting changes.
+Protection controls access to the change-tracking process.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- RAPID REVISION -->
+<!-- ===================================================== -->
+
+<section class="quick">
+
+<h3>⚡ RAPID REVISION</h3>
+
+<ul>
+
+<li>
+<strong>Table of Contents (ToC)</strong> is an automatically generated
+list of topics/subtopics with page numbers.
+</li>
+
+<li>
+ToC entries are based on the document's
+<strong>heading hierarchy</strong>.
+</li>
+
+<li>
+<strong>Heading 1</strong> is generally used for main topics,
+while Heading 2 and Heading 3 are used for lower-level sections.
+</li>
+
+<li>
+A ToC can be <strong>created, customized, updated and deleted</strong>.
+</li>
+
+<li>
+If headings or page numbers change, the ToC should be
+<strong>updated</strong>.
+</li>
+
+<li>
+A <strong>Template</strong> is a pre-designed document structure
+used as a starting point for creating new documents.
+</li>
+
+<li>
+Templates save <strong>time</strong> and maintain
+<strong>consistency</strong>.
+</li>
+
+<li>
+<strong>Track Changes</strong> records modifications made to a document.
+</li>
+
+<li>
+Track Changes can record changes such as
+<strong>insertions, deletions and formatting changes</strong>.
+</li>
+
+<li>
+<strong>Accept</strong> keeps a change.
+<strong>Reject</strong> removes a change.
+</li>
+
+<li>
+<strong>Show/Hide Changes</strong> changes only the display of recorded
+changes; it does not accept or reject them.
+</li>
+
+<li>
+<strong>Comments</strong> are useful for suggestions, remarks and
+explanations.
+</li>
+
+<li>
+<strong>Compare Document</strong> is used to identify differences
+between documents.
+</li>
+
+<li>
+<strong>Merge Document</strong> is used to combine recorded changes
+from edited copies.
+</li>
+
+<li>
+<strong>Protect Changes</strong> helps prevent unauthorized modification
+of the change-tracking process.
+</li>
+
+<li>
+Important menu path:
+<strong>Edit → Track Changes → Record</strong>.
+</li>
+
+<li>
+For exam questions remember:
+<strong>Compare = Find differences</strong>,
+<strong>Merge = Combine changes</strong>.
+</li>
+
+</ul>
+
+</section>
+
+
+<div class="footer">
+
+    THE GOAL • CBSE Class 10 IT (402) • Part B • Unit 1 • Chapter 3
+
+    <br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</div>
+
+</main>
+
+</body>
+</html>
