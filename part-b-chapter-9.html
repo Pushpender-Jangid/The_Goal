@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Chapter 9 Notes</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+body{
+    background:#d8d1c3;
+    color:#242424;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.55;
+}
+
+/* ---------- TOP BRAND ---------- */
+
+.topbar{
+    background:#172033;
+    color:white;
+    padding:18px 15px;
+    text-align:center;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:bold;
+    opacity:.8;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:42px;
+    margin-top:4px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.85;
+}
+
+/* ---------- NOTEBOOK ---------- */
+
+.notebook{
+    width:min(1050px,96%);
+    margin:25px auto 45px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #fffdf4 0px,
+        #fffdf4 31px,
+        #a9c8e7 32px
+    );
+
+    position:relative;
+
+    padding:35px 45px 70px 90px;
+
+    box-shadow:
+    0 5px 12px rgba(0,0,0,.18),
+    0 25px 55px rgba(0,0,0,.12);
+
+    min-height:100vh;
+}
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:62px;
+    width:2px;
+    background:#e28c8c;
+}
+
+/* ---------- COVER ---------- */
+
+.cover{
+    padding:12px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover .small{
+    font-size:17px;
+    color:#555;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:50px;
+    color:#183f72;
+    line-height:1;
+    margin:8px 0;
+}
+
+.cover .intro{
+    font-size:19px;
+    max-width:820px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:13px;
+    padding:4px 12px;
+    border:2px solid #555;
+    transform:rotate(-1deg);
+    background:#fff2a8;
+    font-size:16px;
+}
+
+.source-note{
+    font-size:15px;
+    color:#555;
+    margin-top:12px;
+}
+
+/* ---------- SESSION ---------- */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    transform:rotate(-1deg);
+    margin-bottom:15px;
+}
+
+.session-number{
+    color:#b32d2d;
+    font-family:"Caveat",cursive;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:27px;
+    color:#222;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    margin:14px 0 4px;
+    color:#254d75;
+}
+
+p,li{
+    font-size:18px;
+}
+
+ul,ol{
+    margin:5px 0 12px 25px;
+}
+
+li{
+    margin:4px 0;
+}
+
+.highlight{
+    background:
+    linear-gradient(
+        transparent 25%,
+        rgba(255,226,86,.72) 25%,
+        rgba(255,226,86,.72) 82%,
+        transparent 82%
+    );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b42d2d;
+    font-weight:bold;
+}
+
+/* ---------- BOXES ---------- */
+
+.important{
+    margin:18px 0;
+    padding:14px 18px;
+    background:rgba(255,242,164,.65);
+    border:2px solid #5f5a43;
+    border-radius:3px;
+    transform:rotate(-.35deg);
+    position:relative;
+}
+
+.important:before{
+    content:"★ IMPORTANT";
+    position:absolute;
+    top:-15px;
+    left:12px;
+    background:#fff4a7;
+    padding:0 7px;
+    font-family:"Caveat",cursive;
+    font-size:17px;
+    color:#9c2929;
+}
+
+.exam{
+    margin:18px 0;
+    padding:13px 17px;
+    border-left:5px solid #c13c3c;
+    background:rgba(255,255,255,.52);
+}
+
+.exam-title{
+    color:#b52c2c;
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:12px 17px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.52);
+}
+
+.memory strong{
+    color:#214d75;
+    font-size:21px;
+}
+
+/* ---------- TABLE ---------- */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:15px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.48);
+}
+
+th,td{
+    border:1.5px solid #555;
+    padding:9px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:21px;
+}
+
+/* ---------- FLOW ---------- */
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:20px 0;
+}
+
+.flow span{
+    padding:9px 14px;
+    border:2px solid #555;
+    background:rgba(255,242,164,.75);
+    font-size:18px;
+    transform:rotate(-1deg);
+}
+
+.arrow{
+    font-size:25px;
+    color:#9d3030;
+}
+
+/* ---------- QUICK ---------- */
+
+.quick{
+    border:3px solid #444;
+    padding:18px;
+    margin-top:30px;
+    background:rgba(255,255,255,.5);
+    transform:rotate(.2deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:22px;
+    margin:25px 0;
+    letter-spacing:5px;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    margin-top:45px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+
+    .notebook{
+        width:100%;
+        padding:28px 20px 60px 58px;
+        margin:0;
+    }
+
+    .notebook:before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:34px;
+    }
+
+    .cover h2{
+        font-size:40px;
+    }
+
+    .session-title{
+        font-size:29px;
+    }
+
+    p,li{
+        font-size:17px;
+    }
+
+    th,td{
+        font-size:15px;
+    }
+
+    .flow{
+        flex-direction:column;
+    }
+
+    .arrow{
+        transform:rotate(90deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • IT 402
+    </div>
+
+    <h1>
+        Part B — Database Management System
+    </h1>
+
+    <p>
+        Chapter 9 • Starting with LibreOffice Base
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ===================================================== -->
+<!-- COVER -->
+<!-- ===================================================== -->
+
+<section class="cover">
+
+    <div class="small">
+        📖 CHAPTER 9 • SOURCE-BASED EXAM NOTES
+    </div>
+
+    <h2>
+        Starting with LibreOffice Base
+    </h2>
+
+    <p class="intro">
+
+        Complete exam-oriented revision notes for CBSE Class 10
+        Information Technology (402), based on the
+        <b>Domestic Data Entry Operator — Class X</b>
+        textbook.
+
+    </p>
+
+    <span class="tag">
+        ✍️ Read • Revise • Recall
+    </span>
+
+    <p class="source-note">
+
+        <b>Source check:</b>
+        Chapter 9 starts on printed page 157.
+        The chapter introduces LibreOffice Base, database creation,
+        data types, tables, primary keys, data entry, editing,
+        sorting and record management.
+
+    </p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 01 INTRODUCTION -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">01.</span>
+    Introduction to LibreOffice Base
+</div>
+
+<h3>What is LibreOffice Base?</h3>
+
+<p>
+
+<span class="highlight">LibreOffice Base</span> is the database
+management component of LibreOffice.
+
+It is used to create and manage databases and provides tools
+for working with database objects such as
+<span class="highlight">tables, queries, forms and reports</span>.
+
+</p>
+
+
+<h3>Why is Base Used?</h3>
+
+<p>
+
+A database helps in storing and managing large amounts of
+related information in an organised manner.
+
+LibreOffice Base provides an interface through which users can
+create databases and work with their stored data.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Exam Point</h3>
+
+<p>
+
+<b>LibreOffice Base</b> is the database component of the
+LibreOffice suite used for creating and managing databases.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 02 DATABASE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">02.</span>
+    Basic Database Concepts
+</div>
+
+<h3>Database</h3>
+
+<p>
+
+A <span class="highlight">database</span> is an organised
+collection of related data that can be stored, managed and
+retrieved efficiently.
+
+</p>
+
+
+<h3>Table</h3>
+
+<p>
+
+A <span class="highlight">table</span> stores data in the form
+of rows and columns.
+
+</p>
+
+
+<h3>Field</h3>
+
+<p>
+
+A <span class="highlight">field</span> represents a particular
+category or attribute of information in a table.
+
+For example, in a student table, Name, Class and Roll Number
+can be fields.
+
+</p>
+
+
+<h3>Record</h3>
+
+<p>
+
+A <span class="highlight">record</span> is a complete set of
+related field values for one entry.
+
+In a table, a record is generally represented by a
+<span class="highlight">row</span>.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>Database</b></td>
+<td>Organised collection of related data.</td>
+</tr>
+
+<tr>
+<td><b>Table</b></td>
+<td>Stores data in rows and columns.</td>
+</tr>
+
+<tr>
+<td><b>Field</b></td>
+<td>Represents a category or attribute of data.</td>
+</tr>
+
+<tr>
+<td><b>Record</b></td>
+<td>Complete set of values representing one entry.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Quick Recall</strong>
+
+<p>
+
+<b>Field = Column</b> &nbsp; | &nbsp;
+<b>Record = Row</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 03 DATA TYPES -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">03.</span>
+    Data Types in LibreOffice Base
+</div>
+
+<p>
+
+When designing a database table, the data type of each field
+must be selected according to the kind of information that
+will be stored in it.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Data Type</th>
+<th>Used For</th>
+</tr>
+
+<tr>
+<td><b>Text</b></td>
+<td>Stores textual information such as names and addresses.</td>
+</tr>
+
+<tr>
+<td><b>Numeric</b></td>
+<td>Stores numerical values.</td>
+</tr>
+
+<tr>
+<td><b>Currency</b></td>
+<td>Stores monetary values.</td>
+</tr>
+
+<tr>
+<td><b>Date</b></td>
+<td>Stores dates.</td>
+</tr>
+
+<tr>
+<td><b>Boolean</b></td>
+<td>Stores logical values such as Yes/No or True/False.</td>
+</tr>
+
+<tr>
+<td><b>Binary</b></td>
+<td>Stores binary data.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+Always choose a field's data type according to the type of
+information that the field will contain.
+
+</p>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Data Type Recall</strong>
+
+<p>
+
+Text → words &nbsp; • &nbsp;
+Numeric → numbers &nbsp; • &nbsp;
+Currency → money &nbsp; • &nbsp;
+Date → dates &nbsp; • &nbsp;
+Boolean → logical values &nbsp; • &nbsp;
+Binary → binary data
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 04 STARTING BASE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">04.</span>
+    Starting LibreOffice Base
+</div>
+
+<h3>Opening LibreOffice Base</h3>
+
+<p>
+
+LibreOffice Base can be started from the
+<span class="highlight">LibreOffice Start Center</span>.
+
+The Database option is selected to work with databases.
+
+</p>
+
+
+<h3>Database Wizard</h3>
+
+<p>
+
+When a new database is created, the
+<span class="highlight">Database Wizard</span>
+helps the user create and save the database.
+
+</p>
+
+
+<div class="flow">
+
+<span>Open LibreOffice</span>
+
+<div class="arrow">→</div>
+
+<span>Select Database</span>
+
+<div class="arrow">→</div>
+
+<span>Database Wizard</span>
+
+<div class="arrow">→</div>
+
+<span>Create / Open Database</span>
+
+</div>
+
+
+<h3>New Database</h3>
+
+<p>
+
+To create a new database, the option for creating a new
+database is selected in the Database Wizard.
+
+After completing the required steps, the database is saved.
+
+</p>
+
+
+<h3>Existing Database</h3>
+
+<p>
+
+An existing database can also be opened through the Database
+Wizard when the user wants to work with a previously created
+database.
+
+</p>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 05 DATABASE WIZARD -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">05.</span>
+    Database Wizard Options
+</div>
+
+<h3>Important Options</h3>
+
+<p>
+
+The Database Wizard provides options for creating a new
+database or opening an existing database.
+
+</p>
+
+
+<h3>Registering the Database</h3>
+
+<p>
+
+The wizard provides an option to
+<span class="highlight">register the database</span>.
+
+Registration makes the database available for use through
+LibreOffice's database environment.
+
+</p>
+
+
+<h3>Opening the Database for Editing</h3>
+
+<p>
+
+The wizard also provides the option to open the database for
+editing after creation.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Remember</h3>
+
+<p>
+
+When creating a new database, carefully complete the Database
+Wizard options and save the database file.
+
+</p>
+
+</div>
+
+
+<h3>Database File</h3>
+
+<p>
+
+A LibreOffice Base database is saved as an
+<span class="highlight">.odb</span> file.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>LibreOffice Base database file extension → .odb</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 06 BASE USER INTERFACE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">06.</span>
+    User Interface of LibreOffice Base
+</div>
+
+<p>
+
+After opening a database, the LibreOffice Base interface
+provides access to the database objects and commands required
+for database management.
+
+</p>
+
+
+<h3>Database Objects</h3>
+
+<p>
+
+The main database objects that can be accessed through Base
+include:
+
+</p>
+
+<ul>
+
+<li><b>Tables</b> — store data.</li>
+
+<li><b>Queries</b> — retrieve selected information from data.</li>
+
+<li><b>Forms</b> — provide an interface for entering or viewing data.</li>
+
+<li><b>Reports</b> — present information in a formatted manner.</li>
+
+</ul>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Object</th>
+<th>Main Purpose</th>
+</tr>
+
+<tr>
+<td>Table</td>
+<td>Stores data.</td>
+</tr>
+
+<tr>
+<td>Query</td>
+<td>Retrieves required information from stored data.</td>
+</tr>
+
+<tr>
+<td>Form</td>
+<td>Provides a user-friendly interface for entering or viewing data.</td>
+</tr>
+
+<tr>
+<td>Report</td>
+<td>Presents database information in a formatted form.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Easy Recall</strong>
+
+<p>
+
+<b>Table = Store</b> → <b>Query = Retrieve</b> →
+<b>Form = Enter/View</b> → <b>Report = Present</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 07 CREATING TABLE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">07.</span>
+    Creating Tables
+</div>
+
+<h3>What is a Table?</h3>
+
+<p>
+
+A table is the database object in which related information
+is stored in rows and columns.
+
+Before entering records, the structure of the table must be
+defined.
+
+</p>
+
+
+<h3>Ways to Create a Table</h3>
+
+<p>
+
+LibreOffice Base provides different ways to create a table.
+The important methods covered in this chapter are:
+
+</p>
+
+<ul>
+
+<li><b>Table Wizard</b></li>
+
+<li><b>Design View</b></li>
+
+</ul>
+
+
+<h3>Table Wizard</h3>
+
+<p>
+
+The Table Wizard assists the user in creating a table by
+providing predefined fields and guided steps.
+
+It is useful when a user wants to create a table quickly
+using available field structures.
+
+</p>
+
+
+<h3>Design View</h3>
+
+<p>
+
+In Design View, the user can define the table structure by
+specifying field names, data types and other field properties.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Table Wizard</b> → guided method for creating a table.
+
+<br>
+
+<b>Design View</b> → allows the user to define the table
+structure manually.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 08 FIELD NAME -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">08.</span>
+    Defining Fields
+</div>
+
+<h3>Field Name</h3>
+
+<p>
+
+A <span class="highlight">field name</span> identifies the
+type of information stored in a field.
+
+For example:
+
+</p>
+
+<ul>
+
+<li>Student_ID</li>
+<li>Name</li>
+<li>Class</li>
+<li>Address</li>
+<li>Date_of_Birth</li>
+
+</ul>
+
+
+<h3>Field Type</h3>
+
+<p>
+
+The data type determines what kind of data can be stored in
+the field.
+
+Therefore, the field name and its data type should be selected
+carefully while designing a table.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Important</h3>
+
+<p>
+
+A well-designed table should have meaningful field names and
+appropriate data types.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 09 PRIMARY KEY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">09.</span>
+    Primary Key
+</div>
+
+<h3>What is a Primary Key?</h3>
+
+<p>
+
+A <span class="highlight">Primary Key</span> is a field or
+combination of fields that uniquely identifies each record
+in a table.
+
+</p>
+
+
+<h3>Why is Primary Key Important?</h3>
+
+<ul>
+
+<li>It uniquely identifies records.</li>
+
+<li>It helps avoid duplicate identification of records.</li>
+
+<li>It provides a unique way to identify each record in a table.</li>
+
+</ul>
+
+
+<h3>Example</h3>
+
+<p>
+
+Suppose a Student table contains:
+
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Student_ID</th>
+<th>Name</th>
+<th>Class</th>
+</tr>
+
+<tr>
+<td>101</td>
+<td>Rahul</td>
+<td>X</td>
+</tr>
+
+<tr>
+<td>102</td>
+<td>Priya</td>
+<td>X</td>
+</tr>
+
+<tr>
+<td>103</td>
+<td>Aman</td>
+<td>X</td>
+</tr>
+
+</table>
+
+</div>
+
+<p>
+
+Here, <b>Student_ID</b> can be used as the Primary Key because
+each student has a unique ID.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+⭐ VERY IMPORTANT FOR EXAM
+</div>
+
+<p>
+
+<b>Primary Key = uniquely identifies each record in a table.</b>
+
+</p>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Memory Trick</strong>
+
+<p>
+
+<b>Primary Key → Unique Identity</b>
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 10 ENTERING DATA -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">10.</span>
+    Entering Data in a Table
+</div>
+
+<h3>Data Entry</h3>
+
+<p>
+
+After creating the table structure, records can be entered
+into the table.
+
+Data is entered into the appropriate fields of a record.
+
+</p>
+
+
+<div class="flow">
+
+<span>Create Table</span>
+
+<div class="arrow">→</div>
+
+<span>Define Fields</span>
+
+<div class="arrow">→</div>
+
+<span>Set Primary Key</span>
+
+<div class="arrow">→</div>
+
+<span>Enter Records</span>
+
+</div>
+
+
+<h3>Navigation During Data Entry</h3>
+
+<p>
+
+The user can move between fields and records while entering
+data.
+
+Correct data entry is important because incorrect or incomplete
+data can affect the usefulness of the database.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Exam Tip</h3>
+
+<p>
+
+Always enter data according to the defined field type.
+
+For example, a Date field should contain date information and
+a Numeric field should contain numerical information.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 11 EDITING DATA -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">11.</span>
+    Editing Data
+</div>
+
+<h3>Editing a Record</h3>
+
+<p>
+
+If incorrect information has been entered into a table,
+the existing record can be edited.
+
+The required field is selected and its value is modified.
+
+</p>
+
+
+<h3>Why Edit Data?</h3>
+
+<ul>
+
+<li>To correct incorrect information.</li>
+
+<li>To update existing information.</li>
+
+<li>To maintain accurate records.</li>
+
+</ul>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+Editing changes the value of an existing record; it does not
+mean creating an entirely new table.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 12 DELETING RECORDS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">12.</span>
+    Deleting Records
+</div>
+
+<h3>Delete a Record</h3>
+
+<p>
+
+An unwanted record can be removed from a table using the
+appropriate delete command.
+
+</p>
+
+
+<div class="important">
+
+<h3>⚠️ Remember</h3>
+
+<p>
+
+Deleting a record removes that record from the table.
+Therefore, the correct record should be selected before
+performing the delete operation.
+
+</p>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Operation</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td><b>Insert / Enter</b></td>
+<td>Add a new record.</td>
+</tr>
+
+<tr>
+<td><b>Edit</b></td>
+<td>Modify existing information.</td>
+</tr>
+
+<tr>
+<td><b>Delete</b></td>
+<td>Remove an existing record.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 13 SORTING -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">13.</span>
+    Sorting Data
+</div>
+
+<h3>What is Sorting?</h3>
+
+<p>
+
+<span class="highlight">Sorting</span> means arranging records
+in a particular order based on the values of a selected field.
+
+</p>
+
+
+<h3>Ascending Order</h3>
+
+<p>
+
+Ascending order arranges values from smaller to larger or
+alphabetically from A to Z, depending on the type of data.
+
+</p>
+
+
+<h3>Descending Order</h3>
+
+<p>
+
+Descending order arranges values from larger to smaller or
+alphabetically from Z to A, depending on the type of data.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Order</th>
+<th>Meaning</th>
+</tr>
+
+<tr>
+<td><b>Ascending</b></td>
+<td>Small → Large / A → Z</td>
+</tr>
+
+<tr>
+<td><b>Descending</b></td>
+<td>Large → Small / Z → A</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Sorting by Multiple Fields</h3>
+
+<p>
+
+Records can also be sorted using more than one field.
+
+This is useful when records need to be arranged first according
+to one field and then according to another field.
+
+</p>
+
+
+<div class="exam">
+
+<div class="exam-title">
+✏️ EXAM POINT
+</div>
+
+<p>
+
+<b>Ascending:</b> A → Z
+
+<br>
+
+<b>Descending:</b> Z → A
+
+<br>
+
+Sorting is used to arrange records in a meaningful order.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 14 CLOSING BASE -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">14.</span>
+    Closing LibreOffice Base
+</div>
+
+<h3>Before Closing</h3>
+
+<p>
+
+Before closing the database, make sure that required changes
+have been saved.
+
+</p>
+
+
+<h3>Closing the Database</h3>
+
+<p>
+
+The database can be closed using the appropriate close command
+or by closing the LibreOffice Base window.
+
+</p>
+
+
+<div class="important">
+
+<h3>📌 Best Practice</h3>
+
+<p>
+
+<b>Save your changes before closing the database.</b>
+
+This helps prevent loss of recently entered or modified data.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 15 CHAPTER SUMMARY -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">15.</span>
+    Chapter Summary
+</div>
+
+<div class="exam">
+
+<div class="exam-title">
+📚 MUST REMEMBER
+</div>
+
+<ul>
+
+<li>
+LibreOffice Base is used for creating and managing databases.
+</li>
+
+<li>
+A database stores related information in an organised manner.
+</li>
+
+<li>
+A table stores data in rows and columns.
+</li>
+
+<li>
+A field represents a category of information.
+</li>
+
+<li>
+A record represents one complete entry.
+</li>
+
+<li>
+The data type determines the type of information stored in a field.
+</li>
+
+<li>
+Tables can be created using Table Wizard or Design View.
+</li>
+
+<li>
+A Primary Key uniquely identifies each record.
+</li>
+
+<li>
+Records can be entered, edited and deleted.
+</li>
+
+<li>
+Data can be sorted in ascending or descending order.
+</li>
+
+<li>
+A LibreOffice Base database is saved with the
+<b>.odb</b> extension.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 16 EXAM QUESTIONS -->
+<!-- ===================================================== -->
+
+<section class="session">
+
+<div class="session-title">
+    <span class="session-number">16.</span>
+    Check Your Progress — Exam Focus
+</div>
+
+
+<div class="exam">
+
+<div class="exam-title">
+📌 QUESTIONS TO PREPARE
+</div>
+
+<ol>
+
+<li>What is LibreOffice Base?</li>
+
+<li>What is a database?</li>
+
+<li>What is a table?</li>
+
+<li>What is a field?</li>
+
+<li>What is a record?</li>
+
+<li>What are the different data types used in a database?</li>
+
+<li>What is the use of the Database Wizard?</li>
+
+<li>What is the difference between Table Wizard and Design View?</li>
+
+<li>What is a Primary Key?</li>
+
+<li>Why is a Primary Key important?</li>
+
+<li>How can a new table be created in LibreOffice Base?</li>
+
+<li>How can records be entered into a table?</li>
+
+<li>How can an existing record be edited?</li>
+
+<li>How can a record be deleted?</li>
+
+<li>What is sorting?</li>
+
+<li>Differentiate between ascending and descending order.</li>
+
+<li>What is the file extension of a LibreOffice Base database?</li>
+
+<li>What are tables, queries, forms and reports used for?</li>
+
+</ol>
+
+</div>
+
+
+<div class="memory">
+
+<strong>🧠 Board Exam Focus</strong>
+
+<p>
+
+Prepare definitions, differences, data types,
+Primary Key, Table Wizard vs Design View,
+record operations and sorting especially well.
+
+</p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 17 LAST MINUTE -->
+<!-- ===================================================== -->
+
+<section class="quick">
+
+<h3>
+⚡ CHAPTER 9 — RAPID REVISION
+</h3>
+
+<ul>
+
+<li>
+<b>LibreOffice Base:</b>
+Database management component of LibreOffice.
+</li>
+
+<li>
+<b>Database:</b>
+Organised collection of related data.
+</li>
+
+<li>
+<b>Table:</b>
+Stores data in rows and columns.
+</li>
+
+<li>
+<b>Field:</b>
+Represents a category/attribute of information.
+</li>
+
+<li>
+<b>Record:</b>
+Complete set of field values for one entry.
+</li>
+
+<li>
+<b>Data Types:</b>
+Text, Numeric, Currency, Date, Boolean and Binary.
+</li>
+
+<li>
+<b>Database Wizard:</b>
+Helps create or open a database.
+</li>
+
+<li>
+<b>Database Extension:</b>
+<b>.odb</b>
+</li>
+
+<li>
+<b>Table Creation:</b>
+Table Wizard or Design View.
+</li>
+
+<li>
+<b>Primary Key:</b>
+Uniquely identifies each record.
+</li>
+
+<li>
+<b>Data Entry:</b>
+Used to add records to a table.
+</li>
+
+<li>
+<b>Editing:</b>
+Used to modify existing information.
+</li>
+
+<li>
+<b>Deleting:</b>
+Removes an existing record.
+</li>
+
+<li>
+<b>Sorting:</b>
+Arranges records according to selected field values.
+</li>
+
+<li>
+<b>Ascending:</b>
+A → Z / smaller → larger.
+</li>
+
+<li>
+<b>Descending:</b>
+Z → A / larger → smaller.
+</li>
+
+<li>
+<b>Table:</b>
+Stores data.
+</li>
+
+<li>
+<b>Query:</b>
+Retrieves required information.
+</li>
+
+<li>
+<b>Form:</b>
+Provides an interface for entering/viewing data.
+</li>
+
+<li>
+<b>Report:</b>
+Presents database information in formatted form.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<div class="footer">
+
+THE GOAL • CBSE Class 10 IT (402) • Part B • Chapter 9
+
+<br>
+
+Made with Love ❤️ in India by Pushpender
+
+</div>
+
+
+</main>
+
+</body>
+</html>
