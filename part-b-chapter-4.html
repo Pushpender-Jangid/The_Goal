@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | IT 402 | Part B | Chapter 4</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#252525;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.6;
+}
+
+/* ================= TOP BAR ================= */
+
+.topbar{
+    background:#172033;
+    color:#fff;
+    text-align:center;
+    padding:22px 15px 20px;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:4px;
+    opacity:.78;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:46px;
+    font-weight:600;
+    margin-top:3px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.82;
+}
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    width:min(1100px,96%);
+    margin:25px auto 45px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+
+    position:relative;
+
+    padding:38px 48px 70px 92px;
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.18),
+        0 25px 60px rgba(0,0,0,.13);
+
+    min-height:100vh;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#df8f8f;
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:8px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover-small{
+    color:#555;
+    font-size:16px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:55px;
+    line-height:1;
+    color:#183f72;
+    margin:8px 0 12px;
+}
+
+.cover p{
+    font-size:19px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff0a6;
+    border:2px solid #555;
+    padding:3px 12px;
+    margin-top:14px;
+    font-size:16px;
+    transform:rotate(-1deg);
+}
+
+.source{
+    font-size:14px !important;
+    color:#666;
+    margin-top:10px;
+}
+
+/* ================= CHAPTER MAP ================= */
+
+.chapter-map{
+    margin:25px 0 35px;
+    padding:18px 20px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.58);
+}
+
+.chapter-map h3{
+    margin-top:0;
+}
+
+.chapter-map ul{
+    margin-bottom:0;
+}
+
+/* ================= SECTIONS ================= */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:35px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    margin-bottom:16px;
+    transform:rotate(-1deg);
+}
+
+.session-number{
+    color:#b42d2d;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#242424;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    color:#254d75;
+    margin:15px 0 5px;
+}
+
+p,
+li{
+    font-size:18px;
+}
+
+ul,
+ol{
+    margin:5px 0 13px 27px;
+}
+
+li{
+    margin:3px 0;
+}
+
+/* ================= HIGHLIGHT ================= */
+
+.highlight{
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(255,225,80,.75) 25%,
+            rgba(255,225,80,.75) 82%,
+            transparent 82%
+        );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b32d2d;
+    font-weight:bold;
+}
+
+/* ================= BOXES ================= */
+
+.important{
+    margin:18px 0;
+    padding:17px 19px;
+    background:rgba(255,242,164,.68);
+    border:2px solid #555;
+    transform:rotate(-.2deg);
+}
+
+.exam{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(255,255,255,.55);
+    border-left:5px solid #b52d2d;
+}
+
+.exam-title{
+    color:#b52d2d;
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(226,239,251,.62);
+    border-left:5px solid #55718d;
+}
+
+.green{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(224,241,220,.65);
+    border-left:5px solid #39723b;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:18px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.5);
+}
+
+th,
+td{
+    border:1.5px solid #555;
+    padding:10px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:22px;
+}
+
+/* ================= STEPS ================= */
+
+.steps{
+    counter-reset:step;
+    list-style:none;
+    margin-left:0;
+}
+
+.steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:43px;
+    margin:9px 0;
+}
+
+.steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;
+    top:0;
+    width:28px;
+    height:28px;
+    border:2px solid #444;
+    border-radius:50%;
+    text-align:center;
+    line-height:24px;
+    background:#fff1a5;
+    font-weight:bold;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:18px 0;
+    padding:18px;
+    text-align:center;
+    background:rgba(255,255,255,.65);
+    border:2px dashed #55718d;
+    font-family:monospace;
+    font-size:18px;
+    overflow-x:auto;
+}
+
+/* ================= QUICK ================= */
+
+.quick{
+    border:3px solid #444;
+    padding:20px;
+    margin-top:30px;
+    background:rgba(255,255,255,.52);
+    transform:rotate(.15deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.quick ul{
+    margin-bottom:0;
+}
+
+/* ================= DOODLE ================= */
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:21px;
+    margin:27px 0;
+    letter-spacing:6px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+    margin-top:50px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .notebook{
+        width:100%;
+        margin:0;
+        padding:30px 18px 60px 57px;
+    }
+
+    .notebook::before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:37px;
+    }
+
+    .cover h2{
+        font-size:43px;
+    }
+
+    p,
+    li{
+        font-size:17px;
+    }
+
+    .session-title{
+        font-size:30px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • INFORMATION TECHNOLOGY 402
+    </div>
+
+    <h1>
+        Part B — Electronic Spreadsheet (Advanced)
+    </h1>
+
+    <p>
+        Chapter 4 • Analyse Data using Scenarios and Goal Seek
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+    <div class="cover-small">
+        📊 CHAPTER 4 • EXAM-ORIENTED NOTES
+    </div>
+
+    <h2>
+        Analyse Data using Scenarios and Goal Seek
+    </h2>
+
+    <p>
+
+        This chapter deals with analysing spreadsheet
+        data using tools such as
+
+        <b>Consolidate, Subtotal, Scenarios,
+        Multiple Operations and Goal Seek.</b>
+
+    </p>
+
+    <span class="badge">
+        ✍️ NOTES ONLY • NO TOP 50 TEST
+    </span>
+
+    <p class="source">
+
+        <b>Source:</b> NCERT Domestic Data Entry Operator —
+        Class X, 2023–24, Part B, Unit 2, Chapter 4.
+
+    </p>
+
+</section>
+
+
+<!-- ================= CHAPTER MAP ================= -->
+
+<section class="chapter-map">
+
+    <h3>🗺️ Chapter Roadmap</h3>
+
+    <ul>
+
+        <li>Analysing Data</li>
+
+        <li>Consolidating Data</li>
+
+        <li>Subtotal</li>
+
+        <li>What-if Analysis</li>
+
+        <li>Scenarios</li>
+
+        <li>Creating Scenarios</li>
+
+        <li>Multiple Operations</li>
+
+        <li>Goal Seek</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ================= SECTION 01 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">01.</span>
+
+    Analysing Data
+
+</div>
+
+
+<p>
+
+A spreadsheet is often used to store a large amount
+of data.
+
+However, simply storing data is not enough.
+
+The data must be analysed to obtain useful information
+for making effective decisions.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Analysing Data</b> means examining and processing
+        data to obtain useful information that can support
+        decision-making.
+
+    </p>
+
+</div>
+
+
+<h3>Why Analyse Data?</h3>
+
+<ul>
+
+    <li>To obtain useful information from data.</li>
+
+    <li>To summarise large amounts of data.</li>
+
+    <li>To compare information.</li>
+
+    <li>To make effective decisions.</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        Data analysis helps in obtaining useful information
+        for making effective decisions.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 02 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">02.</span>
+
+    Consolidating Data
+
+</div>
+
+
+<p>
+
+When data is available in different worksheets or
+different ranges, it may be necessary to combine the
+data into one summary.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <span class="highlight">Consolidate</span> is used
+        to combine data from multiple ranges/sources into
+        a summary.
+
+    </p>
+
+</div>
+
+
+<h3>Purpose of Consolidation</h3>
+
+<ul>
+
+    <li>Combine data from different ranges.</li>
+
+    <li>Summarise information.</li>
+
+    <li>Make comparison and analysis easier.</li>
+
+</ul>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        <b>Consolidate → Combine/Summarise Data</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 03 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">03.</span>
+
+    Subtotal
+
+</div>
+
+
+<p>
+
+The <span class="highlight">Subtotal</span> feature is
+used to calculate subtotals for groups of related data.
+
+</p>
+
+
+<h3>Purpose of Subtotal</h3>
+
+<ul>
+
+    <li>Organise data into groups.</li>
+
+    <li>Calculate subtotals for each group.</li>
+
+    <li>Make large data sets easier to analyse.</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM KEYWORD
+    </div>
+
+    <p>
+
+        <b>Subtotal</b> is an important data-analysis
+        feature of Calc.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ================= SECTION 04 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">04.</span>
+
+    What-if Analysis
+
+</div>
+
+
+<h3>Meaning</h3>
+
+<p>
+
+Sometimes the input values in a spreadsheet are not
+fixed.
+
+We may want to change the input values and observe
+how the output changes.
+
+This type of analysis is called
+
+<span class="highlight">What-if Analysis</span>.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>What-if Analysis</b> is used to examine possible
+        results by changing input values.
+
+    </p>
+
+</div>
+
+
+<h3>What-if Tool</h3>
+
+<p>
+
+LibreOffice Calc provides a
+
+<span class="highlight">What-if tool</span>
+
+to analyse different possibilities.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ DIRECT EXAM ANSWER
+    </div>
+
+    <p>
+
+        What-if analysis is used to determine how changing
+        input values affects the result.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 05 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">05.</span>
+
+    Scenarios
+
+</div>
+
+
+<h3>What is a Scenario?</h3>
+
+<p>
+
+A <span class="highlight">Scenario</span> is a set of
+values that can be used to analyse different possible
+situations in a spreadsheet.
+
+</p>
+
+
+<p>
+
+Different scenarios can be created by changing the
+values of selected cells.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Scenario = Different possible set of input
+        values used for What-if Analysis.</b>
+
+    </p>
+
+</div>
+
+
+<h3>Why Use Scenarios?</h3>
+
+<ul>
+
+    <li>To compare different possibilities.</li>
+
+    <li>To study the effect of different inputs.</li>
+
+    <li>To support decision-making.</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= SECTION 06 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">06.</span>
+
+    Creating a Scenario
+
+</div>
+
+
+<p>
+
+A scenario is created by selecting the cells whose
+values will change and assigning a name to the scenario.
+
+</p>
+
+
+<h3>Basic Process</h3>
+
+<ol class="steps">
+
+<li>
+
+Enter the data and formulas in the worksheet.
+
+</li>
+
+<li>
+
+Select the cells containing the values that are to
+be changed.
+
+</li>
+
+<li>
+
+Open the Scenario option from the Data menu.
+
+</li>
+
+<li>
+
+Enter a suitable name for the scenario.
+
+</li>
+
+<li>
+
+Set the required options.
+
+</li>
+
+<li>
+
+Create the scenario.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        Scenario analysis allows different sets of values
+        to be stored and compared.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 07 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">07.</span>
+
+    Managing Scenarios
+
+</div>
+
+
+<p>
+
+Once scenarios have been created, they can be selected
+and used to view different results.
+
+</p>
+
+
+<h3>Important Concept</h3>
+
+<p>
+
+A scenario does not permanently change the original
+set of values.
+
+Instead, it allows different possible sets of values
+to be examined.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM FOCUS
+    </div>
+
+    <p>
+
+        Scenarios are associated with
+
+        <b>What-if Analysis</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 08 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">08.</span>
+
+    Multiple Operations
+
+</div>
+
+
+<p>
+
+The <span class="highlight">Multiple Operations</span>
+feature is used when we want to calculate multiple
+possible results by using different values for variables
+in a formula.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        Multiple Operations can generate different outputs
+        from a formula by using different input values.
+
+    </p>
+
+</div>
+
+
+<h3>Important Terms</h3>
+
+<ul>
+
+    <li><b>Formula Cell</b> — cell containing the formula.</li>
+
+    <li><b>Variable/Input Cell</b> — cell whose value is changed.</li>
+
+    <li><b>Output</b> — calculated result produced by the formula.</li>
+
+</ul>
+
+
+<h3>Example Concept</h3>
+
+<p>
+
+Suppose a formula calculates profit based on the
+number of items sold.
+
+If different numbers of items are entered, the
+corresponding profit can be calculated using
+Multiple Operations.
+
+</p>
+
+</section>
+
+
+<!-- ================= SECTION 09 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">09.</span>
+
+    Multiple Operations — Procedure
+
+</div>
+
+
+<p>
+
+The textbook demonstrates Multiple Operations using
+a formula cell and a variable/input cell.
+
+</p>
+
+
+<ol class="steps">
+
+<li>
+
+Create the worksheet and enter the required values.
+
+</li>
+
+<li>
+
+Create the required formula.
+
+</li>
+
+<li>
+
+Enter the different possible input values.
+
+</li>
+
+<li>
+
+Select:
+
+<b>Data → Multiple Operations</b>
+
+</li>
+
+<li>
+
+The <b>Multiple Operations</b> dialog box appears.
+
+</li>
+
+<li>
+
+Enter the cell address containing the formula
+in the <b>Formulas</b> box.
+
+</li>
+
+<li>
+
+Enter the cell address of the variable used in the
+formula in the <b>Column input cell</b> box.
+
+</li>
+
+<li>
+
+Click <b>OK</b>.
+
+</li>
+
+<li>
+
+Calc generates the possible outputs based on the
+formula.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT
+    </div>
+
+    <p>
+
+        <b>Data → Multiple Operations</b>
+
+    </p>
+
+    <p>
+
+        The textbook specifically demonstrates entering
+        the formula cell and the variable cell before
+        clicking OK.
+
+    </p>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Practical Memory:</b>
+
+    <p>
+
+        Formula Cell → Formula
+
+        <br>
+
+        Input Cell → Variable
+
+        <br>
+
+        Result → Multiple Outputs
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ================= SECTION 10 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">10.</span>
+
+    Absolute Cell Referencing in Multiple Operations
+
+</div>
+
+
+<p>
+
+When the same formula cell address needs to be
+referred to repeatedly, absolute cell referencing
+can be used.
+
+</p>
+
+
+<h3>Example</h3>
+
+<div class="formula">
+
+$B$5
+
+</div>
+
+
+<p>
+
+Here, the cell reference remains fixed because both
+the column and row are preceded by the
+
+<span class="highlight">$</span>
+
+symbol.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        The textbook example uses
+
+        <b>$B$5</b>
+
+        as an absolute cell reference for the formula cell.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 11 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">11.</span>
+
+    Goal Seek
+
+</div>
+
+
+<h3>What is Goal Seek?</h3>
+
+<div class="important">
+
+    <p>
+
+        <span class="highlight">Goal Seek</span> is used
+        to find the input value required to obtain a
+        specific desired output.
+
+    </p>
+
+</div>
+
+
+<p>
+
+Normally, we enter input values and use a formula to
+calculate the output.
+
+But sometimes we already know the desired output and
+want to find the input value that will produce it.
+
+That is where Goal Seek is useful.
+
+</p>
+
+
+<h3>Simple Example</h3>
+
+<p>
+
+Suppose a student wants to achieve an average of
+
+<b>70</b>
+
+and has marks for four subjects.
+
+Goal Seek can be used to determine the marks required
+in the fifth subject to achieve the desired average.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ ONE-LINE EXAM ANSWER
+    </div>
+
+    <p>
+
+        <b>
+
+        Goal Seek finds the input value required to
+        achieve a specified output.
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 12 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">12.</span>
+
+    Goal Seek — Main Components
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+    <th>Component</th>
+
+    <th>Meaning</th>
+
+</tr>
+
+<tr>
+
+<td><b>Formula Cell</b></td>
+
+<td>
+
+The cell containing the formula whose result needs
+to reach the desired value.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Variable Cell</b></td>
+
+<td>
+
+The cell whose value is changed by Goal Seek.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Target Value</b></td>
+
+<td>
+
+The desired result/output.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Golden Formula:</b>
+
+    <p>
+
+        <b>
+
+        Formula Cell + Variable Cell + Target Value
+        → Goal Seek
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 13 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">13.</span>
+
+    Goal Seek — Procedure
+
+</div>
+
+
+<p>
+
+The textbook gives the following procedure for
+performing Goal Seek.
+
+</p>
+
+
+<ol class="steps">
+
+<li>
+
+Enter the required values in the worksheet.
+
+</li>
+
+<li>
+
+Write the formula in the cell where the calculation
+is required.
+
+</li>
+
+<li>
+
+Place the cursor in the formula cell.
+
+</li>
+
+<li>
+
+Select:
+
+<b>Tools → Goal Seek</b>
+
+</li>
+
+<li>
+
+The <b>Goal Seek</b> dialog box appears.
+
+</li>
+
+<li>
+
+The <b>Formula cell</b> box contains the formula cell.
+
+</li>
+
+<li>
+
+Select the <b>Variable cell</b> — the cell whose value
+needs to be changed.
+
+</li>
+
+<li>
+
+Enter the desired result in the
+<b>Target value</b> box.
+
+</li>
+
+<li>
+
+Click <b>OK</b>.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT MENU PATH
+    </div>
+
+    <p>
+
+        <b>Tools → Goal Seek</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 14 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">14.</span>
+
+    Goal Seek Example — Marks
+
+</div>
+
+
+<h3>Problem</h3>
+
+<p>
+
+A student has marks in four subjects and wants to
+find the marks required in the fifth subject to obtain
+a target average of <b>70</b>.
+
+</p>
+
+
+<h3>Formula</h3>
+
+<p>
+
+The textbook example uses the Average function in
+cell B7.
+
+</p>
+
+
+<div class="formula">
+
+=AVERAGE(B2:B6)
+
+</div>
+
+
+<p>
+
+Goal Seek can then be used to find the value in the
+variable cell that makes the formula result equal to
+the desired target value.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Known:</b> Desired average
+
+        <br>
+
+        <b>Find:</b> Required input marks
+
+        <br>
+
+        <b>Tool:</b> Goal Seek
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 15 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">15.</span>
+
+    Scenarios vs Goal Seek
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+    <th>Feature</th>
+
+    <th>Scenarios</th>
+
+    <th>Goal Seek</th>
+
+</tr>
+
+<tr>
+
+<td>Purpose</td>
+
+<td>
+
+Compare different possible sets of values.
+
+</td>
+
+<td>
+
+Find an input required for a desired output.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Type of analysis</td>
+
+<td>
+
+What-if analysis.
+
+</td>
+
+<td>
+
+Backward calculation.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Input</td>
+
+<td>
+
+Different sets of values.
+
+</td>
+
+<td>
+
+Variable cell value is determined.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Output</td>
+
+<td>
+
+Results for different scenarios.
+
+</td>
+
+<td>
+
+Required input for target output.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        🔥 DIFFERENCE TO REMEMBER
+    </div>
+
+    <p>
+
+        <b>
+
+        Scenario → “What happens if inputs change?”
+
+        </b>
+
+    </p>
+
+    <p>
+
+        <b>
+
+        Goal Seek → “What input is needed for this
+        desired result?”
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 16 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">16.</span>
+
+    Multiple Operations vs Goal Seek
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+    <th>Multiple Operations</th>
+
+    <th>Goal Seek</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Generates multiple possible outputs.
+
+</td>
+
+<td>
+
+Finds an input for a specific desired output.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Uses different values for a variable/input.
+
+</td>
+
+<td>
+
+Changes a variable cell to reach target value.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Menu: Data → Multiple Operations
+
+</td>
+
+<td>
+
+Menu: Tools → Goal Seek
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">
+— ✦ — ✦ — ✦ —
+</div>
+
+
+<!-- ================= SECTION 17 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">17.</span>
+
+    🔥 Exam-Oriented Command Map
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+    <th>Task</th>
+
+    <th>Important Command / Keyword</th>
+
+</tr>
+
+<tr>
+
+<td>Data Analysis</td>
+
+<td>Summarise and analyse data</td>
+
+</tr>
+
+<tr>
+
+<td>Combine Data</td>
+
+<td>Consolidate</td>
+
+</tr>
+
+<tr>
+
+<td>Group Calculations</td>
+
+<td>Subtotal</td>
+
+</tr>
+
+<tr>
+
+<td>What-if Analysis</td>
+
+<td>What-if Tool</td>
+
+</tr>
+
+<tr>
+
+<td>Different Possible Sets</td>
+
+<td>Scenarios</td>
+
+</tr>
+
+<tr>
+
+<td>Multiple Results</td>
+
+<td>Data → Multiple Operations</td>
+
+</tr>
+
+<tr>
+
+<td>Formula Cell</td>
+
+<td>Cell containing formula</td>
+
+</tr>
+
+<tr>
+
+<td>Variable Cell</td>
+
+<td>Cell whose value changes</td>
+
+</tr>
+
+<tr>
+
+<td>Desired Result</td>
+
+<td>Target Value</td>
+
+</tr>
+
+<tr>
+
+<td>Backward Calculation</td>
+
+<td>Goal Seek</td>
+
+</tr>
+
+<tr>
+
+<td>Goal Seek Menu</td>
+
+<td>Tools → Goal Seek</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 18 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">18.</span>
+
+    📌 High-Priority Definitions
+
+</div>
+
+
+<div class="important">
+
+<h3>Consolidate</h3>
+
+<p>
+
+Used to combine/summarise data from different ranges.
+
+</p>
+
+
+<h3>Subtotal</h3>
+
+<p>
+
+Used to calculate subtotals for groups of data.
+
+</p>
+
+
+<h3>What-if Analysis</h3>
+
+<p>
+
+Analysis performed by changing input values to observe
+their effect on results.
+
+</p>
+
+
+<h3>Scenario</h3>
+
+<p>
+
+A set of possible values used for analysing different
+situations.
+
+</p>
+
+
+<h3>Multiple Operations</h3>
+
+<p>
+
+A tool used to calculate multiple possible outputs
+using different values for a variable.
+
+</p>
+
+
+<h3>Goal Seek</h3>
+
+<p>
+
+A tool used to find an input value required to obtain
+a specified output.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 19 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">19.</span>
+
+    🧠 Chapter 4 One-Liners
+
+</div>
+
+
+<ul>
+
+<li>
+
+Data analysis is used to obtain useful information
+for effective decision-making.
+
+</li>
+
+<li>
+
+<b>Consolidate</b> is used to combine/summarise data.
+
+</li>
+
+<li>
+
+<b>Subtotal</b> is used for grouped calculations.
+
+</li>
+
+<li>
+
+<b>What-if Analysis</b> studies the effect of changing
+input values.
+
+</li>
+
+<li>
+
+<b>Scenario</b> represents a possible set of values.
+
+</li>
+
+<li>
+
+<b>Multiple Operations</b> generates multiple outputs
+using different input values.
+
+</li>
+
+<li>
+
+<b>Formula Cell</b> contains the formula.
+
+</li>
+
+<li>
+
+<b>Variable Cell</b> contains the value that can change.
+
+</li>
+
+<li>
+
+<b>Target Value</b> is the desired result.
+
+</li>
+
+<li>
+
+<b>Goal Seek</b> performs backward calculation.
+
+</li>
+
+<li>
+
+Goal Seek menu:
+
+<b>Tools → Goal Seek</b>
+
+</li>
+
+<li>
+
+Multiple Operations menu:
+
+<b>Data → Multiple Operations</b>
+
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= SECTION 20 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">20.</span>
+
+    ⚡ Last-Minute Revision Board
+
+</div>
+
+
+<div class="quick">
+
+<h3>CHAPTER 4 — RAPID REVISION</h3>
+
+<ul>
+
+<li>
+<b>Analyse Data</b> → Useful information + decisions.
+</li>
+
+<li>
+<b>Consolidate</b> → Combine/summarise data.
+</li>
+
+<li>
+<b>Subtotal</b> → Calculate subtotals for groups.
+</li>
+
+<li>
+<b>What-if</b> → Change inputs → observe outputs.
+</li>
+
+<li>
+<b>Scenario</b> → Possible set of input values.
+</li>
+
+<li>
+<b>Multiple Operations</b> → Multiple possible outputs.
+</li>
+
+<li>
+<b>Formula Cell</b> → Contains formula.
+</li>
+
+<li>
+<b>Variable Cell</b> → Value changed during analysis.
+</li>
+
+<li>
+<b>Target Value</b> → Desired output.
+</li>
+
+<li>
+<b>Goal Seek</b> → Find input for desired output.
+</li>
+
+<li>
+<b>Multiple Operations</b> → Data → Multiple Operations.
+</li>
+
+<li>
+<b>Goal Seek</b> → Tools → Goal Seek.
+</li>
+
+<li>
+<b>Absolute Reference Example</b> → $B$5.
+</li>
+
+<li>
+<b>Average Example</b> → =AVERAGE(B2:B6).
+</li>
+
+</ul>
+
+</div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <b>THE GOAL</b> • CBSE Class 10 • Information Technology 402
+
+    <br><br>
+
+    Part B • Unit 2 • Chapter 4
+    — Analyse Data using Scenarios and Goal Seek
+
+    <br><br>
+
+    <b>Source:</b> NCERT Domestic Data Entry Operator —
+    Class X (2023–24)
+
+    <br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</footer>
+
+
+</main>
+
+</body>
+</html>
