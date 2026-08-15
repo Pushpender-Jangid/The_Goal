@@ -26,12 +26,186 @@
     --soft:#eef2ff;
 }
 
+/* =========================================================
+   SECURITY LOCK
+========================================================= */
+
+#security-screen{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        radial-gradient(circle at 10% 20%,rgba(129,140,248,.20),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(192,132,252,.20),transparent 30%),
+        linear-gradient(135deg,#111827,#312e81,#4c1d95);
+
+    color:white;
+}
+
+.security-box{
+    width:100%;
+    max-width:430px;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:28px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.30);
+}
+
+.security-icon{
+    width:78px;
+    height:78px;
+
+    margin:0 auto 22px;
+
+    border-radius:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:38px;
+
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+}
+
+.security-brand{
+    font-size:14px;
+    font-weight:900;
+    letter-spacing:3px;
+
+    color:#c7d2fe;
+
+    margin-bottom:10px;
+}
+
+.security-box h1{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.security-box p{
+    color:#cbd5e1;
+    font-size:14px;
+    line-height:1.6;
+
+    margin-bottom:25px;
+}
+
+.security-input{
+    width:100%;
+
+    padding:14px 16px;
+
+    border-radius:13px;
+
+    border:1px solid rgba(255,255,255,.20);
+
+    background:rgba(255,255,255,.10);
+
+    color:white;
+
+    outline:none;
+
+    font-size:16px;
+    text-align:center;
+    letter-spacing:4px;
+
+    transition:.2s;
+}
+
+.security-input::placeholder{
+    color:#cbd5e1;
+    letter-spacing:1px;
+}
+
+.security-input:focus{
+    border-color:#a5b4fc;
+    background:rgba(255,255,255,.14);
+}
+
+.unlock-btn{
+    width:100%;
+
+    margin-top:14px;
+
+    padding:14px;
+
+    border:0;
+    border-radius:13px;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary2)
+    );
+
+    font-size:14px;
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.unlock-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(79,70,229,.35);
+}
+
+.security-error{
+    min-height:22px;
+
+    margin-top:13px;
+
+    color:#fda4af;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.security-footer{
+    margin-top:24px;
+
+    color:#94a3b8;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
 body{
     font-family:Inter,Segoe UI,Arial,sans-serif;
     background:var(--bg);
     color:var(--text);
     min-height:100vh;
 }
+
 
 /* ================= HEADER ================= */
 
@@ -40,105 +214,159 @@ header{
         radial-gradient(circle at 10% 20%,rgba(129,140,248,.25),transparent 30%),
         radial-gradient(circle at 90% 80%,rgba(192,132,252,.25),transparent 30%),
         linear-gradient(135deg,#111827,#312e81,#4c1d95);
+
     color:white;
+
     padding:22px 7%;
+
     position:relative;
     overflow:hidden;
 }
 
 nav{
     max-width:1200px;
+
     margin:auto;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 }
 
 .brand{
     font-size:25px;
+
     font-weight:900;
+
     letter-spacing:2px;
 }
 
 .nav-badge{
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     padding:7px 14px;
+
     border:1px solid rgba(255,255,255,.2);
+
     border-radius:30px;
+
     background:rgba(255,255,255,.08);
+
     font-size:13px;
+
     font-weight:700;
 }
 
 .nav-badge img{
     width:32px;
     height:32px;
+
     object-fit:contain;
+
     background:white;
+
     border-radius:50%;
+
     padding:2px;
 }
+
 
 /* ================= HERO ================= */
 
 .hero{
     max-width:1100px;
+
     margin:auto;
+
     text-align:center;
+
     padding:65px 20px 75px;
 }
 
 .hero-label{
     display:inline-block;
+
     padding:8px 17px;
+
     border-radius:30px;
+
     background:rgba(255,255,255,.1);
+
     border:1px solid rgba(255,255,255,.2);
+
     font-size:13px;
+
     margin-bottom:22px;
 }
 
 .hero h1{
     font-size:clamp(42px,7vw,70px);
+
     font-weight:950;
+
     letter-spacing:3px;
+
     margin-bottom:12px;
 }
 
 .hero h1 span{
-    background:linear-gradient(90deg,#a5b4fc,#e9d5ff,#fbcfe8);
+    background:
+        linear-gradient(
+            90deg,
+            #a5b4fc,
+            #e9d5ff,
+            #fbcfe8
+        );
+
     -webkit-background-clip:text;
+
     background-clip:text;
+
     color:transparent;
 }
 
 .hero h2{
     font-size:clamp(20px,4vw,30px);
+
     font-weight:700;
+
     margin-bottom:15px;
 }
 
 .hero p{
     max-width:680px;
+
     margin:auto;
+
     color:#cbd5e1;
+
     line-height:1.7;
+
     font-size:16px;
 }
+
 
 /* ================= MAIN ================= */
 
 main{
     max-width:1200px;
+
     margin:-30px auto 0;
+
     padding:0 20px 60px;
+
     position:relative;
 }
 
 .section-title{
     text-align:center;
+
     margin:45px 0 28px;
 }
 
@@ -148,51 +376,78 @@ main{
 
 .section-title p{
     color:var(--muted);
+
     margin-top:7px;
 }
+
 
 /* ================= CHAPTER GRID ================= */
 
 .chapter-grid{
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
+
     gap:18px;
 }
 
 .chapter{
     background:var(--card);
+
     border:1px solid var(--border);
+
     border-radius:20px;
+
     padding:22px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
-    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.06);
+
     transition:.3s ease;
 }
 
 .chapter:hover{
     transform:translateY(-5px);
+
     border-color:#a5b4fc;
-    box-shadow:0 18px 40px rgba(79,70,229,.12);
+
+    box-shadow:
+        0 18px 40px rgba(79,70,229,.12);
 }
 
 .chapter-left{
     display:flex;
+
     align-items:center;
+
     gap:16px;
 }
 
 .chapter-icon{
     width:55px;
+
     height:55px;
+
     min-width:55px;
+
     border-radius:16px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     background:var(--soft);
+
     font-size:25px;
 }
 
@@ -202,33 +457,54 @@ main{
 
 .chapter-number{
     color:var(--primary);
+
     font-size:11px;
+
     font-weight:800;
+
     letter-spacing:1px;
+
     margin-bottom:5px;
 }
 
 .chapter h3{
     font-size:17px;
+
     line-height:1.35;
 }
 
 .notes-btn{
     text-decoration:none;
+
     white-space:nowrap;
+
     color:white;
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
     padding:11px 16px;
+
     border-radius:11px;
+
     font-size:12px;
+
     font-weight:800;
+
     transition:.2s;
 }
 
 .notes-btn:hover{
     transform:translateY(-2px);
-    box-shadow:0 8px 20px rgba(79,70,229,.25);
+
+    box-shadow:
+        0 8px 20px rgba(79,70,229,.25);
 }
+
 
 /* ================= PYQ SECTION ================= */
 
@@ -238,112 +514,178 @@ main{
 
 .pyq-grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:20px;
 }
 
 .pyq-card{
     background:var(--card);
+
     border:1px solid var(--border);
+
     border-radius:20px;
+
     padding:25px;
-    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+    box-shadow:
+        0 10px 30px rgba(15,23,42,.06);
+
     transition:.3s ease;
+
     position:relative;
+
     overflow:hidden;
 }
 
 .pyq-card::before{
     content:"";
+
     position:absolute;
+
     top:0;
     left:0;
+
     width:100%;
     height:4px;
-    background:linear-gradient(90deg,var(--primary),var(--primary2));
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--primary2)
+        );
 }
 
 .pyq-card:hover{
     transform:translateY(-5px);
+
     border-color:#a5b4fc;
-    box-shadow:0 18px 40px rgba(79,70,229,.12);
+
+    box-shadow:
+        0 18px 40px rgba(79,70,229,.12);
 }
 
-/* ===== PYQ LOGO — UPDATED ===== */
+
+/* ===== PYQ LOGO ===== */
 
 .pyq-logo{
     width:68px;
+
     height:68px;
+
     object-fit:contain;
+
     display:block;
+
     margin-bottom:15px;
 }
 
 .pyq-year{
     font-size:30px;
+
     font-weight:900;
+
     color:var(--text);
 }
 
 .pyq-title{
     font-size:14px;
+
     font-weight:700;
+
     margin-top:3px;
 }
 
 .pyq-subtitle{
     color:var(--muted);
+
     font-size:12px;
+
     margin-top:4px;
+
     margin-bottom:20px;
 }
 
 .pyq-buttons{
     display:flex;
+
     gap:10px;
 }
 
 .pyq-btn{
     flex:1;
+
     text-decoration:none;
+
     text-align:center;
+
     padding:11px 10px;
+
     border-radius:11px;
+
     font-size:11px;
+
     font-weight:800;
+
     transition:.2s;
 }
 
 .pyq-standard{
     color:white;
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
 }
 
 .pyq-basic{
     color:var(--primary);
+
     background:var(--soft);
+
     border:1px solid #c7d2fe;
 }
 
 .pyq-combined{
     color:white;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed
+        );
 }
 
 .pyq-btn:hover{
     transform:translateY(-2px);
-    box-shadow:0 7px 18px rgba(79,70,229,.18);
+
+    box-shadow:
+        0 7px 18px rgba(79,70,229,.18);
 }
 
 .pyq-note{
     margin-top:22px;
+
     padding:18px 20px;
+
     border:1px dashed #c7d2fe;
+
     background:#eef2ff;
+
     border-radius:16px;
+
     text-align:center;
+
     color:var(--muted);
+
     font-size:13px;
+
     line-height:1.6;
 }
 
@@ -351,59 +693,89 @@ main{
     color:var(--text);
 }
 
+
 /* ================= INFO ================= */
 
 .info-box{
     margin-top:45px;
-    background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f5f3ff
+        );
+
     border:1px solid #c7d2fe;
+
     border-radius:20px;
+
     padding:25px;
+
     text-align:center;
 }
 
 .info-box h3{
     margin-bottom:8px;
+
     font-size:19px;
 }
 
 .info-box p{
     color:var(--muted);
+
     line-height:1.6;
+
     font-size:14px;
 }
+
 
 /* ================= BACK BUTTON ================= */
 
 .back-section{
     text-align:center;
+
     margin-top:35px;
 }
 
 .back-btn{
     display:inline-block;
+
     text-decoration:none;
+
     color:var(--primary);
+
     border:1px solid #c7d2fe;
+
     background:white;
+
     padding:12px 20px;
+
     border-radius:12px;
+
     font-weight:700;
+
     font-size:14px;
+
     transition:.2s;
 }
 
 .back-btn:hover{
     background:var(--soft);
+
     transform:translateY(-2px);
 }
+
 
 /* ================= FOOTER ================= */
 
 footer{
     background:#0f172a;
+
     color:#94a3b8;
+
     text-align:center;
+
     padding:30px 20px;
 }
 
@@ -414,6 +786,7 @@ footer strong{
 .heart{
     color:#f43f5e;
 }
+
 
 /* ================= RESPONSIVE ================= */
 
@@ -445,11 +818,13 @@ footer strong{
 
     .nav-badge{
         font-size:11px;
+
         padding:6px 10px;
     }
 
     .nav-badge img{
         width:28px;
+
         height:28px;
     }
 
@@ -467,8 +842,11 @@ footer strong{
 
     .chapter-icon{
         width:48px;
+
         height:48px;
+
         min-width:48px;
+
         font-size:21px;
     }
 
@@ -478,6 +856,7 @@ footer strong{
 
     .notes-btn{
         padding:10px 12px;
+
         font-size:11px;
     }
 
@@ -491,6 +870,71 @@ footer strong{
 </head>
 
 <body>
+
+
+<!-- =========================================================
+     SECURITY SCREEN
+========================================================= -->
+
+<div id="security-screen">
+
+    <div class="security-box">
+
+        <div class="security-icon">
+            🔐
+        </div>
+
+        <div class="security-brand">
+            THE GOAL
+        </div>
+
+        <h1>
+            Mathematics
+        </h1>
+
+        <p>
+            This page is currently under preparation.
+            <br>
+            Enter the security key to continue.
+        </p>
+
+        <input
+            type="password"
+            id="security-key"
+            class="security-input"
+            placeholder="Enter Security Key"
+            maxlength="20"
+            autocomplete="off"
+        >
+
+        <button
+            class="unlock-btn"
+            onclick="unlockPage()">
+
+            🔓 UNLOCK PAGE
+
+        </button>
+
+        <div
+            id="security-error"
+            class="security-error">
+        </div>
+
+        <div class="security-footer">
+            🔒 Protected by THE GOAL
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN MATHEMATICS PAGE
+========================================================= -->
+
+<div id="main-content" style="display:none;">
+
 
 <header>
 
@@ -554,6 +998,7 @@ Select a chapter to view its notes.
 
 
 <section class="chapter-grid">
+
 
 <div class="chapter">
 
@@ -988,6 +1433,7 @@ VIEW NOTES →
 
 </div>
 
+
 </section>
 
 
@@ -1144,6 +1590,7 @@ BASIC →
 
 </div>
 
+
 </div>
 
 
@@ -1214,6 +1661,83 @@ Made with Love
 in India by Pushpender
 
 </footer>
+
+
+</div>
+
+
+<!-- =========================================================
+     SECURITY JAVASCRIPT
+========================================================= -->
+
+<script>
+
+const SECURITY_KEY = "1509";
+
+const securityScreen =
+    document.getElementById("security-screen");
+
+const mainContent =
+    document.getElementById("main-content");
+
+const keyInput =
+    document.getElementById("security-key");
+
+const errorBox =
+    document.getElementById("security-error");
+
+
+function unlockPage(){
+
+    const enteredKey =
+        keyInput.value.trim();
+
+    if(enteredKey === SECURITY_KEY){
+
+        securityScreen.style.display = "none";
+
+        mainContent.style.display = "block";
+
+        errorBox.textContent = "";
+
+        keyInput.value = "";
+
+    }else{
+
+        errorBox.textContent =
+            "❌ Incorrect security key. Please try again.";
+
+        keyInput.value = "";
+
+        keyInput.focus();
+
+    }
+
+}
+
+
+/* ENTER KEY SUPPORT */
+
+keyInput.addEventListener("keydown", function(event){
+
+    if(event.key === "Enter"){
+
+        unlockPage();
+
+    }
+
+});
+
+
+/* AUTO FOCUS */
+
+window.addEventListener("load", function(){
+
+    keyInput.focus();
+
+});
+
+</script>
 
 
 </body>
