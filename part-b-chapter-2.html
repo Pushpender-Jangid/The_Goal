@@ -1,0 +1,3587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | IT 402 | Chapter 2 | Working with Images</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#252525;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.6;
+}
+
+/* ================= HEADER ================= */
+
+.topbar{
+    background:#172033;
+    color:#fff;
+    text-align:center;
+    padding:22px 15px 20px;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:4px;
+    opacity:.78;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:46px;
+    font-weight:600;
+    margin-top:3px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.82;
+}
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    width:min(1100px,96%);
+    margin:25px auto 45px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+
+    position:relative;
+
+    padding:38px 48px 70px 92px;
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.18),
+        0 25px 60px rgba(0,0,0,.13);
+
+    min-height:100vh;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#df8f8f;
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:8px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover-small{
+    color:#555;
+    font-size:16px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:55px;
+    line-height:1;
+    color:#183f72;
+    margin:8px 0 12px;
+}
+
+.cover p{
+    font-size:19px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff0a6;
+    border:2px solid #555;
+    padding:3px 12px;
+    margin-top:14px;
+    font-size:16px;
+    transform:rotate(-1deg);
+}
+
+.source{
+    font-size:14px !important;
+    color:#666;
+    margin-top:10px;
+}
+
+/* ================= CHAPTER MAP ================= */
+
+.chapter-map{
+    margin:25px 0 35px;
+    padding:18px 20px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.58);
+}
+
+.chapter-map h3{
+    margin-top:0;
+}
+
+.chapter-map ul{
+    margin-bottom:0;
+}
+
+/* ================= SECTIONS ================= */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:35px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    margin-bottom:16px;
+    transform:rotate(-1deg);
+}
+
+.session-number{
+    color:#b42d2d;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#242424;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    color:#254d75;
+    margin:15px 0 5px;
+}
+
+p,
+li{
+    font-size:18px;
+}
+
+ul,
+ol{
+    margin:5px 0 13px 27px;
+}
+
+li{
+    margin:3px 0;
+}
+
+/* ================= HIGHLIGHT ================= */
+
+.highlight{
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(255,225,80,.75) 25%,
+            rgba(255,225,80,.75) 82%,
+            transparent 82%
+        );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b32d2d;
+    font-weight:bold;
+}
+
+/* ================= BOXES ================= */
+
+.important{
+    margin:18px 0;
+    padding:17px 19px;
+    background:rgba(255,242,164,.68);
+    border:2px solid #555;
+    transform:rotate(-.2deg);
+}
+
+.exam{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(255,255,255,.55);
+    border-left:5px solid #b52d2d;
+}
+
+.exam-title{
+    color:#b52d2d;
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(226,239,251,.62);
+    border-left:5px solid #55718d;
+}
+
+.green{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(224,241,220,.65);
+    border-left:5px solid #39723b;
+}
+
+.warning{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(247,218,218,.65);
+    border-left:5px solid #a33;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:18px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.5);
+}
+
+th,
+td{
+    border:1.5px solid #555;
+    padding:10px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:22px;
+}
+
+/* ================= STEPS ================= */
+
+.steps{
+    counter-reset:step;
+    list-style:none;
+    margin-left:0;
+}
+
+.steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:43px;
+    margin:9px 0;
+}
+
+.steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;
+    top:0;
+    width:28px;
+    height:28px;
+    border:2px solid #444;
+    border-radius:50%;
+    text-align:center;
+    line-height:24px;
+    background:#fff1a5;
+    font-weight:bold;
+}
+
+/* ================= TOOL GRID ================= */
+
+.tool-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin:18px 0;
+}
+
+.tool{
+    padding:15px;
+    background:rgba(255,255,255,.55);
+    border:1.5px solid #666;
+}
+
+.tool h4{
+    margin-top:0;
+}
+
+/* ================= QUICK REVISION ================= */
+
+.quick{
+    border:3px solid #444;
+    padding:20px;
+    margin-top:30px;
+    background:rgba(255,255,255,.52);
+    transform:rotate(.15deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.quick ul{
+    margin-bottom:0;
+}
+
+/* ================= DOODLE ================= */
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:21px;
+    margin:27px 0;
+    letter-spacing:6px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+    margin-top:50px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .notebook{
+        width:100%;
+        margin:0;
+        padding:30px 18px 60px 57px;
+    }
+
+    .notebook::before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:37px;
+    }
+
+    .cover h2{
+        font-size:43px;
+    }
+
+    p,
+    li{
+        font-size:17px;
+    }
+
+    .session-title{
+        font-size:30px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+    }
+
+    .tool-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • INFORMATION TECHNOLOGY 402
+    </div>
+
+    <h1>
+        Part B — Digital Documentation
+    </h1>
+
+    <p>
+        Chapter 2 • Working with Images
+    </p>
+
+</header>
+
+
+<!-- ================= NOTEBOOK ================= -->
+
+<main class="notebook">
+
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+    <div class="cover-small">
+        📖 CHAPTER 2 • EXAM-ORIENTED NOTES
+    </div>
+
+    <h2>
+        Working with Images
+    </h2>
+
+    <p>
+
+        Complete source-based notes for CBSE Class 10
+        Information Technology (402), covering images,
+        image modification and drawing objects in
+        LibreOffice Writer.
+
+    </p>
+
+    <span class="badge">
+        ✍️ READ • UNDERSTAND • REVISE
+    </span>
+
+    <p class="source">
+
+        <b>Source:</b> NCERT Domestic Data Entry Operator —
+        Class X, 2023–24, Part B, Unit 1, Chapter 2.
+
+    </p>
+
+</section>
+
+
+<!-- ================= CHAPTER MAP ================= -->
+
+<section class="chapter-map">
+
+    <h3>🗺️ Chapter Roadmap</h3>
+
+    <ul>
+
+        <li>Digital Image and Pixels</li>
+
+        <li>Inserting an Image in a Document</li>
+
+        <li>Insert Image Dialog Box</li>
+
+        <li>Drag and Drop Method</li>
+
+        <li>Copy and Paste Method</li>
+
+        <li>Linking an Image</li>
+
+        <li>Embedding vs Linking</li>
+
+        <li>Image Toolbar</li>
+
+        <li>Image Filters</li>
+
+        <li>Rotating an Image</li>
+
+        <li>Cropping an Image</li>
+
+        <li>Resizing an Image</li>
+
+        <li>Deleting an Image</li>
+
+        <li>Drawing Objects</li>
+
+        <li>Drawing Toolbar</li>
+
+        <li>Object Properties</li>
+
+        <li>Resizing and Grouping Objects</li>
+
+        <li>Positioning an Image</li>
+
+        <li>Arrangement</li>
+
+        <li>Anchoring</li>
+
+        <li>Alignment</li>
+
+        <li>Text Wrapping</li>
+
+        <li>Final Exam Revision</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ================= SESSION 1 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">01.</span>
+
+    Digital Image
+
+</div>
+
+
+<h3>What is a Digital Image?</h3>
+
+<p>
+
+A picture used in a digital document is called a
+
+<span class="highlight">digital image</span>.
+
+It is a representation of an image using a finite set
+of digital values.
+
+</p>
+
+
+<h3>Pixels</h3>
+
+<div class="important">
+
+    <p>
+
+        A digital image is represented using
+
+        <span class="highlight">pixels</span>.
+
+    </p>
+
+</div>
+
+
+<p>
+
+These pixels are stored in different types of graphics
+files.
+
+</p>
+
+
+<h3>Common Image File Extensions</h3>
+
+<ul>
+
+    <li><b>GIF</b></li>
+
+    <li><b>JPG</b></li>
+
+    <li><b>JPEG</b></li>
+
+    <li><b>PNG</b></li>
+
+    <li><b>BMP</b></li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        JPG/JPEG is an image format associated with
+        <b>Joint Photographic Experts Group</b>.
+
+    </p>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        Digital Image → Representation → Pixels →
+        Image File
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 2 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">02.</span>
+
+    Inserting an Image
+
+</div>
+
+
+<p>
+
+LibreOffice Writer allows images, shapes, charts and
+diagrams to be used in documents.
+
+</p>
+
+
+<h3>Methods of Inserting an Image</h3>
+
+<ul>
+
+    <li>Using <b>Insert Image</b> dialog box</li>
+
+    <li>Using <b>Drag and Drop</b></li>
+
+    <li>Using <b>Cut, Copy and Paste</b></li>
+
+    <li>Using <b>Linking</b></li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT
+    </div>
+
+    <p>
+
+        The textbook explains four ways of inserting
+        an image: Insert Image dialog, Drag and Drop,
+        Cut/Copy/Paste and Linking.
+
+    </p>
+
+</div>
+
+
+<h3>Method 1 — Insert Image Dialog Box</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the document in LibreOffice Writer.
+
+</li>
+
+<li>
+
+Place the cursor where the image needs to be inserted.
+
+</li>
+
+<li>
+
+Select <b>Insert → Image</b> from the Menu Bar.
+
+</li>
+
+<li>
+
+The <b>Insert Image</b> dialog box opens.
+
+</li>
+
+<li>
+
+Select the required image file.
+
+</li>
+
+<li>
+
+Click <b>Open</b>.
+
+</li>
+
+</ol>
+
+
+<div class="green">
+
+    <b>✅ Shortcut Revision</b>
+
+    <p>
+
+        Insert → Image → Select File → Open
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 3 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">03.</span>
+
+    Drag and Drop Method
+
+</div>
+
+
+<p>
+
+An image can also be inserted by dragging it from
+the required location and dropping it into the document.
+
+</p>
+
+
+<h3>Important Concept</h3>
+
+<div class="important">
+
+    <p>
+
+        When an image is inserted using the normal
+        insertion methods, a copy of the image is saved
+        inside the document.
+
+        This is called
+
+        <span class="highlight">embedding</span>.
+
+    </p>
+
+</div>
+
+
+<h3>Copy and Paste Method</h3>
+
+<p>
+
+An image can be copied from another document and
+pasted into the target document.
+
+</p>
+
+
+<ol class="steps">
+
+<li>
+
+Open the source and target documents.
+
+</li>
+
+<li>
+
+Select the image in the source document.
+
+</li>
+
+<li>
+
+Use <b>Ctrl + C</b> or the Copy command.
+
+</li>
+
+<li>
+
+Switch to the target document.
+
+</li>
+
+<li>
+
+Place the cursor where the image is required.
+
+</li>
+
+<li>
+
+Use <b>Ctrl + V</b> or Paste.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 Keyboard Shortcuts:</b>
+
+    <p>
+
+        Copy → <b>Ctrl + C</b>
+
+        <br>
+
+        Paste → <b>Ctrl + V</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 4 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">04.</span>
+
+    Linking an Image
+
+</div>
+
+
+<h3>What is Linking?</h3>
+
+<p>
+
+If the same image needs to be inserted multiple times,
+it can be useful to save the
+
+<span class="highlight">link/reference</span>
+
+of the image instead of saving the image itself
+inside the document.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        Linking stores the <b>reference</b> of an image
+        instead of embedding the actual image.
+
+    </p>
+
+</div>
+
+
+<h3>Advantage of Linking</h3>
+
+<p>
+
+The actual image is stored separately, so linking can
+reduce the size of the document when multiple copies
+of the same image are required.
+
+</p>
+
+
+<h3>How to Link an Image?</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the <b>Insert Image</b> dialog box.
+
+</li>
+
+<li>
+
+Select the required image.
+
+</li>
+
+<li>
+
+Enable the <b>Link</b> option.
+
+</li>
+
+<li>
+
+Insert the image.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        Shortcut mentioned in the textbook for linking
+        an image by drag and drop:
+
+        <span class="highlight">
+
+        Ctrl + Shift
+
+        </span>
+
+        while dragging and dropping.
+
+    </p>
+
+</div>
+
+
+<h3>Embedding vs Linking</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>Embedding</th>
+
+    <th>Linking</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+
+A copy of the image is saved inside the document.
+
+</td>
+
+<td>
+
+The reference/link of the image is stored.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Document contains the image itself.
+
+</td>
+
+<td>
+
+Actual image remains as a separate file.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Useful when the image should be stored with
+the document.
+
+</td>
+
+<td>
+
+Useful when multiple copies of the same image
+are required.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Generally increases document size compared
+with linking.
+
+</td>
+
+<td>
+
+Can reduce document size when the same image
+is used multiple times.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 5 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">05.</span>
+
+    Modifying an Image
+
+</div>
+
+
+<p>
+
+After inserting an image, it may need to be modified
+according to the requirement of the document.
+
+</p>
+
+
+<h3>Image Toolbar</h3>
+
+<p>
+
+The <span class="highlight">Image Toolbar</span> automatically
+appears when an image is inserted or selected.
+
+</p>
+
+
+<p>
+
+It can also be displayed through:
+
+</p>
+
+<div class="memory">
+
+    <b>View → Toolbars → Image</b>
+
+</div>
+
+
+<h3>Important Image Toolbar Tools</h3>
+
+
+<div class="tool-grid">
+
+
+<div class="tool">
+
+<h4>Image Filter</h4>
+
+<p>
+
+Provides filters for improving or changing
+the appearance of an image.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Image Mode</h4>
+
+<p>
+
+Can change the image to:
+
+<b>black and white, grayscale or watermark</b>.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Crop</h4>
+
+<p>
+
+Cuts off the non-desirable part of an image.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Flip Horizontally</h4>
+
+<p>
+
+Flips the image horizontally by 180°.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Flip Vertically</h4>
+
+<p>
+
+Flips the image vertically by 180°.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Rotate 90° Left</h4>
+
+<p>
+
+Rotates the image 90° towards the left.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Rotate 90° Right</h4>
+
+<p>
+
+Rotates the image 90° towards the right.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Rotate</h4>
+
+<p>
+
+Allows the image to be rotated through
+any required angle.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Transparency</h4>
+
+<p>
+
+Makes an image transparent using a
+percentage value.
+
+</p>
+
+</div>
+
+
+<div class="tool">
+
+<h4>Colour</h4>
+
+<p>
+
+Allows adjustment of colour components,
+brightness, contrast and gamma.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<h3>Colour Tool Components</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>Component</th>
+
+    <th>Purpose</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Red</td>
+
+<td>Adjusts the red colour component.</td>
+
+</tr>
+
+<tr>
+
+<td>Green</td>
+
+<td>Adjusts the green colour component.</td>
+
+</tr>
+
+<tr>
+
+<td>Blue</td>
+
+<td>Adjusts the blue colour component.</td>
+
+</tr>
+
+<tr>
+
+<td>Brightness</td>
+
+<td>Adjusts brightness.</td>
+
+</tr>
+
+<tr>
+
+<td>Contrast</td>
+
+<td>Adjusts contrast.</td>
+
+</tr>
+
+<tr>
+
+<td>Gamma</td>
+
+<td>Adjusts gamma.</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ DIRECT EXAM POINT
+    </div>
+
+    <p>
+
+        The Colour drop-down contains six components:
+
+        <b>Red, Green, Blue, Brightness, Contrast and Gamma.</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 6 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">06.</span>
+
+    Image Filters
+
+</div>
+
+
+<p>
+
+LibreOffice Writer provides
+
+<span class="highlight">11 types of image filters</span>.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>Filter</th>
+
+    <th>Effect</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td><b>Invert</b></td>
+
+<td>
+
+Inverts colour values. For grayscale images,
+brightness is inverted.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Smooth</b></td>
+
+<td>
+
+Softens the contrast of the image.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Sharpen</b></td>
+
+<td>
+
+Increases image contrast.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Remove Noise</b></td>
+
+<td>
+
+Removes single pixels from the image.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Solarisation</b></td>
+
+<td>
+
+Reverses the tone of a photograph.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Aging</b></td>
+
+<td>
+
+Simulates the effect of time on a picture.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Posterise</b></td>
+
+<td>
+
+Makes a picture appear like a painting by
+reducing colours.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Charcoal Sketch</b></td>
+
+<td>
+
+Changes the image into a charcoal-sketch style.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Relief</b></td>
+
+<td>
+
+Adjusts light source to create a shadow effect.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Mosaic</b></td>
+
+<td>
+
+Joins groups of pixels into a single area
+of one colour.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM ALERT
+    </div>
+
+    <p>
+
+        <b>Aging</b> → simulates the effect of time.
+
+        <br>
+
+        <b>Posterise</b> → makes picture appear like a painting.
+
+        <br>
+
+        <b>Charcoal Sketch</b> → charcoal sketch effect.
+
+        <br>
+
+        <b>Mosaic</b> → joins groups of pixels.
+
+    </p>
+
+</div>
+
+
+<div class="warning">
+
+    <b>⚠️ Important</b>
+
+    <p>
+
+        The textbook states that the Image Filter window
+        contains <b>11 filters</b>. The listed filter table
+        is an important source-based revision point.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 7 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">07.</span>
+
+    Rotating an Image
+
+</div>
+
+
+<p>
+
+An inserted image can be rotated using the
+
+<span class="highlight">Rotate</span>
+
+tool.
+
+</p>
+
+
+<h3>Basic Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Insert an image.
+
+</li>
+
+<li>
+
+Select the image.
+
+</li>
+
+<li>
+
+Click the <b>Rotate</b> tool.
+
+</li>
+
+<li>
+
+Four rotation handles appear at the corners.
+
+</li>
+
+<li>
+
+Move the pointer to a corner until the rotate
+symbol appears.
+
+</li>
+
+<li>
+
+Drag the rotate symbol in the required direction.
+
+</li>
+
+<li>
+
+Release the mouse button after obtaining the
+required rotation.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 Exam Memory</b>
+
+    <p>
+
+        <b>Corner handles → Rotate</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 8 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">08.</span>
+
+    Cropping an Image
+
+</div>
+
+
+<h3>What is Cropping?</h3>
+
+<div class="important">
+
+    <p>
+
+        <span class="highlight">Cropping</span> means cutting
+        off the non-desirable part of an image.
+
+    </p>
+
+</div>
+
+
+<h3>Steps to Crop</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select the inserted image.
+
+</li>
+
+<li>
+
+Click the <b>Crop</b> tool from the Image Toolbar.
+
+</li>
+
+<li>
+
+The normal sizing handles change into special
+cropping handles.
+
+</li>
+
+<li>
+
+Drag an edge towards the centre of the image.
+
+</li>
+
+<li>
+
+The unwanted part is cropped.
+
+</li>
+
+<li>
+
+Click elsewhere on the page or press <b>Esc</b>
+to leave the crop tool.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ Cropping vs Resizing
+    </div>
+
+    <p>
+
+        <b>Resizing</b> changes the size of the image.
+
+        <br><br>
+
+        <b>Cropping</b> cuts off a part of the image.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 9 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">09.</span>
+
+    Resizing an Image
+
+</div>
+
+
+<h3>Meaning</h3>
+
+<p>
+
+Resizing is the process of
+
+<span class="highlight">reducing or enlarging the size</span>
+
+of an image.
+
+</p>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select the image.
+
+</li>
+
+<li>
+
+Observe the eight sizing handles.
+
+</li>
+
+<li>
+
+Place the pointer over a sizing handle.
+
+</li>
+
+<li>
+
+Click and drag the handle.
+
+</li>
+
+<li>
+
+Release the mouse button after obtaining
+the required size.
+
+</li>
+
+</ol>
+
+
+<h3>Corner vs Edge Handles</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>Handle</th>
+
+    <th>Effect</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td><b>Corner handles</b></td>
+
+<td>
+
+Change width and height simultaneously.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Other four handles</b></td>
+
+<td>
+
+Resize one dimension at a time.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT
+    </div>
+
+    <p>
+
+        Resizing changes the image's size, while
+        cropping cuts the image.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 10 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">10.</span>
+
+    Deleting an Image
+
+</div>
+
+
+<p>
+
+An image can be deleted just like text.
+
+</p>
+
+
+<ol class="steps">
+
+<li>
+
+Select the image.
+
+</li>
+
+<li>
+
+Press the <b>Delete</b> key.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 One-Line Answer:</b>
+
+    <p>
+
+        Select Image → Press Delete
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 11 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">11.</span>
+
+    Drawing Objects
+
+</div>
+
+
+<p>
+
+LibreOffice Writer provides Drawing Tools for creating
+objects such as:
+
+</p>
+
+
+<ul>
+
+    <li>Flowcharts</li>
+
+    <li>Callout boxes</li>
+
+    <li>Designs</li>
+
+    <li>Diagrams</li>
+
+    <li>Other drawings</li>
+
+</ul>
+
+
+<div class="important">
+
+    <p>
+
+        Drawing objects can be created directly in Writer
+        and can also be copied or imported into other
+        packages.
+
+    </p>
+
+</div>
+
+
+<h3>Displaying Drawing Toolbar</h3>
+
+
+<div class="memory">
+
+    <b>View → Toolbars → Drawing</b>
+
+</div>
+
+
+<h3>Basic Steps to Create a Drawing Object</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Place the cursor where the drawing should be placed.
+
+</li>
+
+<li>
+
+Select the required tool from the Drawing Toolbar.
+
+</li>
+
+<li>
+
+Move the pointer to the desired location.
+
+</li>
+
+<li>
+
+Click and drag to create the drawing object.
+
+</li>
+
+<li>
+
+Release the mouse button to finish.
+
+</li>
+
+<li>
+
+Press <b>Esc</b> or click the Select icon to cancel
+the selected drawing function.
+
+</li>
+
+</ol>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 12 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">12.</span>
+
+    Drawing Toolbar — Important Tools
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>Tool</th>
+
+    <th>Purpose / Use</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Select</td>
+<td>Selects drawing objects.</td>
+</tr>
+
+<tr>
+<td>Insert Line</td>
+<td>Creates a line.</td>
+</tr>
+
+<tr>
+<td>Curve</td>
+<td>Creates curved lines.</td>
+</tr>
+
+<tr>
+<td>Polygon</td>
+<td>Creates polygon shapes.</td>
+</tr>
+
+<tr>
+<td>Square / Rectangle</td>
+<td>Creates rectangular shapes.</td>
+</tr>
+
+<tr>
+<td>Circle / Oval</td>
+<td>Creates circular or oval shapes.</td>
+</tr>
+
+<tr>
+<td>Lines & Arrows</td>
+<td>Creates lines and arrows.</td>
+</tr>
+
+<tr>
+<td>Flowchart</td>
+<td>Creates flowchart shapes.</td>
+</tr>
+
+<tr>
+<td>Callout</td>
+<td>Creates callout objects.</td>
+</tr>
+
+<tr>
+<td>Text Box</td>
+<td>Creates a text box.</td>
+</tr>
+
+<tr>
+<td>Fontwork</td>
+<td>Creates decorative text.</td>
+</tr>
+
+<tr>
+<td>Basic Shapes</td>
+<td>Provides basic drawing shapes.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        The Drawing Toolbar contains different types of
+        drawing objects used to create designs, diagrams
+        and drawings.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 13 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">13.</span>
+
+    Object Properties
+
+</div>
+
+
+<p>
+
+Properties of a drawing object can be changed according
+to the requirement.
+
+</p>
+
+
+<h3>Examples of Properties</h3>
+
+<ul>
+
+    <li>Fill colour</li>
+
+    <li>Line colour</li>
+
+    <li>Line width</li>
+
+    <li>Size</li>
+
+    <li>Shape</li>
+
+    <li>Position</li>
+
+</ul>
+
+
+<h3>Default Values</h3>
+
+<div class="important">
+
+    <p>
+
+        If properties are modified
+
+        <span class="highlight">before creating</span>
+
+        an object, those settings become the
+
+        <b>default values</b> for subsequently created objects.
+
+    </p>
+
+</div>
+
+
+<h3>Changing Properties After Creation</h3>
+
+<p>
+
+Properties can also be changed after the object has
+already been created.
+
+</p>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        Before creation → Default values
+
+        <br>
+
+        After creation → Modify selected object
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 14 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">14.</span>
+
+    Resizing Drawing Objects
+
+</div>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select the object.
+
+</li>
+
+<li>
+
+Eight handles appear around the object.
+
+</li>
+
+<li>
+
+Click and drag one of the handles.
+
+</li>
+
+<li>
+
+Release the mouse button at the required size.
+
+</li>
+
+</ol>
+
+
+<h3>Maintaining Original Shape</h3>
+
+<p>
+
+Use the
+
+<span class="highlight">corner handles</span>
+
+to resize while maintaining the original shape.
+
+</p>
+
+
+<h3>Non-Proportional Resizing</h3>
+
+<p>
+
+Using edge handles can resize the object
+non-proportionally.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        <b>Corner handle</b> → maintains original shape.
+
+        <br>
+
+        <b>Edge handle</b> → non-proportional resizing.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 15 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">15.</span>
+
+    Grouping Drawing Objects
+
+</div>
+
+
+<h3>Why Group Objects?</h3>
+
+<p>
+
+When several shapes are placed together, they may look
+like one drawing but are actually separate objects.
+
+</p>
+
+<p>
+
+Grouping allows them to behave as a
+
+<span class="highlight">single entity</span>.
+
+</p>
+
+
+<h3>Advantages of Grouping</h3>
+
+<ul>
+
+    <li>Objects can be handled as one unit.</li>
+
+    <li>Size and position can be maintained together.</li>
+
+    <li>A change applied to the group can affect its members.</li>
+
+</ul>
+
+
+<h3>Steps to Group</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select the first object.
+
+</li>
+
+<li>
+
+Hold the <b>Shift</b> key.
+
+</li>
+
+<li>
+
+Select the other objects to be included.
+
+</li>
+
+<li>
+
+Choose the <b>Group</b> option from Drawing Object
+Properties Toolbar.
+
+</li>
+
+</ol>
+
+
+<h3>Group Options</h3>
+
+<div class="tool-grid">
+
+<div class="tool">
+
+<h4>Group</h4>
+
+<p>
+
+Combines selected objects into one group.
+
+</p>
+
+</div>
+
+<div class="tool">
+
+<h4>Ungroup</h4>
+
+<p>
+
+Separates grouped objects.
+
+</p>
+
+</div>
+
+<div class="tool">
+
+<h4>Enter Group</h4>
+
+<p>
+
+Allows work inside a group.
+
+</p>
+
+</div>
+
+<div class="tool">
+
+<h4>Exit Group</h4>
+
+<p>
+
+Leaves the selected group.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ DIRECT EXAM QUESTION
+    </div>
+
+    <p>
+
+        Grouping options are:
+
+        <b>Group, Ungroup, Enter Group and Exit Group.</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 16 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">16.</span>
+
+    Positioning an Image
+
+</div>
+
+
+<p>
+
+After creating, formatting, resizing and grouping an
+image or drawing object, it needs to be positioned
+properly in relation to text and other objects.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        Positioning of an image is controlled by
+
+        <span class="highlight">
+
+        FOUR SETTINGS
+
+        </span>:
+
+    </p>
+
+    <ol>
+
+        <li>Arrangement</li>
+
+        <li>Anchoring</li>
+
+        <li>Alignment</li>
+
+        <li>Text Wrapping</li>
+
+    </ol>
+
+</div>
+
+
+<p>
+
+These settings can be accessed through:
+
+</p>
+
+<ul>
+
+    <li>Format Menu</li>
+
+    <li>Context Menu after right-clicking</li>
+
+    <li>Drawing Object Properties Toolbar</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= SESSION 17 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">17.</span>
+
+    Arrangement
+
+</div>
+
+
+<p>
+
+When objects overlap, arrangement determines the
+position of the current object with respect to other
+objects or text.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>Tool</th>
+
+    <th>Effect</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td><b>Bring to Front</b></td>
+
+<td>
+
+Places the image on top of all objects/images.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Forward One</b></td>
+
+<td>
+
+Moves the image one level upward.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Back One</b></td>
+
+<td>
+
+Moves the image one level downward.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Send to Back</b></td>
+
+<td>
+
+Places the image at the bottom of all objects/images.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>To Foreground</b></td>
+
+<td>
+
+Moves the drawing object in front of the text.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>To Background</b></td>
+
+<td>
+
+Moves the drawing object behind the text.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM TRAP
+    </div>
+
+    <p>
+
+        The first four arrangement settings can be applied
+        to images or drawings.
+
+        <br><br>
+
+        <b>To Foreground</b> and <b>To Background</b>
+        are available for drawings only.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 18 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">18.</span>
+
+    Anchoring
+
+</div>
+
+
+<h3>What is Anchoring?</h3>
+
+<div class="important">
+
+    <p>
+
+        <span class="highlight">Anchor</span> acts as a
+        reference point for an image or drawing.
+
+    </p>
+
+</div>
+
+
+<p>
+
+Anchoring allows an image to retain its position
+relative to:
+
+</p>
+
+
+<ul>
+
+    <li>Page</li>
+
+    <li>Paragraph</li>
+
+    <li>Character</li>
+
+    <li>Frame</li>
+
+</ul>
+
+
+<p>
+
+When the corresponding page, paragraph, character or
+frame is moved/aligned, the anchored image moves
+along with it.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ ONE-LINE ANSWER
+    </div>
+
+    <p>
+
+        <b>Anchor = Reference point for an image/drawing.</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 19 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">19.</span>
+
+    Alignment
+
+</div>
+
+
+<p>
+
+Alignment controls the vertical or horizontal placement
+of an image with respect to its anchor.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        An image can be aligned in
+
+        <span class="highlight">six different styles</span>:
+
+        <br>
+
+        <b>3 horizontal + 3 vertical</b>.
+
+    </p>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Exam Memory:</b>
+
+    <p>
+
+        Alignment → Position of image relative to its Anchor
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 20 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">20.</span>
+
+    Text Wrapping
+
+</div>
+
+
+<h3>Meaning</h3>
+
+<p>
+
+Text wrapping controls the placement of an image
+in relation to surrounding text.
+
+</p>
+
+
+<h3>Six Text Wrapping Options</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+
+    <th>Option</th>
+
+    <th>Effect</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td><b>Wrap off</b></td>
+
+<td>
+
+Text is placed above and below the image.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Page Wrap</b></td>
+
+<td>
+
+Text flows around the image. Moving the image
+rearranges the text on the page.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Optimal Page Wrap</b></td>
+
+<td>
+
+In Page Wrap, if the space between image and
+margin is less than 2 cm, text is not placed
+on that side.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Wrap left</b></td>
+
+<td>
+
+Text is placed on the left side of the image.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Wrap right</b></td>
+
+<td>
+
+Text is placed on the right side of the image.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Wrap through</b></td>
+
+<td>
+
+The image is superimposed on the text.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        <b>Wrap off</b> → Text above and below.
+
+        <br>
+
+        <b>Page Wrap</b> → Text flows around image.
+
+        <br>
+
+        <b>Wrap left</b> → Text on left.
+
+        <br>
+
+        <b>Wrap right</b> → Text on right.
+
+        <br>
+
+        <b>Wrap through</b> → Image superimposes text.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 21 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">21.</span>
+
+    ⭐ Most Important Exam Points
+
+</div>
+
+
+<div class="important">
+
+<ul>
+
+<li>
+
+A digital image is represented using <b>pixels</b>.
+
+</li>
+
+<li>
+
+Common image formats include GIF, JPG, JPEG, PNG
+and BMP.
+
+</li>
+
+<li>
+
+Images can be inserted using Insert Image, Drag and Drop,
+Copy-Paste and Linking.
+
+</li>
+
+<li>
+
+Normal insertion embeds a copy of the image in the document.
+
+</li>
+
+<li>
+
+Linking stores the reference of the image instead of
+the actual image.
+
+</li>
+
+<li>
+
+Linking can save space when multiple copies of the same
+image are required.
+
+</li>
+
+<li>
+
+Image Toolbar provides tools for modifying images.
+
+</li>
+
+<li>
+
+The Image Toolbar includes filters, image mode, crop,
+flip, rotate, transparency and colour tools.
+
+</li>
+
+<li>
+
+There are <b>11 image filters</b> in the textbook.
+
+</li>
+
+<li>
+
+Aging simulates the effect of time on a picture.
+
+</li>
+
+<li>
+
+Crop cuts off unwanted parts.
+
+</li>
+
+<li>
+
+Resizing changes the image size.
+
+</li>
+
+<li>
+
+Corner handles can change width and height simultaneously.
+
+</li>
+
+<li>
+
+An image can be deleted by selecting it and pressing Delete.
+
+</li>
+
+<li>
+
+Drawing Tools are used to create flowcharts, callouts,
+designs and diagrams.
+
+</li>
+
+<li>
+
+Drawing Toolbar can be enabled through
+<b>View → Toolbars → Drawing</b>.
+
+</li>
+
+<li>
+
+Grouping makes multiple drawing objects behave as a
+single entity.
+
+</li>
+
+<li>
+
+Grouping options are Group, Ungroup, Enter Group and Exit Group.
+
+</li>
+
+<li>
+
+Positioning uses four settings:
+Arrangement, Anchoring, Alignment and Text Wrapping.
+
+</li>
+
+<li>
+
+Anchor acts as a reference point.
+
+</li>
+
+<li>
+
+An image can be anchored to Page, Paragraph, Character or Frame.
+
+</li>
+
+<li>
+
+Alignment has six styles: three horizontal and three vertical.
+
+</li>
+
+<li>
+
+Text Wrapping has six choices.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- ================= QUICK REVISION ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">22.</span>
+
+    ⚡ Last-Minute Revision Sheet
+
+</div>
+
+
+<div class="quick">
+
+<h3>CHAPTER 2 — 60 SECOND REVISION</h3>
+
+
+<p>
+
+<b>DIGITAL IMAGE</b>
+
+→ Representation of an image using digital values.
+
+</p>
+
+
+<p>
+
+<b>PIXEL</b>
+
+→ Basic digital value used to represent an image.
+
+</p>
+
+
+<p>
+
+<b>IMAGE INSERTION</b>
+
+→ Insert Image + Drag & Drop + Copy/Paste + Linking
+
+</p>
+
+
+<p>
+
+<b>EMBEDDING</b>
+
+→ Copy of image saved in document.
+
+</p>
+
+
+<p>
+
+<b>LINKING</b>
+
+→ Reference of image saved.
+
+</p>
+
+
+<p>
+
+<b>IMAGE TOOLBAR</b>
+
+→ Modify, filter, crop, rotate, flip, transparency,
+colour adjustments.
+
+</p>
+
+
+<p>
+
+<b>FILTERS</b>
+
+→ 11 types mentioned in the chapter.
+
+</p>
+
+
+<p>
+
+<b>CROP</b>
+
+→ Cuts unwanted portion.
+
+</p>
+
+
+<p>
+
+<b>RESIZE</b>
+
+→ Changes image size.
+
+</p>
+
+
+<p>
+
+<b>DELETE</b>
+
+→ Select image + Delete.
+
+</p>
+
+
+<p>
+
+<b>DRAWING TOOLS</b>
+
+→ Flowcharts, callouts, diagrams and designs.
+
+</p>
+
+
+<p>
+
+<b>GROUPING</b>
+
+→ Multiple objects behave as one entity.
+
+</p>
+
+
+<p>
+
+<b>POSITIONING</b>
+
+→ Arrangement + Anchoring + Alignment + Text Wrapping
+
+</p>
+
+
+<p>
+
+<b>ANCHOR</b>
+
+→ Reference point.
+
+</p>
+
+
+<p>
+
+<b>ALIGNMENT</b>
+
+→ 6 styles.
+
+</p>
+
+
+<p>
+
+<b>TEXT WRAPPING</b>
+
+→ 6 options.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= SOURCE BASED CHECK ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">23.</span>
+
+    📌 NCERT Check Your Progress Focus
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ✏️ Prepare These Questions
+    </div>
+
+    <ul>
+
+        <li>
+            What is a digital image? How can you create one?
+        </li>
+
+        <li>
+            Write steps to insert an image using Drag and Drop.
+        </li>
+
+        <li>
+            How is resizing different from cropping?
+        </li>
+
+        <li>
+            What tools are available in the Drawing Toolbar?
+        </li>
+
+        <li>
+            Explain any five drawing tools.
+        </li>
+
+        <li>
+            How is linking different from embedding?
+        </li>
+
+        <li>
+            Give a situation where you would prefer linking an image.
+        </li>
+
+        <li>
+            What are the benefits and drawbacks of grouping
+            drawing objects?
+        </li>
+
+        <li>
+            Describe any two tools from Drawing Object Properties Toolbar.
+        </li>
+
+        <li>
+            Write steps to insert an image in a basic drawing shape.
+        </li>
+
+        <li>
+            Write the factors controlling positioning of an image
+            in a document.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Source Check:</b>
+
+    <p>
+
+        These question areas are directly reflected in the
+        chapter's Check Your Progress and exercise section,
+        so they should be prioritised during revision.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= FINAL MEMORY ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">24.</span>
+
+    🧠 Final Memory Board
+
+</div>
+
+
+<div class="important">
+
+<h3>Remember These Before Exam</h3>
+
+
+<p>
+
+<b>Digital Image</b> → Pixels
+
+</p>
+
+
+<p>
+
+<b>Insert Image</b> → Insert → Image → Select File → Open
+
+</p>
+
+
+<p>
+
+<b>Embedding</b> → Image copy stored in document
+
+</p>
+
+
+<p>
+
+<b>Linking</b> → Image reference stored
+
+</p>
+
+
+<p>
+
+<b>Crop</b> → Cuts unwanted part
+
+</p>
+
+
+<p>
+
+<b>Resize</b> → Changes size
+
+</p>
+
+
+<p>
+
+<b>Corner Handles</b> → Width + Height together
+
+</p>
+
+
+<p>
+
+<b>Delete</b> → Select + Delete
+
+</p>
+
+
+<p>
+
+<b>Drawing Toolbar</b> → View → Toolbars → Drawing
+
+</p>
+
+
+<p>
+
+<b>Grouping</b> → Objects behave as one entity
+
+</p>
+
+
+<p>
+
+<b>Anchor</b> → Reference point
+
+</p>
+
+
+<p>
+
+<b>Positioning</b> → Arrangement + Anchoring + Alignment + Text Wrapping
+
+</p>
+
+
+<p>
+
+<b>Alignment</b> → 6 styles
+
+</p>
+
+
+<p>
+
+<b>Text Wrapping</b> → 6 options
+
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <b>THE GOAL</b> • CBSE Class 10 • Information Technology 402
+
+    <br><br>
+
+    Part B • Unit 1 • Chapter 2 — Working with Images
+
+    <br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</footer>
+
+
+</main>
+
+</body>
+</html>
