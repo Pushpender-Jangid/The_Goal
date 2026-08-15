@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Chapter 7 | Share and Review a Spreadsheet</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#252525;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.6;
+}
+
+.topbar{
+    background:#172033;
+    color:#fff;
+    text-align:center;
+    padding:22px 15px 20px;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:4px;
+    opacity:.78;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:46px;
+    font-weight:600;
+    margin-top:3px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.82;
+}
+
+.notebook{
+    width:min(1100px,96%);
+    margin:25px auto 45px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+
+    position:relative;
+
+    padding:38px 48px 70px 92px;
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.18),
+        0 25px 60px rgba(0,0,0,.13);
+
+    min-height:100vh;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#df8f8f;
+}
+
+.cover{
+    padding:8px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover-small{
+    color:#555;
+    font-size:16px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:55px;
+    line-height:1;
+    color:#183f72;
+    margin:8px 0 12px;
+}
+
+.cover p{
+    font-size:19px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff0a6;
+    border:2px solid #555;
+    padding:3px 12px;
+    margin-top:14px;
+    font-size:16px;
+    transform:rotate(-1deg);
+}
+
+.chapter-map{
+    margin:25px 0 35px;
+    padding:18px 20px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.58);
+}
+
+.chapter-map h3{
+    margin-top:0;
+}
+
+.chapter-map ul{
+    margin-bottom:0;
+}
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:35px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    margin-bottom:16px;
+    transform:rotate(-1deg);
+}
+
+.session-number{
+    color:#b42d2d;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#242424;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    color:#254d75;
+    margin:15px 0 5px;
+}
+
+p,
+li{
+    font-size:18px;
+}
+
+ul,
+ol{
+    margin:5px 0 13px 27px;
+}
+
+li{
+    margin:3px 0;
+}
+
+.highlight{
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(255,225,80,.75) 25%,
+            rgba(255,225,80,.75) 82%,
+            transparent 82%
+        );
+    padding:0 3px;
+}
+
+.red{
+    color:#b32d2d;
+    font-weight:bold;
+}
+
+.important{
+    margin:18px 0;
+    padding:17px 19px;
+    background:rgba(255,242,164,.68);
+    border:2px solid #555;
+    transform:rotate(-.2deg);
+}
+
+.exam{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(255,255,255,.55);
+    border-left:5px solid #b52d2d;
+}
+
+.exam-title{
+    color:#b52d2d;
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(226,239,251,.62);
+    border-left:5px solid #55718d;
+}
+
+.table-wrap{
+    overflow-x:auto;
+    margin:18px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.5);
+}
+
+th,
+td{
+    border:1.5px solid #555;
+    padding:10px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:22px;
+}
+
+.steps{
+    counter-reset:step;
+    list-style:none;
+    margin-left:0;
+}
+
+.steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:43px;
+    margin:9px 0;
+}
+
+.steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;
+    top:0;
+    width:28px;
+    height:28px;
+    border:2px solid #444;
+    border-radius:50%;
+    text-align:center;
+    line-height:24px;
+    background:#fff1a5;
+    font-weight:bold;
+}
+
+.menu{
+    margin:18px 0;
+    padding:16px 20px;
+    background:#172033;
+    color:white;
+    font-family:monospace;
+    font-size:16px;
+    overflow-x:auto;
+    border-radius:4px;
+}
+
+.formula{
+    margin:18px 0;
+    padding:18px;
+    text-align:center;
+    background:rgba(255,255,255,.65);
+    border:2px dashed #55718d;
+    font-size:18px;
+}
+
+.quick{
+    border:3px solid #444;
+    padding:20px;
+    margin-top:30px;
+    background:rgba(255,255,255,.52);
+    transform:rotate(.15deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:21px;
+    margin:27px 0;
+    letter-spacing:6px;
+}
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+    margin-top:50px;
+}
+
+@media(max-width:700px){
+
+    .notebook{
+        width:100%;
+        margin:0;
+        padding:30px 18px 60px 57px;
+    }
+
+    .notebook::before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:37px;
+    }
+
+    .cover h2{
+        font-size:43px;
+    }
+
+    p,
+    li{
+        font-size:17px;
+    }
+
+    .session-title{
+        font-size:30px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • INFORMATION TECHNOLOGY 402
+    </div>
+
+    <h1>
+        Part B — Electronic Spreadsheet (Advanced)
+    </h1>
+
+    <p>
+        Chapter 7 • Share and Review a Spreadsheet
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+    <div class="cover-small">
+        📊 CHAPTER 7 • EXAM-ORIENTED NOTES
+    </div>
+
+    <h2>
+        Share and Review a Spreadsheet
+    </h2>
+
+    <p>
+
+        This chapter explains how a spreadsheet can be
+        shared for collaborative editing and how changes
+        can be recorded, reviewed, accepted, rejected,
+        merged and compared in LibreOffice Calc.
+
+    </p>
+
+    <span class="badge">
+        ✍️ NOTES ONLY • NO TOP 50 TEST
+    </span>
+
+</section>
+
+
+<!-- ================= CHAPTER MAP ================= -->
+
+<section class="chapter-map">
+
+    <h3>🗺️ Chapter Roadmap</h3>
+
+    <ul>
+
+        <li>Sharing a Spreadsheet</li>
+
+        <li>Opening a Shared Spreadsheet</li>
+
+        <li>Saving a Shared Spreadsheet</li>
+
+        <li>Recording Changes</li>
+
+        <li>Adding, Editing and Formatting Comments</li>
+
+        <li>Reviewing Changes</li>
+
+        <li>Accepting and Rejecting Changes</li>
+
+        <li>Merging Two Spreadsheets</li>
+
+        <li>Comparing Two Spreadsheets</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ================= SECTION 01 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">01.</span>
+
+    Introduction
+
+</div>
+
+
+<p>
+
+LibreOffice Calc allows a spreadsheet to be
+
+<span class="highlight">shared with more than one user</span>
+
+at the same time.
+
+</p>
+
+
+<p>
+
+A shared spreadsheet is the same spreadsheet that can
+be accessed by multiple users and allows them to make
+changes simultaneously.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Core Idea:</b>
+
+        Sharing avoids the trouble of maintaining multiple
+        copies of the same spreadsheet edited by different
+        users.
+
+    </p>
+
+</div>
+
+
+<h3>Benefits of Sharing</h3>
+
+<ul>
+
+    <li>Multiple users can work on the same spreadsheet.</li>
+
+    <li>Users can make changes collaboratively.</li>
+
+    <li>Users can view the changes made by others.</li>
+
+    <li>It avoids maintaining multiple copies.</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= SECTION 02 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">02.</span>
+
+    Sharing a Spreadsheet
+
+</div>
+
+
+<h3>Steps to Share a Spreadsheet</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open a new spreadsheet and save it with a suitable name.
+
+</li>
+
+<li>
+
+Select
+
+<b>Tools → Share Spreadsheet</b>
+
+from the main menu bar.
+
+</li>
+
+<li>
+
+The <b>Share Document</b> dialog window opens.
+
+</li>
+
+<li>
+
+Select the checkbox
+
+<b>“Share this spreadsheet with other users”</b>.
+
+</li>
+
+<li>
+
+Click <b>OK</b>.
+
+</li>
+
+<li>
+
+A confirmation dialog appears asking to save
+the spreadsheet to activate shared mode.
+
+</li>
+
+<li>
+
+Click <b>Yes</b> to continue.
+
+</li>
+
+<li>
+
+After saving, the title bar displays
+
+<b>(shared)</b>
+
+along with the spreadsheet name.
+
+</li>
+
+</ol>
+
+
+<div class="menu">
+
+Tools → Share Spreadsheet
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ EXAM POINT
+
+    </div>
+
+    <p>
+
+        The checkbox used to enable sharing is:
+
+        <b>“Share this spreadsheet with other users”</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 03 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">03.</span>
+
+    Shared Mode
+
+</div>
+
+
+<p>
+
+Once sharing is activated and the spreadsheet is saved,
+the word
+
+<span class="highlight">(shared)</span>
+
+appears in the title bar along with the file name.
+
+</p>
+
+
+<div class="formula">
+
+Spreadsheet Name + (shared)
+
+</div>
+
+
+<h3>Important Point</h3>
+
+<p>
+
+The shared mode allows multiple users to access and
+edit the spreadsheet at the same time.
+
+</p>
+
+
+</section>
+
+
+<!-- ================= SECTION 04 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">04.</span>
+
+    Opening a Shared Spreadsheet
+
+</div>
+
+
+<p>
+
+When a shared spreadsheet is opened, LibreOffice Calc
+displays a message informing the user that the spreadsheet
+is in shared mode.
+
+</p>
+
+
+<p>
+
+Some features are not available when the spreadsheet
+is opened in shared mode.
+
+</p>
+
+
+<h3>Features Mentioned as Unavailable</h3>
+
+<ul>
+
+    <li>Undo</li>
+
+    <li>Redo</li>
+
+    <li>Repeat</li>
+
+    <li>Paste</li>
+
+    <li>Links to External Files</li>
+
+    <li>ImageMap</li>
+
+    <li>Object</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ TRUE / FALSE TRAP
+
+    </div>
+
+    <p>
+
+        Some features become unavailable when a spreadsheet
+        is in shared mode.
+
+        <b>TRUE</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 05 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">05.</span>
+
+    Saving a Shared Spreadsheet
+
+</div>
+
+
+<p>
+
+After making changes in a shared spreadsheet,
+the spreadsheet should be saved before closing.
+
+</p>
+
+
+<h3>When Changes Do Not Conflict</h3>
+
+<p>
+
+If two or more users are working at the same time
+and their changes do not conflict, the spreadsheet
+can be updated with the changes saved by other users.
+
+</p>
+
+
+<h3>When Changes Conflict</h3>
+
+<p>
+
+If there is a conflict between changes, a
+
+<span class="highlight">Resolve Conflict</span>
+
+dialog window appears.
+
+</p>
+
+
+<ul>
+
+    <li>
+
+        No other user can save the shared spreadsheet
+        while the conflict is being resolved.
+
+    </li>
+
+    <li>
+
+        If another user is trying to save and resolve
+        conflicts, the file is locked.
+
+    </li>
+
+</ul>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        <b>Conflict → Resolve Conflict dialog → File may be locked</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 06 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">06.</span>
+
+    Recording Changes
+
+</div>
+
+
+<p>
+
+The <span class="highlight">Recording Changes</span>
+feature of LibreOffice Calc records changes made by
+one or other users in the spreadsheet.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>VERY IMPORTANT:</b>
+
+        When Recording Changes is enabled,
+        the spreadsheet's shared feature is turned off.
+
+    </p>
+
+</div>
+
+
+<h3>First Step</h3>
+
+<p>
+
+Before enabling Record Changes, the spreadsheet must
+first be taken out of shared mode.
+
+</p>
+
+
+<h3>Disabling Shared Mode</h3>
+
+<ol class="steps">
+
+<li>
+
+Open the shared spreadsheet.
+
+</li>
+
+<li>
+
+Select
+
+<b>Tools → Share Spreadsheet</b>.
+
+</li>
+
+<li>
+
+Remove the check mark from
+
+<b>“Share this spreadsheet with other users”</b>.
+
+</li>
+
+<li>
+
+Click <b>OK</b>.
+
+</li>
+
+<li>
+
+A confirmation dialog appears.
+
+</li>
+
+<li>
+
+Click <b>Yes</b> to continue.
+
+</li>
+
+<li>
+
+The word <b>(shared)</b> disappears from the title bar.
+
+</li>
+
+</ol>
+
+
+</section>
+
+
+<!-- ================= SECTION 07 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">07.</span>
+
+    Turning ON Record Changes
+
+</div>
+
+
+<p>
+
+Once shared mode has been disabled, the
+
+<span class="highlight">Track Changes → Record</span>
+
+option becomes available.
+
+</p>
+
+
+<div class="menu">
+
+Edit → Track Changes → Record
+
+</div>
+
+
+<h3>What Happens After Recording is ON?</h3>
+
+<p>
+
+When a change is made in the spreadsheet,
+Calc records the change.
+
+</p>
+
+
+<p>
+
+The chapter's example changes the name
+
+<b>Sia</b>
+
+to
+
+<b>Sita</b>
+
+in cell
+
+<b>B5</b>.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        The border colour of the cell in which data
+        has been changed becomes
+
+        <span class="red">RED</span>.
+
+    </p>
+
+</div>
+
+
+<p>
+
+When the cursor is moved to the changed cell,
+information about the recorded change is displayed.
+
+</p>
+
+</section>
+
+
+<!-- ================= SECTION 08 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">08.</span>
+
+    Stopping Record Changes
+
+</div>
+
+
+<p>
+
+To stop recording changes, select the Record option
+again.
+
+</p>
+
+
+<div class="menu">
+
+Edit → Track Changes → Record
+
+</div>
+
+
+<p>
+
+Alternatively, the Record button can be used
+from the appropriate toolbar.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ EXAM FILL-IN
+
+    </div>
+
+    <p>
+
+        Recording changes is performed through
+
+        <b>Edit → Track Changes → Record</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 09 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">09.</span>
+
+    Adding Comments
+
+</div>
+
+
+<p>
+
+In Calc, comments can be added automatically as well
+as manually by the author or reviewer.
+
+</p>
+
+
+<h3>Adding a Comment using Track Changes</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select
+
+<b>Edit → Track Changes → Comment</b>.
+
+</li>
+
+<li>
+
+The <b>Add Comment</b> window opens.
+
+</li>
+
+<li>
+
+Enter the required comment.
+
+</li>
+
+<li>
+
+The comment can then be viewed from the relevant cell.
+
+</li>
+
+</ol>
+
+
+<div class="menu">
+
+Edit → Track Changes → Comment
+
+</div>
+
+
+<h3>Adding a Comment to a Cell</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select the cell where the comment is required.
+
+</li>
+
+<li>
+
+Select
+
+<b>Insert → Comment</b>.
+
+</li>
+
+<li>
+
+A comment box appears.
+
+</li>
+
+<li>
+
+Enter the required note or suggestion.
+
+</li>
+
+</ol>
+
+
+<div class="menu">
+
+Insert → Comment
+
+</div>
+
+
+<div class="important">
+
+    <p>
+
+        Comments added through
+
+        <b>Insert → Comment</b>
+
+        are described in the chapter as
+
+        <span class="highlight">notes or suggestions</span>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 10 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">10.</span>
+
+    Viewing, Editing and Deleting Comments
+
+</div>
+
+
+<p>
+
+After a comment is inserted, it can be displayed,
+edited or deleted.
+
+</p>
+
+
+<h3>Edit Comment</h3>
+
+<p>
+
+Right-click the cell containing the comment and
+select
+
+<b>Edit Comment</b>.
+
+</p>
+
+
+<h3>Delete Comment</h3>
+
+<p>
+
+Right-click the cell and select
+
+<b>Delete Comment</b>.
+
+</p>
+
+
+<h3>Show Comment</h3>
+
+<p>
+
+Right-click the cell and select
+
+<b>Show Comment</b>.
+
+</p>
+
+
+<h3>Hide Comment</h3>
+
+<p>
+
+When the comment is already being displayed,
+the option changes to
+
+<b>Hide Comment</b>.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Option</th>
+
+<th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td><b>Edit Comment</b></td>
+
+<td>Modify the existing comment.</td>
+
+</tr>
+
+<tr>
+
+<td><b>Delete Comment</b></td>
+
+<td>Remove the comment.</td>
+
+</tr>
+
+<tr>
+
+<td><b>Show Comment</b></td>
+
+<td>Display the comment.</td>
+
+</tr>
+
+<tr>
+
+<td><b>Hide Comment</b></td>
+
+<td>Hide the displayed comment.</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 11 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">11.</span>
+
+    Formatting a Comment
+
+</div>
+
+
+<p>
+
+The comment box can be formatted similar to cell
+contents.
+
+</p>
+
+
+<h3>Formatting Options</h3>
+
+<ul>
+
+    <li>Background colour</li>
+
+    <li>Border style</li>
+
+    <li>Transparency</li>
+
+    <li>Font</li>
+
+    <li>Font effects</li>
+
+    <li>Alignment</li>
+
+    <li>Borders</li>
+
+    <li>Background</li>
+
+    <li>Cell Protection</li>
+
+</ul>
+
+
+<h3>Basic Procedure</h3>
+
+<ol class="steps">
+
+<li>
+
+Right-click the cell containing the comment.
+
+</li>
+
+<li>
+
+Select <b>Format Cell</b>.
+
+</li>
+
+<li>
+
+The <b>Format Cells</b> dialog box opens.
+
+</li>
+
+<li>
+
+Apply the required formatting.
+
+</li>
+
+<li>
+
+Click <b>OK</b>.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ EXAM POINT
+
+    </div>
+
+    <p>
+
+        The comment box can be formatted just like
+        formatting the <b>cell contents</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 12 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">12.</span>
+
+    Reviewing Changes
+
+</div>
+
+
+<p>
+
+After all team members have edited the spreadsheet,
+the changes can be reviewed before preparing the
+final spreadsheet.
+
+</p>
+
+
+<h3>Showing Changes</h3>
+
+
+<div class="menu">
+
+Edit → Track Changes → Show
+
+</div>
+
+
+<p>
+
+This opens the
+
+<span class="highlight">Show Changes</span>
+
+dialog window.
+
+</p>
+
+
+<p>
+
+The Show Changes dialog is used to decide which
+changes should be displayed while reviewing the
+spreadsheet.
+
+</p>
+
+
+<h3>Managing Changes</h3>
+
+
+<div class="menu">
+
+Edit → Track Changes → Manage
+
+</div>
+
+
+<p>
+
+The
+
+<span class="highlight">Manage Changes</span>
+
+dialog window is used to accept or reject changes.
+
+</p>
+
+</section>
+
+
+<!-- ================= SECTION 13 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">13.</span>
+
+    Accepting and Rejecting Changes
+
+</div>
+
+
+<p>
+
+The changes made by team members can be reviewed
+and then accepted or rejected.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Action</th>
+
+<th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td><b>Accept</b></td>
+
+<td>
+
+Accept the selected change.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Reject</b></td>
+
+<td>
+
+Reject the selected change.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Accept All</b></td>
+
+<td>
+
+Accept all recorded changes.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Reject All</b></td>
+
+<td>
+
+Reject all recorded changes.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="important">
+
+    <p>
+
+        The original/owner user reviews the recorded
+        changes and decides which changes should be
+        accepted or rejected.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 14 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">14.</span>
+
+    Merging Two Spreadsheets
+
+</div>
+
+
+<p>
+
+If the same spreadsheet has been reviewed by different
+team members and different versions are available,
+the spreadsheets can be merged.
+
+</p>
+
+
+<h3>Merge Document</h3>
+
+
+<div class="menu">
+
+Edit → Track Changes → Merge Document
+
+</div>
+
+
+<h3>Steps to Merge</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the original spreadsheet.
+
+</li>
+
+<li>
+
+Select
+
+<b>Edit → Track Changes → Merge Document</b>.
+
+</li>
+
+<li>
+
+The <b>Merge With</b> dialog window opens.
+
+</li>
+
+<li>
+
+Select the second spreadsheet file.
+
+</li>
+
+<li>
+
+Click <b>Open</b>.
+
+</li>
+
+<li>
+
+The <b>Manage Changes</b> dialog window opens.
+
+</li>
+
+<li>
+
+Review and accept/reject the changes as required.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ DIFFERENCE TO REMEMBER
+
+    </div>
+
+    <p>
+
+        <b>Merge Document</b> is used when two versions
+        of a spreadsheet need to be merged.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 15 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">15.</span>
+
+    Comparing Two Spreadsheets
+
+</div>
+
+
+<p>
+
+Instead of merging two spreadsheets, Calc also allows
+two spreadsheets to be compared.
+
+</p>
+
+
+<h3>Compare Document</h3>
+
+
+<div class="menu">
+
+Edit → Track Changes → Compare Document
+
+</div>
+
+
+<h3>Steps to Compare</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the first spreadsheet.
+
+</li>
+
+<li>
+
+Select
+
+<b>Edit → Track Changes → Compare Document</b>.
+
+</li>
+
+<li>
+
+The <b>Compare to</b> dialog window opens.
+
+</li>
+
+<li>
+
+Select the spreadsheet that needs to be compared.
+
+</li>
+
+<li>
+
+Click <b>Open</b>.
+
+</li>
+
+<li>
+
+The <b>Manage Changes</b> dialog window opens.
+
+</li>
+
+<li>
+
+Accept or reject the required changes.
+
+</li>
+
+<li>
+
+Click <b>Close</b> when finished.
+
+</li>
+
+</ol>
+
+</section>
+
+
+<!-- ================= SECTION 16 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">16.</span>
+
+    Merge vs Compare
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Merge Document</th>
+
+<th>Compare Document</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Used to combine changes from another version
+of the spreadsheet.
+
+</td>
+
+<td>
+
+Used to compare two spreadsheet documents.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Uses
+
+<b>Merge Document</b>.
+
+</td>
+
+<td>
+
+Uses
+
+<b>Compare Document</b>.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+The changes can then be managed through
+Manage Changes.
+
+</td>
+
+<td>
+
+The differences/changes can be reviewed through
+Manage Changes.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Easy Trick:</b>
+
+    <p>
+
+        <b>MERGE = Combine</b>
+
+        <br>
+
+        <b>COMPARE = Check differences</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 17 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">17.</span>
+
+    Important Menu Paths
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Task</th>
+
+<th>Menu Path</th>
+
+</tr>
+
+<tr>
+
+<td>Share Spreadsheet</td>
+
+<td><b>Tools → Share Spreadsheet</b></td>
+
+</tr>
+
+<tr>
+
+<td>Record Changes</td>
+
+<td><b>Edit → Track Changes → Record</b></td>
+
+</tr>
+
+<tr>
+
+<td>Add Comment</td>
+
+<td><b>Edit → Track Changes → Comment</b></td>
+
+</tr>
+
+<tr>
+
+<td>Insert Comment</td>
+
+<td><b>Insert → Comment</b></td>
+
+</tr>
+
+<tr>
+
+<td>Show Changes</td>
+
+<td><b>Edit → Track Changes → Show</b></td>
+
+</tr>
+
+<tr>
+
+<td>Manage Changes</td>
+
+<td><b>Edit → Track Changes → Manage</b></td>
+
+</tr>
+
+<tr>
+
+<td>Merge Spreadsheet</td>
+
+<td><b>Edit → Track Changes → Merge Document</b></td>
+
+</tr>
+
+<tr>
+
+<td>Compare Spreadsheet</td>
+
+<td><b>Edit → Track Changes → Compare Document</b></td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 18 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">18.</span>
+
+    🔥 High-Priority Exam Facts
+
+</div>
+
+
+<ul>
+
+<li>
+
+Sharing allows
+
+<span class="highlight">different users simultaneously</span>
+
+to edit a spreadsheet.
+
+</li>
+
+<li>
+
+Sharing saves changes in the
+
+<span class="highlight">same spreadsheet</span>.
+
+</li>
+
+<li>
+
+The title bar shows
+
+<b>(shared)</b>
+
+when the spreadsheet is in shared mode.
+
+</li>
+
+<li>
+
+Some features become unavailable in shared mode.
+
+</li>
+
+<li>
+
+Recording Changes automatically
+
+<span class="highlight">turns off shared mode</span>.
+
+</li>
+
+<li>
+
+Record Changes is found under
+
+<b>Edit → Track Changes → Record</b>.
+
+</li>
+
+<li>
+
+The border of a changed cell becomes
+
+<span class="red">red</span>
+
+when changes are recorded.
+
+</li>
+
+<li>
+
+Comments can be added using
+
+<b>Edit → Track Changes → Comment</b>.
+
+</li>
+
+<li>
+
+Notes/suggestions can be added using
+
+<b>Insert → Comment</b>.
+
+</li>
+
+<li>
+
+Comments can be edited, deleted, shown and hidden.
+
+</li>
+
+<li>
+
+Comment formatting can change background colour,
+border style and transparency.
+
+</li>
+
+<li>
+
+Show Changes is used to decide what changes are
+displayed during review.
+
+</li>
+
+<li>
+
+Manage Changes is used to accept or reject changes.
+
+</li>
+
+<li>
+
+Merge Document combines changes from different
+versions.
+
+</li>
+
+<li>
+
+Compare Document is used to compare two spreadsheets.
+
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= SECTION 19 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">19.</span>
+
+    🧠 Important Terms
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Term</th>
+
+<th>Meaning</th>
+
+</tr>
+
+<tr>
+
+<td><b>Shared Spreadsheet</b></td>
+
+<td>
+
+A spreadsheet that can be accessed and edited
+by multiple users simultaneously.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Record Changes</b></td>
+
+<td>
+
+Feature used to record changes made by users.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Comment</b></td>
+
+<td>
+
+A note or suggestion associated with a cell.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Show Changes</b></td>
+
+<td>
+
+Used to decide which changes should be displayed.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Manage Changes</b></td>
+
+<td>
+
+Used to review, accept or reject changes.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Merge Document</b></td>
+
+<td>
+
+Used to merge two versions of a spreadsheet.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Compare Document</b></td>
+
+<td>
+
+Used to compare two spreadsheet documents.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 20 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">20.</span>
+
+    🎯 Exam-Oriented Differences
+
+</div>
+
+
+<h3>Sharing vs Recording Changes</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Sharing</th>
+
+<th>Recording Changes</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Allows multiple users to edit the spreadsheet
+simultaneously.
+
+</td>
+
+<td>
+
+Records changes made by users.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Spreadsheet remains in shared mode.
+
+</td>
+
+<td>
+
+Shared mode is turned off.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Comment vs Track Changes</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Comment</th>
+
+<th>Track Changes</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Adds notes or suggestions to a cell.
+
+</td>
+
+<td>
+
+Records modifications made to spreadsheet data.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Can be edited, deleted, shown or hidden.
+
+</td>
+
+<td>
+
+Recorded changes can be reviewed and accepted/rejected.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 21 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">21.</span>
+
+    📌 Chapter Flow
+
+</div>
+
+
+<div class="formula">
+
+Share Spreadsheet
+
+<br>
+↓
+
+Multiple Users Work Together
+
+<br>
+↓
+
+Save Changes
+
+<br>
+↓
+
+Record Changes
+
+<br>
+↓
+
+Add Comments
+
+<br>
+↓
+
+Show / Manage Changes
+
+<br>
+↓
+
+Accept / Reject
+
+<br>
+↓
+
+Merge Different Versions
+
+<br>
+↓
+
+Compare Documents
+
+</div>
+
+</section>
+
+
+<!-- ================= RAPID REVISION ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">22.</span>
+
+    ⚡ RAPID REVISION
+
+</div>
+
+
+<div class="quick">
+
+<h3>🔥 CHAPTER 7 — RAPID REVISION</h3>
+
+<ul>
+
+<li>
+
+<b>Sharing:</b> allows different users to edit the
+same spreadsheet simultaneously.
+
+</li>
+
+<li>
+
+<b>Share command:</b>
+
+Tools → Share Spreadsheet.
+
+</li>
+
+<li>
+
+<b>Sharing checkbox:</b>
+
+“Share this spreadsheet with other users”.
+
+</li>
+
+<li>
+
+After activation, the title bar shows
+
+<b>(shared)</b>.
+
+</li>
+
+<li>
+
+Some features become unavailable in shared mode.
+
+</li>
+
+<li>
+
+<b>Conflict:</b> Resolve Conflict dialog appears.
+
+</li>
+
+<li>
+
+<b>Recording Changes:</b> turns OFF shared mode.
+
+</li>
+
+<li>
+
+<b>Record command:</b>
+
+Edit → Track Changes → Record.
+
+</li>
+
+<li>
+
+Changed cell border becomes
+
+<span class="red">RED</span>.
+
+</li>
+
+<li>
+
+<b>Comment command:</b>
+
+Edit → Track Changes → Comment.
+
+</li>
+
+<li>
+
+<b>Cell note/suggestion:</b>
+
+Insert → Comment.
+
+</li>
+
+<li>
+
+<b>Edit Comment:</b> right-click → Edit Comment.
+
+</li>
+
+<li>
+
+<b>Delete Comment:</b> right-click → Delete Comment.
+
+</li>
+
+<li>
+
+<b>Show Comment:</b> right-click → Show Comment.
+
+</li>
+
+<li>
+
+<b>Hide Comment:</b> used when the comment is already displayed.
+
+</li>
+
+<li>
+
+<b>Format Comment:</b> right-click → Format Cell.
+
+</li>
+
+<li>
+
+<b>Show Changes:</b>
+
+Edit → Track Changes → Show.
+
+</li>
+
+<li>
+
+<b>Manage Changes:</b>
+
+Edit → Track Changes → Manage.
+
+</li>
+
+<li>
+
+<b>Accept:</b> accepts selected change.
+
+</li>
+
+<li>
+
+<b>Reject:</b> rejects selected change.
+
+</li>
+
+<li>
+
+<b>Accept All:</b> accepts all changes.
+
+</li>
+
+<li>
+
+<b>Reject All:</b> rejects all changes.
+
+</li>
+
+<li>
+
+<b>Merge:</b>
+
+Edit → Track Changes → Merge Document.
+
+</li>
+
+<li>
+
+<b>Compare:</b>
+
+Edit → Track Changes → Compare Document.
+
+</li>
+
+<li>
+
+<b>MERGE = Combine</b>
+
+</li>
+
+<li>
+
+<b>COMPARE = Check differences</b>
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <b>THE GOAL</b> • CBSE Class 10 • Information Technology 402
+
+    <br><br>
+
+    Part B • Unit 2 • Chapter 7
+    — Share and Review a Spreadsheet
+
+    <br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</footer>
+
+
+</main>
+
+</body>
+</html>
