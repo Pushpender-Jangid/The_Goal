@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Chapter 6 Test</title>
+
+<style>
+:root{
+    --primary:#4f46e5;
+    --primary-hover:#4338ca;
+    --primary-light:#e0e7ff;
+    --secondary:#0ea5e9;
+
+    --bg-grad-1:#0f172a;
+    --bg-grad-2:#1e1b4b;
+
+    --card-bg:#ffffff;
+    --body-bg:#f8fafc;
+
+    --text-dark:#0f172a;
+    --text-muted:#64748b;
+
+    --border:#e2e8f0;
+
+    --success:#10b981;
+    --success-light:#d1fae5;
+
+    --danger:#ef4444;
+    --danger-light:#fee2e2;
+
+    --warning:#f59e0b;
+    --warning-light:#fef3c7;
+
+    --shadow-sm:0 1px 2px rgba(15,23,42,.06);
+    --shadow-md:0 4px 10px rgba(15,23,42,.08);
+    --shadow-lg:0 18px 35px rgba(15,23,42,.12);
+
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:18px;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,
+    "Roboto","Oxygen","Ubuntu","Cantarell",sans-serif;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    background:var(--body-bg);
+    color:var(--text-dark);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+header{
+    background:linear-gradient(135deg,var(--bg-grad-1),var(--bg-grad-2));
+    color:white;
+    padding:20px 16px;
+    text-align:center;
+    box-shadow:var(--shadow-md);
+    position:relative;
+    z-index:10;
+}
+
+header h1{
+    font-size:1.55rem;
+    font-weight:900;
+    letter-spacing:1.5px;
+    color:#38bdf8;
+    margin-bottom:5px;
+}
+
+header p{
+    font-size:.88rem;
+    color:#cbd5e1;
+    font-weight:500;
+}
+
+.main-container{
+    width:100%;
+    max-width:1050px;
+    margin:0 auto;
+    padding:24px 16px;
+    flex:1;
+}
+
+.screen{
+    display:none;
+    width:100%;
+}
+
+.screen.active{
+    display:block;
+    animation:fadeIn .3s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(7px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-md);
+    padding:28px;
+}
+
+/* ================= START SCREEN ================= */
+
+.start-card{
+    max-width:600px;
+    margin:25px auto;
+    text-align:center;
+    padding:40px 30px;
+}
+
+.brand-badge{
+    display:inline-block;
+    padding:6px 13px;
+    background:var(--primary-light);
+    color:var(--primary);
+    border-radius:30px;
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:.7px;
+    margin-bottom:16px;
+}
+
+.test-title{
+    font-size:1.55rem;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.test-subtitle{
+    font-size:1.05rem;
+    color:var(--primary);
+    font-weight:700;
+    line-height:1.5;
+    margin-bottom:22px;
+}
+
+.info-pills{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-bottom:28px;
+}
+
+.pill{
+    background:#f1f5f9;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:8px 12px;
+    font-size:.83rem;
+    font-weight:700;
+    color:var(--text-muted);
+}
+
+.input-group{
+    text-align:left;
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    font-size:.88rem;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.input-group input{
+    width:100%;
+    padding:13px 14px;
+    border:2px solid var(--border);
+    border-radius:12px;
+    font-size:1rem;
+    outline:none;
+    transition:.2s;
+}
+
+.input-group input:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(79,70,229,.08);
+}
+
+.btn{
+    width:100%;
+    border:0;
+    border-radius:12px;
+    padding:13px 18px;
+    background:var(--primary);
+    color:white;
+    font-size:.96rem;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:var(--shadow-sm);
+}
+
+.btn:hover{
+    background:var(--primary-hover);
+    transform:translateY(-1px);
+    box-shadow:var(--shadow-md);
+}
+
+.btn:active{
+    transform:translateY(0);
+}
+
+.btn-secondary{
+    background:#f1f5f9;
+    color:var(--text-dark);
+    border:1px solid var(--border);
+}
+
+.btn-secondary:hover{
+    background:#e2e8f0;
+}
+
+.btn-outline{
+    background:white;
+    color:var(--primary);
+    border:2px solid var(--primary);
+}
+
+.btn-outline:hover{
+    background:var(--primary-light);
+}
+
+/* ================= QUIZ HEADER ================= */
+
+.quiz-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:14px 18px;
+    margin-bottom:16px;
+    box-shadow:var(--shadow-sm);
+}
+
+.student-info{
+    font-size:.94rem;
+    font-weight:800;
+}
+
+.timer-badge{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:#f1f5f9;
+    color:var(--primary);
+    border:1px solid var(--border);
+    border-radius:30px;
+    padding:7px 13px;
+    font-size:1rem;
+    font-weight:900;
+    font-variant-numeric:tabular-nums;
+}
+
+.timer-badge.warning{
+    background:var(--warning-light);
+    color:#b45309;
+    border-color:#fde68a;
+    animation:pulse 1s infinite alternate;
+}
+
+.timer-badge.danger{
+    background:var(--danger-light);
+    color:var(--danger);
+    border-color:#fca5a5;
+    animation:pulse .5s infinite alternate;
+}
+
+@keyframes pulse{
+    from{opacity:1}
+    to{opacity:.65}
+}
+
+/* ================= QUIZ LAYOUT ================= */
+
+.quiz-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 290px;
+    gap:16px;
+}
+
+.progress-bar-container{
+    width:100%;
+    height:8px;
+    background:#e2e8f0;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:22px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    transition:.3s;
+}
+
+.q-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.q-number{
+    color:var(--primary);
+    font-size:.83rem;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.q-text{
+    font-size:1.12rem;
+    font-weight:700;
+    line-height:1.55;
+    margin-bottom:20px;
+}
+
+.options-grid{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.option-card{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:13px 14px;
+    background:white;
+    border:2px solid var(--border);
+    border-radius:13px;
+    cursor:pointer;
+    transition:.2s;
+    user-select:none;
+}
+
+.option-card:hover{
+    background:#f8fafc;
+    border-color:#cbd5e1;
+}
+
+.option-card.selected{
+    background:var(--primary-light);
+    border-color:var(--primary);
+}
+
+.option-key{
+    flex:0 0 29px;
+    width:29px;
+    height:29px;
+    border-radius:50%;
+    background:#f1f5f9;
+    color:var(--text-muted);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:.82rem;
+    font-weight:900;
+}
+
+.option-card.selected .option-key{
+    background:var(--primary);
+    color:white;
+}
+
+.option-val{
+    font-size:.94rem;
+    line-height:1.45;
+    font-weight:600;
+    margin-top:3px;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:10px;
+    justify-content:space-between;
+    border-top:1px solid var(--border);
+    padding-top:16px;
+}
+
+.nav-buttons .btn{
+    width:auto;
+    min-width:120px;
+}
+
+/* ================= PALETTE ================= */
+
+.palette-card{
+    height:max-content;
+}
+
+.palette-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.palette-progress{
+    color:var(--text-muted);
+    font-size:.8rem;
+    font-weight:700;
+}
+
+.palette-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:7px;
+    max-height:390px;
+    overflow-y:auto;
+    padding-right:3px;
+}
+
+.p-btn{
+    aspect-ratio:1;
+    border-radius:9px;
+    border:1px solid var(--border);
+    background:white;
+    color:var(--text-muted);
+    font-weight:800;
+    cursor:pointer;
+    transition:.15s;
+}
+
+.p-btn:hover{
+    border-color:var(--primary);
+    color:var(--primary);
+}
+
+.p-btn.answered{
+    background:var(--primary);
+    border-color:var(--primary);
+    color:white;
+}
+
+.p-btn.current{
+    outline:2px solid var(--primary);
+    outline-offset:1px;
+}
+
+.palette-legend{
+    display:flex;
+    justify-content:space-around;
+    gap:5px;
+    margin-top:16px;
+    padding-top:13px;
+    border-top:1px solid var(--border);
+    font-size:.68rem;
+    color:var(--text-muted);
+    font-weight:700;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.legend-dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+}
+
+.legend-dot.ans{
+    background:var(--primary);
+}
+
+.legend-dot.unans{
+    background:white;
+    border:1px solid var(--border);
+}
+
+.legend-dot.curr{
+    border:2px solid var(--primary);
+}
+
+/* ================= RESULT ================= */
+
+.result-card{
+    max-width:720px;
+    margin:20px auto;
+    text-align:center;
+}
+
+.result-header h2{
+    font-size:1.7rem;
+    font-weight:900;
+    margin-bottom:5px;
+}
+
+.result-subtitle{
+    color:var(--text-muted);
+    margin-bottom:20px;
+}
+
+.score-circle{
+    width:145px;
+    height:145px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 12px 25px rgba(79,70,229,.28);
+}
+
+.score-val{
+    font-size:2.35rem;
+    font-weight:900;
+    line-height:1;
+}
+
+.score-max{
+    font-size:.82rem;
+    margin-top:6px;
+    opacity:.85;
+}
+
+.perf-msg{
+    color:var(--primary);
+    font-size:1.18rem;
+    font-weight:900;
+    margin-bottom:22px;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-bottom:24px;
+}
+
+.stat-card{
+    padding:13px 7px;
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:12px;
+}
+
+.stat-val{
+    font-size:1.25rem;
+    font-weight:900;
+    margin-bottom:3px;
+}
+
+.stat-lbl{
+    font-size:.68rem;
+    color:var(--text-muted);
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.stat-card.pc .stat-val{
+    color:var(--primary);
+}
+
+.stat-card.cor .stat-val{
+    color:var(--success);
+}
+
+.stat-card.incor .stat-val{
+    color:var(--danger);
+}
+
+.stat-card.unatt .stat-val{
+    color:var(--warning);
+}
+
+.result-actions{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.result-actions .btn{
+    width:210px;
+}
+
+/* ================= REVIEW ================= */
+
+.review-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    background:white;
+    padding:15px 18px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    margin-bottom:16px;
+}
+
+.review-title{
+    font-size:1.2rem;
+    font-weight:900;
+}
+
+.review-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.review-item{
+    background:white;
+    border:1px solid var(--border);
+    border-left:5px solid var(--warning);
+    border-radius:13px;
+    padding:18px;
+    box-shadow:var(--shadow-sm);
+}
+
+.review-item.status-correct{
+    border-left-color:var(--success);
+}
+
+.review-item.status-incorrect{
+    border-left-color:var(--danger);
+}
+
+.review-q-head{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.review-q-num{
+    color:var(--text-muted);
+    font-size:.82rem;
+    font-weight:800;
+}
+
+.status-badge{
+    padding:4px 8px;
+    border-radius:15px;
+    font-size:.68rem;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.status-badge.correct{
+    background:var(--success-light);
+    color:#047857;
+}
+
+.status-badge.incorrect{
+    background:var(--danger-light);
+    color:#b91c1c;
+}
+
+.status-badge.unattempted{
+    background:var(--warning-light);
+    color:#b45309;
+}
+
+.review-q-text{
+    font-size:1rem;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:14px;
+}
+
+.review-ans-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.ans-box{
+    padding:11px 12px;
+    background:#f8fafc;
+    border:1px solid var(--border);
+    border-radius:9px;
+}
+
+.ans-box-lbl{
+    font-size:.68rem;
+    color:var(--text-muted);
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:4px;
+}
+
+.ans-box-val{
+    font-size:.88rem;
+    font-weight:700;
+    line-height:1.4;
+}
+
+.ans-box.user-ans.correct{
+    background:var(--success-light);
+    border-color:#a7f3d0;
+}
+
+.ans-box.user-ans.incorrect{
+    background:var(--danger-light);
+    border-color:#fca5a5;
+}
+
+.ans-box.correct-ans{
+    background:var(--success-light);
+    border-color:#a7f3d0;
+}
+
+.explanation-box{
+    background:#f1f5f9;
+    border-left:3px solid var(--primary);
+    border-radius:8px;
+    padding:11px 12px;
+    font-size:.86rem;
+    line-height:1.5;
+    color:#334155;
+}
+
+.explanation-box strong{
+    color:var(--primary);
+    display:block;
+    margin-bottom:3px;
+}
+
+/* ================= MODAL ================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.62);
+    backdrop-filter:blur(4px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:100;
+    padding:16px;
+}
+
+.modal-overlay.active{
+    display:flex;
+}
+
+.modal-card{
+    width:100%;
+    max-width:430px;
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    text-align:center;
+    box-shadow:var(--shadow-lg);
+}
+
+.modal-title{
+    font-size:1.2rem;
+    font-weight:900;
+    margin-bottom:7px;
+}
+
+.modal-body{
+    color:var(--text-muted);
+    line-height:1.45;
+    font-size:.92rem;
+    margin-bottom:20px;
+}
+
+.modal-actions{
+    display:flex;
+    gap:9px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:auto;
+    padding:16px;
+    text-align:center;
+    background:#0f172a;
+    color:#94a3b8;
+    font-size:.82rem;
+    border-top:1px solid #1e293b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    .quiz-layout{
+        grid-template-columns:1fr;
+    }
+
+    .palette-card{
+        order:2;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:1.35rem;
+    }
+
+    header p{
+        font-size:.78rem;
+    }
+
+    .main-container{
+        padding:14px 10px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .start-card{
+        padding:30px 20px;
+    }
+
+    .test-title{
+        font-size:1.25rem;
+    }
+
+    .test-subtitle{
+        font-size:.95rem;
+    }
+
+    .quiz-header{
+        padding:12px;
+    }
+
+    .student-info{
+        font-size:.82rem;
+    }
+
+    .timer-badge{
+        font-size:.9rem;
+        padding:6px 9px;
+    }
+
+    .q-text{
+        font-size:1rem;
+    }
+
+    .option-card{
+        padding:11px;
+    }
+
+    .option-val{
+        font-size:.88rem;
+    }
+
+    .nav-buttons .btn{
+        min-width:90px;
+        padding:11px 10px;
+        font-size:.82rem;
+    }
+
+    .review-ans-grid{
+        grid-template-columns:1fr;
+    }
+
+    .result-actions{
+        flex-direction:column;
+    }
+
+    .result-actions .btn{
+        width:100%;
+    }
+
+    .review-header{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .palette-grid{
+        grid-template-columns:repeat(10,1fr);
+    }
+}
+
+@media(max-width:420px){
+
+    .palette-grid{
+        grid-template-columns:repeat(5,1fr);
+    }
+
+    .stats-grid{
+        gap:7px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>THE GOAL</h1>
+    <p>
+        CBSE Class 10 IT — Part B | Unit 2 |
+        Chapter 6: Linking Spreadsheet Data
+    </p>
+</header>
+
+<div class="main-container">
+
+<!-- ================= START SCREEN ================= -->
+
+<div id="start-screen" class="screen active">
+
+    <div class="card start-card">
+
+        <span class="brand-badge">
+            THE GOAL • PART B
+        </span>
+
+        <h2 class="test-title">
+            CHAPTER 6 TEST
+        </h2>
+
+        <div class="test-subtitle">
+            Linking Spreadsheet Data
+        </div>
+
+        <div class="info-pills">
+            <span class="pill">📋 30 Questions</span>
+            <span class="pill">⏱️ 30 Minutes</span>
+            <span class="pill">🎯 30 Marks</span>
+            <span class="pill">📊 LibreOffice Calc</span>
+        </div>
+
+        <form id="start-form"
+              onsubmit="event.preventDefault(); startTest();">
+
+            <div class="input-group">
+
+                <label for="student-name">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="student-name"
+                    placeholder="Enter Your Full Name"
+                    required
+                    autocomplete="name"
+                >
+
+            </div>
+
+            <button type="submit" class="btn">
+                START TEST
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= QUIZ SCREEN ================= -->
+
+<div id="quiz-screen" class="screen">
+
+    <div class="quiz-header">
+
+        <div class="student-info"
+             id="display-student-name">
+            Student
+        </div>
+
+        <div class="timer-badge"
+             id="timer-display">
+            ⏱️ 30:00
+        </div>
+
+    </div>
+
+
+    <div class="quiz-layout">
+
+        <div class="card">
+
+            <div class="progress-bar-container">
+
+                <div class="progress-bar"
+                     id="progress-bar">
+                </div>
+
+            </div>
+
+            <div class="q-meta">
+
+                <span class="q-number"
+                      id="q-number-text">
+                    Question 1 of 30
+                </span>
+
+            </div>
+
+            <div class="q-text"
+                 id="q-text">
+                Loading question...
+            </div>
+
+            <div class="options-grid"
+                 id="options-container">
+            </div>
+
+
+            <div class="nav-buttons">
+
+                <button
+                    class="btn btn-secondary"
+                    id="btn-prev"
+                    onclick="navigateQuestion(-1)">
+                    PREVIOUS
+                </button>
+
+                <button
+                    class="btn btn-outline"
+                    id="btn-submit"
+                    onclick="confirmSubmit()">
+                    SUBMIT TEST
+                </button>
+
+                <button
+                    class="btn"
+                    id="btn-next"
+                    onclick="navigateQuestion(1)">
+                    NEXT
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PALETTE -->
+
+        <div class="card palette-card">
+
+            <div class="palette-title">
+
+                <span>
+                    Question Palette
+                </span>
+
+                <span
+                    class="palette-progress"
+                    id="palette-progress">
+                    0/30
+                </span>
+
+            </div>
+
+            <div class="palette-grid"
+                 id="palette-grid">
+            </div>
+
+            <div class="palette-legend">
+
+                <div class="legend-item">
+                    <div class="legend-dot ans"></div>
+                    Answered
+                </div>
+
+                <div class="legend-item">
+                    <div class="legend-dot unans"></div>
+                    Skipped
+                </div>
+
+                <div class="legend-item">
+                    <div class="legend-dot curr"></div>
+                    Current
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= RESULT SCREEN ================= -->
+
+<div id="result-screen" class="screen">
+
+    <div class="card result-card">
+
+        <div class="result-header">
+
+            <h2>
+                Test Completed 🎉
+            </h2>
+
+            <p class="result-subtitle">
+                Well done,
+                <strong id="res-student-name">
+                    Student
+                </strong>
+            </p>
+
+        </div>
+
+
+        <div class="score-circle">
+
+            <div class="score-val"
+                 id="res-score">
+                0
+            </div>
+
+            <div class="score-max">
+                OUT OF 30
+            </div>
+
+        </div>
+
+
+        <div class="perf-msg"
+             id="res-perf-msg">
+            Keep Learning! 🚀
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card pc">
+
+                <div class="stat-val"
+                     id="res-percentage">
+                    0%
+                </div>
+
+                <div class="stat-lbl">
+                    Percentage
+                </div>
+
+            </div>
+
+
+            <div class="stat-card cor">
+
+                <div class="stat-val"
+                     id="res-correct">
+                    0
+                </div>
+
+                <div class="stat-lbl">
+                    Correct
+                </div>
+
+            </div>
+
+
+            <div class="stat-card incor">
+
+                <div class="stat-val"
+                     id="res-incorrect">
+                    0
+                </div>
+
+                <div class="stat-lbl">
+                    Incorrect
+                </div>
+
+            </div>
+
+
+            <div class="stat-card unatt">
+
+                <div class="stat-val"
+                     id="res-unattempted">
+                    0
+                </div>
+
+                <div class="stat-lbl">
+                    Unattempted
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-actions">
+
+            <button
+                class="btn btn-secondary"
+                onclick="showReviewScreen()">
+                REVIEW ANSWERS
+            </button>
+
+            <button
+                class="btn"
+                onclick="retakeTest()">
+                RETAKE TEST
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= REVIEW SCREEN ================= -->
+
+<div id="review-screen" class="screen">
+
+    <div class="review-header">
+
+        <div class="review-title">
+            Answer Review
+        </div>
+
+        <button
+            class="btn btn-secondary"
+            style="width:auto;padding:9px 13px;"
+            onclick="showResultScreen()">
+            BACK TO RESULT
+        </button>
+
+    </div>
+
+    <div class="review-list"
+         id="review-list">
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= CONFIRM MODAL ================= -->
+
+<div class="modal-overlay"
+     id="confirm-modal">
+
+    <div class="modal-card">
+
+        <div class="modal-title"
+             id="modal-title">
+            Submit Test?
+        </div>
+
+        <div class="modal-body"
+             id="modal-body">
+            Are you sure you want to submit your test?
+        </div>
+
+        <div class="modal-actions">
+
+            <button
+                class="btn btn-secondary"
+                onclick="closeModal()">
+                CANCEL
+            </button>
+
+            <button
+                class="btn"
+                onclick="finalSubmit()">
+                SUBMIT
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    Made with Love ❤️ in India by Pushpender
+</footer>
+
+
+<script>
+
+/* =========================================================
+   CHAPTER 6 — MASTER QUESTION BANK
+
+   SOURCE:
+   NCERT / PART B BOOK (1).pdf
+   UNIT 2 — ELECTRONIC SPREADSHEET (ADVANCED)
+   CHAPTER 6 — LINKING SPREADSHEET DATA
+
+   30 EXAM-ORIENTED QUESTIONS
+========================================================= */
+
+const rawQuestionBank = [
+
+{
+    id:1,
+
+    question:
+    "What is the main purpose of linking spreadsheet data across different sheets?",
+
+    options:[
+        "To avoid repeated data entry and reduce chances of errors",
+        "To permanently delete duplicate worksheets",
+        "To convert a spreadsheet into a presentation",
+        "To prevent formulas from being calculated"
+    ],
+
+    answer:0,
+
+    explanation:
+    "Linking allows data stored in different sheets to be referenced directly, reducing repeated typing and chances of errors."
+},
+
+{
+    id:2,
+
+    question:
+    "In the chapter example, marks for three terms are stored in:",
+
+    options:[
+        "Term1, Term2 and Term3 sheets",
+        "Only the Result sheet",
+        "Three different spreadsheet files only",
+        "Three different databases"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook example stores marks of three terminal examinations in sheets named Term1, Term2 and Term3."
+},
+
+{
+    id:3,
+
+    question:
+    "Which of the following is an ideal solution instead of retyping marks from different sheets?",
+
+    options:[
+        "Creating references to the required sheets",
+        "Deleting the original marks",
+        "Taking screenshots of every sheet",
+        "Converting all sheets into images"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook recommends referring to the marks stored in different sheets rather than retyping or copying them."
+},
+
+{
+    id:4,
+
+    question:
+    "How can a new sheet be added in LibreOffice Calc using the sheet tab area?",
+
+    options:[
+        "By clicking the + sign at the bottom-left of the spreadsheet",
+        "By pressing the Print button",
+        "By selecting Format > Cells",
+        "By clicking the Status Bar"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook states that a new sheet can be added by clicking the + sign located at the left bottom of the spreadsheet."
+},
+
+{
+    id:5,
+
+    question:
+    "Which option appears when you right-click on a sheet tab to add a new sheet?",
+
+    options:[
+        "Insert Sheet",
+        "Insert Chart",
+        "Insert Formula",
+        "Insert Database"
+    ],
+
+    answer:0,
+
+    explanation:
+    "Right-clicking a sheet tab provides the Insert Sheet option."
+},
+
+{
+    id:6,
+
+    question:
+    "The Insert Sheet dialog box can also be invoked using:",
+
+    options:[
+        "Sheet > Insert Sheet",
+        "Tools > Options > Macro",
+        "Data > Sort",
+        "Format > Cells"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook specifically gives Sheet > Insert Sheet as another way to open the Insert Sheet dialog box."
+},
+
+{
+    id:7,
+
+    question:
+    "In the textbook example, the sheet used to store second-term marks is named:",
+
+    options:[
+        "Term2",
+        "Term1",
+        "Result",
+        "Final"
+    ],
+
+    answer:0,
+
+    explanation:
+    "After inserting a new sheet, the textbook instructs the user to name it Term2."
+},
+
+{
+    id:8,
+
+    question:
+    "The active sheet in the example before inserting Term2 is:",
+
+    options:[
+        "Term1",
+        "Term2",
+        "Result",
+        "Final Result"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook identifies Term1 as the current or active sheet before Term2 is inserted."
+},
+
+{
+    id:9,
+
+    question:
+    "Which two methods are taught in the chapter for creating references to other sheets/documents?",
+
+    options:[
+        "Using keyboard and mouse, and linking external data",
+        "Using only keyboard and printer",
+        "Using only charts and images",
+        "Using macros and mail merge"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The chapter introduces two approaches: creating references using keyboard/mouse and linking external data."
+},
+
+{
+    id:10,
+
+    question:
+    "What is the purpose of the Result sheet in the textbook example?",
+
+    options:[
+        "To calculate final/average marks using data from other sheets",
+        "To store only student photographs",
+        "To delete the Term1 and Term2 sheets",
+        "To create a database"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The Result sheet is used to calculate final marks by referring to marks stored in Term1 and Term2."
+},
+
+{
+    id:11,
+
+    question:
+    "If marks from Term1 and Term2 are used to calculate average marks, which operation is required?",
+
+    options:[
+        "Add the two marks and divide by 2",
+        "Multiply the two marks by 2",
+        "Subtract Term2 from Term1",
+        "Divide Term1 by Term2"
+    ],
+
+    answer:0,
+
+    explanation:
+    "For two terms, the textbook example calculates the average as (Term1 marks + Term2 marks) / 2."
+},
+
+{
+    id:12,
+
+    question:
+    "After entering the formula in the first result cell, which feature is used to fill the formula for the remaining students?",
+
+    options:[
+        "Fill handle",
+        "Hyperlink",
+        "Navigator",
+        "Status bar"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook instructs students to use the fill handle to fill the formula up to the last student's data."
+},
+
+{
+    id:13,
+
+    question:
+    "What happens to the linked Result sheet when marks in the source sheets are changed?",
+
+    options:[
+        "The changed marks are reflected in the Result sheet",
+        "The Result sheet is automatically deleted",
+        "The source sheets become read-only",
+        "Nothing can ever change"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook explains that changes made to Term1 and Term2 are reflected in the Result sheet because the sheets are linked."
+},
+
+{
+    id:14,
+
+    question:
+    "To refer to a cell in another sheet, the cell reference is preceded by:",
+
+    options:[
+        "A $ sign",
+        "A # sign only",
+        "An @ sign",
+        "A % sign"
+    ],
+
+    answer:0,
+
+    explanation:
+    "For a reference to another sheet, the textbook describes using a $ sign before the sheet reference."
+},
+
+{
+    id:15,
+
+    question:
+    "In the reference example, what is written between the sheet name and the cell address?",
+
+    options:[
+        "A dot (.)",
+        "A slash (/)",
+        "A colon (:)",
+        "A semicolon (;)"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook shows the syntax with the sheet name followed by a dot and then the cell address."
+},
+
+{
+    id:16,
+
+    question:
+    "Why are single quotes used around a sheet name in the example $'Term 1'.C4?",
+
+    options:[
+        "Because the sheet name contains a space",
+        "Because every cell must use quotes",
+        "Because Calc does not allow numbers",
+        "Because the sheet is protected"
+    ],
+
+    answer:0,
+
+    explanation:
+    "Single quotes are used because the sheet name contains a space, as in 'Term 1'."
+},
+
+{
+    id:17,
+
+    question:
+    "What is required when the data to be referenced is stored in another spreadsheet file?",
+
+    options:[
+        "A reference to the other spreadsheet document",
+        "A new operating system",
+        "A screenshot of the file",
+        "A new printer"
+    ],
+
+    answer:0,
+
+    explanation:
+    "When data is stored in another spreadsheet file, a reference to that external spreadsheet is created."
+},
+
+{
+    id:18,
+
+    question:
+    "Which function is used in the textbook example to find the highest English score from two spreadsheet files?",
+
+    options:[
+        "MAX()",
+        "MIN()",
+        "COUNT()",
+        "SUMIF()"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook example uses MAX() to display the highest English score from the two result spreadsheets."
+},
+
+{
+    id:19,
+
+    question:
+    "When referring to a cell in a different spreadsheet file, the file path is followed by:",
+
+    options:[
+        "#$ followed by the sheet name and cell address",
+        "@@ followed by the cell only",
+        "%% followed by the worksheet name",
+        "// followed only by the cell"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook gives the external reference format using the file path followed by #$, sheet name and cell address."
+},
+
+{
+    id:20,
+
+    question:
+    "According to the textbook, a file path in an external spreadsheet reference contains how many forward slashes after file:?",
+
+    options:[
+        "Three",
+        "One",
+        "Two",
+        "Four"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The chapter notes that a file path uses three forward slashes, as in file:///."
+},
+
+{
+    id:21,
+
+    question:
+    "Which option allows a sheet from another spreadsheet file to be inserted into the current document?",
+
+    options:[
+        "From File in the Insert Sheet dialog box",
+        "From Macro in the Tools menu",
+        "From Chart in the Insert menu",
+        "From Formula in the Data menu"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The From File option of the Insert Sheet dialog box allows a sheet from another spreadsheet file to be inserted."
+},
+
+{
+    id:22,
+
+    question:
+    "What is the purpose of checking the Link checkbox while inserting a sheet from another file?",
+
+    options:[
+        "To ensure changes in the source sheet are reflected",
+        "To permanently copy the data without connection",
+        "To delete the source file",
+        "To protect the sheet with a password"
+    ],
+
+    answer:0,
+
+    explanation:
+    "Selecting Link keeps the inserted sheet connected so changes made in the source sheet can be reflected."
+},
+
+{
+    id:23,
+
+    question:
+    "What does 'live' data mean in the context of linked spreadsheets?",
+
+    options:[
+        "Data that remains the same as in the original source file",
+        "Data that is always converted into text",
+        "Data that cannot be edited",
+        "Data stored only in memory"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook describes live data as data that is always the same as in the original file."
+},
+
+{
+    id:24,
+
+    question:
+    "Where can linked data updating options be accessed according to the chapter?",
+
+    options:[
+        "Tools > Options > LibreOffice Calc > General > Updating",
+        "Insert > Hyperlink > Updating",
+        "Sheet > Insert Sheet > Updating",
+        "Data > Sort > Updating"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The chapter gives Tools > Options > LibreOffice Calc > General > Updating for link update settings."
+},
+
+{
+    id:25,
+
+    question:
+    "Which feature allows a user to jump from one document/location to another?",
+
+    options:[
+        "Hyperlink",
+        "Macro",
+        "Scenario",
+        "Goal Seek"
+    ],
+
+    answer:0,
+
+    explanation:
+    "A hyperlink can be used to jump to a document, spreadsheet sheet or website."
+},
+
+{
+    id:26,
+
+    question:
+    "Which statement correctly describes an absolute hyperlink?",
+
+    options:[
+        "It stores the complete location/path of the file",
+        "It stores only the current folder name",
+        "It never stores a file location",
+        "It can only point to a website"
+    ],
+
+    answer:0,
+
+    explanation:
+    "An absolute hyperlink stores the complete location where the file is stored."
+},
+
+{
+    id:27,
+
+    question:
+    "A relative hyperlink stores the location with respect to the:",
+
+    options:[
+        "Current location",
+        "Internet server only",
+        "Desktop wallpaper",
+        "Printer location"
+    ],
+
+    answer:0,
+
+    explanation:
+    "A relative hyperlink stores the location relative to the current location of the active spreadsheet/document."
+},
+
+{
+    id:28,
+
+    question:
+    "Which menu command is used to create a hyperlink in LibreOffice Calc?",
+
+    options:[
+        "Insert > Hyperlink",
+        "Tools > Macro",
+        "Data > Sort",
+        "Sheet > Delete"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook procedure begins by selecting Insert > Hyperlink from the main menu."
+},
+
+{
+    id:29,
+
+    question:
+    "Which option is used to insert tables from a webpage into LibreOffice Calc?",
+
+    options:[
+        "Sheet > Link to External Data",
+        "Insert > Chart",
+        "Tools > Macro",
+        "Format > Cells"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The chapter explains that webpage tables can be imported using Sheet > Link to External Data."
+},
+
+{
+    id:30,
+
+    question:
+    "Which option selects the entire HTML document while importing external webpage data?",
+
+    options:[
+        "HTML_all",
+        "HTML_10",
+        "WEB_all",
+        "HTML_full_page"
+    ],
+
+    answer:0,
+
+    explanation:
+    "The textbook states that selecting HTML_all chooses the entire HTML document. The chapter answer key also gives HTML_all for this fill-in-the-blank."
+}
+
+];
+
+
+/* =========================================================
+   TEST STATE
+========================================================= */
+
+let studentName="";
+let currentQuestions=[];
+let currentQuestionIndex=0;
+let userAnswers={};
+let timerInterval=null;
+let timeRemaining=1800;
+let isSubmitted=false;
+
+const STORAGE_KEY="THE_GOAL_PART_B_CH6_TEST";
+
+
+/* =========================================================
+   SHUFFLE
+========================================================= */
+
+function shuffleArray(array){
+
+    const arr=[...array];
+
+    for(let i=arr.length-1;i>0;i--){
+
+        const j=Math.floor(Math.random()*(i+1));
+
+        [arr[i],arr[j]]=[arr[j],arr[i]];
+    }
+
+    return arr;
+}
+
+
+/* =========================================================
+   PAGE LOAD / RESTORE
+========================================================= */
+
+window.addEventListener("DOMContentLoaded",()=>{
+
+    const savedState=
+        localStorage.getItem(STORAGE_KEY);
+
+    if(!savedState) return;
+
+    try{
+
+        const state=JSON.parse(savedState);
+
+        if(
+            state &&
+            !state.isSubmitted &&
+            state.timeRemaining>0 &&
+            state.currentQuestions?.length
+        ){
+
+            studentName=state.studentName;
+
+            currentQuestions=state.currentQuestions;
+
+            currentQuestionIndex=
+                state.currentQuestionIndex || 0;
+
+            userAnswers=
+                state.userAnswers || {};
+
+            timeRemaining=
+                state.timeRemaining;
+
+            document.getElementById("student-name")
+                .value=studentName;
+
+            document.getElementById(
+                "display-student-name"
+            ).textContent=studentName;
+
+            showScreen("quiz-screen");
+
+            initQuizUI();
+
+            startTimer();
+        }
+
+    }catch(error){
+
+        console.error(error);
+
+        localStorage.removeItem(STORAGE_KEY);
+    }
+
+});
+
+
+/* =========================================================
+   SAVE STATE
+========================================================= */
+
+function saveState(){
+
+    if(isSubmitted) return;
+
+    const state={
+
+        studentName,
+
+        currentQuestions,
+
+        currentQuestionIndex,
+
+        userAnswers,
+
+        timeRemaining,
+
+        isSubmitted
+
+    };
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(state)
+    );
+}
+
+
+/* =========================================================
+   START TEST
+========================================================= */
+
+function startTest(){
+
+    const input=
+        document.getElementById("student-name");
+
+    const name=input.value.trim();
+
+    if(!name) return;
+
+    studentName=name;
+
+    document.getElementById(
+        "display-student-name"
+    ).textContent=studentName;
+
+    prepareQuestions();
+
+    currentQuestionIndex=0;
+
+    userAnswers={};
+
+    timeRemaining=1800;
+
+    isSubmitted=false;
+
+    showScreen("quiz-screen");
+
+    initQuizUI();
+
+    startTimer();
+
+    saveState();
+}
+
+
+/* =========================================================
+   PREPARE QUESTIONS
+   QUESTION + OPTION ORDER RANDOMIZATION
+========================================================= */
+
+function prepareQuestions(){
+
+    const shuffled=
+        shuffleArray(rawQuestionBank);
+
+    currentQuestions=
+        shuffled.map(q=>{
+
+            const optionObjects=
+                q.options.map((text,index)=>({
+
+                    text,
+
+                    correct:index===q.answer
+
+                }));
+
+            const shuffledOptions=
+                shuffleArray(optionObjects);
+
+            const newAnswer=
+                shuffledOptions.findIndex(
+                    option=>option.correct
+                );
+
+            return{
+
+                id:q.id,
+
+                question:q.question,
+
+                options:
+                    shuffledOptions.map(
+                        option=>option.text
+                    ),
+
+                answer:newAnswer,
+
+                explanation:q.explanation
+            };
+
+        });
+}
+
+
+/* =========================================================
+   SCREEN
+========================================================= */
+
+function showScreen(screenId){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen=>{
+
+            screen.classList.remove("active");
+
+        });
+
+    document
+        .getElementById(screenId)
+        .classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+function startTimer(){
+
+    clearInterval(timerInterval);
+
+    updateTimerDisplay();
+
+    timerInterval=setInterval(()=>{
+
+        timeRemaining--;
+
+        saveState();
+
+        updateTimerDisplay();
+
+        if(timeRemaining<=0){
+
+            clearInterval(timerInterval);
+
+            autoSubmitTest();
+        }
+
+    },1000);
+}
+
+
+function updateTimerDisplay(){
+
+    if(timeRemaining<0)
+        timeRemaining=0;
+
+    const minutes=
+        Math.floor(timeRemaining/60);
+
+    const seconds=
+        timeRemaining%60;
+
+    const display=
+        `⏱️ ${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+
+    const badge=
+        document.getElementById(
+            "timer-display"
+        );
+
+    badge.textContent=display;
+
+    if(timeRemaining<=180){
+
+        badge.className=
+            "timer-badge danger";
+
+    }else if(timeRemaining<=300){
+
+        badge.className=
+            "timer-badge warning";
+
+    }else{
+
+        badge.className=
+            "timer-badge";
+    }
+}
+
+
+/* =========================================================
+   QUIZ UI
+========================================================= */
+
+function initQuizUI(){
+
+    renderPalette();
+
+    renderQuestion();
+}
+
+
+function renderQuestion(){
+
+    const q=
+        currentQuestions[currentQuestionIndex];
+
+    document.getElementById(
+        "q-number-text"
+    ).textContent=
+        `Question ${currentQuestionIndex+1} of ${currentQuestions.length}`;
+
+    document.getElementById(
+        "q-text"
+    ).textContent=
+        q.question;
+
+    const progress=
+        ((currentQuestionIndex+1)/
+        currentQuestions.length)*100;
+
+    document.getElementById(
+        "progress-bar"
+    ).style.width=
+        `${progress}%`;
+
+    const container=
+        document.getElementById(
+            "options-container"
+        );
+
+    container.innerHTML="";
+
+    const keys=["A","B","C","D"];
+
+    const selected=
+        userAnswers[currentQuestionIndex];
+
+    q.options.forEach((option,index)=>{
+
+        const card=
+            document.createElement("div");
+
+        card.className=
+            "option-card"+
+            (selected===index
+                ?" selected"
+                :"");
+
+        card.onclick=()=>{
+            selectOption(index);
+        };
+
+        const key=
+            document.createElement("div");
+
+        key.className="option-key";
+
+        key.textContent=
+            keys[index];
+
+        const text=
+            document.createElement("div");
+
+        text.className="option-val";
+
+        text.textContent=option;
+
+        card.appendChild(key);
+
+        card.appendChild(text);
+
+        container.appendChild(card);
+
+    });
+
+    document.getElementById(
+        "btn-prev"
+    ).style.visibility=
+        currentQuestionIndex===0
+        ?"hidden"
+        :"visible";
+
+    document.getElementById(
+        "btn-next"
+    ).style.display=
+        currentQuestionIndex===
+        currentQuestions.length-1
+        ?"none"
+        :"inline-flex";
+
+    updatePaletteUI();
+}
+
+
+/* =========================================================
+   SELECT OPTION
+========================================================= */
+
+function selectOption(index){
+
+    userAnswers[currentQuestionIndex]=index;
+
+    renderQuestion();
+
+    updatePaletteUI();
+
+    saveState();
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function navigateQuestion(direction){
+
+    const newIndex=
+        currentQuestionIndex+direction;
+
+    if(
+        newIndex>=0 &&
+        newIndex<currentQuestions.length
+    ){
+
+        currentQuestionIndex=newIndex;
+
+        renderQuestion();
+
+        saveState();
+    }
+}
+
+
+function jumpToQuestion(index){
+
+    currentQuestionIndex=index;
+
+    renderQuestion();
+
+    saveState();
+}
+
+
+/* =========================================================
+   PALETTE
+========================================================= */
+
+function renderPalette(){
+
+    const grid=
+        document.getElementById(
+            "palette-grid"
+        );
+
+    grid.innerHTML="";
+
+    currentQuestions.forEach((_,index)=>{
+
+        const button=
+            document.createElement("button");
+
+        button.className="p-btn";
+
+        button.id=
+            `palette-btn-${index}`;
+
+        button.textContent=
+            index+1;
+
+        button.onclick=()=>{
+            jumpToQuestion(index);
+        };
+
+        grid.appendChild(button);
+
+    });
+
+    updatePaletteUI();
+}
+
+
+function updatePaletteUI(){
+
+    const total=
+        currentQuestions.length;
+
+    let answered=0;
+
+    currentQuestions.forEach((_,index)=>{
+
+        const button=
+            document.getElementById(
+                `palette-btn-${index}`
+            );
+
+        if(!button) return;
+
+        button.className="p-btn";
+
+        if(userAnswers[index]!==undefined){
+
+            button.classList.add("answered");
+
+            answered++;
+        }
+
+        if(index===currentQuestionIndex){
+
+            button.classList.add("current");
+        }
+
+    });
+
+    document.getElementById(
+        "palette-progress"
+    ).textContent=
+        `${answered}/${total}`;
+}
+
+
+/* =========================================================
+   SUBMIT CONFIRMATION
+========================================================= */
+
+function confirmSubmit(){
+
+    const total=
+        currentQuestions.length;
+
+    const answered=
+        Object.keys(userAnswers).length;
+
+    const unanswered=
+        total-answered;
+
+    const title=
+        document.getElementById(
+            "modal-title"
+        );
+
+    const body=
+        document.getElementById(
+            "modal-body"
+        );
+
+    if(unanswered>0){
+
+        title.textContent=
+            "Unanswered Questions!";
+
+        body.textContent=
+            `You have ${unanswered} unanswered question(s). Are you sure you want to submit your test?`;
+
+    }else{
+
+        title.textContent=
+            "Submit Test?";
+
+        body.textContent=
+            "All questions have been answered. Are you sure you want to submit your test?";
+    }
+
+    document
+        .getElementById("confirm-modal")
+        .classList.add("active");
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById("confirm-modal")
+        .classList.remove("active");
+}
+
+
+function autoSubmitTest(){
+
+    closeModal();
+
+    processSubmission();
+}
+
+
+function finalSubmit(){
+
+    closeModal();
+
+    processSubmission();
+}
+
+
+/* =========================================================
+   RESULT PROCESSING
+========================================================= */
+
+function processSubmission(){
+
+    if(isSubmitted) return;
+
+    clearInterval(timerInterval);
+
+    isSubmitted=true;
+
+    localStorage.removeItem(STORAGE_KEY);
+
+    let correct=0;
+
+    let incorrect=0;
+
+    let unattempted=0;
+
+    currentQuestions.forEach((q,index)=>{
+
+        const userAnswer=
+            userAnswers[index];
+
+        if(userAnswer===undefined){
+
+            unattempted++;
+
+        }else if(
+            userAnswer===q.answer
+        ){
+
+            correct++;
+
+        }else{
+
+            incorrect++;
+        }
+
+    });
+
+    const score=correct;
+
+    const percentage=
+        Math.round(
+            (score/currentQuestions.length)*100
+        );
+
+    document.getElementById(
+        "res-student-name"
+    ).textContent=
+        studentName;
+
+    document.getElementById(
+        "res-score"
+    ).textContent=
+        score;
+
+    document.getElementById(
+        "res-percentage"
+    ).textContent=
+        `${percentage}%`;
+
+    document.getElementById(
+        "res-correct"
+    ).textContent=
+        correct;
+
+    document.getElementById(
+        "res-incorrect"
+    ).textContent=
+        incorrect;
+
+    document.getElementById(
+        "res-unattempted"
+    ).textContent=
+        unattempted;
+
+    const performance=
+        document.getElementById(
+            "res-perf-msg"
+        );
+
+    if(percentage>=90){
+
+        performance.textContent=
+            "Outstanding! 🔥";
+
+    }else if(percentage>=75){
+
+        performance.textContent=
+            "Excellent Work! 👏";
+
+    }else if(percentage>=60){
+
+        performance.textContent=
+            "Good Job! 👍";
+
+    }else if(percentage>=40){
+
+        performance.textContent=
+            "Keep Practising! 💪";
+
+    }else{
+
+        performance.textContent=
+            "Revise the Chapter & Try Again! 📚";
+    }
+
+    showScreen("result-screen");
+}
+
+
+/* =========================================================
+   REVIEW
+========================================================= */
+
+function showReviewScreen(){
+
+    const list=
+        document.getElementById(
+            "review-list"
+        );
+
+    list.innerHTML="";
+
+    const keys=["A","B","C","D"];
+
+    currentQuestions.forEach((q,index)=>{
+
+        const userAnswer=
+            userAnswers[index];
+
+        const unattempted=
+            userAnswer===undefined;
+
+        const correct=
+            !unattempted &&
+            userAnswer===q.answer;
+
+        let statusClass=
+            "status-incorrect";
+
+        let badge=
+            `<span class="status-badge incorrect">
+                Incorrect
+            </span>`;
+
+        if(unattempted){
+
+            statusClass=
+                "status-unattempted";
+
+            badge=
+                `<span class="status-badge unattempted">
+                    Not Attempted
+                </span>`;
+
+        }else if(correct){
+
+            statusClass=
+                "status-correct";
+
+            badge=
+                `<span class="status-badge correct">
+                    Correct
+                </span>`;
+        }
+
+        const userText=
+            unattempted
+            ?"Not Attempted"
+            :`${keys[userAnswer]}. ${q.options[userAnswer]}`;
+
+        const correctText=
+            `${keys[q.answer]}. ${q.options[q.answer]}`;
+
+        const item=
+            document.createElement("div");
+
+        item.className=
+            `review-item ${statusClass}`;
+
+        const head=
+            document.createElement("div");
+
+        head.className=
+            "review-q-head";
+
+        const number=
+            document.createElement("span");
+
+        number.className=
+            "review-q-num";
+
+        number.textContent=
+            `Question ${index+1} of 30`;
+
+        const status=
+            document.createElement("div");
+
+        status.innerHTML=badge;
+
+        head.appendChild(number);
+
+        head.appendChild(status);
+
+
+        const question=
+            document.createElement("div");
+
+        question.className=
+            "review-q-text";
+
+        question.textContent=
+            q.question;
+
+
+        const answerGrid=
+            document.createElement("div");
+
+        answerGrid.className=
+            "review-ans-grid";
+
+
+        const userBox=
+            document.createElement("div");
+
+        userBox.className=
+            "ans-box user-ans "+
+            (
+                correct
+                ?"correct"
+                :unattempted
+                ?""
+                :"incorrect"
+            );
+
+        userBox.innerHTML=
+            `
+            <div class="ans-box-lbl">
+                Your Answer
+            </div>
+
+            <div class="ans-box-val">
+                ${escapeHTML(userText)}
+            </div>
+            `;
+
+
+        const correctBox=
+            document.createElement("div");
+
+        correctBox.className=
+            "ans-box correct-ans";
+
+        correctBox.innerHTML=
+            `
+            <div class="ans-box-lbl">
+                Correct Answer
+            </div>
+
+            <div class="ans-box-val">
+                ${escapeHTML(correctText)}
+            </div>
+            `;
+
+
+        answerGrid.appendChild(userBox);
+
+        answerGrid.appendChild(correctBox);
+
+
+        const explanation=
+            document.createElement("div");
+
+        explanation.className=
+            "explanation-box";
+
+        explanation.innerHTML=
+            `
+            <strong>Explanation:</strong>
+            ${escapeHTML(q.explanation)}
+            `;
+
+
+        item.appendChild(head);
+
+        item.appendChild(question);
+
+        item.appendChild(answerGrid);
+
+        item.appendChild(explanation);
+
+        list.appendChild(item);
+
+    });
+
+    showScreen("review-screen");
+}
+
+
+function showResultScreen(){
+
+    showScreen("result-screen");
+}
+
+
+/* =========================================================
+   RETAKE
+========================================================= */
+
+function retakeTest(){
+
+    localStorage.removeItem(
+        STORAGE_KEY
+    );
+
+    prepareQuestions();
+
+    currentQuestionIndex=0;
+
+    userAnswers={};
+
+    timeRemaining=1800;
+
+    isSubmitted=false;
+
+    document.getElementById(
+        "display-student-name"
+    ).textContent=
+        studentName;
+
+    showScreen("quiz-screen");
+
+    initQuizUI();
+
+    startTimer();
+
+    saveState();
+}
+
+
+/* =========================================================
+   SECURITY / HTML ESCAPE
+========================================================= */
+
+function escapeHTML(str){
+
+    return String(str)
+
+        .replace(/&/g,"&amp;")
+
+        .replace(/</g,"&lt;")
+
+        .replace(/>/g,"&gt;")
+
+        .replace(/"/g,"&quot;")
+
+        .replace(/'/g,"&#039;");
+}
+
+</script>
+
+</body>
+</html>
