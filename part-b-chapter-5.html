@@ -1,0 +1,2753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | IT 402 | Part B | Chapter 5</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#252525;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.6;
+}
+
+/* ================= TOP BAR ================= */
+
+.topbar{
+    background:#172033;
+    color:#fff;
+    text-align:center;
+    padding:22px 15px 20px;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:4px;
+    opacity:.78;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:46px;
+    font-weight:600;
+    margin-top:3px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.82;
+}
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    width:min(1100px,96%);
+    margin:25px auto 45px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+
+    position:relative;
+
+    padding:38px 48px 70px 92px;
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.18),
+        0 25px 60px rgba(0,0,0,.13);
+
+    min-height:100vh;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#df8f8f;
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:8px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover-small{
+    color:#555;
+    font-size:16px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:55px;
+    line-height:1;
+    color:#183f72;
+    margin:8px 0 12px;
+}
+
+.cover p{
+    font-size:19px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff0a6;
+    border:2px solid #555;
+    padding:3px 12px;
+    margin-top:14px;
+    font-size:16px;
+    transform:rotate(-1deg);
+}
+
+.source{
+    font-size:14px !important;
+    color:#666;
+    margin-top:10px;
+}
+
+/* ================= CHAPTER MAP ================= */
+
+.chapter-map{
+    margin:25px 0 35px;
+    padding:18px 20px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.58);
+}
+
+.chapter-map h3{
+    margin-top:0;
+}
+
+.chapter-map ul{
+    margin-bottom:0;
+}
+
+/* ================= SECTIONS ================= */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:35px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    margin-bottom:16px;
+    transform:rotate(-1deg);
+}
+
+.session-number{
+    color:#b42d2d;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#242424;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    color:#254d75;
+    margin:15px 0 5px;
+}
+
+p,
+li{
+    font-size:18px;
+}
+
+ul,
+ol{
+    margin:5px 0 13px 27px;
+}
+
+li{
+    margin:3px 0;
+}
+
+/* ================= HIGHLIGHT ================= */
+
+.highlight{
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(255,225,80,.75) 25%,
+            rgba(255,225,80,.75) 82%,
+            transparent 82%
+        );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b32d2d;
+    font-weight:bold;
+}
+
+/* ================= BOXES ================= */
+
+.important{
+    margin:18px 0;
+    padding:17px 19px;
+    background:rgba(255,242,164,.68);
+    border:2px solid #555;
+    transform:rotate(-.2deg);
+}
+
+.exam{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(255,255,255,.55);
+    border-left:5px solid #b52d2d;
+}
+
+.exam-title{
+    color:#b52d2d;
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(226,239,251,.62);
+    border-left:5px solid #55718d;
+}
+
+.green{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(224,241,220,.65);
+    border-left:5px solid #39723b;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:18px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.5);
+}
+
+th,
+td{
+    border:1.5px solid #555;
+    padding:10px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:22px;
+}
+
+/* ================= STEPS ================= */
+
+.steps{
+    counter-reset:step;
+    list-style:none;
+    margin-left:0;
+}
+
+.steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:43px;
+    margin:9px 0;
+}
+
+.steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;
+    top:0;
+    width:28px;
+    height:28px;
+    border:2px solid #444;
+    border-radius:50%;
+    text-align:center;
+    line-height:24px;
+    background:#fff1a5;
+    font-weight:bold;
+}
+
+/* ================= CODE ================= */
+
+.codebox{
+    margin:18px 0;
+    padding:17px 20px;
+    background:#172033;
+    color:#fff;
+    border-radius:4px;
+    font-family:monospace;
+    font-size:16px;
+    overflow-x:auto;
+}
+
+.codebox .comment{
+    color:#b7c7d9;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:18px 0;
+    padding:18px;
+    text-align:center;
+    background:rgba(255,255,255,.65);
+    border:2px dashed #55718d;
+    font-family:monospace;
+    font-size:18px;
+    overflow-x:auto;
+}
+
+/* ================= QUICK ================= */
+
+.quick{
+    border:3px solid #444;
+    padding:20px;
+    margin-top:30px;
+    background:rgba(255,255,255,.52);
+    transform:rotate(.15deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+/* ================= DOODLE ================= */
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:21px;
+    margin:27px 0;
+    letter-spacing:6px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+    margin-top:50px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .notebook{
+        width:100%;
+        margin:0;
+        padding:30px 18px 60px 57px;
+    }
+
+    .notebook::before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:37px;
+    }
+
+    .cover h2{
+        font-size:43px;
+    }
+
+    p,
+    li{
+        font-size:17px;
+    }
+
+    .session-title{
+        font-size:30px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • INFORMATION TECHNOLOGY 402
+    </div>
+
+    <h1>
+        Part B — Electronic Spreadsheet (Advanced)
+    </h1>
+
+    <p>
+        Chapter 5 • Using Macros in Spreadsheet
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+    <div class="cover-small">
+        📊 CHAPTER 5 • EXAM-ORIENTED NOTES
+    </div>
+
+    <h2>
+        Using Macros in Spreadsheet
+    </h2>
+
+    <p>
+
+        This chapter explains how
+
+        <span class="highlight">macros</span>
+
+        can be used to automate repeated tasks
+        in LibreOffice Calc.
+
+    </p>
+
+    <span class="badge">
+        ✍️ NOTES ONLY • NO TOP 50 TEST
+    </span>
+
+    <p class="source">
+
+        <b>Source:</b> NCERT Domestic Data Entry Operator —
+        Class X, 2023–24, Part B, Unit 2, Chapter 5.
+
+    </p>
+
+</section>
+
+
+<!-- ================= CHAPTER MAP ================= -->
+
+<section class="chapter-map">
+
+    <h3>🗺️ Chapter Roadmap</h3>
+
+    <ul>
+
+        <li>Introduction to Macros</li>
+
+        <li>Recording a Macro</li>
+
+        <li>Enabling Macro Recording</li>
+
+        <li>Actions Not Recorded by Macro</li>
+
+        <li>Saving a Macro</li>
+
+        <li>Macro, Library and Module</li>
+
+        <li>Rules for Naming Macro / Module / Library</li>
+
+        <li>Running a Macro</li>
+
+        <li>Editing Macro Code</li>
+
+        <li>Creating and Organising a Simple Macro</li>
+
+        <li>Macro as a Function</li>
+
+        <li>Arguments and Return Value</li>
+
+        <li>Using a Macro as a Function in Calc</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ================= SECTION 01 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">01.</span>
+
+    Introduction to Macros
+
+</div>
+
+
+<p>
+
+Many spreadsheet tasks are performed repeatedly.
+
+For example, entering the same school name,
+address or contact information with a particular
+format, or applying the same formula to different
+sheets.
+
+</p>
+
+
+<p>
+
+Performing such tasks manually again and again
+can take time and may lead to typing or formatting
+mistakes.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        A <span class="highlight">Macro</span> can be used
+        to automate repeated tasks that are performed
+        in the same way repeatedly.
+
+    </p>
+
+</div>
+
+
+<h3>Definition of Macro</h3>
+
+<p>
+
+A macro is a
+
+<span class="highlight">single instruction that executes
+a set of instructions.</span>
+
+</p>
+
+
+<p>
+
+These instructions may be a sequence of
+
+<b>commands or keystrokes</b>
+
+that can be used any number of times later.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM DEFINITION
+    </div>
+
+    <p>
+
+        <b>
+
+        Macro is a single instruction that executes
+        a set of instructions.
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 02 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">02.</span>
+
+    Advantages of Macros
+
+</div>
+
+
+<ul>
+
+    <li>Automates repeated tasks.</li>
+
+    <li>Saves time.</li>
+
+    <li>Reduces repeated manual work.</li>
+
+    <li>Helps maintain standardisation.</li>
+
+    <li>Reduces typing mistakes in repeated tasks.</li>
+
+</ul>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        <b>
+
+        Repeated Task → Record Once → Run Again
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 03 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">03.</span>
+
+    Enabling Macro Recording
+
+</div>
+
+
+<p>
+
+By default, the
+
+<span class="highlight">macro recording feature
+is turned off</span>
+
+when LibreOffice is installed.
+
+</p>
+
+
+<p>
+
+Therefore, before recording a macro, macro recording
+must be enabled.
+
+</p>
+
+
+<h3>Steps to Enable Macro Recording</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Click <b>Tools</b> on the main menu bar.
+
+</li>
+
+<li>
+
+Select <b>Options</b>.
+
+</li>
+
+<li>
+
+Select <b>LibreOffice</b>.
+
+</li>
+
+<li>
+
+Select <b>Advanced</b>.
+
+</li>
+
+<li>
+
+Under <b>Optional Features</b>, locate
+
+<b>Enable macro recording</b>.
+
+</li>
+
+<li>
+
+Put a check mark on
+
+<b>Enable macro recording</b>.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT MENU PATH
+    </div>
+
+    <p>
+
+        <b>
+
+        Tools → Options → LibreOffice → Advanced
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 04 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">04.</span>
+
+    Recording a Macro
+
+</div>
+
+
+<p>
+
+Once macro recording has been enabled,
+the <b>Record Macro</b> option becomes available
+under the Tools → Macros menu.
+
+</p>
+
+
+<h3>Procedure</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Click
+
+<b>Tools → Macros → Record Macro</b>.
+
+</li>
+
+<li>
+
+Start performing the actions that you want to record.
+
+</li>
+
+<li>
+
+When recording starts, a small alert is displayed.
+
+</li>
+
+<li>
+
+Click <b>Stop Recording</b> when the required actions
+are completed.
+
+</li>
+
+<li>
+
+The <b>Basic Macros</b> dialog box opens.
+
+</li>
+
+<li>
+
+Select the object where the macro has to be saved.
+
+</li>
+
+<li>
+
+Give the macro a suitable name.
+
+</li>
+
+<li>
+
+Click <b>Save</b>.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM PATH
+    </div>
+
+    <p>
+
+        <b>Tools → Macros → Record Macro</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 05 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">05.</span>
+
+    Actions Recorded by Macro
+
+</div>
+
+
+<p>
+
+The Macro Recorder records keyboard and mouse
+actions performed during the recording.
+
+</p>
+
+
+<p>
+
+However, some actions are specifically not recorded.
+
+</p>
+
+
+<h3>Actions NOT Recorded</h3>
+
+
+<ul>
+
+    <li>Opening of windows.</li>
+
+    <li>Actions carried out in another window from
+    where recording was started.</li>
+
+    <li>Window switching.</li>
+
+    <li>Actions unrelated to spreadsheet contents.</li>
+
+    <li>Changes made in the Options dialog.</li>
+
+    <li>Actions in Macro Organizer.</li>
+
+    <li>Customizing actions.</li>
+
+</ul>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Important:</b>
+
+        Selections are recorded only when they are
+        made using the keyboard/cursor movement,
+        not when the mouse is used for selection.
+
+    </p>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Exam Fact:</b>
+
+    <p>
+
+        The macro recorder works only in
+
+        <b>Calc and Writer</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 06 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">06.</span>
+
+    Saving a Macro
+
+</div>
+
+
+<p>
+
+After recording is stopped, the
+
+<span class="highlight">Basic Macros dialog</span>
+
+appears.
+
+</p>
+
+
+<p>
+
+The recorded macro can then be saved in the
+required object/library.
+
+</p>
+
+
+<h3>Important Points</h3>
+
+
+<ul>
+
+    <li>
+
+        A <b>Standard Library</b> is present by default
+        when a spreadsheet is created and saved.
+
+    </li>
+
+    <li>
+
+        The default macro name is
+
+        <b>Main</b>.
+
+    </li>
+
+    <li>
+
+        By default, Main is saved in the
+
+        <b>Standard Library → Module1</b>.
+
+    </li>
+
+    <li>
+
+        The macro name can be changed.
+
+    </li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ REMEMBER
+    </div>
+
+    <p>
+
+        Default Macro Name → <b>Main</b>
+
+        <br>
+
+        Default Library → <b>Standard Library</b>
+
+        <br>
+
+        Default Module → <b>Module1</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 07 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">07.</span>
+
+    Library and Module
+
+</div>
+
+
+<h3>Library</h3>
+
+<p>
+
+A
+
+<span class="highlight">Library</span>
+
+is a collection of modules.
+
+</p>
+
+
+<h3>Module</h3>
+
+<p>
+
+A module contains macros.
+
+Therefore:
+
+</p>
+
+
+<div class="formula">
+
+Library → Modules → Macros
+
+</div>
+
+
+<div class="important">
+
+    <p>
+
+        <b>
+
+        A Library is a collection of modules,
+        which in turn is a collection of macros.
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 08 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">08.</span>
+
+    Macro Naming Rules
+
+</div>
+
+
+<p>
+
+The chapter specifies rules that must be followed
+while naming a Macro, Module or Library.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+    <th>Rule</th>
+
+    <th>Requirement</th>
+
+</tr>
+
+<tr>
+
+<td>First character</td>
+
+<td>
+
+Name should begin with a <b>letter</b>.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Spaces</td>
+
+<td>
+
+Spaces are <b>not allowed</b>.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Special characters</td>
+
+<td>
+
+Special characters are not allowed except
+
+<b>underscore (_)</b>.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<h3>Examples</h3>
+
+
+<div class="formula">
+
+FormatHeading
+
+<br><br>
+
+Format_Heading
+
+</div>
+
+
+<p>
+
+Names such as the following are invalid:
+
+</p>
+
+
+<div class="formula">
+
+1formatword
+
+<br>
+
+format word
+
+<br>
+
+format*word
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM TRAP
+    </div>
+
+    <p>
+
+        <b>Format_word</b> is valid because underscore
+        is allowed.
+
+    </p>
+
+    <p>
+
+        <b>format word</b> is invalid because spaces
+        are not allowed.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 09 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">09.</span>
+
+    Running a Macro
+
+</div>
+
+
+<p>
+
+A previously created macro can be run whenever
+the same task is required again.
+
+</p>
+
+
+<h3>Procedure</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Type the required heading or data in the worksheet.
+
+</li>
+
+<li>
+
+Click
+
+<b>Tools → Macros → Run Macro</b>.
+
+</li>
+
+<li>
+
+The <b>Macro Selector</b> dialog box opens.
+
+</li>
+
+<li>
+
+Select the required library and module.
+
+</li>
+
+<li>
+
+Select the required macro from the Macro Name list.
+
+</li>
+
+<li>
+
+Click <b>Run</b>.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT
+    </div>
+
+    <p>
+
+        <b>Tools → Macros → Run Macro</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 10 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">10.</span>
+
+    Macro Libraries
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Library</th>
+
+<th>Meaning</th>
+
+</tr>
+
+<tr>
+
+<td><b>LibreOffice Macros</b></td>
+
+<td>
+
+Provided by LibreOffice and contains modules
+with prerecorded macros. It should not be changed.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>My Macros</b></td>
+
+<td>
+
+Contains macros that we write or add to LibreOffice.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Untitled1</b></td>
+
+<td>
+
+Name of the worksheet being worked on when it
+has not yet been saved with another name.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ DIRECT EXAM POINT
+    </div>
+
+    <p>
+
+        <b>LibreOffice Macros</b> library contains
+        prerecorded macros and should not be changed.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 11 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">11.</span>
+
+    Macro Code and BASIC
+
+</div>
+
+
+<p>
+
+The actions recorded by a macro are stored as
+instructions in a programming language called
+
+<span class="highlight">BASIC</span>.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>
+
+        BASIC is the programming language used for
+        the recorded macro instructions in Calc.
+
+        </b>
+
+    </p>
+
+</div>
+
+
+<h3>Viewing Macro Code</h3>
+
+
+<p>
+
+The generated macro code can be viewed through:
+
+</p>
+
+
+<div class="formula">
+
+Tools → Macros → Edit Macros
+
+</div>
+
+
+<p>
+
+The selected macro's associated code can be viewed
+in the IDE.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ WARNING FROM TEXTBOOK
+    </div>
+
+    <p>
+
+        Macro code should not be changed unless you
+        have knowledge of the language in which it
+        is written.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 12 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">12.</span>
+
+    Structure of Macro Code
+
+</div>
+
+
+<p>
+
+The code of a macro begins with
+
+<b>Sub</b>
+
+followed by the name of the macro and ends with
+
+<b>End Sub</b>.
+
+</p>
+
+
+<div class="codebox">
+
+Sub FormatHeading
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;' Macro instructions
+
+<br>
+
+End Sub
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ FILL IN THE BLANK
+    </div>
+
+    <p>
+
+        Macro code begins with <b>Sub</b> and ends with
+        <b>End Sub</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 13 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">13.</span>
+
+    Creating and Organising a Simple Macro
+
+</div>
+
+
+<p>
+
+Macros can also be organised manually by creating
+libraries and modules.
+
+</p>
+
+
+<h3>Opening Basic Macro Organiser</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Click
+
+<b>Tools → Macros → Organize Macros →
+LibreOffice Basic</b>.
+
+</li>
+
+<li>
+
+The LibreOffice Basic Macro dialog opens.
+
+</li>
+
+<li>
+
+Click <b>Organizer</b>.
+
+</li>
+
+<li>
+
+The Basic Macro Organizer opens.
+
+</li>
+
+</ol>
+
+
+<h3>Creating a Library</h3>
+
+
+<p>
+
+To create a new library containing modules:
+
+</p>
+
+
+<div class="formula">
+
+Library → New
+
+</div>
+
+
+<p>
+
+The newly created library can then be used to
+organise modules and macros.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ MENU PATH
+    </div>
+
+    <p>
+
+        <b>
+
+        Tools → Macros → Organize Macros →
+        LibreOffice Basic
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 14 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">14.</span>
+
+    IDE — Integrated Development Environment
+
+</div>
+
+
+<p>
+
+The chapter introduces the
+
+<span class="highlight">IDE</span>
+
+for viewing and editing macro code.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>IDE</b> stands for
+
+        <b>Integrated Development Environment</b>.
+
+    </p>
+
+</div>
+
+
+<p>
+
+The IDE displays the programming code associated
+with the macro.
+
+</p>
+
+
+<div class="memory">
+
+    <b>🧠 Exam Memory:</b>
+
+    <p>
+
+        IDE = <b>Integrated Development Environment</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 15 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">15.</span>
+
+    Macro as a Function
+
+</div>
+
+
+<p>
+
+The chapter also explains that a macro can be used
+as a function in Calc.
+
+</p>
+
+
+<p>
+
+A macro used as a function can
+
+<span class="highlight">accept arguments/values</span>
+
+and return a
+
+<span class="highlight">result/value</span>.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>
+
+        Macro as Function → Accepts arguments/values
+        → Returns result/value
+
+        </b>
+
+    </p>
+
+</div>
+
+
+<h3>Difference from Normal Macro</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Macro</th>
+
+<th>Macro as Function</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Executes a set of recorded/programmed instructions.
+
+</td>
+
+<td>
+
+Can accept input values and return a result/value.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Used mainly for automation of tasks.
+
+</td>
+
+<td>
+
+Can be used in a spreadsheet formula-like manner.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 16 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">16.</span>
+
+    Arguments and Return Value
+
+</div>
+
+
+<h3>Arguments / Values</h3>
+
+<p>
+
+Arguments are the input values supplied to a
+macro function.
+
+</p>
+
+
+<h3>Result / Value</h3>
+
+<p>
+
+The return value is the result produced by the
+macro function.
+
+</p>
+
+
+<div class="formula">
+
+Input / Arguments → Macro Function → Result / Value
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ FILL-IN-THE-BLANK FOCUS
+    </div>
+
+    <p>
+
+        A macro as a function is capable of accepting
+
+        <b>arguments/values</b>
+
+        and returning a
+
+        <b>result/value</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 17 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">17.</span>
+
+    Function Example — Number of Tiles
+
+</div>
+
+
+<p>
+
+The textbook demonstrates a macro as a function
+using a calculation for the
+
+<b>number of tiles</b>
+
+required.
+
+</p>
+
+
+<p>
+
+The macro function accepts required values and
+returns the calculated result.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        The important concept is not merely the example,
+        but the way a macro can be designed to
+
+        <b>accept values and return a result</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 18 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">18.</span>
+
+    Running a Macro from IDE
+
+</div>
+
+
+<p>
+
+The chapter also covers execution of a module from
+the IDE.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM FACT
+    </div>
+
+    <p>
+
+        A module can be executed from the IDE by
+        pressing <b>F5</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 19 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">19.</span>
+
+    Important Macro Terms
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Term</th>
+
+<th>Exam-Oriented Meaning</th>
+
+</tr>
+
+<tr>
+
+<td><b>Macro</b></td>
+
+<td>
+
+Single instruction that executes a set of instructions.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Macro Recorder</b></td>
+
+<td>
+
+Records a sequence of actions.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Library</b></td>
+
+<td>
+
+Collection of modules.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Module</b></td>
+
+<td>
+
+Contains macros.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>BASIC</b></td>
+
+<td>
+
+Programming language used for macro instructions.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>IDE</b></td>
+
+<td>
+
+Integrated Development Environment.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Macro Selector</b></td>
+
+<td>
+
+Dialog used to select and run a macro.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Standard Library</b></td>
+
+<td>
+
+Default library in which the default macro is saved.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Sub</b></td>
+
+<td>
+
+Beginning of macro code followed by macro name.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>End Sub</b></td>
+
+<td>
+
+End of macro code.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 20 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">20.</span>
+
+    🔥 Important Menu Paths
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Task</th>
+
+<th>Menu Path</th>
+
+</tr>
+
+<tr>
+
+<td>Enable Macro Recording</td>
+
+<td>
+
+Tools → Options → LibreOffice → Advanced
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Record Macro</td>
+
+<td>
+
+Tools → Macros → Record Macro
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Run Macro</td>
+
+<td>
+
+Tools → Macros → Run Macro
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Edit Macro</td>
+
+<td>
+
+Tools → Macros → Edit Macros
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Organise Macros</td>
+
+<td>
+
+Tools → Macros → Organize Macros →
+LibreOffice Basic
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 21 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">21.</span>
+
+    📌 High-Priority Exam Facts
+
+</div>
+
+
+<ul>
+
+<li>
+
+Macro recording is
+
+<b>OFF by default</b>.
+
+</li>
+
+<li>
+
+Macro recording can be enabled from
+
+<b>Tools → Options → LibreOffice → Advanced</b>.
+
+</li>
+
+<li>
+
+The option to enable is
+
+<b>Enable macro recording</b>.
+
+</li>
+
+<li>
+
+The default macro name is
+
+<b>Main</b>.
+
+</li>
+
+<li>
+
+Default storage is
+
+<b>Standard Library → Module1</b>.
+
+</li>
+
+<li>
+
+A library is a collection of modules.
+
+</li>
+
+<li>
+
+A module contains macros.
+
+</li>
+
+<li>
+
+Macro instructions are written in
+
+<b>BASIC</b>.
+
+</li>
+
+<li>
+
+Macro code begins with
+
+<b>Sub</b>
+
+and ends with
+
+<b>End Sub</b>.
+
+</li>
+
+<li>
+
+IDE stands for
+
+<b>Integrated Development Environment</b>.
+
+</li>
+
+<li>
+
+A macro as a function accepts
+
+<b>arguments/values</b>
+
+and returns a
+
+<b>result/value</b>.
+
+</li>
+
+<li>
+
+F5 can be used to execute a module from the IDE.
+
+</li>
+
+<li>
+
+Macro names cannot contain spaces.
+
+</li>
+
+<li>
+
+Special characters are not allowed except
+
+<b>underscore (_)</b>.
+
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= SECTION 22 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">22.</span>
+
+    🧠 Chapter 5 Exam Comparison
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Question Type</th>
+
+<th>Answer to Remember</th>
+
+</tr>
+
+<tr>
+
+<td>What is a Macro?</td>
+
+<td>
+
+Single instruction executing a set of instructions.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Default macro recording status?</td>
+
+<td>
+
+Turned off.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Programming language?</td>
+
+<td>
+
+BASIC.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Default macro name?</td>
+
+<td>
+
+Main.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Default library?</td>
+
+<td>
+
+Standard Library.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Library contains?</td>
+
+<td>
+
+Modules.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Module contains?</td>
+
+<td>
+
+Macros.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Macro code begins with?</td>
+
+<td>
+
+Sub.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Macro code ends with?</td>
+
+<td>
+
+End Sub.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>IDE full form?</td>
+
+<td>
+
+Integrated Development Environment.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Macro function accepts?</td>
+
+<td>
+
+Arguments / values.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Macro function returns?</td>
+
+<td>
+
+Result / value.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>IDE module execution key?</td>
+
+<td>
+
+F5.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 23 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">23.</span>
+
+    🎯 Check Your Progress — What to Prepare
+
+</div>
+
+
+<p>
+
+The textbook's Check Your Progress for Chapter 5
+focuses on the following areas:
+
+</p>
+
+
+<ul>
+
+<li>Macro definition.</li>
+
+<li>Uses of macros.</li>
+
+<li>Actions not recorded by Macro Recorder.</li>
+
+<li>Difference between LibreOffice Macros and My Macros.</li>
+
+<li>Macro as a function.</li>
+
+<li>Rules for naming macros.</li>
+
+<li>Advantages of macros.</li>
+
+<li>Default library.</li>
+
+<li>IDE full form.</li>
+
+<li>Arguments and return values.</li>
+
+<li>Macro Organizer.</li>
+
+<li>Sub and End Sub.</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM PRIORITY
+    </div>
+
+    <p>
+
+        These topics are directly reflected in the
+        chapter's own Check Your Progress and answer
+        key, so they should be given high priority while
+        preparing for the examination.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= PAID REVISION ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">24.</span>
+
+    💎 RPAID REVISION
+
+</div>
+
+
+<div class="quick">
+
+<h3>⚡ CHAPTER 5 — RPAID REVISION</h3>
+
+<ul>
+
+<li>
+<b>Macro</b> → Single instruction that executes a set
+of instructions.
+</li>
+
+<li>
+<b>Purpose</b> → Automate repeated tasks.
+</li>
+
+<li>
+<b>Default recording</b> → OFF.
+</li>
+
+<li>
+<b>Enable recording</b> →
+Tools → Options → LibreOffice → Advanced.
+</li>
+
+<li>
+<b>Record Macro</b> →
+Tools → Macros → Record Macro.
+</li>
+
+<li>
+<b>Run Macro</b> →
+Tools → Macros → Run Macro.
+</li>
+
+<li>
+<b>Edit Macro</b> →
+Tools → Macros → Edit Macros.
+</li>
+
+<li>
+<b>Organize Macros</b> →
+Tools → Macros → Organize Macros →
+LibreOffice Basic.
+</li>
+
+<li>
+<b>Default Macro Name</b> → Main.
+</li>
+
+<li>
+<b>Default Library</b> → Standard Library.
+</li>
+
+<li>
+<b>Default Module</b> → Module1.
+</li>
+
+<li>
+<b>Library</b> → Collection of modules.
+</li>
+
+<li>
+<b>Module</b> → Collection/container for macros.
+</li>
+
+<li>
+<b>BASIC</b> → Programming language for macro code.
+</li>
+
+<li>
+<b>IDE</b> → Integrated Development Environment.
+</li>
+
+<li>
+<b>Macro Code</b> → Sub ... End Sub.
+</li>
+
+<li>
+<b>Macro as Function</b> →
+Arguments/values → Result/value.
+</li>
+
+<li>
+<b>IDE execution</b> → F5.
+</li>
+
+<li>
+<b>Naming Rule</b> → Begin with a letter.
+</li>
+
+<li>
+<b>No spaces</b> in Macro, Module or Library names.
+</li>
+
+<li>
+<b>Special characters</b> are not allowed except
+underscore (_).
+</li>
+
+<li>
+<b>LibreOffice Macros</b> → Prerecorded macros;
+should not be changed.
+</li>
+
+<li>
+<b>My Macros</b> → Macros written or added by us.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <b>THE GOAL</b> • CBSE Class 10 • Information Technology 402
+
+    <br><br>
+
+    Part B • Unit 2 • Chapter 5
+    — Using Macros in Spreadsheet
+
+    <br><br>
+
+    <b>Source:</b> NCERT Domestic Data Entry Operator —
+    Class X (2023–24)
+
+    <br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</footer>
+
+
+</main>
+
+</body>
+</html>
