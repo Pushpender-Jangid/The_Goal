@@ -1,0 +1,2464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Part B | Chapter 6 | Linking Spreadsheet Data</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#252525;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.6;
+}
+
+/* ================= TOP BAR ================= */
+
+.topbar{
+    background:#172033;
+    color:#fff;
+    text-align:center;
+    padding:22px 15px 20px;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:4px;
+    opacity:.78;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:46px;
+    font-weight:600;
+    margin-top:3px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.82;
+}
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    width:min(1100px,96%);
+    margin:25px auto 45px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+
+    position:relative;
+
+    padding:38px 48px 70px 92px;
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.18),
+        0 25px 60px rgba(0,0,0,.13);
+
+    min-height:100vh;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#df8f8f;
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:8px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover-small{
+    color:#555;
+    font-size:16px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:55px;
+    line-height:1;
+    color:#183f72;
+    margin:8px 0 12px;
+}
+
+.cover p{
+    font-size:19px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff0a6;
+    border:2px solid #555;
+    padding:3px 12px;
+    margin-top:14px;
+    font-size:16px;
+    transform:rotate(-1deg);
+}
+
+/* ================= CHAPTER MAP ================= */
+
+.chapter-map{
+    margin:25px 0 35px;
+    padding:18px 20px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.58);
+}
+
+.chapter-map h3{
+    margin-top:0;
+}
+
+.chapter-map ul{
+    margin-bottom:0;
+}
+
+/* ================= SECTIONS ================= */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:35px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    margin-bottom:16px;
+    transform:rotate(-1deg);
+}
+
+.session-number{
+    color:#b42d2d;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#242424;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    color:#254d75;
+    margin:15px 0 5px;
+}
+
+p,
+li{
+    font-size:18px;
+}
+
+ul,
+ol{
+    margin:5px 0 13px 27px;
+}
+
+li{
+    margin:3px 0;
+}
+
+/* ================= HIGHLIGHT ================= */
+
+.highlight{
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(255,225,80,.75) 25%,
+            rgba(255,225,80,.75) 82%,
+            transparent 82%
+        );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b32d2d;
+    font-weight:bold;
+}
+
+/* ================= BOXES ================= */
+
+.important{
+    margin:18px 0;
+    padding:17px 19px;
+    background:rgba(255,242,164,.68);
+    border:2px solid #555;
+    transform:rotate(-.2deg);
+}
+
+.exam{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(255,255,255,.55);
+    border-left:5px solid #b52d2d;
+}
+
+.exam-title{
+    color:#b52d2d;
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(226,239,251,.62);
+    border-left:5px solid #55718d;
+}
+
+.green{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(224,241,220,.65);
+    border-left:5px solid #39723b;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:18px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.5);
+}
+
+th,
+td{
+    border:1.5px solid #555;
+    padding:10px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:22px;
+}
+
+/* ================= STEPS ================= */
+
+.steps{
+    counter-reset:step;
+    list-style:none;
+    margin-left:0;
+}
+
+.steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:43px;
+    margin:9px 0;
+}
+
+.steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;
+    top:0;
+    width:28px;
+    height:28px;
+    border:2px solid #444;
+    border-radius:50%;
+    text-align:center;
+    line-height:24px;
+    background:#fff1a5;
+    font-weight:bold;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:18px 0;
+    padding:18px;
+    text-align:center;
+    background:rgba(255,255,255,.65);
+    border:2px dashed #55718d;
+    font-family:monospace;
+    font-size:18px;
+    overflow-x:auto;
+}
+
+/* ================= CODE ================= */
+
+.codebox{
+    margin:18px 0;
+    padding:17px 20px;
+    background:#172033;
+    color:#fff;
+    border-radius:4px;
+    font-family:monospace;
+    font-size:16px;
+    overflow-x:auto;
+}
+
+/* ================= QUICK ================= */
+
+.quick{
+    border:3px solid #444;
+    padding:20px;
+    margin-top:30px;
+    background:rgba(255,255,255,.52);
+    transform:rotate(.15deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+/* ================= DOODLE ================= */
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:21px;
+    margin:27px 0;
+    letter-spacing:6px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+    margin-top:50px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .notebook{
+        width:100%;
+        margin:0;
+        padding:30px 18px 60px 57px;
+    }
+
+    .notebook::before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:37px;
+    }
+
+    .cover h2{
+        font-size:43px;
+    }
+
+    p,
+    li{
+        font-size:17px;
+    }
+
+    .session-title{
+        font-size:30px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • INFORMATION TECHNOLOGY 402
+    </div>
+
+    <h1>
+        Part B — Electronic Spreadsheet (Advanced)
+    </h1>
+
+    <p>
+        Chapter 6 • Linking Spreadsheet Data
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+    <div class="cover-small">
+        📊 CHAPTER 6 • EXAM-ORIENTED NOTES
+    </div>
+
+    <h2>
+        Linking Spreadsheet Data
+    </h2>
+
+    <p>
+
+        This chapter explains how data can be linked
+        between different sheets, spreadsheets,
+        webpages and registered data sources in
+        LibreOffice Calc.
+
+    </p>
+
+    <span class="badge">
+        ✍️ NOTES ONLY • NO TOP 50 TEST
+    </span>
+
+</section>
+
+
+<!-- ================= CHAPTER MAP ================= -->
+
+<section class="chapter-map">
+
+    <h3>🗺️ Chapter Roadmap</h3>
+
+    <ul>
+
+        <li>Creating Multiple Sheets</li>
+
+        <li>Inserting a New Sheet</li>
+
+        <li>Moving and Copying Sheets</li>
+
+        <li>Referencing Data from Another Sheet</li>
+
+        <li>Referencing Data using Mouse and Keyboard</li>
+
+        <li>Absolute and Relative References</li>
+
+        <li>Linking Data from Another Spreadsheet</li>
+
+        <li>Hyperlinks</li>
+
+        <li>Relative and Absolute Hyperlinks</li>
+
+        <li>Linking External Data</li>
+
+        <li>Importing Tables from a Webpage</li>
+
+        <li>Linking to Registered Data Sources</li>
+
+        <li>LibreOffice Base Database Link</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ================= SECTION 01 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">01.</span>
+
+    Introduction to Linking Spreadsheet Data
+
+</div>
+
+
+<p>
+
+In a spreadsheet, data may be distributed among
+different sheets or even different spreadsheet files.
+
+</p>
+
+
+<p>
+
+LibreOffice Calc provides features that allow us to
+
+<span class="highlight">
+
+create multiple sheets and link data between them.
+
+</span>
+
+</p>
+
+
+<p>
+
+Linking is useful when information stored at different
+places needs to be connected or reused.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Chapter Core Idea:</b>
+
+        Data can be linked within the same spreadsheet,
+        between different spreadsheet files, from
+        webpages and from registered data sources.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 02 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">02.</span>
+
+    Creating Multiple Sheets
+
+</div>
+
+
+<p>
+
+A spreadsheet document can contain multiple worksheets.
+
+</p>
+
+
+<p>
+
+Different sheets can be used to store different
+categories of information.
+
+</p>
+
+
+<h3>Examples</h3>
+
+<ul>
+
+    <li>Student information in one sheet.</li>
+
+    <li>Marks in another sheet.</li>
+
+    <li>Attendance in another sheet.</li>
+
+    <li>Summary or result in another sheet.</li>
+
+</ul>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        Multiple sheets help organise related information
+        inside one spreadsheet document.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 03 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">03.</span>
+
+    Inserting a New Sheet
+
+</div>
+
+
+<p>
+
+A new sheet can be inserted into a spreadsheet
+document using the
+
+<span class="highlight">Insert Sheet</span>
+
+dialog.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ EXAM POINT
+
+    </div>
+
+    <p>
+
+        The <b>Insert Sheet</b> dialog can be invoked
+        from the <b>Sheet</b> menu.
+
+    </p>
+
+</div>
+
+
+<h3>Important Options</h3>
+
+<ul>
+
+    <li>Insert a new sheet.</li>
+
+    <li>Specify the number of sheets.</li>
+
+    <li>Give suitable names to sheets.</li>
+
+    <li>Insert sheets from another file.</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= SECTION 04 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">04.</span>
+
+    Inserting Sheet from Another File
+
+</div>
+
+
+<p>
+
+LibreOffice Calc allows a sheet from another
+spreadsheet file to be inserted into the current
+spreadsheet.
+
+</p>
+
+
+<h3>From File Option</h3>
+
+<p>
+
+The <span class="highlight">From file</span> option
+in the Insert Sheet dialog allows a sheet to be
+inserted from another file.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ FILL IN THE BLANK
+
+    </div>
+
+    <p>
+
+        The <b>From file</b> option of the
+
+        <b>Insert Sheet</b> dialog box allows a sheet
+        to be inserted from another file.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 05 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">05.</span>
+
+    Referencing Data from Another Sheet
+
+</div>
+
+
+<p>
+
+A cell in one sheet can refer to a cell in another
+sheet of the same spreadsheet document.
+
+</p>
+
+
+<p>
+
+This is called creating a
+
+<span class="highlight">reference to another sheet</span>.
+
+</p>
+
+
+<div class="formula">
+
+Current Sheet → Reference → Another Sheet
+
+</div>
+
+
+<p>
+
+The linked value is obtained from the referenced cell.
+
+If the value in the original cell changes,
+the referenced value can also be updated.
+
+</p>
+
+</section>
+
+
+<!-- ================= SECTION 06 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">06.</span>
+
+    Referencing using Keyboard and Mouse
+
+</div>
+
+
+<p>
+
+A reference to another sheet can be created using
+the keyboard or mouse.
+
+</p>
+
+
+<h3>General Method</h3>
+
+<ol class="steps">
+
+<li>
+
+Select the cell where the result/reference is required.
+
+</li>
+
+<li>
+
+Type the reference formula or begin entering
+the required reference.
+
+</li>
+
+<li>
+
+Select the required sheet.
+
+</li>
+
+<li>
+
+Select the required cell.
+
+</li>
+
+<li>
+
+Complete the reference and press Enter.
+
+</li>
+
+</ol>
+
+
+<div class="important">
+
+    <p>
+
+        The main purpose is to create a connection
+        between the current cell and a cell located
+        on another sheet.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 07 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">07.</span>
+
+    Sheet Reference Syntax
+
+</div>
+
+
+<p>
+
+LibreOffice Calc uses a specific syntax for referring
+to a cell located on another sheet.
+
+</p>
+
+
+<p>
+
+If the sheet name contains spaces, the sheet name
+is enclosed in
+
+<span class="highlight">single quotation marks</span>.
+
+</p>
+
+
+<div class="formula">
+
+$'My Sheet'.G5
+
+</div>
+
+
+<p>
+
+Here:
+
+</p>
+
+<ul>
+
+    <li><b>My Sheet</b> = name of the sheet.</li>
+
+    <li><b>G5</b> = cell reference.</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ EXAM TRAP
+
+    </div>
+
+    <p>
+
+        Quotation marks are important when the sheet
+        name contains a space.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 08 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">08.</span>
+
+    Absolute and Relative References
+
+</div>
+
+
+<p>
+
+References in a spreadsheet can behave differently
+when copied from one location to another.
+
+</p>
+
+
+<h3>Relative Reference</h3>
+
+<p>
+
+A relative reference changes according to the
+new position when the formula is copied.
+
+</p>
+
+
+<h3>Absolute Reference</h3>
+
+<p>
+
+An absolute reference remains fixed when the
+formula is copied.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Reference</th>
+
+<th>Behaviour</th>
+
+</tr>
+
+<tr>
+
+<td><b>Relative</b></td>
+
+<td>
+
+Changes according to the new position.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Absolute</b></td>
+
+<td>
+
+Remains fixed.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Easy Trick:</b>
+
+    <p>
+
+        Relative = moves
+
+        <br>
+
+        Absolute = fixed
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 09 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">09.</span>
+
+    Linking Data from Another Spreadsheet
+
+</div>
+
+
+<p>
+
+LibreOffice Calc also allows data to be linked
+from a different spreadsheet document.
+
+</p>
+
+
+<p>
+
+This is useful when information is stored in
+separate spreadsheet files but needs to be
+displayed or used in the current spreadsheet.
+
+</p>
+
+
+<h3>Basic Concept</h3>
+
+<div class="formula">
+
+Spreadsheet A → Link → Spreadsheet B
+
+</div>
+
+
+<p>
+
+The external spreadsheet can act as the source
+of the linked information.
+
+</p>
+
+</section>
+
+
+<!-- ================= SECTION 10 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">10.</span>
+
+    File Path and External References
+
+</div>
+
+
+<p>
+
+When a spreadsheet refers to an external file,
+the location of the file is important.
+
+</p>
+
+
+<p>
+
+A file path identifies the location of a file.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Exam Fact:</b>
+
+        The path of a file uses
+
+        <span class="highlight">forward slashes (/)</span>.
+
+    </p>
+
+</div>
+
+
+<h3>Example Structure</h3>
+
+<div class="formula">
+
+folder/subfolder/file.ods
+
+</div>
+
+
+<p>
+
+The exact path depends on the location of the
+external spreadsheet file.
+
+</p>
+
+</section>
+
+
+<!-- ================= SECTION 11 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">11.</span>
+
+    Hyperlinks
+
+</div>
+
+
+<p>
+
+A hyperlink provides a way to move from one location
+to another.
+
+</p>
+
+
+<p>
+
+In Calc, a hyperlink can be used to
+
+<span class="highlight">
+
+jump to a different spreadsheet from the current
+spreadsheet.
+
+</span>
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ VERY IMPORTANT
+
+    </div>
+
+    <p>
+
+        The feature used to jump to another spreadsheet
+        from the current spreadsheet is
+
+        <b>Hyperlink</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 12 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">12.</span>
+
+    Relative Hyperlink
+
+</div>
+
+
+<p>
+
+A relative hyperlink stores the location of a file
+with respect to the
+
+<span class="highlight">current location</span>.
+
+</p>
+
+
+<div class="formula">
+
+Relative Hyperlink
+<br>
+↓
+<br>
+Location with respect to current location
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ FILL IN THE BLANK
+
+    </div>
+
+    <p>
+
+        A relative hyperlink stores the location
+        with respect to the <b>current</b> location.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 13 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">13.</span>
+
+    Absolute Hyperlink
+
+</div>
+
+
+<p>
+
+An absolute hyperlink stores the complete location
+of the target.
+
+</p>
+
+
+<p>
+
+Unlike a relative hyperlink, it does not depend
+on the current location.
+
+</p>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Type</th>
+
+<th>Meaning</th>
+
+</tr>
+
+<tr>
+
+<td><b>Relative Hyperlink</b></td>
+
+<td>
+
+Stores location with respect to the current location.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Absolute Hyperlink</b></td>
+
+<td>
+
+Stores the complete location of the target.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 14 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">14.</span>
+
+    Linking External Data
+
+</div>
+
+
+<p>
+
+LibreOffice Calc provides a feature for obtaining
+data from an external source.
+
+</p>
+
+
+<p>
+
+External data may be obtained from sources such as
+a webpage.
+
+</p>
+
+
+<p>
+
+The imported information can then be inserted into
+the spreadsheet.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Key Idea:</b>
+
+        External data means data that comes from
+        outside the current spreadsheet document.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 15 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">15.</span>
+
+    Importing Data from a Webpage
+
+</div>
+
+
+<p>
+
+Calc can insert a table from a webpage into a
+spreadsheet.
+
+</p>
+
+
+<h3>Basic Procedure</h3>
+
+<ol class="steps">
+
+<li>
+
+Open the required external-data/import feature.
+
+</li>
+
+<li>
+
+Type the URL of the source document.
+
+</li>
+
+<li>
+
+If the URL is already listed, select it from
+the drop-down list.
+
+</li>
+
+<li>
+
+Press Enter.
+
+</li>
+
+<li>
+
+A dialog box appears for selecting the language
+for import.
+
+</li>
+
+<li>
+
+Select the appropriate language option.
+
+</li>
+
+<li>
+
+Choose the required table/range from
+Available Tables/Ranges.
+
+</li>
+
+<li>
+
+Insert the selected table into the spreadsheet.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ IMPORTANT
+
+    </div>
+
+    <p>
+
+        When importing data from a webpage,
+
+        <b>Automatic</b> language selection shows
+        the data in the same language as the webpage.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 16 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">16.</span>
+
+    Available Tables / Ranges
+
+</div>
+
+
+<p>
+
+After connecting to a webpage, Calc displays
+available tables or ranges from the webpage.
+
+</p>
+
+
+<p>
+
+The required table can be selected from the
+
+<span class="highlight">
+
+Available Tables/Ranges
+
+</span>
+
+list.
+
+</p>
+
+
+<h3>HTML_all</h3>
+
+<div class="important">
+
+    <p>
+
+        <b>HTML_all</b> selects the
+
+        <span class="highlight">entire HTML document</span>.
+
+    </p>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ DIRECT EXAM QUESTION
+
+    </div>
+
+    <p>
+
+        While inserting tables from a webpage,
+
+        <b>HTML_all</b> selects the entire HTML document.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 17 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">17.</span>
+
+    Selecting a Specific Web Table
+
+</div>
+
+
+<p>
+
+Instead of selecting the complete webpage,
+a specific table can be selected from the
+
+<b>Available Tables/Ranges</b>
+
+list.
+
+</p>
+
+
+<p>
+
+For example, if a webpage contains several HTML
+tables, a particular table such as
+
+<b>HTML_10</b>
+
+can be selected.
+
+</p>
+
+
+<div class="formula">
+
+Webpage
+<br>
+↓
+<br>
+Available Tables / Ranges
+<br>
+↓
+<br>
+Required HTML Table
+<br>
+↓
+<br>
+Calc Spreadsheet
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 18 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">18.</span>
+
+    Linking to Registered Data Sources
+
+</div>
+
+
+<p>
+
+LibreOffice Calc can link spreadsheet documents
+with
+
+<span class="highlight">
+
+databases and other data sources.
+
+</span>
+
+</p>
+
+
+<p>
+
+The data source must be
+
+<span class="highlight">registered with LibreOffice</span>
+
+before it can be used in this manner.
+
+</p>
+
+
+<h3>Meaning of Registration</h3>
+
+<p>
+
+Registration informs LibreOffice about:
+
+</p>
+
+<ul>
+
+    <li>The type of data source.</li>
+
+    <li>The location of the data source/file.</li>
+
+</ul>
+
+
+<div class="important">
+
+    <p>
+
+        The chapter restricts its discussion of
+        registered data sources to
+
+        <b>LibreOffice Base</b>.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 19 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">19.</span>
+
+    LibreOffice Base Data Source
+
+</div>
+
+
+<p>
+
+LibreOffice Base is used as the database source
+for the example of registered data sources.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ IMPORTANT EXTENSION
+
+    </div>
+
+    <p>
+
+        The extension of a LibreOffice Base database
+        is <b>.odb</b>.
+
+    </p>
+
+</div>
+
+
+<div class="formula">
+
+LibreOffice Base → .odb
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 20 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">20.</span>
+
+    Registering a Database
+
+</div>
+
+
+<p>
+
+To register a database in LibreOffice, the chapter
+gives the following procedure.
+
+</p>
+
+
+<ol class="steps">
+
+<li>
+
+Select
+
+<b>Tools → Options</b>.
+
+</li>
+
+<li>
+
+Select
+
+<b>LibreOffice Base → Databases</b>.
+
+</li>
+
+<li>
+
+The Options — LibreOffice Base-Databases
+dialog box appears.
+
+</li>
+
+<li>
+
+Click the <b>New</b> button.
+
+</li>
+
+<li>
+
+The <b>Create Database Link</b> dialog box opens.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+
+        ⭐ MENU PATH
+
+    </div>
+
+    <p>
+
+        <b>
+
+        Tools → Options → LibreOffice Base →
+        Databases
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 21 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">21.</span>
+
+    Types of Linking Covered in Chapter
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Linking Method</th>
+
+<th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td>Reference to another sheet</td>
+
+<td>
+
+Connect cells/data between sheets of the same
+spreadsheet.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Reference to another spreadsheet</td>
+
+<td>
+
+Use data from a different spreadsheet document.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Hyperlink</td>
+
+<td>
+
+Jump to another spreadsheet/location.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>External data</td>
+
+<td>
+
+Import data from an external source such as a webpage.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Registered data source</td>
+
+<td>
+
+Link Calc with a registered database/data source.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 22 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">22.</span>
+
+    🔥 High-Priority Exam Facts
+
+</div>
+
+
+<ul>
+
+<li>
+
+The chapter is <b>Linking Spreadsheet Data</b>.
+
+</li>
+
+<li>
+
+The <b>Insert Sheet</b> dialog is invoked from
+the <b>Sheet</b> menu.
+
+</li>
+
+<li>
+
+<b>From file</b> allows insertion of a sheet
+from another file.
+
+</li>
+
+<li>
+
+A cell can refer to a cell on another sheet.
+
+</li>
+
+<li>
+
+Sheet names containing spaces are enclosed
+in <b>single quotation marks</b>.
+
+</li>
+
+<li>
+
+<b>Hyperlink</b> is used to jump to a different
+spreadsheet.
+
+</li>
+
+<li>
+
+A relative hyperlink stores location with respect
+to the <b>current location</b>.
+
+</li>
+
+<li>
+
+A file path uses <b>forward slashes</b>.
+
+</li>
+
+<li>
+
+While importing webpage data,
+<b>HTML_all</b> selects the entire HTML document.
+
+</li>
+
+<li>
+
+<b>Automatic</b> language selection displays
+webpage data in the same language as the webpage.
+
+</li>
+
+<li>
+
+Calc can link with registered databases and
+other data sources.
+
+</li>
+
+<li>
+
+A data source must be registered with LibreOffice.
+
+</li>
+
+<li>
+
+The chapter uses <b>LibreOffice Base</b> as the
+registered database example.
+
+</li>
+
+<li>
+
+LibreOffice Base database extension is
+<b>.odb</b>.
+
+</li>
+
+<li>
+
+Database registration uses
+
+<b>
+
+Tools → Options → LibreOffice Base → Databases
+
+</b>.
+
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- ================= SECTION 23 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">23.</span>
+
+    🧠 Important Terms
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Term</th>
+
+<th>Exam-Oriented Meaning</th>
+
+</tr>
+
+<tr>
+
+<td><b>Reference</b></td>
+
+<td>
+
+Connection to a cell or data located elsewhere.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Hyperlink</b></td>
+
+<td>
+
+Used to jump to another spreadsheet/location.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Relative Hyperlink</b></td>
+
+<td>
+
+Location stored with respect to current location.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>External Data</b></td>
+
+<td>
+
+Data obtained from outside the current spreadsheet.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>HTML_all</b></td>
+
+<td>
+
+Selects the entire HTML document.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Available Tables/Ranges</b></td>
+
+<td>
+
+List from which required webpage table/range
+can be selected.
+
+</td>
+
+<tr>
+
+<td><b>Registered Data Source</b></td>
+
+<td>
+
+Data source registered with LibreOffice.
+
+</td>
+
+<tr>
+
+<td><b>.odb</b></td>
+
+<td>
+
+Extension of LibreOffice Base database.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 24 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">24.</span>
+
+    🎯 Exam-Oriented Differences
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Relative Hyperlink</th>
+
+<th>Absolute Hyperlink</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Stores location with respect to the current location.
+
+</td>
+
+<td>
+
+Stores the complete location of the target.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+Depends on the current location.
+
+</td>
+
+<td>
+
+Does not depend on the current location.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<br>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Reference within Sheet</th>
+
+<th>Reference to Another Sheet</th>
+
+</tr>
+
+<tr>
+
+<td>
+
+Refers to a cell in the same sheet.
+
+</td>
+
+<td>
+
+Refers to a cell located on another sheet.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SECTION 25 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">25.</span>
+
+    📌 Chapter Flow
+
+</div>
+
+
+<div class="formula">
+
+Multiple Sheets
+
+<br>
+↓
+
+References between Sheets
+
+<br>
+↓
+
+References between Spreadsheets
+
+<br>
+↓
+
+Hyperlinks
+
+<br>
+↓
+
+External Data
+
+<br>
+↓
+
+Webpage Tables
+
+<br>
+↓
+
+Registered Data Sources
+
+<br>
+↓
+
+LibreOffice Base Database
+
+</div>
+
+</section>
+
+
+<!-- ================= PAID REVISION ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">26.</span>
+
+    💎 RPAID REVISION
+
+</div>
+
+
+<div class="quick">
+
+<h3>⚡ CHAPTER 6 — RPAID REVISION</h3>
+
+<ul>
+
+<li>
+
+<b>Chapter:</b> Linking Spreadsheet Data
+
+</li>
+
+<li>
+
+<b>Insert Sheet:</b> invoked from the <b>Sheet</b> menu.
+
+</li>
+
+<li>
+
+<b>From file:</b> inserts a sheet from another file.
+
+</li>
+
+<li>
+
+<b>Reference:</b> connects a cell with data located elsewhere.
+
+</li>
+
+<li>
+
+<b>Sheet name with space:</b> enclosed in single quotation marks.
+
+</li>
+
+<li>
+
+<b>Hyperlink:</b> used to jump to another spreadsheet/location.
+
+</li>
+
+<li>
+
+<b>Relative hyperlink:</b> location with respect to current location.
+
+</li>
+
+<li>
+
+<b>File path:</b> uses forward slashes `/`.
+
+</li>
+
+<li>
+
+<b>Webpage import:</b> URL → language → Available Tables/Ranges.
+
+</li>
+
+<li>
+
+<b>Automatic language:</b> displays webpage data in its same language.
+
+</li>
+
+<li>
+
+<b>HTML_all:</b> selects the entire HTML document.
+
+</li>
+
+<li>
+
+<b>Specific HTML table:</b> can be selected from Available Tables/Ranges.
+
+</li>
+
+<li>
+
+<b>Registered data source:</b> must be registered with LibreOffice.
+
+</li>
+
+<li>
+
+<b>LibreOffice Base:</b> database used in the chapter's registered-data-source example.
+
+</li>
+
+<li>
+
+<b>Base extension:</b> `.odb`
+
+</li>
+
+<li>
+
+<b>Register database:</b>
+
+Tools → Options → LibreOffice Base → Databases
+
+</li>
+
+<li>
+
+<b>New:</b> opens the Create Database Link dialog.
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <b>THE GOAL</b> • CBSE Class 10 • Information Technology 402
+
+    <br><br>
+
+    Part B • Unit 2 • Chapter 6
+    — Linking Spreadsheet Data
+
+    <br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</footer>
+
+
+</main>
+
+</body>
+</html>
