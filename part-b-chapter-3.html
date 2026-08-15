@@ -1,0 +1,3753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | IT 402 | Part B | Chapter 3</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#d8d1c3;
+    color:#252525;
+    font-family:"Patrick Hand",cursive;
+    line-height:1.6;
+}
+
+/* ================= TOP BAR ================= */
+
+.topbar{
+    background:#172033;
+    color:#fff;
+    text-align:center;
+    padding:22px 15px 20px;
+}
+
+.brand{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:4px;
+    opacity:.78;
+}
+
+.topbar h1{
+    font-family:"Caveat",cursive;
+    font-size:46px;
+    font-weight:600;
+    margin-top:3px;
+}
+
+.topbar p{
+    font-size:17px;
+    opacity:.82;
+}
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    width:min(1100px,96%);
+    margin:25px auto 45px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf4 0px,
+            #fffdf4 31px,
+            #a9c8e7 32px
+        );
+
+    position:relative;
+
+    padding:38px 48px 70px 92px;
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.18),
+        0 25px 60px rgba(0,0,0,.13);
+
+    min-height:100vh;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#df8f8f;
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    padding:8px 10px 28px;
+    border-bottom:2px dashed #777;
+    margin-bottom:30px;
+}
+
+.cover-small{
+    color:#555;
+    font-size:16px;
+}
+
+.cover h2{
+    font-family:"Caveat",cursive;
+    font-size:55px;
+    line-height:1;
+    color:#183f72;
+    margin:8px 0 12px;
+}
+
+.cover p{
+    font-size:19px;
+}
+
+.badge{
+    display:inline-block;
+    background:#fff0a6;
+    border:2px solid #555;
+    padding:3px 12px;
+    margin-top:14px;
+    font-size:16px;
+    transform:rotate(-1deg);
+}
+
+.source{
+    font-size:14px !important;
+    color:#666;
+    margin-top:10px;
+}
+
+/* ================= CHAPTER MAP ================= */
+
+.chapter-map{
+    margin:25px 0 35px;
+    padding:18px 20px;
+    border:2px dashed #55718d;
+    background:rgba(226,239,251,.58);
+}
+
+.chapter-map h3{
+    margin-top:0;
+}
+
+.chapter-map ul{
+    margin-bottom:0;
+}
+
+/* ================= SECTIONS ================= */
+
+.session{
+    margin:42px 0;
+}
+
+.session-title{
+    display:inline-block;
+    font-family:"Caveat",cursive;
+    font-size:35px;
+    color:#173f70;
+    border-bottom:3px solid #173f70;
+    margin-bottom:16px;
+    transform:rotate(-1deg);
+}
+
+.session-number{
+    color:#b42d2d;
+    font-size:21px;
+    margin-right:6px;
+}
+
+h3{
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#242424;
+    margin:20px 0 7px;
+}
+
+h4{
+    font-family:"Caveat",cursive;
+    font-size:24px;
+    color:#254d75;
+    margin:15px 0 5px;
+}
+
+p,
+li{
+    font-size:18px;
+}
+
+ul,
+ol{
+    margin:5px 0 13px 27px;
+}
+
+li{
+    margin:3px 0;
+}
+
+/* ================= HIGHLIGHT ================= */
+
+.highlight{
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(255,225,80,.75) 25%,
+            rgba(255,225,80,.75) 82%,
+            transparent 82%
+        );
+
+    padding:0 3px;
+}
+
+.red{
+    color:#b32d2d;
+    font-weight:bold;
+}
+
+/* ================= BOXES ================= */
+
+.important{
+    margin:18px 0;
+    padding:17px 19px;
+    background:rgba(255,242,164,.68);
+    border:2px solid #555;
+    transform:rotate(-.2deg);
+}
+
+.exam{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(255,255,255,.55);
+    border-left:5px solid #b52d2d;
+}
+
+.exam-title{
+    color:#b52d2d;
+    font-family:"Caveat",cursive;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.memory{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(226,239,251,.62);
+    border-left:5px solid #55718d;
+}
+
+.green{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(224,241,220,.65);
+    border-left:5px solid #39723b;
+}
+
+.warning{
+    margin:18px 0;
+    padding:15px 18px;
+    background:rgba(247,218,218,.65);
+    border-left:5px solid #a33;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    overflow-x:auto;
+    margin:18px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    background:rgba(255,255,255,.5);
+}
+
+th,
+td{
+    border:1.5px solid #555;
+    padding:10px 11px;
+    text-align:left;
+    vertical-align:top;
+    font-size:17px;
+}
+
+th{
+    background:rgba(213,225,238,.65);
+    font-family:"Caveat",cursive;
+    font-size:22px;
+}
+
+/* ================= STEPS ================= */
+
+.steps{
+    counter-reset:step;
+    list-style:none;
+    margin-left:0;
+}
+
+.steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:43px;
+    margin:9px 0;
+}
+
+.steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;
+    top:0;
+    width:28px;
+    height:28px;
+    border:2px solid #444;
+    border-radius:50%;
+    text-align:center;
+    line-height:24px;
+    background:#fff1a5;
+    font-weight:bold;
+}
+
+/* ================= TOOL GRID ================= */
+
+.tool-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin:18px 0;
+}
+
+.tool{
+    padding:15px;
+    background:rgba(255,255,255,.55);
+    border:1.5px solid #666;
+}
+
+.tool h4{
+    margin-top:0;
+}
+
+/* ================= QUICK REVISION ================= */
+
+.quick{
+    border:3px solid #444;
+    padding:20px;
+    margin-top:30px;
+    background:rgba(255,255,255,.52);
+    transform:rotate(.15deg);
+}
+
+.quick h3{
+    color:#9f2929;
+    margin-top:0;
+}
+
+.quick ul{
+    margin-bottom:0;
+}
+
+/* ================= DOODLE ================= */
+
+.doodle{
+    text-align:center;
+    color:#777;
+    font-size:21px;
+    margin:27px 0;
+    letter-spacing:6px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    color:#555;
+    font-size:15px;
+    border-top:1px dashed #777;
+    padding-top:18px;
+    margin-top:50px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .notebook{
+        width:100%;
+        margin:0;
+        padding:30px 18px 60px 57px;
+    }
+
+    .notebook::before{
+        left:39px;
+    }
+
+    .topbar h1{
+        font-size:37px;
+    }
+
+    .cover h2{
+        font-size:43px;
+    }
+
+    p,
+    li{
+        font-size:17px;
+    }
+
+    .session-title{
+        font-size:30px;
+    }
+
+    th,
+    td{
+        font-size:15px;
+    }
+
+    .tool-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="brand">
+        THE GOAL • CBSE CLASS 10 • INFORMATION TECHNOLOGY 402
+    </div>
+
+    <h1>
+        Part B — Digital Documentation
+    </h1>
+
+    <p>
+        Chapter 3 • Advanced Features of Writer
+    </p>
+
+</header>
+
+
+<main class="notebook">
+
+
+<!-- ================= COVER ================= -->
+
+<section class="cover">
+
+    <div class="cover-small">
+        📖 CHAPTER 3 • EXAM-ORIENTED NOTES
+    </div>
+
+    <h2>
+        Advanced Features of Writer
+    </h2>
+
+    <p>
+
+        Source-based notes covering the three major
+        advanced features discussed in this chapter:
+
+        <b>Table of Contents, Templates and Track Changes.</b>
+
+    </p>
+
+    <span class="badge">
+        ✍️ READ • UNDERSTAND • REVISE
+    </span>
+
+    <p class="source">
+
+        <b>Source:</b> NCERT Domestic Data Entry Operator —
+        Class X, 2023–24, Part B, Unit 1, Chapter 3.
+
+    </p>
+
+</section>
+
+
+<!-- ================= CHAPTER MAP ================= -->
+
+<section class="chapter-map">
+
+    <h3>🗺️ Chapter Roadmap</h3>
+
+    <ul>
+
+        <li>Table of Contents (ToC)</li>
+
+        <li>Hierarchy of Headings</li>
+
+        <li>Creating a Table of Contents</li>
+
+        <li>Customisation of ToC</li>
+
+        <li>Updating ToC</li>
+
+        <li>Deleting ToC</li>
+
+        <li>Using Templates</li>
+
+        <li>Checking the Template of a Document</li>
+
+        <li>Creating a Template</li>
+
+        <li>Using In-built / Saved Templates</li>
+
+        <li>Using Online Templates</li>
+
+        <li>Importing Templates</li>
+
+        <li>Editing Templates</li>
+
+        <li>Setting a Custom Default Template</li>
+
+        <li>Moving a Template</li>
+
+        <li>Exporting a Template</li>
+
+        <li>Track Changes</li>
+
+        <li>Preparing a Document for Review</li>
+
+        <li>Recording Changes</li>
+
+        <li>Accepting / Rejecting Changes</li>
+
+        <li>Adding Comments</li>
+
+        <li>Deleting Comments</li>
+
+        <li>Comparing Documents</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ================= SESSION 1 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">01.</span>
+
+    Table of Contents — ToC
+
+</div>
+
+
+<h3>What is a Table of Contents?</h3>
+
+<p>
+
+A <span class="highlight">Table of Contents (ToC)</span>
+contains a list of topics and subtopics covered in a
+document along with their page numbers.
+
+</p>
+
+
+<p>
+
+In LibreOffice Writer, ToC can be inserted
+
+<span class="highlight">automatically</span>.
+
+The entries are taken from the headings and
+sub-headings of the document.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Important:</b>
+
+        The entries in the Table of Contents are
+        <span class="highlight">hyperlinked</span>.
+
+        Therefore, clicking the required entry allows
+        navigation directly to that section.
+
+    </p>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        ToC = Topics + Subtopics + Page Numbers +
+        Hyperlinked Entries
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 2 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">02.</span>
+
+    Hierarchy of Headings
+
+</div>
+
+
+<p>
+
+Before creating a Table of Contents, proper heading
+styles must be applied to the headings and sub-headings.
+
+</p>
+
+
+<h3>Heading Levels</h3>
+
+<div class="important">
+
+    <p>
+
+        LibreOffice Writer supports up to
+
+        <span class="highlight">10 levels of headings</span>:
+
+        <b>H1 to H10</b>.
+
+    </p>
+
+</div>
+
+
+<h3>Meaning of Heading Hierarchy</h3>
+
+<table>
+
+<tr>
+
+    <th>Level</th>
+
+    <th>Meaning</th>
+
+</tr>
+
+<tr>
+
+    <td>Heading 1</td>
+
+    <td>Main / highest-level heading</td>
+
+</tr>
+
+<tr>
+
+    <td>Heading 2</td>
+
+    <td>Sub-heading under Heading 1</td>
+
+</tr>
+
+<tr>
+
+    <td>Heading 3</td>
+
+    <td>Sub-heading under Heading 2</td>
+
+</tr>
+
+<tr>
+
+    <td>Heading 4–10</td>
+
+    <td>Further levels of hierarchy</td>
+
+</tr>
+
+</table>
+
+
+<h3>Applying Heading Styles</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open/create the document.
+
+</li>
+
+<li>
+
+Open the <b>Styles</b> option from the right sidebar.
+
+</li>
+
+<li>
+
+Select <b>Paragraph Styles</b>.
+
+</li>
+
+<li>
+
+Select <b>Headings</b>.
+
+</li>
+
+<li>
+
+Choose the required Heading 1 to Heading 10 style.
+
+</li>
+
+<li>
+
+Repeat the process for other headings.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        Correct ToC depends on the correct hierarchy
+        of heading styles.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 3 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">03.</span>
+
+    Creating a Table of Contents
+
+</div>
+
+
+<h3>Requirement Before Creating ToC</h3>
+
+<div class="warning">
+
+    <p>
+
+        Proper paragraph styles such as
+
+        <b>Heading 1, Heading 2, Heading 3</b>
+
+        and so on must already be applied.
+
+    </p>
+
+</div>
+
+
+<h3>Steps to Insert ToC</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the document.
+
+</li>
+
+<li>
+
+Apply proper heading styles to all headings and
+sub-headings.
+
+</li>
+
+<li>
+
+Place the cursor at the position where the ToC
+is required.
+
+Usually, it is placed at the beginning of the document.
+
+</li>
+
+<li>
+
+Select:
+
+<br>
+
+<b>
+Insert → Table of Contents and Index →
+Table of Contents, Index or Bibliography
+</b>
+
+</li>
+
+<li>
+
+The <b>Table of Contents, Index and Bibliography</b>
+dialog box appears.
+
+</li>
+
+<li>
+
+The <b>Type</b> tab is selected by default.
+
+</li>
+
+<li>
+
+Enter/change the title of the ToC if required.
+
+</li>
+
+<li>
+
+Click <b>OK</b>.
+
+</li>
+
+</ol>
+
+
+<h3>Important Default Options</h3>
+
+<ul>
+
+<li>
+
+<b>Protected Against Manual Changes</b>
+checkbox is selected by default.
+
+</li>
+
+<li>
+
+The ToC is generated from the headings and
+sub-headings of the entire document.
+
+</li>
+
+<li>
+
+The <b>Outline</b> checkbox is selected by default.
+
+</li>
+
+<li>
+
+Headings appear with their page numbers.
+
+</li>
+
+<li>
+
+ToC entries are hyperlinked.
+
+</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT
+    </div>
+
+    <p>
+
+        <b>Insert → Table of Contents and Index →
+        Table of Contents, Index or Bibliography</b>
+
+        is the important menu path for creating a ToC.
+
+    </p>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Hyperlink Shortcut:</b>
+
+    <p>
+
+        Ctrl + Click on a ToC entry
+        → directly opens the selected heading.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 4 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">04.</span>
+
+    Customisation of ToC
+
+</div>
+
+
+<p>
+
+After inserting a ToC, it can be customised according
+to the document requirement.
+
+</p>
+
+
+<h3>Opening Customisation Options</h3>
+
+<ol class="steps">
+
+<li>
+
+Right-click anywhere on the ToC.
+
+</li>
+
+<li>
+
+Select <b>Edit Index</b>.
+
+</li>
+
+<li>
+
+The Table of Contents, Index or Bibliography
+dialog box opens.
+
+</li>
+
+</ol>
+
+
+<h3>Five Important Tabs</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+    <th>Tab</th>
+
+    <th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td><b>Type</b></td>
+
+<td>
+
+General type/title and other ToC settings.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Entries</b></td>
+
+<td>
+
+Sets styles for different entries in the ToC.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Styles</b></td>
+
+<td>
+
+Applies desired styles to the text of each
+ToC level.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Columns</b></td>
+
+<td>
+
+Sets the number of columns in the ToC.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Background</b></td>
+
+<td>
+
+Changes the background of the ToC.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ DIRECT EXAM MEMORY
+    </div>
+
+    <p>
+
+        <b>
+
+        Type → Entries → Styles → Columns → Background
+
+        </b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 5 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">05.</span>
+
+    Type Tab
+
+</div>
+
+
+<p>
+
+The <b>Type</b> tab is active by default when the
+Table of Contents, Index or Bibliography dialog box
+is opened for inserting the ToC.
+
+</p>
+
+
+<h3>Important Point</h3>
+
+<div class="important">
+
+    <p>
+
+        The <b>Protected Against Manual Changes</b>
+        checkbox is selected by default.
+
+    </p>
+
+    <p>
+
+        It protects the ToC from accidental manual changes.
+
+    </p>
+
+</div>
+
+
+<p>
+
+If the checkbox is unchecked, the ToC contents can
+be changed directly on the document page like normal
+text.
+
+</p>
+
+</section>
+
+
+<!-- ================= SESSION 6 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">06.</span>
+
+    Entries Tab
+
+</div>
+
+
+<p>
+
+The <span class="highlight">Entries</span> tab contains
+options to set styles for various entries in the ToC.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        <b>Entries Tab → Styles for various ToC entries</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 7 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">07.</span>
+
+    Styles Tab
+
+</div>
+
+
+<p>
+
+The <b>Styles</b> tab contains options to apply the
+desired styles to the text of each level in the ToC.
+
+</p>
+
+
+<h3>Applying a Custom Paragraph Style</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select the required level from the <b>Levels</b>
+list box.
+
+</li>
+
+<li>
+
+Select the required paragraph style from the
+<b>Paragraph Styles</b> list box.
+
+</li>
+
+<li>
+
+Click <b>OK</b> to apply the selected paragraph style.
+
+</li>
+
+<li>
+
+The assigned style appears in square brackets
+in the Levels list and is visible in the Preview pane.
+
+</li>
+
+</ol>
+
+
+<h3>Removing Applied Paragraph Style</h3>
+
+<p>
+
+Select the required level and click the
+
+<span class="highlight">Default</span>
+
+button.
+
+</p>
+
+</section>
+
+
+<!-- ================= SESSION 8 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">08.</span>
+
+    Columns and Background Tabs
+
+</div>
+
+
+<h3>Columns Tab</h3>
+
+<p>
+
+The <b>Columns</b> tab contains options to set the
+number of columns in the ToC.
+
+</p>
+
+
+<h3>Background Tab</h3>
+
+<p>
+
+The <b>Background</b> tab contains options to change
+the background of the ToC.
+
+</p>
+
+
+<div class="memory">
+
+    <b>🧠 Quick Recall:</b>
+
+    <p>
+
+        Columns → Number of columns
+
+        <br>
+
+        Background → Background appearance
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 9 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">09.</span>
+
+    Updating a Table of Contents
+
+</div>
+
+
+<p>
+
+If a document is edited after inserting the ToC,
+the ToC can be updated to reflect the changes.
+
+</p>
+
+
+<h3>Steps to Update ToC</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Right-click anywhere in the ToC.
+
+</li>
+
+<li>
+
+Select <b>Update Index</b>.
+
+</li>
+
+<li>
+
+The changes are reflected in the ToC.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ ONE-LINE EXAM ANSWER
+    </div>
+
+    <p>
+
+        <b>Update ToC → Right-click ToC → Update Index</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 10 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">10.</span>
+
+    Deleting a Table of Contents
+
+</div>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Right-click anywhere on the ToC.
+
+</li>
+
+<li>
+
+Select <b>Delete Index</b>.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        Update → <b>Update Index</b>
+
+        <br>
+
+        Delete → <b>Delete Index</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= TEMPLATES ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">11.</span>
+
+    Templates
+
+</div>
+
+
+<h3>What is a Template?</h3>
+
+<div class="important">
+
+    <p>
+
+        A <span class="highlight">template</span> is a
+        preset layout that helps create professional
+        and/or formal documents easily.
+
+    </p>
+
+</div>
+
+
+<h3>Why Use Templates?</h3>
+
+<p>
+
+Templates are useful when the same content,
+formatting and appearance are required in multiple
+documents.
+
+</p>
+
+
+<p>
+
+A template can contain:
+
+</p>
+
+<ul>
+
+    <li>Text</li>
+
+    <li>Graphics</li>
+
+    <li>Styles</li>
+
+    <li>Defined headings</li>
+
+    <li>Text formats</li>
+
+    <li>Page numbers</li>
+
+    <li>Headers</li>
+
+    <li>Footers</li>
+
+</ul>
+
+
+<h3>Examples</h3>
+
+<ul>
+
+    <li>Resume</li>
+
+    <li>Chapter</li>
+
+    <li>Project Report</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        Templates save time and effort because the same
+        formatting and content structure can be reused.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 12 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">12.</span>
+
+    Default Template
+
+</div>
+
+
+<p>
+
+All documents in Writer are based upon templates.
+
+</p>
+
+
+<p>
+
+If no specific template is specified, Writer uses the
+
+<span class="highlight">default template</span>
+
+for creating a blank document.
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        <b>Default Template → Blank Document Template</b>
+
+    </p>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= SESSION 13 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">13.</span>
+
+    Checking the Template of a Document
+
+</div>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the document.
+
+</li>
+
+<li>
+
+Select <b>Properties</b> from the File menu.
+
+</li>
+
+<li>
+
+The <b>Properties</b> dialog box appears.
+
+</li>
+
+<li>
+
+The associated template name is displayed there
+if the document was created using a template.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM MEMORY
+    </div>
+
+    <p>
+
+        <b>Check associated template → File → Properties</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 14 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">14.</span>
+
+    Creating and Saving a Template
+
+</div>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open/create the document whose template is to
+be created.
+
+</li>
+
+<li>
+
+Select:
+
+<b>File → Templates → Save</b>
+
+</li>
+
+<li>
+
+The <b>Save As Template</b> dialog box appears.
+
+</li>
+
+<li>
+
+Enter the name of the new template.
+
+</li>
+
+<li>
+
+Select the category.
+
+</li>
+
+<li>
+
+If required, select the
+<b>Set as default template</b> checkbox.
+
+</li>
+
+<li>
+
+Click <b>Save</b>.
+
+</li>
+
+</ol>
+
+
+<div class="important">
+
+    <p>
+
+        Writer templates are saved with the extension
+
+        <span class="highlight">.ott</span>
+
+    </p>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT
+    </div>
+
+    <p>
+
+        <b>.ott → Template file extension</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 15 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">15.</span>
+
+    Using In-built / Saved Templates
+
+</div>
+
+
+<h3>Opening Templates Dialog Box</h3>
+
+
+<div class="memory">
+
+    <b>Keyboard Shortcut:</b>
+
+    <p>
+
+        <span class="highlight">Ctrl + Shift + N</span>
+
+    </p>
+
+</div>
+
+
+<h3>Steps to Use a Saved Template</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the Templates dialog box.
+
+</li>
+
+<li>
+
+Select the desired template.
+
+</li>
+
+<li>
+
+Click <b>Open</b>.
+
+</li>
+
+<li>
+
+A new document opens with the same content,
+appearance and formatting effects as the template.
+
+</li>
+
+<li>
+
+Make the required changes and save the document.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        <b>
+
+        File → Templates → Manage Templates
+
+        </b>
+
+        can be used to access the Templates dialog box.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 16 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">16.</span>
+
+    Using Online Templates
+
+</div>
+
+
+<p>
+
+LibreOffice provides a wide range of online templates
+that can be downloaded from the Internet.
+
+</p>
+
+
+<h3>Basic Procedure</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the Templates dialog box.
+
+</li>
+
+<li>
+
+Click <b>Browse Online Templates</b>.
+
+</li>
+
+<li>
+
+The online templates page opens in a browser.
+
+</li>
+
+<li>
+
+Select the required template.
+
+</li>
+
+<li>
+
+Download the template.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 Exam Keyword:</b>
+
+    <p>
+
+        <b>Browse Online Templates</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 17 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">17.</span>
+
+    Importing a Template
+
+</div>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the Templates dialog box.
+
+</li>
+
+<li>
+
+Click <b>Import Templates</b>.
+
+</li>
+
+<li>
+
+The <b>Select Category</b> dialog box appears.
+
+</li>
+
+<li>
+
+Select an existing category or create a new category.
+
+</li>
+
+<li>
+
+Browse for the downloaded template.
+
+</li>
+
+<li>
+
+Select the template file.
+
+</li>
+
+<li>
+
+Click <b>Open</b>.
+
+</li>
+
+<li>
+
+The selected template is added to the list.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        <b>Import Templates</b> is used to add a downloaded
+        template to the Templates list.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 18 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">18.</span>
+
+    Editing a Template
+
+</div>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select:
+
+<b>File → Templates → Manage Templates</b>
+
+</li>
+
+<li>
+
+Right-click the template that needs editing.
+
+</li>
+
+<li>
+
+Select <b>Edit</b>.
+
+</li>
+
+<li>
+
+Make the desired changes.
+
+</li>
+
+<li>
+
+Save the template.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 Remember:</b>
+
+    <p>
+
+        Edit Template → Manage Templates →
+        Right-click → Edit
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 19 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">19.</span>
+
+    Setting a Custom Default Template
+
+</div>
+
+
+<p>
+
+Writer provides a blank document as the default
+template. However, any template can be set as the
+default template.
+
+</p>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the Templates dialog box.
+
+</li>
+
+<li>
+
+Right-click the template to be made default.
+
+</li>
+
+<li>
+
+Select <b>Set as Default</b>.
+
+</li>
+
+</ol>
+
+
+<div class="important">
+
+    <p>
+
+        After setting a template as default, new text
+        documents use the selected default template.
+
+    </p>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= SESSION 20 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">20.</span>
+
+    Moving a Template
+
+</div>
+
+
+<p>
+
+Templates can be organised by moving them between
+categories/folders within the Templates dialog.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM FOCUS
+    </div>
+
+    <p>
+
+        Remember the purpose of template management:
+        organising and reusing templates efficiently.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 21 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">21.</span>
+
+    Track Changes
+
+</div>
+
+
+<h3>What is Track Changes?</h3>
+
+<div class="important">
+
+    <p>
+
+        <span class="highlight">Track Changes</span> is a
+        feature used when a document is reviewed or edited
+        by multiple users.
+
+    </p>
+
+</div>
+
+
+<p>
+
+Instead of permanently changing the original document,
+Writer keeps a record of the changes made.
+
+</p>
+
+
+<p>
+
+The original author can later
+
+<b>accept or reject</b>
+
+the recorded changes.
+
+</p>
+
+
+<p>
+
+The feature also allows reviewers to add
+
+<span class="highlight">comments</span>.
+
+</p>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ VERY IMPORTANT
+    </div>
+
+    <p>
+
+        Track Changes →
+
+        <b>Record + Review + Accept/Reject + Comments</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 22 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">22.</span>
+
+    Track Changes Toolbar
+
+</div>
+
+
+<h3>Displaying the Toolbar</h3>
+
+
+<div class="memory">
+
+    <b>
+
+        View → Toolbars → Track Changes
+
+    </b>
+
+</div>
+
+
+<h3>Important Buttons</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+    <th>Button</th>
+
+    <th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td><b>View Track Changes</b></td>
+
+<td>
+
+Displays changes made by different users.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Record Track Changes</b></td>
+
+<td>
+
+Turns on Track Changes so editing is recorded.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Previous / Next Track Changes</b></td>
+
+<td>
+
+Moves between recorded changes.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Accept / Accept All</b></td>
+
+<td>
+
+Accepts one or all recorded changes.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Reject / Reject All</b></td>
+
+<td>
+
+Rejects one or all recorded changes.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Manage Track Changes</b></td>
+
+<td>
+
+Displays detailed information about changes.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td><b>Insert Comment</b></td>
+
+<td>
+
+Adds a comment to the document.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ DIRECT EXAM POINT
+    </div>
+
+    <p>
+
+        The Track Changes toolbar contains tools for
+        viewing, recording, navigating, accepting,
+        rejecting, managing changes and inserting comments.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 23 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">23.</span>
+
+    Preparing a Document for Review
+
+</div>
+
+
+<h3>Purpose</h3>
+
+<p>
+
+Before sharing a document with reviewers, the original
+author should ensure that changes will be recorded.
+
+</p>
+
+
+<h3>Starting the Recording</h3>
+
+
+<div class="important">
+
+    <p>
+
+        Select:
+
+        <b>
+
+        Edit → Track Changes → Record
+
+        </b>
+
+    </p>
+
+</div>
+
+
+<p>
+
+Alternatively, click the <b>Record</b> button on the
+Track Changes toolbar.
+
+</p>
+
+
+<h3>Protecting Track Changes</h3>
+
+<p>
+
+The document can be protected with a password so
+that another user cannot disable Track Changes
+without entering the password.
+
+</p>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Select:
+
+<b>
+
+Edit → Track Changes → Protect
+
+</b>
+
+</li>
+
+<li>
+
+Enter the password.
+
+</li>
+
+<li>
+
+Confirm the password.
+
+</li>
+
+<li>
+
+Click <b>OK</b>.
+
+</li>
+
+</ol>
+
+
+</section>
+
+
+<!-- ================= SESSION 24 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">24.</span>
+
+    Recording Changes
+
+</div>
+
+
+<h3>Starting Track Changes</h3>
+
+
+<p>
+
+Select:
+
+<b>
+
+Edit → Track Changes → Record
+
+</b>
+
+</p>
+
+
+<div class="important">
+
+    <p>
+
+        Shortcut key to start recording changes:
+
+        <span class="highlight">Ctrl + Shift + C</span>
+
+    </p>
+
+</div>
+
+
+<h3>How Changes Appear?</h3>
+
+<ul>
+
+    <li>
+
+Added characters are displayed in a
+<b>different colour</b>.
+
+    </li>
+
+    <li>
+
+Deleted characters are displayed using
+<b>strike-through</b> style.
+
+    </li>
+
+    <li>
+
+A tooltip can display details about the change.
+
+    </li>
+
+</ul>
+
+
+<h3>Change Details</h3>
+
+<p>
+
+The tooltip can provide information such as:
+
+</p>
+
+<ul>
+
+    <li>Author</li>
+
+    <li>Change made</li>
+
+    <li>Date</li>
+
+    <li>Time</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ MUST REMEMBER
+    </div>
+
+    <p>
+
+        <b>Ctrl + Shift + C → Start recording changes</b>
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= SESSION 25 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">25.</span>
+
+    Accepting and Rejecting Changes
+
+</div>
+
+
+<h3>Accepting a Change</h3>
+
+<p>
+
+The original author can accept a recorded change.
+
+</p>
+
+
+<h3>Rejecting a Change</h3>
+
+<p>
+
+The original author can reject a recorded change.
+
+</p>
+
+
+<h3>Important Options</h3>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+    <th>Option</th>
+
+    <th>Purpose</th>
+
+</tr>
+
+<tr>
+
+<td>Accept Track Change</td>
+
+<td>Accepts the selected change.</td>
+
+</tr>
+
+<tr>
+
+<td>Reject Track Change</td>
+
+<td>Rejects the selected change.</td>
+
+</tr>
+
+<tr>
+
+<td>Accept All Tracked Changes</td>
+
+<td>Accepts all changes.</td>
+
+</tr>
+
+<tr>
+
+<td>Reject All Tracked Changes</td>
+
+<td>Rejects all changes.</td>
+
+</tr>
+
+<tr>
+
+<td>Previous Track Changes</td>
+
+<td>Moves to previous change.</td>
+
+</tr>
+
+<tr>
+
+<td>Next Track Changes</td>
+
+<td>Moves to next change.</td>
+
+</tr>
+
+<tr>
+
+<td>Manage Track Changes</td>
+
+<td>
+
+Displays detailed list of changes along with
+author and date/time information.
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 26 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">26.</span>
+
+    Adding Comments
+
+</div>
+
+
+<p>
+
+Comments can be added while reviewing a document.
+
+</p>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Place the cursor at the location where the comment
+is required.
+
+</li>
+
+<li>
+
+Click <b>Insert Comment</b> on the Track Changes toolbar.
+
+</li>
+
+<li>
+
+A comment box appears on the right side.
+
+</li>
+
+<li>
+
+Type the comment.
+
+</li>
+
+<li>
+
+Click elsewhere on the document.
+
+</li>
+
+</ol>
+
+
+<div class="memory">
+
+    <b>🧠 Important:</b>
+
+    <p>
+
+        Comment boxes by different users can appear
+        in different colours.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 27 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">27.</span>
+
+    Deleting Comments
+
+</div>
+
+
+<p>
+
+Comments can be deleted individually, by author,
+or all together.
+
+</p>
+
+
+<h3>Available Options</h3>
+
+<ul>
+
+    <li>Delete current comment</li>
+
+    <li>Delete all comments by a particular author</li>
+
+    <li>Delete all comments</li>
+
+</ul>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM POINT
+    </div>
+
+    <p>
+
+        The comment menu provides options for deleting
+        the current comment, comments of a particular
+        author, or all comments.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= SESSION 28 ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">28.</span>
+
+    Comparing Documents
+
+</div>
+
+
+<p>
+
+Writer allows comparison between an original document
+and an edited/reviewed document.
+
+</p>
+
+
+<h3>Steps</h3>
+
+
+<ol class="steps">
+
+<li>
+
+Open the edited document.
+
+</li>
+
+<li>
+
+Select:
+
+<b>
+
+Edit → Track Changes → Compare Documents
+
+</b>
+
+</li>
+
+<li>
+
+The <b>Compare To</b> dialog box appears.
+
+</li>
+
+<li>
+
+Browse and select the original document.
+
+</li>
+
+<li>
+
+The <b>Manage Changes</b> dialog box appears.
+
+</li>
+
+<li>
+
+Accept or reject the desired changes.
+
+</li>
+
+<li>
+
+Close the dialog box.
+
+</li>
+
+<li>
+
+Save the edited document.
+
+</li>
+
+</ol>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ⭐ EXAM MEMORY
+    </div>
+
+    <p>
+
+        Compare Documents is used to compare the
+        original document with the reviewed/edited
+        document.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<div class="doodle">— ✦ — ✦ — ✦ —</div>
+
+
+<!-- ================= MASTER TABLE ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">29.</span>
+
+    🔥 Chapter 3 Master Revision Table
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+
+<th>Topic</th>
+
+<th>Must Remember</th>
+
+</tr>
+
+<tr>
+
+<td>Table of Contents</td>
+
+<td>
+
+Automated list of topics/subtopics with page numbers;
+entries are hyperlinked.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Heading Levels</td>
+
+<td>
+
+H1 to H10 — up to 10 levels.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>ToC Creation</td>
+
+<td>
+
+Insert → Table of Contents and Index →
+Table of Contents, Index or Bibliography
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Default ToC Tab</td>
+
+<td>
+
+Type
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>ToC Protection</td>
+
+<td>
+
+Protected Against Manual Changes
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>ToC Tabs</td>
+
+<td>
+
+Type, Entries, Styles, Columns, Background
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Update ToC</td>
+
+<td>
+
+Right-click → Update Index
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Delete ToC</td>
+
+<td>
+
+Right-click → Delete Index
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Template</td>
+
+<td>
+
+Preset layout for professional/formal documents.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Default Template</td>
+
+<td>
+
+Blank Document template
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Template Shortcut</td>
+
+<td>
+
+Ctrl + Shift + N
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Template Extension</td>
+
+<td>
+
+.ott
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Check Template</td>
+
+<td>
+
+File → Properties
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Online Templates</td>
+
+<td>
+
+Browse Online Templates
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Track Changes</td>
+
+<td>
+
+Records editing/reviewing changes.
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Record Shortcut</td>
+
+<td>
+
+Ctrl + Shift + C
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Track Changes Menu</td>
+
+<td>
+
+Edit → Track Changes
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Comments</td>
+
+<td>
+
+Insert Comment
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Compare</td>
+
+<td>
+
+Edit → Track Changes → Compare Documents
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ================= EXAM KEYWORDS ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">30.</span>
+
+    ⭐ High-Priority Exam Keywords
+
+</div>
+
+
+<div class="important">
+
+<ul>
+
+<li>
+
+<b>Table of Contents</b>
+
+</li>
+
+<li>
+
+<b>Heading 1 to Heading 10</b>
+
+</li>
+
+<li>
+
+<b>Protected Against Manual Changes</b>
+
+</li>
+
+<li>
+
+<b>Update Index</b>
+
+</li>
+
+<li>
+
+<b>Delete Index</b>
+
+</li>
+
+<li>
+
+<b>Entries Tab</b>
+
+</li>
+
+<li>
+
+<b>Styles Tab</b>
+
+</li>
+
+<li>
+
+<b>Columns Tab</b>
+
+</li>
+
+<li>
+
+<b>Background Tab</b>
+
+</li>
+
+<li>
+
+<b>Template</b>
+
+</li>
+
+<li>
+
+<b>.ott</b>
+
+</li>
+
+<li>
+
+<b>Blank Document Template</b>
+
+</li>
+
+<li>
+
+<b>File → Properties</b>
+
+</li>
+
+<li>
+
+<b>Browse Online Templates</b>
+
+</li>
+
+<li>
+
+<b>Track Changes</b>
+
+</li>
+
+<li>
+
+<b>Ctrl + Shift + C</b>
+
+</li>
+
+<li>
+
+<b>Accept / Reject Track Changes</b>
+
+</li>
+
+<li>
+
+<b>Insert Comment</b>
+
+</li>
+
+<li>
+
+<b>Compare Documents</b>
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- ================= SOURCE CHECK ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">31.</span>
+
+    📌 NCERT Check Your Progress Focus
+
+</div>
+
+
+<div class="exam">
+
+    <div class="exam-title">
+        ✏️ EXAM-ORIENTED AREAS
+    </div>
+
+    <ul>
+
+        <li>
+            Table of Contents dialog box and its tabs
+        </li>
+
+        <li>
+            Protected Against Manual Changes
+        </li>
+
+        <li>
+            Default Type tab
+        </li>
+
+        <li>
+            Styles tab
+        </li>
+
+        <li>
+            Background options
+        </li>
+
+        <li>
+            Templates and their reuse
+        </li>
+
+        <li>
+            Templates dialog box shortcut
+        </li>
+
+        <li>
+            Manage Templates
+        </li>
+
+        <li>
+            Track Changes
+        </li>
+
+        <li>
+            Track Changes menu
+        </li>
+
+        <li>
+            Shortcut for recording changes
+        </li>
+
+        <li>
+            Accepting and rejecting changes
+        </li>
+
+        <li>
+            Adding and deleting comments
+        </li>
+
+        <li>
+            Comparing documents
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="memory">
+
+    <b>🧠 Source Verification:</b>
+
+    <p>
+
+        These areas are especially important because they
+        are directly represented in the chapter's
+        <b>Check Your Progress</b> and exercise material.
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ================= LAST MINUTE ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">32.</span>
+
+    ⚡ 60-Second Revision
+
+</div>
+
+
+<div class="quick">
+
+<h3>CHAPTER 3 — QUICK RECALL</h3>
+
+
+<p>
+
+<b>ToC</b>
+
+→ Automated list of topics/subtopics + page numbers.
+
+</p>
+
+
+<p>
+
+<b>ToC Entries</b>
+
+→ Hyperlinked.
+
+</p>
+
+
+<p>
+
+<b>Headings</b>
+
+→ H1 to H10.
+
+</p>
+
+
+<p>
+
+<b>ToC Menu</b>
+
+→ Insert → Table of Contents and Index →
+Table of Contents, Index or Bibliography.
+
+</p>
+
+
+<p>
+
+<b>Default ToC Tab</b>
+
+→ Type.
+
+</p>
+
+
+<p>
+
+<b>ToC Tabs</b>
+
+→ Type + Entries + Styles + Columns + Background.
+
+</p>
+
+
+<p>
+
+<b>Update</b>
+
+→ Update Index.
+
+</p>
+
+
+<p>
+
+<b>Delete</b>
+
+→ Delete Index.
+
+</p>
+
+
+<p>
+
+<b>Template</b>
+
+→ Preset layout for professional/formal documents.
+
+</p>
+
+
+<p>
+
+<b>Template Extension</b>
+
+→ .ott
+
+</p>
+
+
+<p>
+
+<b>Template Dialog Shortcut</b>
+
+→ Ctrl + Shift + N.
+
+</p>
+
+
+<p>
+
+<b>Check Template</b>
+
+→ File → Properties.
+
+</p>
+
+
+<p>
+
+<b>Track Changes</b>
+
+→ Records edits for review.
+
+</p>
+
+
+<p>
+
+<b>Record Shortcut</b>
+
+→ Ctrl + Shift + C.
+
+</p>
+
+
+<p>
+
+<b>Accept/Reject</b>
+
+→ Original author can accept or reject changes.
+
+</p>
+
+
+<p>
+
+<b>Comments</b>
+
+→ Insert Comment.
+
+</p>
+
+
+<p>
+
+<b>Compare</b>
+
+→ Edit → Track Changes → Compare Documents.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FINAL MEMORY BOARD ================= -->
+
+<section class="session">
+
+<div class="session-title">
+
+    <span class="session-number">33.</span>
+
+    🧠 Final Memory Board
+
+</div>
+
+
+<div class="important">
+
+<h3>Remember These Before Exam</h3>
+
+
+<p>
+
+<b>10 Heading Levels</b> → H1–H10
+
+</p>
+
+
+<p>
+
+<b>ToC</b> → Automated + Hyperlinked
+
+</p>
+
+
+<p>
+
+<b>Default ToC Tab</b> → Type
+
+</p>
+
+
+<p>
+
+<b>ToC Tabs</b> → Type / Entries / Styles /
+Columns / Background
+
+</p>
+
+
+<p>
+
+<b>Update ToC</b> → Update Index
+
+</p>
+
+
+<p>
+
+<b>Delete ToC</b> → Delete Index
+
+</p>
+
+
+<p>
+
+<b>Template</b> → Preset Layout
+
+</p>
+
+
+<p>
+
+<b>.ott</b> → Template File
+
+</p>
+
+
+<p>
+
+<b>Ctrl + Shift + N</b> → Templates Dialog Box
+
+</p>
+
+
+<p>
+
+<b>File → Properties</b> → Check associated template
+
+</p>
+
+
+<p>
+
+<b>Track Changes</b> → Record edits
+
+</p>
+
+
+<p>
+
+<b>Ctrl + Shift + C</b> → Record changes
+
+</p>
+
+
+<p>
+
+<b>Accept / Reject</b> → Review recorded changes
+
+</p>
+
+
+<p>
+
+<b>Insert Comment</b> → Add reviewer comment
+
+</p>
+
+
+<p>
+
+<b>Compare Documents</b> → Compare edited and original document
+
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <b>THE GOAL</b> • CBSE Class 10 • Information Technology 402
+
+    <br><br>
+
+    Part B • Unit 1 • Chapter 3 — Advanced Features of Writer
+
+    <br><br>
+
+    <b>Source:</b> NCERT Domestic Data Entry Operator — Class X (2023–24)
+
+    <br><br>
+
+    Made with Love ❤️ in India by Pushpender
+
+</footer>
+
+
+</main>
+
+</body>
+</html>
