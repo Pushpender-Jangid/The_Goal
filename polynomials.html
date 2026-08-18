@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Class 10 Mathematics | Polynomials</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#e8e3d9;
+    color:#202020;
+    font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+    line-height:1.65;
+    padding:18px 10px;
+}
+
+.notebook{
+    max-width:980px;
+    margin:auto;
+    position:relative;
+    padding:35px 42px 55px 88px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #fffef9 0px,
+        #fffef9 31px,
+        #d8e5f2 32px,
+        #fffef9 33px
+    );
+
+    box-shadow:0 10px 35px rgba(0,0,0,.16);
+    border-radius:6px;
+}
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#e89a9a;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.header h1{
+    font-size:38px;
+    color:#4f46e5;
+    letter-spacing:1px;
+}
+
+.header h2{
+    font-size:19px;
+    color:#374151;
+    margin-top:4px;
+}
+
+.header p{
+    color:#666;
+    font-size:13px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:10px;
+    padding:5px 15px;
+    border-radius:20px;
+    background:#ede9fe;
+    color:#5b21b6;
+    font-weight:bold;
+    font-size:12px;
+}
+
+/* SECTIONS */
+
+.section{
+    margin-bottom:30px;
+}
+
+.section-title{
+    display:inline-block;
+    color:#4338ca;
+    font-size:21px;
+    font-weight:bold;
+    border-bottom:2px solid #7c3aed;
+    margin-bottom:10px;
+}
+
+/* CARDS */
+
+.note,
+.example,
+.formula-box,
+.exam,
+.hint,
+.warning,
+.steps{
+    border-radius:10px;
+    padding:12px 16px;
+    margin:10px 0;
+}
+
+.note{
+    background:rgba(255,255,255,.82);
+    border-left:4px solid #6366f1;
+}
+
+.example{
+    background:#fffdf3;
+    border:1px dashed #d97706;
+}
+
+.formula-box{
+    background:rgba(237,233,254,.88);
+    border:1px dashed #8b5cf6;
+    text-align:center;
+}
+
+.exam{
+    background:#ecfdf5;
+    border-left:4px solid #16a34a;
+}
+
+.hint{
+    background:#f5f3ff;
+    border-left:4px solid #a78bfa;
+    font-size:14px;
+    color:#4c1d95;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+}
+
+.steps{
+    background:rgba(255,255,255,.84);
+    border:1px solid #d1d5db;
+}
+
+.example-title{
+    color:#b45309;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.formula{
+    font-size:19px;
+    color:#312e81;
+    font-weight:bold;
+    margin:7px 0;
+}
+
+/* FRACTIONS */
+
+.frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1.05;
+    margin:0 4px;
+}
+
+.frac .top{
+    border-bottom:2px solid #222;
+    padding:0 8px 3px;
+}
+
+.frac .bottom{
+    padding:3px 8px 0;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.85);
+    margin:10px 0;
+}
+
+th,td{
+    border:1px solid #999;
+    padding:8px;
+    text-align:center;
+}
+
+th{
+    background:#ede9fe;
+    color:#4338ca;
+}
+
+/* HIGHLIGHT */
+
+.mark{
+    color:#4f46e5;
+    font-weight:bold;
+}
+
+.red{
+    color:#b91c1c;
+    font-weight:bold;
+}
+
+.green{
+    color:#15803d;
+    font-weight:bold;
+}
+
+/* MINI GRAPH */
+
+.graph{
+    width:100%;
+    max-width:600px;
+    height:250px;
+    margin:15px auto;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(#dce7f2 1px,transparent 1px),
+    linear-gradient(90deg,#dce7f2 1px,transparent 1px);
+
+    background-size:25px 25px;
+    border:1px solid #aaa;
+}
+
+.graph .yaxis{
+    position:absolute;
+    width:2px;
+    background:#555;
+    top:0;
+    bottom:0;
+    left:50%;
+}
+
+.graph .xaxis{
+    position:absolute;
+    height:2px;
+    background:#555;
+    left:0;
+    right:0;
+    top:50%;
+}
+
+.graph .zero1,
+.graph .zero2{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#4f46e5;
+    top:calc(50% - 5px);
+}
+
+.graph .zero1{
+    left:35%;
+}
+
+.graph .zero2{
+    left:65%;
+}
+
+.graph .label1{
+    position:absolute;
+    left:34%;
+    top:54%;
+    font-size:13px;
+}
+
+.graph .label2{
+    position:absolute;
+    left:64%;
+    top:54%;
+    font-size:13px;
+}
+
+.graph .xlabel{
+    position:absolute;
+    right:8px;
+    top:51%;
+    font-size:12px;
+}
+
+.graph .ylabel{
+    position:absolute;
+    left:51%;
+    top:5px;
+    font-size:12px;
+}
+
+/* CHECKLIST */
+
+.check{
+    margin:6px 0;
+}
+
+.check:before{
+    content:"✓ ";
+    color:#16a34a;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    margin-top:40px;
+    color:#6b7280;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        padding:25px 14px 45px 48px;
+        border-radius:0;
+    }
+
+    .notebook:before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:29px;
+    }
+
+    .header h2{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .formula{
+        font-size:16px;
+    }
+
+    .note,
+    .example,
+    .formula-box,
+    .exam,
+    .hint,
+    .warning,
+    .steps{
+        padding:10px 12px;
+    }
+
+    table{
+        font-size:11px;
+    }
+
+    th,td{
+        padding:6px 4px;
+    }
+
+    .graph{
+        height:210px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="notebook">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<h1>✍ POLYNOMIALS</h1>
+
+<h2>Class 10 Mathematics • Chapter 2</h2>
+
+<p>Concept Notes • Examples • Exam-Oriented Revision</p>
+
+<div class="badge">
+THE GOAL • ENGLISH MEDIUM
+</div>
+
+</div>
+
+
+<!-- 1 -->
+
+<div class="section">
+
+<div class="section-title">
+01. What is a Polynomial?
+</div>
+
+<div class="note">
+
+A polynomial in one variable is an algebraic expression in which
+the powers of the variable are <b>non-negative integers</b>.
+
+<br><br>
+
+A general polynomial in x can be written as:
+
+<div class="formula-box">
+
+<div class="formula">
+aₙxⁿ + aₙ₋₁xⁿ⁻¹ + ... + a₂x² + a₁x + a₀
+</div>
+
+</div>
+
+Here, a₀, a₁, a₂, ... are real numbers.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Simple meaning:</b>
+Polynomial mein variable ki powers 0, 1, 2, 3... jaise
+non-negative integers honi chahiye.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+2x³ − 5x² + 7x − 4
+
+<br><br>
+
+This is a polynomial in x.
+
+<br><br>
+
+But
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">x</span>
+</span>
+
++ 2
+
+is <b>not</b> a polynomial because
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">x</span>
+</span>
+
+= x⁻¹.
+
+</div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="section">
+
+<div class="section-title">
+02. Terms and Coefficients
+</div>
+
+<div class="note">
+
+The separate parts of a polynomial connected by + or −
+are called its <b>terms</b>.
+
+The numerical multiplier of a variable term is called its
+<b>coefficient</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+For:
+
+<br>
+
+5x³ − 7x² + 4x − 9
+
+<br><br>
+
+Terms are:
+
+<br>
+
+5x³, −7x², 4x, −9
+
+<br><br>
+
+Coefficient of x² = <b>−7</b>
+
+<br>
+
+Coefficient of x = <b>4</b>
+
+<br>
+
+Constant term = <b>−9</b>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Yaad rakho:</b> Sign bhi coefficient ka part hota hai.
+Isliye x² ka coefficient <b>−7</b> hai, 7 nahi.
+
+</div>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="section">
+
+<div class="section-title">
+03. Zero Polynomial
+</div>
+
+<div class="note">
+
+A polynomial in which all coefficients are zero is called
+the <b>zero polynomial</b>.
+
+<br><br>
+
+Example:
+
+<div class="formula">
+p(x) = 0
+</div>
+
+</div>
+
+<div class="hint">
+
+💡 Zero polynomial mein koi non-zero coefficient nahi hota.
+
+</div>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="section">
+
+<div class="section-title">
+04. Degree of a Polynomial
+</div>
+
+<div class="note">
+
+The highest power of the variable having a non-zero coefficient
+is called the <b>degree</b> of the polynomial.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+p(x) = 7x⁴ − 3x² + 8x − 5
+
+<br><br>
+
+Highest power of x = 4
+
+<br><br>
+
+Therefore,
+
+<b>Degree = 4</b>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Simple trick:</b> Sabse badi power dekho — wahi degree hai.
+
+</div>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="section">
+
+<div class="section-title">
+05. Types of Polynomials According to Degree
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Degree</th>
+<th>Name</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>Constant</td>
+<td>7</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Linear</td>
+<td>2x + 3</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Quadratic</td>
+<td>x² − 5x + 6</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Cubic</td>
+<td>x³ − 4x + 1</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+3x² + 7x − 2
+
+<br><br>
+
+Highest power = 2
+
+<br>
+
+Therefore, it is a <b>quadratic polynomial</b>.
+
+</div>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="section">
+
+<div class="section-title">
+06. Monomial, Binomial and Trinomial
+</div>
+
+<div class="note">
+
+A polynomial having:
+
+<br>
+
+<b>1 term</b> → Monomial
+
+<br>
+
+<b>2 terms</b> → Binomial
+
+<br>
+
+<b>3 terms</b> → Trinomial
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Examples</div>
+
+7x² → Monomial
+
+<br><br>
+
+x + 5 → Binomial
+
+<br><br>
+
+x² + 3x + 2 → Trinomial
+
+</div>
+
+<div class="hint">
+
+💡 Terms count karo, degree nahi.
+
+</div>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="section">
+
+<div class="section-title">
+07. Zero of a Polynomial ⭐
+</div>
+
+<div class="note">
+
+A number k is called a <b>zero</b> of a polynomial p(x)
+if:
+
+<div class="formula-box">
+
+<div class="formula">
+p(k) = 0
+</div>
+
+</div>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Simple meaning:</b> Jis value ko x ki jagah put karne par
+polynomial ki value <b>0</b> ho jaaye, wahi zero hai.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+p(x) = x − 5
+
+<br><br>
+
+Put x = 5:
+
+<br>
+
+p(5) = 5 − 5
+
+<br>
+
+= 0
+
+<br><br>
+
+Therefore,
+
+<b>5 is a zero of p(x).</b>
+
+</div>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="section">
+
+<div class="section-title">
+08. Finding the Zero of a Linear Polynomial
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Find the zero of:
+
+<br>
+
+p(x) = 3x − 12
+
+<br><br>
+
+For zero:
+
+<br>
+
+3x − 12 = 0
+
+<br>
+
+3x = 12
+
+<br>
+
+x = 4
+
+<br><br>
+
+<b>Therefore, zero = 4.</b>
+
+</div>
+
+<div class="hint">
+
+💡 Linear polynomial ka zero find karne ke liye simply
+p(x) = 0 put karke x solve karo.
+
+</div>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="section">
+
+<div class="section-title">
+09. Geometrical Meaning of Zeroes ⭐⭐⭐
+</div>
+
+<div class="note">
+
+The zeroes of a polynomial are the x-coordinates of the points
+where its graph intersects or touches the <b>x-axis</b>.
+
+</div>
+
+<div class="graph">
+
+<div class="yaxis"></div>
+<div class="xaxis"></div>
+
+<div class="zero1"></div>
+<div class="zero2"></div>
+
+<div class="label1">x = 2</div>
+<div class="label2">x = 5</div>
+
+<div class="xlabel">x-axis →</div>
+<div class="ylabel">y-axis ↑</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+If a graph intersects the x-axis at x = 2 and x = 5,
+
+<br><br>
+
+then its zeroes are:
+
+<br>
+
+<b>2 and 5</b>
+
+</div>
+
+<div class="hint">
+
+💡 Graph mein <b>x-axis ko cut/touch</b> karne wale points ke
+x-coordinates zeroes hote hain.
+
+</div>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="section">
+
+<div class="section-title">
+10. Number of Zeroes from a Graph
+</div>
+
+<div class="note">
+
+The number of zeroes of a polynomial is equal to the number of
+points where its graph intersects or touches the x-axis.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+If a graph cuts the x-axis at three distinct points,
+
+<br><br>
+
+<b>Number of zeroes = 3</b>
+
+</div>
+
+<div class="exam">
+
+⭐ <b>Exam Point:</b>
+
+<br><br>
+
+More x-axis intersections → More zeroes.
+
+<br>
+
+No intersection with x-axis → No real zero.
+
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="section">
+
+<div class="section-title">
+11. Remainder Theorem ⭐⭐⭐
+</div>
+
+<div class="note">
+
+If a polynomial p(x) is divided by (x − a),
+then the remainder is:
+
+<div class="formula-box">
+
+<div class="formula">
+Remainder = p(a)
+</div>
+
+</div>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Shortcut:</b> Long division karne ki zarurat nahi.
+Divisor x − a hai to directly <b>x = a</b> put karo.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Find the remainder when:
+
+<br>
+
+p(x) = x³ + 2x² − x + 5
+
+<br>
+
+is divided by x − 2.
+
+<br><br>
+
+By Remainder Theorem:
+
+<br>
+
+Remainder = p(2)
+
+<br>
+
+= 2³ + 2(2²) − 2 + 5
+
+<br>
+
+= 8 + 8 − 2 + 5
+
+<br>
+
+= <b>19</b>
+
+</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="section">
+
+<div class="section-title">
+12. Remainder with Divisor (x + a)
+</div>
+
+<div class="note">
+
+If the divisor is:
+
+<div class="formula">
+x + a
+</div>
+
+write it as:
+
+<div class="formula">
+x − (−a)
+</div>
+
+Therefore, remainder = <b>p(−a)</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Find the remainder when:
+
+<br>
+
+p(x) = x² + 3x + 5
+
+<br>
+
+is divided by x + 2.
+
+<br><br>
+
+Remainder = p(−2)
+
+<br>
+
+= (−2)² + 3(−2) + 5
+
+<br>
+
+= 4 − 6 + 5
+
+<br>
+
+= <b>3</b>
+
+</div>
+
+<div class="hint">
+
+💡 <b>x + 2</b> mein value <b>−2</b> put hogi.
+
+</div>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="section">
+
+<div class="section-title">
+13. Factor Theorem ⭐⭐⭐
+</div>
+
+<div class="note">
+
+If p(a) = 0, then (x − a) is a factor of p(x).
+
+Conversely, if (x − a) is a factor of p(x),
+then p(a) = 0.
+
+<div class="formula-box">
+
+<div class="formula">
+(x − a) is a factor of p(x)
+⇔ p(a) = 0
+</div>
+
+</div>
+
+</div>
+
+<div class="hint">
+
+💡 Factor check karna hai? Bas <b>p(a)</b> calculate karo.
+Answer 0 aaya → factor hai.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Check whether x − 2 is a factor of:
+
+<br>
+
+p(x) = x³ − 3x² + 4
+
+<br><br>
+
+p(2) = 8 − 12 + 4
+
+<br>
+
+= 0
+
+<br><br>
+
+Therefore,
+
+<b>x − 2 is a factor of p(x).</b>
+
+</div>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="section">
+
+<div class="section-title">
+14. Proof of Factor Theorem
+</div>
+
+<div class="note">
+
+Suppose p(x) is divided by (x − a).
+
+By the division algorithm:
+
+<br><br>
+
+p(x) = (x − a)q(x) + r
+
+<br><br>
+
+Since the divisor is linear, the remainder r is a constant.
+
+Putting x = a:
+
+<br><br>
+
+p(a) = (a − a)q(a) + r
+
+<br>
+
+p(a) = r
+
+<br><br>
+
+Therefore, if p(a) = 0,
+
+<br>
+
+r = 0
+
+<br><br>
+
+Hence,
+
+<br>
+
+<b>(x − a) is a factor of p(x).</b>
+
+</div>
+
+<div class="hint">
+
+💡 Exam mein proof likhte waqt equations ka order maintain karna.
+Last line mein clearly conclusion likhna.
+
+</div>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="section">
+
+<div class="section-title">
+15. Factorisation of a Quadratic Polynomial ⭐⭐⭐
+</div>
+
+<div class="note">
+
+A quadratic polynomial has the form:
+
+<div class="formula-box">
+
+<div class="formula">
+ax² + bx + c, &nbsp; a ≠ 0
+</div>
+
+</div>
+
+It can often be factorised by splitting the middle term.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Factorise:
+
+<br>
+
+x² + 7x + 12
+
+<br><br>
+
+We need two numbers whose:
+
+<br>
+
+Product = 12
+
+<br>
+
+Sum = 7
+
+<br><br>
+
+Numbers are 3 and 4.
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x² + 7x + 12
+
+<br>
+
+= (x + 3)(x + 4)
+
+</div>
+
+<div class="hint">
+
+💡 Aise questions mein do numbers find karo:
+<b>product = last term</b> and <b>sum = middle coefficient</b>
+when the leading coefficient is 1.
+
+</div>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="section">
+
+<div class="section-title">
+16. Splitting the Middle Term ⭐⭐⭐
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Factorise:
+
+<br>
+
+2x² + 7x + 3
+
+<br><br>
+
+First × last coefficient:
+
+<br>
+
+2 × 3 = 6
+
+<br><br>
+
+Two numbers with:
+
+<br>
+
+Product = 6
+
+<br>
+
+Sum = 7
+
+<br><br>
+
+are 6 and 1.
+
+<br><br>
+
+Therefore:
+
+<br>
+
+2x² + 6x + x + 3
+
+<br>
+
+= 2x(x + 3) + 1(x + 3)
+
+<br>
+
+= (2x + 1)(x + 3)
+
+</div>
+
+<div class="hint">
+
+💡 Pehle middle term ko suitable two terms mein split karo,
+phir grouping se common factor nikalo.
+
+</div>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="section">
+
+<div class="section-title">
+17. Factorising a Cubic Polynomial ⭐⭐⭐
+</div>
+
+<div class="note">
+
+For a cubic polynomial, we can use the <b>Factor Theorem</b>
+to find one factor and then factorise the remaining quadratic.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Factorise:
+
+<br>
+
+p(x) = x³ − 6x² + 11x − 6
+
+<br><br>
+
+Try x = 1:
+
+<br>
+
+p(1) = 1 − 6 + 11 − 6
+
+<br>
+
+= 0
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x − 1 is a factor.
+
+<br><br>
+
+Hence:
+
+<br>
+
+p(x) = (x − 1)(x² − 5x + 6)
+
+<br>
+
+= (x − 1)(x − 2)(x − 3)
+
+</div>
+
+<div class="hint">
+
+💡 Cubic factorisation mein possible zeroes try karke
+Factor Theorem use karna very useful hai.
+
+</div>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="section">
+
+<div class="section-title">
+18. Algebraic Identity: (x + y + z)²
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+(x + y + z)²
+= x² + y² + z² + 2xy + 2yz + 2zx
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+For x = 1, y = 2, z = 3:
+
+<br><br>
+
+(1 + 2 + 3)² = 36
+
+<br><br>
+
+Using identity:
+
+<br>
+
+1² + 2² + 3² + 2(1)(2) + 2(2)(3) + 2(3)(1)
+
+<br>
+
+= 1 + 4 + 9 + 4 + 12 + 6
+
+<br>
+
+= <b>36</b>
+
+</div>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="section">
+
+<div class="section-title">
+19. Identity: (x + y)³
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+(x + y)³ = x³ + y³ + 3xy(x + y)
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+(2 + 3)³
+
+<br>
+
+= 2³ + 3³ + 3(2)(3)(5)
+
+<br>
+
+= 8 + 27 + 90
+
+<br>
+
+= <b>125</b>
+
+</div>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="section">
+
+<div class="section-title">
+20. Identity: (x − y)³
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+(x − y)³ = x³ − y³ − 3xy(x − y)
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+(5 − 2)³
+
+<br>
+
+= 5³ − 2³ − 3(5)(2)(3)
+
+<br>
+
+= 125 − 8 − 90
+
+<br>
+
+= <b>27</b>
+
+</div>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="section">
+
+<div class="section-title">
+21. Sum of Two Cubes
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+x³ + y³
+= (x + y)(x² − xy + y²)
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Factorise:
+
+<br>
+
+x³ + 8
+
+<br><br>
+
+= x³ + 2³
+
+<br>
+
+= (x + 2)(x² − 2x + 4)
+
+</div>
+
+<div class="hint">
+
+💡 Sum of cubes mein first bracket <b>(x + y)</b> hota hai,
+second bracket mein middle sign negative hota hai.
+
+</div>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="section">
+
+<div class="section-title">
+22. Difference of Two Cubes
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+x³ − y³
+= (x − y)(x² + xy + y²)
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Factorise:
+
+<br>
+
+x³ − 27
+
+<br><br>
+
+= x³ − 3³
+
+<br>
+
+= (x − 3)(x² + 3x + 9)
+
+</div>
+
+<div class="hint">
+
+💡 Difference of cubes:
+<b>same sign first bracket</b>, opposite sign middle term in second bracket.
+
+</div>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="section">
+
+<div class="section-title">
+23. Identity: x³ + y³ + z³ − 3xyz
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+x³ + y³ + z³ − 3xyz
+</div>
+
+<div class="formula">
+= (x + y + z)
+(x² + y² + z² − xy − yz − zx)
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+For x = 1, y = 2, z = 3:
+
+<br><br>
+
+LHS:
+
+<br>
+
+1³ + 2³ + 3³ − 3(1)(2)(3)
+
+<br>
+
+= 1 + 8 + 27 − 18
+
+<br>
+
+= <b>18</b>
+
+</div>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="section">
+
+<div class="section-title">
+24. Special Case: x + y + z = 0 ⭐
+</div>
+
+<div class="note">
+
+If:
+
+<div class="formula-box">
+
+<div class="formula">
+x + y + z = 0
+</div>
+
+</div>
+
+then:
+
+<div class="formula-box">
+
+<div class="formula">
+x³ + y³ + z³ = 3xyz
+</div>
+
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Let:
+
+<br>
+
+x = 1, y = 2
+
+<br>
+
+Since x + y + z = 0:
+
+<br>
+
+1 + 2 + z = 0
+
+<br>
+
+z = −3
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x³ + y³ + z³
+
+<br>
+
+= 1 + 8 − 27
+
+<br>
+
+= −18
+
+<br><br>
+
+3xyz = 3(1)(2)(−3)
+
+<br>
+
+= −18 ✓
+
+</div>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="section">
+
+<div class="section-title">
+25. Using Identities for Factorisation
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Factorise:
+
+<br>
+
+8x³ + 27
+
+<br><br>
+
+= (2x)³ + 3³
+
+<br><br>
+
+Using:
+
+<br>
+
+a³ + b³ = (a + b)(a² − ab + b²)
+
+<br><br>
+
+Therefore:
+
+<br>
+
+= (2x + 3)(4x² − 6x + 9)
+
+</div>
+
+<div class="hint">
+
+💡 Pehle expression ko identity ke pattern mein convert karo.
+
+</div>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="section">
+
+<div class="section-title">
+26. Finding an Unknown Constant Using Factor Theorem
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Find k if x − 2 is a factor of:
+
+<br>
+
+p(x) = x³ + kx² − 4x + 4
+
+<br><br>
+
+Since x − 2 is a factor:
+
+<br>
+
+p(2) = 0
+
+<br><br>
+
+8 + 4k − 8 + 4 = 0
+
+<br>
+
+4 + 4k = 0
+
+<br>
+
+4k = −4
+
+<br>
+
+<b>k = −1</b>
+
+</div>
+
+<div class="hint">
+
+💡 “x − a is a factor” dikhe → directly <b>p(a) = 0</b> use karo.
+
+</div>
+
+</div>
+
+
+<!-- 27 -->
+
+<div class="section">
+
+<div class="section-title">
+27. Finding a Missing Factor
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+If x − 1 is a factor of:
+
+<br>
+
+x³ − 4x² + 5x − 2
+
+<br><br>
+
+First verify:
+
+<br>
+
+p(1) = 1 − 4 + 5 − 2 = 0
+
+<br><br>
+
+So x − 1 is a factor.
+
+<br><br>
+
+After factorisation:
+
+<br>
+
+x³ − 4x² + 5x − 2
+
+<br>
+
+= (x − 1)(x² − 3x + 2)
+
+<br>
+
+= (x − 1)(x − 1)(x − 2)
+
+</div>
+
+</div>
+
+
+<!-- 28 -->
+
+<div class="section">
+
+<div class="section-title">
+28. Important Exam Type — Check a Factor
+</div>
+
+<div class="steps">
+
+<div class="check">
+Write p(x).
+</div>
+
+<div class="check">
+Identify a from factor (x − a).
+</div>
+
+<div class="check">
+Calculate p(a).
+</div>
+
+<div class="check">
+If p(a) = 0 → factor is correct.
+</div>
+
+<div class="check">
+If p(a) ≠ 0 → factor is not a factor.
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Quick Example</div>
+
+Is x + 1 a factor of p(x)?
+
+<br><br>
+
+Since x + 1 = x − (−1),
+
+<br>
+
+calculate p(−1).
+
+<br><br>
+
+If p(−1) = 0,
+
+<br>
+
+<b>x + 1 is a factor.</b>
+
+</div>
+
+</div>
+
+
+<!-- 29 -->
+
+<div class="section">
+
+<div class="section-title">
+29. Common Mistakes ⚠️
+</div>
+
+<div class="warning">
+
+<b>1.</b> Degree ≠ number of terms.
+
+<br><br>
+
+<b>2.</b> Zero of p(x) means p(k) = 0, not p(0).
+
+<br><br>
+
+<b>3.</b> Divisor x + a → put x = −a.
+
+<br><br>
+
+<b>4.</b> Factor x − a → check p(a).
+
+<br><br>
+
+<b>5.</b> In x³ + y³ identity, the middle sign is negative.
+
+<br><br>
+
+<b>6.</b> In x³ − y³ identity, the middle sign is positive.
+
+<br><br>
+
+<b>7.</b> Don't confuse coefficient with constant term.
+
+</div>
+
+</div>
+
+
+<!-- 30 -->
+
+<div class="section">
+
+<div class="section-title">
+30. Formula Sheet ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+Remainder on division by (x − a) = p(a)
+</div>
+
+<div class="formula">
+p(a) = 0 ⇔ (x − a) is a factor
+</div>
+
+<div class="formula">
+(x + y + z)²
+= x² + y² + z² + 2xy + 2yz + 2zx
+</div>
+
+<div class="formula">
+(x + y)³
+= x³ + y³ + 3xy(x + y)
+</div>
+
+<div class="formula">
+(x − y)³
+= x³ − y³ − 3xy(x − y)
+</div>
+
+<div class="formula">
+x³ + y³
+= (x + y)(x² − xy + y²)
+</div>
+
+<div class="formula">
+x³ − y³
+= (x − y)(x² + xy + y²)
+</div>
+
+<div class="formula">
+x³ + y³ + z³ − 3xyz
+</div>
+
+<div class="formula">
+= (x + y + z)
+(x² + y² + z² − xy − yz − zx)
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 31 -->
+
+<div class="section">
+
+<div class="section-title">
+31. One-Minute Revision
+</div>
+
+<div class="note">
+
+<div class="check">
+Polynomial → powers of variable are non-negative integers.
+</div>
+
+<div class="check">
+Degree → highest power with non-zero coefficient.
+</div>
+
+<div class="check">
+Zero → p(k) = 0.
+</div>
+
+<div class="check">
+Graph → x-axis intersections/touching points give zeroes.
+</div>
+
+<div class="check">
+Remainder → put the zero of the linear divisor.
+</div>
+
+<div class="check">
+Factor Theorem → p(a) = 0 means x − a is a factor.
+</div>
+
+<div class="check">
+Quadratic factorisation → split middle term when suitable.
+</div>
+
+<div class="check">
+Cubic factorisation → Factor Theorem + quadratic factorisation.
+</div>
+
+<div class="check">
+Identities → recognise the pattern before expanding.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 32 -->
+
+<div class="section">
+
+<div class="section-title">
+32. Exam Practice Mindset 🎯
+</div>
+
+<div class="exam">
+
+<b>Question says “remainder”?</b>
+
+<br>
+→ Think Remainder Theorem.
+
+<br><br>
+
+<b>Question says “factor”?</b>
+
+<br>
+→ Think Factor Theorem.
+
+<br><br>
+
+<b>Question gives x − a?</b>
+
+<br>
+→ Put x = a.
+
+<br><br>
+
+<b>Question gives x + a?</b>
+
+<br>
+→ Put x = −a.
+
+<br><br>
+
+<b>Question gives cubic polynomial?</b>
+
+<br>
+→ Try a suitable value → find one factor → factorise the remaining quadratic.
+
+<br><br>
+
+<b>Question looks like a³ ± b³?</b>
+
+<br>
+→ Use cube identities.
+
+</div>
+
+</div>
+
+
+<!-- FINAL -->
+
+<div class="section">
+
+<div class="section-title">
+🏆 POLYNOMIALS — FINAL CHECK
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+Concept → Understand
+</div>
+
+<div class="formula">
+Example → Observe
+</div>
+
+<div class="formula">
+Formula → Remember
+</div>
+
+<div class="formula">
+Practice → Master
+</div>
+
+</div>
+
+<div class="hint">
+
+💡 <b>THE GOAL Tip:</b>
+
+Formula ratne se pehle uska pattern samjho.
+Question ko identify karo — phir correct theorem/identity apply karo.
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Chapter 2 • Polynomials
+
+<br><br>
+
+Learn the concept • Understand the method • Practice the pattern
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</div>
+
+</div>
+
+</body>
+</html>
