@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Trigonometry Notes</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#e8e4dc;
+    color:#202020;
+    font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+    padding:18px 10px;
+    line-height:1.45;
+}
+
+/* ================= NOTEBOOK ================= */
+
+.notebook{
+    max-width:950px;
+    margin:auto;
+    min-height:100vh;
+    position:relative;
+
+    padding:32px 38px 50px 82px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffef8 0px,
+            #fffef8 31px,
+            #dbe7f5 32px,
+            #fffef8 33px
+        );
+
+    box-shadow:0 8px 35px rgba(0,0,0,.16);
+    border-radius:5px;
+}
+
+/* RED MARGIN */
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:58px;
+    width:2px;
+    background:#ef9a9a;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    text-align:center;
+    margin-bottom:22px;
+}
+
+.header h1{
+    color:#4f46e5;
+    font-size:34px;
+    letter-spacing:1px;
+}
+
+.header p{
+    color:#555;
+    font-size:14px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:8px;
+    padding:5px 14px;
+    border-radius:20px;
+    background:#ede9fe;
+    color:#5b21b6;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+    margin-bottom:22px;
+}
+
+.section-title{
+    display:inline-block;
+    color:#4338ca;
+    font-size:20px;
+    font-weight:bold;
+    border-bottom:2px solid #7c3aed;
+    margin-bottom:8px;
+}
+
+/* ================= NOTE ================= */
+
+.note{
+    background:rgba(255,255,255,.76);
+    border-left:4px solid #7c3aed;
+    border-radius:9px;
+    padding:10px 14px;
+    margin:7px 0;
+}
+
+/* ================= FORMULA ================= */
+
+.formula-box{
+    background:rgba(237,233,254,.82);
+    border:1px dashed #8b5cf6;
+    border-radius:10px;
+    padding:10px 14px;
+    margin:7px 0;
+}
+
+.formula{
+    color:#312e81;
+    font-size:18px;
+    font-weight:bold;
+    margin:6px 0;
+}
+
+/* ================= PROPER FRACTION ================= */
+
+.frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1;
+    margin:0 4px;
+}
+
+.frac .top{
+    border-bottom:2px solid #222;
+    padding:0 7px 3px;
+}
+
+.frac .bottom{
+    padding:3px 7px 0;
+}
+
+/* ================= TWO COLUMN ================= */
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+/* ================= RIGHT TRIANGLE ================= */
+
+.triangle-diagram{
+    width:100%;
+    max-width:600px;
+    margin:4px auto 10px;
+}
+
+.triangle-diagram svg{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* ================= HEIGHT / DISTANCE DIAGRAM ================= */
+
+.height-diagram{
+    width:100%;
+    max-width:720px;
+    margin:5px auto 12px;
+    padding:5px;
+    background:rgba(255,255,255,.35);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.height-diagram svg{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.8);
+}
+
+th,
+td{
+    border:1px solid #aaa;
+    padding:7px 4px;
+    text-align:center;
+    font-size:13px;
+}
+
+th{
+    background:#ede9fe;
+    color:#4338ca;
+}
+
+td:first-child{
+    font-weight:bold;
+    background:#f5f3ff;
+}
+
+/* ================= ALERT ================= */
+
+.alert{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    border-radius:8px;
+    padding:9px 13px;
+    margin-top:8px;
+}
+
+.exam{
+    background:#ecfdf5;
+    border-left:4px solid #16a34a;
+    border-radius:8px;
+    padding:9px 13px;
+    margin-top:8px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    margin-top:28px;
+    color:#6b7280;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:650px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        padding:25px 14px 40px 47px;
+        border-radius:0;
+    }
+
+    .notebook::before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:27px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .formula{
+        font-size:16px;
+    }
+
+    .two-col{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        font-size:10px;
+    }
+
+    th,
+    td{
+        font-size:9.5px;
+        padding:5px 2px;
+    }
+
+    .triangle-diagram{
+        max-width:100%;
+    }
+
+    .height-diagram{
+        max-width:100%;
+        overflow-x:auto;
+    }
+
+    .height-diagram svg{
+        min-width:650px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="notebook">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<div class="header">
+
+    <h1>✍ TRIGONOMETRY</h1>
+
+    <p>
+        Class 10 Mathematics • Handwritten Notes + Formula
+    </p>
+
+    <div class="badge">
+        THE GOAL • EXAM REVISION
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     01. RIGHT ANGLED TRIANGLE
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+01. Right-Angled Triangle
+</div>
+
+
+<div class="triangle-diagram">
+
+<svg viewBox="0 0 600 380"
+     aria-label="Right angled triangle showing perpendicular base and hypotenuse">
+
+    <!-- Triangle -->
+
+    <polygon
+        points="125,310 125,80 500,310"
+        fill="rgba(237,233,254,.45)"
+        stroke="#222"
+        stroke-width="4"
+        stroke-linejoin="round"
+    />
+
+
+    <!-- Right Angle -->
+
+    <polyline
+        points="125,280 155,280 155,310"
+        fill="none"
+        stroke="#222"
+        stroke-width="3"
+    />
+
+
+    <!-- Angle Arc -->
+
+    <path
+        d="M 175 310
+           A 50 50 0 0 0 155 272"
+        fill="none"
+        stroke="#dc2626"
+        stroke-width="3"
+    />
+
+
+    <!-- Theta -->
+
+    <text
+        x="174"
+        y="292"
+        font-size="25"
+        font-weight="bold"
+        fill="#dc2626"
+        font-family="Comic Sans MS, cursive">
+        θ
+    </text>
+
+
+    <!-- P -->
+
+    <text
+        x="88"
+        y="200"
+        font-size="26"
+        font-weight="bold"
+        fill="#2563eb"
+        font-family="Comic Sans MS, cursive">
+        P
+    </text>
+
+
+    <!-- B -->
+
+    <text
+        x="295"
+        y="345"
+        font-size="26"
+        font-weight="bold"
+        fill="#16a34a"
+        font-family="Comic Sans MS, cursive">
+        B
+    </text>
+
+
+    <!-- H -->
+
+    <text
+        x="310"
+        y="160"
+        font-size="26"
+        font-weight="bold"
+        fill="#9333ea"
+        font-family="Comic Sans MS, cursive">
+        H
+    </text>
+
+
+    <!-- Names -->
+
+    <text
+        x="15"
+        y="205"
+        font-size="16"
+        fill="#2563eb"
+        font-family="Comic Sans MS, cursive">
+        Perpendicular
+    </text>
+
+    <text
+        x="275"
+        y="370"
+        font-size="16"
+        fill="#16a34a"
+        font-family="Comic Sans MS, cursive">
+        Base
+    </text>
+
+    <text
+        x="375"
+        y="125"
+        font-size="16"
+        fill="#9333ea"
+        font-family="Comic Sans MS, cursive">
+        Hypotenuse
+    </text>
+
+</svg>
+
+</div>
+
+
+<div class="note">
+
+<b>Perpendicular (P)</b> → Given angle θ के सामने वाली side.
+
+<br>
+
+<b>Base (B)</b> → Given angle θ के पास वाली side,
+जो hypotenuse नहीं है.
+
+<br>
+
+<b>Hypotenuse (H)</b> → 90° angle के opposite side.
+
+</div>
+
+
+<div class="exam">
+
+⭐ <b>Important:</b>
+
+Right-angled triangle में Hypotenuse हमेशा सबसे बड़ी side होती है.
+
+<br><br>
+
+🧠 <b>Triangle देखकर याद करो:</b>
+
+<br>
+
+P → Perpendicular
+
+&nbsp;&nbsp; | &nbsp;&nbsp;
+
+B → Base
+
+&nbsp;&nbsp; | &nbsp;&nbsp;
+
+H → Hypotenuse
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     02. SIX RATIOS
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+02. Six Trigonometric Ratios
+</div>
+
+
+<div class="two-col">
+
+<div class="formula-box">
+
+<div class="formula">
+
+sin θ =
+
+<span class="frac">
+<span class="top">P</span>
+<span class="bottom">H</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+cos θ =
+
+<span class="frac">
+<span class="top">B</span>
+<span class="bottom">H</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+tan θ =
+
+<span class="frac">
+<span class="top">P</span>
+<span class="bottom">B</span>
+</span>
+
+</div>
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+cosec θ =
+
+<span class="frac">
+<span class="top">H</span>
+<span class="bottom">P</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+sec θ =
+
+<span class="frac">
+<span class="top">H</span>
+<span class="bottom">B</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+cot θ =
+
+<span class="frac">
+<span class="top">B</span>
+<span class="bottom">P</span>
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="exam">
+
+🧠 <b>Memory:</b>
+
+P/H → sin
+
+&nbsp; | &nbsp;
+
+B/H → cos
+
+&nbsp; | &nbsp;
+
+P/B → tan
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     03. RELATIONS
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+03. Relations Between Ratios
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+tan θ =
+
+<span class="frac">
+<span class="top">sin θ</span>
+<span class="bottom">cos θ</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+cot θ =
+
+<span class="frac">
+<span class="top">cos θ</span>
+<span class="bottom">sin θ</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+sin θ =
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">cosec θ</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+cos θ =
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">sec θ</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+tan θ =
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">cot θ</span>
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     04. STANDARD VALUES
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+04. Standard Values ⭐⭐⭐
+</div>
+
+
+<table>
+
+<tr>
+<th>θ</th>
+<th>0°</th>
+<th>30°</th>
+<th>45°</th>
+<th>60°</th>
+<th>90°</th>
+</tr>
+
+
+<tr>
+<td>sin θ</td>
+<td>0</td>
+<td>½</td>
+<td>1/√2</td>
+<td>√3/2</td>
+<td>1</td>
+</tr>
+
+
+<tr>
+<td>cos θ</td>
+<td>1</td>
+<td>√3/2</td>
+<td>1/√2</td>
+<td>½</td>
+<td>0</td>
+</tr>
+
+
+<tr>
+<td>tan θ</td>
+<td>0</td>
+<td>1/√3</td>
+<td>1</td>
+<td>√3</td>
+<td>Not Defined</td>
+</tr>
+
+
+<tr>
+<td>cosec θ</td>
+<td>Not Defined</td>
+<td>2</td>
+<td>√2</td>
+<td>2/√3</td>
+<td>1</td>
+</tr>
+
+
+<tr>
+<td>sec θ</td>
+<td>1</td>
+<td>2/√3</td>
+<td>√2</td>
+<td>2</td>
+<td>Not Defined</td>
+</tr>
+
+
+<tr>
+<td>cot θ</td>
+<td>Not Defined</td>
+<td>√3</td>
+<td>1</td>
+<td>1/√3</td>
+<td>0</td>
+</tr>
+
+</table>
+
+
+<div class="alert">
+
+⚠️ <b>Remember:</b>
+
+<br>
+
+tan 90° और sec 90° = Not Defined
+
+<br>
+
+cosec 0° और cot 0° = Not Defined
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     05. IDENTITIES
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+05. Fundamental Identities ⭐⭐⭐
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+sin²θ + cos²θ = 1
+</div>
+
+<div class="formula">
+1 + tan²θ = sec²θ
+</div>
+
+<div class="formula">
+1 + cot²θ = cosec²θ
+</div>
+
+</div>
+
+
+<div class="note">
+
+sin²θ = 1 − cos²θ
+
+<br>
+
+cos²θ = 1 − sin²θ
+
+<br>
+
+tan²θ = sec²θ − 1
+
+<br>
+
+cot²θ = cosec²θ − 1
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     06. COMPLEMENTARY ANGLES
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+06. Complementary Angles
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+sin(90° − θ) = cos θ
+</div>
+
+<div class="formula">
+cos(90° − θ) = sin θ
+</div>
+
+<div class="formula">
+tan(90° − θ) = cot θ
+</div>
+
+<div class="formula">
+cot(90° − θ) = tan θ
+</div>
+
+<div class="formula">
+sec(90° − θ) = cosec θ
+</div>
+
+<div class="formula">
+cosec(90° − θ) = sec θ
+</div>
+
+</div>
+
+
+<div class="exam">
+
+🧠 <b>TRICK:</b>
+
+90° − θ → Function changes to its co-function.
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     07. IDENTITY PROOF
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+07. How to Prove a Trigonometric Identity?
+</div>
+
+
+<div class="note">
+
+⭐ हमेशा <b>LHS से शुरू</b> करो.
+
+<br><br>
+
+<b>LHS → Simplify → Required Form → RHS</b>
+
+</div>
+
+
+<div class="alert">
+
+⚠️ दोनों sides को एक साथ simplify करने की जरूरत नहीं.
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     08. ANGLE OF ELEVATION
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+08. Angle of Elevation 📐
+</div>
+
+
+<div class="height-diagram">
+
+<svg viewBox="0 0 700 390"
+     aria-label="Angle of elevation">
+
+    <!-- Ground -->
+
+    <line
+        x1="70"
+        y1="320"
+        x2="630"
+        y2="320"
+        stroke="#222"
+        stroke-width="4"
+    />
+
+
+    <!-- Building -->
+
+    <line
+        x1="530"
+        y1="320"
+        x2="530"
+        y2="85"
+        stroke="#222"
+        stroke-width="5"
+    />
+
+
+    <!-- Right angle -->
+
+    <polyline
+        points="530,295 505,295 505,320"
+        fill="none"
+        stroke="#222"
+        stroke-width="3"
+    />
+
+
+    <!-- Observer -->
+
+    <circle
+        cx="110"
+        cy="215"
+        r="8"
+        fill="#222"
+    />
+
+
+    <!-- Eye horizontal -->
+
+    <line
+        x1="110"
+        y1="215"
+        x2="530"
+        y2="215"
+        stroke="#555"
+        stroke-width="2"
+        stroke-dasharray="9 7"
+    />
+
+
+    <!-- Line of sight -->
+
+    <line
+        x1="110"
+        y1="215"
+        x2="530"
+        y2="85"
+        stroke="#dc2626"
+        stroke-width="4"
+    />
+
+
+    <!-- Angle -->
+
+    <path
+        d="M 150 215
+           A 40 40 0 0 0 148 203"
+        fill="none"
+        stroke="#dc2626"
+        stroke-width="3"
+    />
+
+
+    <text
+        x="150"
+        y="207"
+        font-size="24"
+        font-weight="bold"
+        fill="#dc2626"
+        font-family="Comic Sans MS, cursive">
+        θ
+    </text>
+
+
+    <!-- Height -->
+
+    <text
+        x="545"
+        y="205"
+        font-size="18"
+        font-weight="bold"
+        fill="#2563eb"
+        font-family="Comic Sans MS, cursive">
+        Height
+    </text>
+
+
+    <!-- Distance -->
+
+    <text
+        x="290"
+        y="345"
+        font-size="18"
+        font-weight="bold"
+        fill="#16a34a"
+        font-family="Comic Sans MS, cursive">
+        Distance
+    </text>
+
+
+    <!-- Top -->
+
+    <text
+        x="540"
+        y="75"
+        font-size="18"
+        font-weight="bold"
+        font-family="Comic Sans MS, cursive">
+        Top
+    </text>
+
+
+    <!-- Horizontal -->
+
+    <text
+        x="265"
+        y="205"
+        font-size="15"
+        fill="#555"
+        font-family="Comic Sans MS, cursive">
+        Horizontal
+    </text>
+
+
+    <!-- Sight -->
+
+    <text
+        x="270"
+        y="145"
+        font-size="16"
+        font-weight="bold"
+        fill="#dc2626"
+        font-family="Comic Sans MS, cursive">
+        Line of Sight
+    </text>
+
+</svg>
+
+</div>
+
+
+<div class="note">
+
+<b>Angle of Elevation</b> वह angle है जो observer की
+<b>horizontal line</b> और object के ऊपर वाले point को देखने वाली
+<b>line of sight</b> के बीच बनता है.
+
+<br><br>
+
+👉 जब object observer की eye level से <b>ऊपर</b> होता है,
+तो यह <b>Angle of Elevation</b> कहलाता है.
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+tan θ =
+
+<span class="frac">
+<span class="top">Height</span>
+<span class="bottom">Distance</span>
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     09. ANGLE OF DEPRESSION
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+09. Angle of Depression 📐
+</div>
+
+
+<div class="height-diagram">
+
+<svg viewBox="0 0 700 390"
+     aria-label="Angle of depression">
+
+    <!-- Ground -->
+
+    <line
+        x1="70"
+        y1="320"
+        x2="630"
+        y2="320"
+        stroke="#222"
+        stroke-width="4"
+    />
+
+
+    <!-- Tower -->
+
+    <line
+        x1="160"
+        y1="320"
+        x2="160"
+        y2="80"
+        stroke="#222"
+        stroke-width="5"
+    />
+
+
+    <!-- Observer eye -->
+
+    <circle
+        cx="160"
+        cy="120"
+        r="8"
+        fill="#222"
+    />
+
+
+    <!-- Horizontal from observer -->
+
+    <line
+        x1="160"
+        y1="120"
+        x2="570"
+        y2="120"
+        stroke="#555"
+        stroke-width="2"
+        stroke-dasharray="9 7"
+    />
+
+
+    <!-- Lower point -->
+
+    <line
+        x1="570"
+        y1="270"
+        x2="570"
+        y2="320"
+        stroke="#222"
+        stroke-width="4"
+    />
+
+
+    <!-- Line of sight -->
+
+    <line
+        x1="160"
+        y1="120"
+        x2="570"
+        y2="270"
+        stroke="#2563eb"
+        stroke-width="4"
+    />
+
+
+    <!-- Right angle -->
+
+    <polyline
+        points="570,295 545,295 545,320"
+        fill="none"
+        stroke="#222"
+        stroke-width="3"
+    />
+
+
+    <!-- Angle -->
+
+    <path
+        d="M 205 120
+           A 45 45 0 0 1 202 136"
+        fill="none"
+        stroke="#2563eb"
+        stroke-width="3"
+    />
+
+
+    <text
+        x="200"
+        y="145"
+        font-size="24"
+        font-weight="bold"
+        fill="#2563eb"
+        font-family="Comic Sans MS, cursive">
+        θ
+    </text>
+
+
+    <!-- Observer -->
+
+    <text
+        x="90"
+        y="105"
+        font-size="18"
+        font-weight="bold"
+        font-family="Comic Sans MS, cursive">
+        Observer
+    </text>
+
+
+    <!-- Horizontal -->
+
+    <text
+        x="275"
+        y="110"
+        font-size="15"
+        fill="#555"
+        font-family="Comic Sans MS, cursive">
+        Horizontal
+    </text>
+
+
+    <!-- Sight -->
+
+    <text
+        x="285"
+        y="185"
+        font-size="16"
+        font-weight="bold"
+        fill="#2563eb"
+        font-family="Comic Sans MS, cursive">
+        Line of Sight
+    </text>
+
+
+    <!-- Object -->
+
+    <text
+        x="580"
+        y="270"
+        font-size="18"
+        font-weight="bold"
+        font-family="Comic Sans MS, cursive">
+        Object
+    </text>
+
+
+    <!-- Distance -->
+
+    <text
+        x="300"
+        y="345"
+        font-size="18"
+        font-weight="bold"
+        fill="#16a34a"
+        font-family="Comic Sans MS, cursive">
+        Distance
+    </text>
+
+</svg>
+
+</div>
+
+
+<div class="note">
+
+<b>Angle of Depression</b> वह angle है जो observer की
+<b>horizontal line</b> और नीचे स्थित object की
+<b>line of sight</b> के बीच बनता है.
+
+<br><br>
+
+👉 जब object observer की eye level से <b>नीचे</b> होता है,
+तो यह <b>Angle of Depression</b> कहलाता है.
+
+</div>
+
+
+<div class="exam">
+
+⭐ <b>VERY IMPORTANT</b>
+
+<br><br>
+
+Angle of Depression = Corresponding Angle of Elevation
+
+<br><br>
+
+क्योंकि दोनों horizontal lines parallel होती हैं.
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     10. HEIGHTS & DISTANCES
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+10. Heights & Distances — Quick Method
+</div>
+
+
+<div class="note">
+
+Question पढ़ो
+
+→ Diagram बनाओ
+
+→ Height / Distance identify करो
+
+→ सही ratio चुनो
+
+→ Value substitute करो
+
+→ Answer निकालो
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+tan θ =
+
+<span class="frac">
+<span class="top">Height</span>
+<span class="bottom">Distance</span>
+</span>
+
+</div>
+
+
+<div class="formula">
+
+Height = Distance × tan θ
+
+</div>
+
+
+<div class="formula">
+
+Distance =
+
+<span class="frac">
+<span class="top">Height</span>
+<span class="bottom">tan θ</span>
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     QUICK REVISION
+========================================================= -->
+
+<div class="section">
+
+<div class="section-title">
+🎯 Last-Minute Revision
+</div>
+
+
+<div class="exam">
+
+<b>sin θ = P/H</b>
+
+&nbsp; | &nbsp;
+
+<b>cos θ = B/H</b>
+
+&nbsp; | &nbsp;
+
+<b>tan θ = P/B</b>
+
+<br><br>
+
+<b>cosec θ = H/P</b>
+
+&nbsp; | &nbsp;
+
+<b>sec θ = H/B</b>
+
+&nbsp; | &nbsp;
+
+<b>cot θ = B/P</b>
+
+<br><br>
+
+<b>sin²θ + cos²θ = 1</b>
+
+<br>
+
+<b>1 + tan²θ = sec²θ</b>
+
+<br>
+
+<b>1 + cot²θ = cosec²θ</b>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Trigonometry
+
+<br><br>
+
+Formula याद करो → Triangle बनाओ → Ratio लगाओ → Answer निकालो.
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</div>
+
+
+</div>
+
+</body>
+</html>
