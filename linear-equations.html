@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Class 10 Mathematics | Pair of Linear Equations</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#e8e3d9;
+    color:#202020;
+    font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+    line-height:1.65;
+    padding:18px 10px;
+}
+
+.notebook{
+    max-width:980px;
+    margin:auto;
+    position:relative;
+    padding:35px 42px 55px 88px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #fffef9 0px,
+        #fffef9 31px,
+        #d8e5f2 32px,
+        #fffef9 33px
+    );
+
+    box-shadow:0 10px 35px rgba(0,0,0,.16);
+    border-radius:6px;
+}
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#e89a9a;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.header h1{
+    font-size:35px;
+    color:#4f46e5;
+    letter-spacing:1px;
+}
+
+.header h2{
+    font-size:19px;
+    color:#374151;
+    margin-top:4px;
+}
+
+.header p{
+    color:#666;
+    font-size:13px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:10px;
+    padding:5px 15px;
+    border-radius:20px;
+    background:#ede9fe;
+    color:#5b21b6;
+    font-weight:bold;
+    font-size:12px;
+}
+
+/* SECTIONS */
+
+.section{
+    margin-bottom:30px;
+}
+
+.section-title{
+    display:inline-block;
+    color:#4338ca;
+    font-size:21px;
+    font-weight:bold;
+    border-bottom:2px solid #7c3aed;
+    margin-bottom:10px;
+}
+
+/* CARDS */
+
+.note,
+.example,
+.formula-box,
+.exam,
+.hint,
+.warning,
+.steps{
+    border-radius:10px;
+    padding:12px 16px;
+    margin:10px 0;
+}
+
+.note{
+    background:rgba(255,255,255,.82);
+    border-left:4px solid #6366f1;
+}
+
+.example{
+    background:#fffdf3;
+    border:1px dashed #d97706;
+}
+
+.formula-box{
+    background:rgba(237,233,254,.88);
+    border:1px dashed #8b5cf6;
+    text-align:center;
+}
+
+.exam{
+    background:#ecfdf5;
+    border-left:4px solid #16a34a;
+}
+
+.hint{
+    background:#f5f3ff;
+    border-left:4px solid #a78bfa;
+    font-size:14px;
+    color:#4c1d95;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+}
+
+.steps{
+    background:rgba(255,255,255,.84);
+    border:1px solid #d1d5db;
+}
+
+.example-title{
+    color:#b45309;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.formula{
+    font-size:19px;
+    color:#312e81;
+    font-weight:bold;
+    margin:7px 0;
+}
+
+/* FRACTION */
+
+.frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1.05;
+    margin:0 4px;
+}
+
+.frac .top{
+    border-bottom:2px solid #222;
+    padding:0 8px 3px;
+}
+
+.frac .bottom{
+    padding:3px 8px 0;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.88);
+    margin:10px 0;
+}
+
+th,td{
+    border:1px solid #999;
+    padding:8px;
+    text-align:center;
+}
+
+th{
+    background:#ede9fe;
+    color:#4338ca;
+}
+
+/* CHECKLIST */
+
+.check{
+    margin:6px 0;
+}
+
+.check:before{
+    content:"✓ ";
+    color:#16a34a;
+    font-weight:bold;
+}
+
+/* SOLUTION */
+
+.answer{
+    color:#15803d;
+    font-weight:bold;
+}
+
+.red{
+    color:#b91c1c;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    margin-top:40px;
+    color:#6b7280;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        padding:25px 14px 45px 48px;
+        border-radius:0;
+    }
+
+    .notebook:before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:27px;
+    }
+
+    .header h2{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .formula{
+        font-size:16px;
+    }
+
+    .note,
+    .example,
+    .formula-box,
+    .exam,
+    .hint,
+    .warning,
+    .steps{
+        padding:10px 12px;
+    }
+
+    table{
+        font-size:11px;
+    }
+
+    th,td{
+        padding:6px 4px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="notebook">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<h1>✍ PAIR OF LINEAR EQUATIONS</h1>
+
+<h2>Class 10 Mathematics • Chapter 3</h2>
+
+<p>Concept Notes • Solved Examples • Exam-Oriented Revision</p>
+
+<div class="badge">
+THE GOAL • ENGLISH MEDIUM + EASY HINDI HINTS
+</div>
+
+</div>
+
+
+<!-- 01 -->
+
+<div class="section">
+
+<div class="section-title">
+01. Linear Equation in Two Variables
+</div>
+
+<div class="note">
+
+A linear equation in two variables x and y is generally written as:
+
+<div class="formula-box">
+
+<div class="formula">
+ax + by + c = 0
+</div>
+
+</div>
+
+where a, b and c are real numbers and at least one of a and b
+is non-zero.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Easy Hindi:</b>
+Equation mein x aur y ki highest power 1 honi chahiye.
+Isliye ye <b>linear</b> equation hai.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+2x + 3y − 7 = 0
+
+<br><br>
+
+Here:
+
+<br>
+a = 2, &nbsp; b = 3, &nbsp; c = −7
+
+<br><br>
+
+Therefore, it is a linear equation in two variables.
+
+</div>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="section">
+
+<div class="section-title">
+02. Pair of Linear Equations
+</div>
+
+<div class="note">
+
+Two linear equations in the same two variables form a
+<b>pair of linear equations in two variables</b>.
+
+<div class="formula-box">
+
+<div class="formula">
+a₁x + b₁y + c₁ = 0
+</div>
+
+<div class="formula">
+a₂x + b₂y + c₂ = 0
+</div>
+
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+2x + 3y − 7 = 0
+
+<br>
+
+4x − y − 5 = 0
+
+<br><br>
+
+These two equations form a pair of linear equations.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Simple meaning:</b> Same x-y variables wali do linear
+equations ko pair bolte hain.
+
+</div>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="section">
+
+<div class="section-title">
+03. Solution of a Pair
+</div>
+
+<div class="note">
+
+A pair of values (x, y) is called a solution if it satisfies
+<b>both equations simultaneously</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Check whether (2, 1) is a solution of:
+
+<br>
+
+x + y = 3
+
+<br>
+
+2x − y = 3
+
+<br><br>
+
+First equation:
+
+<br>
+
+2 + 1 = 3 ✓
+
+<br><br>
+
+Second equation:
+
+<br>
+
+2(2) − 1 = 3 ✓
+
+<br><br>
+
+Therefore,
+
+<span class="answer">(2, 1) is the solution.</span>
+
+</div>
+
+<div class="hint">
+
+💡 Sirf ek equation satisfy karna enough nahi hai.
+<b>Dono equations</b> satisfy honi chahiye.
+
+</div>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="section">
+
+<div class="section-title">
+04. Graphical Meaning of a Pair
+</div>
+
+<div class="note">
+
+Each linear equation in two variables represents a
+<b>straight line</b>.
+
+Therefore, a pair of linear equations represents
+<b>two straight lines</b>.
+
+Their relative positions determine the number of solutions.
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Position of Lines</th>
+<th>Number of Solutions</th>
+<th>Type</th>
+</tr>
+
+<tr>
+<td>Intersecting</td>
+<td>One</td>
+<td>Unique solution</td>
+</tr>
+
+<tr>
+<td>Parallel</td>
+<td>None</td>
+<td>No solution</td>
+</tr>
+
+<tr>
+<td>Coincident</td>
+<td>Infinitely many</td>
+<td>Infinite solutions</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Graph trick:</b>
+
+<br>
+Cross/intersect → 1 solution
+
+<br>
+Parallel → 0 solution
+
+<br>
+Same line → infinitely many solutions
+
+</div>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="section">
+
+<div class="section-title">
+05. Consistent and Inconsistent Pair ⭐
+</div>
+
+<div class="note">
+
+A pair of linear equations is called <b>consistent</b> if it has
+at least one solution.
+
+<br><br>
+
+A pair is called <b>inconsistent</b> if it has no solution.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example 1 — Consistent</div>
+
+x + y = 5
+
+<br>
+
+x − y = 1
+
+<br><br>
+
+These equations have one solution.
+
+<br>
+
+Therefore, the pair is <span class="answer">consistent</span>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example 2 — Inconsistent</div>
+
+x + y = 4
+
+<br>
+
+x + y = 7
+
+<br><br>
+
+Both cannot be true at the same time.
+
+<br>
+
+Therefore, there is <b>no solution</b>.
+
+<br>
+
+Hence, the pair is <span class="red">inconsistent</span>.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Yaad rakho:</b>
+
+<br>
+At least one solution → Consistent
+
+<br>
+No solution → Inconsistent
+
+</div>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="section">
+
+<div class="section-title">
+06. Conditions for Number of Solutions ⭐⭐⭐
+</div>
+
+<div class="note">
+
+For:
+
+<div class="formula-box">
+
+<div class="formula">
+a₁x + b₁y + c₁ = 0
+</div>
+
+<div class="formula">
+a₂x + b₂y + c₂ = 0
+</div>
+
+</div>
+
+compare:
+
+<div class="formula">
+a₁/a₂, &nbsp; b₁/b₂, &nbsp; c₁/c₂
+</div>
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Condition</th>
+<th>Number of Solutions</th>
+<th>Lines</th>
+</tr>
+
+<tr>
+
+<td>
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+≠
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+</td>
+
+<td>One</td>
+
+<td>Intersecting</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+≠
+
+<div class="frac">
+<span class="top">c₁</span>
+<span class="bottom">c₂</span>
+</div>
+
+</td>
+
+<td>None</td>
+
+<td>Parallel</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">c₁</span>
+<span class="bottom">c₂</span>
+</div>
+
+</td>
+
+<td>Infinitely many</td>
+
+<td>Coincident</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Super shortcut:</b>
+
+<br>
+First two ratios different → <b>one solution</b>
+
+<br>
+First two equal, third different → <b>no solution</b>
+
+<br>
+All three equal → <b>infinitely many solutions</b>
+
+</div>
+
+</div>
+
+
+<!-- 07 -->
+
+<div class="section">
+
+<div class="section-title">
+07. Example — Unique Solution
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Check the number of solutions:
+
+<br><br>
+
+2x + 3y − 5 = 0
+
+<br>
+
+4x + y − 7 = 0
+
+<br><br>
+
+Here:
+
+<br>
+
+a₁ = 2, b₁ = 3
+
+<br>
+
+a₂ = 4, b₂ = 1
+
+<br><br>
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">2</span>
+<span class="bottom">4</span>
+</div>
+
+=
+
+1/2
+
+<br><br>
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+=
+
+3/1 = 3
+
+<br><br>
+
+Since:
+
+<br>
+
+1/2 ≠ 3
+
+<br><br>
+
+<span class="answer">Unique solution.</span>
+
+</div>
+
+<div class="hint">
+
+💡 Ratios equal nahi hain → lines intersect → one solution.
+
+</div>
+
+</div>
+
+
+<!-- 08 -->
+
+<div class="section">
+
+<div class="section-title">
+08. Example — No Solution
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+3x + 2y − 5 = 0
+
+<br>
+
+6x + 4y − 9 = 0
+
+<br><br>
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">3</span>
+<span class="bottom">6</span>
+</div>
+
+= 1/2
+
+<br><br>
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">2</span>
+<span class="bottom">4</span>
+</div>
+
+= 1/2
+
+<br><br>
+
+But:
+
+<div class="frac">
+<span class="top">c₁</span>
+<span class="bottom">c₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">−5</span>
+<span class="bottom">−9</span>
+</div>
+
+≠ 1/2
+
+<br><br>
+
+Therefore:
+
+<span class="red">No solution.</span>
+
+</div>
+
+<div class="hint">
+
+💡 First two ratios same but third different → parallel lines →
+no solution.
+
+</div>
+
+</div>
+
+
+<!-- 09 -->
+
+<div class="section">
+
+<div class="section-title">
+09. Example — Infinitely Many Solutions
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+2x + 3y − 5 = 0
+
+<br>
+
+4x + 6y − 10 = 0
+
+<br><br>
+
+<div class="frac">
+<span class="top">2</span>
+<span class="bottom">4</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">3</span>
+<span class="bottom">6</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">−5</span>
+<span class="bottom">−10</span>
+</div>
+
+= 1/2
+
+<br><br>
+
+All three ratios are equal.
+
+<br><br>
+
+Therefore:
+
+<span class="answer">Infinitely many solutions.</span>
+
+</div>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="section">
+
+<div class="section-title">
+10. Substitution Method ⭐⭐⭐
+</div>
+
+<div class="note">
+
+In the substitution method, we express one variable in terms
+of the other and substitute it into the second equation.
+
+</div>
+
+<div class="steps">
+
+<b>Steps:</b>
+
+<br><br>
+
+1. Take either equation and express one variable in terms of
+the other.
+
+<br><br>
+
+2. Substitute this expression in the second equation.
+
+<br><br>
+
+3. Find the value of one variable.
+
+<br><br>
+
+4. Substitute it back to find the other variable.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+x + y = 7
+
+<br>
+
+x − y = 1
+
+<br><br>
+
+From first equation:
+
+<br>
+
+x = 7 − y
+
+<br><br>
+
+Substitute in second:
+
+<br>
+
+(7 − y) − y = 1
+
+<br>
+
+7 − 2y = 1
+
+<br>
+
+−2y = −6
+
+<br>
+
+y = 3
+
+<br><br>
+
+Now:
+
+<br>
+
+x = 7 − 3
+
+<br>
+
+x = 4
+
+<br><br>
+
+<span class="answer">Therefore, x = 4, y = 3.</span>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Easy Hindi:</b>
+Pehle ek variable ko akela karo, phir uski value/expression
+dusri equation mein put karo.
+
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="section">
+
+<div class="section-title">
+11. Substitution Method — Another Type
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+2x + y = 8
+
+<br>
+
+x − y = 1
+
+<br><br>
+
+From second equation:
+
+<br>
+
+y = x − 1
+
+<br><br>
+
+Substitute in first:
+
+<br>
+
+2x + (x − 1) = 8
+
+<br>
+
+3x − 1 = 8
+
+<br>
+
+3x = 9
+
+<br>
+
+x = 3
+
+<br><br>
+
+Therefore:
+
+<br>
+
+y = 3 − 1 = 2
+
+<br><br>
+
+<span class="answer">x = 3, y = 2</span>
+
+</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="section">
+
+<div class="section-title">
+12. Elimination Method ⭐⭐⭐
+</div>
+
+<div class="note">
+
+In the elimination method, we eliminate one variable by adding
+or subtracting the equations after making their coefficients
+equal in magnitude.
+
+</div>
+
+<div class="steps">
+
+<b>Steps:</b>
+
+<br><br>
+
+1. Arrange both equations properly.
+
+<br><br>
+
+2. Make coefficients of one variable equal or opposite.
+
+<br><br>
+
+3. Add or subtract the equations.
+
+<br><br>
+
+4. Find one variable.
+
+<br><br>
+
+5. Substitute its value to find the other variable.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+2x + 3y = 13
+
+<br>
+
+2x − y = 5
+
+<br><br>
+
+Subtract second equation from first:
+
+<br>
+
+(2x + 3y) − (2x − y) = 13 − 5
+
+<br>
+
+4y = 8
+
+<br>
+
+y = 2
+
+<br><br>
+
+Substitute in:
+
+<br>
+
+2x − y = 5
+
+<br>
+
+2x − 2 = 5
+
+<br>
+
+2x = 7
+
+<br>
+
+x = 7/2
+
+<br><br>
+
+<span class="answer">
+Therefore, x = 7/2 and y = 2.
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 Elimination ka main idea:
+<b>ek variable ko cancel karo.</b>
+
+</div>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="section">
+
+<div class="section-title">
+13. Elimination with Different Coefficients
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+2x + 3y = 8
+
+<br>
+
+3x + 2y = 7
+
+<br><br>
+
+Multiply first equation by 3:
+
+<br>
+
+6x + 9y = 24
+
+<br><br>
+
+Multiply second equation by 2:
+
+<br>
+
+6x + 4y = 14
+
+<br><br>
+
+Subtract:
+
+<br>
+
+5y = 10
+
+<br>
+
+y = 2
+
+<br><br>
+
+Put y = 2 in:
+
+<br>
+
+3x + 2(2) = 7
+
+<br>
+
+3x + 4 = 7
+
+<br>
+
+x = 1
+
+<br><br>
+
+<span class="answer">x = 1, y = 2</span>
+
+</div>
+
+<div class="hint">
+
+💡 Coefficients same nahi hain → suitable multiplication karke
+same coefficient banao.
+
+</div>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="section">
+
+<div class="section-title">
+14. Choosing the Better Method
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Situation</th>
+<th>Useful Method</th>
+</tr>
+
+<tr>
+<td>One variable easily isolated</td>
+<td>Substitution</td>
+</tr>
+
+<tr>
+<td>Coefficients easily matched</td>
+<td>Elimination</td>
+</tr>
+
+<tr>
+<td>Question asks graphically</td>
+<td>Graphical Method</td>
+</tr>
+
+<tr>
+<td>Question asks nature of solutions</td>
+<td>Ratio Conditions</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="hint">
+
+💡 Method choose karna bhi exam skill hai.
+Jo method calculation ko shortest banaye, use prefer karo.
+
+</div>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="section">
+
+<div class="section-title">
+15. Situational Problems — General Strategy ⭐⭐⭐
+</div>
+
+<div class="steps">
+
+<b>Step 1:</b> Define the variables.
+
+<br><br>
+
+<b>Step 2:</b> Translate the information into two equations.
+
+<br><br>
+
+<b>Step 3:</b> Solve the pair.
+
+<br><br>
+
+<b>Step 4:</b> Interpret the answer according to the question.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Hindi trick:</b>
+Pehle “x kya hai?” aur “y kya hai?” clearly define karo.
+Uske baad statement ko equations mein convert karo.
+
+</div>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="section">
+
+<div class="section-title">
+16. Word Problem — Numbers
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+The sum of two numbers is 35 and their difference is 7.
+Find the numbers.
+
+<br><br>
+
+Let the numbers be x and y.
+
+<br>
+
+According to question:
+
+<br>
+
+x + y = 35
+
+<br>
+
+x − y = 7
+
+<br><br>
+
+Add both equations:
+
+<br>
+
+2x = 42
+
+<br>
+
+x = 21
+
+<br><br>
+
+Then:
+
+<br>
+
+21 + y = 35
+
+<br>
+
+y = 14
+
+<br><br>
+
+<span class="answer">
+Therefore, the numbers are 21 and 14.
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="section">
+
+<div class="section-title">
+17. Word Problem — Cost
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+The cost of 2 pens and 3 pencils is ₹34.
+The cost of 3 pens and 2 pencils is ₹31.
+Find the cost of each.
+
+<br><br>
+
+Let:
+
+<br>
+
+Cost of one pen = ₹x
+
+<br>
+
+Cost of one pencil = ₹y
+
+<br><br>
+
+Equations:
+
+<br>
+
+2x + 3y = 34
+
+<br>
+
+3x + 2y = 31
+
+<br><br>
+
+Multiply first by 3:
+
+<br>
+
+6x + 9y = 102
+
+<br><br>
+
+Multiply second by 2:
+
+<br>
+
+6x + 4y = 62
+
+<br><br>
+
+Subtract:
+
+<br>
+
+5y = 40
+
+<br>
+
+y = 8
+
+<br><br>
+
+Put y = 8:
+
+<br>
+
+3x + 16 = 31
+
+<br>
+
+3x = 15
+
+<br>
+
+x = 5
+
+<br><br>
+
+<span class="answer">
+Pen = ₹5, Pencil = ₹8
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="section">
+
+<div class="section-title">
+18. Word Problem — Age
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+The sum of the ages of a father and son is 50 years.
+The father's age is 4 times the son's age.
+Find their ages.
+
+<br><br>
+
+Let son's age = x years.
+
+<br>
+
+Father's age = y years.
+
+<br><br>
+
+Equation 1:
+
+<br>
+
+x + y = 50
+
+<br><br>
+
+Equation 2:
+
+<br>
+
+y = 4x
+
+<br><br>
+
+Substitute:
+
+<br>
+
+x + 4x = 50
+
+<br>
+
+5x = 50
+
+<br>
+
+x = 10
+
+<br>
+
+y = 40
+
+<br><br>
+
+<span class="answer">
+Son = 10 years, Father = 40 years
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="section">
+
+<div class="section-title">
+19. Word Problem — Speed and Distance
+</div>
+
+<div class="note">
+
+For such questions, remember:
+
+<div class="formula-box">
+
+<div class="formula">
+Distance = Speed × Time
+</div>
+
+</div>
+
+The given conditions are converted into equations.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+A car travels 120 km partly at 40 km/h and partly at
+60 km/h. If the total travel time is 2.5 hours, find the
+distance travelled at each speed.
+
+<br><br>
+
+Let distance at 40 km/h = x km.
+
+<br>
+
+Distance at 60 km/h = y km.
+
+<br><br>
+
+Total distance:
+
+<br>
+
+x + y = 120
+
+<br><br>
+
+Time:
+
+<br>
+
+<div class="frac">
+<span class="top">x</span>
+<span class="bottom">40</span>
+</div>
+
++
+
+<div class="frac">
+<span class="top">y</span>
+<span class="bottom">60</span>
+</div>
+
+= 2.5
+
+<br><br>
+
+This can be simplified and solved as a pair of linear equations.
+
+</div>
+
+<div class="hint">
+
+💡 Word problem mein formula directly use karke equations banana
+sabse important step hai.
+
+</div>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="section">
+
+<div class="section-title">
+20. Exam Type — Find the Value of k
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Find k for which the pair has infinitely many solutions:
+
+<br>
+
+2x + 3y − 5 = 0
+
+<br>
+
+4x + 6y + k = 0
+
+<br><br>
+
+For infinitely many solutions:
+
+<br>
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">c₁</span>
+<span class="bottom">c₂</span>
+</div>
+
+<br><br>
+
+We have:
+
+<br>
+
+2/4 = 3/6 = 1/2
+
+<br><br>
+
+Therefore:
+
+<br>
+
+−5/k = 1/2
+
+<br>
+
+k = −10
+
+<br><br>
+
+<span class="answer">k = −10</span>
+
+</div>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="section">
+
+<div class="section-title">
+21. Exam Type — Find k for No Solution
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Find k so that:
+
+<br>
+
+3x + 2y − 5 = 0
+
+<br>
+
+6x + ky − 9 = 0
+
+<br>
+
+has no solution.
+
+<br><br>
+
+For no solution:
+
+<br>
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+≠
+
+<div class="frac">
+<span class="top">c₁</span>
+<span class="bottom">c₂</span>
+</div>
+
+<br><br>
+
+So:
+
+<br>
+
+3/6 = 2/k
+
+<br>
+
+1/2 = 2/k
+
+<br>
+
+k = 4
+
+<br><br>
+
+Check:
+
+<br>
+
+−5/−9 = 5/9
+
+<br>
+
+and 1/2 ≠ 5/9.
+
+<br><br>
+
+<span class="answer">Therefore, k = 4.</span>
+
+</div>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="section">
+
+<div class="section-title">
+22. Common Mistakes ⚠️
+</div>
+
+<div class="warning">
+
+<b>1.</b> x + a ko x = a mat lena.
+<br>
+Correct: x + a = x − (−a).
+
+<br><br>
+
+<b>2.</b> Ratio conditions mein signs carefully handle karo.
+
+<br><br>
+
+<b>3.</b> Unique, no solution and infinite solutions ko mix mat karo.
+
+<br><br>
+
+<b>4.</b> Word problems mein variables define kiye bina equations
+mat banana.
+
+<br><br>
+
+<b>5.</b> Final answer ko question ke context mein interpret karo.
+
+<br><br>
+
+<b>6.</b> Elimination mein equation ko multiply karte waqt
+RHS ko bhi multiply karo.
+
+<br><br>
+
+<b>7.</b> Substitution mein brackets carefully open karo.
+
+</div>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="section">
+
+<div class="section-title">
+23. Formula & Condition Sheet ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+a₁x + b₁y + c₁ = 0
+</div>
+
+<div class="formula">
+a₂x + b₂y + c₂ = 0
+</div>
+
+<br>
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+≠
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+→ Unique Solution
+
+</div>
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+≠
+
+<div class="frac">
+<span class="top">c₁</span>
+<span class="bottom">c₂</span>
+</div>
+
+→ No Solution
+
+</div>
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">a₁</span>
+<span class="bottom">a₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">b₁</span>
+<span class="bottom">b₂</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">c₁</span>
+<span class="bottom">c₂</span>
+</div>
+
+→ Infinitely Many Solutions
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="section">
+
+<div class="section-title">
+24. Quick Revision — Chapter 3
+</div>
+
+<div class="note">
+
+<div class="check">
+Two linear equations → Pair of linear equations.
+</div>
+
+<div class="check">
+Each equation represents a straight line.
+</div>
+
+<div class="check">
+Intersecting lines → one solution.
+</div>
+
+<div class="check">
+Parallel lines → no solution.
+</div>
+
+<div class="check">
+Coincident lines → infinitely many solutions.
+</div>
+
+<div class="check">
+At least one solution → consistent.
+</div>
+
+<div class="check">
+No solution → inconsistent.
+</div>
+
+<div class="check">
+Substitution → express one variable and substitute.
+</div>
+
+<div class="check">
+Elimination → cancel one variable.
+</div>
+
+<div class="check">
+Word problem → define variables → form equations → solve → interpret.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="section">
+
+<div class="section-title">
+25. THE GOAL Exam Strategy 🎯
+</div>
+
+<div class="exam">
+
+<b>Question says “number of solutions”?</b>
+
+<br>
+→ Compare the three coefficient ratios.
+
+<br><br>
+
+<b>Question says “solve”?</b>
+
+<br>
+→ Use substitution or elimination.
+
+<br><br>
+
+<b>Question says “graphically”?</b>
+
+<br>
+→ Think of the two straight lines and their intersection.
+
+<br><br>
+
+<b>Question says “consistent”?</b>
+
+<br>
+→ Check whether at least one solution exists.
+
+<br><br>
+
+<b>Question gives a real-life situation?</b>
+
+<br>
+→ Define x and y first, then form two equations.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Final Hindi Tip:</b>
+Question ko dekhte hi method identify karna seekho.
+Aadha question wahi solve ho jata hai jab tumhe pata ho
+ki kaunsi condition/method use karni hai.
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Chapter 3 • Pair of Linear Equations in Two Variables
+
+<br><br>
+
+Understand the Concept • Learn the Method • Practice the Pattern
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</div>
+
+</div>
+
+</body>
+</html>
