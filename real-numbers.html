@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Chapter 1 | Real Numbers</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#e8e4dc;
+    color:#202020;
+    font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+    padding:18px 10px;
+    line-height:1.55;
+}
+
+.notebook{
+    max-width:950px;
+    margin:auto;
+    min-height:100vh;
+    position:relative;
+
+    padding:32px 38px 50px 82px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffef8 0px,
+            #fffef8 31px,
+            #dbe7f5 32px,
+            #fffef8 33px
+        );
+
+    box-shadow:0 8px 35px rgba(0,0,0,.16);
+    border-radius:5px;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:58px;
+    width:2px;
+    background:#ef9a9a;
+}
+
+
+/* ================= HEADER ================= */
+
+.header{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.header h1{
+    color:#4f46e5;
+    font-size:35px;
+    letter-spacing:1px;
+}
+
+.header p{
+    color:#555;
+    font-size:14px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:8px;
+    padding:5px 14px;
+    border-radius:20px;
+    background:#ede9fe;
+    color:#5b21b6;
+    font-size:12px;
+    font-weight:bold;
+}
+
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-bottom:26px;
+}
+
+.section-title{
+    display:inline-block;
+    color:#4338ca;
+    font-size:20px;
+    font-weight:bold;
+    border-bottom:2px solid #7c3aed;
+    margin-bottom:10px;
+}
+
+
+/* ================= NOTE ================= */
+
+.note{
+    background:rgba(255,255,255,.78);
+    border-left:4px solid #7c3aed;
+    border-radius:9px;
+    padding:11px 15px;
+    margin:8px 0;
+}
+
+
+/* ================= EXAMPLE ================= */
+
+.example{
+    background:#fffdf2;
+    border:1px dashed #d97706;
+    border-radius:10px;
+    padding:11px 15px;
+    margin:9px 0;
+}
+
+.example-title{
+    color:#b45309;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+
+/* ================= FORMULA ================= */
+
+.formula-box{
+    background:rgba(237,233,254,.82);
+    border:1px dashed #8b5cf6;
+    border-radius:10px;
+    padding:11px 15px;
+    margin:9px 0;
+}
+
+.formula{
+    color:#312e81;
+    font-size:18px;
+    font-weight:bold;
+    margin:8px 0;
+}
+
+
+/* ================= FRACTION ================= */
+
+.frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1;
+    margin:0 4px;
+}
+
+.frac .top{
+    border-bottom:2px solid #222;
+    padding:0 8px 4px;
+}
+
+.frac .bottom{
+    padding:4px 8px 0;
+}
+
+
+/* ================= ROOT ================= */
+
+.root{
+    font-size:18px;
+    font-weight:bold;
+}
+
+
+/* ================= EXAM ================= */
+
+.exam{
+    background:#ecfdf5;
+    border-left:4px solid #16a34a;
+    border-radius:8px;
+    padding:11px 15px;
+    margin-top:9px;
+}
+
+
+/* ================= ALERT ================= */
+
+.alert{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    border-radius:8px;
+    padding:11px 15px;
+    margin-top:9px;
+}
+
+
+/* ================= STEPS ================= */
+
+.steps{
+    background:rgba(255,255,255,.82);
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    padding:13px 16px;
+    margin-top:9px;
+}
+
+.step{
+    margin:9px 0;
+}
+
+.step b{
+    color:#4338ca;
+}
+
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.82);
+    margin-top:9px;
+}
+
+th,
+td{
+    border:1px solid #aaa;
+    padding:8px 5px;
+    text-align:center;
+    font-size:13px;
+}
+
+th{
+    background:#ede9fe;
+    color:#4338ca;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    margin-top:32px;
+    color:#6b7280;
+    font-size:12px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        padding:25px 14px 40px 47px;
+        border-radius:0;
+    }
+
+    .notebook::before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:27px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .formula{
+        font-size:16px;
+    }
+
+    table{
+        font-size:10px;
+    }
+
+    th,
+    td{
+        font-size:9px;
+        padding:5px 2px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="notebook">
+
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+<h1>✍ REAL NUMBERS</h1>
+
+<p>
+Class 10 Mathematics • Chapter 1 • Concept Notes + Examples
+</p>
+
+<div class="badge">
+THE GOAL • EXAM ORIENTED
+</div>
+
+</div>
+
+
+<!-- ================= 01 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+01. Real Numbers
+</div>
+
+<div class="note">
+
+All numbers that can be represented on the number line
+are called <b>Real Numbers</b>.
+
+<br><br>
+
+Real Numbers include:
+
+<br>
+
+• Rational Numbers
+
+<br>
+
+• Irrational Numbers
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+5, −3, 0,
+
+<span class="frac">
+<span class="top">3</span>
+<span class="bottom">4</span>
+</span>
+
+, √2, √5 and π are all real numbers.
+
+</div>
+
+</div>
+
+
+<!-- ================= 02 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+02. Rational Numbers
+</div>
+
+<div class="note">
+
+A number that can be expressed in the form
+
+<div class="formula-box">
+
+<div class="formula">
+
+<span class="frac">
+<span class="top">p</span>
+<span class="bottom">q</span>
+</span>
+
+, where p, q ∈ Z and q ≠ 0
+
+</div>
+
+</div>
+
+is called a <b>Rational Number</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+3 =
+
+<span class="frac">
+<span class="top">3</span>
+<span class="bottom">1</span>
+</span>
+
+<br><br>
+
+0.75 =
+
+<span class="frac">
+<span class="top">75</span>
+<span class="bottom">100</span>
+</span>
+
+=
+
+<span class="frac">
+<span class="top">3</span>
+<span class="bottom">4</span>
+</span>
+
+<br><br>
+
+Therefore, both are rational numbers.
+
+</div>
+
+</div>
+
+
+<!-- ================= 03 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+03. Irrational Numbers
+</div>
+
+<div class="note">
+
+Numbers which cannot be expressed in the form
+
+<span class="frac">
+<span class="top">p</span>
+<span class="bottom">q</span>
+</span>
+
+are called <b>Irrational Numbers</b>.
+
+Their decimal expansions are
+<b>non-terminating and non-repeating</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+√2 = 1.4142135...
+
+<br>
+
+√3 = 1.7320508...
+
+<br>
+
+√5 = 2.2360679...
+
+<br><br>
+
+These are irrational numbers.
+
+</div>
+
+</div>
+
+
+<!-- ================= 04 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+04. Prime Numbers
+</div>
+
+<div class="note">
+
+A natural number greater than 1 having exactly two positive factors,
+1 and itself, is called a <b>Prime Number</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+Factors of 7:
+
+<br>
+
+1, 7
+
+<br><br>
+
+Therefore, 7 is prime.
+
+</div>
+
+<div class="alert">
+
+⚠️ 1 is neither prime nor composite.
+
+</div>
+
+</div>
+
+
+<!-- ================= 05 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+05. Composite Numbers
+</div>
+
+<div class="note">
+
+A natural number greater than 1 having more than two positive factors
+is called a <b>Composite Number</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+Factors of 12:
+
+<br>
+
+1, 2, 3, 4, 6, 12
+
+<br><br>
+
+Therefore, 12 is composite.
+
+</div>
+
+</div>
+
+
+<!-- ================= 06 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+06. Prime Factorisation ⭐⭐⭐
+</div>
+
+<div class="note">
+
+Expressing a composite number as a product of prime numbers
+is called <b>Prime Factorisation</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+60 = 2 × 30
+
+<br>
+
+= 2 × 2 × 15
+
+<br>
+
+= 2 × 2 × 3 × 5
+
+<br><br>
+
+Therefore,
+
+<div class="formula-box">
+
+<div class="formula">
+
+60 = 2² × 3 × 5
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= 07 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+07. Fundamental Theorem of Arithmetic ⭐⭐⭐
+</div>
+
+<div class="note">
+
+Every composite number can be expressed as a product of primes,
+and this prime factorisation is unique apart from the order
+of the prime factors.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+72 = 2 × 36
+
+<br>
+
+= 2 × 2 × 18
+
+<br>
+
+= 2 × 2 × 2 × 9
+
+<br><br>
+
+Therefore,
+
+<b>72 = 2³ × 3²</b>
+
+</div>
+
+</div>
+
+
+<!-- ================= 08 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+08. HCF using Prime Factorisation
+</div>
+
+<div class="note">
+
+For HCF, take the <b>common prime factors with the smallest powers</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+36 = 2² × 3²
+
+<br>
+
+48 = 2⁴ × 3
+
+<br><br>
+
+HCF = 2² × 3
+
+<br>
+
+= 4 × 3
+
+<br>
+
+<b>= 12</b>
+
+</div>
+
+</div>
+
+
+<!-- ================= 09 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+09. LCM using Prime Factorisation
+</div>
+
+<div class="note">
+
+For LCM, take <b>all prime factors with the highest powers</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+36 = 2² × 3²
+
+<br>
+
+48 = 2⁴ × 3
+
+<br><br>
+
+LCM = 2⁴ × 3²
+
+<br>
+
+= 16 × 9
+
+<br>
+
+<b>= 144</b>
+
+</div>
+
+</div>
+
+
+<!-- ================= 10 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+10. HCF × LCM Relation ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+HCF(a,b) × LCM(a,b) = a × b
+
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+For 12 and 18:
+
+<br><br>
+
+HCF = 6
+
+<br>
+
+LCM = 36
+
+<br><br>
+
+6 × 36 = 216
+
+<br>
+
+12 × 18 = 216
+
+<br><br>
+
+Hence verified.
+
+</div>
+
+</div>
+
+
+<!-- ================= 11 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+11. Prove √2 is Irrational ⭐⭐⭐
+</div>
+
+<div class="note">
+
+We use the <b>proof by contradiction</b> method.
+
+</div>
+
+<div class="steps">
+
+<div class="step">
+<b>Step 1:</b>
+Assume that √2 is rational.
+</div>
+
+<div class="step">
+<b>Step 2:</b>
+Therefore,
+
+<br><br>
+
+√2 =
+
+<span class="frac">
+<span class="top">p</span>
+<span class="bottom">q</span>
+</span>
+
+<br><br>
+
+where p and q are coprime integers and q ≠ 0.
+</div>
+
+<div class="step">
+<b>Step 3:</b>
+Squaring both sides:
+
+<br><br>
+
+2 =
+
+<span class="frac">
+<span class="top">p²</span>
+<span class="bottom">q²</span>
+</span>
+
+<br><br>
+
+Therefore,
+
+<br>
+
+p² = 2q²
+</div>
+
+<div class="step">
+<b>Step 4:</b>
+Since p² is divisible by 2,
+p is also divisible by 2.
+
+<br><br>
+
+Let p = 2k.
+</div>
+
+<div class="step">
+<b>Step 5:</b>
+Substituting p = 2k:
+
+<br><br>
+
+(2k)² = 2q²
+
+<br>
+
+4k² = 2q²
+
+<br>
+
+q² = 2k²
+
+<br><br>
+
+Therefore, q is also divisible by 2.
+</div>
+
+<div class="step">
+<b>Step 6:</b>
+Thus, both p and q are divisible by 2.
+
+This contradicts the fact that p and q are coprime.
+</div>
+
+</div>
+
+<div class="exam">
+
+Therefore, our assumption is false.
+
+<br><br>
+
+<b>Hence, √2 is irrational.</b> ✓
+
+</div>
+
+</div>
+
+
+<!-- ================= 12 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+12. Prove √3 is Irrational ⭐⭐⭐
+</div>
+
+<div class="steps">
+
+<div class="step">
+<b>Step 1:</b>
+Assume that √3 is rational.
+</div>
+
+<div class="step">
+<b>Step 2:</b>
+
+√3 =
+
+<span class="frac">
+<span class="top">p</span>
+<span class="bottom">q</span>
+</span>
+
+<br><br>
+
+where p and q are coprime integers and q ≠ 0.
+</div>
+
+<div class="step">
+<b>Step 3:</b>
+Squaring both sides:
+
+<br><br>
+
+3 =
+
+<span class="frac">
+<span class="top">p²</span>
+<span class="bottom">q²</span>
+</span>
+
+<br><br>
+
+Therefore,
+
+<br>
+
+p² = 3q²
+</div>
+
+<div class="step">
+<b>Step 4:</b>
+Since p² is divisible by 3,
+p is also divisible by 3.
+
+<br><br>
+
+Let p = 3k.
+</div>
+
+<div class="step">
+<b>Step 5:</b>
+
+(3k)² = 3q²
+
+<br>
+
+9k² = 3q²
+
+<br>
+
+q² = 3k²
+
+<br><br>
+
+Therefore, q is also divisible by 3.
+</div>
+
+<div class="step">
+<b>Step 6:</b>
+Thus, both p and q are divisible by 3.
+
+This contradicts the fact that p and q are coprime.
+</div>
+
+</div>
+
+<div class="exam">
+
+Therefore, our assumption is false.
+
+<br><br>
+
+<b>Hence, √3 is irrational.</b> ✓
+
+</div>
+
+</div>
+
+
+<!-- ================= 13 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+13. Prove √5 is Irrational ⭐⭐⭐
+</div>
+
+<div class="steps">
+
+<div class="step">
+<b>Step 1:</b>
+Assume that √5 is rational.
+</div>
+
+<div class="step">
+<b>Step 2:</b>
+
+√5 =
+
+<span class="frac">
+<span class="top">p</span>
+<span class="bottom">q</span>
+</span>
+
+<br><br>
+
+where p and q are coprime integers and q ≠ 0.
+</div>
+
+<div class="step">
+<b>Step 3:</b>
+Squaring both sides:
+
+<br><br>
+
+5 =
+
+<span class="frac">
+<span class="top">p²</span>
+<span class="bottom">q²</span>
+</span>
+
+<br><br>
+
+Therefore,
+
+<br>
+
+p² = 5q²
+</div>
+
+<div class="step">
+<b>Step 4:</b>
+Since p² is divisible by 5,
+p is also divisible by 5.
+
+<br><br>
+
+Let p = 5k.
+</div>
+
+<div class="step">
+<b>Step 5:</b>
+
+(5k)² = 5q²
+
+<br>
+
+25k² = 5q²
+
+<br>
+
+q² = 5k²
+
+<br><br>
+
+Therefore, q is also divisible by 5.
+</div>
+
+<div class="step">
+<b>Step 6:</b>
+Thus, both p and q are divisible by 5.
+
+This contradicts the fact that p and q are coprime.
+</div>
+
+</div>
+
+<div class="exam">
+
+Therefore, our assumption is false.
+
+<br><br>
+
+<b>Hence, √5 is irrational.</b> ✓
+
+</div>
+
+</div>
+
+
+<!-- ================= 14 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+14. Prove 3 + 2√5 is Irrational ⭐⭐⭐
+</div>
+
+<div class="steps">
+
+<div class="step">
+<b>Step 1:</b>
+Assume that 3 + 2√5 is rational.
+</div>
+
+<div class="step">
+<b>Step 2:</b>
+
+2√5 = (3 + 2√5) − 3
+
+<br><br>
+
+Since rational − rational is rational,
+2√5 would be rational.
+</div>
+
+<div class="step">
+<b>Step 3:</b>
+
+√5 =
+
+<span class="frac">
+<span class="top">2√5</span>
+<span class="bottom">2</span>
+</span>
+
+<br><br>
+
+Therefore, √5 would be rational.
+</div>
+
+<div class="step">
+<b>Step 4:</b>
+But √5 is irrational.
+
+This is a contradiction.
+</div>
+
+</div>
+
+<div class="exam">
+
+Therefore, our assumption is false.
+
+<br><br>
+
+<b>Hence, 3 + 2√5 is irrational.</b> ✓
+
+</div>
+
+</div>
+
+
+<!-- ================= 15 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+15. Rational + Irrational
+</div>
+
+<div class="note">
+
+The sum of a rational number and an irrational number
+is always irrational.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+3 + √2
+
+<br><br>
+
+3 is rational and √2 is irrational.
+
+<br><br>
+
+Therefore,
+
+<b>3 + √2 is irrational.</b>
+
+</div>
+
+</div>
+
+
+<!-- ================= 16 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+16. Non-zero Rational × Irrational
+</div>
+
+<div class="note">
+
+The product of a non-zero rational number and an irrational number
+is always irrational.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+5√3
+
+<br><br>
+
+5 is a non-zero rational number
+and √3 is irrational.
+
+<br><br>
+
+Therefore,
+
+<b>5√3 is irrational.</b>
+
+</div>
+
+<div class="alert">
+
+⚠️ The condition <b>non-zero</b> is important.
+
+0 × √3 = 0, which is rational.
+
+</div>
+
+</div>
+
+
+<!-- ================= 17 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+17. Irrational + Irrational
+</div>
+
+<div class="note">
+
+The sum of two irrational numbers may be rational
+or irrational.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 1 — Rational
+</div>
+
+√2 + (−√2) = 0
+
+<br><br>
+
+0 is rational.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 2 — Irrational
+</div>
+
+√2 + √3
+
+<br><br>
+
+is irrational.
+
+</div>
+
+</div>
+
+
+<!-- ================= 18 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+18. Irrational × Irrational
+</div>
+
+<div class="note">
+
+The product of two irrational numbers may be rational
+or irrational.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 1 — Rational
+</div>
+
+√2 × √2 = 2
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 2 — Irrational
+</div>
+
+√2 × √3 = √6
+
+<br><br>
+
+√6 is irrational.
+
+</div>
+
+</div>
+
+
+<!-- ================= 19 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+19. Irrational ÷ Irrational
+</div>
+
+<div class="note">
+
+The quotient of two irrational numbers may be rational
+or irrational.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 1 — Rational
+</div>
+
+<span class="frac">
+<span class="top">√2</span>
+<span class="bottom">√2</span>
+</span>
+
+= 1
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 2 — Irrational
+</div>
+
+<span class="frac">
+<span class="top">√2</span>
+<span class="bottom">√3</span>
+</span>
+
+is irrational.
+
+</div>
+
+</div>
+
+
+<!-- ================= 20 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+20. Perfect Square and √n
+</div>
+
+<div class="note">
+
+If n is a perfect square, then √n is an integer
+and therefore rational.
+
+If n is not a perfect square, then √n is irrational.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+√81 = 9
+
+<br>
+
+Therefore, √81 is rational.
+
+<br><br>
+
+√10 is irrational because 10 is not a perfect square.
+
+</div>
+
+</div>
+
+
+<!-- ================= 21 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+21. HCF–LCM Based Question ⭐⭐⭐
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+The HCF of two positive integers is 6
+and their LCM is 180.
+
+If one number is 30, find the other number.
+
+<br><br>
+
+HCF × LCM = Product of the two numbers
+
+<br><br>
+
+6 × 180 = 30 × x
+
+<br><br>
+
+1080 = 30x
+
+<br><br>
+
+<b>x = 36</b>
+
+</div>
+
+</div>
+
+
+<!-- ================= 22 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+22. HCF and LCM Together
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+Find HCF and LCM of 72 and 120.
+
+<br><br>
+
+72 = 2³ × 3²
+
+<br>
+
+120 = 2³ × 3 × 5
+
+<br><br>
+
+<b>HCF</b>
+
+<br>
+
+= 2³ × 3
+
+<br>
+
+= 24
+
+<br><br>
+
+<b>LCM</b>
+
+<br>
+
+= 2³ × 3² × 5
+
+<br>
+
+= 360
+
+</div>
+
+<div class="exam">
+
+Check:
+
+<br><br>
+
+24 × 360 = 8640
+
+<br>
+
+72 × 120 = 8640 ✓
+
+</div>
+
+</div>
+
+
+<!-- ================= 23 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+23. Irrationality Proof — General Pattern ⭐⭐⭐
+</div>
+
+<div class="steps">
+
+<div class="step">
+<b>Step 1:</b>
+Assume that the given number is rational.
+</div>
+
+<div class="step">
+<b>Step 2:</b>
+Express it as p/q,
+where p and q are coprime integers and q ≠ 0.
+</div>
+
+<div class="step">
+<b>Step 3:</b>
+Perform the required algebraic manipulation.
+</div>
+
+<div class="step">
+<b>Step 4:</b>
+Show that p and q are both divisible by the same prime number.
+</div>
+
+<div class="step">
+<b>Step 5:</b>
+This contradicts the fact that p and q are coprime.
+</div>
+
+<div class="step">
+<b>Step 6:</b>
+Therefore, the original assumption is false.
+</div>
+
+<div class="step">
+<b>Step 7:</b>
+Hence, the given number is irrational.
+</div>
+
+</div>
+
+<div class="exam">
+
+<b>Exam Pattern:</b>
+
+<br><br>
+
+Assumption → Algebra → Contradiction → Conclusion
+
+</div>
+
+</div>
+
+
+<!-- ================= 24 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+24. Important Number Facts
+</div>
+
+<table>
+
+<tr>
+<th>Number</th>
+<th>Type</th>
+</tr>
+
+<tr>
+<td>0</td>
+<td>Rational</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Rational</td>
+</tr>
+
+<tr>
+<td>−5</td>
+<td>Rational</td>
+</tr>
+
+<tr>
+<td>3/7</td>
+<td>Rational</td>
+</tr>
+
+<tr>
+<td>√2</td>
+<td>Irrational</td>
+</tr>
+
+<tr>
+<td>√3</td>
+<td>Irrational</td>
+</tr>
+
+<tr>
+<td>√5</td>
+<td>Irrational</td>
+</tr>
+
+<tr>
+<td>π</td>
+<td>Irrational</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ================= 25 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+25. Identify Rational or Irrational
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+√49 = 7
+
+<br><br>
+
+Therefore, √49 is rational.
+
+<br><br>
+
+√50 = 5√2
+
+<br><br>
+
+Since √2 is irrational and 5 is non-zero rational,
+
+<br>
+
+<b>√50 is irrational.</b>
+
+</div>
+
+</div>
+
+
+<!-- ================= 26 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+26. Quick Concept Check
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Q1
+</div>
+
+√2 + √2 = 2√2
+
+<br><br>
+
+<b>Answer: Irrational</b>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Q2
+</div>
+
+√5 × √5 = 5
+
+<br><br>
+
+<b>Answer: Rational</b>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Q3
+</div>
+
+√3 − √3 = 0
+
+<br><br>
+
+<b>Answer: Rational</b>
+
+</div>
+
+</div>
+
+
+<!-- ================= 27 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+27. Exam Traps ⚠️
+</div>
+
+<div class="alert">
+
+❌ 1 is neither prime nor composite.
+
+<br><br>
+
+❌ HCF → highest powers नहीं.
+
+<br>
+
+✔ HCF → lowest powers.
+
+<br><br>
+
+❌ LCM → lowest powers नहीं.
+
+<br>
+
+✔ LCM → highest powers.
+
+<br><br>
+
+❌ Two irrational numbers do not always have an irrational sum.
+
+<br><br>
+
+❌ Two irrational numbers do not always have an irrational product.
+
+<br><br>
+
+❌ In irrationality proofs, p and q must be taken as coprime.
+
+<br><br>
+
+❌ q = 0 is not allowed.
+
+</div>
+
+</div>
+
+
+<!-- ================= 28 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+28. Quick Revision ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+Real Numbers = Rational + Irrational
+</div>
+
+<div class="formula">
+Rational Number = p/q, q ≠ 0
+</div>
+
+<div class="formula">
+HCF × LCM = Product of two positive integers
+</div>
+
+</div>
+
+<div class="note">
+
+<b>Fundamental Theorem of Arithmetic</b>
+
+<br><br>
+
+Every composite number can be expressed as a product of primes,
+and the prime factorisation is unique apart from the order
+of the prime factors.
+
+<br><br>
+
+<b>Irrationality Proof</b>
+
+<br><br>
+
+Assume rational → Express as p/q
+→ Algebraic manipulation → Contradiction
+→ Hence irrational.
+
+</div>
+
+</div>
+
+
+<!-- ================= 29 ================= -->
+
+<div class="section">
+
+<div class="section-title">
+29. Real Numbers — Exam Strategy 🎯
+</div>
+
+<div class="steps">
+
+<div class="step">
+<b>Prime Factorisation:</b>
+Express the number as a product of prime factors.
+</div>
+
+<div class="step">
+<b>HCF:</b>
+Take common prime factors with the lowest powers.
+</div>
+
+<div class="step">
+<b>LCM:</b>
+Take all prime factors with the highest powers.
+</div>
+
+<div class="step">
+<b>HCF–LCM Relation:</b>
+HCF × LCM = Product of two positive integers.
+</div>
+
+<div class="step">
+<b>√2, √3, √5:</b>
+Use the contradiction method.
+</div>
+
+<div class="step">
+<b>3 + 2√5:</b>
+Assume rational and isolate √5.
+</div>
+
+<div class="step">
+<b>Rational / Irrational:</b>
+Use the definition and known irrational numbers.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= FINAL ================= -->
+
+<div class="section">
+
+<div class="section-title">
+🏆 Real Numbers — Key Points
+</div>
+
+<div class="exam">
+
+<b>Prime Factorisation</b>
+
+<br>
+→ Unique apart from order of factors.
+
+<br><br>
+
+<b>HCF</b>
+
+<br>
+→ Lowest powers of common prime factors.
+
+<br><br>
+
+<b>LCM</b>
+
+<br>
+→ Highest powers of all prime factors.
+
+<br><br>
+
+<b>HCF × LCM</b>
+
+<br>
+→ Product of two positive integers.
+
+<br><br>
+
+<b>√2, √3, √5</b>
+
+<br>
+→ Irrational
+
+<br><br>
+
+<b>Rational + Irrational</b>
+
+<br>
+→ Irrational
+
+<br><br>
+
+<b>Non-zero Rational × Irrational</b>
+
+<br>
+→ Irrational
+
+<br><br>
+
+<b>Irrational + Irrational</b>
+
+<br>
+→ May be rational or irrational
+
+<br><br>
+
+<b>Irrational × Irrational</b>
+
+<br>
+→ May be rational or irrational
+
+</div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Chapter 1 • Real Numbers
+
+<br><br>
+
+Concept समझो → Example देखो → Practice करो → Exam में confidently solve करो.
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</div>
+
+
+</div>
+
+</body>
+</html>
