@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Class 10 Maths | Chapter 11 | Areas Related to Circles</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --ink:#252525;
+    --purple:#5146a5;
+    --purple2:#6d5bd0;
+    --paper:#fffef8;
+    --line:#dce8f5;
+    --red:#d66b6b;
+    --green:#27834d;
+    --orange:#b66b18;
+    --blue:#3975a8;
+}
+
+body{
+    background:#ddd9d0;
+    color:var(--ink);
+    font-family:"Segoe Print","Comic Sans MS","Bradley Hand",cursive;
+    line-height:1.65;
+    padding:20px 10px;
+}
+
+.notebook{
+    max-width:1100px;
+    margin:auto;
+    position:relative;
+
+    padding:40px 45px 60px 95px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        var(--paper) 0px,
+        var(--paper) 31px,
+        var(--line) 32px,
+        var(--paper) 33px
+    );
+
+    border-radius:7px;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.18);
+
+    overflow:hidden;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:68px;
+    width:2px;
+    background:#e8a1a1;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.header h1{
+    color:var(--purple);
+    font-size:37px;
+    letter-spacing:1px;
+}
+
+.header h2{
+    font-size:21px;
+    color:#3f3b54;
+}
+
+.header p{
+    font-size:13px;
+    color:#666;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 16px;
+    border:1px solid #b8afea;
+    border-radius:20px;
+    background:#eeeaff;
+    color:#4c3c9e;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.section{
+    margin-bottom:42px;
+}
+
+.title{
+    display:inline-block;
+    font-size:22px;
+    color:var(--purple);
+    border-bottom:2px solid var(--purple2);
+    margin-bottom:13px;
+}
+
+.card,
+.definition,
+.example,
+.formula-box,
+.hindi,
+.exam,
+.warning,
+.tip,
+.note{
+    padding:16px 19px;
+    margin:12px 0;
+    border-radius:10px;
+}
+
+.card{
+    background:rgba(255,255,255,.82);
+    border-left:4px solid var(--purple2);
+}
+
+.definition{
+    background:#f8fafc;
+    border-left:4px solid #64748b;
+}
+
+.example{
+    background:#fffaf0;
+    border:1px dashed #c78b3a;
+}
+
+.formula-box{
+    background:#f2efff;
+    border:1px dashed #7666c5;
+}
+
+.hindi{
+    background:#faf7ff;
+    border-left:4px solid #a58ee8;
+    color:#4c397f;
+}
+
+.exam{
+    background:#effaf3;
+    border-left:4px solid var(--green);
+}
+
+.warning{
+    background:#fff5eb;
+    border-left:4px solid #ed8a28;
+}
+
+.tip{
+    background:#eef7ff;
+    border-left:4px solid var(--blue);
+}
+
+.note{
+    background:#f8f8f8;
+    border-left:4px solid #888;
+}
+
+.example-title{
+    color:var(--orange);
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.answer{
+    color:var(--green);
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.math{
+    font-family:"Cambria Math","Times New Roman",serif;
+    font-size:21px;
+    color:#30266e;
+    margin:10px 0;
+    text-align:center;
+}
+
+.fraction{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1.05;
+    margin:0 4px;
+}
+
+.fraction .top{
+    border-bottom:1.5px solid #30266e;
+    padding:0 6px 3px;
+}
+
+.fraction .bottom{
+    padding:3px 6px 0;
+}
+
+.small-math{
+    font-family:"Cambria Math","Times New Roman",serif;
+    font-size:18px;
+}
+
+hr{
+    border:0;
+    border-top:1px dashed #aaa;
+    margin:18px 0;
+}
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.three-col{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:13px;
+}
+
+.diagram{
+    width:100%;
+    max-width:850px;
+    margin:18px auto;
+    padding:12px;
+    background:rgba(255,255,255,.78);
+    border:1px dashed #aaa;
+    border-radius:10px;
+}
+
+.diagram svg{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.circle{
+    stroke:#5146a5;
+    stroke-width:4;
+    fill:#f8f5ff;
+}
+
+.radius{
+    stroke:#27834d;
+    stroke-width:3;
+    fill:none;
+}
+
+.line{
+    stroke:#5146a5;
+    stroke-width:3;
+    fill:none;
+}
+
+.arc{
+    stroke:#d66b6b;
+    stroke-width:5;
+    fill:none;
+}
+
+.chord{
+    stroke:#b66b18;
+    stroke-width:4;
+    fill:none;
+}
+
+.label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:18px;
+    fill:#252525;
+    font-weight:bold;
+}
+
+.small-label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:15px;
+    fill:#5146a5;
+}
+
+.green-label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:16px;
+    fill:#27834d;
+    font-weight:bold;
+}
+
+.red-label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:16px;
+    fill:#b84e4e;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.88);
+    margin:15px 0;
+}
+
+th,td{
+    border:1px solid #aaa;
+    padding:10px 8px;
+    text-align:center;
+}
+
+th{
+    background:#eeeaff;
+    color:#4d409b;
+}
+
+.footer{
+    text-align:center;
+    color:#666;
+    font-size:12px;
+    margin-top:45px;
+}
+
+@media(max-width:750px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        border-radius:0;
+        padding:28px 13px 50px 48px;
+    }
+
+    .notebook::before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:27px;
+    }
+
+    .header h2{
+        font-size:16px;
+    }
+
+    .title{
+        font-size:19px;
+    }
+
+    .math{
+        font-size:18px;
+    }
+
+    .two-col,
+    .three-col{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        font-size:11px;
+    }
+
+    th,td{
+        padding:7px 4px;
+    }
+
+    .label{
+        font-size:15px;
+    }
+
+    .small-label,
+    .green-label,
+    .red-label{
+        font-size:12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="notebook">
+
+<!-- HEADER -->
+
+<header class="header">
+
+<h1>◯ AREAS RELATED TO CIRCLES</h1>
+
+<h2>Class 10 Mathematics • Chapter 11</h2>
+
+<p>Circle • Circular Path • Sector • Segment • Arc</p>
+
+<div class="badge">
+THE GOAL • HANDWRITTEN EXAM NOTES
+</div>
+
+</header>
+
+
+<!-- 1 -->
+
+<section class="section">
+
+<div class="title">
+01. Circle — Basic Revision
+</div>
+
+<div class="definition">
+
+A circle is the set of all points in a plane which are at the
+same distance from a fixed point called the <b>centre</b>.
+
+That fixed distance is called the <b>radius</b>.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 800 400">
+
+<circle cx="390" cy="200" r="125" class="circle"/>
+
+<line x1="390" y1="200"
+      x2="515" y2="200"
+      class="radius"/>
+
+<circle cx="390" cy="200" r="5" fill="#252525"/>
+
+<text x="372" y="195" class="label">O</text>
+
+<text x="435" y="185" class="green-label">
+r = radius
+</text>
+
+<text x="525" y="205" class="label">
+A
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+Circumference = 2πr
+</div>
+
+<div class="math">
+Area = πr²
+</div>
+
+<div class="math">
+Diameter = 2r
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 Circle ki boundary ki total length = circumference.
+
+Circle ke andar covered region = area.
+
+</div>
+
+</section>
+
+
+<!-- 2 -->
+
+<section class="section">
+
+<div class="title">
+02. Circular Path / Ring
+</div>
+
+<div class="definition">
+
+When two concentric circles form a region between them,
+that region is called a <b>circular path</b>.
+
+Let:
+
+<b>R</b> = outer radius
+
+<b>r</b> = inner radius
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+Area of Circular Path
+=
+πR² − πr²
+</div>
+
+<div class="math">
+= π(R² − r²)
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+Outer radius = 7 cm
+
+Inner radius = 3 cm
+
+<div class="math">
+Area = π(7² − 3²)
+</div>
+
+<div class="math">
+= π(49 − 9)
+</div>
+
+<div class="math">
+= 40π cm²
+</div>
+
+<div class="answer">
+✓ Area = 40π cm²
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 3 -->
+
+<section class="section">
+
+<div class="title">
+03. Sector of a Circle ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+A <b>sector</b> is the region enclosed by:
+
+<br>
+
+<b>Two radii + the corresponding arc.</b>
+
+<br><br>
+
+The angle between the two radii is called the
+<b>central angle</b>.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 800 480">
+
+<circle cx="390" cy="250" r="155"
+class="circle"/>
+
+<path d="
+M390 250
+L545 250
+A155 155 0 0 0 312 116
+Z"
+fill="#eeeaff"
+stroke="#5146a5"
+stroke-width="2"/>
+
+<line x1="390" y1="250"
+x2="545" y2="250"
+class="radius"/>
+
+<line x1="390" y1="250"
+x2="312" y2="116"
+class="radius"/>
+
+<path d="
+M545 250
+A155 155 0 0 0 312 116"
+class="arc"/>
+
+<circle cx="390" cy="250" r="5"
+fill="#252525"/>
+
+<text x="370" y="245" class="label">O</text>
+
+<text x="555" y="255" class="label">A</text>
+
+<text x="300" y="108" class="label">B</text>
+
+<text x="392" y="202" class="red-label">
+θ
+</text>
+
+<text x="390" y="330" class="small-label">
+Sector AOB
+</text>
+
+</svg>
+
+</div>
+
+<div class="hindi">
+
+💡 Sector ko identify karne ka easiest way:
+
+<b>Centre se do radii draw hongi aur unke beech arc hoga.</b>
+
+</div>
+
+</section>
+
+
+<!-- 4 -->
+
+<section class="section">
+
+<div class="title">
+04. Minor Sector — Formula ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+The sector corresponding to the smaller central angle is called
+the <b>minor sector</b>.
+
+Usually:
+
+<span class="small-math">θ &lt; 180°</span>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+
+<b>Area of Minor Sector</b>
+
+</div>
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+× πr²
+
+</div>
+
+<div class="math">
+
+<b>Arc Length of Minor Sector</b>
+
+</div>
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+× 2πr
+
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+Find the area of a sector of radius 14 cm and angle 90°.
+
+<div class="math">
+
+Area
+=
+<span class="fraction">
+<span class="top">90°</span>
+<span class="bottom">360°</span>
+</span>
+× π × 14²
+
+</div>
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">4</span>
+</span>
+× π × 196
+
+</div>
+
+Using π =
+<span class="fraction">
+<span class="top">22</span>
+<span class="bottom">7</span>
+</span>:
+
+<div class="math">
+= 154 cm²
+</div>
+
+<div class="answer">
+✓ Area of Minor Sector = 154 cm²
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 5 -->
+
+<section class="section">
+
+<div class="title">
+05. Major Sector — Formula ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+The larger region formed by the two radii and the major arc is
+called the <b>major sector</b>.
+
+If the minor angle is θ:
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+
+<b>Major Angle</b>
+
+</div>
+
+<div class="math">
+
+= 360° − θ
+
+</div>
+
+<hr>
+
+<div class="math">
+
+<b>Area of Major Sector</b>
+
+</div>
+
+<div class="math">
+
+=
+πr² − Area of Minor Sector
+
+</div>
+
+<div class="math">
+
+=
+πr² −
+[
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+× πr²
+]
+
+</div>
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">360° − θ</span>
+<span class="bottom">360°</span>
+</span>
+× πr²
+
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+A circle has radius 14 cm and the minor sector angle is 90°.
+Find the area of the major sector.
+
+<div class="math">
+
+Major angle = 360° − 90°
+
+</div>
+
+<div class="math">
+= 270°
+</div>
+
+<div class="math">
+
+Area
+=
+<span class="fraction">
+<span class="top">270°</span>
+<span class="bottom">360°</span>
+</span>
+× π × 14²
+
+</div>
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">3</span>
+<span class="bottom">4</span>
+</span>
+× 616
+
+</div>
+
+<div class="math">
+= 462 cm²
+</div>
+
+<div class="answer">
+✓ Area of Major Sector = 462 cm²
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 6 -->
+
+<section class="section">
+
+<div class="title">
+06. Sector — Complete Formula Box
+</div>
+
+<div class="formula-box">
+
+<h3>① Minor Sector</h3>
+
+<div class="math">
+
+Area =
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+
+</div>
+
+<div class="math">
+
+Arc Length =
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+2πr
+
+</div>
+
+<hr>
+
+<h3>② Major Sector</h3>
+
+<div class="math">
+
+Major Angle = 360° − θ
+
+</div>
+
+<div class="math">
+
+Area =
+<span class="fraction">
+<span class="top">360° − θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+
+</div>
+
+<div class="math">
+
+OR
+
+</div>
+
+<div class="math">
+
+Area = πr² − Minor Sector Area
+
+</div>
+
+</div>
+
+<div class="hindi">
+
+🧠 <b>Sector Trick:</b>
+
+<br><br>
+
+Minor → θ/360 × πr²
+
+<br><br>
+
+Major → (360 − θ)/360 × πr²
+
+<br><br>
+
+Full Circle → πr²
+
+</div>
+
+</section>
+
+
+<!-- 7 -->
+
+<section class="section">
+
+<div class="title">
+07. Segment of a Circle ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+A <b>segment</b> is the region bounded by a chord and its
+corresponding arc.
+
+<br><br>
+
+<b>Sector → Two radii + Arc</b>
+
+<br>
+
+<b>Segment → Chord + Arc</b>
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 850 470">
+
+<circle cx="410" cy="245" r="150"
+class="circle"/>
+
+<path d="
+M285 165
+A150 150 0 0 1 535 165
+L285 165 Z"
+fill="#eeeaff"/>
+
+<line x1="285" y1="165"
+x2="535" y2="165"
+class="chord"/>
+
+<path d="
+M285 165
+A150 150 0 0 1 535 165"
+class="arc"/>
+
+<text x="375" y="115"
+class="red-label">
+Minor Segment
+</text>
+
+<text x="375" y="190"
+class="label">
+Chord AB
+</text>
+
+</svg>
+
+</div>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="section">
+
+<div class="title">
+08. Minor Segment — Formula ⭐⭐⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+
+<b>Area of Minor Segment</b>
+
+</div>
+
+<div class="math">
+
+= Area of Minor Sector
+− Area of ΔOAB
+
+</div>
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+− Area of ΔOAB
+
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 Segment ka direct circle formula yaad karne ki zarurat nahi.
+
+Pehle sector ka area nikalo.
+
+Phir triangle OAB ka area subtract karo.
+
+<b>Sector − Triangle = Minor Segment</b>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+For a circle of radius 7 cm and central angle 90°, find the
+area of the minor segment.
+
+Sector area:
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">90°</span>
+<span class="bottom">360°</span>
+</span>
+× π × 7²
+
+</div>
+
+<div class="math">
+= 38.5 cm²
+</div>
+
+Triangle area:
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">2</span>
+</span>
+× 7 × 7
+
+</div>
+
+<div class="math">
+= 24.5 cm²
+</div>
+
+Therefore:
+
+<div class="math">
+
+Minor Segment
+= 38.5 − 24.5
+
+</div>
+
+<div class="math">
+= 14 cm²
+</div>
+
+<div class="answer">
+✓ Area of Minor Segment = 14 cm²
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="section">
+
+<div class="title">
+09. Major Segment — Formula ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+The larger region of a circle bounded by a chord and the major
+arc is called the <b>major segment</b>.
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+
+<b>Area of Major Segment</b>
+
+</div>
+
+<div class="math">
+
+= Area of Circle − Area of Minor Segment
+
+</div>
+
+<div class="math">
+
+= πr² − Area of Minor Segment
+
+</div>
+
+<div class="math">
+
+= πr² −
+[
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+πr² − Area of ΔOAB
+]
+
+</div>
+
+</div>
+
+<div class="hindi">
+
+🧠 Major segment ko directly solve karne ke bajay usually:
+
+<b>Full Circle − Minor Segment</b>
+
+karna easiest hota hai.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+If the area of the circle is 154 cm² and the area of its
+minor segment is 14 cm²:
+
+<div class="math">
+
+Major Segment
+= 154 − 14
+
+</div>
+
+<div class="math">
+= 140 cm²
+</div>
+
+<div class="answer">
+✓ Area of Major Segment = 140 cm²
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 10 -->
+
+<section class="section">
+
+<div class="title">
+10. Major vs Minor — Quick Comparison
+</div>
+
+<table>
+
+<tr>
+<th>Concept</th>
+<th>Minor</th>
+<th>Major</th>
+</tr>
+
+<tr>
+<td>Sector</td>
+<td>Smaller sector</td>
+<td>Larger sector</td>
+</tr>
+
+<tr>
+<td>Angle</td>
+<td>θ</td>
+<td>360° − θ</td>
+</tr>
+
+<tr>
+<td>Sector Area</td>
+<td>
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+</td>
+
+<td>
+<span class="fraction">
+<span class="top">360° − θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+</td>
+</tr>
+
+<tr>
+<td>Segment</td>
+<td>Smaller region</td>
+<td>Larger region</td>
+</tr>
+
+<tr>
+<td>Segment Area</td>
+<td>Sector − Triangle</td>
+<td>Circle − Minor Segment</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- 11 -->
+
+<section class="section">
+
+<div class="title">
+11. Arc Length ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+An arc is a part of the circumference of a circle.
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+
+<b>Length of Arc</b>
+
+</div>
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+× 2πr
+
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+Find the arc length of a circle with radius 14 cm and central
+angle 90°.
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">90°</span>
+<span class="bottom">360°</span>
+</span>
+× 2π × 14
+
+</div>
+
+<div class="math">
+
+=
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">4</span>
+</span>
+× 28π
+
+</div>
+
+Using π = 22/7:
+
+<div class="math">
+= 22 cm
+</div>
+
+<div class="answer">
+✓ Arc Length = 22 cm
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 12 -->
+
+<section class="section">
+
+<div class="title">
+12. Area of Sector + Triangle Figure
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 850 500">
+
+<circle cx="420" cy="300" r="150"
+class="circle"/>
+
+<line x1="420" y1="300"
+x2="295" y2="217"
+class="radius"/>
+
+<line x1="420" y1="300"
+x2="545" y2="217"
+class="radius"/>
+
+<polygon points="420,300 295,217 545,217"
+fill="#eef7ff"
+stroke="#3975a8"
+stroke-width="3"/>
+
+<path d="
+M295 217
+A150 150 0 0 1 545 217"
+class="arc"/>
+
+<text x="400" y="325"
+class="label">
+O
+</text>
+
+<text x="278" y="212"
+class="label">
+A
+</text>
+
+<text x="550" y="212"
+class="label">
+B
+</text>
+
+<text x="395" y="280"
+class="red-label">
+θ
+</text>
+
+<text x="355" y="175"
+class="red-label">
+Minor Arc
+</text>
+
+<text x="350" y="245"
+class="small-label">
+Triangle OAB
+</text>
+
+</svg>
+
+</div>
+
+<div class="exam">
+
+<b>Exam Identification:</b>
+
+<br><br>
+
+If the question asks for the shaded region between a chord and
+an arc, think:
+
+<div class="math">
+Segment
+</div>
+
+If the question asks for a region between two radii and an arc,
+think:
+
+<div class="math">
+Sector
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 13 -->
+
+<section class="section">
+
+<div class="title">
+13. Shaded Region Strategy ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+Most shaded-area questions can be solved using:
+
+<b>Required Region = Bigger Region − Unwanted Region</b>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+Circle − Inner Circle
+</div>
+
+<div class="math">
+Circle − Sector
+</div>
+
+<div class="math">
+Sector − Triangle
+</div>
+
+<div class="math">
+Outer Circle − Inner Circle
+</div>
+
+<div class="math">
+Circle − Minor Segment
+</div>
+
+</div>
+
+<div class="hindi">
+
+🧠 Figure dekhte hi calculation start mat karo.
+
+Pehle identify karo:
+
+<b>“Shaded region actually kis shape ka part hai?”</b>
+
+</div>
+
+</section>
+
+
+<!-- 14 -->
+
+<section class="section">
+
+<div class="title">
+14. Circular Path — Exam Example
+</div>
+
+<div class="example">
+
+<div class="example-title">
+Question
+</div>
+
+A circular garden has radius 14 m. A path of width 3.5 m is
+constructed inside it. Find the area of the path.
+
+</div>
+
+<div class="formula-box">
+
+Outer radius:
+
+<div class="math">
+R = 14 m
+</div>
+
+Inner radius:
+
+<div class="math">
+r = 14 − 3.5
+</div>
+
+<div class="math">
+r = 10.5 m
+</div>
+
+Therefore:
+
+<div class="math">
+
+Area
+=
+π(14² − 10.5²)
+
+</div>
+
+Using π = 22/7:
+
+<div class="math">
+= 269.5 m²
+</div>
+
+<div class="answer">
+✓ Area of Path = 269.5 m²
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 15 -->
+
+<section class="section">
+
+<div class="title">
+15. Special Angles — Easy Fraction Connection
+</div>
+
+<table>
+
+<tr>
+<th>Angle</th>
+<th>Fraction of Circle</th>
+<th>Sector Area</th>
+</tr>
+
+<tr>
+<td>90°</td>
+
+<td>
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">4</span>
+</span>
+</td>
+
+<td>
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">4</span>
+</span>
+πr²
+</td>
+
+</tr>
+
+<tr>
+
+<td>180°</td>
+
+<td>
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">2</span>
+</span>
+</td>
+
+<td>
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">2</span>
+</span>
+πr²
+</td>
+
+</tr>
+
+<tr>
+
+<td>270°</td>
+
+<td>
+<span class="fraction">
+<span class="top">3</span>
+<span class="bottom">4</span>
+</span>
+</td>
+
+<td>
+<span class="fraction">
+<span class="top">3</span>
+<span class="bottom">4</span>
+</span>
+πr²
+</td>
+
+</tr>
+
+<tr>
+
+<td>360°</td>
+
+<td>1</td>
+
+<td>
+πr²
+</td>
+
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- 16 -->
+
+<section class="section">
+
+<div class="title">
+16. Complete Formula Sheet ⭐⭐⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+<b>Diameter</b> = 2r
+</div>
+
+<div class="math">
+<b>Circumference</b> = 2πr
+</div>
+
+<div class="math">
+<b>Area of Circle</b> = πr²
+</div>
+
+<hr>
+
+<div class="math">
+
+<b>Area of Minor Sector</b>
+=
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+
+</div>
+
+<div class="math">
+
+<b>Area of Major Sector</b>
+=
+<span class="fraction">
+<span class="top">360° − θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+
+</div>
+
+<hr>
+
+<div class="math">
+
+<b>Arc Length</b>
+=
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+2πr
+
+</div>
+
+<hr>
+
+<div class="math">
+
+<b>Minor Segment</b>
+=
+Minor Sector − Triangle
+
+</div>
+
+<div class="math">
+
+<b>Major Segment</b>
+=
+Circle − Minor Segment
+
+</div>
+
+<hr>
+
+<div class="math">
+
+<b>Circular Path</b>
+=
+π(R² − r²)
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 17 -->
+
+<section class="section">
+
+<div class="title">
+17. Sector vs Segment — Never Confuse
+</div>
+
+<table>
+
+<tr>
+<th>Sector</th>
+<th>Segment</th>
+</tr>
+
+<tr>
+<td>Two radii + arc</td>
+<td>Chord + arc</td>
+</tr>
+
+<tr>
+<td>Centre is used</td>
+<td>Chord is used</td>
+</tr>
+
+<tr>
+<td>
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+</td>
+
+<td>
+Sector − Triangle
+</td>
+</tr>
+
+</table>
+
+<div class="hindi">
+
+❤️ Ek line yaad rakho:
+
+<br><br>
+
+<b>SECTOR → Radius + Radius + Arc</b>
+
+<br><br>
+
+<b>SEGMENT → Chord + Arc</b>
+
+</div>
+
+</section>
+
+
+<!-- 18 -->
+
+<section class="section">
+
+<div class="title">
+18. Common Exam Mistakes ⚠️
+</div>
+
+<div class="warning">
+
+<b>1.</b> Diameter ko radius maan lena.
+
+<br><br>
+
+<b>2.</b> Minor aur major sector confuse karna.
+
+<br><br>
+
+<b>3.</b> Sector aur segment ko same samajhna.
+
+<br><br>
+
+<b>4.</b> θ/360° ko incorrectly use karna.
+
+<br><br>
+
+<b>5.</b> Circular path mein inner area subtract na karna.
+
+<br><br>
+
+<b>6.</b> Major angle = 360° − θ bhool jana.
+
+<br><br>
+
+<b>7.</b> Segment mein triangle subtraction bhool jana.
+
+<br><br>
+
+<b>8.</b> Area ke answer mein cm² / m² na lagana.
+
+</div>
+
+</section>
+
+
+<!-- 19 -->
+
+<section class="section">
+
+<div class="title">
+19. One-Minute Concept Map
+</div>
+
+<div class="three-col">
+
+<div class="card">
+
+<b>CIRCLE</b>
+
+<br><br>
+
+Area = πr²
+
+<br>
+
+Circumference = 2πr
+
+</div>
+
+<div class="card">
+
+<b>SECTOR</b>
+
+<br><br>
+
+Two radii + arc
+
+<br><br>
+
+θ/360 × πr²
+
+</div>
+
+<div class="card">
+
+<b>SEGMENT</b>
+
+<br><br>
+
+Chord + arc
+
+<br><br>
+
+Sector − Triangle
+
+</div>
+
+</div>
+
+<div class="three-col">
+
+<div class="card">
+
+<b>MINOR</b>
+
+<br><br>
+
+Smaller region
+
+</div>
+
+<div class="card">
+
+<b>MAJOR</b>
+
+<br><br>
+
+Larger region
+
+</div>
+
+<div class="card">
+
+<b>ARC</b>
+
+<br><br>
+
+Part of circumference
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 20 -->
+
+<section class="section">
+
+<div class="title">
+20. Final Exam Checklist 🎯
+</div>
+
+<div class="exam">
+
+☑ Radius identify karo.
+
+<br><br>
+
+☑ Diameter diya ho to:
+
+<div class="math">
+r =
+<span class="fraction">
+<span class="top">d</span>
+<span class="bottom">2</span>
+</span>
+</div>
+
+☑ Sector ya segment identify karo.
+
+<br><br>
+
+☑ Minor ya major identify karo.
+
+<br><br>
+
+☑ Central angle θ identify karo.
+
+<br><br>
+
+☑ Sector:
+
+<div class="math">
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+</div>
+
+☑ Major Sector:
+
+<div class="math">
+<span class="fraction">
+<span class="top">360° − θ</span>
+<span class="bottom">360°</span>
+</span>
+πr²
+</div>
+
+☑ Arc:
+
+<div class="math">
+<span class="fraction">
+<span class="top">θ</span>
+<span class="bottom">360°</span>
+</span>
+2πr
+</div>
+
+☑ Minor Segment:
+
+<div class="math">
+Sector − Triangle
+</div>
+
+☑ Major Segment:
+
+<div class="math">
+Circle − Minor Segment
+</div>
+
+☑ Circular Path:
+
+<div class="math">
+π(R² − r²)
+</div>
+
+☑ Final unit check.
+
+</div>
+
+</section>
+
+
+<footer class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Chapter 11 • Areas Related to Circles
+
+<br><br>
+
+Concept • Figure • Formula • Example • Exam Practice
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</footer>
+
+</div>
+
+</body>
+</html>
