@@ -1,0 +1,2354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Class 10 Maths | Chapter 6 - Triangles</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --ink:#252525;
+    --purple:#5146a5;
+    --purple2:#6d5bd0;
+    --light:#f4f0ff;
+    --paper:#fffef8;
+    --line:#dce8f5;
+    --red:#d66b6b;
+    --green:#27834d;
+    --orange:#b66b18;
+}
+
+body{
+    background:#ddd9d0;
+    color:var(--ink);
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        "Bradley Hand",
+        cursive;
+    line-height:1.65;
+    padding:20px 10px;
+}
+
+.notebook{
+    max-width:1050px;
+    margin:auto;
+    position:relative;
+    padding:40px 45px 60px 95px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            var(--paper) 0px,
+            var(--paper) 31px,
+            var(--line) 32px,
+            var(--paper) 33px
+        );
+
+    border-radius:7px;
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+    overflow:hidden;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:68px;
+    width:2px;
+    background:#e8a1a1;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.header h1{
+    color:var(--purple);
+    font-size:38px;
+    letter-spacing:1px;
+}
+
+.header h2{
+    font-size:20px;
+    color:#3f3b54;
+}
+
+.header p{
+    font-size:13px;
+    color:#666;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 15px;
+    border:1px solid #b8afea;
+    border-radius:20px;
+    background:#eeeaff;
+    color:#4c3c9e;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.section{
+    margin-bottom:34px;
+}
+
+.title{
+    display:inline-block;
+    font-size:21px;
+    color:var(--purple);
+    border-bottom:2px solid var(--purple2);
+    margin-bottom:12px;
+}
+
+.card,
+.definition,
+.example,
+.formula-box,
+.hindi,
+.exam,
+.warning,
+.proof{
+    padding:13px 17px;
+    margin:10px 0;
+    border-radius:10px;
+}
+
+.card{
+    background:rgba(255,255,255,.8);
+    border-left:4px solid var(--purple2);
+}
+
+.definition{
+    background:#f8fafc;
+    border-left:4px solid #64748b;
+}
+
+.example{
+    background:#fffaf0;
+    border:1px dashed #c78b3a;
+}
+
+.formula-box{
+    background:#f2efff;
+    border:1px dashed #7666c5;
+    text-align:center;
+}
+
+.hindi{
+    background:#faf7ff;
+    border-left:4px solid #a58ee8;
+    color:#4c397f;
+}
+
+.exam{
+    background:#effaf3;
+    border-left:4px solid var(--green);
+}
+
+.warning{
+    background:#fff5eb;
+    border-left:4px solid #ed8a28;
+}
+
+.proof{
+    background:#f0faf3;
+    border-left:4px solid #2f995c;
+}
+
+.example-title{
+    color:var(--orange);
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.answer{
+    color:var(--green);
+    font-weight:bold;
+}
+
+.formula{
+    font-size:20px;
+    color:#30266e;
+    font-weight:bold;
+    margin:9px 0;
+}
+
+.frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1.05;
+    margin:0 4px;
+}
+
+.frac .top{
+    border-bottom:2px solid #222;
+    padding:0 8px 3px;
+}
+
+.frac .bottom{
+    padding:3px 8px 0;
+}
+
+hr{
+    border:0;
+    border-top:1px dashed #aaa;
+    margin:18px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.85);
+    margin:12px 0;
+}
+
+th,
+td{
+    border:1px solid #aaa;
+    padding:8px;
+    text-align:center;
+}
+
+th{
+    background:#eeeaff;
+    color:#4d409b;
+}
+
+.diagram{
+    width:100%;
+    max-width:570px;
+    margin:14px auto;
+    padding:10px;
+    background:rgba(255,255,255,.68);
+    border:1px dashed #b8b8b8;
+    border-radius:10px;
+}
+
+.diagram svg{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.svg-line{
+    stroke:#292929;
+    stroke-width:3;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.svg-parallel{
+    stroke:#5146a5;
+    stroke-width:3;
+    fill:none;
+}
+
+.svg-label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:20px;
+    fill:#252525;
+    font-weight:bold;
+}
+
+.svg-small{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:16px;
+    fill:#5146a5;
+}
+
+.svg-angle{
+    stroke:#c85d5d;
+    stroke-width:2.5;
+    fill:none;
+}
+
+.svg-mark{
+    stroke:#27834d;
+    stroke-width:3;
+}
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.footer{
+    text-align:center;
+    color:#666;
+    font-size:12px;
+    margin-top:45px;
+}
+
+/* mobile */
+
+@media(max-width:700px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        border-radius:0;
+        padding:28px 13px 50px 48px;
+    }
+
+    .notebook::before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:28px;
+    }
+
+    .header h2{
+        font-size:16px;
+    }
+
+    .title{
+        font-size:18px;
+    }
+
+    .formula{
+        font-size:17px;
+    }
+
+    .two-col{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        font-size:11px;
+    }
+
+    th,
+    td{
+        padding:6px 4px;
+    }
+
+    .svg-label{
+        font-size:17px;
+    }
+
+    .svg-small{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="notebook">
+
+<!-- HEADER -->
+
+<header class="header">
+
+<h1>△ TRIANGLES</h1>
+
+<h2>Class 10 Mathematics • Chapter 6</h2>
+
+<p>
+Concepts • Theorems • Proofs • Similarity • Solved Examples
+</p>
+
+<div class="badge">
+THE GOAL • ENGLISH MEDIUM + EASY HINDI EXPLANATION
+</div>
+
+</header>
+
+
+<!-- ===================================================== -->
+<!-- 1 -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+01. Similar Figures
+</div>
+
+<div class="definition">
+
+Two figures are called <b>similar</b> if they have the same shape,
+but their sizes may be different.
+
+For similar figures:
+
+<br><br>
+
+• Corresponding angles are equal.
+
+<br>
+
+• Corresponding sides are proportional.
+
+</div>
+
+<!-- diagram -->
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 270">
+
+<!-- small triangle -->
+
+<line x1="90" y1="210" x2="170" y2="60" class="svg-line"/>
+<line x1="170" y1="60" x2="250" y2="210" class="svg-line"/>
+<line x1="250" y1="210" x2="90" y2="210" class="svg-line"/>
+
+<text x="160" y="45" class="svg-label">A</text>
+<text x="72" y="230" class="svg-label">B</text>
+<text x="250" y="230" class="svg-label">C</text>
+
+<!-- large triangle -->
+
+<line x1="350" y1="210" x2="455" y2="35" class="svg-line"/>
+<line x1="455" y1="35" x2="560" y2="210" class="svg-line"/>
+<line x1="560" y1="210" x2="350" y2="210" class="svg-line"/>
+
+<text x="447" y="22" class="svg-label">D</text>
+<text x="330" y="230" class="svg-label">E</text>
+<text x="560" y="230" class="svg-label">F</text>
+
+<text x="250" y="135" class="svg-small">same shape</text>
+
+</svg>
+
+</div>
+
+<div class="hindi">
+
+💡 <b>Easy Hindi:</b>
+
+Similarity ka simple meaning hai:
+
+<b>Shape same, size different ho sakta hai.</b>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+If two triangles have angles:
+
+<br>
+
+40°, 60°, 80°
+
+<br><br>
+
+and another triangle also has:
+
+<br>
+
+40°, 60°, 80°
+
+<br><br>
+
+then the triangles have the same shape and are similar.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 2 -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+02. Similar Triangles
+</div>
+
+<div class="card">
+
+Two triangles are similar when their corresponding angles are equal
+and their corresponding sides are proportional.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 290">
+
+<!-- ABC -->
+
+<line x1="70" y1="230" x2="160" y2="55" class="svg-line"/>
+<line x1="160" y1="55" x2="250" y2="230" class="svg-line"/>
+<line x1="250" y1="230" x2="70" y2="230" class="svg-line"/>
+
+<text x="151" y="40" class="svg-label">A</text>
+<text x="52" y="252" class="svg-label">B</text>
+<text x="250" y="252" class="svg-label">C</text>
+
+<!-- DEF -->
+
+<line x1="350" y1="230" x2="455" y2="35" class="svg-line"/>
+<line x1="455" y1="35" x2="560" y2="230" class="svg-line"/>
+<line x1="560" y1="230" x2="350" y2="230" class="svg-line"/>
+
+<text x="446" y="22" class="svg-label">D</text>
+<text x="332" y="252" class="svg-label">E</text>
+<text x="560" y="252" class="svg-label">F</text>
+
+<text x="275" y="80" class="svg-small">∼</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+△ABC ∼ △DEF
+</div>
+
+Therefore:
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AB</span>
+<span class="bottom">DE</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">BC</span>
+<span class="bottom">EF</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">CA</span>
+<span class="bottom">FD</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 <b>Correspondence:</b>
+
+<br><br>
+
+A ↔ D
+
+<br>
+B ↔ E
+
+<br>
+C ↔ F
+
+<br><br>
+
+Similarity statement ka order hi corresponding vertices batata hai.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 3 BPT -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+03. Basic Proportionality Theorem — BPT ⭐⭐⭐
+</div>
+
+<div class="card">
+
+<b>Statement:</b>
+
+If a line is drawn parallel to one side of a triangle to intersect
+the other two sides in distinct points, then the other two sides
+are divided in the same ratio.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 360">
+
+<!-- outer triangle -->
+
+<line x1="300" y1="35" x2="90" y2="310" class="svg-line"/>
+<line x1="300" y1="35" x2="510" y2="310" class="svg-line"/>
+<line x1="90" y1="310" x2="510" y2="310" class="svg-line"/>
+
+<!-- DE -->
+
+<line x1="190" y1="178" x2="410" y2="178"
+      class="svg-parallel"/>
+
+<!-- labels -->
+
+<text x="292" y="25" class="svg-label">A</text>
+
+<text x="170" y="174" class="svg-label">D</text>
+<text x="414" y="174" class="svg-label">E</text>
+
+<text x="70" y="332" class="svg-label">B</text>
+<text x="510" y="332" class="svg-label">C</text>
+
+<text x="265" y="166" class="svg-small">DE ∥ BC</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 <b>Hindi:</b>
+
+Triangle ke andar agar ek line kisi side ke parallel draw ki jaaye,
+toh baaki dono sides <b>same ratio</b> mein divide hoti hain.
+
+<br><br>
+
+<b>Parallel → Proportion</b>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 4 BPT EXAMPLE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+04. BPT — Solved Example
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+In △ABC, DE ∥ BC.
+
+Given:
+
+<br>
+
+AD = 3 cm, DB = 2 cm, AE = 6 cm.
+
+Find EC.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 360">
+
+<line x1="300" y1="35" x2="90" y2="310" class="svg-line"/>
+<line x1="300" y1="35" x2="510" y2="310" class="svg-line"/>
+<line x1="90" y1="310" x2="510" y2="310" class="svg-line"/>
+
+<line x1="190" y1="178" x2="410" y2="178"
+      class="svg-parallel"/>
+
+<text x="292" y="25" class="svg-label">A</text>
+
+<text x="169" y="174" class="svg-label">D</text>
+<text x="414" y="174" class="svg-label">E</text>
+
+<text x="70" y="332" class="svg-label">B</text>
+<text x="510" y="332" class="svg-label">C</text>
+
+<text x="110" y="125" class="svg-small">AD = 3</text>
+<text x="110" y="250" class="svg-small">DB = 2</text>
+
+<text x="395" y="120" class="svg-small">AE = 6</text>
+<text x="405" y="255" class="svg-small">EC = x</text>
+
+<text x="263" y="165" class="svg-small">DE ∥ BC</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+By BPT:
+
+<br>
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+</div>
+
+Therefore:
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">3</span>
+<span class="bottom">2</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">6</span>
+<span class="bottom">x</span>
+</div>
+
+</div>
+
+3x = 12
+
+<br>
+
+<b>x = 4 cm</b>
+
+</div>
+
+<div class="answer">
+✓ EC = 4 cm
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 5 BPT PROOF -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+05. BPT — Proof ⭐⭐⭐
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 360">
+
+<line x1="300" y1="35" x2="90" y2="310" class="svg-line"/>
+<line x1="300" y1="35" x2="510" y2="310" class="svg-line"/>
+<line x1="90" y1="310" x2="510" y2="310" class="svg-line"/>
+
+<line x1="190" y1="178" x2="410" y2="178"
+      class="svg-parallel"/>
+
+<text x="292" y="25" class="svg-label">A</text>
+<text x="170" y="174" class="svg-label">D</text>
+<text x="414" y="174" class="svg-label">E</text>
+<text x="70" y="332" class="svg-label">B</text>
+<text x="510" y="332" class="svg-label">C</text>
+
+<text x="260" y="165" class="svg-small">DE ∥ BC</text>
+
+</svg>
+
+</div>
+
+<div class="proof">
+
+<b>Given:</b>
+
+<br>
+
+In △ABC, D lies on AB and E lies on AC such that
+
+<br>
+
+DE ∥ BC.
+
+<br><br>
+
+<b>To Prove:</b>
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+</div>
+
+<b>Proof:</b>
+
+<br><br>
+
+Join BE and CD.
+
+<br><br>
+
+Triangles △ADE and △BDE have the same altitude from E to AB.
+
+Therefore,
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">ar(△ADE)</span>
+<span class="bottom">ar(△BDE)</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+</div>
+
+Similarly, △ADE and △CDE have the same altitude from D to AC.
+
+Therefore,
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">ar(△ADE)</span>
+<span class="bottom">ar(△CDE)</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+</div>
+
+Since DE ∥ BC, triangles △BDE and △CDE are on the same
+base DE and between the same parallels DE and BC.
+
+Therefore,
+
+<div class="formula">
+ar(△BDE) = ar(△CDE)
+</div>
+
+Hence,
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+</div>
+
+<div class="answer">
+Hence proved.
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 <b>Proof ka idea:</b>
+
+Same altitude wale triangles ke areas ka ratio unki corresponding
+bases ke ratio ke equal hota hai. Isi area relation se BPT ka result
+milta hai.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 6 CONVERSE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+06. Converse of BPT ⭐⭐⭐
+</div>
+
+<div class="card">
+
+If a line divides any two sides of a triangle in the same ratio,
+then the line is parallel to the third side.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 350">
+
+<line x1="300" y1="35" x2="90" y2="300" class="svg-line"/>
+<line x1="300" y1="35" x2="510" y2="300" class="svg-line"/>
+<line x1="90" y1="300" x2="510" y2="300" class="svg-line"/>
+
+<line x1="190" y1="175" x2="410" y2="175"
+      class="svg-line"/>
+
+<text x="292" y="25" class="svg-label">A</text>
+<text x="170" y="172" class="svg-label">D</text>
+<text x="414" y="172" class="svg-label">E</text>
+<text x="70" y="323" class="svg-label">B</text>
+<text x="510" y="323" class="svg-label">C</text>
+
+<text x="242" y="160" class="svg-small">
+AD/DB = AE/EC
+</text>
+
+<text x="238" y="330" class="svg-small">
+⇒ DE ∥ BC
+</text>
+
+</svg>
+
+</div>
+
+<div class="hindi">
+
+💡 BPT ka direction:
+
+<b>Parallel → Ratio</b>
+
+<br><br>
+
+Converse ka direction:
+
+<b>Ratio → Parallel</b>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+AD = 4 cm
+
+<br>
+DB = 6 cm
+
+<br>
+AE = 6 cm
+
+<br>
+EC = 9 cm
+
+<br><br>
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">4</span>
+<span class="bottom">6</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">2</span>
+<span class="bottom">3</span>
+</div>
+
+</div>
+
+and
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">6</span>
+<span class="bottom">9</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">2</span>
+<span class="bottom">3</span>
+</div>
+
+</div>
+
+Therefore:
+
+<div class="answer">
+DE ∥ BC by converse of BPT.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 7 AA -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+07. AA Similarity Criterion ⭐⭐⭐
+</div>
+
+<div class="card">
+
+If two angles of one triangle are respectively equal to two angles
+of another triangle, then the two triangles are similar.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 300">
+
+<!-- ABC -->
+
+<line x1="60" y1="240" x2="150" y2="55" class="svg-line"/>
+<line x1="150" y1="55" x2="250" y2="240" class="svg-line"/>
+<line x1="250" y1="240" x2="60" y2="240" class="svg-line"/>
+
+<path d="M 78 240 A 25 25 0 0 1 73 215"
+      class="svg-angle"/>
+
+<path d="M 226 240 A 25 25 0 0 0 217 219"
+      class="svg-angle"/>
+
+<text x="142" y="40" class="svg-label">A</text>
+<text x="45" y="260" class="svg-label">B</text>
+<text x="250" y="260" class="svg-label">C</text>
+
+<!-- DEF -->
+
+<line x1="350" y1="240" x2="455" y2="35" class="svg-line"/>
+<line x1="455" y1="35" x2="560" y2="240" class="svg-line"/>
+<line x1="560" y1="240" x2="350" y2="240" class="svg-line"/>
+
+<path d="M 370 240 A 25 25 0 0 1 363 217"
+      class="svg-angle"/>
+
+<path d="M 535 240 A 25 25 0 0 0 526 218"
+      class="svg-angle"/>
+
+<text x="447" y="22" class="svg-label">D</text>
+<text x="332" y="260" class="svg-label">E</text>
+<text x="560" y="260" class="svg-label">F</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+∠A = ∠D
+
+<br>
+
+∠B = ∠E
+
+<br><br>
+
+Therefore:
+
+<div class="formula">
+△ABC ∼ △DEF
+</div>
+
+<b>by AA similarity criterion.</b>
+
+</div>
+
+<div class="hindi">
+
+💡 Do corresponding angles equal mil jaayein, toh third angles
+automatically equal honge because the sum of angles of a triangle
+is 180°.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+In △ABC and △PQR:
+
+<br>
+
+∠A = ∠P = 50°
+
+<br>
+
+∠B = ∠Q = 60°
+
+<br><br>
+
+Then:
+
+<br>
+
+∠C = ∠R = 70°
+
+<br><br>
+
+Hence:
+
+<div class="formula">
+△ABC ∼ △PQR
+</div>
+
+by AA similarity.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 8 SSS -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+08. SSS Similarity Criterion ⭐⭐⭐
+</div>
+
+<div class="card">
+
+If the corresponding sides of two triangles are proportional,
+then the triangles are similar.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 310">
+
+<!-- first -->
+
+<line x1="70" y1="245" x2="150" y2="65" class="svg-line"/>
+<line x1="150" y1="65" x2="245" y2="245" class="svg-line"/>
+<line x1="245" y1="245" x2="70" y2="245" class="svg-line"/>
+
+<text x="142" y="48" class="svg-label">A</text>
+<text x="52" y="268" class="svg-label">B</text>
+<text x="245" y="268" class="svg-label">C</text>
+
+<text x="91" y="145" class="svg-small">3</text>
+<text x="194" y="145" class="svg-small">5</text>
+<text x="150" y="270" class="svg-small">4</text>
+
+<!-- second -->
+
+<line x1="350" y1="245" x2="455" y2="30" class="svg-line"/>
+<line x1="455" y1="30" x2="570" y2="245" class="svg-line"/>
+<line x1="570" y1="245" x2="350" y2="245" class="svg-line"/>
+
+<text x="447" y="18" class="svg-label">P</text>
+<text x="332" y="268" class="svg-label">Q</text>
+<text x="570" y="268" class="svg-label">R</text>
+
+<text x="382" y="140" class="svg-small">6</text>
+<text x="510" y="140" class="svg-small">10</text>
+<text x="455" y="270" class="svg-small">8</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">3</span>
+<span class="bottom">6</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">4</span>
+<span class="bottom">8</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">5</span>
+<span class="bottom">10</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">1</span>
+<span class="bottom">2</span>
+</div>
+
+</div>
+
+Therefore:
+
+<div class="formula">
+△ABC ∼ △PQR
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 SSS mein three corresponding sides proportional honi chahiye.
+
+Angles find karna necessary nahi hai.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 9 SSS EXAMPLE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+09. SSS — Solved Example
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Check whether triangles with sides
+
+<br>
+
+3 cm, 4 cm, 5 cm
+
+<br>
+
+and
+
+<br>
+
+6 cm, 8 cm, 10 cm
+
+<br>
+
+are similar.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 310">
+
+<polygon points="70,245 150,65 245,245"
+         fill="none"
+         stroke="#292929"
+         stroke-width="3"/>
+
+<polygon points="350,245 455,30 570,245"
+         fill="none"
+         stroke="#292929"
+         stroke-width="3"/>
+
+<text x="140" y="48" class="svg-label">A</text>
+<text x="52" y="268" class="svg-label">B</text>
+<text x="245" y="268" class="svg-label">C</text>
+
+<text x="447" y="18" class="svg-label">P</text>
+<text x="332" y="268" class="svg-label">Q</text>
+<text x="570" y="268" class="svg-label">R</text>
+
+<text x="91" y="145" class="svg-small">3</text>
+<text x="194" y="145" class="svg-small">5</text>
+<text x="150" y="270" class="svg-small">4</text>
+
+<text x="382" y="140" class="svg-small">6</text>
+<text x="510" y="140" class="svg-small">10</text>
+<text x="455" y="270" class="svg-small">8</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+3/6 = 1/2
+
+<br>
+
+4/8 = 1/2
+
+<br>
+
+5/10 = 1/2
+
+<br><br>
+
+All corresponding sides are proportional.
+
+<br><br>
+
+<div class="answer">
+Therefore, the triangles are similar by SSS.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 10 SAS -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+10. SAS Similarity Criterion ⭐⭐⭐
+</div>
+
+<div class="card">
+
+If one angle of a triangle is equal to one angle of another triangle
+and the sides including these angles are proportional, then the
+triangles are similar.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 320">
+
+<!-- triangle ABC -->
+
+<line x1="70" y1="250" x2="155" y2="60" class="svg-line"/>
+<line x1="155" y1="60" x2="250" y2="250" class="svg-line"/>
+<line x1="250" y1="250" x2="70" y2="250" class="svg-line"/>
+
+<path d="M 96 250 A 28 28 0 0 1 91 226"
+      class="svg-angle"/>
+
+<text x="147" y="43" class="svg-label">A</text>
+<text x="50" y="273" class="svg-label">B</text>
+<text x="250" y="273" class="svg-label">C</text>
+
+<text x="91" y="145" class="svg-small">4</text>
+<text x="194" y="145" class="svg-small">6</text>
+
+<!-- triangle DEF -->
+
+<line x1="350" y1="250" x2="455" y2="30" class="svg-line"/>
+<line x1="455" y1="30" x2="570" y2="250" class="svg-line"/>
+<line x1="570" y1="250" x2="350" y2="250" class="svg-line"/>
+
+<path d="M 377 250 A 28 28 0 0 1 372 226"
+      class="svg-angle"/>
+
+<text x="447" y="18" class="svg-label">D</text>
+<text x="332" y="273" class="svg-label">E</text>
+<text x="570" y="273" class="svg-label">F</text>
+
+<text x="382" y="140" class="svg-small">8</text>
+<text x="510" y="140" class="svg-small">12</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+∠A = ∠D
+
+<br><br>
+
+<div class="frac">
+<span class="top">AB</span>
+<span class="bottom">DE</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AC</span>
+<span class="bottom">DF</span>
+</div>
+
+<br><br>
+
+Therefore:
+
+<div class="formula">
+△ABC ∼ △DEF
+</div>
+
+by SAS similarity.
+
+</div>
+
+<div class="hindi">
+
+💡 <b>Important:</b>
+
+SAS mein angle wahi hona chahiye jo given dono sides ke
+<b>beech</b> mein ho.
+
+Isko <b>included angle</b> kehte hain.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 11 SAS EXAMPLE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+11. SAS — Solved Example
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Given:
+
+<br>
+
+AB = 4 cm, AC = 6 cm
+
+<br>
+
+DE = 8 cm, DF = 12 cm
+
+<br>
+
+and ∠A = ∠D.
+
+Check similarity.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 310">
+
+<polygon points="70,245 155,60 250,245"
+         fill="none"
+         stroke="#292929"
+         stroke-width="3"/>
+
+<polygon points="350,245 455,30 570,245"
+         fill="none"
+         stroke="#292929"
+         stroke-width="3"/>
+
+<text x="145" y="43" class="svg-label">A</text>
+<text x="50" y="268" class="svg-label">B</text>
+<text x="250" y="268" class="svg-label">C</text>
+
+<text x="447" y="18" class="svg-label">D</text>
+<text x="332" y="268" class="svg-label">E</text>
+<text x="570" y="268" class="svg-label">F</text>
+
+<text x="87" y="145" class="svg-small">4</text>
+<text x="193" y="145" class="svg-small">6</text>
+
+<text x="382" y="140" class="svg-small">8</text>
+<text x="510" y="140" class="svg-small">12</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="frac">
+<span class="top">AB</span>
+<span class="bottom">DE</span>
+</div>
+
+=
+
+4/8
+
+=
+
+1/2
+
+<br><br>
+
+<div class="frac">
+<span class="top">AC</span>
+<span class="bottom">DF</span>
+</div>
+
+=
+
+6/12
+
+=
+
+1/2
+
+<br><br>
+
+∠A = ∠D
+
+<br><br>
+
+<div class="answer">
+Therefore △ABC ∼ △DEF by SAS.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 12 MISSING SIDE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+12. Similar Triangles — Find Missing Side ⭐⭐⭐
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Given:
+
+<br>
+
+△ABC ∼ △PQR
+
+<br>
+
+AB = 6 cm
+
+<br>
+
+PQ = 9 cm
+
+<br>
+
+BC = 8 cm
+
+<br>
+
+Find QR.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 310">
+
+<polygon points="70,245 155,60 250,245"
+         fill="none"
+         stroke="#292929"
+         stroke-width="3"/>
+
+<polygon points="350,245 455,30 570,245"
+         fill="none"
+         stroke="#292929"
+         stroke-width="3"/>
+
+<text x="145" y="43" class="svg-label">A</text>
+<text x="50" y="268" class="svg-label">B</text>
+<text x="250" y="268" class="svg-label">C</text>
+
+<text x="447" y="18" class="svg-label">P</text>
+<text x="332" y="268" class="svg-label">Q</text>
+<text x="570" y="268" class="svg-label">R</text>
+
+<text x="91" y="145" class="svg-small">6 cm</text>
+<text x="145" y="270" class="svg-small">8 cm</text>
+
+<text x="382" y="140" class="svg-small">9 cm</text>
+<text x="455" y="270" class="svg-small">x</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+Since:
+
+<div class="formula">
+△ABC ∼ △PQR
+</div>
+
+Corresponding sides:
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AB</span>
+<span class="bottom">PQ</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">BC</span>
+<span class="bottom">QR</span>
+</div>
+
+</div>
+
+Therefore:
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">6</span>
+<span class="bottom">9</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">8</span>
+<span class="bottom">x</span>
+</div>
+
+</div>
+
+6x = 72
+
+<br>
+
+<b>x = 12 cm</b>
+
+</div>
+
+<div class="answer">
+✓ QR = 12 cm
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 13 BPT APPLICATION -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+13. BPT Application — Unknown Length
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+In △ABC, DE ∥ BC.
+
+AD = 5 cm
+
+<br>
+
+DB = 3 cm
+
+<br>
+
+AE = 10 cm
+
+<br>
+
+Find EC.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 360">
+
+<line x1="300" y1="35" x2="90" y2="310" class="svg-line"/>
+<line x1="300" y1="35" x2="510" y2="310" class="svg-line"/>
+<line x1="90" y1="310" x2="510" y2="310" class="svg-line"/>
+
+<line x1="190" y1="178" x2="410" y2="178"
+      class="svg-parallel"/>
+
+<text x="292" y="25" class="svg-label">A</text>
+<text x="169" y="174" class="svg-label">D</text>
+<text x="414" y="174" class="svg-label">E</text>
+<text x="70" y="332" class="svg-label">B</text>
+<text x="510" y="332" class="svg-label">C</text>
+
+<text x="115" y="125" class="svg-small">5 cm</text>
+<text x="110" y="255" class="svg-small">3 cm</text>
+
+<text x="395" y="120" class="svg-small">10 cm</text>
+<text x="405" y="255" class="svg-small">x</text>
+
+<text x="260" y="165" class="svg-small">
+DE ∥ BC
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+By BPT:
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+</div>
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">5</span>
+<span class="bottom">3</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">10</span>
+<span class="bottom">x</span>
+</div>
+
+</div>
+
+5x = 30
+
+<br>
+
+<b>x = 6 cm</b>
+
+</div>
+
+<div class="answer">
+✓ EC = 6 cm
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 14 CORRESPONDENCE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+14. Corresponding Sides — Very Important
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 600 310">
+
+<polygon points="70,245 150,60 250,245"
+         fill="none"
+         stroke="#292929"
+         stroke-width="3"/>
+
+<polygon points="350,245 455,30 570,245"
+         fill="none"
+         stroke="#292929"
+         stroke-width="3"/>
+
+<text x="140" y="43" class="svg-label">A</text>
+<text x="50" y="268" class="svg-label">B</text>
+<text x="250" y="268" class="svg-label">C</text>
+
+<text x="447" y="18" class="svg-label">D</text>
+<text x="332" y="268" class="svg-label">E</text>
+<text x="570" y="268" class="svg-label">F</text>
+
+<text x="270" y="145" class="svg-small">↔</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+If:
+
+<div class="formula">
+△ABC ∼ △DEF
+</div>
+
+Then:
+
+<br>
+
+A ↔ D
+
+<br>
+
+B ↔ E
+
+<br>
+
+C ↔ F
+
+<br><br>
+
+Therefore:
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AB</span>
+<span class="bottom">DE</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">BC</span>
+<span class="bottom">EF</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">CA</span>
+<span class="bottom">FD</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="warning">
+
+⚠ <b>Common mistake:</b>
+
+Similarity statement ka order ignore karke sides ko random
+compare mat karo.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 15 CRITERIA TABLE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+15. Which Similarity Criterion?
+</div>
+
+<table>
+
+<tr>
+<th>Given in Question</th>
+<th>Criterion</th>
+<th>What to Check</th>
+</tr>
+
+<tr>
+<td>Two corresponding angles equal</td>
+<td><b>AA</b></td>
+<td>2 angles</td>
+</tr>
+
+<tr>
+<td>Three corresponding sides proportional</td>
+<td><b>SSS</b></td>
+<td>3 side ratios</td>
+</tr>
+
+<tr>
+<td>Two sides proportional + included angle equal</td>
+<td><b>SAS</b></td>
+<td>2 sides + included angle</td>
+</tr>
+
+</table>
+
+<div class="hindi">
+
+💡 Question mein jo information actually given hai,
+usi ke according criterion select karo.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 16 BPT VS CONVERSE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+16. BPT vs Converse — Don't Confuse
+</div>
+
+<div class="two-col">
+
+<div class="formula-box">
+
+<b>BPT</b>
+
+<br><br>
+
+DE ∥ BC
+
+<br><br>
+
+↓
+
+<br><br>
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+</div>
+
+<div class="formula-box">
+
+<b>Converse</b>
+
+<br><br>
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+<br><br>
+
+↓
+
+<br><br>
+
+DE ∥ BC
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 17 PROOF METHOD -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+17. How to Write a Similarity Proof
+</div>
+
+<div class="card">
+
+<b>Step 1:</b> Identify the two triangles.
+
+<br><br>
+
+<b>Step 2:</b> Write the equal angles or proportional sides.
+
+<br><br>
+
+<b>Step 3:</b> Select AA / SSS / SAS.
+
+<br><br>
+
+<b>Step 4:</b> Write the similarity statement in correct order.
+
+<br><br>
+
+<b>Step 5:</b> Use corresponding sides if a length has to be found.
+
+</div>
+
+<div class="hindi">
+
+💡 <b>Exam approach:</b>
+
+Pehle triangles identify karo → correspondence set karo →
+criterion lagao → similarity prove karo → phir required ratio use karo.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 18 COMMON MISTAKES -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+18. Common Exam Mistakes ⚠️
+</div>
+
+<div class="warning">
+
+<b>1.</b> Similarity statement ka order galat likhna.
+
+<br><br>
+
+<b>2.</b> Corresponding sides ko opposite order mein compare karna.
+
+<br><br>
+
+<b>3.</b> BPT mein DE ∥ BC condition miss kar dena.
+
+<br><br>
+
+<b>4.</b> Converse mein ratios equal establish kiye bina
+parallel conclude kar dena.
+
+<br><br>
+
+<b>5.</b> SAS mein non-included angle use karna.
+
+<br><br>
+
+<b>6.</b> SSS mein sides ka correspondence incorrectly match karna.
+
+<br><br>
+
+<b>7.</b> Calculation ke baad unit na likhna.
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 19 QUICK REVISION -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+19. One-Page Revision ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<b>Similarity</b>
+
+<br>
+
+Same shape, size may differ.
+
+<hr>
+
+<b>BPT</b>
+
+<div class="formula">
+
+DE ∥ BC
+
+⇒
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+</div>
+
+<hr>
+
+<b>Converse of BPT</b>
+
+<div class="formula">
+
+<div class="frac">
+<span class="top">AD</span>
+<span class="bottom">DB</span>
+</div>
+
+=
+
+<div class="frac">
+<span class="top">AE</span>
+<span class="bottom">EC</span>
+</div>
+
+⇒ DE ∥ BC
+
+</div>
+
+<hr>
+
+<b>AA</b>
+
+<br>
+
+Two corresponding angles equal
+⇒ Similar triangles
+
+<hr>
+
+<b>SSS</b>
+
+<br>
+
+Three corresponding sides proportional
+⇒ Similar triangles
+
+<hr>
+
+<b>SAS</b>
+
+<br>
+
+Two corresponding sides proportional
++ included angle equal
+⇒ Similar triangles
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- 20 FINAL CHECK -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="title">
+20. Final Exam Check 🎯
+</div>
+
+<div class="exam">
+
+✓ Can you identify similar triangles?
+
+<br><br>
+
+✓ Can you write correct correspondence?
+
+<br><br>
+
+✓ Can you apply BPT?
+
+<br><br>
+
+✓ Can you apply converse of BPT?
+
+<br><br>
+
+✓ Can you prove similarity by AA?
+
+<br><br>
+
+✓ Can you prove similarity by SSS?
+
+<br><br>
+
+✓ Can you prove similarity by SAS?
+
+<br><br>
+
+✓ Can you find an unknown side using proportional sides?
+
+<br><br>
+
+✓ Can you write a proper proof step-by-step?
+
+</div>
+
+<div class="hindi">
+
+💡 <b>Chapter ka core idea:</b>
+
+<br><br>
+
+<b>Triangle → Similarity → Proportion → Unknown Length</b>
+
+<br><br>
+
+Aur BPT ke liye:
+
+<br>
+
+<b>Parallel line → Same ratio</b>
+
+<br><br>
+
+Converse ke liye:
+
+<br>
+
+<b>Same ratio → Parallel line</b>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Chapter 6 • Triangles
+
+<br><br>
+
+Concept • Diagram • Example • Application
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</footer>
+
+</div>
+
+</body>
+</html>
