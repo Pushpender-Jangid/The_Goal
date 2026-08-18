@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Class 10 Maths | Chapter 12 | Surface Areas and Volumes</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --ink:#252525;
+    --purple:#5146a5;
+    --purple2:#6d5bd0;
+    --paper:#fffef8;
+    --line:#dce8f5;
+    --red:#d66b6b;
+    --green:#27834d;
+    --orange:#b66b18;
+    --blue:#3975a8;
+}
+
+body{
+    background:#ddd9d0;
+    color:var(--ink);
+    font-family:"Segoe Print","Comic Sans MS","Bradley Hand",cursive;
+    line-height:1.65;
+    padding:20px 10px;
+}
+
+.notebook{
+    max-width:1100px;
+    margin:auto;
+    position:relative;
+
+    padding:40px 45px 65px 95px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        var(--paper) 0px,
+        var(--paper) 31px,
+        var(--line) 32px,
+        var(--paper) 33px
+    );
+
+    border-radius:7px;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.18);
+
+    overflow:hidden;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:68px;
+    width:2px;
+    background:#e8a1a1;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:42px;
+}
+
+.header h1{
+    color:var(--purple);
+    font-size:36px;
+    letter-spacing:1px;
+}
+
+.header h2{
+    font-size:20px;
+    color:#3f3b54;
+}
+
+.header p{
+    color:#666;
+    font-size:13px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:12px;
+    padding:5px 16px;
+    border:1px solid #b8afea;
+    border-radius:20px;
+    background:#eeeaff;
+    color:#4c3c9e;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.section{
+    margin-bottom:43px;
+}
+
+.title{
+    display:inline-block;
+    color:var(--purple);
+    font-size:22px;
+    border-bottom:2px solid var(--purple2);
+    margin-bottom:14px;
+}
+
+.card,
+.definition,
+.example,
+.formula-box,
+.hindi,
+.exam,
+.warning,
+.tip,
+.note,
+.syllabus{
+    padding:16px 19px;
+    margin:12px 0;
+    border-radius:10px;
+}
+
+.card{
+    background:rgba(255,255,255,.82);
+    border-left:4px solid var(--purple2);
+}
+
+.definition{
+    background:#f8fafc;
+    border-left:4px solid #64748b;
+}
+
+.example{
+    background:#fffaf0;
+    border:1px dashed #c78b3a;
+}
+
+.formula-box{
+    background:#f2efff;
+    border:1px dashed #7666c5;
+}
+
+.hindi{
+    background:#faf7ff;
+    border-left:4px solid #a58ee8;
+    color:#4c397f;
+}
+
+.exam{
+    background:#effaf3;
+    border-left:4px solid var(--green);
+}
+
+.warning{
+    background:#fff5eb;
+    border-left:4px solid #ed8a28;
+}
+
+.tip{
+    background:#eef7ff;
+    border-left:4px solid var(--blue);
+}
+
+.note{
+    background:#f7f7f7;
+    border-left:4px solid #888;
+}
+
+.syllabus{
+    background:#eef7ff;
+    border:1px solid #9fc3df;
+}
+
+.example-title{
+    color:var(--orange);
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.answer{
+    color:var(--green);
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.math{
+    font-family:"Cambria Math","Times New Roman",serif;
+    font-size:21px;
+    color:#30266e;
+    margin:10px 0;
+    text-align:center;
+}
+
+.fraction{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1.05;
+    margin:0 4px;
+}
+
+.fraction .top{
+    border-bottom:1.5px solid #30266e;
+    padding:0 7px 3px;
+}
+
+.fraction .bottom{
+    padding:3px 7px 0;
+}
+
+.small-math{
+    font-family:"Cambria Math","Times New Roman",serif;
+    font-size:18px;
+}
+
+hr{
+    border:0;
+    border-top:1px dashed #aaa;
+    margin:20px 0;
+}
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.three-col{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:13px;
+}
+
+.diagram{
+    width:100%;
+    max-width:850px;
+    margin:18px auto;
+    padding:12px;
+    background:rgba(255,255,255,.78);
+    border:1px dashed #aaa;
+    border-radius:10px;
+}
+
+.diagram svg{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.solid{
+    fill:#f4f0ff;
+    stroke:#5146a5;
+    stroke-width:3;
+}
+
+.edge{
+    stroke:#5146a5;
+    stroke-width:3;
+    fill:none;
+}
+
+.radius{
+    stroke:#27834d;
+    stroke-width:3;
+    fill:none;
+}
+
+.height{
+    stroke:#d66b6b;
+    stroke-width:3;
+    stroke-dasharray:7 5;
+    fill:none;
+}
+
+.base{
+    stroke:#b66b18;
+    stroke-width:3;
+    fill:none;
+}
+
+.label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:18px;
+    fill:#252525;
+    font-weight:bold;
+}
+
+.green-label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:16px;
+    fill:#27834d;
+    font-weight:bold;
+}
+
+.red-label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:16px;
+    fill:#b84e4e;
+    font-weight:bold;
+}
+
+.blue-label{
+    font-family:"Segoe Print","Comic Sans MS",cursive;
+    font-size:16px;
+    fill:#3975a8;
+    font-weight:bold;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.9);
+    margin:15px 0;
+}
+
+th,td{
+    border:1px solid #aaa;
+    padding:10px 8px;
+    text-align:center;
+}
+
+th{
+    background:#eeeaff;
+    color:#4d409b;
+}
+
+.footer{
+    text-align:center;
+    color:#666;
+    font-size:12px;
+    margin-top:45px;
+}
+
+@media(max-width:750px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        border-radius:0;
+        padding:28px 13px 50px 48px;
+    }
+
+    .notebook::before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:27px;
+    }
+
+    .header h2{
+        font-size:16px;
+    }
+
+    .title{
+        font-size:19px;
+    }
+
+    .math{
+        font-size:18px;
+    }
+
+    .two-col,
+    .three-col{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        font-size:11px;
+    }
+
+    th,td{
+        padding:7px 4px;
+    }
+
+    .label{
+        font-size:14px;
+    }
+
+    .green-label,
+    .red-label,
+    .blue-label{
+        font-size:12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="notebook">
+
+<!-- HEADER -->
+
+<header class="header">
+
+<h1>▱ SURFACE AREAS & VOLUMES</h1>
+
+<h2>Class 10 Mathematics • Chapter 12</h2>
+
+<p>Solid Shapes • Surface Area • Volume • Combination of Solids</p>
+
+<div class="badge">
+THE GOAL • HANDWRITTEN EXAM NOTES
+</div>
+
+</header>
+
+
+<!-- SYLLABUS -->
+
+<section class="section">
+
+<div class="title">
+00. Exam Focus 🎯
+</div>
+
+<div class="syllabus">
+
+<b>Current CBSE Focus:</b>
+
+<br><br>
+
+For the current CBSE Class 10 Mathematics syllabus, the
+Surface Areas and Volumes section explicitly includes:
+
+<br><br>
+
+✓ Cube
+
+<br>
+✓ Cuboid
+
+<br>
+✓ Right Circular Cylinder
+
+<br><br>
+
+<b>NCERT Concept Extension:</b>
+
+The NCERT chapter also discusses combinations of solids and
+related concepts involving cone, sphere and hemisphere.
+
+</div>
+
+<div class="hindi">
+
+💡 Is page ka main goal hai ki student figure dekhkar
+<b>solid identify</b> kare, correct formula choose kare aur
+units ke saath answer de.
+
+</div>
+
+</section>
+
+
+<!-- 1 CUBOID -->
+
+<section class="section">
+
+<div class="title">
+01. Cuboid ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+A cuboid is a three-dimensional solid having:
+
+<br><br>
+
+<b>Length = l</b>
+
+<br>
+<b>Breadth = b</b>
+
+<br>
+<b>Height = h</b>
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 850 450">
+
+<!-- front -->
+<polygon points="240,150 560,150 560,330 240,330"
+class="solid"/>
+
+<!-- top -->
+<polygon points="240,150 340,80 660,80 560,150"
+class="solid"/>
+
+<!-- side -->
+<polygon points="560,150 660,80 660,260 560,330"
+class="solid"/>
+
+<!-- edges -->
+<line x1="240" y1="150" x2="340" y2="80" class="edge"/>
+<line x1="560" y1="150" x2="660" y2="80" class="edge"/>
+<line x1="560" y1="330" x2="660" y2="260" class="edge"/>
+
+<line x1="340" y1="80" x2="660" y2="80" class="edge"/>
+<line x1="660" y1="80" x2="660" y2="260" class="edge"/>
+
+<text x="390" y="355" class="label">
+l
+</text>
+
+<text x="600" y="145" class="green-label">
+b
+</text>
+
+<text x="570" y="250" class="red-label">
+h
+</text>
+
+<text x="385" y="50" class="blue-label">
+CUBOID
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+<b>Volume</b> = lbh
+</div>
+
+<div class="math">
+<b>LSA</b> = 2h(l + b)
+</div>
+
+<div class="math">
+<b>TSA</b> = 2(lb + bh + hl)
+</div>
+
+</div>
+
+<div class="hindi">
+
+🧠 Volume = solid ke andar kitni space hai.
+
+<br><br>
+
+LSA = sirf 4 side faces.
+
+<br>
+
+TSA = all 6 faces.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+Find the volume and total surface area of a cuboid having
+l = 8 cm, b = 5 cm and h = 3 cm.
+
+<div class="math">
+V = lbh
+</div>
+
+<div class="math">
+= 8 × 5 × 3
+</div>
+
+<div class="math">
+= 120 cm³
+</div>
+
+<hr>
+
+<div class="math">
+TSA = 2(lb + bh + hl)
+</div>
+
+<div class="math">
+= 2(40 + 15 + 24)
+</div>
+
+<div class="math">
+= 158 cm²
+</div>
+
+<div class="answer">
+✓ Volume = 120 cm³
+<br>
+✓ TSA = 158 cm²
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 2 CUBE -->
+
+<section class="section">
+
+<div class="title">
+02. Cube ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+A cube has all its edges equal.
+
+Let side = a.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 800 430">
+
+<polygon points="250,140 470,140 470,350 250,350"
+class="solid"/>
+
+<polygon points="250,140 330,80 550,80 470,140"
+class="solid"/>
+
+<polygon points="470,140 550,80 550,290 470,350"
+class="solid"/>
+
+<line x1="250" y1="140" x2="330" y2="80" class="edge"/>
+<line x1="470" y1="140" x2="550" y2="80" class="edge"/>
+<line x1="470" y1="350" x2="550" y2="290" class="edge"/>
+
+<text x="355" y="375" class="label">
+a
+</text>
+
+<text x="490" y="250" class="green-label">
+a
+</text>
+
+<text x="350" y="48" class="blue-label">
+CUBE
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+<b>LSA</b> = 4a²
+</div>
+
+<div class="math">
+<b>TSA</b> = 6a²
+</div>
+
+<div class="math">
+<b>Volume</b> = a³
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+Side of a cube = 7 cm.
+
+<div class="math">
+TSA = 6a²
+</div>
+
+<div class="math">
+= 6 × 7²
+</div>
+
+<div class="math">
+= 294 cm²
+</div>
+
+<div class="math">
+V = a³ = 7³ = 343 cm³
+</div>
+
+<div class="answer">
+✓ TSA = 294 cm²
+<br>
+✓ Volume = 343 cm³
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 3 CYLINDER -->
+
+<section class="section">
+
+<div class="title">
+03. Right Circular Cylinder ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+A cylinder has:
+
+<br>
+
+<b>Radius = r</b>
+
+<br>
+
+<b>Height = h</b>
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 800 500">
+
+<ellipse cx="400" cy="100" rx="150" ry="45"
+fill="#f4f0ff" stroke="#5146a5" stroke-width="3"/>
+
+<line x1="250" y1="100" x2="250" y2="370"
+class="edge"/>
+
+<line x1="550" y1="100" x2="550" y2="370"
+class="edge"/>
+
+<path d="M250 370 A150 45 0 0 0 550 370"
+class="edge"/>
+
+<path d="M250 370 A150 45 0 0 1 550 370"
+class="edge"/>
+
+<line x1="400" y1="100" x2="550" y2="100"
+class="radius"/>
+
+<line x1="590" y1="100" x2="590" y2="370"
+class="height"/>
+
+<text x="455" y="90" class="green-label">
+r
+</text>
+
+<text x="600" y="240" class="red-label">
+h
+</text>
+
+<text x="340" y="50" class="blue-label">
+RIGHT CIRCULAR CYLINDER
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+<b>CSA</b> = 2πrh
+</div>
+
+<div class="math">
+<b>TSA</b> = 2πr(h + r)
+</div>
+
+<div class="math">
+<b>Volume</b> = πr²h
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 Cylinder ka curved part = CSA.
+
+<br><br>
+
+Dono circular bases ko bhi include karoge to = TSA.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+A cylinder has radius 7 cm and height 10 cm.
+Find its volume.
+
+<div class="math">
+V = πr²h
+</div>
+
+<div class="math">
+= π × 7² × 10
+</div>
+
+Using
+
+<span class="fraction">
+<span class="top">22</span>
+<span class="bottom">7</span>
+</span>
+
+for π:
+
+<div class="math">
+= 1540 cm³
+</div>
+
+<div class="answer">
+✓ Volume = 1540 cm³
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 4 CSA vs TSA -->
+
+<section class="section">
+
+<div class="title">
+04. CSA vs TSA — Never Confuse
+</div>
+
+<table>
+
+<tr>
+<th>Solid</th>
+<th>Curved / Lateral Surface</th>
+<th>Total Surface</th>
+</tr>
+
+<tr>
+<td>Cube</td>
+<td>LSA = 4a²</td>
+<td>TSA = 6a²</td>
+</tr>
+
+<tr>
+<td>Cuboid</td>
+<td>LSA = 2h(l+b)</td>
+<td>TSA = 2(lb+bh+hl)</td>
+</tr>
+
+<tr>
+<td>Cylinder</td>
+<td>CSA = 2πrh</td>
+<td>TSA = 2πr(h+r)</td>
+</tr>
+
+</table>
+
+<div class="warning">
+
+⚠️ <b>Most common mistake:</b>
+
+<br><br>
+
+Question agar "curved surface area" pooch raha hai,
+TSA mat calculate karna.
+
+<br><br>
+
+Question agar "total surface area" pooch raha hai,
+required bases ko include karna hai.
+
+</div>
+
+</section>
+
+
+<!-- 5 UNITS -->
+
+<section class="section">
+
+<div class="title">
+05. Units — Very Important ⭐⭐⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+1 m = 100 cm
+</div>
+
+<div class="math">
+1 m² = 10,000 cm²
+</div>
+
+<div class="math">
+1 m³ = 1,000,000 cm³
+</div>
+
+<div class="math">
+1 L = 1000 cm³
+</div>
+
+<div class="math">
+1 mL = 1 cm³
+</div>
+
+</div>
+
+<div class="hindi">
+
+🧠 Surface area ka answer <b>square unit</b> mein.
+
+<br>
+
+Volume ka answer <b>cubic unit</b> mein.
+
+<br><br>
+
+Area → cm², m²
+
+<br>
+
+Volume → cm³, m³
+
+</div>
+
+</section>
+
+
+<!-- 6 MISSING DIMENSION -->
+
+<section class="section">
+
+<div class="title">
+06. Finding Missing Dimension
+</div>
+
+<div class="definition">
+
+Kabhi question mein volume diya hota hai aur
+height/radius/side find karni hoti hai.
+
+Formula ko rearrange karo.
+
+</div>
+
+<div class="formula-box">
+
+For cylinder:
+
+<div class="math">
+V = πr²h
+</div>
+
+Therefore:
+
+<div class="math">
+h =
+<span class="fraction">
+<span class="top">V</span>
+<span class="bottom">πr²</span>
+</span>
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+Volume of a cylinder = 1540 cm³,
+radius = 7 cm. Find height.
+
+<div class="math">
+h =
+<span class="fraction">
+<span class="top">1540</span>
+<span class="bottom">π × 7²</span>
+</span>
+</div>
+
+Using π = 22/7:
+
+<div class="math">
+h = 10 cm
+</div>
+
+<div class="answer">
+✓ Height = 10 cm
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 7 CONE REFERENCE -->
+
+<section class="section">
+
+<div class="title">
+07. Cone — NCERT Concept Reference
+</div>
+
+<div class="note">
+
+📘 <b>Note:</b> Cone is part of the broader NCERT Chapter 12
+treatment, while the current CBSE 2025–26 syllabus explicitly
+lists cube, cuboid and right circular cylinder under this unit.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 800 500">
+
+<ellipse cx="400" cy="385" rx="155" ry="45"
+fill="#f4f0ff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<line x1="245" y1="385" x2="400" y2="95"
+class="edge"/>
+
+<line x1="555" y1="385" x2="400" y2="95"
+class="edge"/>
+
+<line x1="400" y1="95" x2="400" y2="385"
+class="height"/>
+
+<line x1="400" y1="385" x2="555" y2="385"
+class="radius"/>
+
+<line x1="400" y1="95" x2="555" y2="385"
+class="base"/>
+
+<text x="410" y="245" class="red-label">
+h
+</text>
+
+<text x="480" y="375" class="green-label">
+r
+</text>
+
+<text x="485" y="230" class="blue-label">
+l
+</text>
+
+<text x="340" y="55" class="blue-label">
+CONE
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+l² = r² + h²
+</div>
+
+<div class="math">
+l = √(r² + h²)
+</div>
+
+<div class="math">
+CSA = πrl
+</div>
+
+<div class="math">
+TSA = πr(l+r)
+</div>
+
+<div class="math">
+V =
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">3</span>
+</span>
+πr²h
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+For r = 3 cm and h = 4 cm:
+
+<div class="math">
+l = √(3² + 4²)
+</div>
+
+<div class="math">
+= √25 = 5 cm
+</div>
+
+Then:
+
+<div class="math">
+CSA = π × 3 × 5 = 15π cm²
+</div>
+
+<div class="answer">
+✓ Slant height = 5 cm
+<br>
+✓ CSA = 15π cm²
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 8 SPHERE -->
+
+<section class="section">
+
+<div class="title">
+08. Sphere — NCERT Concept Reference
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 800 430">
+
+<ellipse cx="400" cy="215"
+rx="145" ry="145"
+class="solid"/>
+
+<ellipse cx="400" cy="215"
+rx="145" ry="48"
+fill="none"
+stroke="#3975a8"
+stroke-width="2"
+stroke-dasharray="7 5"/>
+
+<line x1="400" y1="215"
+x2="545" y2="215"
+class="radius"/>
+
+<circle cx="400" cy="215"
+r="5"
+fill="#252525"/>
+
+<text x="380" y="210" class="label">
+O
+</text>
+
+<text x="460" y="205" class="green-label">
+r
+</text>
+
+<text x="350" y="50" class="blue-label">
+SPHERE
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+Surface Area = 4πr²
+</div>
+
+<div class="math">
+Volume =
+<span class="fraction">
+<span class="top">4</span>
+<span class="bottom">3</span>
+</span>
+πr³
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 9 HEMISPHERE -->
+
+<section class="section">
+
+<div class="title">
+09. Hemisphere — NCERT Concept Reference
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 800 450">
+
+<path d="
+M240 230
+A160 80 0 0 1 560 230
+L560 230
+A160 80 0 0 1 240 230
+Z"
+fill="#f4f0ff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<path d="
+M240 230
+A160 80 0 0 0 560 230"
+fill="none"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<line x1="400" y1="230"
+x2="560" y2="230"
+class="radius"/>
+
+<text x="475" y="220" class="green-label">
+r
+</text>
+
+<text x="340" y="125" class="blue-label">
+HEMISPHERE
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+CSA = 2πr²
+</div>
+
+<div class="math">
+TSA = 3πr²
+</div>
+
+<div class="math">
+Volume =
+<span class="fraction">
+<span class="top">2</span>
+<span class="bottom">3</span>
+</span>
+πr³
+</div>
+
+</div>
+
+<div class="warning">
+
+⚠️ Hemisphere mein:
+
+<br><br>
+
+<b>CSA</b> = curved part only.
+
+<br>
+
+<b>TSA</b> = curved part + circular base.
+
+</div>
+
+</section>
+
+
+<!-- 10 COMBINATION -->
+
+<section class="section">
+
+<div class="title">
+10. Combination of Solids ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+A solid made by joining two or more basic solids is called a
+<b>combination of solids</b>.
+
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 850 480">
+
+<!-- cylinder -->
+<rect x="270" y="150"
+width="310" height="170"
+fill="#f4f0ff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<ellipse cx="425" cy="150"
+rx="155" ry="45"
+fill="#eeeaff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<!-- hemisphere left -->
+<path d="
+M270 320
+A155 85 0 0 1 580 320"
+fill="none"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<line x1="425" y1="150"
+x2="580" y2="150"
+class="radius"/>
+
+<line x1="610" y1="150"
+x2="610" y2="320"
+class="height"/>
+
+<text x="470" y="140" class="green-label">
+r
+</text>
+
+<text x="620" y="240" class="red-label">
+h
+</text>
+
+<text x="330" y="80" class="blue-label">
+COMBINATION
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+<b>Total Volume</b>
+=
+Volume₁ + Volume₂ + ...
+</div>
+
+<div class="math">
+<b>Required Surface Area</b>
+=
+Only exposed surfaces
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 सबसे important:
+
+<b>Volume mein joined solids ke volumes add hote hain.</b>
+
+<br><br>
+
+Lekin surface area mein jo surfaces andar join ho gaye hain,
+unko count nahi karna.
+
+</div>
+
+</section>
+
+
+<!-- 11 CYLINDER + HEMISPHERE -->
+
+<section class="section">
+
+<div class="title">
+11. Cylinder + Hemisphere
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 850 500">
+
+<!-- cylinder -->
+<rect x="280" y="145"
+width="280" height="190"
+fill="#f4f0ff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<ellipse cx="420" cy="145"
+rx="140" ry="42"
+fill="#eeeaff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<!-- hemisphere -->
+<path d="
+M280 335
+A140 70 0 0 0 560 335"
+fill="#f4f0ff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<line x1="420" y1="145"
+x2="560" y2="145"
+class="radius"/>
+
+<line x1="600" y1="145"
+x2="600" y2="335"
+class="height"/>
+
+<text x="480" y="135" class="green-label">
+r
+</text>
+
+<text x="610" y="245" class="red-label">
+h
+</text>
+
+<text x="330" y="70" class="blue-label">
+CYLINDER + HEMISPHERE
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<b>Volume:</b>
+
+<div class="math">
+
+V =
+πr²h
++
+<span class="fraction">
+<span class="top">2</span>
+<span class="bottom">3</span>
+</span>
+πr³
+
+</div>
+
+<b>Exposed Surface Area:</b>
+
+<div class="math">
+
+CSA of cylinder
++
+CSA of hemisphere
++
+top circular base
+
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+A solid consists of a cylinder of radius 3 cm and height 10 cm
+with a hemisphere of the same radius attached to one end.
+
+<div class="math">
+
+V
+=
+π(3²)(10)
++
+<span class="fraction">
+<span class="top">2</span>
+<span class="bottom">3</span>
+</span>
+π(3³)
+
+</div>
+
+<div class="math">
+= 90π + 18π
+</div>
+
+<div class="math">
+= 108π cm³
+</div>
+
+<div class="answer">
+✓ Volume = 108π cm³
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 12 CONE + CYLINDER -->
+
+<section class="section">
+
+<div class="title">
+12. Cylinder + Cone
+</div>
+
+<div class="diagram">
+
+<svg viewBox="0 0 800 520">
+
+<!-- cylinder -->
+<rect x="280" y="250"
+width="240"
+height="150"
+fill="#f4f0ff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<!-- cone -->
+<path d="
+M280 250
+L400 90
+L520 250
+Z"
+fill="#eeeaff"
+stroke="#5146a5"
+stroke-width="3"/>
+
+<line x1="400" y1="90"
+x2="400" y2="250"
+class="height"/>
+
+<line x1="400" y1="250"
+x2="520" y2="250"
+class="radius"/>
+
+<line x1="400" y1="90"
+x2="520" y2="250"
+class="base"/>
+
+<text x="410" y="175" class="red-label">
+h₁
+</text>
+
+<text x="450" y="240" class="green-label">
+r
+</text>
+
+<text x="455" y="165" class="blue-label">
+l
+</text>
+
+<text x="320" y="55" class="blue-label">
+CONE + CYLINDER
+</text>
+
+</svg>
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+
+Total Volume
+=
+πr²h₂
++
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">3</span>
+</span>
+πr²h₁
+
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 Same radius ho to r²π common le sakte ho.
+
+</div>
+
+</section>
+
+
+<!-- 13 HOLLOW SOLID -->
+
+<section class="section">
+
+<div class="title">
+13. Hollow Solid / Material Removed
+</div>
+
+<div class="definition">
+
+When a portion of a solid is removed or a hollow is created,
+find the required quantity by subtraction.
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+Remaining Volume
+=
+Original Volume − Removed Volume
+</div>
+
+<div class="math">
+Material Volume
+=
+Outer Volume − Inner Volume
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+A cylinder has outer radius R and inner radius r, with the
+same height h.
+
+<div class="math">
+
+Volume of material
+=
+πR²h − πr²h
+
+</div>
+
+<div class="math">
+
+= πh(R² − r²)
+
+</div>
+
+<div class="answer">
+✓ This is the standard subtraction approach for hollow solids.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 14 MELTING / RECASTING -->
+
+<section class="section">
+
+<div class="title">
+14. Melting & Recasting ⭐⭐⭐⭐⭐
+</div>
+
+<div class="definition">
+
+If one solid is melted and recast into another solid, the
+<b>volume of material remains unchanged</b>.
+
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+Volume of old solid
+=
+Volume of new solid
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+A metal cube is melted and recast into a cuboid.
+
+Then:
+
+<div class="math">
+a³ = lbh
+</div>
+
+If the new dimensions are known, the missing dimension can be
+found from this equation.
+
+</div>
+
+<div class="hindi">
+
+🧠 Melting/recasting mein surface area change ho sakta hai,
+but material ka volume same rehta hai.
+
+</div>
+
+</section>
+
+
+<!-- 15 CAPACITY -->
+
+<section class="section">
+
+<div class="title">
+15. Capacity & Volume ⭐⭐⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+1 L = 1000 cm³
+</div>
+
+<div class="math">
+1 mL = 1 cm³
+</div>
+
+<div class="math">
+1 m³ = 1000 L
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏️ Example
+</div>
+
+A tank has volume 2 m³.
+
+<div class="math">
+2 m³ = 2 × 1000 L
+</div>
+
+<div class="math">
+= 2000 L
+</div>
+
+<div class="answer">
+✓ Capacity = 2000 L
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 16 CONVERSION -->
+
+<section class="section">
+
+<div class="title">
+16. Important Unit Conversions
+</div>
+
+<table>
+
+<tr>
+<th>Quantity</th>
+<th>Conversion</th>
+</tr>
+
+<tr>
+<td>Length</td>
+<td>1 m = 100 cm</td>
+</tr>
+
+<tr>
+<td>Area</td>
+<td>1 m² = 10,000 cm²</td>
+</tr>
+
+<tr>
+<td>Volume</td>
+<td>1 m³ = 1,000,000 cm³</td>
+</tr>
+
+<tr>
+<td>Capacity</td>
+<td>1 L = 1000 cm³</td>
+</tr>
+
+<tr>
+<td>Capacity</td>
+<td>1 mL = 1 cm³</td>
+</tr>
+
+</table>
+
+<div class="warning">
+
+⚠️ Length conversion ko directly area/volume mein apply mat
+karna.
+
+<br><br>
+
+For example:
+
+1 m = 100 cm
+
+but
+
+1 m² ≠ 100 cm²
+
+Instead:
+
+1 m² = 100² = 10,000 cm².
+
+</div>
+
+</section>
+
+
+<!-- 17 PI -->
+
+<section class="section">
+
+<div class="title">
+17. Value of π
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+
+π =
+<span class="fraction">
+<span class="top">22</span>
+<span class="bottom">7</span>
+</span>
+
+</div>
+
+<div class="math">
+
+or
+
+</div>
+
+<div class="math">
+π ≈ 3.14
+</div>
+
+</div>
+
+<div class="hindi">
+
+💡 Question mein agar π ki specific value di ho,
+<b>usi value ko use karo.</b>
+
+Otherwise required approximation ke according
+22/7 or 3.14 use kiya ja sakta hai.
+
+</div>
+
+</section>
+
+
+<!-- 18 MASTER TABLE -->
+
+<section class="section">
+
+<div class="title">
+18. Complete Formula Sheet ⭐⭐⭐⭐⭐
+</div>
+
+<table>
+
+<tr>
+<th>Solid</th>
+<th>Surface Area</th>
+<th>Volume</th>
+</tr>
+
+<tr>
+<td>Cube</td>
+<td>6a²</td>
+<td>a³</td>
+</tr>
+
+<tr>
+<td>Cuboid</td>
+<td>2(lb+bh+hl)</td>
+<td>lbh</td>
+</tr>
+
+<tr>
+<td>Cylinder</td>
+<td>2πr(h+r)</td>
+<td>πr²h</td>
+</tr>
+
+<tr>
+<td>Cylinder CSA</td>
+<td>2πrh</td>
+<td>—</td>
+</tr>
+
+<tr>
+<td>Cone</td>
+<td>πr(l+r)</td>
+<td>
+<span class="fraction">
+<span class="top">1</span>
+<span class="bottom">3</span>
+</span>
+πr²h
+</td>
+</tr>
+
+<tr>
+<td>Sphere</td>
+<td>4πr²</td>
+<td>
+<span class="fraction">
+<span class="top">4</span>
+<span class="bottom">3</span>
+</span>
+πr³
+</td>
+</tr>
+
+<tr>
+<td>Hemisphere</td>
+<td>3πr² TSA</td>
+<td>
+<span class="fraction">
+<span class="top">2</span>
+<span class="bottom">3</span>
+</span>
+πr³
+</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<!-- 19 FIGURE IDENTIFICATION -->
+
+<section class="section">
+
+<div class="title">
+19. Figure Dekho → Solid Identify Karo
+</div>
+
+<div class="three-col">
+
+<div class="card">
+
+<b>▱ CUBOID</b>
+
+<br><br>
+
+Three dimensions:
+
+<br>
+
+l, b, h
+
+</div>
+
+<div class="card">
+
+<b>□ CUBE</b>
+
+<br><br>
+
+All edges equal:
+
+<br>
+
+a
+
+</div>
+
+<div class="card">
+
+<b>◯ CYLINDER</b>
+
+<br><br>
+
+Two circular bases:
+
+<br>
+
+r, h
+
+</div>
+
+</div>
+
+<div class="three-col">
+
+<div class="card">
+
+<b>△ CONE</b>
+
+<br><br>
+
+r, h, l
+
+</div>
+
+<div class="card">
+
+<b>SPHERE</b>
+
+<br><br>
+
+Only radius r
+
+</div>
+
+<div class="card">
+
+<b>HEMISPHERE</b>
+
+<br><br>
+
+Half sphere + circular base
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 20 EXAM STRATEGY -->
+
+<section class="section">
+
+<div class="title">
+20. Exam Question Strategy 🎯
+</div>
+
+<div class="exam">
+
+<b>STEP 1</b>
+
+→ Figure identify karo.
+
+<br><br>
+
+<b>STEP 2</b>
+
+→ Given dimensions likho.
+
+<br><br>
+
+<b>STEP 3</b>
+
+→ Required quantity identify karo:
+
+<br>
+
+Surface Area / Volume / Capacity
+
+<br><br>
+
+<b>STEP 4</b>
+
+→ Correct formula select karo.
+
+<br><br>
+
+<b>STEP 5</b>
+
+→ Units same karo.
+
+<br><br>
+
+<b>STEP 6</b>
+
+→ Calculation carefully karo.
+
+<br><br>
+
+<b>STEP 7</b>
+
+→ Final answer ki unit check karo.
+
+</div>
+
+</section>
+
+
+<!-- 21 COMMON MISTAKES -->
+
+<section class="section">
+
+<div class="title">
+21. Common Exam Mistakes ⚠️
+</div>
+
+<div class="warning">
+
+❌ CSA aur TSA confuse karna.
+
+<br><br>
+
+❌ Radius ko diameter maan lena.
+
+<br><br>
+
+❌ Area ke answer mein cm³ likhna.
+
+<br><br>
+
+❌ Volume ke answer mein cm² likhna.
+
+<br><br>
+
+❌ Unit conversion skip karna.
+
+<br><br>
+
+❌ Combined solid mein hidden joining surface ko
+surface area mein count kar lena.
+
+<br><br>
+
+❌ Recasting question mein volume equality use na karna.
+
+<br><br>
+
+❌ π ki given value ignore karna.
+
+</div>
+
+</section>
+
+
+<!-- 22 QUICK REVISION -->
+
+<section class="section">
+
+<div class="title">
+22. Quick Revision Map
+</div>
+
+<div class="formula-box">
+
+<div class="math">
+Cube → a³
+</div>
+
+<div class="math">
+Cuboid → lbh
+</div>
+
+<div class="math">
+Cylinder → πr²h
+</div>
+
+<hr>
+
+<div class="math">
+Cube TSA → 6a²
+</div>
+
+<div class="math">
+Cuboid TSA → 2(lb+bh+hl)
+</div>
+
+<div class="math">
+Cylinder CSA → 2πrh
+</div>
+
+<div class="math">
+Cylinder TSA → 2πr(h+r)
+</div>
+
+<hr>
+
+<div class="math">
+Melting/Recasting → Volume remains same
+</div>
+
+<div class="math">
+Hollow Solid → Outer − Inner
+</div>
+
+<div class="math">
+Capacity → Volume + Unit Conversion
+</div>
+
+</div>
+
+</section>
+
+
+<!-- 23 FINAL CHECKLIST -->
+
+<section class="section">
+
+<div class="title">
+23. Final Exam Checklist 📝
+</div>
+
+<div class="exam">
+
+☑ Figure identify ki?
+
+<br><br>
+
+☑ Radius / diameter correctly identify kiya?
+
+<br><br>
+
+☑ l, b, h correctly identify kiye?
+
+<br><br>
+
+☑ CSA / LSA / TSA ka difference clear hai?
+
+<br><br>
+
+☑ Volume formula correct hai?
+
+<br><br>
+
+☑ Units same hain?
+
+<br><br>
+
+☑ π ki correct value use ki?
+
+<br><br>
+
+☑ Combined solid mein hidden surface count nahi ki?
+
+<br><br>
+
+☑ Volume answer mein cubic unit hai?
+
+<br><br>
+
+☑ Surface area answer mein square unit hai?
+
+</div>
+
+</section>
+
+
+<footer class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Chapter 12 • Surface Areas & Volumes
+
+<br><br>
+
+Concept • Figure • Formula • Example • Exam Practice
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</footer>
+
+</div>
+
+</body>
+</html>
