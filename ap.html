@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Chapter 5 | Arithmetic Progressions</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#e8e4dc;
+    color:#202020;
+    font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+    padding:18px 10px;
+    line-height:1.5;
+}
+
+.notebook{
+    max-width:950px;
+    margin:auto;
+    min-height:100vh;
+    position:relative;
+
+    padding:32px 38px 50px 82px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffef8 0px,
+            #fffef8 31px,
+            #dbe7f5 32px,
+            #fffef8 33px
+        );
+
+    box-shadow:0 8px 35px rgba(0,0,0,.16);
+    border-radius:5px;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:58px;
+    width:2px;
+    background:#ef9a9a;
+}
+
+
+/* ================= HEADER ================= */
+
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    color:#4f46e5;
+    font-size:34px;
+    letter-spacing:1px;
+}
+
+.header p{
+    color:#555;
+    font-size:14px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:8px;
+    padding:5px 14px;
+    border-radius:20px;
+    background:#ede9fe;
+    color:#5b21b6;
+    font-size:12px;
+    font-weight:bold;
+}
+
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-bottom:24px;
+}
+
+.section-title{
+    display:inline-block;
+    color:#4338ca;
+    font-size:20px;
+    font-weight:bold;
+    border-bottom:2px solid #7c3aed;
+    margin-bottom:9px;
+}
+
+
+/* ================= NOTE ================= */
+
+.note{
+    background:rgba(255,255,255,.78);
+    border-left:4px solid #7c3aed;
+    border-radius:9px;
+    padding:10px 14px;
+    margin:7px 0;
+}
+
+
+/* ================= EXAMPLE ================= */
+
+.example{
+    background:#fffdf2;
+    border:1px dashed #d97706;
+    border-radius:10px;
+    padding:10px 14px;
+    margin:8px 0;
+}
+
+.example-title{
+    color:#b45309;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+
+/* ================= FORMULA ================= */
+
+.formula-box{
+    background:rgba(237,233,254,.82);
+    border:1px dashed #8b5cf6;
+    border-radius:10px;
+    padding:10px 14px;
+    margin:8px 0;
+}
+
+.formula{
+    color:#312e81;
+    font-size:18px;
+    font-weight:bold;
+    margin:7px 0;
+}
+
+
+/* ================= FRACTION ================= */
+
+.frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1;
+    margin:0 4px;
+}
+
+.frac .top{
+    border-bottom:2px solid #222;
+    padding:0 7px 3px;
+}
+
+.frac .bottom{
+    padding:3px 7px 0;
+}
+
+
+/* ================= EXAM ================= */
+
+.exam{
+    background:#ecfdf5;
+    border-left:4px solid #16a34a;
+    border-radius:8px;
+    padding:10px 14px;
+    margin-top:8px;
+}
+
+
+/* ================= ALERT ================= */
+
+.alert{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    border-radius:8px;
+    padding:10px 14px;
+    margin-top:8px;
+}
+
+
+/* ================= STEP BOX ================= */
+
+.steps{
+    background:rgba(255,255,255,.82);
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    padding:12px 15px;
+    margin-top:8px;
+}
+
+.step{
+    margin:7px 0;
+}
+
+.step b{
+    color:#4338ca;
+}
+
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.82);
+    margin-top:8px;
+}
+
+th,
+td{
+    border:1px solid #aaa;
+    padding:8px 5px;
+    text-align:center;
+    font-size:13px;
+}
+
+th{
+    background:#ede9fe;
+    color:#4338ca;
+}
+
+td:first-child{
+    font-weight:bold;
+    background:#f5f3ff;
+}
+
+
+/* ================= SERIES ================= */
+
+.series{
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    background:rgba(255,255,255,.72);
+    border-radius:9px;
+    padding:10px;
+    margin:8px 0;
+}
+
+
+/* ================= TWO COLUMN ================= */
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    margin-top:30px;
+    color:#6b7280;
+    font-size:12px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        padding:25px 14px 40px 47px;
+        border-radius:0;
+    }
+
+    .notebook::before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:27px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .formula{
+        font-size:16px;
+    }
+
+    .series{
+        font-size:15px;
+    }
+
+    .two-col{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        font-size:10px;
+    }
+
+    th,
+    td{
+        font-size:9px;
+        padding:5px 2px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="notebook">
+
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+
+<div class="header">
+
+<h1>✍ ARITHMETIC PROGRESSIONS</h1>
+
+<p>
+Class 10 Mathematics • Chapter 5 • Concept Notes + Examples + Formula
+</p>
+
+<div class="badge">
+THE GOAL • EXAM REVISION
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+01 INTRODUCTION
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+01. Arithmetic Progression क्या है?
+</div>
+
+<div class="note">
+
+ऐसी sequence जिसमें consecutive terms के बीच का difference
+हमेशा <b>same</b> रहता है, उसे <b>Arithmetic Progression (AP)</b> कहते हैं.
+
+<br><br>
+
+इस common difference को <b>d</b> से denote करते हैं.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 1
+</div>
+
+2, 5, 8, 11, 14, ...
+
+<br><br>
+
+5 − 2 = 3
+
+<br>
+8 − 5 = 3
+
+<br>
+11 − 8 = 3
+
+<br><br>
+
+हर difference same है.
+
+<br>
+
+इसलिए यह <b>AP</b> है.
+
+<br><br>
+
+<b>d = 3</b>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 2
+</div>
+
+20, 17, 14, 11, 8, ...
+
+<br><br>
+
+17 − 20 = −3
+
+<br>
+14 − 17 = −3
+
+<br>
+11 − 14 = −3
+
+<br><br>
+
+इसलिए यह भी AP है.
+
+<br>
+
+<b>d = −3</b>
+
+</div>
+
+
+<div class="exam">
+
+⭐ <b>Important:</b>
+
+AP में terms बढ़ भी सकती हैं और घट भी सकती हैं.
+
+<br><br>
+
+d > 0 → increasing AP
+
+<br>
+
+d < 0 → decreasing AP
+
+<br>
+
+d = 0 → constant AP
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+02 NOT AP
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+02. AP नहीं है — कैसे पहचानें?
+</div>
+
+<div class="note">
+
+Consecutive terms के differences निकालो.
+
+अगर differences equal नहीं हैं,
+तो sequence AP नहीं है.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+2, 4, 7, 11, 16
+
+<br><br>
+
+4 − 2 = 2
+
+<br>
+
+7 − 4 = 3
+
+<br>
+
+11 − 7 = 4
+
+<br>
+
+16 − 11 = 5
+
+<br><br>
+
+Differences:
+
+2, 3, 4, 5
+
+<br><br>
+
+Same नहीं हैं.
+
+<br>
+
+❌ Therefore, यह AP नहीं है.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+03 TERMS OF AP
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+03. Terms of an AP
+</div>
+
+<div class="series">
+
+a, a + d, a + 2d, a + 3d, ...
+</div>
+
+
+<div class="note">
+
+यह AP का general form है.
+
+<br><br>
+
+<b>a</b> = first term
+
+<br>
+
+<b>d</b> = common difference
+
+<br>
+
+Terms:
+
+<br>
+
+1st = a
+
+<br>
+
+2nd = a + d
+
+<br>
+
+3rd = a + 2d
+
+<br>
+
+4th = a + 3d
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+5, 8, 11, 14, ...
+
+<br><br>
+
+a = 5
+
+<br>
+
+d = 8 − 5 = 3
+
+<br><br>
+
+Therefore:
+
+<br>
+
+1st = 5
+
+<br>
+
+2nd = 5 + 3 = 8
+
+<br>
+
+3rd = 5 + 2(3) = 11
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+04 COMMON DIFFERENCE
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+04. Common Difference (d) ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+d = Second Term − First Term
+
+</div>
+
+<div class="formula">
+
+d = a₂ − a₁
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+7, 12, 17, 22, ...
+
+<br><br>
+
+d = 12 − 7
+
+<br>
+
+<b>d = 5</b>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Negative d
+</div>
+
+30, 25, 20, 15, ...
+
+<br><br>
+
+d = 25 − 30
+
+<br>
+
+<b>d = −5</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+05 FIND UNKNOWN TERMS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+05. Unknown Term / Missing Term
+</div>
+
+<div class="note">
+
+अगर कुछ terms दी हों और बीच में term missing हो,
+तो AP का common difference use करो.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+3, __, 11, 15, ...
+
+<br><br>
+
+11 और 15 के बीच difference:
+
+<br>
+
+15 − 11 = 4
+
+<br><br>
+
+इसलिए d = 4.
+
+<br>
+
+Missing term = 11 − 4
+
+<br>
+
+<b>= 7</b>
+
+<br><br>
+
+AP:
+
+<br>
+
+3, 7, 11, 15, ...
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+06 NTH TERM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+06. nth Term of an AP ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+aₙ = a + (n − 1)d
+
+</div>
+
+</div>
+
+
+<div class="note">
+
+जहाँ:
+
+<br><br>
+
+a = first term
+
+<br>
+
+d = common difference
+
+<br>
+
+n = term number
+
+<br>
+
+aₙ = nth term
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+AP:
+
+3, 7, 11, 15, ...
+
+Find the 10th term.
+
+<br><br>
+
+a = 3
+
+<br>
+
+d = 4
+
+<br>
+
+n = 10
+
+<br><br>
+
+a₁₀ = a + (n − 1)d
+
+<br><br>
+
+= 3 + (10 − 1)(4)
+
+<br>
+
+= 3 + 36
+
+<br>
+
+<b>= 39</b>
+
+</div>
+
+
+<div class="exam">
+
+⭐ <b>Most Important Formula:</b>
+
+<br><br>
+
+aₙ = a + (n − 1)d
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+07 FIND PARTICULAR TERM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+07. किसी भी Particular Term को Find करना
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+AP:
+
+7, 10, 13, 16, ...
+
+Find the 25th term.
+
+<br><br>
+
+a = 7
+
+<br>
+
+d = 3
+
+<br>
+
+n = 25
+
+<br><br>
+
+a₂₅ = 7 + (25 − 1)(3)
+
+<br>
+
+= 7 + 72
+
+<br>
+
+<b>= 79</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+08 FIND WHICH TERM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+08. Given Number कौन-सा Term है? ⭐⭐⭐
+</div>
+
+<div class="note">
+
+अगर question पूछे:
+
+<b>"कौन-सा term 100 है?"</b>
+
+तो:
+
+<br><br>
+
+aₙ = 100
+
+<br>
+
+और nth-term formula में n solve करो.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+AP:
+
+5, 9, 13, 17, ...
+
+Which term is 81?
+
+<br><br>
+
+a = 5
+
+<br>
+
+d = 4
+
+<br>
+
+aₙ = 81
+
+<br><br>
+
+81 = 5 + (n − 1)4
+
+<br><br>
+
+76 = 4(n − 1)
+
+<br><br>
+
+19 = n − 1
+
+<br>
+
+<b>n = 20</b>
+
+<br><br>
+
+Therefore, 81 is the <b>20th term</b>.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+09 NUMBER OF TERMS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+09. Number of Terms Find करना
+</div>
+
+<div class="note">
+
+अगर first term, last term और common difference दी हो,
+तो पहले nth-term formula लगाकर <b>n</b> find करो.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+7, 10, 13, ..., 97
+
+Find number of terms.
+
+<br><br>
+
+a = 7
+
+<br>
+
+d = 3
+
+<br>
+
+aₙ = 97
+
+<br><br>
+
+97 = 7 + (n − 1)3
+
+<br>
+
+90 = 3(n − 1)
+
+<br>
+
+30 = n − 1
+
+<br>
+
+<b>n = 31</b>
+
+<br><br>
+
+Number of terms = <b>31</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+10 ARITHMETIC MEAN
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+10. Arithmetic Mean (AM)
+</div>
+
+<div class="note">
+
+दो numbers a और b के बीच arithmetic mean:
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+AM =
+
+<span class="frac">
+
+<span class="top">a + b</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+8 और 20 का arithmetic mean:
+
+<br><br>
+
+AM =
+
+<span class="frac">
+
+<span class="top">8 + 20</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+<br>
+
+= 14
+
+<br><br>
+
+इसलिए 8, <b>14</b>, 20 एक AP बनाते हैं.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+11 INSERT ONE AM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+11. एक Arithmetic Mean Insert करना
+</div>
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+5 और 17 के बीच एक AM insert करो.
+
+<br><br>
+
+x =
+
+<span class="frac">
+
+<span class="top">5 + 17</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+<br>
+
+<b>x = 11</b>
+
+<br><br>
+
+AP:
+
+<br>
+
+5, 11, 17
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+12 INSERT TWO AM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+12. दो Arithmetic Means Insert करना
+</div>
+
+<div class="note">
+
+अगर a और b के बीच <b>n arithmetic means</b> insert करने हों,
+तो total terms:
+
+<br><br>
+
+<b>n + 2</b>
+
+<br><br>
+
+और:
+
+<br>
+
+d =
+
+<span class="frac">
+
+<span class="top">b − a</span>
+
+<span class="bottom">n + 1</span>
+
+</span>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+4 और 16 के बीच 2 arithmetic means insert करो.
+
+<br><br>
+
+a = 4
+
+<br>
+
+b = 16
+
+<br>
+
+n = 2
+
+<br><br>
+
+d =
+
+<span class="frac">
+
+<span class="top">16 − 4</span>
+
+<span class="bottom">2 + 1</span>
+
+</span>
+
+<br>
+
+= 4
+
+<br><br>
+
+AP:
+
+<br>
+
+4, 8, 12, 16
+
+<br><br>
+
+Therefore:
+
+<b>8 and 12</b> are the required means.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+13 INSERT n AM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+13. n Arithmetic Means Insert करना ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+d =
+
+<span class="frac">
+
+<span class="top">b − a</span>
+
+<span class="bottom">n + 1</span>
+
+</span>
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+10 और 40 के बीच 4 arithmetic means insert करो.
+
+<br><br>
+
+a = 10
+
+<br>
+
+b = 40
+
+<br>
+
+n = 4
+
+<br><br>
+
+d =
+
+<span class="frac">
+
+<span class="top">40 − 10</span>
+
+<span class="bottom">4 + 1</span>
+
+</span>
+
+<br>
+
+= 6
+
+<br><br>
+
+AP:
+
+<br>
+
+10, 16, 22, 28, 34, 40
+
+<br><br>
+
+Required means:
+
+<b>16, 22, 28, 34</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+14 SUM OF N TERMS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+14. Sum of First n Terms ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+Sₙ =
+
+<span class="frac">
+
+<span class="top">n</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+[2a + (n − 1)d]
+
+</div>
+
+</div>
+
+
+<div class="note">
+
+यह formula तब use करो जब:
+
+<br>
+
+first term = a
+
+<br>
+
+common difference = d
+
+<br>
+
+number of terms = n
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+Find the sum of first 10 terms of:
+
+2, 5, 8, 11, ...
+
+<br><br>
+
+a = 2
+
+<br>
+
+d = 3
+
+<br>
+
+n = 10
+
+<br><br>
+
+S₁₀ =
+
+<span class="frac">
+
+<span class="top">10</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+[2(2) + (10 − 1)(3)]
+
+<br><br>
+
+= 5[4 + 27]
+
+<br>
+
+= 5 × 31
+
+<br>
+
+<b>= 155</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+15 SUM USING FIRST AND LAST TERM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+15. Sum using First & Last Term ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+Sₙ =
+
+<span class="frac">
+
+<span class="top">n</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+(a + l)
+
+</div>
+
+</div>
+
+
+<div class="note">
+
+यहाँ:
+
+<br>
+
+a = first term
+
+<br>
+
+l = last term
+
+<br>
+
+n = number of terms
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+Find sum:
+
+5 + 8 + 11 + ... + 50
+
+<br><br>
+
+First:
+
+a = 5
+
+<br>
+
+d = 3
+
+<br>
+
+l = 50
+
+<br><br>
+
+पहले n find करें:
+
+<br>
+
+50 = 5 + (n − 1)3
+
+<br>
+
+45 = 3(n − 1)
+
+<br>
+
+15 = n − 1
+
+<br>
+
+n = 16
+
+<br><br>
+
+अब:
+
+<br>
+
+Sₙ =
+
+<span class="frac">
+
+<span class="top">16</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+(5 + 50)
+
+<br><br>
+
+= 8 × 55
+
+<br>
+
+<b>= 440</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+16 SUM OF NATURAL NUMBERS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+16. Important Special APs
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+1 + 2 + 3 + ... + n
+
+=
+
+<span class="frac">
+
+<span class="top">n(n + 1)</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+</div>
+
+
+<div class="formula">
+
+2 + 4 + 6 + ... + 2n
+
+=
+
+n(n + 1)
+
+</div>
+
+
+<div class="formula">
+
+1 + 3 + 5 + ... + (2n − 1)
+
+=
+
+n²
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+Find:
+
+1 + 2 + 3 + ... + 20
+
+<br><br>
+
+S =
+
+<span class="frac">
+
+<span class="top">20 × 21</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+<br>
+
+<b>= 210</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+17 FIND SUM WHEN LAST TERM GIVEN
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+17. Last Term Given हो तो
+</div>
+
+<div class="note">
+
+अगर last term <b>l</b> दी हो,
+तो पहले n find करना useful रहता है:
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+l = a + (n − 1)d
+
+</div>
+
+<div class="formula">
+
+Sₙ =
+
+<span class="frac">
+
+<span class="top">n</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+(a + l)
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+Find the sum of:
+
+10 + 15 + 20 + ... + 100
+
+<br><br>
+
+a = 10
+
+<br>
+
+d = 5
+
+<br>
+
+l = 100
+
+<br><br>
+
+100 = 10 + (n − 1)5
+
+<br>
+
+90 = 5(n − 1)
+
+<br>
+
+18 = n − 1
+
+<br>
+
+n = 19
+
+<br><br>
+
+S₁₉ =
+
+<span class="frac">
+
+<span class="top">19</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+(10 + 100)
+
+<br>
+
+= 19 × 55
+
+<br>
+
+<b>= 1045</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+18 FIND FIRST TERM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+18. Given nth Term से First Term Find करना
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+aₙ = a + (n − 1)d
+
+</div>
+
+<div class="formula">
+
+a = aₙ − (n − 1)d
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+20th term = 95
+
+<br>
+
+d = 4
+
+<br><br>
+
+a = 95 − (20 − 1)(4)
+
+<br>
+
+= 95 − 76
+
+<br>
+
+<b>= 19</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+19 FIND COMMON DIFFERENCE FROM TERMS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+19. Two Terms Given हों तो d Find करना
+</div>
+
+<div class="note">
+
+अगर aₘ और aₙ दिए हों:
+
+<br><br>
+
+aₘ = a + (m − 1)d
+
+<br>
+
+aₙ = a + (n − 1)d
+
+<br><br>
+
+दोनों equations subtract करके d निकाला जा सकता है.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक AP में:
+
+<br>
+
+5th term = 18
+
+<br>
+
+9th term = 30
+
+<br><br>
+
+Difference:
+
+30 − 18 = 12
+
+<br>
+
+Term difference = 9 − 5 = 4
+
+<br><br>
+
+4d = 12
+
+<br>
+
+<b>d = 3</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+20 THREE TERMS IN AP
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+20. Three Numbers in AP ⭐⭐⭐
+</div>
+
+<div class="note">
+
+अगर तीन numbers AP में हैं,
+तो उन्हें convenient form में:
+
+<br><br>
+
+<b>a − d, a, a + d</b>
+
+<br><br>
+
+लिख सकते हैं.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+तीन numbers AP में हैं और उनका sum 24 है.
+
+<br><br>
+
+Numbers:
+
+a − d, a, a + d
+
+<br><br>
+
+Sum:
+
+3a = 24
+
+<br>
+
+a = 8
+
+<br><br>
+
+इसलिए numbers:
+
+<b>8 − d, 8, 8 + d</b>
+
+<br><br>
+
+Additional information मिलने पर d find किया जाएगा.
+
+</div>
+
+
+<div class="exam">
+
+⭐ तीन consecutive terms in AP:
+
+<b>a − d, a, a + d</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+21 FOUR TERMS IN AP
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+21. Four Numbers in AP
+</div>
+
+<div class="note">
+
+चार numbers को AP में लिखने का convenient form:
+
+<br><br>
+
+<b>a − 3d, a − d, a + d, a + 3d</b>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+चार numbers AP में हैं और उनका sum 40 है.
+
+<br><br>
+
+Numbers:
+
+a − 3d, a − d, a + d, a + 3d
+
+<br><br>
+
+Sum:
+
+4a = 40
+
+<br>
+
+<b>a = 10</b>
+
+<br><br>
+
+Numbers:
+
+10 − 3d,
+
+10 − d,
+
+10 + d,
+
+10 + 3d
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+22 WORD PROBLEMS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+22. AP Word Problems ⭐⭐⭐
+</div>
+
+<div class="note">
+
+Word problem में पहले यह identify करो कि:
+
+<br><br>
+
+• First term क्या है?
+
+<br>
+
+• Common difference क्या है?
+
+<br>
+
+• Number of terms क्या है?
+
+<br>
+
+• Last term क्या है?
+
+<br>
+
+• Sum चाहिए या particular term?
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example — Saving Money
+</div>
+
+एक student पहले month ₹100 save करता है और
+हर अगले month ₹50 ज्यादा save करता है.
+
+पहले 6 months में total saving?
+
+<br><br>
+
+यह AP है:
+
+<br>
+
+100, 150, 200, 250, ...
+
+<br><br>
+
+a = 100
+
+<br>
+
+d = 50
+
+<br>
+
+n = 6
+
+<br><br>
+
+S₆ =
+
+<span class="frac">
+
+<span class="top">6</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+[2(100) + (6 − 1)(50)]
+
+<br><br>
+
+= 3[200 + 250]
+
+<br>
+
+= 3 × 450
+
+<br>
+
+<b>= ₹1350</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+23 FIND SUM OF LAST TERMS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+23. Sum of Last Few Terms
+</div>
+
+<div class="note">
+
+अगर पूरी AP का sum दिया हो और first few terms का sum चाहिए,
+तो difference method useful है.
+
+<br><br>
+
+इसी तरह:
+
+<br>
+
+Sum of last terms = Total Sum − Sum of preceding terms
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+AP के first 20 terms का sum 500 है.
+
+पहले 15 terms का sum 330 है.
+
+तो last 5 terms का sum:
+
+<br><br>
+
+S₂₀ − S₁₅
+
+<br>
+
+= 500 − 330
+
+<br>
+
+<b>= 170</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+24 RELATION BETWEEN TERMS AND SUM
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+24. Sₙ से nth Term Find करना
+</div>
+
+<div class="note">
+
+अगर consecutive sums दिए हों,
+तो nth term निकाली जा सकती है:
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+aₙ = Sₙ − Sₙ₋₁
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+अगर:
+
+S₁₀ = 150
+
+<br>
+
+S₉ = 126
+
+<br><br>
+
+तो:
+
+a₁₀ = S₁₀ − S₉
+
+<br>
+
+= 150 − 126
+
+<br>
+
+<b>= 24</b>
+
+</div>
+
+
+<div class="alert">
+
+⚠️ यह relation तभी use करो जब question में
+consecutive sums जैसे Sₙ और Sₙ₋₁ दिए हों.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+25 CHECK AP QUICKLY
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+25. AP Check करने का Fast Method
+</div>
+
+
+<div class="steps">
+
+<div class="step">
+<b>Step 1:</b> Consecutive terms का difference निकालो.
+</div>
+
+<div class="step">
+<b>Step 2:</b> Differences compare करो.
+</div>
+
+<div class="step">
+<b>Step 3:</b> Same हैं → AP.
+</div>
+
+<div class="step">
+<b>Step 4:</b> Same नहीं हैं → Not AP.
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+11, 7, 3, −1, −5
+
+<br><br>
+
+7 − 11 = −4
+
+<br>
+
+3 − 7 = −4
+
+<br>
+
+−1 − 3 = −4
+
+<br>
+
+−5 − (−1) = −4
+
+<br><br>
+
+<b>d = −4</b>
+
+<br>
+
+Therefore, AP ✅
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+26 MOST IMPORTANT FORMULAS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+26. One-Page AP Formula Revision ⭐⭐⭐
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+aₙ = a + (n − 1)d
+
+</div>
+
+
+<div class="formula">
+
+d = aₙ − aₙ₋₁
+
+</div>
+
+
+<div class="formula">
+
+Sₙ =
+
+<span class="frac">
+
+<span class="top">n</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+[2a + (n − 1)d]
+
+</div>
+
+
+<div class="formula">
+
+Sₙ =
+
+<span class="frac">
+
+<span class="top">n</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+(a + l)
+
+</div>
+
+
+<div class="formula">
+
+l = a + (n − 1)d
+
+</div>
+
+
+<div class="formula">
+
+AM =
+
+<span class="frac">
+
+<span class="top">a + b</span>
+
+<span class="bottom">2</span>
+
+</span>
+
+</div>
+
+
+<div class="formula">
+
+d =
+
+<span class="frac">
+
+<span class="top">b − a</span>
+
+<span class="bottom">n + 1</span>
+
+</span>
+
+</div>
+
+
+<div class="formula">
+
+aₙ = Sₙ − Sₙ₋₁
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+27 IMPORTANT SPECIAL SERIES
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+27. Special Series — Quick Recall
+</div>
+
+
+<table>
+
+<tr>
+<th>Series</th>
+<th>Sum</th>
+</tr>
+
+<tr>
+<td>1 + 2 + 3 + ... + n</td>
+<td>n(n + 1)/2</td>
+</tr>
+
+<tr>
+<td>2 + 4 + 6 + ... + 2n</td>
+<td>n(n + 1)</td>
+</tr>
+
+<tr>
+<td>1 + 3 + 5 + ... + (2n − 1)</td>
+<td>n²</td>
+</tr>
+
+</table>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+First 10 odd numbers का sum:
+
+<br><br>
+
+= 10²
+
+<br>
+
+<b>= 100</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+28 EXAM TRAPS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+28. Exam Traps ⚠️
+</div>
+
+
+<div class="alert">
+
+❌ d निकालते समय order उल्टा मत करो.
+
+<br><br>
+
+❌ nth term में <b>n − 1</b> भूलना नहीं.
+
+<br><br>
+
+❌ Sₙ में n/2 को पूरी bracket पर multiply करना है.
+
+<br><br>
+
+❌ Last term को बिना verify किए n मत मानो.
+
+<br><br>
+
+❌ "which term" question में n का answer integer होना चाहिए.
+
+<br><br>
+
+❌ AP होने के लिए difference <b>equal</b> होना चाहिए,
+सिर्फ sequence बढ़ना जरूरी नहीं.
+
+<br><br>
+
+❌ Negative common difference को positive मत बना देना.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+29 EXAM APPROACH
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+29. AP Question देखकर क्या करना है?
+</div>
+
+
+<div class="steps">
+
+<div class="step">
+<b>AP पहचाननी है?</b>
+→ Consecutive differences check करो.
+</div>
+
+<div class="step">
+<b>nth term?</b>
+→ aₙ = a + (n − 1)d
+</div>
+
+<div class="step">
+<b>Which term?</b>
+→ aₙ को given value के बराबर रखो.
+</div>
+
+<div class="step">
+<b>Number of terms?</b>
+→ Last term को aₙ रखकर n निकालो.
+</div>
+
+<div class="step">
+<b>Sum?</b>
+→ Sₙ formula use करो.
+</div>
+
+<div class="step">
+<b>Means insert करने हैं?</b>
+→ d = (b − a)/(n + 1)
+</div>
+
+<div class="step">
+<b>Three terms in AP?</b>
+→ a − d, a, a + d
+</div>
+
+<div class="step">
+<b>Four terms in AP?</b>
+→ a − 3d, a − d, a + d, a + 3d
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+30 FINAL REVISION
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+🎯 Last-Minute AP Revision
+</div>
+
+
+<div class="exam">
+
+<b>AP:</b>
+
+a, a+d, a+2d, ...
+
+<br><br>
+
+<b>Common Difference:</b>
+
+d = a₂ − a₁
+
+<br><br>
+
+<b>nth Term:</b>
+
+aₙ = a + (n−1)d
+
+<br><br>
+
+<b>Sum:</b>
+
+Sₙ = n/2 [2a + (n−1)d]
+
+<br><br>
+
+<b>Another Sum Formula:</b>
+
+Sₙ = n/2 (a+l)
+
+<br><br>
+
+<b>Arithmetic Mean:</b>
+
+AM = (a+b)/2
+
+<br><br>
+
+<b>n Means:</b>
+
+d = (b−a)/(n+1)
+
+<br><br>
+
+<b>Three Terms:</b>
+
+a−d, a, a+d
+
+<br><br>
+
+<b>Four Terms:</b>
+
+a−3d, a−d, a+d, a+3d
+
+<br><br>
+
+<b>Consecutive Sums:</b>
+
+aₙ = Sₙ − Sₙ₋₁
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<div class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Chapter 5 • Arithmetic Progressions
+
+<br><br>
+
+Concept समझो → AP पहचानो → Formula चुनो → Example से verify करो → Answer निकालो.
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</div>
+
+
+</div>
+
+</body>
+</html>
