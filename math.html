@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,180 +25,13 @@
     --primary2:#7c3aed;
     --border:#e2e8f0;
     --soft:#eef2ff;
+    --success:#059669;
+    --success-soft:#ecfdf5;
+    --warning:#d97706;
+    --warning-soft:#fffbeb;
 }
 
-/* =========================================================
-   SECURITY LOCK
-========================================================= */
-
-#security-screen{
-    position:fixed;
-    inset:0;
-    z-index:99999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:20px;
-
-    background:
-        radial-gradient(circle at 10% 20%,rgba(129,140,248,.20),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(192,132,252,.20),transparent 30%),
-        linear-gradient(135deg,#111827,#312e81,#4c1d95);
-
-    color:white;
-}
-
-.security-box{
-    width:100%;
-    max-width:430px;
-
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.18);
-
-    border-radius:28px;
-
-    padding:40px 30px;
-
-    text-align:center;
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.30);
-}
-
-.security-icon{
-    width:78px;
-    height:78px;
-
-    margin:0 auto 22px;
-
-    border-radius:22px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:38px;
-
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.18);
-}
-
-.security-brand{
-    font-size:14px;
-    font-weight:900;
-    letter-spacing:3px;
-
-    color:#c7d2fe;
-
-    margin-bottom:10px;
-}
-
-.security-box h1{
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.security-box p{
-    color:#cbd5e1;
-    font-size:14px;
-    line-height:1.6;
-
-    margin-bottom:25px;
-}
-
-.security-input{
-    width:100%;
-
-    padding:14px 16px;
-
-    border-radius:13px;
-
-    border:1px solid rgba(255,255,255,.20);
-
-    background:rgba(255,255,255,.10);
-
-    color:white;
-
-    outline:none;
-
-    font-size:16px;
-    text-align:center;
-    letter-spacing:4px;
-
-    transition:.2s;
-}
-
-.security-input::placeholder{
-    color:#cbd5e1;
-    letter-spacing:1px;
-}
-
-.security-input:focus{
-    border-color:#a5b4fc;
-    background:rgba(255,255,255,.14);
-}
-
-.unlock-btn{
-    width:100%;
-
-    margin-top:14px;
-
-    padding:14px;
-
-    border:0;
-    border-radius:13px;
-
-    color:white;
-
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--primary2)
-    );
-
-    font-size:14px;
-    font-weight:900;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.unlock-btn:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 10px 25px rgba(79,70,229,.35);
-}
-
-.security-error{
-    min-height:22px;
-
-    margin-top:13px;
-
-    color:#fda4af;
-
-    font-size:13px;
-    font-weight:700;
-}
-
-.security-footer{
-    margin-top:24px;
-
-    color:#94a3b8;
-
-    font-size:11px;
-}
-
-
-/* =========================================================
-   MAIN PAGE
-========================================================= */
+/* ================= BODY ================= */
 
 body{
     font-family:Inter,Segoe UI,Arial,sans-serif;
@@ -225,41 +59,48 @@ header{
 
 nav{
     max-width:1200px;
-
     margin:auto;
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 }
 
 .brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
     font-size:25px;
-
     font-weight:900;
-
     letter-spacing:2px;
+}
+
+.brand-logo{
+    width:42px;
+    height:42px;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.12);
+    padding:4px;
 }
 
 .nav-badge{
     display:flex;
-
     align-items:center;
-
     gap:10px;
 
     padding:7px 14px;
 
     border:1px solid rgba(255,255,255,.2);
-
     border-radius:30px;
 
     background:rgba(255,255,255,.08);
 
     font-size:13px;
-
     font-weight:700;
 }
 
@@ -270,9 +111,7 @@ nav{
     object-fit:contain;
 
     background:white;
-
     border-radius:50%;
-
     padding:2px;
 }
 
@@ -297,7 +136,6 @@ nav{
     border-radius:30px;
 
     background:rgba(255,255,255,.1);
-
     border:1px solid rgba(255,255,255,.2);
 
     font-size:13px;
@@ -325,7 +163,6 @@ nav{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
@@ -429,11 +266,12 @@ main{
     align-items:center;
 
     gap:16px;
+
+    min-width:0;
 }
 
 .chapter-icon{
     width:55px;
-
     height:55px;
 
     min-width:55px;
@@ -443,7 +281,6 @@ main{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     background:var(--soft);
@@ -472,6 +309,9 @@ main{
 
     line-height:1.35;
 }
+
+
+/* ================= NOTES BUTTON ================= */
 
 .notes-btn{
     text-decoration:none;
@@ -503,6 +343,63 @@ main{
 
     box-shadow:
         0 8px 20px rgba(79,70,229,.25);
+}
+
+
+/* ================= COMING SOON ================= */
+
+.coming-soon-btn{
+    white-space:nowrap;
+
+    color:var(--warning);
+
+    background:var(--warning-soft);
+
+    border:1px solid #fde68a;
+
+    padding:11px 16px;
+
+    border-radius:11px;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    cursor:default;
+}
+
+.coming-soon-card{
+    position:relative;
+}
+
+.coming-soon-card:hover{
+    border-color:#fcd34d;
+}
+
+.coming-badge{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    margin-top:7px;
+
+    padding:4px 9px;
+
+    border-radius:20px;
+
+    background:var(--warning-soft);
+
+    border:1px solid #fde68a;
+
+    color:var(--warning);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:.5px;
 }
 
 
@@ -572,7 +469,6 @@ main{
 
 .pyq-logo{
     width:68px;
-
     height:68px;
 
     object-fit:contain;
@@ -816,6 +712,15 @@ footer strong{
         gap:10px;
     }
 
+    .brand{
+        font-size:20px;
+    }
+
+    .brand-logo{
+        width:36px;
+        height:36px;
+    }
+
     .nav-badge{
         font-size:11px;
 
@@ -824,7 +729,6 @@ footer strong{
 
     .nav-badge img{
         width:28px;
-
         height:28px;
     }
 
@@ -842,9 +746,7 @@ footer strong{
 
     .chapter-icon{
         width:48px;
-
         height:48px;
-
         min-width:48px;
 
         font-size:21px;
@@ -854,10 +756,10 @@ footer strong{
         font-size:15px;
     }
 
-    .notes-btn{
+    .notes-btn,
+    .coming-soon-btn{
         padding:10px 12px;
-
-        font-size:11px;
+        font-size:10px;
     }
 
     .pyq-buttons{
@@ -867,82 +769,29 @@ footer strong{
 }
 
 </style>
+
 </head>
 
 <body>
 
 
-<!-- =========================================================
-     SECURITY SCREEN
-========================================================= -->
-
-<div id="security-screen">
-
-    <div class="security-box">
-
-        <div class="security-icon">
-            🔐
-        </div>
-
-        <div class="security-brand">
-            THE GOAL
-        </div>
-
-        <h1>
-            Mathematics
-        </h1>
-
-        <p>
-            This page is currently under preparation.
-            <br>
-            Enter the security key to continue.
-        </p>
-
-        <input
-            type="password"
-            id="security-key"
-            class="security-input"
-            placeholder="Enter Security Key"
-            maxlength="20"
-            autocomplete="off"
-        >
-
-        <button
-            class="unlock-btn"
-            onclick="unlockPage()">
-
-            🔓 UNLOCK PAGE
-
-        </button>
-
-        <div
-            id="security-error"
-            class="security-error">
-        </div>
-
-        <div class="security-footer">
-            🔒 Protected by Pushpender Jangid.
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     MAIN MATHEMATICS PAGE
-========================================================= -->
-
-<div id="main-content" style="display:none;">
-
+<!-- ================= HEADER ================= -->
 
 <header>
 
 <nav>
 
 <div class="brand">
-THE GOAL
+
+<img
+src="THE.png"
+alt="THE GOAL Logo"
+class="brand-logo">
+
+<span>THE GOAL</span>
+
 </div>
+
 
 <div class="nav-badge">
 
@@ -957,6 +806,7 @@ CBSE CLASS 10
 </div>
 
 </nav>
+
 
 <div class="hero">
 
@@ -973,8 +823,9 @@ Learn • Practice • Improve • Achieve
 </h2>
 
 <p>
-Chapter-wise notes and study material for CBSE Class 10 Mathematics.
-Prepare smarter with structured revision and easy access to notes.
+Chapter-wise formula notes and study material for CBSE
+Class 10 Mathematics. Prepare smarter with structured
+revision and easy access to important formulas.
 </p>
 
 </div>
@@ -982,7 +833,11 @@ Prepare smarter with structured revision and easy access to notes.
 </header>
 
 
+
+<!-- ================= MAIN ================= -->
+
 <main>
+
 
 <div class="section-title">
 
@@ -991,14 +846,17 @@ Prepare smarter with structured revision and easy access to notes.
 </h2>
 
 <p>
-Select a chapter to view its notes.
+Select a chapter to view its formula notes.
 </p>
 
 </div>
 
 
+
 <section class="chapter-grid">
 
+
+<!-- CHAPTER 01 -->
 
 <div class="chapter">
 
@@ -1022,14 +880,19 @@ Real Numbers
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="real-numbers.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 02 -->
 
 <div class="chapter">
 
@@ -1053,14 +916,19 @@ Polynomials
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="polynomials.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 03 -->
 
 <div class="chapter">
 
@@ -1084,14 +952,19 @@ Pair of Linear Equations in Two Variables
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="linear-equations.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 04 -->
 
 <div class="chapter">
 
@@ -1115,14 +988,19 @@ Quadratic Equations
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="quadratic-equations.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 05 -->
 
 <div class="chapter">
 
@@ -1146,14 +1024,19 @@ Arithmetic Progressions
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="ap.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 06 -->
 
 <div class="chapter">
 
@@ -1177,14 +1060,19 @@ Triangles
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="triangles.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 07 -->
 
 <div class="chapter">
 
@@ -1208,14 +1096,19 @@ Coordinate Geometry
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="coordinate.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 08 -->
 
 <div class="chapter">
 
@@ -1239,14 +1132,19 @@ Introduction to Trigonometry
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="trigonometry.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 09 -->
 
 <div class="chapter">
 
@@ -1270,16 +1168,21 @@ Some Applications of Trigonometry
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="application_of_trignometry.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
 
-<div class="chapter">
+
+<!-- CHAPTER 10 : COMING SOON -->
+
+<div class="chapter coming-soon-card">
 
 <div class="chapter-left">
 
@@ -1297,18 +1200,23 @@ CHAPTER 10
 Circles
 </h3>
 
+<div class="coming-badge">
+🚧 COMING SOON
 </div>
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
-</a>
+</div>
+
+<div class="coming-soon-btn">
+COMING SOON
+</div>
 
 </div>
 
+
+
+<!-- CHAPTER 11 -->
 
 <div class="chapter">
 
@@ -1332,14 +1240,19 @@ Areas Related to Circles
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="area_related_to_circle.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 12 -->
 
 <div class="chapter">
 
@@ -1363,14 +1276,19 @@ Surface Areas and Volumes
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="surface_area.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 13 -->
 
 <div class="chapter">
 
@@ -1394,14 +1312,19 @@ Statistics
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="statistics.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
 
+
+
+<!-- CHAPTER 14 -->
 
 <div class="chapter">
 
@@ -1425,10 +1348,12 @@ Probability
 
 </div>
 
-<a class="notes-btn"
-href="YOUR_PDF_LINK_HERE"
-target="_blank">
-VIEW NOTES →
+<a
+class="notes-btn"
+href="probability.html">
+
+VIEW FORMULA NOTES →
+
 </a>
 
 </div>
@@ -1437,9 +1362,11 @@ VIEW NOTES →
 </section>
 
 
+
 <!-- ================= PYQ ================= -->
 
 <section class="pyq-section">
+
 
 <div class="section-title">
 
@@ -1452,6 +1379,7 @@ Year-wise official CBSE question papers for Class 10 Mathematics.
 </p>
 
 </div>
+
 
 
 <div class="pyq-grid">
@@ -1493,6 +1421,7 @@ BASIC + STANDARD →
 </div>
 
 </div>
+
 
 
 <!-- 2025 -->
@@ -1541,6 +1470,7 @@ BASIC →
 </div>
 
 </div>
+
 
 
 <!-- 2024 -->
@@ -1594,6 +1524,7 @@ BASIC →
 </div>
 
 
+
 <div class="pyq-note">
 
 <strong>
@@ -1614,6 +1545,9 @@ Solve them like a real board examination for better preparation.
 </section>
 
 
+
+<!-- ================= INFO ================= -->
+
 <div class="info-box">
 
 <h3>
@@ -1621,13 +1555,16 @@ Solve them like a real board examination for better preparation.
 </h3>
 
 <p>
-Use the chapter-wise notes and previous year papers for
-concept building, revision and better CBSE Class 10
+Use the chapter-wise formula notes and previous year papers
+for concept building, revision and better CBSE Class 10
 Mathematics preparation.
 </p>
 
 </div>
 
+
+
+<!-- ================= BACK BUTTON ================= -->
 
 <div class="back-section">
 
@@ -1641,8 +1578,12 @@ href="index.html">
 
 </div>
 
+
 </main>
 
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1663,82 +1604,6 @@ in India by Pushpender
 </footer>
 
 
-</div>
-
-
-<!-- =========================================================
-     SECURITY JAVASCRIPT
-========================================================= -->
-
-<script>
-
-const SECURITY_KEY = "1509";
-
-const securityScreen =
-    document.getElementById("security-screen");
-
-const mainContent =
-    document.getElementById("main-content");
-
-const keyInput =
-    document.getElementById("security-key");
-
-const errorBox =
-    document.getElementById("security-error");
-
-
-function unlockPage(){
-
-    const enteredKey =
-        keyInput.value.trim();
-
-    if(enteredKey === SECURITY_KEY){
-
-        securityScreen.style.display = "none";
-
-        mainContent.style.display = "block";
-
-        errorBox.textContent = "";
-
-        keyInput.value = "";
-
-    }else{
-
-        errorBox.textContent =
-            "❌ Incorrect security key. Please try again.";
-
-        keyInput.value = "";
-
-        keyInput.focus();
-
-    }
-
-}
-
-
-/* ENTER KEY SUPPORT */
-
-keyInput.addEventListener("keydown", function(event){
-
-    if(event.key === "Enter"){
-
-        unlockPage();
-
-    }
-
-});
-
-
-/* AUTO FOCUS */
-
-window.addEventListener("load", function(){
-
-    keyInput.focus();
-
-});
-
-</script>
-
-
 </body>
 </html>
+```
