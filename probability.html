@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Probability Notes</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#e8e4dc;
+    color:#202020;
+    font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+    padding:18px 10px;
+    line-height:1.5;
+}
+
+.notebook{
+    max-width:950px;
+    margin:auto;
+    min-height:100vh;
+    position:relative;
+
+    padding:32px 38px 50px 82px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffef8 0px,
+            #fffef8 31px,
+            #dbe7f5 32px,
+            #fffef8 33px
+        );
+
+    box-shadow:0 8px 35px rgba(0,0,0,.16);
+    border-radius:5px;
+}
+
+.notebook::before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:58px;
+    width:2px;
+    background:#ef9a9a;
+}
+
+
+/* ================= HEADER ================= */
+
+.header{
+    text-align:center;
+    margin-bottom:24px;
+}
+
+.header h1{
+    color:#4f46e5;
+    font-size:34px;
+    letter-spacing:1px;
+}
+
+.header p{
+    color:#555;
+    font-size:14px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:8px;
+    padding:5px 14px;
+    border-radius:20px;
+    background:#ede9fe;
+    color:#5b21b6;
+    font-size:12px;
+    font-weight:bold;
+}
+
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-bottom:23px;
+}
+
+.section-title{
+    display:inline-block;
+    color:#4338ca;
+    font-size:20px;
+    font-weight:bold;
+    border-bottom:2px solid #7c3aed;
+    margin-bottom:8px;
+}
+
+
+/* ================= NOTE ================= */
+
+.note{
+    background:rgba(255,255,255,.76);
+    border-left:4px solid #7c3aed;
+    border-radius:9px;
+    padding:10px 14px;
+    margin:7px 0;
+}
+
+
+/* ================= EXAMPLE ================= */
+
+.example{
+    background:#fffdf2;
+    border:1px dashed #d97706;
+    border-radius:10px;
+    padding:10px 14px;
+    margin:8px 0;
+}
+
+.example-title{
+    color:#b45309;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+
+/* ================= FORMULA ================= */
+
+.formula-box{
+    background:rgba(237,233,254,.82);
+    border:1px dashed #8b5cf6;
+    border-radius:10px;
+    padding:10px 14px;
+    margin:7px 0;
+}
+
+.formula{
+    color:#312e81;
+    font-size:18px;
+    font-weight:bold;
+    margin:6px 0;
+}
+
+
+/* ================= FRACTION ================= */
+
+.frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1;
+    margin:0 4px;
+}
+
+.frac .top{
+    border-bottom:2px solid #222;
+    padding:0 7px 3px;
+}
+
+.frac .bottom{
+    padding:3px 7px 0;
+}
+
+
+/* ================= EXAM BOX ================= */
+
+.exam{
+    background:#ecfdf5;
+    border-left:4px solid #16a34a;
+    border-radius:8px;
+    padding:10px 14px;
+    margin-top:8px;
+}
+
+
+/* ================= ALERT ================= */
+
+.alert{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    border-radius:8px;
+    padding:10px 14px;
+    margin-top:8px;
+}
+
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.82);
+}
+
+th,
+td{
+    border:1px solid #aaa;
+    padding:8px 5px;
+    text-align:center;
+    font-size:13px;
+}
+
+th{
+    background:#ede9fe;
+    color:#4338ca;
+}
+
+td:first-child{
+    font-weight:bold;
+    background:#f5f3ff;
+}
+
+
+/* ================= TREE / SAMPLE SPACE ================= */
+
+.sample-space{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:7px;
+}
+
+.outcome{
+    padding:6px 11px;
+    background:#ede9fe;
+    border:1px solid #8b5cf6;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+
+/* ================= TWO COLUMN ================= */
+
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+    text-align:center;
+    margin-top:30px;
+    color:#6b7280;
+    font-size:12px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        padding:25px 14px 40px 47px;
+        border-radius:0;
+    }
+
+    .notebook::before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:27px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .formula{
+        font-size:16px;
+    }
+
+    .two-col{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        font-size:10px;
+    }
+
+    th,
+    td{
+        font-size:9px;
+        padding:5px 2px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="notebook">
+
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+
+<div class="header">
+
+<h1>✍ PROBABILITY</h1>
+
+<p>
+Class 10 Mathematics • Concept Notes + Examples + Formula
+</p>
+
+<div class="badge">
+THE GOAL • EXAM REVISION
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+01 RANDOM EXPERIMENT
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+01. Random Experiment
+</div>
+
+<div class="note">
+
+ऐसा experiment जिसका exact result पहले से निश्चित नहीं होता,
+उसे <b>Random Experiment</b> कहते हैं.
+
+<br><br>
+
+हम experiment perform कर सकते हैं,
+लेकिन उसका result पहले से निश्चित नहीं बता सकते.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक coin को toss करना.
+
+<br>
+
+हमें पहले से पता नहीं कि result <b>Head</b> आएगा या <b>Tail</b>.
+
+<br><br>
+
+इसलिए coin toss एक <b>Random Experiment</b> है.
+
+</div>
+
+
+<div class="exam">
+
+⭐ <b>Remember:</b>
+
+Random experiment → Result uncertain before experiment.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+02 TRIAL
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+02. Trial
+</div>
+
+<div class="note">
+
+Random experiment को एक बार perform करने को
+<b>Trial</b> कहते हैं.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+अगर coin को 10 बार toss किया गया,
+
+तो coin toss करने की हर एक बार की प्रक्रिया = <b>one trial</b>.
+
+<br><br>
+
+Total trials = <b>10</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+03 OUTCOME
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+03. Outcome
+</div>
+
+<div class="note">
+
+Experiment perform करने पर जो possible result मिलता है,
+उसे <b>Outcome</b> कहते हैं.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक coin toss किया.
+
+Possible outcomes:
+
+<div class="sample-space">
+
+<div class="outcome">H</div>
+<div class="outcome">T</div>
+
+</div>
+
+इसलिए outcomes हैं:
+
+<b>Head और Tail</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+04 SAMPLE SPACE
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+04. Sample Space
+</div>
+
+<div class="note">
+
+किसी random experiment के सभी possible outcomes के set को
+<b>Sample Space</b> कहते हैं.
+
+इसे सामान्यतः <b>S</b> से denote करते हैं.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 1 — Coin
+</div>
+
+एक coin toss:
+
+<br>
+
+S = {H, T}
+
+<br><br>
+
+Total outcomes = <b>2</b>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example 2 — Die
+</div>
+
+एक die को throw करने पर:
+
+<br>
+
+S = {1, 2, 3, 4, 5, 6}
+
+<br><br>
+
+Total outcomes = <b>6</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+05 EVENT
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+05. Event
+</div>
+
+<div class="note">
+
+Sample space के outcomes में से किसी particular condition को
+satisfy करने वाले outcomes का collection एक <b>Event</b> कहलाता है.
+
+Event को सामान्यतः <b>E</b> से denote करते हैं.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक die throw किया.
+
+Event E = even number आना.
+
+<br><br>
+
+Favourable outcomes:
+
+<div class="sample-space">
+
+<div class="outcome">2</div>
+<div class="outcome">4</div>
+<div class="outcome">6</div>
+
+</div>
+
+इसलिए:
+
+E = {2, 4, 6}
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+06 EQUALLY LIKELY
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+06. Equally Likely Outcomes
+</div>
+
+<div class="note">
+
+जब सभी possible outcomes के होने की संभावना समान हो,
+तो उन्हें <b>Equally Likely Outcomes</b> कहते हैं.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक fair coin में:
+
+<br>
+
+P(Head) = P(Tail)
+
+<br><br>
+
+दोनों outcomes की chance equal है.
+
+इसलिए H और T <b>equally likely</b> हैं.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+07 THEORETICAL PROBABILITY
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+07. Theoretical Probability ⭐⭐⭐
+</div>
+
+<div class="note">
+
+जब सभी possible outcomes equally likely हों,
+तो किसी event E की theoretical probability:
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+P(E) =
+
+<span class="frac">
+
+<span class="top">
+Number of favourable outcomes
+</span>
+
+<span class="bottom">
+Total number of equally likely outcomes
+</span>
+
+</span>
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक die को throw किया गया.
+
+Event E = 4 आना.
+
+<br><br>
+
+Favourable outcomes = <b>1</b>
+
+<br>
+
+Total outcomes = <b>6</b>
+
+<br><br>
+
+Therefore,
+
+<br>
+
+P(E) =
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">6</span>
+</span>
+
+</div>
+
+
+<div class="exam">
+
+🧠 <b>Exam Formula:</b>
+
+<br><br>
+
+Favourable outcomes ऊपर,
+
+Total outcomes नीचे.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+08 IMPOSSIBLE EVENT
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+08. Impossible Event
+</div>
+
+<div class="note">
+
+ऐसा event जो हो ही नहीं सकता,
+उसे <b>Impossible Event</b> कहते हैं.
+
+इसकी probability:
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+P(E) = 0
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक normal die को throw करके <b>8</b> प्राप्त करना.
+
+Die पर केवल 1 से 6 तक numbers हैं.
+
+<br><br>
+
+इसलिए 8 आना impossible है.
+
+<br>
+
+P(8) = <b>0</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+09 SURE EVENT
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+09. Sure Event
+</div>
+
+<div class="note">
+
+ऐसा event जो निश्चित रूप से होगा,
+उसे <b>Sure Event</b> कहते हैं.
+
+इसकी probability:
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+P(E) = 1
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक die को throw करने पर number
+<b>1 से 6 के बीच</b> आएगा.
+
+यह निश्चित है.
+
+<br><br>
+
+Therefore:
+
+P(E) = <b>1</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+10 PROBABILITY RANGE
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+10. Probability की Range ⭐
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+0 ≤ P(E) ≤ 1
+
+</div>
+
+</div>
+
+
+<div class="note">
+
+किसी भी event की probability कभी भी 0 से कम या 1 से अधिक नहीं हो सकती.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+Possible probabilities:
+
+<br><br>
+
+0, 0.25, ½, 0.75, 1
+
+<br><br>
+
+लेकिन:
+
+−0.2 ❌
+
+और
+
+1.5 ❌
+
+</div>
+
+
+<div class="exam">
+
+⭐ Probability हमेशा:
+
+<b>0 से 1 के बीच</b> रहेगी.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+11 COMPLEMENTARY EVENT
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+11. Complementary Event ⭐⭐⭐
+</div>
+
+<div class="note">
+
+अगर E एक event है,
+तो E के न होने वाले event को
+<b>Complementary Event</b> कहते हैं.
+
+इसे <b>Ē</b> या <b>E'</b> से denote किया जा सकता है.
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+P(E) + P(E') = 1
+
+</div>
+
+
+<div class="formula">
+
+P(E') = 1 − P(E)
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक die throw किया.
+
+E = even number आना.
+
+<br>
+
+P(E) =
+
+<span class="frac">
+<span class="top">3</span>
+<span class="bottom">6</span>
+</span>
+
+=
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">2</span>
+
+</span>
+
+<br><br>
+
+अब odd number E' है.
+
+<br>
+
+P(E') = 1 − ½
+
+<br>
+
+P(E') = <b>½</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+12 COIN
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+12. Coin Based Questions 🪙
+</div>
+
+<div class="note">
+
+एक fair coin के लिए:
+
+<br>
+
+S = {H, T}
+
+<br><br>
+
+Total outcomes = 2
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example — Head की Probability
+</div>
+
+Favourable outcome = H = 1
+
+<br>
+
+Total outcomes = 2
+
+<br><br>
+
+P(H) =
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">2</span>
+</span>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example — Two Coins
+</div>
+
+दो coins toss किए.
+
+<br>
+
+S = {HH, HT, TH, TT}
+
+<br><br>
+
+Total outcomes = <b>4</b>
+
+<br>
+
+Exactly one Head:
+
+HT, TH
+
+<br><br>
+
+Favourable outcomes = <b>2</b>
+
+<br>
+
+P(exactly one Head) =
+
+<span class="frac">
+<span class="top">2</span>
+<span class="bottom">4</span>
+</span>
+
+=
+
+<b>½</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+13 DICE
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+13. Dice Based Questions 🎲
+</div>
+
+<div class="note">
+
+एक normal die में possible outcomes:
+
+<br>
+
+S = {1,2,3,4,5,6}
+
+<br><br>
+
+Total outcomes = <b>6</b>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example — Prime Number
+</div>
+
+Prime numbers:
+
+<br>
+
+2, 3, 5
+
+<br><br>
+
+Favourable outcomes = 3
+
+<br>
+
+P(prime) =
+
+<span class="frac">
+<span class="top">3</span>
+<span class="bottom">6</span>
+</span>
+
+=
+
+<b>½</b>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example — Number Greater Than 4
+</div>
+
+Numbers greater than 4:
+
+<br>
+
+5, 6
+
+<br><br>
+
+Favourable outcomes = 2
+
+<br>
+
+P =
+
+<span class="frac">
+<span class="top">2</span>
+<span class="bottom">6</span>
+</span>
+
+=
+
+<b>⅓</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+14 PLAYING CARDS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+14. Playing Cards 🃏
+</div>
+
+<div class="note">
+
+एक standard deck में कुल:
+
+<br><br>
+
+<b>52 cards</b>
+
+<br><br>
+
+4 suits होते हैं:
+
+<br>
+
+♥ Hearts
+
+&nbsp; | &nbsp;
+
+♦ Diamonds
+
+&nbsp; | &nbsp;
+
+♣ Clubs
+
+&nbsp; | &nbsp;
+
+♠ Spades
+
+<br><br>
+
+हर suit में 13 cards होते हैं.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example — Red Card
+</div>
+
+Red suits:
+
+♥ Hearts + ♦ Diamonds
+
+<br><br>
+
+Red cards = 26
+
+<br>
+
+Total cards = 52
+
+<br><br>
+
+P(Red) =
+
+<span class="frac">
+<span class="top">26</span>
+<span class="bottom">52</span>
+</span>
+
+=
+
+<b>½</b>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example — King
+</div>
+
+52 cards में 4 Kings होते हैं.
+
+<br><br>
+
+P(King) =
+
+<span class="frac">
+<span class="top">4</span>
+<span class="bottom">52</span>
+</span>
+
+=
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">13</span>
+</span>
+
+</div>
+
+
+<div class="exam">
+
+🧠 <b>Card Facts:</b>
+
+<br><br>
+
+Total = 52
+
+<br>
+
+Suits = 4
+
+<br>
+
+Cards per suit = 13
+
+<br>
+
+Kings = 4
+
+<br>
+
+Queens = 4
+
+<br>
+
+Jacks = 4
+
+<br>
+
+Aces = 4
+
+<br>
+
+Face cards = 12
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+15 AT LEAST / AT MOST
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+15. "At Least" & "At Most" ⭐
+</div>
+
+<div class="note">
+
+<b>At least</b> → given number या उससे ज्यादा.
+
+<br><br>
+
+<b>At most</b> → given number या उससे कम.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+"At least 2"
+
+<br>
+
+→ 2, 3, 4, 5 ...
+
+<br><br>
+
+"At most 2"
+
+<br>
+
+→ 0, 1, 2
+
+</div>
+
+
+<div class="exam">
+
+⚠️ Question में "at least" और "at most" देखकर
+favourable outcomes carefully लिखना.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+16 COMPLEMENT METHOD
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+16. Complement Method — Smart Trick ⭐⭐⭐
+</div>
+
+<div class="note">
+
+कई questions में required event को directly count करना मुश्किल होता है.
+
+ऐसे cases में:
+
+<br><br>
+
+<b>Required Probability = 1 − Probability of opposite event</b>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक die throw करने पर number 6 नहीं आने की probability.
+
+<br><br>
+
+P(6) =
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">6</span>
+</span>
+
+<br><br>
+
+Therefore,
+
+P(not 6) =
+
+1 −
+
+<span class="frac">
+<span class="top">1</span>
+<span class="bottom">6</span>
+</span>
+
+<br><br>
+
+=
+
+<span class="frac">
+<span class="top">5</span>
+<span class="bottom">6</span>
+</span>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+17 EMPIRICAL IDEA
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+17. Experimental / Empirical Probability
+</div>
+
+<div class="note">
+
+किसी experiment को कई बार perform करके,
+किसी event के होने की frequency के आधार पर probability estimate करना
+<b>Experimental / Empirical Probability</b> कहलाता है.
+
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+P(E) =
+
+<span class="frac">
+
+<span class="top">
+Number of times E occurs
+</span>
+
+<span class="bottom">
+Total number of trials
+</span>
+
+</span>
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+एक coin को 50 बार toss किया गया.
+
+Head 27 बार आया.
+
+<br><br>
+
+Experimental probability of Head:
+
+<br>
+
+P(H) =
+
+<span class="frac">
+<span class="top">27</span>
+<span class="bottom">50</span>
+</span>
+
+</div>
+
+
+<div class="exam">
+
+⭐ <b>Difference:</b>
+
+<br><br>
+
+Theoretical → equally likely outcomes से calculate.
+
+<br>
+
+Experimental → actual experiment के results से estimate.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+18 HOW TO SOLVE
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+18. Probability Question Solving Method
+</div>
+
+
+<div class="note">
+
+<b>STEP 1:</b> Experiment identify करो.
+
+<br><br>
+
+<b>STEP 2:</b> Sample Space लिखो.
+
+<br><br>
+
+<b>STEP 3:</b> Total outcomes count करो.
+
+<br><br>
+
+<b>STEP 4:</b> Favourable outcomes identify करो.
+
+<br><br>
+
+<b>STEP 5:</b> Formula apply करो.
+
+</div>
+
+
+<div class="example">
+
+<div class="example-title">
+✏ Example
+</div>
+
+A die is thrown. Find the probability of getting an even number.
+
+<br><br>
+
+<b>Step 1:</b>
+
+S = {1,2,3,4,5,6}
+
+<br><br>
+
+<b>Step 2:</b>
+
+Total outcomes = 6
+
+<br><br>
+
+<b>Step 3:</b>
+
+Even = {2,4,6}
+
+<br><br>
+
+Favourable outcomes = 3
+
+<br><br>
+
+<b>Step 4:</b>
+
+P(E) =
+
+<span class="frac">
+<span class="top">3</span>
+<span class="bottom">6</span>
+</span>
+
+=
+
+<b>½</b>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+19 IMPORTANT FORMULAS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+19. One-Page Formula Revision ⭐⭐⭐
+</div>
+
+
+<div class="formula-box">
+
+<div class="formula">
+
+P(E) =
+
+<span class="frac">
+
+<span class="top">
+Favourable Outcomes
+</span>
+
+<span class="bottom">
+Total Equally Likely Outcomes
+</span>
+
+</span>
+
+</div>
+
+
+<div class="formula">
+
+0 ≤ P(E) ≤ 1
+
+</div>
+
+
+<div class="formula">
+
+P(E') = 1 − P(E)
+
+</div>
+
+
+<div class="formula">
+
+P(E) + P(E') = 1
+
+</div>
+
+
+<div class="formula">
+
+P(Impossible Event) = 0
+
+</div>
+
+
+<div class="formula">
+
+P(Sure Event) = 1
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+20 EXAM TRAPS
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+20. Exam Traps ⚠️
+</div>
+
+
+<div class="alert">
+
+❌ Total outcomes गलत मत लो.
+
+<br><br>
+
+❌ Favourable outcomes में unwanted outcomes मत include करो.
+
+<br><br>
+
+❌ "At least" और "at most" confuse मत करो.
+
+<br><br>
+
+❌ Complementary event में:
+
+<b>1 − P(E)</b>
+
+लगाना मत भूलो.
+
+<br><br>
+
+❌ Probability को 0 और 1 के बाहर answer मत आने दो.
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+FINAL REVISION
+===================================================== -->
+
+<div class="section">
+
+<div class="section-title">
+🎯 Last-Minute Probability Revision
+</div>
+
+
+<div class="exam">
+
+<b>Random Experiment</b>
+
+→ Result निश्चित नहीं.
+
+<br><br>
+
+<b>Outcome</b>
+
+→ Experiment का possible result.
+
+<br><br>
+
+<b>Sample Space</b>
+
+→ सभी possible outcomes.
+
+<br><br>
+
+<b>Event</b>
+
+→ Required outcomes का collection.
+
+<br><br>
+
+<b>Probability</b>
+
+→ Favourable / Total equally likely outcomes.
+
+<br><br>
+
+<b>Impossible Event</b>
+
+→ P(E) = 0
+
+<br><br>
+
+<b>Sure Event</b>
+
+→ P(E) = 1
+
+<br><br>
+
+<b>Complement</b>
+
+→ P(E') = 1 − P(E)
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<div class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Probability
+
+<br><br>
+
+Concept समझो → Example देखो → Formula लगाओ → Question Solve करो.
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</div>
+
+
+</div>
+
+</body>
+</html>
