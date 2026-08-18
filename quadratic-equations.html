@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Class 10 Mathematics | Quadratic Equations</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#e8e3d9;
+    color:#202020;
+    font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+    line-height:1.65;
+    padding:18px 10px;
+}
+
+.notebook{
+    max-width:980px;
+    margin:auto;
+    position:relative;
+    padding:35px 42px 55px 88px;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        #fffef9 0px,
+        #fffef9 31px,
+        #d8e5f2 32px,
+        #fffef9 33px
+    );
+
+    box-shadow:0 10px 35px rgba(0,0,0,.16);
+    border-radius:6px;
+}
+
+.notebook:before{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:64px;
+    width:2px;
+    background:#e89a9a;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.header h1{
+    font-size:35px;
+    color:#4f46e5;
+    letter-spacing:1px;
+}
+
+.header h2{
+    font-size:19px;
+    color:#374151;
+    margin-top:4px;
+}
+
+.header p{
+    color:#666;
+    font-size:13px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:10px;
+    padding:5px 15px;
+    border-radius:20px;
+    background:#ede9fe;
+    color:#5b21b6;
+    font-weight:bold;
+    font-size:12px;
+}
+
+/* SECTION */
+
+.section{
+    margin-bottom:30px;
+}
+
+.section-title{
+    display:inline-block;
+    color:#4338ca;
+    font-size:21px;
+    font-weight:bold;
+    border-bottom:2px solid #7c3aed;
+    margin-bottom:10px;
+}
+
+/* BOXES */
+
+.note,
+.example,
+.formula-box,
+.exam,
+.hint,
+.warning,
+.steps,
+.definition{
+    border-radius:10px;
+    padding:12px 16px;
+    margin:10px 0;
+}
+
+.note{
+    background:rgba(255,255,255,.82);
+    border-left:4px solid #6366f1;
+}
+
+.definition{
+    background:#f8fafc;
+    border-left:4px solid #64748b;
+}
+
+.example{
+    background:#fffdf3;
+    border:1px dashed #d97706;
+}
+
+.formula-box{
+    background:rgba(237,233,254,.88);
+    border:1px dashed #8b5cf6;
+    text-align:center;
+}
+
+.exam{
+    background:#ecfdf5;
+    border-left:4px solid #16a34a;
+}
+
+.hint{
+    background:#f5f3ff;
+    border-left:4px solid #a78bfa;
+    font-size:14px;
+    color:#4c1d95;
+}
+
+.warning{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+}
+
+.steps{
+    background:rgba(255,255,255,.84);
+    border:1px solid #d1d5db;
+}
+
+.example-title{
+    color:#b45309;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+/* FORMULAS */
+
+.formula{
+    font-size:20px;
+    color:#312e81;
+    font-weight:bold;
+    margin:7px 0;
+}
+
+/* FRACTION */
+
+.frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    line-height:1.05;
+    margin:0 4px;
+}
+
+.frac .top{
+    border-bottom:2px solid #222;
+    padding:0 8px 3px;
+}
+
+.frac .bottom{
+    padding:3px 8px 0;
+}
+
+/* TABLE */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,.88);
+    margin:10px 0;
+}
+
+th,td{
+    border:1px solid #999;
+    padding:8px;
+    text-align:center;
+}
+
+th{
+    background:#ede9fe;
+    color:#4338ca;
+}
+
+/* CHECK */
+
+.check{
+    margin:6px 0;
+}
+
+.check:before{
+    content:"✓ ";
+    color:#16a34a;
+    font-weight:bold;
+}
+
+/* ANSWERS */
+
+.answer{
+    color:#15803d;
+    font-weight:bold;
+}
+
+.red{
+    color:#b91c1c;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    margin-top:40px;
+    color:#6b7280;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    body{
+        padding:0;
+    }
+
+    .notebook{
+        padding:25px 14px 45px 48px;
+        border-radius:0;
+    }
+
+    .notebook:before{
+        left:31px;
+    }
+
+    .header h1{
+        font-size:27px;
+    }
+
+    .header h2{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .formula{
+        font-size:17px;
+    }
+
+    table{
+        font-size:11px;
+    }
+
+    th,td{
+        padding:6px 4px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="notebook">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<h1>✍ QUADRATIC EQUATIONS</h1>
+
+<h2>Class 10 Mathematics • Chapter 4</h2>
+
+<p>Concept Notes • Solved Examples • Exam-Oriented Revision</p>
+
+<div class="badge">
+THE GOAL • ENGLISH MEDIUM + EASY HINDI HINTS
+</div>
+
+</div>
+
+
+<!-- 01 -->
+
+<div class="section">
+
+<div class="section-title">
+01. What is a Quadratic Equation?
+</div>
+
+<div class="definition">
+
+A quadratic equation in one variable is an equation of the form:
+
+<div class="formula-box">
+
+<div class="formula">
+ax² + bx + c = 0
+</div>
+
+</div>
+
+where <b>a, b and c</b> are real numbers and:
+
+<div class="formula">
+a ≠ 0
+</div>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Easy Hindi:</b>
+
+Quadratic equation mein variable ki highest power <b>2</b> hoti hai.
+
+Agar x² present hai aur uska coefficient zero nahi hai,
+toh equation quadratic ho sakti hai.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+2x² + 5x − 3 = 0
+
+<br><br>
+
+Here:
+
+<br>
+
+a = 2
+
+<br>
+
+b = 5
+
+<br>
+
+c = −3
+
+<br><br>
+
+Since a ≠ 0, it is a quadratic equation.
+
+</div>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="section">
+
+<div class="section-title">
+02. How to Identify a Quadratic Equation
+</div>
+
+<div class="note">
+
+A quadratic equation must have:
+
+<br><br>
+
+✓ Highest power of variable = 2
+
+<br>
+
+✓ Coefficient of x² must not be zero
+
+<br>
+
+✓ It can be written in the form:
+
+<div class="formula">
+ax² + bx + c = 0
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example 1</div>
+
+3x² − 7x + 2 = 0
+
+<br><br>
+
+Quadratic ✓
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example 2</div>
+
+5x + 8 = 0
+
+<br><br>
+
+Not quadratic ✗
+
+<br>
+
+Because highest power is 1.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Hindi:</b>
+
+Power 1 → Linear
+
+<br>
+Power 2 → Quadratic
+
+<br>
+Power 3 → Cubic
+
+</div>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="section">
+
+<div class="section-title">
+03. Converting into Standard Form
+</div>
+
+<div class="note">
+
+Before solving a quadratic equation, arrange it in:
+
+<div class="formula">
+ax² + bx + c = 0
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+x² + 5 = 3x
+
+<br><br>
+
+Bring all terms to one side:
+
+<br>
+
+x² − 3x + 5 = 0
+
+<br><br>
+
+Therefore:
+
+<br>
+
+a = 1, b = −3, c = 5
+
+</div>
+
+<div class="hint">
+
+💡 Pehle equation ko <b>zero ke equal</b> karo.
+Uske baad a, b, c identify karo.
+
+</div>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="section">
+
+<div class="section-title">
+04. Roots / Solutions of a Quadratic Equation
+</div>
+
+<div class="note">
+
+The values of the variable which satisfy the quadratic equation
+are called its <b>roots</b> or <b>solutions</b>.
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Consider:
+
+<br>
+
+x² − 5x + 6 = 0
+
+<br><br>
+
+Factorise:
+
+<br>
+
+(x − 2)(x − 3) = 0
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x = 2 or x = 3
+
+<br><br>
+
+<span class="answer">
+Roots are 2 and 3.
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 Root ka matlab: woh value jo equation mein put karne par
+equation ko <b>true</b> bana de.
+
+</div>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="section">
+
+<div class="section-title">
+05. Factorisation Method ⭐⭐⭐
+</div>
+
+<div class="note">
+
+A quadratic equation can sometimes be solved by factorising it
+into two linear factors.
+
+</div>
+
+<div class="steps">
+
+<b>Basic idea:</b>
+
+<br><br>
+
+ax² + bx + c = 0
+
+<br><br>
+
+→ Factorise
+
+<br><br>
+
+→ Product of two factors = 0
+
+<br><br>
+
+→ Use zero product property
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+x² − 7x + 12 = 0
+
+<br><br>
+
+We need two numbers whose:
+
+<br>
+
+Product = 12
+
+<br>
+
+Sum = −7
+
+<br><br>
+
+Numbers are −3 and −4.
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x² − 7x + 12 = 0
+
+<br>
+
+(x − 3)(x − 4) = 0
+
+<br><br>
+
+So:
+
+<br>
+
+x − 3 = 0 → x = 3
+
+<br>
+
+x − 4 = 0 → x = 4
+
+<br><br>
+
+<span class="answer">
+Roots = 3, 4
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Hindi trick:</b>
+
+Middle term ko aise split karo ki product first × last
+term ke equal aaye.
+
+</div>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="section">
+
+<div class="section-title">
+06. Factorisation — Splitting the Middle Term
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+2x² + 7x + 3 = 0
+
+<br><br>
+
+Product:
+
+<br>
+
+2 × 3 = 6
+
+<br><br>
+
+We need two numbers whose product is 6 and sum is 7:
+
+<br>
+
+6 and 1
+
+<br><br>
+
+Split 7x:
+
+<br>
+
+2x² + 6x + x + 3 = 0
+
+<br><br>
+
+Group:
+
+<br>
+
+2x(x + 3) + 1(x + 3) = 0
+
+<br><br>
+
+(x + 3)(2x + 1) = 0
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x + 3 = 0 → x = −3
+
+<br>
+
+2x + 1 = 0 → x = −1/2
+
+<br><br>
+
+<span class="answer">
+Roots = −3, −1/2
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 Jab x² ka coefficient 1 na ho, tab
+<b>first coefficient × constant</b> wala product useful hota hai.
+
+</div>
+
+</div>
+
+
+<!-- 07 -->
+
+<div class="section">
+
+<div class="section-title">
+07. Zero Product Property
+</div>
+
+<div class="note">
+
+If:
+
+<div class="formula">
+AB = 0
+</div>
+
+then:
+
+<div class="formula">
+A = 0 or B = 0
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+(x − 5)(x + 2) = 0
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x − 5 = 0
+
+<br>
+
+or
+
+<br>
+
+x + 2 = 0
+
+<br><br>
+
+Hence:
+
+<br>
+
+x = 5 or x = −2
+
+</div>
+
+<div class="hint">
+
+💡 Dono factors ko zero ke equal karke roots nikaalte hain.
+
+</div>
+
+</div>
+
+
+<!-- 08 -->
+
+<div class="section">
+
+<div class="section-title">
+08. Quadratic Formula ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+
+x =
+<div class="frac">
+<span class="top">−b ± √(b² − 4ac)</span>
+<span class="bottom">2a</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="note">
+
+For:
+
+<div class="formula">
+ax² + bx + c = 0
+</div>
+
+identify:
+
+<br>
+
+a = coefficient of x²
+
+<br>
+
+b = coefficient of x
+
+<br>
+
+c = constant term
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+x² − 5x + 6 = 0
+
+<br><br>
+
+Here:
+
+<br>
+
+a = 1, b = −5, c = 6
+
+<br><br>
+
+Using formula:
+
+<br>
+
+x =
+<div class="frac">
+<span class="top">−(−5) ± √[(-5)² − 4(1)(6)]</span>
+<span class="bottom">2(1)</span>
+</div>
+
+<br><br>
+
+x =
+<div class="frac">
+<span class="top">5 ± √(25 − 24)</span>
+<span class="bottom">2</span>
+</div>
+
+<br><br>
+
+x =
+<div class="frac">
+<span class="top">5 ± 1</span>
+<span class="bottom">2</span>
+</div>
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x = 3 or x = 2
+
+<br><br>
+
+<span class="answer">
+Roots = 2, 3
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 <b>Hindi:</b>
+
+Formula mein values substitute karte waqt signs carefully dekho,
+especially <b>b</b> negative ho toh −b positive ho jayega.
+
+</div>
+
+</div>
+
+
+<!-- 09 -->
+
+<div class="section">
+
+<div class="section-title">
+09. Quadratic Formula — Fraction Type
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Solve:
+
+<br>
+
+2x² − 3x − 2 = 0
+
+<br><br>
+
+Here:
+
+<br>
+
+a = 2
+
+<br>
+
+b = −3
+
+<br>
+
+c = −2
+
+<br><br>
+
+x =
+<div class="frac">
+<span class="top">
+−(−3) ± √[(-3)² − 4(2)(−2)]
+</span>
+<span class="bottom">
+4
+</span>
+</div>
+
+<br><br>
+
+x =
+<div class="frac">
+<span class="top">
+3 ± √(9 + 16)
+</span>
+<span class="bottom">
+4
+</span>
+</div>
+
+<br><br>
+
+x =
+<div class="frac">
+<span class="top">
+3 ± 5
+</span>
+<span class="bottom">
+4
+</span>
+</div>
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x = 2
+
+<br>
+
+or
+
+<br>
+
+x = −1/2
+
+<br><br>
+
+<span class="answer">
+Roots = 2, −1/2
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="section">
+
+<div class="section-title">
+10. Discriminant ⭐⭐⭐
+</div>
+
+<div class="note">
+
+The expression:
+
+<div class="formula">
+D = b² − 4ac
+</div>
+
+is called the <b>discriminant</b> of a quadratic equation.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Easy Hindi:</b>
+
+Discriminant ko ek "root detector" ki tarah socho.
+Ye batata hai ki equation ke <b>real roots ka nature</b> kya hoga.
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Discriminant</th>
+<th>Nature of Roots</th>
+</tr>
+
+<tr>
+<td>D &gt; 0</td>
+<td>Two distinct real roots</td>
+</tr>
+
+<tr>
+<td>D = 0</td>
+<td>Two equal real roots</td>
+</tr>
+
+<tr>
+<td>D &lt; 0</td>
+<td>No real roots</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="section">
+
+<div class="section-title">
+11. Nature of Roots — D &gt; 0
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+x² − 5x + 6 = 0
+
+<br><br>
+
+a = 1, b = −5, c = 6
+
+<br><br>
+
+D = b² − 4ac
+
+<br>
+
+D = (−5)² − 4(1)(6)
+
+<br>
+
+D = 25 − 24
+
+<br>
+
+D = 1
+
+<br><br>
+
+Since:
+
+<br>
+
+D &gt; 0
+
+<br><br>
+
+<span class="answer">
+The equation has two distinct real roots.
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="section">
+
+<div class="section-title">
+12. Nature of Roots — D = 0
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+x² − 6x + 9 = 0
+
+<br><br>
+
+D = (−6)² − 4(1)(9)
+
+<br>
+
+D = 36 − 36
+
+<br>
+
+D = 0
+
+<br><br>
+
+Therefore:
+
+<br>
+
+<span class="answer">
+The equation has two equal real roots.
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 D = 0 means dono roots same hain.
+
+</div>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="section">
+
+<div class="section-title">
+13. Nature of Roots — D &lt; 0
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+x² + 2x + 5 = 0
+
+<br><br>
+
+D = (2)² − 4(1)(5)
+
+<br>
+
+D = 4 − 20
+
+<br>
+
+D = −16
+
+<br><br>
+
+Since D &lt; 0:
+
+<br>
+
+<span class="red">
+The equation has no real roots.
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 CBSE Class 10 mein focus <b>real roots</b> par hai.
+Negative discriminant → no real roots.
+
+</div>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="section">
+
+<div class="section-title">
+14. Finding k Using Discriminant ⭐⭐⭐
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Find the value of k for which:
+
+<br>
+
+x² + 4x + k = 0
+
+<br>
+
+has equal roots.
+
+<br><br>
+
+For equal roots:
+
+<br>
+
+D = 0
+
+<br><br>
+
+Therefore:
+
+<br>
+
+b² − 4ac = 0
+
+<br><br>
+
+Here:
+
+<br>
+
+a = 1, b = 4, c = k
+
+<br><br>
+
+16 − 4k = 0
+
+<br>
+
+4k = 16
+
+<br>
+
+k = 4
+
+<br><br>
+
+<span class="answer">
+Therefore, k = 4.
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 Equal roots dikhe → immediately <b>D = 0</b> use karo.
+
+</div>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="section">
+
+<div class="section-title">
+15. Situational Problems — General Method
+</div>
+
+<div class="steps">
+
+<b>Step 1:</b> Read the statement carefully.
+
+<br><br>
+
+<b>Step 2:</b> Let the unknown quantity be x.
+
+<br><br>
+
+<b>Step 3:</b> Translate the condition into an equation.
+
+<br><br>
+
+<b>Step 4:</b> Bring the equation to standard form.
+
+<br><br>
+
+<b>Step 5:</b> Solve by factorisation or quadratic formula.
+
+<br><br>
+
+<b>Step 6:</b> Reject any value which is not meaningful in the
+given situation.
+
+<br><br>
+
+<b>Step 7:</b> Write the final answer with units/context.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Hindi:</b>
+
+Word problem mein sabse pehla kaam calculation nahi,
+<b>equation banana</b> hai.
+
+</div>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="section">
+
+<div class="section-title">
+16. Situational Problem — Consecutive Integers ⭐⭐⭐
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+The product of two consecutive positive integers is 72.
+Find the integers.
+
+<br><br>
+
+Let the first integer = x.
+
+<br>
+
+Next integer = x + 1.
+
+<br><br>
+
+According to question:
+
+<br>
+
+x(x + 1) = 72
+
+<br>
+
+x² + x − 72 = 0
+
+<br><br>
+
+Factorise:
+
+<br>
+
+(x + 9)(x − 8) = 0
+
+<br><br>
+
+So:
+
+<br>
+
+x = −9 or x = 8
+
+<br><br>
+
+Since integers are positive:
+
+<br>
+
+x = 8
+
+<br>
+
+Next integer = 9
+
+<br><br>
+
+<span class="answer">
+Therefore, the integers are 8 and 9.
+</span>
+
+</div>
+
+<div class="hint">
+
+💡 Negative answer mathematically possible ho sakta hai,
+but question mein <b>positive integers</b> hain, isliye −9 reject hoga.
+
+</div>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="section">
+
+<div class="section-title">
+17. Situational Problem — Area
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+The area of a rectangular garden is 96 m².
+Its length is 4 m more than its breadth.
+Find its dimensions.
+
+<br><br>
+
+Let breadth = x m.
+
+<br>
+
+Length = x + 4 m.
+
+<br><br>
+
+Area:
+
+<br>
+
+x(x + 4) = 96
+
+<br>
+
+x² + 4x − 96 = 0
+
+<br><br>
+
+Factorise:
+
+<br>
+
+(x + 12)(x − 8) = 0
+
+<br><br>
+
+x = −12 or x = 8
+
+<br><br>
+
+Length = 8 + 4 = 12 m
+
+<br><br>
+
+Negative dimension is not possible.
+
+<br><br>
+
+<span class="answer">
+Breadth = 8 m, Length = 12 m
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="section">
+
+<div class="section-title">
+18. Situational Problem — Product of Numbers
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+The product of two positive numbers is 180 and one number
+is 3 more than the other. Find the numbers.
+
+<br><br>
+
+Let smaller number = x.
+
+<br>
+
+Larger number = x + 3.
+
+<br><br>
+
+x(x + 3) = 180
+
+<br>
+
+x² + 3x − 180 = 0
+
+<br><br>
+
+Factorise:
+
+<br>
+
+(x + 15)(x − 12) = 0
+
+<br><br>
+
+x = −15 or x = 12
+
+<br><br>
+
+Since numbers are positive:
+
+<br>
+
+x = 12
+
+<br>
+
+x + 3 = 15
+
+<br><br>
+
+<span class="answer">
+Numbers are 12 and 15.
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="section">
+
+<div class="section-title">
+19. Important Exam Type — Identify a,b,c
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+For:
+
+<br>
+
+3x² − 7x + 2 = 0
+
+<br><br>
+
+Compare with:
+
+<br>
+
+ax² + bx + c = 0
+
+<br><br>
+
+Therefore:
+
+<br>
+
+a = 3
+
+<br>
+
+b = −7
+
+<br>
+
+c = 2
+
+</div>
+
+<div class="hint">
+
+💡 <b>Sign mat bhoolna!</b>
+
+b = −7 hai, +7 nahi.
+
+</div>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="section">
+
+<div class="section-title">
+20. Important Exam Type — Is it Quadratic?
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Check whether:
+
+<br>
+
+(x + 2)(x + 1) = x² + 3
+
+<br>
+
+is a quadratic equation.
+
+<br><br>
+
+Expand LHS:
+
+<br>
+
+x² + 3x + 2 = x² + 3
+
+<br><br>
+
+Cancel x²:
+
+<br>
+
+3x + 2 = 3
+
+<br>
+
+3x − 1 = 0
+
+<br><br>
+
+This is a linear equation.
+
+<br><br>
+
+<span class="red">
+Therefore, it is NOT a quadratic equation.
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="section">
+
+<div class="section-title">
+21. Roots and Verification
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+For:
+
+<br>
+
+x² − 5x + 6 = 0
+
+<br>
+
+Suppose x = 2.
+
+<br><br>
+
+Put x = 2:
+
+<br>
+
+(2)² − 5(2) + 6
+
+<br>
+
+= 4 − 10 + 6
+
+<br>
+
+= 0
+
+<br><br>
+
+Therefore, x = 2 is a root.
+
+</div>
+
+<div class="hint">
+
+💡 Root verify karne ke liye value ko original equation mein
+substitute karo.
+
+</div>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="section">
+
+<div class="section-title">
+22. Important Relationship with Roots
+</div>
+
+<div class="note">
+
+If α and β are the roots of:
+
+<div class="formula">
+ax² + bx + c = 0
+</div>
+
+then:
+
+<div class="formula">
+α + β = −b/a
+</div>
+
+and:
+
+<div class="formula">
+αβ = c/a
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+For:
+
+<br>
+
+2x² − 7x + 3 = 0
+
+<br><br>
+
+Here:
+
+<br>
+
+a = 2, b = −7, c = 3
+
+<br><br>
+
+Sum of roots:
+
+<br>
+
+α + β = −(−7)/2
+
+<br>
+
+= 7/2
+
+<br><br>
+
+Product of roots:
+
+<br>
+
+αβ = 3/2
+
+</div>
+
+<div class="hint">
+
+💡 Ye relationship roots ko directly calculate kiye bina
+unka sum aur product find karne mein useful hai.
+
+</div>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="section">
+
+<div class="section-title">
+23. Forming a Quadratic Equation from Roots
+</div>
+
+<div class="note">
+
+If α and β are the roots, then the quadratic equation is:
+
+<div class="formula">
+x² − (α + β)x + αβ = 0
+</div>
+
+</div>
+
+<div class="example">
+
+<div class="example-title">✏ Example</div>
+
+Form a quadratic equation whose roots are 2 and 5.
+
+<br><br>
+
+α + β = 7
+
+<br>
+
+αβ = 10
+
+<br><br>
+
+Therefore:
+
+<br>
+
+x² − 7x + 10 = 0
+
+<br><br>
+
+<span class="answer">
+Required equation: x² − 7x + 10 = 0
+</span>
+
+</div>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="section">
+
+<div class="section-title">
+24. Common Mistakes ⚠️
+</div>
+
+<div class="warning">
+
+<b>1.</b> Equation ko standard form mein convert kiye bina
+a, b, c identify mat karo.
+
+<br><br>
+
+<b>2.</b> b negative ho toh −b carefully handle karo.
+
+<br><br>
+
+<b>3.</b> Quadratic formula mein denominator <b>2a</b> hota hai.
+
+<br><br>
+
+<b>4.</b> √ ke andar calculation mein sign mistake mat karo.
+
+<br><br>
+
+<b>5.</b> ± ko ignore mat karo — generally two values milengi.
+
+<br><br>
+
+<b>6.</b> Word problems mein negative length, age or distance
+ko automatically accept mat karo.
+
+<br><br>
+
+<b>7.</b> Discriminant ka formula:
+
+<div class="formula">
+D = b² − 4ac
+</div>
+
+exactly yaad rakho.
+
+</div>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="section">
+
+<div class="section-title">
+25. One-Page Formula Revision ⭐⭐⭐
+</div>
+
+<div class="formula-box">
+
+<div class="formula">
+ax² + bx + c = 0, &nbsp; a ≠ 0
+</div>
+
+<div class="formula">
+D = b² − 4ac
+</div>
+
+<div class="formula">
+
+x =
+<div class="frac">
+<span class="top">−b ± √(b² − 4ac)</span>
+<span class="bottom">2a</span>
+</div>
+
+</div>
+
+<div class="formula">
+α + β = −b/a
+</div>
+
+<div class="formula">
+αβ = c/a
+</div>
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Condition</th>
+<th>Nature of Roots</th>
+</tr>
+
+<tr>
+<td>D &gt; 0</td>
+<td>Two distinct real roots</td>
+</tr>
+
+<tr>
+<td>D = 0</td>
+<td>Two equal real roots</td>
+</tr>
+
+<tr>
+<td>D &lt; 0</td>
+<td>No real roots</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="section">
+
+<div class="section-title">
+26. THE GOAL — Exam Strategy 🎯
+</div>
+
+<div class="exam">
+
+<b>Question says “solve by factorisation”?</b>
+
+<br>
+→ Factorise → zero product property → roots.
+
+<br><br>
+
+<b>Question says “solve using formula”?</b>
+
+<br>
+→ Identify a, b, c → substitute in formula → simplify.
+
+<br><br>
+
+<b>Question asks “nature of roots”?</b>
+
+<br>
+→ Calculate D = b² − 4ac.
+
+<br><br>
+
+<b>Question says “equal roots”?</b>
+
+<br>
+→ Put D = 0.
+
+<br><br>
+
+<b>Question gives a real-life situation?</b>
+
+<br>
+→ Define variable → form quadratic equation → solve →
+interpret the answer.
+
+</div>
+
+<div class="hint">
+
+💡 <b>Final Hindi Tip:</b>
+
+Is chapter ka main idea sirf formula yaad karna nahi hai.
+
+Pehle ye samjho ki question mein unknown kya hai,
+equation kaise ban rahi hai, aur phir decide karo
+<b>factorisation</b> use karni hai ya <b>quadratic formula</b>.
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<strong>THE GOAL</strong>
+
+<br>
+
+Class 10 Mathematics • Chapter 4 • Quadratic Equations
+
+<br><br>
+
+Understand the Concept • Learn the Method • Practice the Pattern
+
+<br><br>
+
+Made with ❤️ in India by Pushpender
+
+</div>
+
+</div>
+
+</body>
+</html>
