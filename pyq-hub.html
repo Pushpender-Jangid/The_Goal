@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PYQ HUB | THE GOAL</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --text:#0f172a;
+    --muted:#64748b;
+    --primary:#4f46e5;
+    --primary2:#7c3aed;
+    --border:#e2e8f0;
+    --soft:#eef2ff;
+}
+
+body{
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+
+
+/* ================================================= */
+/* ================= HEADER ======================== */
+/* ================================================= */
+
+header{
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(129,140,248,.28),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(192,132,252,.28),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #111827,
+            #312e81,
+            #4c1d95
+        );
+
+    color:white;
+
+    padding:22px 7% 75px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+
+.brand{
+
+    font-size:25px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+
+.nav-badge{
+
+    padding:8px 15px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    font-size:13px;
+}
+
+
+/* ================================================= */
+/* ================= HERO ========================== */
+/* ================================================= */
+
+.hero{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:70px 20px 30px;
+}
+
+
+.hero-label{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.1);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    font-size:13px;
+
+    margin-bottom:20px;
+}
+
+
+.hero h1{
+
+    font-size:clamp(48px,8vw,76px);
+
+    font-weight:950;
+
+    letter-spacing:3px;
+
+    margin-bottom:12px;
+}
+
+
+.hero h1 span{
+
+    background:
+        linear-gradient(
+            90deg,
+            #a5b4fc,
+            #e9d5ff,
+            #fbcfe8
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+}
+
+
+.hero p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+
+    font-size:16px;
+}
+
+
+/* ================================================= */
+/* ================= MAIN ========================== */
+/* ================================================= */
+
+main{
+
+    max-width:1200px;
+
+    margin:-40px auto 0;
+
+    padding:0 20px 70px;
+
+    position:relative;
+}
+
+
+/* ================================================= */
+/* ================= BACK BUTTON =================== */
+/* ================================================= */
+
+.back-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    padding:10px 17px;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    box-shadow:0 8px 20px rgba(15,23,42,.06);
+
+    transition:.2s;
+}
+
+
+.back-btn:hover{
+
+    color:var(--primary);
+
+    transform:translateX(-3px);
+
+    box-shadow:0 12px 25px rgba(15,23,42,.1);
+}
+
+
+/* ================================================= */
+/* ================= SECTION TITLE ================= */
+/* ================================================= */
+
+.section-title{
+
+    text-align:center;
+
+    margin:45px 0 30px;
+}
+
+
+.section-title h2{
+
+    font-size:30px;
+
+    margin-bottom:7px;
+}
+
+
+.section-title p{
+
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+
+/* ================================================= */
+/* ================= PYQ GRID ===================== */
+/* ================================================= */
+
+.pyq-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+/* ================================================= */
+/* ================= PYQ CARD ===================== */
+/* ================================================= */
+
+.pyq-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:26px;
+
+    padding:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 12px 35px rgba(15,23,42,.07);
+
+    transition:.3s ease;
+}
+
+
+.pyq-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 22px 50px rgba(15,23,42,.13);
+}
+
+
+/* decorative circle */
+
+.pyq-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:var(--soft);
+
+    right:-95px;
+
+    top:-95px;
+
+    z-index:0;
+}
+
+
+/* ================================================= */
+/* ================= CARD TOP ====================== */
+/* ================================================= */
+
+.card-top{
+
+    position:relative;
+
+    z-index:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:22px;
+}
+
+
+.year-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:8px 13px;
+
+    border-radius:30px;
+
+    background:var(--soft);
+
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:.5px;
+}
+
+
+/* ================================================= */
+/* ================= CBSE LOGO ===================== */
+/* ================================================= */
+
+.cbse-logo{
+
+    width:64px;
+
+    height:64px;
+
+    object-fit:contain;
+
+    border-radius:14px;
+
+    background:white;
+
+    padding:5px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 7px 18px rgba(15,23,42,.12);
+
+    transition:.25s;
+}
+
+
+.cbse-logo:hover{
+
+    transform:
+        scale(1.08)
+        rotate(2deg);
+
+    box-shadow:
+        0 10px 25px rgba(79,70,229,.2);
+}
+
+
+/* ================================================= */
+/* ================= CARD CONTENT ================== */
+/* ================================================= */
+
+.pyq-icon{
+
+    width:65px;
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:19px;
+
+    background:var(--soft);
+
+    font-size:31px;
+
+    margin-bottom:18px;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+.pyq-card h3{
+
+    font-size:25px;
+
+    margin-bottom:9px;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+.pyq-card .small-title{
+
+    color:var(--primary);
+
+    font-weight:800;
+
+    font-size:13px;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+.pyq-card p{
+
+    color:var(--muted);
+
+    line-height:1.65;
+
+    font-size:14px;
+
+    margin:14px 0 23px;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+/* ================================================= */
+/* ================= TAGS ========================== */
+/* ================================================= */
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:23px;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+.tag{
+
+    padding:6px 9px;
+
+    background:#f8fafc;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    color:#475569;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+
+/* ================================================= */
+/* ================= OPEN BUTTON =================== */
+/* ================================================= */
+
+.pyq-btn{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    padding:14px 18px;
+
+    border-radius:13px;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    transition:.25s;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+.pyq-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 27px rgba(79,70,229,.28);
+}
+
+
+/* ================================================= */
+/* ================= INFO BOX ====================== */
+/* ================================================= */
+
+.info-box{
+
+    margin-top:35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f5f3ff
+        );
+
+    border:1px solid #ddd6fe;
+
+    border-radius:20px;
+
+    padding:22px 25px;
+
+    text-align:center;
+}
+
+
+.info-box strong{
+
+    color:var(--primary);
+}
+
+
+.info-box p{
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin-top:5px;
+}
+
+
+/* ================================================= */
+/* ================= FOOTER ======================== */
+/* ================================================= */
+
+footer{
+
+    background:#0f172a;
+
+    color:#94a3b8;
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    line-height:1.6;
+}
+
+
+footer strong{
+
+    color:white;
+}
+
+
+.heart{
+
+    color:#f43f5e;
+}
+
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+@media(max-width:900px){
+
+    .pyq-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    header{
+
+        padding-bottom:65px;
+    }
+
+
+    .hero{
+
+        padding-top:55px;
+    }
+
+
+    .hero h1{
+
+        font-size:48px;
+    }
+
+
+    .pyq-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .pyq-card{
+
+        padding:26px;
+    }
+
+}
+
+
+@media(max-width:450px){
+
+    nav{
+
+        gap:10px;
+    }
+
+
+    .brand{
+
+        font-size:21px;
+    }
+
+
+    .nav-badge{
+
+        font-size:10px;
+
+        padding:7px 11px;
+    }
+
+
+    .hero h1{
+
+        font-size:42px;
+    }
+
+
+    .hero p{
+
+        font-size:14px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- ================= HEADER ======================== -->
+<!-- ================================================= -->
+
+<header>
+
+<nav>
+
+<div class="brand">
+THE GOAL
+</div>
+
+<div class="nav-badge">
+CBSE CLASS 10 • PYQ HUB
+</div>
+
+</nav>
+
+
+<div class="hero">
+
+<div class="hero-label">
+📚 PREVIOUS YEAR QUESTIONS
+</div>
+
+<h1>
+<span>PYQ HUB</span>
+</h1>
+
+<p>
+Explore CBSE Class 10 Mathematics Previous Year Questions
+in a clean chapter-wise and type-wise format.
+Practice smarter with Basic and Standard papers.
+</p>
+
+</div>
+
+</header>
+
+
+<!-- ================================================= -->
+<!-- ================= MAIN ========================== -->
+<!-- ================================================= -->
+
+<main>
+
+
+<!-- BACK -->
+
+<a
+    href="index.html"
+    class="back-btn"
+>
+    ← Back to Home
+</a>
+
+
+<div class="section-title">
+
+<h2>
+Choose Your PYQ Collection
+</h2>
+
+<p>
+Select the year and paper type you want to practice.
+</p>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= PYQ CARDS ==================== -->
+<!-- ================================================= -->
+
+<section class="pyq-grid">
+
+
+<!-- ================================================= -->
+<!-- ================= 2026 ========================== -->
+<!-- ================================================= -->
+
+<div class="pyq-card">
+
+
+<div class="card-top">
+
+<div class="year-badge">
+📅 2026
+</div>
+
+
+<a
+    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="View CBSE Official Logo"
+>
+
+<img
+    class="cbse-logo"
+    src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
+    alt="CBSE Logo"
+>
+
+</a>
+
+</div>
+
+
+<div class="pyq-icon">
+📚
+</div>
+
+
+<div class="small-title">
+CBSE MATHEMATICS
+</div>
+
+
+<h3>
+2026 PYQs
+</h3>
+
+
+<p>
+Complete collection of CBSE Class 10 Mathematics
+2026 Previous Year Questions with both Basic and
+Standard papers organized chapter-wise and type-wise.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+BASIC
+</span>
+
+<span class="tag">
+STANDARD
+</span>
+
+<span class="tag">
+CHAPTERWISE
+</span>
+
+<span class="tag">
+TYPEWISE
+</span>
+
+</div>
+
+
+<a
+    href="2026-pyq.html"
+    class="pyq-btn"
+>
+    OPEN 2026 PYQs →
+</a>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= 2025 BASIC =================== -->
+<!-- ================================================= -->
+
+<div class="pyq-card">
+
+
+<div class="card-top">
+
+<div class="year-badge">
+📅 2025
+</div>
+
+
+<a
+    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="View CBSE Official Logo"
+>
+
+<img
+    class="cbse-logo"
+    src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
+    alt="CBSE Logo"
+>
+
+</a>
+
+</div>
+
+
+<div class="pyq-icon">
+📝
+</div>
+
+
+<div class="small-title">
+CBSE MATHEMATICS
+</div>
+
+
+<h3>
+2025 Basic
+</h3>
+
+
+<p>
+Chapter-wise collection of CBSE Class 10 Mathematics
+Basic Mathematics Previous Year Questions from the
+2025 examination.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+BASIC
+</span>
+
+<span class="tag">
+2025
+</span>
+
+<span class="tag">
+CHAPTERWISE
+</span>
+
+<span class="tag">
+PYQs
+</span>
+
+</div>
+
+
+<a
+    href="2025-basic.html"
+    class="pyq-btn"
+>
+    OPEN 2025 BASIC →
+</a>
+
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ================= 2025 STANDARD ================ -->
+<!-- ================================================= -->
+
+<div class="pyq-card">
+
+
+<div class="card-top">
+
+<div class="year-badge">
+📅 2025
+</div>
+
+
+<a
+    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="View CBSE Official Logo"
+>
+
+<img
+    class="cbse-logo"
+    src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
+    alt="CBSE Logo"
+>
+
+</a>
+
+</div>
+
+
+<div class="pyq-icon">
+🎯
+</div>
+
+
+<div class="small-title">
+CBSE MATHEMATICS
+</div>
+
+
+<h3>
+2025 Standard
+</h3>
+
+
+<p>
+Chapter-wise collection of CBSE Class 10 Mathematics
+Standard Mathematics Previous Year Questions from the
+2025 examination.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+STANDARD
+</span>
+
+<span class="tag">
+2025
+</span>
+
+<span class="tag">
+CHAPTERWISE
+</span>
+
+<span class="tag">
+PYQs
+</span>
+
+</div>
+
+
+<a
+    href="2025-standard.html"
+    class="pyq-btn"
+>
+    OPEN 2025 STANDARD →
+</a>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- ================= INFO ========================== -->
+<!-- ================================================= -->
+
+<div class="info-box">
+
+<p>
+<strong>📌 PYQ HUB</strong>
+</p>
+
+<p>
+Questions are organized chapter-wise and type-wise
+for easier revision and exam preparation.
+Always cross-check with official CBSE material when needed.
+</p>
+
+</div>
+
+
+</main>
+
+
+<!-- ================================================= -->
+<!-- ================= FOOTER ======================== -->
+<!-- ================================================= -->
+
+<footer>
+
+<strong>
+THE GOAL
+</strong>
+
+<br><br>
+
+CBSE Class 10 Learning Portal
+
+<br><br>
+
+Previous Year Questions • Chapter-wise Practice
+
+<br><br>
+
+Made with Love
+<span class="heart">❤️</span>
+in India by Pushpender
+
+</footer>
+
+
+</body>
+</html>
