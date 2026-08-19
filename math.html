@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,10 @@
 
 <style>
 
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -16,225 +21,452 @@
 }
 
 :root{
-    --bg:#f8fafc;
+
+    --bg:#ffffff;
     --card:#ffffff;
-    --text:#0f172a;
+
+    --text:#111827;
     --muted:#64748b;
-    --primary:#4f46e5;
-    --primary2:#7c3aed;
-    --border:#e2e8f0;
-    --soft:#eef2ff;
-    --success:#059669;
-    --success-soft:#ecfdf5;
+
+    --purple:#6d3fa9;
+    --purple-dark:#59318f;
+
+    --blue:#4ba3d8;
+    --blue-dark:#368fc7;
+
+    --border:#e7e9ef;
+
+    --soft-purple:#f3edfa;
+    --soft-blue:#edf7fc;
+
     --warning:#d97706;
     --warning-soft:#fffbeb;
+
+    --shadow:
+        0 12px 35px rgba(15,23,42,.07);
 }
 
-/* ================= BODY ================= */
+
+/* =====================================================
+   BODY
+===================================================== */
 
 body{
-    font-family:Inter,Segoe UI,Arial,sans-serif;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
     background:var(--bg);
+
     color:var(--text);
+
     min-height:100vh;
+
+    overflow-x:hidden;
 }
 
 
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
-    background:
-        radial-gradient(circle at 10% 20%,rgba(129,140,248,.25),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(192,132,252,.25),transparent 30%),
-        linear-gradient(135deg,#111827,#312e81,#4c1d95);
 
-    color:white;
+    background:#ffffff;
 
-    padding:22px 7%;
+    border-bottom:
+        1px solid
+        var(--border);
 
     position:relative;
+
     overflow:hidden;
 }
 
+
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+        rgba(109,63,169,.07);
+
+    top:-190px;
+    left:-100px;
+
+    pointer-events:none;
+}
+
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+        rgba(75,163,216,.07);
+
+    right:-120px;
+    top:-100px;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
 nav{
+
     max-width:1200px;
+
     margin:auto;
 
+    padding:
+        18px 20px;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
+    position:relative;
+
+    z-index:2;
 }
 
-.brand{
+
+.nav-brand{
+
     display:flex;
+
     align-items:center;
+
     gap:11px;
 
-    font-size:25px;
-    font-weight:900;
-    letter-spacing:2px;
+    text-decoration:none;
 }
 
-.brand-logo{
-    width:42px;
-    height:42px;
+
+.nav-logo{
+
+    width:52px;
+    height:52px;
 
     object-fit:contain;
 
-    border-radius:10px;
+    border-radius:12px;
 
-    background:rgba(255,255,255,.12);
-    padding:4px;
+    transition:.25s;
 }
+
+
+.nav-brand:hover .nav-logo{
+
+    transform:
+        rotate(-3deg)
+        scale(1.05);
+}
+
+
+.brand-text{
+
+    font-size:22px;
+
+    font-weight:950;
+
+    letter-spacing:1.5px;
+
+    color:var(--text);
+}
+
+
+.brand-text span{
+
+    color:var(--purple);
+}
+
 
 .nav-badge{
-    display:flex;
-    align-items:center;
-    gap:10px;
 
-    padding:7px 14px;
+    padding:
+        8px 16px;
 
-    border:1px solid rgba(255,255,255,.2);
+    border:
+        1px solid
+        #ddd9e8;
+
     border-radius:30px;
 
-    background:rgba(255,255,255,.08);
+    background:#faf8fd;
 
-    font-size:13px;
-    font-weight:700;
-}
+    color:var(--purple);
 
-.nav-badge img{
-    width:32px;
-    height:32px;
+    font-size:12px;
 
-    object-fit:contain;
+    font-weight:800;
 
-    background:white;
-    border-radius:50%;
-    padding:2px;
+    letter-spacing:.4px;
 }
 
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-    max-width:1100px;
+
+    max-width:1050px;
 
     margin:auto;
 
     text-align:center;
 
-    padding:65px 20px 75px;
+    padding:
+        48px 20px
+        70px;
+
+    position:relative;
+
+    z-index:2;
 }
 
-.hero-label{
-    display:inline-block;
 
-    padding:8px 17px;
+.hero-logo-wrap{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+
+.hero-logo{
+
+    width:110px;
+    height:110px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 14px 24px
+            rgba(15,23,42,.12)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+
+.hero-logo:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+}
+
+
+.hero-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:
+        8px 17px;
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-purple),
+            var(--soft-blue)
+        );
 
-    font-size:13px;
+    border:
+        1px solid
+        #e3e0eb;
+
+    color:#596174;
+
+    font-size:12px;
+
+    font-weight:800;
 
     margin-bottom:22px;
 }
 
+
 .hero h1{
-    font-size:clamp(42px,7vw,70px);
+
+    font-size:
+        clamp(45px,7vw,76px);
 
     font-weight:950;
 
-    letter-spacing:3px;
+    letter-spacing:4px;
 
-    margin-bottom:12px;
+    line-height:1;
+
+    margin-bottom:17px;
+
+    color:var(--text);
 }
 
+
 .hero h1 span{
+
     background:
         linear-gradient(
             90deg,
-            #a5b4fc,
-            #e9d5ff,
-            #fbcfe8
+            var(--purple),
+            var(--blue)
         );
 
     -webkit-background-clip:text;
+
     background-clip:text;
 
     color:transparent;
 }
 
-.hero h2{
-    font-size:clamp(20px,4vw,30px);
 
-    font-weight:700;
+.hero h2{
+
+    font-size:
+        clamp(20px,4vw,30px);
+
+    font-weight:750;
 
     margin-bottom:15px;
+
+    color:#263044;
 }
 
+
 .hero p{
-    max-width:680px;
+
+    max-width:700px;
 
     margin:auto;
 
-    color:#cbd5e1;
+    color:var(--muted);
 
-    line-height:1.7;
+    line-height:1.8;
 
-    font-size:16px;
+    font-size:15px;
 }
 
 
-/* ================= MAIN ================= */
+/* =====================================================
+   MAIN
+===================================================== */
 
 main{
+
     max-width:1200px;
 
-    margin:-30px auto 0;
+    margin:auto;
 
-    padding:0 20px 60px;
+    padding:
+        5px 20px
+        70px;
 
     position:relative;
 }
 
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
 .section-title{
+
     text-align:center;
 
-    margin:45px 0 28px;
+    margin:
+        45px 0
+        27px;
 }
+
 
 .section-title h2{
+
     font-size:30px;
+
+    font-weight:850;
+
+    color:var(--text);
 }
+
 
 .section-title p{
+
     color:var(--muted);
 
-    margin-top:7px;
+    margin-top:8px;
+
+    font-size:14px;
+
+    line-height:1.6;
 }
 
 
-/* ================= CHAPTER GRID ================= */
+/* =====================================================
+   CHAPTER GRID
+===================================================== */
 
 .chapter-grid{
+
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+        repeat(2,1fr);
 
-    gap:18px;
+    gap:20px;
 }
 
+
+/* =====================================================
+   CHAPTER CARD
+===================================================== */
+
 .chapter{
+
     background:var(--card);
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     border-radius:20px;
 
-    padding:22px;
+    padding:23px;
 
     display:flex;
 
@@ -242,24 +474,79 @@ main{
 
     justify-content:space-between;
 
-    gap:20px;
+    gap:18px;
 
     box-shadow:
-        0 10px 30px rgba(15,23,42,.06);
+        0 10px 30px
+        rgba(15,23,42,.055);
 
-    transition:.3s ease;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+    position:relative;
+
+    overflow:hidden;
 }
+
+
+.chapter::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:
+        var(--soft-purple);
+
+    right:-65px;
+    top:-65px;
+
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+
+.chapter:nth-child(even)::after{
+
+    background:
+        var(--soft-blue);
+}
+
 
 .chapter:hover{
-    transform:translateY(-5px);
 
-    border-color:#a5b4fc;
+    transform:
+        translateY(-6px);
 
     box-shadow:
-        0 18px 40px rgba(79,70,229,.12);
+        0 20px 45px
+        rgba(15,23,42,.10);
+
+    border-color:
+        #d9d1e8;
 }
 
+
+.chapter:hover::after{
+
+    transform:scale(1.2);
+}
+
+
+/* =====================================================
+   CHAPTER LEFT
+===================================================== */
+
 .chapter-left{
+
     display:flex;
 
     align-items:center;
@@ -267,52 +554,88 @@ main{
     gap:16px;
 
     min-width:0;
+
+    position:relative;
+
+    z-index:2;
 }
 
+
 .chapter-icon{
-    width:55px;
-    height:55px;
 
-    min-width:55px;
+    width:57px;
+    height:57px;
 
-    border-radius:16px;
+    min-width:57px;
+
+    border-radius:17px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    background:var(--soft);
+    background:
+        var(--soft-purple);
 
-    font-size:25px;
+    font-size:26px;
+
+    border:
+        1px solid
+        rgba(109,63,169,.08);
 }
 
+
+.chapter:nth-child(even)
+.chapter-icon{
+
+    background:
+        var(--soft-blue);
+
+    border-color:
+        rgba(75,163,216,.10);
+}
+
+
 .chapter-info{
+
     min-width:0;
 }
 
+
 .chapter-number{
-    color:var(--primary);
+
+    color:var(--purple);
 
     font-size:11px;
 
-    font-weight:800;
+    font-weight:850;
 
     letter-spacing:1px;
 
     margin-bottom:5px;
 }
 
+
 .chapter h3{
+
     font-size:17px;
 
     line-height:1.35;
+
+    color:var(--text);
+
+    font-weight:800;
 }
 
 
-/* ================= NOTES BUTTON ================= */
+/* =====================================================
+   NOTES BUTTON
+===================================================== */
 
 .notes-btn{
+
     text-decoration:none;
 
     white-space:nowrap;
@@ -322,60 +645,87 @@ main{
     background:
         linear-gradient(
             135deg,
-            var(--primary),
-            var(--primary2)
+            var(--purple),
+            var(--blue)
         );
 
-    padding:11px 16px;
+    padding:
+        12px 16px;
 
     border-radius:11px;
 
-    font-size:12px;
+    font-size:11px;
 
-    font-weight:800;
+    font-weight:850;
 
-    transition:.2s;
+    transition:.25s;
+
+    position:relative;
+
+    z-index:3;
 }
+
 
 .notes-btn:hover{
-    transform:translateY(-2px);
+
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 8px 20px rgba(79,70,229,.25);
+        0 9px 22px
+        rgba(86,92,170,.25);
 }
 
 
-/* ================= COMING SOON ================= */
+/* =====================================================
+   COMING SOON
+===================================================== */
+
+.coming-soon-card:hover{
+
+    border-color:#f1d38b;
+}
+
+
+.coming-soon-card::after{
+
+    background:
+        var(--warning-soft);
+}
+
 
 .coming-soon-btn{
+
     white-space:nowrap;
 
     color:var(--warning);
 
-    background:var(--warning-soft);
+    background:
+        var(--warning-soft);
 
-    border:1px solid #fde68a;
+    border:
+        1px solid
+        #fde68a;
 
-    padding:11px 16px;
+    padding:
+        12px 16px;
 
     border-radius:11px;
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:900;
 
     cursor:default;
-}
 
-.coming-soon-card{
     position:relative;
+
+    z-index:3;
 }
 
-.coming-soon-card:hover{
-    border-color:#fcd34d;
-}
 
 .coming-badge{
+
     display:inline-flex;
 
     align-items:center;
@@ -384,13 +734,17 @@ main{
 
     margin-top:7px;
 
-    padding:4px 9px;
+    padding:
+        4px 9px;
 
     border-radius:20px;
 
-    background:var(--warning-soft);
+    background:
+        var(--warning-soft);
 
-    border:1px solid #fde68a;
+    border:
+        1px solid
+        #fde68a;
 
     color:var(--warning);
 
@@ -402,40 +756,57 @@ main{
 }
 
 
-/* ================= PYQ SECTION ================= */
+/* =====================================================
+   PYQ SECTION
+===================================================== */
 
 .pyq-section{
-    margin-top:70px;
+
+    margin-top:65px;
 }
 
+
 .pyq-grid{
+
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
     gap:20px;
 }
 
+
+/* =====================================================
+   PYQ CARD
+===================================================== */
+
 .pyq-card{
+
     background:var(--card);
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
-    border-radius:20px;
+    border-radius:21px;
 
     padding:25px;
 
-    box-shadow:
-        0 10px 30px rgba(15,23,42,.06);
+    box-shadow:var(--shadow);
 
-    transition:.3s ease;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 
     position:relative;
 
     overflow:hidden;
 }
 
+
 .pyq-card::before{
+
     content:"";
 
     position:absolute;
@@ -449,24 +820,50 @@ main{
     background:
         linear-gradient(
             90deg,
-            var(--primary),
-            var(--primary2)
+            var(--purple),
+            var(--blue)
         );
 }
 
-.pyq-card:hover{
-    transform:translateY(-5px);
 
-    border-color:#a5b4fc;
+.pyq-card::after{
 
-    box-shadow:
-        0 18px 40px rgba(79,70,229,.12);
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    background:
+        var(--soft-blue);
+
+    right:-85px;
+    bottom:-85px;
+
+    pointer-events:none;
 }
 
 
-/* ===== PYQ LOGO ===== */
+.pyq-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(15,23,42,.10);
+}
+
+
+/* =====================================================
+   PYQ LOGO
+===================================================== */
 
 .pyq-logo{
+
     width:68px;
     height:68px;
 
@@ -475,25 +872,53 @@ main{
     display:block;
 
     margin-bottom:15px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        #e4e6eb;
+
+    border-radius:15px;
+
+    padding:5px;
+
+    position:relative;
+
+    z-index:2;
 }
+
 
 .pyq-year{
+
     font-size:30px;
 
-    font-weight:900;
+    font-weight:950;
 
     color:var(--text);
+
+    position:relative;
+
+    z-index:2;
 }
+
 
 .pyq-title{
+
     font-size:14px;
 
-    font-weight:700;
+    font-weight:750;
 
     margin-top:3px;
+
+    position:relative;
+
+    z-index:2;
 }
 
+
 .pyq-subtitle{
+
     color:var(--muted);
 
     font-size:12px;
@@ -501,77 +926,121 @@ main{
     margin-top:4px;
 
     margin-bottom:20px;
+
+    position:relative;
+
+    z-index:2;
 }
 
+
+/* =====================================================
+   PYQ BUTTONS
+===================================================== */
+
 .pyq-buttons{
+
     display:flex;
 
     gap:10px;
+
+    position:relative;
+
+    z-index:3;
 }
 
+
 .pyq-btn{
+
     flex:1;
 
     text-decoration:none;
 
     text-align:center;
 
-    padding:11px 10px;
+    padding:
+        11px 10px;
 
     border-radius:11px;
 
     font-size:11px;
 
-    font-weight:800;
+    font-weight:850;
 
-    transition:.2s;
+    transition:.25s;
 }
+
 
 .pyq-standard{
+
     color:white;
 
     background:
         linear-gradient(
             135deg,
-            var(--primary),
-            var(--primary2)
+            var(--purple),
+            var(--blue)
         );
 }
+
 
 .pyq-basic{
-    color:var(--primary);
 
-    background:var(--soft);
+    color:var(--purple);
 
-    border:1px solid #c7d2fe;
+    background:
+        var(--soft-purple);
+
+    border:
+        1px solid
+        #ddd1ed;
 }
 
+
 .pyq-combined{
+
     color:white;
 
     background:
         linear-gradient(
             135deg,
-            #4f46e5,
-            #7c3aed
+            var(--purple),
+            var(--blue)
         );
 }
 
+
 .pyq-btn:hover{
-    transform:translateY(-2px);
+
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 7px 18px rgba(79,70,229,.18);
+        0 8px 20px
+        rgba(86,92,170,.20);
 }
 
+
+/* =====================================================
+   PYQ NOTE
+===================================================== */
+
 .pyq-note{
+
     margin-top:22px;
 
-    padding:18px 20px;
+    padding:
+        18px 20px;
 
-    border:1px dashed #c7d2fe;
+    border:
+        1px dashed
+        #d7cbe6;
 
-    background:#eef2ff;
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-purple),
+            var(--soft-blue)
+        );
 
     border-radius:16px;
 
@@ -581,188 +1050,1187 @@ main{
 
     font-size:13px;
 
-    line-height:1.6;
+    line-height:1.7;
 }
 
+
 .pyq-note strong{
+
     color:var(--text);
 }
 
 
-/* ================= INFO ================= */
+/* =====================================================
+   INFO BOX
+===================================================== */
 
 .info-box{
+
     margin-top:45px;
 
     background:
         linear-gradient(
             135deg,
-            #eef2ff,
-            #f5f3ff
+            var(--soft-purple),
+            var(--soft-blue)
         );
 
-    border:1px solid #c7d2fe;
+    border:
+        1px solid
+        #e0d8ea;
 
     border-radius:20px;
 
-    padding:25px;
+    padding:27px;
 
     text-align:center;
 }
 
+
 .info-box h3{
+
     margin-bottom:8px;
 
     font-size:19px;
+
+    color:var(--text);
 }
+
 
 .info-box p{
+
     color:var(--muted);
 
-    line-height:1.6;
+    line-height:1.7;
 
     font-size:14px;
+
+    max-width:750px;
+
+    margin:auto;
 }
 
 
-/* ================= BACK BUTTON ================= */
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
 .back-section{
+
     text-align:center;
 
     margin-top:35px;
 }
 
+
 .back-btn{
-    display:inline-block;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
 
     text-decoration:none;
 
-    color:var(--primary);
+    color:var(--purple);
 
-    border:1px solid #c7d2fe;
+    border:
+        1px solid
+        #ddd1ed;
 
-    background:white;
+    background:#fff;
 
-    padding:12px 20px;
+    padding:
+        12px 20px;
 
     border-radius:12px;
 
-    font-weight:700;
+    font-weight:800;
+
+    font-size:13px;
+
+    transition:.25s;
+}
+
+
+.back-btn:hover{
+
+    background:
+        var(--soft-purple);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   FEEDBACK FLOATING BUTTON
+===================================================== */
+
+.feedback-floating{
+
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    z-index:999;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    padding:
+        15px 23px;
+
+    border-radius:35px;
 
     font-size:14px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 12px 32px
+        rgba(86,92,170,.30);
+
+    transition:.25s ease;
+}
+
+
+.feedback-floating:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.02);
+
+    box-shadow:
+        0 17px 38px
+        rgba(86,92,170,.38);
+}
+
+
+/* =====================================================
+   FEEDBACK OVERLAY
+===================================================== */
+
+.feedback-overlay{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(15,23,42,.55);
+
+    backdrop-filter:
+        blur(7px);
+
+    z-index:1000;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+
+.feedback-overlay.active{
+
+    display:flex;
+}
+
+
+/* =====================================================
+   FEEDBACK BOX
+===================================================== */
+
+.feedback-box{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:450px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    padding:32px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(15,23,42,.28);
+
+    animation:
+        feedbackPop .25s ease;
+}
+
+
+@keyframes feedbackPop{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.94)
+            translateY(10px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   FEEDBACK CLOSE
+===================================================== */
+
+.feedback-close{
+
+    position:absolute;
+
+    right:16px;
+    top:14px;
+
+    width:35px;
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f1f5f9;
+
+    font-size:24px;
+
+    color:#64748b;
+
+    cursor:pointer;
 
     transition:.2s;
 }
 
-.back-btn:hover{
-    background:var(--soft);
 
-    transform:translateY(-2px);
+.feedback-close:hover{
+
+    background:#e2e8f0;
+
+    transform:
+        rotate(5deg);
 }
 
 
-/* ================= FOOTER ================= */
+/* =====================================================
+   FEEDBACK ICON
+===================================================== */
 
-footer{
-    background:#0f172a;
+.feedback-icon{
 
-    color:#94a3b8;
+    width:62px;
+    height:62px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius:19px;
+
+    background:
+        var(--soft-purple);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:29px;
+}
+
+
+.feedback-box h2{
 
     text-align:center;
 
-    padding:30px 20px;
+    font-size:27px;
+
+    color:var(--text);
 }
 
-footer strong{
-    color:white;
+
+.feedback-subtitle{
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin:
+        7px 0 25px;
 }
+
+
+/* =====================================================
+   FEEDBACK FORM
+===================================================== */
+
+.feedback-box label{
+
+    display:block;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    margin:
+        17px 0 7px;
+
+    color:#334155;
+}
+
+
+.feedback-box input[type="text"],
+.feedback-box input[type="email"],
+.feedback-box textarea{
+
+    width:100%;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:12px;
+
+    padding:
+        13px 14px;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    color:var(--text);
+
+    background:#fff;
+
+    outline:none;
+
+    transition:.2s;
+}
+
+
+.feedback-box input[type="text"]:focus,
+.feedback-box input[type="email"]:focus,
+.feedback-box textarea:focus{
+
+    border-color:#8b72b5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(109,63,169,.10);
+}
+
+
+.feedback-box textarea{
+
+    min-height:115px;
+
+    resize:vertical;
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.stars{
+
+    display:flex;
+
+    flex-direction:row-reverse;
+
+    justify-content:center;
+
+    gap:5px;
+
+    margin:
+        6px 0 3px;
+}
+
+
+.stars input{
+
+    display:none;
+}
+
+
+.stars label{
+
+    font-size:34px !important;
+
+    color:#cbd5e1 !important;
+
+    cursor:pointer;
+
+    margin:0 !important;
+
+    transition:.15s;
+}
+
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label{
+
+    color:#f59e0b !important;
+}
+
+
+/* =====================================================
+   FEEDBACK SUBMIT
+===================================================== */
+
+.feedback-submit{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    margin-top:20px;
+
+    transition:.2s;
+}
+
+
+.feedback-submit:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(86,92,170,.25);
+}
+
+
+.feedback-submit:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.feedback-success{
+
+    display:none;
+
+    text-align:center;
+}
+
+
+.feedback-success.active{
+
+    display:block;
+}
+
+
+.success-check{
+
+    width:68px;
+    height:68px;
+
+    margin:
+        10px auto 15px;
+
+    border-radius:50%;
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:33px;
+
+    font-weight:900;
+}
+
+
+.feedback-success h3{
+
+    font-size:25px;
+}
+
+
+.feedback-success p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    margin:
+        8px 0 20px;
+}
+
+
+.feedback-success button{
+
+    border:none;
+
+    background:
+        var(--soft-purple);
+
+    color:var(--purple);
+
+    padding:
+        10px 24px;
+
+    border-radius:10px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   PREMIUM FOOTER
+===================================================== */
+
+footer{
+
+    background:
+        linear-gradient(
+            180deg,
+            #faf9fc 0%,
+            #ffffff 100%
+        );
+
+    border-top:
+        1px solid
+        var(--border);
+
+    padding:
+        55px 25px
+        20px;
+
+    margin-top:10px;
+
+    color:var(--muted);
+}
+
+
+.footer-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1.2fr;
+
+    gap:55px;
+
+    padding-bottom:40px;
+}
+
+
+/* =====================================================
+   FOOTER BRAND
+===================================================== */
+
+.footer-brand{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+
+.footer-logo{
+
+    width:110px;
+    height:110px;
+
+    object-fit:contain;
+
+    margin-bottom:13px;
+
+    filter:
+        drop-shadow(
+            0 9px 18px
+            rgba(15,23,42,.10)
+        );
+
+    transition:.3s;
+}
+
+
+.footer-logo:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+}
+
+
+.footer-brand-title{
+
+    font-size:26px;
+
+    font-weight:950;
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    margin-bottom:8px;
+}
+
+
+.footer-brand p{
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:750;
+
+    margin-bottom:6px;
+}
+
+
+.footer-brand span{
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+
+.footer-column h4{
+
+    color:var(--text);
+
+    font-size:15px;
+
+    margin-bottom:16px;
+
+    position:relative;
+
+    padding-bottom:8px;
+}
+
+
+.footer-column h4::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:28px;
+    height:2px;
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+/* =====================================================
+   FOOTER LINKS
+===================================================== */
+
+.footer-column > a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-bottom:9px;
+
+    transition:.2s;
+}
+
+
+.footer-column > a:hover{
+
+    color:var(--purple);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =====================================================
+   CONNECT
+===================================================== */
+
+.connect-column p{
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    max-width:270px;
+
+    margin-bottom:16px;
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.social-links{
+
+    display:flex;
+
+    gap:9px;
+
+    flex-wrap:wrap;
+}
+
+
+.social{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:
+        9px 14px;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.25s;
+}
+
+
+.social:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.10);
+}
+
+
+.social.whatsapp{
+
+    background:#16a34a;
+}
+
+
+.social.instagram{
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #e1306c,
+            #f77737
+        );
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-top:20px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    color:#9ca3af;
+
+    font-size:11px;
+}
+
+
+.footer-bottom strong{
+
+    color:#555;
+}
+
 
 .heart{
-    color:#f43f5e;
+
+    color:#ef4444;
+
+    font-size:14px;
+
+    margin:
+        0 2px;
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media(max-width:900px){
 
-    .pyq-grid{
+    .chapter-grid{
+
         grid-template-columns:1fr;
+    }
+
+
+    .pyq-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .footer-inner{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:35px;
+    }
+
+
+    .footer-brand{
+
+        grid-column:
+            1 / -1;
     }
 
 }
 
-@media(max-width:750px){
 
-    .chapter-grid{
-        grid-template-columns:1fr;
-    }
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
 
     .hero{
-        padding:55px 15px 65px;
+
+        padding:
+            42px 15px
+            65px;
+    }
+
+
+    .hero-logo{
+
+        width:100px;
+        height:100px;
+    }
+
+
+    .hero h1{
+
+        letter-spacing:2px;
+    }
+
+
+    .pyq-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .footer-inner{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .footer-brand{
+
+        grid-column:auto;
+    }
+
+
+    .chapter{
+
+        align-items:flex-start;
+
+        padding:20px;
     }
 
 }
 
-@media(max-width:500px){
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:450px){
 
     nav{
+
         gap:10px;
     }
 
-    .brand{
+
+    .nav-logo{
+
+        width:46px;
+        height:46px;
+    }
+
+
+    .brand-text{
+
+        font-size:18px;
+    }
+
+
+    .nav-badge{
+
+        font-size:10px;
+
+        padding:
+            7px 12px;
+    }
+
+
+    .hero-logo{
+
+        width:95px;
+        height:95px;
+    }
+
+
+    .hero h1{
+
+        font-size:46px;
+    }
+
+
+    .hero h2{
+
         font-size:20px;
     }
 
-    .brand-logo{
-        width:36px;
-        height:36px;
+
+    .hero p{
+
+        font-size:14px;
     }
 
-    .nav-badge{
-        font-size:11px;
-
-        padding:6px 10px;
-    }
-
-    .nav-badge img{
-        width:28px;
-        height:28px;
-    }
-
-    .hero h1{
-        font-size:44px;
-    }
 
     .chapter{
-        padding:18px;
+
+        flex-direction:column;
+
+        gap:16px;
     }
+
 
     .chapter-left{
-        gap:12px;
+
+        width:100%;
     }
 
-    .chapter-icon{
-        width:48px;
-        height:48px;
-        min-width:48px;
-
-        font-size:21px;
-    }
-
-    .chapter h3{
-        font-size:15px;
-    }
 
     .notes-btn,
     .coming-soon-btn{
-        padding:10px 12px;
-        font-size:10px;
+
+        width:100%;
+
+        text-align:center;
+
+        padding:
+            12px;
     }
 
+
     .pyq-buttons{
+
         flex-direction:column;
+    }
+
+
+    .feedback-floating{
+
+        right:15px;
+
+        bottom:15px;
+
+        padding:
+            14px 20px;
+
+        font-size:13px;
+    }
+
+
+    .feedback-box{
+
+        padding:
+            27px 21px;
+
+        border-radius:21px;
+    }
+
+
+    .feedback-box h2{
+
+        font-size:23px;
+    }
+
+
+    .social{
+
+        width:100%;
+
+        max-width:220px;
+    }
+
+
+    .footer-logo{
+
+        width:95px;
+        height:95px;
+    }
+
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        line-height:1.7;
     }
 
 }
@@ -771,61 +2239,89 @@ footer strong{
 
 </head>
 
+
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
 <nav>
 
-<div class="brand">
 
-<img
-src="THE.png"
-alt="THE GOAL Logo"
-class="brand-logo">
+<a
+    href="index.html"
+    class="nav-brand"
+>
 
-<span>THE GOAL</span>
+    <img
+        src="goal.png"
+        alt="THE GOAL Logo"
+        class="nav-logo"
+    >
 
-</div>
+    <div class="brand-text">
+        THE <span>GOAL</span>
+    </div>
+
+</a>
 
 
 <div class="nav-badge">
-
-<img
-src="cbse-logo.jpeg"
-alt="CBSE Logo">
-
-<span>
-CBSE CLASS 10
-</span>
-
+    CBSE CLASS 10 • MATHEMATICS
 </div>
+
 
 </nav>
 
 
 <div class="hero">
 
-<div class="hero-label">
-🧮 CBSE CLASS 10 • MATHEMATICS
+
+<div class="hero-logo-wrap">
+
+    <img
+        src="goal.png"
+        alt="THE GOAL"
+        class="hero-logo"
+    >
+
 </div>
 
+
+<div class="hero-label">
+
+    🧮 CBSE CLASS 10 • MATHEMATICS
+
+</div>
+
+
 <h1>
-<span>MATHEMATICS</span>
+
+    <span>MATHEMATICS</span>
+
 </h1>
 
+
 <h2>
-Learn • Practice • Improve • Achieve
+
+    Learn • Practice • Improve • Achieve
+
 </h2>
 
+
 <p>
-Chapter-wise formula notes and study material for CBSE
-Class 10 Mathematics. Prepare smarter with structured
-revision and easy access to important formulas.
+
+    Chapter-wise formula notes and study material for
+    CBSE Class 10 Mathematics. Prepare smarter with
+    structured revision, important formulas and
+    exam-focused resources.
+
 </p>
+
 
 </div>
 
@@ -833,23 +2329,29 @@ revision and easy access to important formulas.
 
 
 
-<!-- ================= MAIN ================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main>
 
 
+<!-- =====================================================
+     CHAPTER SECTION
+===================================================== -->
+
 <div class="section-title">
 
-<h2>
-📚 Class 10 Mathematics Chapters
-</h2>
+    <h2>
+        📚 Class 10 Mathematics Chapters
+    </h2>
 
-<p>
-Select a chapter to view its formula notes.
-</p>
+    <p>
+        Select a chapter to explore formula notes and
+        exam-focused study material.
+    </p>
 
 </div>
-
 
 
 <section class="chapter-grid">
@@ -862,17 +2364,17 @@ Select a chapter to view its formula notes.
 <div class="chapter-left">
 
 <div class="chapter-icon">
-🔢
+    🔢
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 01
+    CHAPTER 01
 </div>
 
 <h3>
-Real Numbers
+    Real Numbers
 </h3>
 
 </div>
@@ -880,11 +2382,10 @@ Real Numbers
 </div>
 
 <a
-class="notes-btn"
-href="real-numbers.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="real-numbers.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -898,17 +2399,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-📐
+    📐
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 02
+    CHAPTER 02
 </div>
 
 <h3>
-Polynomials
+    Polynomials
 </h3>
 
 </div>
@@ -916,11 +2417,10 @@ Polynomials
 </div>
 
 <a
-class="notes-btn"
-href="polynomials.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="polynomials.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -934,17 +2434,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-📊
+    📊
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 03
+    CHAPTER 03
 </div>
 
 <h3>
-Pair of Linear Equations in Two Variables
+    Pair of Linear Equations in Two Variables
 </h3>
 
 </div>
@@ -952,11 +2452,10 @@ Pair of Linear Equations in Two Variables
 </div>
 
 <a
-class="notes-btn"
-href="linear-equations.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="linear-equations.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -970,17 +2469,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-📈
+    📈
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 04
+    CHAPTER 04
 </div>
 
 <h3>
-Quadratic Equations
+    Quadratic Equations
 </h3>
 
 </div>
@@ -988,11 +2487,10 @@ Quadratic Equations
 </div>
 
 <a
-class="notes-btn"
-href="quadratic-equations.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="quadratic-equations.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1006,17 +2504,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-📏
+    📏
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 05
+    CHAPTER 05
 </div>
 
 <h3>
-Arithmetic Progressions
+    Arithmetic Progressions
 </h3>
 
 </div>
@@ -1024,11 +2522,10 @@ Arithmetic Progressions
 </div>
 
 <a
-class="notes-btn"
-href="ap.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="ap.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1042,17 +2539,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-🔺
+    🔺
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 06
+    CHAPTER 06
 </div>
 
 <h3>
-Triangles
+    Triangles
 </h3>
 
 </div>
@@ -1060,11 +2557,10 @@ Triangles
 </div>
 
 <a
-class="notes-btn"
-href="triangles.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="triangles.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1078,17 +2574,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-⭕
+    ⭕
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 07
+    CHAPTER 07
 </div>
 
 <h3>
-Coordinate Geometry
+    Coordinate Geometry
 </h3>
 
 </div>
@@ -1096,11 +2592,10 @@ Coordinate Geometry
 </div>
 
 <a
-class="notes-btn"
-href="coordinate.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="coordinate.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1114,17 +2609,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-📐
+    📐
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 08
+    CHAPTER 08
 </div>
 
 <h3>
-Introduction to Trigonometry
+    Introduction to Trigonometry
 </h3>
 
 </div>
@@ -1132,11 +2627,10 @@ Introduction to Trigonometry
 </div>
 
 <a
-class="notes-btn"
-href="trigonometry.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="trigonometry.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1150,17 +2644,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-🌐
+    🌐
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 09
+    CHAPTER 09
 </div>
 
 <h3>
-Some Applications of Trigonometry
+    Some Applications of Trigonometry
 </h3>
 
 </div>
@@ -1168,39 +2662,38 @@ Some Applications of Trigonometry
 </div>
 
 <a
-class="notes-btn"
-href="application_of_trignometry.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="application_of_trignometry.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
 
 
 
-<!-- CHAPTER 10 : COMING SOON -->
+<!-- CHAPTER 10 -->
 
 <div class="chapter coming-soon-card">
 
 <div class="chapter-left">
 
 <div class="chapter-icon">
-⭕
+    ⭕
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 10
+    CHAPTER 10
 </div>
 
 <h3>
-Circles
+    Circles
 </h3>
 
 <div class="coming-badge">
-🚧 COMING SOON
+    🚧 COMING SOON
 </div>
 
 </div>
@@ -1208,7 +2701,7 @@ Circles
 </div>
 
 <div class="coming-soon-btn">
-COMING SOON
+    COMING SOON
 </div>
 
 </div>
@@ -1222,17 +2715,17 @@ COMING SOON
 <div class="chapter-left">
 
 <div class="chapter-icon">
-📦
+    📦
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 11
+    CHAPTER 11
 </div>
 
 <h3>
-Areas Related to Circles
+    Areas Related to Circles
 </h3>
 
 </div>
@@ -1240,11 +2733,10 @@ Areas Related to Circles
 </div>
 
 <a
-class="notes-btn"
-href="area_related_to_circle.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="area_related_to_circle.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1258,17 +2750,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-📐
+    📐
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 12
+    CHAPTER 12
 </div>
 
 <h3>
-Surface Areas and Volumes
+    Surface Areas and Volumes
 </h3>
 
 </div>
@@ -1276,11 +2768,10 @@ Surface Areas and Volumes
 </div>
 
 <a
-class="notes-btn"
-href="surface_area.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="surface_area.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1294,17 +2785,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-📉
+    📉
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 13
+    CHAPTER 13
 </div>
 
 <h3>
-Statistics
+    Statistics
 </h3>
 
 </div>
@@ -1312,11 +2803,10 @@ Statistics
 </div>
 
 <a
-class="notes-btn"
-href="statistics.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="statistics.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1330,17 +2820,17 @@ VIEW FORMULA NOTES →
 <div class="chapter-left">
 
 <div class="chapter-icon">
-🎲
+    🎲
 </div>
 
 <div class="chapter-info">
 
 <div class="chapter-number">
-CHAPTER 14
+    CHAPTER 14
 </div>
 
 <h3>
-Probability
+    Probability
 </h3>
 
 </div>
@@ -1348,11 +2838,10 @@ Probability
 </div>
 
 <a
-class="notes-btn"
-href="probability.html">
-
-VIEW FORMULA NOTES →
-
+    class="notes-btn"
+    href="probability.html"
+>
+    VIEW FORMULA NOTES →
 </a>
 
 </div>
@@ -1362,7 +2851,9 @@ VIEW FORMULA NOTES →
 
 
 
-<!-- ================= PYQ ================= -->
+<!-- =====================================================
+     PYQ SECTION
+===================================================== -->
 
 <section class="pyq-section">
 
@@ -1370,11 +2861,12 @@ VIEW FORMULA NOTES →
 <div class="section-title">
 
 <h2>
-📝 CBSE Mathematics Previous Year Papers
+    📝 CBSE Mathematics Previous Year Papers
 </h2>
 
 <p>
-Year-wise official CBSE question papers for Class 10 Mathematics.
+    Practice official CBSE question papers for
+    Class 10 Mathematics.
 </p>
 
 </div>
@@ -1384,37 +2876,39 @@ Year-wise official CBSE question papers for Class 10 Mathematics.
 <div class="pyq-grid">
 
 
-<!-- 2026 -->
+<!-- =====================================================
+     2026
+===================================================== -->
 
 <div class="pyq-card">
 
 <img
-src="cbse-logo.jpeg"
-alt="CBSE Logo"
-class="pyq-logo">
+    src="cbse-logo.jpeg"
+    alt="CBSE Logo"
+    class="pyq-logo"
+>
 
 <div class="pyq-year">
-2026
+    2026
 </div>
 
 <div class="pyq-title">
-Mathematics Board Examination
+    Mathematics Board Examination
 </div>
 
 <div class="pyq-subtitle">
-Basic + Standard Question Papers
+    Basic + Standard Question Papers
 </div>
 
 <div class="pyq-buttons">
 
 <a
-href="https://www.cbse.gov.in/cbsenew/question-paper/2026/X/Mathematics_Standard.zip"
-target="_blank"
-rel="noopener noreferrer"
-class="pyq-btn pyq-combined">
-
-BASIC + STANDARD →
-
+    href="https://www.cbse.gov.in/cbsenew/question-paper/2026/X/Mathematics_Standard.zip"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="pyq-btn pyq-combined"
+>
+    BASIC + STANDARD →
 </a>
 
 </div>
@@ -1423,47 +2917,48 @@ BASIC + STANDARD →
 
 
 
-<!-- 2025 -->
+<!-- =====================================================
+     2025
+===================================================== -->
 
 <div class="pyq-card">
 
 <img
-src="cbse-logo.jpeg"
-alt="CBSE Logo"
-class="pyq-logo">
+    src="cbse-logo.jpeg"
+    alt="CBSE Logo"
+    class="pyq-logo"
+>
 
 <div class="pyq-year">
-2025
+    2025
 </div>
 
 <div class="pyq-title">
-Mathematics Board Examination
+    Mathematics Board Examination
 </div>
 
 <div class="pyq-subtitle">
-Basic & Standard Question Papers
+    Basic & Standard Question Papers
 </div>
 
 <div class="pyq-buttons">
 
 <a
-href="https://www.cbse.gov.in/cbsenew/question-paper/2025/X/041_Mathematics_Standard.zip"
-target="_blank"
-rel="noopener noreferrer"
-class="pyq-btn pyq-standard">
-
-STANDARD →
-
+    href="https://www.cbse.gov.in/cbsenew/question-paper/2025/X/041_Mathematics_Standard.zip"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="pyq-btn pyq-standard"
+>
+    STANDARD →
 </a>
 
 <a
-href="https://www.cbse.gov.in/cbsenew/question-paper/2025/X/241_Mathematics_Basic.zip"
-target="_blank"
-rel="noopener noreferrer"
-class="pyq-btn pyq-basic">
-
-BASIC →
-
+    href="https://www.cbse.gov.in/cbsenew/question-paper/2025/X/241_Mathematics_Basic.zip"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="pyq-btn pyq-basic"
+>
+    BASIC →
 </a>
 
 </div>
@@ -1472,47 +2967,48 @@ BASIC →
 
 
 
-<!-- 2024 -->
+<!-- =====================================================
+     2024
+===================================================== -->
 
 <div class="pyq-card">
 
 <img
-src="cbse-logo.jpeg"
-alt="CBSE Logo"
-class="pyq-logo">
+    src="cbse-logo.jpeg"
+    alt="CBSE Logo"
+    class="pyq-logo"
+>
 
 <div class="pyq-year">
-2024
+    2024
 </div>
 
 <div class="pyq-title">
-Mathematics Board Examination
+    Mathematics Board Examination
 </div>
 
 <div class="pyq-subtitle">
-Basic & Standard Question Papers
+    Basic & Standard Question Papers
 </div>
 
 <div class="pyq-buttons">
 
 <a
-href="https://www.cbse.gov.in/cbsenew/question-paper/2024/X/MATHEMATICS_STANDARD.zip"
-target="_blank"
-rel="noopener noreferrer"
-class="pyq-btn pyq-standard">
-
-STANDARD →
-
+    href="https://www.cbse.gov.in/cbsenew/question-paper/2024/X/MATHEMATICS_STANDARD.zip"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="pyq-btn pyq-standard"
+>
+    STANDARD →
 </a>
 
 <a
-href="https://www.cbse.gov.in/cbsenew/question-paper/2024/X/MATHEMATICS_BASIC.zip"
-target="_blank"
-rel="noopener noreferrer"
-class="pyq-btn pyq-basic">
-
-BASIC →
-
+    href="https://www.cbse.gov.in/cbsenew/question-paper/2024/X/MATHEMATICS_BASIC.zip"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="pyq-btn pyq-basic"
+>
+    BASIC →
 </a>
 
 </div>
@@ -1527,7 +3023,7 @@ BASIC →
 <div class="pyq-note">
 
 <strong>
-🏛️ Official CBSE Question Papers
+    🏛️ Official CBSE Question Papers
 </strong>
 
 <br>
@@ -1537,7 +3033,8 @@ question-paper files provided above.
 
 <br>
 
-Solve them like a real board examination for better preparation.
+Solve them like a real board examination for
+better preparation.
 
 </div>
 
@@ -1545,34 +3042,37 @@ Solve them like a real board examination for better preparation.
 
 
 
-<!-- ================= INFO ================= -->
+<!-- =====================================================
+     INFO BOX
+===================================================== -->
 
 <div class="info-box">
 
 <h3>
-📖 Smart Revision with THE GOAL
+    📖 Smart Revision with THE GOAL
 </h3>
 
 <p>
-Use the chapter-wise formula notes and previous year papers
-for concept building, revision and better CBSE Class 10
-Mathematics preparation.
+    Use the chapter-wise formula notes and previous
+    year papers for concept building, revision and
+    better CBSE Class 10 Mathematics preparation.
 </p>
 
 </div>
 
 
 
-<!-- ================= BACK BUTTON ================= -->
+<!-- =====================================================
+     BACK BUTTON
+===================================================== -->
 
 <div class="back-section">
 
 <a
-class="back-btn"
-href="index.html">
-
-← BACK TO HOME
-
+    class="back-btn"
+    href="index.html"
+>
+    ← BACK TO HOME
 </a>
 
 </div>
@@ -1582,23 +3082,555 @@ href="index.html">
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FEEDBACK BUTTON
+===================================================== -->
+
+<button
+    class="feedback-floating"
+    onclick="openFeedback()"
+>
+    💬 Give Feedback
+</button>
+
+
+
+<!-- =====================================================
+     FEEDBACK POPUP
+===================================================== -->
+
+<div
+    class="feedback-overlay"
+    id="feedbackOverlay"
+>
+
+<div class="feedback-box">
+
+
+<button
+    class="feedback-close"
+    onclick="closeFeedback()"
+    aria-label="Close feedback"
+>
+    ×
+</button>
+
+
+<div class="feedback-icon">
+    💬
+</div>
+
+
+<h2>
+    Tell Us What You Think
+</h2>
+
+
+<p class="feedback-subtitle">
+    Your feedback helps us make THE GOAL better.
+</p>
+
+
+<form id="feedbackForm">
+
+
+<label for="feedbackName">
+    Your Name
+</label>
+
+<input
+    id="feedbackName"
+    type="text"
+    name="name"
+    placeholder="Enter your name"
+    required
+    autocomplete="name"
+>
+
+
+<label for="feedbackEmail">
+    Email Address
+</label>
+
+<input
+    id="feedbackEmail"
+    type="email"
+    name="email"
+    placeholder="Enter your email"
+    required
+    autocomplete="email"
+>
+
+
+<label>
+    Your Rating
+</label>
+
+
+<div class="stars">
+
+
+<input
+    type="radio"
+    id="star5"
+    name="rating"
+    value="5"
+    required
+>
+
+<label for="star5">
+    ★
+</label>
+
+
+<input
+    type="radio"
+    id="star4"
+    name="rating"
+    value="4"
+>
+
+<label for="star4">
+    ★
+</label>
+
+
+<input
+    type="radio"
+    id="star3"
+    name="rating"
+    value="3"
+>
+
+<label for="star3">
+    ★
+</label>
+
+
+<input
+    type="radio"
+    id="star2"
+    name="rating"
+    value="2"
+>
+
+<label for="star2">
+    ★
+</label>
+
+
+<input
+    type="radio"
+    id="star1"
+    name="rating"
+    value="1"
+>
+
+<label for="star1">
+    ★
+</label>
+
+
+</div>
+
+
+<label for="feedbackMessage">
+    Tell Us
+</label>
+
+
+<textarea
+    id="feedbackMessage"
+    name="feedback"
+    placeholder="Tell us what you think..."
+    required
+></textarea>
+
+
+<button
+    type="submit"
+    class="feedback-submit"
+    id="feedbackSubmit"
+>
+    SEND FEEDBACK →
+</button>
+
+
+</form>
+
+
+<div
+    class="feedback-success"
+    id="feedbackSuccess"
+>
+
+<div class="success-check">
+    ✓
+</div>
+
+<h3>
+    Thank You! ❤️
+</h3>
+
+<p>
+    Your feedback has been received.
+    It helps us improve THE GOAL.
+</p>
+
+<button
+    onclick="closeFeedback()"
+>
+    CLOSE
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FEEDBACK JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const FEEDBACK_URL =
+"https://script.google.com/macros/s/AKfycbz_0DPiLtm6SIT8uyn7Sw7UO8cNyZezfszdyKtfDdLPe2OcVtFspQL9UOuS5yHD57qm/exec";
+
+
+/* =====================================================
+   OPEN FEEDBACK
+===================================================== */
+
+function openFeedback(){
+
+    document
+        .getElementById("feedbackOverlay")
+        .classList
+        .add("active");
+
+}
+
+
+/* =====================================================
+   CLOSE FEEDBACK
+===================================================== */
+
+function closeFeedback(){
+
+    document
+        .getElementById("feedbackOverlay")
+        .classList
+        .remove("active");
+
+}
+
+
+/* =====================================================
+   CLOSE WHEN CLICKING OUTSIDE
+===================================================== */
+
+document
+    .getElementById("feedbackOverlay")
+    .addEventListener(
+        "click",
+        function(e){
+
+            if(e.target === this){
+
+                closeFeedback();
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   ESCAPE KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            closeFeedback();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   FEEDBACK SUBMIT
+===================================================== */
+
+document
+    .getElementById("feedbackForm")
+    .addEventListener(
+        "submit",
+        async function(e){
+
+            e.preventDefault();
+
+            const form = this;
+
+            const submitButton =
+                document.getElementById(
+                    "feedbackSubmit"
+                );
+
+
+            submitButton.disabled = true;
+
+            submitButton.textContent =
+                "SENDING...";
+
+
+            const formData =
+                new FormData(form);
+
+
+            try{
+
+                await fetch(
+                    FEEDBACK_URL,
+                    {
+                        method:"POST",
+
+                        body:formData,
+
+                        mode:"no-cors"
+                    }
+                );
+
+
+                form.style.display =
+                    "none";
+
+
+                document
+                    .getElementById(
+                        "feedbackSuccess"
+                    )
+                    .classList
+                    .add("active");
+
+
+                form.reset();
+
+            }
+
+            catch(error){
+
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
+
+                submitButton.disabled =
+                    false;
+
+
+                submitButton.textContent =
+                    "SEND FEEDBACK →";
+
+            }
+
+        }
+    );
+
+</script>
+
+
+
+<!-- =====================================================
+     PREMIUM FOOTER
+===================================================== -->
 
 <footer>
 
-<strong>
-THE GOAL
-</strong>
 
-<br><br>
+<div class="footer-inner">
 
-CBSE Class 10 Learning Portal
 
-<br><br>
+<!-- =====================================================
+     BRAND
+===================================================== -->
 
-Made with Love
-<span class="heart">❤️</span>
-in India by Pushpender
+<div class="footer-brand">
+
+
+<img
+    src="goal.png"
+    alt="THE GOAL Logo"
+    class="footer-logo"
+>
+
+
+<div class="footer-brand-title">
+    THE GOAL
+</div>
+
+
+<p>
+    CBSE Class 10 Learning Portal
+</p>
+
+
+<span>
+    Learn • Practice • Improve • Achieve
+</span>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     QUICK LINKS
+===================================================== -->
+
+<div class="footer-column">
+
+
+<h4>
+    Quick Links
+</h4>
+
+
+<a href="index.html">
+    Home
+</a>
+
+
+<a href="math.html">
+    Mathematics
+</a>
+
+
+<a href="it.html">
+    Information Technology
+</a>
+
+
+<a href="pyq-hub.html">
+    Mathematics PYQ Hub
+</a>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     CONNECT
+===================================================== -->
+
+<div class="footer-column connect-column">
+
+
+<h4>
+    Let's Connect
+</h4>
+
+
+<p>
+    Have a suggestion, feedback
+    or simply want to connect?
+</p>
+
+
+<div class="social-links">
+
+
+<a
+    href="https://chat.whatsapp.com/KbZQL2FaE5S98ziUvz7pyq"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social whatsapp"
+>
+
+    💬
+
+    <span>
+        WhatsApp
+    </span>
+
+</a>
+
+
+<a
+    href="https://www.instagram.com/the_goal_10th/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social instagram"
+>
+
+    📸
+
+    <span>
+        Instagram
+    </span>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER BOTTOM
+===================================================== -->
+
+<div class="footer-bottom">
+
+
+<div>
+
+    © 2026
+
+    <strong>
+        THE GOAL
+    </strong>
+
+    · CBSE Class 10 Learning Portal
+
+</div>
+
+
+<div>
+
+    Made with
+
+    <span class="heart">
+        ♥
+    </span>
+
+    in India by
+
+    <strong>
+        Pushpender
+    </strong>
+
+</div>
+
+
+</div>
+
 
 </footer>
 
