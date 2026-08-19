@@ -202,6 +202,8 @@ main{
     margin:15px 0 22px;
 }
 
+/* ================= NORMAL SUBJECT BUTTON ================= */
+
 .subject-btn{
     display:inline-block;
     text-decoration:none;
@@ -217,6 +219,185 @@ main{
     transform:translateY(-2px);
     box-shadow:0 10px 25px rgba(79,70,229,.25);
 }
+
+
+/* ================================================= */
+/* ================= PYQ HUB BUTTON ================= */
+/* ================================================= */
+
+.pyq-hub-btn{
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:19px 22px;
+
+    text-decoration:none;
+
+    color:white;
+
+    border-radius:17px;
+
+    font-size:18px;
+
+    font-weight:950;
+
+    letter-spacing:.5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed,
+            #9333ea
+        );
+
+    box-shadow:
+        0 12px 30px rgba(79,70,229,.30);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* SHINE EFFECT */
+
+.pyq-hub-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.25),
+            transparent
+        );
+
+    transform:skewX(-20deg);
+
+    transition:.6s;
+}
+
+
+.pyq-hub-btn:hover::before{
+
+    left:130%;
+
+}
+
+
+.pyq-hub-btn:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.015);
+
+    box-shadow:
+        0 18px 40px rgba(79,70,229,.42);
+
+}
+
+
+/* PYQ ICON */
+
+.pyq-icon{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.16);
+
+    font-size:22px;
+
+    flex-shrink:0;
+}
+
+
+/* PYQ TEXT */
+
+.pyq-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    line-height:1.1;
+
+}
+
+
+.pyq-title{
+
+    font-size:19px;
+
+}
+
+
+.pyq-subtitle{
+
+    font-size:10px;
+
+    font-weight:700;
+
+    opacity:.8;
+
+    margin-top:4px;
+
+    letter-spacing:1px;
+
+}
+
+
+/* ARROW */
+
+.pyq-arrow{
+
+    margin-left:auto;
+
+    font-size:22px;
+
+    transition:.25s;
+
+}
+
+
+.pyq-hub-btn:hover .pyq-arrow{
+
+    transform:translateX(5px);
+
+}
+
 
 /* ================= FEATURES ================= */
 
@@ -845,6 +1026,16 @@ footer strong{
         max-width:220px;
     }
 
+    /* PYQ BUTTON MOBILE */
+
+    .pyq-hub-btn{
+        padding:17px 16px;
+    }
+
+    .pyq-title{
+        font-size:17px;
+    }
+
 }
 
 </style>
@@ -968,6 +1159,41 @@ Mathematics
 Chapter-wise practice, important questions and
 exam-focused preparation for CBSE Class 10 Mathematics.
 </p>
+
+
+<!-- ================= PYQ HUB ================= -->
+
+<a
+    class="pyq-hub-btn"
+    href="pyq-hub.html"
+    aria-label="Open CBSE Mathematics PYQ Hub"
+>
+
+    <span class="pyq-icon">
+        📚
+    </span>
+
+    <span class="pyq-text">
+
+        <span class="pyq-title">
+            PYQ HUB
+        </span>
+
+        <span class="pyq-subtitle">
+            2025 • 2026 • BASIC + STANDARD
+        </span>
+
+    </span>
+
+    <span class="pyq-arrow">
+        →
+    </span>
+
+</a>
+
+
+<br>
+
 
 <a class="subject-btn" href="math.html">
 START →
