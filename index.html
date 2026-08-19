@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link rel="icon" type="image/png" href="goal.png">
-  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Z05VL2LNB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-4Z05VL2LNB');
+<head>
+
+<link rel="icon" type="image/png" href="goal.png">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Z05VL2LNB"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+    dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'G-4Z05VL2LNB');
 </script>
 
-<!-- existing code continues -->
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>THE GOAL | CBSE Class 10 Learning Portal</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
+
+
+/* =====================================================
+   ROOT
+===================================================== */
 
 :root{
 
@@ -50,6 +69,11 @@
         0 12px 35px rgba(15,23,42,.07);
 }
 
+
+/* =====================================================
+   BODY
+===================================================== */
+
 body{
 
     font-family:
@@ -59,9 +83,11 @@ body{
         sans-serif;
 
     background:var(--bg);
+
     color:var(--text);
 
     min-height:100vh;
+
     overflow-x:hidden;
 }
 
@@ -79,8 +105,10 @@ header{
         var(--border);
 
     position:relative;
+
     overflow:hidden;
 }
+
 
 header::before{
 
@@ -101,6 +129,7 @@ header::before{
 
     pointer-events:none;
 }
+
 
 header::after{
 
@@ -130,6 +159,7 @@ header::after{
 nav{
 
     max-width:1200px;
+
     margin:auto;
 
     padding:
@@ -138,14 +168,14 @@ nav{
     display:flex;
 
     justify-content:space-between;
+
     align-items:center;
 
     position:relative;
-    z-index:2;
+
+    z-index:10;
 }
 
-
-/* THE LOGO */
 
 .nav-brand{
 
@@ -157,6 +187,7 @@ nav{
 
     text-decoration:none;
 }
+
 
 .nav-logo{
 
@@ -170,12 +201,14 @@ nav{
     transition:.25s;
 }
 
+
 .nav-brand:hover .nav-logo{
 
     transform:
         rotate(-3deg)
         scale(1.05);
 }
+
 
 .brand-text{
 
@@ -187,6 +220,7 @@ nav{
 
     color:var(--text);
 }
+
 
 .brand-text span{
 
@@ -205,8 +239,7 @@ nav{
 
     border-radius:30px;
 
-    background:
-        #faf8fd;
+    background:#faf8fd;
 
     color:var(--purple);
 
@@ -224,55 +257,37 @@ nav{
 
 .hero{
 
-    max-width:1050px;
+    max-width:1200px;
 
     margin:auto;
 
-    text-align:center;
-
     padding:
-        55px 20px
-        90px;
+        65px 20px
+        85px;
 
     position:relative;
+
     z-index:2;
-}
 
+    display:grid;
 
-/* HERO LOGO */
+    grid-template-columns:
+        1.05fr
+        .95fr;
 
-.hero-logo-wrap{
-
-    display:flex;
-
-    justify-content:center;
     align-items:center;
 
-    margin-bottom:22px;
+    gap:65px;
 }
 
-.hero-logo{
 
-    width:130px;
-    height:130px;
+/* =====================================================
+   HERO LEFT
+===================================================== */
 
-    object-fit:contain;
+.hero-content{
 
-    filter:
-        drop-shadow(
-            0 14px 24px
-            rgba(15,23,42,.12)
-        );
-
-    transition:
-        transform .3s ease;
-}
-
-.hero-logo:hover{
-
-    transform:
-        translateY(-5px)
-        scale(1.04);
+    text-align:left;
 }
 
 
@@ -281,6 +296,7 @@ nav{
     display:inline-flex;
 
     align-items:center;
+
     gap:7px;
 
     padding:
@@ -302,27 +318,29 @@ nav{
     color:#596174;
 
     font-size:12px;
+
     font-weight:800;
 
-    margin-bottom:24px;
+    margin-bottom:22px;
 }
 
 
 .hero h1{
 
     font-size:
-        clamp(50px,8vw,88px);
+        clamp(52px,7vw,82px);
 
     font-weight:950;
 
-    letter-spacing:5px;
+    letter-spacing:4px;
 
-    line-height:1;
+    line-height:.98;
 
-    margin-bottom:18px;
+    margin-bottom:20px;
 
     color:var(--text);
 }
+
 
 .hero h1 span{
 
@@ -334,6 +352,7 @@ nav{
         );
 
     -webkit-background-clip:text;
+
     background-clip:text;
 
     color:transparent;
@@ -343,11 +362,13 @@ nav{
 .hero h2{
 
     font-size:
-        clamp(20px,4vw,31px);
+        clamp(22px,3vw,31px);
 
-    font-weight:750;
+    font-weight:800;
 
-    margin-bottom:16px;
+    line-height:1.25;
+
+    margin-bottom:18px;
 
     color:#263044;
 }
@@ -355,15 +376,517 @@ nav{
 
 .hero p{
 
-    max-width:680px;
-
-    margin:auto;
+    max-width:600px;
 
     color:var(--muted);
 
     line-height:1.8;
 
     font-size:15px;
+
+    margin-bottom:28px;
+}
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+
+.hero-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:
+        14px 23px;
+
+    border-radius:13px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(86,92,170,.20);
+
+    transition:.25s;
+}
+
+
+.hero-primary:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(86,92,170,.30);
+}
+
+
+.hero-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        13px 21px;
+
+    border-radius:13px;
+
+    text-decoration:none;
+
+    color:var(--purple);
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        #ddd9e8;
+
+    font-size:13px;
+
+    font-weight:850;
+
+    transition:.25s;
+}
+
+
+.hero-secondary:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--soft-purple);
+}
+
+
+/* =====================================================
+   HERO TRUST
+===================================================== */
+
+.hero-trust{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:17px;
+
+    margin-top:27px;
+
+    flex-wrap:wrap;
+}
+
+
+.trust-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+
+.trust-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.hero-visual{
+
+    position:relative;
+
+    min-height:470px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:visible;
+}
+
+
+/* =====================================================
+   VISUAL GLOW
+===================================================== */
+
+.visual-glow{
+
+    position:absolute;
+
+    width:390px;
+
+    height:390px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(109,63,169,.08),
+            rgba(75,163,216,.10)
+        );
+
+    filter:blur(2px);
+}
+
+
+/* =====================================================
+   FLOATING CARDS
+===================================================== */
+
+.learning-card{
+
+    position:absolute;
+
+    width:285px;
+
+    min-height:145px;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:22px;
+
+    padding:21px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(15,23,42,.12);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:
+        box-shadow .3s,
+        transform .3s;
+
+    animation:
+        cardFloat 4.5s ease-in-out infinite;
+
+    will-change:transform;
+}
+
+
+.learning-card:hover{
+
+    animation-play-state:paused;
+
+    transform:
+        scale(1.04)
+        translateY(-6px);
+
+    box-shadow:
+        0 25px 55px
+        rgba(15,23,42,.17);
+}
+
+
+/* =====================================================
+   NOTES CARD
+===================================================== */
+
+.learning-card.notes{
+
+    top:18px;
+
+    left:10px;
+
+    animation-delay:0s;
+
+    z-index:3;
+}
+
+
+/* =====================================================
+   PRACTICE TEST CARD
+===================================================== */
+
+.learning-card.tests{
+
+    top:138px;
+
+    right:-8px;
+
+    animation-delay:1s;
+
+    z-index:10;
+}
+
+
+/* =====================================================
+   PYQ CARD
+===================================================== */
+
+.learning-card.pyqs{
+
+    bottom:8px;
+
+    left:35px;
+
+    animation-delay:2s;
+
+    z-index:5;
+}
+
+
+/* =====================================================
+   FLOAT ANIMATION
+===================================================== */
+
+@keyframes cardFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+    }
+
+    50%{
+
+        transform:
+            translateY(-12px);
+    }
+}
+
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.card-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+
+.card-icon{
+
+    width:49px;
+
+    height:49px;
+
+    border-radius:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+}
+
+
+.notes .card-icon{
+
+    background:
+        var(--soft-purple);
+}
+
+
+.tests .card-icon{
+
+    background:
+        var(--soft-blue);
+}
+
+
+.pyqs .card-icon{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-purple),
+            var(--soft-blue)
+        );
+}
+
+
+.card-tag{
+
+    padding:
+        6px 9px;
+
+    border-radius:20px;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:.5px;
+
+    color:var(--purple);
+
+    background:#faf8fd;
+
+    border:
+        1px solid
+        #e8e1f0;
+}
+
+
+/* =====================================================
+   CARD TEXT
+===================================================== */
+
+.learning-card h3{
+
+    font-size:19px;
+
+    margin-top:14px;
+
+    color:var(--text);
+}
+
+
+.learning-card p{
+
+    font-size:11px;
+
+    line-height:1.55;
+
+    color:var(--muted);
+
+    margin-top:5px;
+}
+
+
+/* =====================================================
+   CARD BOTTOM LINE
+===================================================== */
+
+.card-line{
+
+    width:100%;
+
+    height:5px;
+
+    border-radius:10px;
+
+    margin-top:14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    opacity:.8;
+}
+
+
+/* =====================================================
+   FLOATING LABEL
+===================================================== */
+
+.visual-label{
+
+    position:absolute;
+
+    bottom:20px;
+
+    right:0;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    padding:
+        10px 15px;
+
+    border-radius:13px;
+
+    box-shadow:
+        0 10px 28px
+        rgba(15,23,42,.08);
+
+    font-size:11px;
+
+    font-weight:850;
+
+    color:#475569;
+
+    z-index:15;
+}
+
+
+.visual-label span{
+
+    color:var(--purple);
 }
 
 
@@ -398,6 +921,7 @@ main{
         27px;
 }
 
+
 .section-title h2{
 
     font-size:30px;
@@ -406,6 +930,7 @@ main{
 
     color:var(--text);
 }
+
 
 .section-title p{
 
@@ -459,6 +984,7 @@ main{
     overflow:hidden;
 }
 
+
 .subject-card::after{
 
     content:"";
@@ -466,6 +992,7 @@ main{
     position:absolute;
 
     width:190px;
+
     height:190px;
 
     border-radius:50%;
@@ -474,6 +1001,7 @@ main{
         var(--soft-purple);
 
     right:-95px;
+
     top:-95px;
 
     pointer-events:none;
@@ -481,11 +1009,13 @@ main{
     transition:.3s;
 }
 
+
 .subject-card:nth-child(2)::after{
 
     background:
         var(--soft-blue);
 }
+
 
 .subject-card:hover{
 
@@ -496,6 +1026,7 @@ main{
         0 22px 50px
         rgba(15,23,42,.11);
 }
+
 
 .subject-card:hover::after{
 
@@ -514,17 +1045,21 @@ main{
     display:flex;
 
     align-items:center;
+
     justify-content:flex-start;
 
     margin-bottom:22px;
 
     position:relative;
+
     z-index:2;
 }
+
 
 .cbse-logo{
 
     width:125px;
+
     height:125px;
 
     object-fit:contain;
@@ -543,20 +1078,15 @@ main{
         0 9px 25px
         rgba(0,0,0,.08);
 
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+    transition:.25s;
 }
+
 
 .subject-card:hover .cbse-logo{
 
     transform:
         translateY(-4px)
         scale(1.04);
-
-    box-shadow:
-        0 13px 30px
-        rgba(0,0,0,.12);
 }
 
 
@@ -567,6 +1097,7 @@ main{
 .subject-icon{
 
     width:62px;
+
     height:62px;
 
     border-radius:18px;
@@ -574,6 +1105,7 @@ main{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     font-size:29px;
@@ -584,8 +1116,10 @@ main{
     margin-bottom:20px;
 
     position:relative;
+
     z-index:2;
 }
+
 
 .subject-card:nth-child(2)
 .subject-icon{
@@ -596,7 +1130,7 @@ main{
 
 
 /* =====================================================
-   SUBJECT CODE
+   CODE
 ===================================================== */
 
 .subject-card .code{
@@ -610,6 +1144,7 @@ main{
     letter-spacing:.5px;
 
     position:relative;
+
     z-index:2;
 }
 
@@ -626,8 +1161,10 @@ main{
         7px 0 9px;
 
     position:relative;
+
     z-index:2;
 }
+
 
 .subject-card p{
 
@@ -641,6 +1178,7 @@ main{
         15px 0 22px;
 
     position:relative;
+
     z-index:2;
 }
 
@@ -676,8 +1214,10 @@ main{
     transition:.25s;
 
     position:relative;
+
     z-index:3;
 }
+
 
 .subject-btn:hover{
 
@@ -701,6 +1241,7 @@ main{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:12px;
@@ -735,49 +1276,13 @@ main{
         0 12px 30px
         rgba(86,92,170,.25);
 
-    border:
-        1px solid
-        rgba(255,255,255,.2);
-
     overflow:hidden;
 
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+    transition:.25s;
 
     z-index:3;
 }
 
-.pyq-hub-btn::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-120%;
-
-    width:70%;
-    height:100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.25),
-            transparent
-        );
-
-    transform:
-        skewX(-20deg);
-
-    transition:.6s;
-}
-
-.pyq-hub-btn:hover::before{
-
-    left:130%;
-}
 
 .pyq-hub-btn:hover{
 
@@ -790,14 +1295,17 @@ main{
         rgba(86,92,170,.35);
 }
 
+
 .pyq-icon{
 
     width:40px;
+
     height:40px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     border-radius:12px;
@@ -810,6 +1318,7 @@ main{
     flex-shrink:0;
 }
 
+
 .pyq-text{
 
     display:flex;
@@ -821,10 +1330,12 @@ main{
     line-height:1.1;
 }
 
+
 .pyq-title{
 
     font-size:19px;
 }
+
 
 .pyq-subtitle{
 
@@ -839,6 +1350,7 @@ main{
     letter-spacing:1px;
 }
 
+
 .pyq-arrow{
 
     margin-left:auto;
@@ -847,6 +1359,7 @@ main{
 
     transition:.25s;
 }
+
 
 .pyq-hub-btn:hover .pyq-arrow{
 
@@ -871,6 +1384,7 @@ main{
     gap:15px;
 }
 
+
 .feature{
 
     background:#ffffff;
@@ -888,6 +1402,7 @@ main{
     transition:.25s;
 }
 
+
 .feature:hover{
 
     transform:
@@ -898,6 +1413,7 @@ main{
         rgba(15,23,42,.06);
 }
 
+
 .feature-icon{
 
     font-size:26px;
@@ -905,12 +1421,14 @@ main{
     margin-bottom:10px;
 }
 
+
 .feature h4{
 
     font-size:15px;
 
     margin-bottom:6px;
 }
+
 
 .feature p{
 
@@ -931,6 +1449,7 @@ main{
     position:fixed;
 
     right:22px;
+
     bottom:22px;
 
     z-index:999;
@@ -964,15 +1483,12 @@ main{
     transition:.25s ease;
 }
 
+
 .feedback-floating:hover{
 
     transform:
         translateY(-4px)
         scale(1.02);
-
-    box-shadow:
-        0 17px 38px
-        rgba(86,92,170,.38);
 }
 
 
@@ -997,10 +1513,12 @@ main{
     z-index:1000;
 
     align-items:center;
+
     justify-content:center;
 
     padding:20px;
 }
+
 
 .feedback-overlay.active{
 
@@ -1017,6 +1535,7 @@ main{
     position:relative;
 
     width:100%;
+
     max-width:450px;
 
     max-height:90vh;
@@ -1036,6 +1555,7 @@ main{
     animation:
         feedbackPop .25s ease;
 }
+
 
 @keyframes feedbackPop{
 
@@ -1068,9 +1588,11 @@ main{
     position:absolute;
 
     right:16px;
+
     top:14px;
 
     width:35px;
+
     height:35px;
 
     border:none;
@@ -1084,16 +1606,6 @@ main{
     color:#64748b;
 
     cursor:pointer;
-
-    transition:.2s;
-}
-
-.feedback-close:hover{
-
-    background:#e2e8f0;
-
-    transform:
-        rotate(5deg);
 }
 
 
@@ -1104,6 +1616,7 @@ main{
 .feedback-icon{
 
     width:62px;
+
     height:62px;
 
     margin:
@@ -1117,19 +1630,20 @@ main{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     font-size:29px;
 }
+
 
 .feedback-box h2{
 
     text-align:center;
 
     font-size:27px;
-
-    color:var(--text);
 }
+
 
 .feedback-subtitle{
 
@@ -1147,7 +1661,7 @@ main{
 
 
 /* =====================================================
-   FEEDBACK FORM
+   FORM
 ===================================================== */
 
 .feedback-box label{
@@ -1164,8 +1678,8 @@ main{
     color:#334155;
 }
 
-.feedback-box input[type="text"],
-.feedback-box input[type="email"],
+
+.feedback-box input,
 .feedback-box textarea{
 
     width:100%;
@@ -1188,20 +1702,8 @@ main{
     background:#fff;
 
     outline:none;
-
-    transition:.2s;
 }
 
-.feedback-box input[type="text"]:focus,
-.feedback-box input[type="email"]:focus,
-.feedback-box textarea:focus{
-
-    border-color:#8b72b5;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(109,63,169,.10);
-}
 
 .feedback-box textarea{
 
@@ -1224,15 +1726,14 @@ main{
     justify-content:center;
 
     gap:5px;
-
-    margin:
-        6px 0 3px;
 }
+
 
 .stars input{
 
     display:none;
 }
+
 
 .stars label{
 
@@ -1243,9 +1744,8 @@ main{
     cursor:pointer;
 
     margin:0 !important;
-
-    transition:.15s;
 }
+
 
 .stars label:hover,
 .stars label:hover ~ label,
@@ -1256,7 +1756,7 @@ main{
 
 
 /* =====================================================
-   FEEDBACK SUBMIT
+   SUBMIT
 ===================================================== */
 
 .feedback-submit{
@@ -1285,25 +1785,14 @@ main{
     font-weight:900;
 
     margin-top:20px;
-
-    transition:.2s;
 }
 
-.feedback-submit:hover{
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(86,92,170,.25);
-}
 
 .feedback-submit:disabled{
 
     opacity:.6;
+
     cursor:not-allowed;
-    transform:none;
 }
 
 
@@ -1318,14 +1807,17 @@ main{
     text-align:center;
 }
 
+
 .feedback-success.active{
 
     display:block;
 }
 
+
 .success-check{
 
     width:68px;
+
     height:68px;
 
     margin:
@@ -1340,16 +1832,20 @@ main{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     font-size:33px;
+
     font-weight:900;
 }
+
 
 .feedback-success h3{
 
     font-size:25px;
 }
+
 
 .feedback-success p{
 
@@ -1362,6 +1858,7 @@ main{
     margin:
         8px 0 20px;
 }
+
 
 .feedback-success button{
 
@@ -1384,7 +1881,7 @@ main{
 
 
 /* =====================================================
-   PREMIUM FOOTER
+   FOOTER
 ===================================================== */
 
 footer{
@@ -1410,10 +1907,6 @@ footer{
 }
 
 
-/* =====================================================
-   FOOTER INNER
-===================================================== */
-
 .footer-inner{
 
     max-width:1200px;
@@ -1433,10 +1926,6 @@ footer{
 }
 
 
-/* =====================================================
-   FOOTER BRAND
-===================================================== */
-
 .footer-brand{
 
     display:flex;
@@ -1447,31 +1936,15 @@ footer{
 }
 
 
-/* BIG GOAL LOGO */
-
 .footer-logo{
 
     width:110px;
+
     height:110px;
 
     object-fit:contain;
 
     margin-bottom:13px;
-
-    filter:
-        drop-shadow(
-            0 9px 18px
-            rgba(15,23,42,.10)
-        );
-
-    transition:.3s;
-}
-
-.footer-logo:hover{
-
-    transform:
-        translateY(-4px)
-        scale(1.04);
 }
 
 
@@ -1491,12 +1964,14 @@ footer{
         );
 
     -webkit-background-clip:text;
+
     background-clip:text;
 
     color:transparent;
 
     margin-bottom:8px;
 }
+
 
 .footer-brand p{
 
@@ -1509,6 +1984,7 @@ footer{
     margin-bottom:6px;
 }
 
+
 .footer-brand span{
 
     color:var(--muted);
@@ -1516,10 +1992,6 @@ footer{
     font-size:12px;
 }
 
-
-/* =====================================================
-   FOOTER COLUMNS
-===================================================== */
 
 .footer-column{
 
@@ -1529,6 +2001,7 @@ footer{
 
     align-items:flex-start;
 }
+
 
 .footer-column h4{
 
@@ -1543,6 +2016,7 @@ footer{
     padding-bottom:8px;
 }
 
+
 .footer-column h4::after{
 
     content:"";
@@ -1550,9 +2024,11 @@ footer{
     position:absolute;
 
     left:0;
+
     bottom:0;
 
     width:28px;
+
     height:2px;
 
     border-radius:5px;
@@ -1565,10 +2041,6 @@ footer{
         );
 }
 
-
-/* =====================================================
-   QUICK LINKS
-===================================================== */
 
 .footer-column > a{
 
@@ -1583,6 +2055,7 @@ footer{
     transition:.2s;
 }
 
+
 .footer-column > a:hover{
 
     color:var(--purple);
@@ -1591,10 +2064,6 @@ footer{
         translateX(3px);
 }
 
-
-/* =====================================================
-   CONNECT
-===================================================== */
 
 .connect-column p{
 
@@ -1608,10 +2077,6 @@ footer{
 }
 
 
-/* =====================================================
-   SOCIAL
-===================================================== */
-
 .social-links{
 
     display:flex;
@@ -1621,11 +2086,13 @@ footer{
     flex-wrap:wrap;
 }
 
+
 .social{
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:7px;
@@ -1646,20 +2113,19 @@ footer{
     transition:.25s;
 }
 
+
 .social:hover{
 
     transform:
         translateY(-3px);
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,.10);
 }
+
 
 .social.whatsapp{
 
     background:#16a34a;
 }
+
 
 .social.instagram{
 
@@ -1704,10 +2170,12 @@ footer{
     font-size:11px;
 }
 
+
 .footer-bottom strong{
 
     color:#555;
 }
+
 
 .heart{
 
@@ -1726,11 +2194,62 @@ footer{
 
 @media(max-width:900px){
 
+    .hero{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        padding-top:45px;
+    }
+
+
+    .hero-content{
+
+        text-align:center;
+    }
+
+
+    .hero p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+    }
+
+
+    .hero-actions{
+
+        justify-content:center;
+    }
+
+
+    .hero-trust{
+
+        justify-content:center;
+    }
+
+
+    .hero-visual{
+
+        min-height:470px;
+
+        max-width:520px;
+
+        width:100%;
+
+        margin:auto;
+
+        overflow:visible;
+    }
+
+
     .features{
 
         grid-template-columns:
             repeat(2,1fr);
     }
+
 
     .footer-inner{
 
@@ -1740,11 +2259,13 @@ footer{
         gap:35px;
     }
 
+
     .footer-brand{
 
         grid-column:
             1 / -1;
     }
+
 }
 
 
@@ -1759,33 +2280,98 @@ footer{
         grid-template-columns:1fr;
     }
 
+
     .hero{
 
         padding:
-            45px 15px
-            70px;
+            42px 15px
+            60px;
     }
 
-    .hero-logo{
-
-        width:110px;
-        height:110px;
-    }
 
     .hero h1{
 
         letter-spacing:2px;
     }
 
+
+    .hero-visual{
+
+        min-height:430px;
+
+        max-width:520px;
+
+        width:100%;
+
+        margin:auto;
+
+        transform:none;
+
+        overflow:visible;
+    }
+
+
+    .learning-card{
+
+        width:250px;
+
+        min-height:135px;
+
+        padding:18px;
+    }
+
+
+    .learning-card.notes{
+
+        top:5px;
+
+        left:0;
+
+        z-index:3;
+    }
+
+
+    .learning-card.tests{
+
+        top:145px;
+
+        right:0;
+
+        z-index:10;
+    }
+
+
+    .learning-card.pyqs{
+
+        bottom:5px;
+
+        left:15px;
+
+        z-index:5;
+    }
+
+
+    .visual-label{
+
+        right:0;
+
+        bottom:0;
+
+        z-index:15;
+    }
+
+
     .footer-inner{
 
         grid-template-columns:1fr;
     }
 
+
     .footer-brand{
 
         grid-column:auto;
     }
+
 }
 
 
@@ -1800,16 +2386,20 @@ footer{
         gap:10px;
     }
 
+
     .nav-logo{
 
         width:46px;
+
         height:46px;
     }
+
 
     .brand-text{
 
         font-size:18px;
     }
+
 
     .nav-badge{
 
@@ -1819,35 +2409,112 @@ footer{
             7px 12px;
     }
 
-    .hero-logo{
 
-        width:100px;
-        height:100px;
+    .hero{
+
+        padding-top:35px;
     }
+
 
     .hero h1{
 
         font-size:48px;
     }
 
+
     .hero h2{
 
         font-size:20px;
     }
+
 
     .hero p{
 
         font-size:14px;
     }
 
+
+    .hero-actions{
+
+        flex-direction:column;
+
+        width:100%;
+    }
+
+
+    .hero-primary,
+    .hero-secondary{
+
+        width:100%;
+    }
+
+
+    .hero-visual{
+
+        min-height:410px;
+
+        transform:
+            scale(.82);
+
+        transform-origin:
+            center;
+
+        margin-top:0;
+
+        margin-bottom:-5px;
+
+        overflow:visible;
+    }
+
+
+    .learning-card{
+
+        width:250px;
+    }
+
+
+    .learning-card.notes{
+
+        left:-5px;
+
+        top:0;
+    }
+
+
+    .learning-card.tests{
+
+        right:-5px;
+
+        top:145px;
+    }
+
+
+    .learning-card.pyqs{
+
+        left:5px;
+
+        bottom:0;
+    }
+
+
+    .visual-label{
+
+        right:-5px;
+
+        bottom:-2px;
+    }
+
+
     .features{
 
         grid-template-columns:1fr;
     }
 
+
     .feedback-floating{
 
         right:15px;
+
         bottom:15px;
 
         padding:
@@ -1855,6 +2522,7 @@ footer{
 
         font-size:13px;
     }
+
 
     .feedback-box{
 
@@ -1864,16 +2532,20 @@ footer{
         border-radius:21px;
     }
 
+
     .feedback-box h2{
 
         font-size:23px;
     }
 
+
     .social{
 
         width:100%;
+
         max-width:220px;
     }
+
 
     .pyq-hub-btn{
 
@@ -1881,22 +2553,28 @@ footer{
             17px 16px;
     }
 
+
     .pyq-title{
 
         font-size:17px;
     }
 
+
     .cbse-logo{
 
         width:105px;
+
         height:105px;
     }
+
 
     .footer-logo{
 
         width:95px;
+
         height:95px;
     }
+
 
     .footer-bottom{
 
@@ -1906,6 +2584,7 @@ footer{
 
         line-height:1.7;
     }
+
 }
 
 </style>
@@ -1922,319 +2601,513 @@ footer{
 
 <header>
 
-    <nav>
 
-        <!-- GOAL LOGO AT FRONT -->
+<nav>
 
-        <a href="index.html" class="nav-brand">
+<a
+    href="index.html"
+    class="nav-brand"
+>
 
-            <img
-                src="goal.png"
-                alt="THE GOAL Logo"
-                class="nav-logo"
-            >
+<img
+    src="goal.png"
+    alt="THE GOAL Logo"
+    class="nav-logo"
+>
 
-            <div class="brand-text">
-                THE <span>GOAL</span>
-            </div>
+<div class="brand-text">
+THE <span>GOAL</span>
+</div>
 
-        </a>
-
-
-        <div class="nav-badge">
-            CBSE CLASS 10
-        </div>
-
-    </nav>
+</a>
 
 
-    <div class="hero">
+<div class="nav-badge">
+CBSE CLASS 10
+</div>
+
+</nav>
 
 
-        <!-- LARGE GOAL LOGO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-        <div class="hero-logo-wrap">
-
-            <img
-                src="goal.png"
-                alt="THE GOAL"
-                class="hero-logo"
-            >
-
-        </div>
+<section class="hero">
 
 
-        <div class="hero-label">
-            🎓 CBSE CLASS 10 • LEARNING PORTAL
-        </div>
+<!-- HERO LEFT -->
+
+<div class="hero-content">
 
 
-        <h1>
-            <span>THE GOAL</span>
-        </h1>
+<div class="hero-label">
+🎓 CBSE CLASS 10 • LEARNING PORTAL
+</div>
 
 
-        <h2>
-            Learn • Practice • Improve • Achieve
-        </h2>
+<h1>
+<span>THE GOAL</span>
+</h1>
 
 
-        <p>
-            A student-focused practice platform for CBSE Class 10.
-            Prepare smarter with exam-oriented MCQs, chapter-wise
-            practice and structured revision.
-        </p>
+<h2>
+Everything You Need to Prepare Smarter.
+</h2>
 
-    </div>
+
+<p>
+
+Notes to understand the chapter.
+Tests to check your preparation.
+PYQs to understand the real exam pattern.
+
+<br><br>
+
+<strong>
+Learn → Practice → Revise → Improve
+</strong>
+
+</p>
+
+
+<div class="hero-actions">
+
+
+<a
+    href="#subjects"
+    class="hero-primary"
+>
+START LEARNING →
+</a>
+
+
+<a
+    href="pyq-hub.html"
+    class="hero-secondary"
+>
+📚 EXPLORE PYQs
+</a>
+
+
+</div>
+
+
+<div class="hero-trust">
+
+
+<div class="trust-item">
+
+<span class="trust-dot"></span>
+
+Chapter-wise Preparation
+
+</div>
+
+
+<div class="trust-item">
+
+<span class="trust-dot"></span>
+
+Exam-Oriented Practice
+
+</div>
+
+
+<div class="trust-item">
+
+<span class="trust-dot"></span>
+
+CBSE Class 10
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     RIGHT ANIMATED VISUAL
+===================================================== -->
+
+<div class="hero-visual">
+
+
+<div class="visual-glow"></div>
+
+
+<!-- NOTES -->
+
+<div class="learning-card notes">
+
+
+<div class="card-top">
+
+<div class="card-icon">
+📖
+</div>
+
+<div class="card-tag">
+LEARN
+</div>
+
+</div>
+
+
+<div>
+
+<h3>
+Chapter-wise Notes
+</h3>
+
+<p>
+Understand important concepts in a simple and exam-focused way.
+</p>
+
+</div>
+
+
+<div class="card-line"></div>
+
+</div>
+
+
+<!-- PRACTICE TESTS -->
+
+<div class="learning-card tests">
+
+
+<div class="card-top">
+
+<div class="card-icon">
+📝
+</div>
+
+<div class="card-tag">
+PRACTICE
+</div>
+
+</div>
+
+
+<div>
+
+<h3>
+Practice Tests
+</h3>
+
+<p>
+Test yourself with focused questions and check your preparation.
+</p>
+
+</div>
+
+
+<div class="card-line"></div>
+
+</div>
+
+
+<!-- PYQs -->
+
+<div class="learning-card pyqs">
+
+
+<div class="card-top">
+
+<div class="card-icon">
+📚
+</div>
+
+<div class="card-tag">
+EXAM
+</div>
+
+</div>
+
+
+<div>
+
+<h3>
+PYQ Bank
+</h3>
+
+<p>
+Practice previous year questions and understand the real CBSE pattern.
+</p>
+
+</div>
+
+
+<div class="card-line"></div>
+
+</div>
+
+
+<div class="visual-label">
+
+One Platform.
+<span>One Goal.</span>
+
+</div>
+
+
+</div>
+
+</section>
 
 </header>
-
 
 
 <!-- =====================================================
      MAIN
 ===================================================== -->
 
-<main>
+<main id="subjects">
 
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            Choose Your Subject
-        </h2>
+<h2>
+Choose Your Subject
+</h2>
 
-        <p>
-            Select a subject to begin your preparation.
-        </p>
 
-    </div>
+<p>
+Select a subject and start your preparation.
+</p>
 
+</div>
 
 
-    <section class="subjects">
+<section class="subjects">
 
 
-        <!-- =================================================
-             INFORMATION TECHNOLOGY
-        ================================================= -->
+<!-- =====================================================
+     INFORMATION TECHNOLOGY
+===================================================== -->
 
-        <div class="subject-card">
+<div class="subject-card">
 
 
-            <div class="cbse-logo-wrap">
+<div class="cbse-logo-wrap">
 
-                <img
-                    src="cbse-logo.jpeg"
-                    alt="CBSE Logo"
-                    class="cbse-logo"
-                >
+<img
+    src="cbse-logo.jpeg"
+    alt="CBSE Logo"
+    class="cbse-logo"
+>
 
-            </div>
+</div>
 
 
-            <div class="subject-icon">
-                💻
-            </div>
+<div class="subject-icon">
+💻
+</div>
 
 
-            <div class="code">
-                SUBJECT CODE • 402
-            </div>
+<div class="code">
+SUBJECT CODE • 402
+</div>
 
 
-            <h3>
-                Information Technology
-            </h3>
+<h3>
+Information Technology
+</h3>
 
 
-            <p>
-                CBSE Class 10 Information Technology (402).
-                Practice Employability Skills and Subject Specific
-                Skills with exam-oriented tests designed for effective revision.
-            </p>
+<p>
 
+CBSE Class 10 Information Technology (402).
 
-            <a
-                class="subject-btn"
-                href="it.html"
-            >
-                Explore IT (402) →
-            </a>
+Practice Employability Skills and Subject Specific
+Skills with chapter-wise notes and exam-oriented tests
+designed for effective revision.
 
+</p>
 
-        </div>
 
+<a
+    class="subject-btn"
+    href="it.html"
+>
+Explore IT (402) →
+</a>
 
 
-        <!-- =================================================
-             MATHEMATICS
-        ================================================= -->
+</div>
 
-        <div class="subject-card">
 
+<!-- =====================================================
+     MATHEMATICS
+===================================================== -->
 
-            <div class="cbse-logo-wrap">
+<div class="subject-card">
 
-                <img
-                    src="cbse-logo.jpeg"
-                    alt="CBSE Logo"
-                    class="cbse-logo"
-                >
 
-            </div>
+<div class="cbse-logo-wrap">
 
+<img
+    src="cbse-logo.jpeg"
+    alt="CBSE Logo"
+    class="cbse-logo"
+>
 
-            <div class="subject-icon">
-                🧮
-            </div>
+</div>
 
 
-            <div class="code">
-                CBSE CLASS 10
-            </div>
+<div class="subject-icon">
+🧮
+</div>
 
 
-            <h3>
-                Mathematics
-            </h3>
+<div class="code">
+CBSE CLASS 10
+</div>
 
 
-            <p>
-                Chapter-wise practice, important questions and
-                exam-focused preparation for CBSE Class 10 Mathematics.
-            </p>
+<h3>
+Mathematics
+</h3>
 
 
-            <a
-                class="pyq-hub-btn"
-                href="pyq-hub.html"
-                aria-label="Open CBSE Mathematics PYQ Hub"
-            >
+<p>
 
-                <span class="pyq-icon">
-                    📚
-                </span>
+Chapter-wise practice, important questions and
+exam-focused preparation for CBSE Class 10 Mathematics.
 
+</p>
 
-                <span class="pyq-text">
 
-                    <span class="pyq-title">
-                        PYQ HUB
-                    </span>
+<a
+    class="pyq-hub-btn"
+    href="pyq-hub.html"
+    aria-label="Open CBSE Mathematics PYQ Hub"
+>
 
-                    <span class="pyq-subtitle">
-                        2025 • 2026 • BASIC + STANDARD
-                    </span>
 
-                </span>
+<span class="pyq-icon">
+📚
+</span>
 
 
-                <span class="pyq-arrow">
-                    →
-                </span>
+<span class="pyq-text">
 
-            </a>
+<span class="pyq-title">
+PYQ HUB
+</span>
 
+<span class="pyq-subtitle">
+2025 • 2026 • BASIC + STANDARD
+</span>
 
-            <br>
+</span>
 
 
-            <a
-                class="subject-btn"
-                href="math.html"
-            >
-                START →
-            </a>
+<span class="pyq-arrow">
+→
+</span>
 
+</a>
 
-        </div>
 
+<br>
 
-    </section>
 
+<a
+    class="subject-btn"
+    href="math.html"
+>
+START →
+</a>
 
 
-    <!-- =====================================================
-         FEATURES
-    ===================================================== -->
+</div>
 
-    <section class="features">
+</section>
 
 
-        <div class="feature">
+<!-- =====================================================
+     FEATURES
+===================================================== -->
 
-            <div class="feature-icon">
-                📝
-            </div>
+<section class="features">
 
-            <h4>
-                Exam-Oriented
-            </h4>
 
-            <p>
-                Questions designed for focused CBSE preparation.
-            </p>
+<div class="feature">
 
-        </div>
+<div class="feature-icon">
+📖
+</div>
 
+<h4>
+Chapter-wise Notes
+</h4>
 
-        <div class="feature">
+<p>
+Study important concepts in a structured way.
+</p>
 
-            <div class="feature-icon">
-                ⏱️
-            </div>
+</div>
 
-            <h4>
-                Timed Tests
-            </h4>
 
-            <p>
-                Practice with a 20-minute test environment.
-            </p>
+<div class="feature">
 
-        </div>
+<div class="feature-icon">
+📝
+</div>
 
+<h4>
+Practice Tests
+</h4>
 
-        <div class="feature">
+<p>
+Test your preparation with focused questions.
+</p>
 
-            <div class="feature-icon">
-                📊
-            </div>
+</div>
 
-            <h4>
-                Instant Results
-            </h4>
 
-            <p>
-                Check your score and review your performance.
-            </p>
+<div class="feature">
 
-        </div>
+<div class="feature-icon">
+📚
+</div>
 
+<h4>
+PYQ Bank
+</h4>
 
-        <div class="feature">
+<p>
+Practice previous year questions for better exam preparation.
+</p>
 
-            <div class="feature-icon">
-                📱
-            </div>
+</div>
 
-            <h4>
-                Any Device
-            </h4>
 
-            <p>
-                Practice comfortably on mobile, tablet or laptop.
-            </p>
+<div class="feature">
 
-        </div>
+<div class="feature-icon">
+📱
+</div>
 
+<h4>
+Any Device
+</h4>
 
-    </section>
+<p>
+Learn comfortably on mobile, tablet or laptop.
+</p>
 
+</div>
+
+
+</section>
 
 </main>
-
 
 
 <!-- =====================================================
@@ -2245,13 +3118,12 @@ footer{
     class="feedback-floating"
     onclick="openFeedback()"
 >
-    💬 Give Feedback
+💬 Give Feedback
 </button>
 
 
-
 <!-- =====================================================
-     FEEDBACK POPUP
+     FEEDBACK OVERLAY
 ===================================================== -->
 
 <div
@@ -2259,179 +3131,187 @@ footer{
     id="feedbackOverlay"
 >
 
-    <div class="feedback-box">
+
+<div class="feedback-box">
 
 
-        <button
-            class="feedback-close"
-            onclick="closeFeedback()"
-            aria-label="Close feedback"
-        >
-            ×
-        </button>
+<button
+    class="feedback-close"
+    onclick="closeFeedback()"
+    aria-label="Close feedback"
+>
+×
+</button>
 
 
-        <div class="feedback-icon">
-            💬
-        </div>
+<div class="feedback-icon">
+💬
+</div>
 
 
-        <h2>
-            Tell Us What You Think
-        </h2>
+<h2>
+Tell Us What You Think
+</h2>
 
 
-        <p class="feedback-subtitle">
-            Your feedback helps us make THE GOAL better.
-        </p>
+<p class="feedback-subtitle">
+Your feedback helps us make THE GOAL better.
+</p>
 
 
-        <form id="feedbackForm">
+<form id="feedbackForm">
 
 
-            <label for="feedbackName">
-                Your Name
-            </label>
-
-            <input
-                id="feedbackName"
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                required
-                autocomplete="name"
-            >
+<label for="feedbackName">
+Your Name
+</label>
 
 
-            <label for="feedbackEmail">
-                Email Address
-            </label>
-
-            <input
-                id="feedbackEmail"
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-                autocomplete="email"
-            >
+<input
+    id="feedbackName"
+    type="text"
+    name="name"
+    placeholder="Enter your name"
+    required
+    autocomplete="name"
+>
 
 
-            <label>
-                Your Rating
-            </label>
+<label for="feedbackEmail">
+Email Address
+</label>
 
 
-            <div class="stars">
-
-                <input
-                    type="radio"
-                    id="star5"
-                    name="rating"
-                    value="5"
-                    required
-                >
-
-                <label for="star5">★</label>
+<input
+    id="feedbackEmail"
+    type="email"
+    name="email"
+    placeholder="Enter your email"
+    required
+    autocomplete="email"
+>
 
 
-                <input
-                    type="radio"
-                    id="star4"
-                    name="rating"
-                    value="4"
-                >
-
-                <label for="star4">★</label>
+<label>
+Your Rating
+</label>
 
 
-                <input
-                    type="radio"
-                    id="star3"
-                    name="rating"
-                    value="3"
-                >
-
-                <label for="star3">★</label>
+<div class="stars">
 
 
-                <input
-                    type="radio"
-                    id="star2"
-                    name="rating"
-                    value="2"
-                >
+<input
+    type="radio"
+    id="star5"
+    name="rating"
+    value="5"
+    required
+>
 
-                <label for="star2">★</label>
-
-
-                <input
-                    type="radio"
-                    id="star1"
-                    name="rating"
-                    value="1"
-                >
-
-                <label for="star1">★</label>
-
-            </div>
+<label for="star5">★</label>
 
 
-            <label for="feedbackMessage">
-                Tell Us
-            </label>
+<input
+    type="radio"
+    id="star4"
+    name="rating"
+    value="4"
+>
 
-            <textarea
-                id="feedbackMessage"
-                name="feedback"
-                placeholder="Tell us what you think..."
-                required
-            ></textarea>
+<label for="star4">★</label>
 
 
-            <button
-                type="submit"
-                class="feedback-submit"
-                id="feedbackSubmit"
-            >
-                SEND FEEDBACK →
-            </button>
+<input
+    type="radio"
+    id="star3"
+    name="rating"
+    value="3"
+>
+
+<label for="star3">★</label>
 
 
-        </form>
+<input
+    type="radio"
+    id="star2"
+    name="rating"
+    value="2"
+>
+
+<label for="star2">★</label>
 
 
-        <div
-            class="feedback-success"
-            id="feedbackSuccess"
-        >
+<input
+    type="radio"
+    id="star1"
+    name="rating"
+    value="1"
+>
 
-            <div class="success-check">
-                ✓
-            </div>
+<label for="star1">★</label>
 
-            <h3>
-                Thank You! ❤️
-            </h3>
-
-            <p>
-                Your feedback has been received.
-                It helps us improve THE GOAL.
-            </p>
-
-            <button
-                onclick="closeFeedback()"
-            >
-                CLOSE
-            </button>
-
-        </div>
-
-
-    </div>
 
 </div>
 
+
+<label for="feedbackMessage">
+Tell Us
+</label>
+
+
+<textarea
+    id="feedbackMessage"
+    name="feedback"
+    placeholder="Tell us what you think..."
+    required
+></textarea>
+
+
+<button
+    type="submit"
+    class="feedback-submit"
+    id="feedbackSubmit"
+>
+SEND FEEDBACK →
+</button>
+
+
+</form>
+
+
+<div
+    class="feedback-success"
+    id="feedbackSuccess"
+>
+
+
+<div class="success-check">
+✓
+</div>
+
+
+<h3>
+Thank You! ❤️
+</h3>
+
+
+<p>
+Your feedback has been received.
+It helps us improve THE GOAL.
+</p>
+
+
+<button onclick="closeFeedback()">
+CLOSE
+</button>
+
+
+</div>
+
+
+</div>
+
+</div>
 
 
 <!-- =====================================================
@@ -2471,7 +3351,9 @@ document
         function(e){
 
             if(e.target === this){
+
                 closeFeedback();
+
             }
 
         }
@@ -2493,13 +3375,16 @@ document
                     "feedbackSubmit"
                 );
 
+
             submitButton.disabled = true;
 
             submitButton.textContent =
                 "SENDING...";
 
+
             const formData =
                 new FormData(form);
+
 
             try{
 
@@ -2512,8 +3397,10 @@ document
                     }
                 );
 
+
                 form.style.display =
                     "none";
+
 
                 document
                     .getElementById(
@@ -2522,9 +3409,11 @@ document
                     .classList
                     .add("active");
 
+
                 form.reset();
 
             }
+
 
             catch(error){
 
@@ -2532,8 +3421,10 @@ document
                     "Something went wrong. Please try again."
                 );
 
+
                 submitButton.disabled =
                     false;
+
 
                 submitButton.textContent =
                     "SEND FEEDBACK →";
@@ -2546,188 +3437,180 @@ document
 </script>
 
 
-
 <!-- =====================================================
-     PREMIUM FOOTER
+     FOOTER
 ===================================================== -->
 
 <footer>
 
 
-    <div class="footer-inner">
+<div class="footer-inner">
 
 
-        <!-- =================================================
-             BRAND
-        ================================================= -->
+<!-- BRAND -->
 
-        <div class="footer-brand">
+<div class="footer-brand">
 
 
-            <!-- GOAL.png FOOTER LOGO -->
+<img
+    src="goal.png"
+    alt="THE GOAL Logo"
+    class="footer-logo"
+>
 
-            <img
-                src="goal.png"
-                alt="THE GOAL Logo"
-                class="footer-logo"
-            >
 
+<div class="footer-brand-title">
+THE GOAL
+</div>
 
-            <div class="footer-brand-title">
-                THE GOAL
-            </div>
 
+<p>
+CBSE Class 10 Learning Portal
+</p>
 
-            <p>
-                CBSE Class 10 Learning Portal
-            </p>
 
+<span>
+Learn • Practice • Improve • Achieve
+</span>
 
-            <span>
-                Learn • Practice • Improve • Achieve
-            </span>
 
-        </div>
+</div>
 
 
+<!-- QUICK LINKS -->
 
-        <!-- =================================================
-             QUICK LINKS
-        ================================================= -->
+<div class="footer-column">
 
-        <div class="footer-column">
 
-            <h4>
-                Quick Links
-            </h4>
+<h4>
+Quick Links
+</h4>
 
 
-            <a href="index.html">
-                Home
-            </a>
+<a href="index.html">
+Home
+</a>
 
 
-            <a href="math.html">
-                Mathematics
-            </a>
+<a href="math.html">
+Mathematics
+</a>
 
 
-            <a href="it.html">
-                Information Technology
-            </a>
+<a href="it.html">
+Information Technology
+</a>
 
 
-            <a href="pyq-hub.html">
-                Mathematics PYQ Hub
-            </a>
+<a href="pyq-hub.html">
+Mathematics PYQ Hub
+</a>
 
-        </div>
 
+</div>
 
 
-        <!-- =================================================
-             CONNECT
-        ================================================= -->
+<!-- CONNECT -->
 
-        <div class="footer-column connect-column">
+<div class="footer-column connect-column">
 
-            <h4>
-                Let's Connect
-            </h4>
 
+<h4>
+Let's Connect
+</h4>
 
-            <p>
-                Have a suggestion, feedback
-                or simply want to connect?
-            </p>
 
+<p>
+Have a suggestion, feedback
+or simply want to connect?
+</p>
 
-            <div class="social-links">
 
+<div class="social-links">
 
-                <a
-                    href="https://chat.whatsapp.com/KbZQL2FaE5S98ziUvz7pyq"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social whatsapp"
-                >
 
-                    💬
+<a
+    href="https://chat.whatsapp.com/KbZQL2FaE5S98ziUvz7pyq"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social whatsapp"
+>
 
-                    <span>
-                        WhatsApp
-                    </span>
+💬
 
-                </a>
+<span>
+WhatsApp
+</span>
 
+</a>
 
-                <a
-                    href="https://www.instagram.com/the_goal_10th/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social instagram"
-                >
 
-                    📸
+<a
+    href="https://www.instagram.com/the_goal_10th/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social instagram"
+>
 
-                    <span>
-                        Instagram
-                    </span>
+📸
 
-                </a>
+<span>
+Instagram
+</span>
 
+</a>
 
-            </div>
 
-        </div>
+</div>
 
 
-    </div>
+</div>
 
 
+</div>
 
-    <!-- =====================================================
-         FOOTER BOTTOM
-    ===================================================== -->
 
-    <div class="footer-bottom">
+<!-- FOOTER BOTTOM -->
 
+<div class="footer-bottom">
 
-        <div>
 
-            © 2026
+<div>
 
-            <strong>
-                THE GOAL
-            </strong>
+© 2026
 
-            · CBSE Class 10 Learning Portal
+<strong>
+THE GOAL
+</strong>
 
-        </div>
+· CBSE Class 10 Learning Portal
 
+</div>
 
-        <div>
 
-            Made with
+<div>
 
-            <span class="heart">
-                ♥
-            </span>
+Made with
 
-            in India by
+<span class="heart">
+♥
+</span>
 
-            <strong>
-                Pushpender
-            </strong>
+in India by
 
-        </div>
+<strong>
+Pushpender
+</strong>
 
+</div>
 
-    </div>
+
+</div>
 
 
 </footer>
 
 
 </body>
+
 </html>
