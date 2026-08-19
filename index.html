@@ -9,20 +9,11 @@
 
 <style>
 
-/* =====================================================
-   RESET
-===================================================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
-
-/* =====================================================
-   ROOT
-===================================================== */
 
 :root{
 
@@ -47,11 +38,6 @@
         0 12px 35px rgba(15,23,42,.07);
 }
 
-
-/* =====================================================
-   BODY
-===================================================== */
-
 body{
 
     font-family:
@@ -61,11 +47,9 @@ body{
         sans-serif;
 
     background:var(--bg);
-
     color:var(--text);
 
     min-height:100vh;
-
     overflow-x:hidden;
 }
 
@@ -83,12 +67,8 @@ header{
         var(--border);
 
     position:relative;
-
     overflow:hidden;
 }
-
-
-/* Decorative circles */
 
 header::before{
 
@@ -138,49 +118,67 @@ header::after{
 nav{
 
     max-width:1200px;
-
     margin:auto;
 
     padding:
-        22px 20px;
+        18px 20px;
 
     display:flex;
 
     justify-content:space-between;
-
     align-items:center;
 
     position:relative;
-
     z-index:2;
 }
 
 
-.brand{
+/* THE LOGO */
 
-    font-size:24px;
+.nav-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    text-decoration:none;
+}
+
+.nav-logo{
+
+    width:48px;
+    height:48px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    transition:.25s;
+}
+
+.nav-brand:hover .nav-logo{
+
+    transform:
+        rotate(-3deg)
+        scale(1.05);
+}
+
+.brand-text{
+
+    font-size:22px;
 
     font-weight:950;
 
-    letter-spacing:2px;
+    letter-spacing:1.5px;
 
     color:var(--text);
 }
 
-.brand::after{
+.brand-text span{
 
-    content:"";
-
-    display:inline-block;
-
-    width:7px;
-    height:7px;
-
-    margin-left:5px;
-
-    border-radius:50%;
-
-    background:var(--purple);
+    color:var(--purple);
 }
 
 
@@ -221,12 +219,48 @@ nav{
     text-align:center;
 
     padding:
-        75px 20px
-        95px;
+        55px 20px
+        90px;
 
     position:relative;
-
     z-index:2;
+}
+
+
+/* HERO LOGO */
+
+.hero-logo-wrap{
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:22px;
+}
+
+.hero-logo{
+
+    width:105px;
+    height:105px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 12px 20px
+            rgba(15,23,42,.10)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+.hero-logo:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
 }
 
 
@@ -235,7 +269,6 @@ nav{
     display:inline-flex;
 
     align-items:center;
-
     gap:7px;
 
     padding:
@@ -257,7 +290,6 @@ nav{
     color:#596174;
 
     font-size:12px;
-
     font-weight:800;
 
     margin-bottom:24px;
@@ -280,7 +312,6 @@ nav{
     color:var(--text);
 }
 
-
 .hero h1 span{
 
     background:
@@ -291,7 +322,6 @@ nav{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
@@ -356,7 +386,6 @@ main{
         27px;
 }
 
-
 .section-title h2{
 
     font-size:30px;
@@ -365,7 +394,6 @@ main{
 
     color:var(--text);
 }
-
 
 .section-title p{
 
@@ -419,36 +447,33 @@ main{
     overflow:hidden;
 }
 
-
 .subject-card::after{
 
     content:"";
 
     position:absolute;
 
-    width:180px;
-    height:180px;
+    width:190px;
+    height:190px;
 
     border-radius:50%;
 
     background:
         var(--soft-purple);
 
-    right:-90px;
-    top:-90px;
+    right:-95px;
+    top:-95px;
 
     pointer-events:none;
 
     transition:.3s;
 }
 
-
 .subject-card:nth-child(2)::after{
 
     background:
         var(--soft-blue);
 }
-
 
 .subject-card:hover{
 
@@ -459,7 +484,6 @@ main{
         0 22px 50px
         rgba(15,23,42,.11);
 }
-
 
 .subject-card:hover::after{
 
@@ -478,53 +502,49 @@ main{
     display:flex;
 
     align-items:center;
-
     justify-content:flex-start;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 
     position:relative;
-
     z-index:2;
 }
 
-
 .cbse-logo{
 
-    width:78px;
-    height:78px;
+    width:105px;
+    height:105px;
 
     object-fit:contain;
 
     background:#ffffff;
 
-    padding:7px;
+    padding:8px;
 
     border:
         1px solid
         #e4e6eb;
 
-    border-radius:13px;
+    border-radius:18px;
 
     box-shadow:
-        0 5px 16px
-        rgba(0,0,0,.07);
+        0 8px 22px
+        rgba(0,0,0,.08);
 
     transition:
         transform .25s ease,
         box-shadow .25s ease;
 }
 
-
 .subject-card:hover .cbse-logo{
 
     transform:
-        translateY(-3px)
-        scale(1.03);
+        translateY(-4px)
+        scale(1.04);
 
     box-shadow:
-        0 10px 24px
-        rgba(0,0,0,.10);
+        0 13px 30px
+        rgba(0,0,0,.12);
 }
 
 
@@ -542,7 +562,6 @@ main{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     font-size:29px;
@@ -553,10 +572,8 @@ main{
     margin-bottom:20px;
 
     position:relative;
-
     z-index:2;
 }
-
 
 .subject-card:nth-child(2)
 .subject-icon{
@@ -581,7 +598,6 @@ main{
     letter-spacing:.5px;
 
     position:relative;
-
     z-index:2;
 }
 
@@ -598,10 +614,8 @@ main{
         7px 0 9px;
 
     position:relative;
-
     z-index:2;
 }
-
 
 .subject-card p{
 
@@ -615,7 +629,6 @@ main{
         15px 0 22px;
 
     position:relative;
-
     z-index:2;
 }
 
@@ -651,10 +664,8 @@ main{
     transition:.25s;
 
     position:relative;
-
     z-index:3;
 }
-
 
 .subject-btn:hover{
 
@@ -678,7 +689,6 @@ main{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:12px;
@@ -726,9 +736,6 @@ main{
     z-index:3;
 }
 
-
-/* Shine */
-
 .pyq-hub-btn::before{
 
     content:"";
@@ -736,11 +743,9 @@ main{
     position:absolute;
 
     top:0;
-
     left:-120%;
 
     width:70%;
-
     height:100%;
 
     background:
@@ -757,12 +762,10 @@ main{
     transition:.6s;
 }
 
-
 .pyq-hub-btn:hover::before{
 
     left:130%;
 }
-
 
 .pyq-hub-btn:hover{
 
@@ -775,9 +778,6 @@ main{
         rgba(86,92,170,.35);
 }
 
-
-/* PYQ ICON */
-
 .pyq-icon{
 
     width:40px;
@@ -786,7 +786,6 @@ main{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border-radius:12px;
@@ -799,9 +798,6 @@ main{
     flex-shrink:0;
 }
 
-
-/* PYQ TEXT */
-
 .pyq-text{
 
     display:flex;
@@ -813,12 +809,10 @@ main{
     line-height:1.1;
 }
 
-
 .pyq-title{
 
     font-size:19px;
 }
-
 
 .pyq-subtitle{
 
@@ -833,9 +827,6 @@ main{
     letter-spacing:1px;
 }
 
-
-/* ARROW */
-
 .pyq-arrow{
 
     margin-left:auto;
@@ -844,7 +835,6 @@ main{
 
     transition:.25s;
 }
-
 
 .pyq-hub-btn:hover .pyq-arrow{
 
@@ -869,7 +859,6 @@ main{
     gap:15px;
 }
 
-
 .feature{
 
     background:#ffffff;
@@ -887,7 +876,6 @@ main{
     transition:.25s;
 }
 
-
 .feature:hover{
 
     transform:
@@ -898,7 +886,6 @@ main{
         rgba(15,23,42,.06);
 }
 
-
 .feature-icon{
 
     font-size:26px;
@@ -906,14 +893,12 @@ main{
     margin-bottom:10px;
 }
 
-
 .feature h4{
 
     font-size:15px;
 
     margin-bottom:6px;
 }
-
 
 .feature p{
 
@@ -967,7 +952,6 @@ main{
     transition:.25s ease;
 }
 
-
 .feedback-floating:hover{
 
     transform:
@@ -1001,12 +985,10 @@ main{
     z-index:1000;
 
     align-items:center;
-
     justify-content:center;
 
     padding:20px;
 }
-
 
 .feedback-overlay.active{
 
@@ -1023,7 +1005,6 @@ main{
     position:relative;
 
     width:100%;
-
     max-width:450px;
 
     max-height:90vh;
@@ -1043,7 +1024,6 @@ main{
     animation:
         feedbackPop .25s ease;
 }
-
 
 @keyframes feedbackPop{
 
@@ -1068,7 +1048,7 @@ main{
 
 
 /* =====================================================
-   CLOSE BUTTON
+   CLOSE
 ===================================================== */
 
 .feedback-close{
@@ -1095,7 +1075,6 @@ main{
 
     transition:.2s;
 }
-
 
 .feedback-close:hover{
 
@@ -1126,12 +1105,10 @@ main{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     font-size:29px;
 }
-
 
 .feedback-box h2{
 
@@ -1141,7 +1118,6 @@ main{
 
     color:var(--text);
 }
-
 
 .feedback-subtitle{
 
@@ -1159,7 +1135,7 @@ main{
 
 
 /* =====================================================
-   FEEDBACK LABELS
+   FEEDBACK FORM
 ===================================================== */
 
 .feedback-box label{
@@ -1175,11 +1151,6 @@ main{
 
     color:#334155;
 }
-
-
-/* =====================================================
-   FEEDBACK INPUTS
-===================================================== */
 
 .feedback-box input[type="text"],
 .feedback-box input[type="email"],
@@ -1209,23 +1180,16 @@ main{
     transition:.2s;
 }
 
-
 .feedback-box input[type="text"]:focus,
 .feedback-box input[type="email"]:focus,
 .feedback-box textarea:focus{
 
-    border-color:
-        #8b72b5;
+    border-color:#8b72b5;
 
     box-shadow:
         0 0 0 3px
         rgba(109,63,169,.10);
 }
-
-
-/* =====================================================
-   TEXTAREA
-===================================================== */
 
 .feedback-box textarea{
 
@@ -1253,12 +1217,10 @@ main{
         6px 0 3px;
 }
 
-
 .stars input{
 
     display:none;
 }
-
 
 .stars label{
 
@@ -1272,7 +1234,6 @@ main{
 
     transition:.15s;
 }
-
 
 .stars label:hover,
 .stars label:hover ~ label,
@@ -1316,7 +1277,6 @@ main{
     transition:.2s;
 }
 
-
 .feedback-submit:hover{
 
     transform:
@@ -1327,13 +1287,10 @@ main{
         rgba(86,92,170,.25);
 }
 
-
 .feedback-submit:disabled{
 
     opacity:.6;
-
     cursor:not-allowed;
-
     transform:none;
 }
 
@@ -1349,12 +1306,10 @@ main{
     text-align:center;
 }
 
-
 .feedback-success.active{
 
     display:block;
 }
-
 
 .success-check{
 
@@ -1373,20 +1328,16 @@ main{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     font-size:33px;
-
     font-weight:900;
 }
-
 
 .feedback-success h3{
 
     font-size:25px;
 }
-
 
 .feedback-success p{
 
@@ -1399,7 +1350,6 @@ main{
     margin:
         8px 0 20px;
 }
-
 
 .feedback-success button{
 
@@ -1448,7 +1398,9 @@ footer{
 }
 
 
-/* FOOTER INNER */
+/* =====================================================
+   FOOTER INNER
+===================================================== */
 
 .footer-inner{
 
@@ -1483,9 +1435,37 @@ footer{
 }
 
 
+/* BIG THE LOGO */
+
+.footer-logo{
+
+    width:95px;
+    height:95px;
+
+    object-fit:contain;
+
+    margin-bottom:13px;
+
+    filter:
+        drop-shadow(
+            0 8px 16px
+            rgba(15,23,42,.10)
+        );
+
+    transition:.3s;
+}
+
+.footer-logo:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+}
+
+
 .footer-brand-title{
 
-    font-size:28px;
+    font-size:26px;
 
     font-weight:950;
 
@@ -1499,14 +1479,12 @@ footer{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
 
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
-
 
 .footer-brand p{
 
@@ -1518,7 +1496,6 @@ footer{
 
     margin-bottom:6px;
 }
-
 
 .footer-brand span{
 
@@ -1541,7 +1518,6 @@ footer{
     align-items:flex-start;
 }
 
-
 .footer-column h4{
 
     color:var(--text);
@@ -1555,7 +1531,6 @@ footer{
     padding-bottom:8px;
 }
 
-
 .footer-column h4::after{
 
     content:"";
@@ -1563,11 +1538,9 @@ footer{
     position:absolute;
 
     left:0;
-
     bottom:0;
 
     width:28px;
-
     height:2px;
 
     border-radius:5px;
@@ -1598,7 +1571,6 @@ footer{
     transition:.2s;
 }
 
-
 .footer-column > a:hover{
 
     color:var(--purple);
@@ -1625,7 +1597,7 @@ footer{
 
 
 /* =====================================================
-   SOCIAL LINKS
+   SOCIAL
 ===================================================== */
 
 .social-links{
@@ -1637,13 +1609,11 @@ footer{
     flex-wrap:wrap;
 }
 
-
 .social{
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:7px;
@@ -1664,7 +1634,6 @@ footer{
     transition:.25s;
 }
 
-
 .social:hover{
 
     transform:
@@ -1675,12 +1644,10 @@ footer{
         rgba(0,0,0,.10);
 }
 
-
 .social.whatsapp{
 
     background:#16a34a;
 }
-
 
 .social.instagram{
 
@@ -1725,12 +1692,10 @@ footer{
     font-size:11px;
 }
 
-
 .footer-bottom strong{
 
     color:#555;
 }
-
 
 .heart{
 
@@ -1744,7 +1709,7 @@ footer{
 
 
 /* =====================================================
-   RESPONSIVE — TABLET
+   TABLET
 ===================================================== */
 
 @media(max-width:900px){
@@ -1772,7 +1737,7 @@ footer{
 
 
 /* =====================================================
-   RESPONSIVE — MOBILE
+   MOBILE
 ===================================================== */
 
 @media(max-width:700px){
@@ -1785,8 +1750,14 @@ footer{
     .hero{
 
         padding:
-            60px 15px
-            75px;
+            45px 15px
+            70px;
+    }
+
+    .hero-logo{
+
+        width:90px;
+        height:90px;
     }
 
     .hero h1{
@@ -1807,7 +1778,7 @@ footer{
 
 
 /* =====================================================
-   RESPONSIVE — SMALL MOBILE
+   SMALL MOBILE
 ===================================================== */
 
 @media(max-width:450px){
@@ -1817,9 +1788,15 @@ footer{
         gap:10px;
     }
 
-    .brand{
+    .nav-logo{
 
-        font-size:21px;
+        width:42px;
+        height:42px;
+    }
+
+    .brand-text{
+
+        font-size:18px;
     }
 
     .nav-badge{
@@ -1828,6 +1805,12 @@ footer{
 
         padding:
             7px 12px;
+    }
+
+    .hero-logo{
+
+        width:82px;
+        height:82px;
     }
 
     .hero h1{
@@ -1853,7 +1836,6 @@ footer{
     .feedback-floating{
 
         right:15px;
-
         bottom:15px;
 
         padding:
@@ -1878,7 +1860,6 @@ footer{
     .social{
 
         width:100%;
-
         max-width:220px;
     }
 
@@ -1895,8 +1876,14 @@ footer{
 
     .cbse-logo{
 
-        width:72px;
-        height:72px;
+        width:90px;
+        height:90px;
+    }
+
+    .footer-logo{
+
+        width:82px;
+        height:82px;
     }
 
     .footer-bottom{
@@ -1925,9 +1912,22 @@ footer{
 
     <nav>
 
-        <div class="brand">
-            THE GOAL
-        </div>
+        <!-- THE LOGO AT FRONT -->
+
+        <a href="index.html" class="nav-brand">
+
+            <img
+                src="THE.png"
+                alt="THE GOAL Logo"
+                class="nav-logo"
+            >
+
+            <div class="brand-text">
+                THE <span>GOAL</span>
+            </div>
+
+        </a>
+
 
         <div class="nav-badge">
             CBSE CLASS 10
@@ -1937,6 +1937,20 @@ footer{
 
 
     <div class="hero">
+
+
+        <!-- LARGE THE LOGO -->
+
+        <div class="hero-logo-wrap">
+
+            <img
+                src="THE.png"
+                alt="THE GOAL"
+                class="hero-logo"
+            >
+
+        </div>
+
 
         <div class="hero-label">
             🎓 CBSE CLASS 10 • LEARNING PORTAL
@@ -1986,10 +2000,6 @@ footer{
 
 
 
-    <!-- =================================================
-         SUBJECT CARDS
-    ================================================= -->
-
     <section class="subjects">
 
 
@@ -1999,8 +2009,6 @@ footer{
 
         <div class="subject-card">
 
-
-            <!-- CBSE LOGO -->
 
             <div class="cbse-logo-wrap">
 
@@ -2012,8 +2020,6 @@ footer{
 
             </div>
 
-
-            <!-- SUBJECT ICON -->
 
             <div class="subject-icon">
                 💻
@@ -2056,8 +2062,6 @@ footer{
         <div class="subject-card">
 
 
-            <!-- CBSE LOGO -->
-
             <div class="cbse-logo-wrap">
 
                 <img
@@ -2068,8 +2072,6 @@ footer{
 
             </div>
 
-
-            <!-- SUBJECT ICON -->
 
             <div class="subject-icon">
                 🧮
@@ -2091,11 +2093,6 @@ footer{
                 exam-focused preparation for CBSE Class 10 Mathematics.
             </p>
 
-
-
-            <!-- =================================================
-                 PYQ HUB
-            ================================================= -->
 
             <a
                 class="pyq-hub-btn"
@@ -2146,9 +2143,9 @@ footer{
 
 
 
-    <!-- =================================================
+    <!-- =====================================================
          FEATURES
-    ================================================= -->
+    ===================================================== -->
 
     <section class="features">
 
@@ -2229,7 +2226,7 @@ footer{
 
 
 <!-- =====================================================
-     FEEDBACK FLOATING BUTTON
+     FEEDBACK BUTTON
 ===================================================== -->
 
 <button
@@ -2253,8 +2250,6 @@ footer{
     <div class="feedback-box">
 
 
-        <!-- CLOSE -->
-
         <button
             class="feedback-close"
             onclick="closeFeedback()"
@@ -2263,8 +2258,6 @@ footer{
             ×
         </button>
 
-
-        <!-- ICON -->
 
         <div class="feedback-icon">
             💬
@@ -2281,15 +2274,8 @@ footer{
         </p>
 
 
-
-        <!-- =================================================
-             FEEDBACK FORM
-        ================================================= -->
-
         <form id="feedbackForm">
 
-
-            <!-- NAME -->
 
             <label for="feedbackName">
                 Your Name
@@ -2305,8 +2291,6 @@ footer{
             >
 
 
-            <!-- EMAIL -->
-
             <label for="feedbackEmail">
                 Email Address
             </label>
@@ -2321,15 +2305,12 @@ footer{
             >
 
 
-            <!-- RATING -->
-
             <label>
                 Your Rating
             </label>
 
 
             <div class="stars">
-
 
                 <input
                     type="radio"
@@ -2339,9 +2320,7 @@ footer{
                     required
                 >
 
-                <label for="star5">
-                    ★
-                </label>
+                <label for="star5">★</label>
 
 
                 <input
@@ -2351,9 +2330,7 @@ footer{
                     value="4"
                 >
 
-                <label for="star4">
-                    ★
-                </label>
+                <label for="star4">★</label>
 
 
                 <input
@@ -2363,9 +2340,7 @@ footer{
                     value="3"
                 >
 
-                <label for="star3">
-                    ★
-                </label>
+                <label for="star3">★</label>
 
 
                 <input
@@ -2375,9 +2350,7 @@ footer{
                     value="2"
                 >
 
-                <label for="star2">
-                    ★
-                </label>
+                <label for="star2">★</label>
 
 
                 <input
@@ -2387,16 +2360,10 @@ footer{
                     value="1"
                 >
 
-                <label for="star1">
-                    ★
-                </label>
-
+                <label for="star1">★</label>
 
             </div>
 
-
-
-            <!-- MESSAGE -->
 
             <label for="feedbackMessage">
                 Tell Us
@@ -2410,9 +2377,6 @@ footer{
             ></textarea>
 
 
-
-            <!-- SUBMIT -->
-
             <button
                 type="submit"
                 class="feedback-submit"
@@ -2425,39 +2389,29 @@ footer{
         </form>
 
 
-
-        <!-- =================================================
-             SUCCESS
-        ================================================= -->
-
         <div
             class="feedback-success"
             id="feedbackSuccess"
         >
 
-
             <div class="success-check">
                 ✓
             </div>
 
-
             <h3>
                 Thank You! ❤️
             </h3>
-
 
             <p>
                 Your feedback has been received.
                 It helps us improve THE GOAL.
             </p>
 
-
             <button
                 onclick="closeFeedback()"
             >
                 CLOSE
             </button>
-
 
         </div>
 
@@ -2478,11 +2432,6 @@ const FEEDBACK_URL =
 "https://script.google.com/macros/s/AKfycbz_0DPiLtm6SIT8uyn7Sw7UO8cNyZezfszdyKtfDdLPe2OcVtFspQL9UOuS5yHD57qm/exec";
 
 
-
-/* =====================================================
-   OPEN FEEDBACK
-===================================================== */
-
 function openFeedback(){
 
     document
@@ -2492,11 +2441,6 @@ function openFeedback(){
 
 }
 
-
-
-/* =====================================================
-   CLOSE FEEDBACK
-===================================================== */
 
 function closeFeedback(){
 
@@ -2508,11 +2452,6 @@ function closeFeedback(){
 }
 
 
-
-/* =====================================================
-   OUTSIDE CLICK
-===================================================== */
-
 document
     .getElementById("feedbackOverlay")
     .addEventListener(
@@ -2520,19 +2459,12 @@ document
         function(e){
 
             if(e.target === this){
-
                 closeFeedback();
-
             }
 
         }
     );
 
-
-
-/* =====================================================
-   SUBMIT FEEDBACK
-===================================================== */
 
 document
     .getElementById("feedbackForm")
@@ -2542,25 +2474,20 @@ document
 
             e.preventDefault();
 
-
             const form = this;
-
 
             const submitButton =
                 document.getElementById(
                     "feedbackSubmit"
                 );
 
-
             submitButton.disabled = true;
 
             submitButton.textContent =
                 "SENDING...";
 
-
             const formData =
                 new FormData(form);
-
 
             try{
 
@@ -2568,21 +2495,13 @@ document
                     FEEDBACK_URL,
                     {
                         method:"POST",
-
                         body:formData,
-
                         mode:"no-cors"
                     }
                 );
 
-
-                /* HIDE FORM */
-
                 form.style.display =
                     "none";
-
-
-                /* SHOW SUCCESS */
 
                 document
                     .getElementById(
@@ -2591,9 +2510,7 @@ document
                     .classList
                     .add("active");
 
-
                 form.reset();
-
 
             }
 
@@ -2603,10 +2520,8 @@ document
                     "Something went wrong. Please try again."
                 );
 
-
                 submitButton.disabled =
                     false;
-
 
                 submitButton.textContent =
                     "SEND FEEDBACK →";
@@ -2621,7 +2536,7 @@ document
 
 
 <!-- =====================================================
-     FOOTER
+     PREMIUM FOOTER
 ===================================================== -->
 
 <footer>
@@ -2635,6 +2550,16 @@ document
         ================================================= -->
 
         <div class="footer-brand">
+
+
+            <!-- THE.png FOOTER LOGO -->
+
+            <img
+                src="THE.png"
+                alt="THE GOAL Logo"
+                class="footer-logo"
+            >
+
 
             <div class="footer-brand-title">
                 THE GOAL
@@ -2708,8 +2633,6 @@ document
             <div class="social-links">
 
 
-                <!-- WHATSAPP -->
-
                 <a
                     href="https://chat.whatsapp.com/KbZQL2FaE5S98ziUvz7pyq"
                     target="_blank"
@@ -2725,9 +2648,6 @@ document
 
                 </a>
 
-
-
-                <!-- INSTAGRAM -->
 
                 <a
                     href="https://www.instagram.com/the_goal_10th/"
@@ -2764,6 +2684,7 @@ document
         <div>
 
             © 2026
+
             <strong>
                 THE GOAL
             </strong>
