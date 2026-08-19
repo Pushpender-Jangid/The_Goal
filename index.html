@@ -9,236 +9,686 @@
 
 <style>
 
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+
+/* =====================================================
+   ROOT
+===================================================== */
+
 :root{
-    --bg:#f8fafc;
+
+    --bg:#ffffff;
     --card:#ffffff;
-    --text:#0f172a;
+
+    --text:#111827;
     --muted:#64748b;
-    --primary:#4f46e5;
-    --primary2:#7c3aed;
-    --border:#e2e8f0;
-    --soft:#eef2ff;
+
+    --purple:#6d3fa9;
+    --purple-dark:#59318f;
+
+    --blue:#4ba3d8;
+    --blue-dark:#368fc7;
+
+    --border:#e7e9ef;
+
+    --soft-purple:#f3edfa;
+    --soft-blue:#edf7fc;
+
+    --shadow:
+        0 12px 35px rgba(15,23,42,.07);
 }
+
+
+/* =====================================================
+   BODY
+===================================================== */
 
 body{
-    font-family:Inter,Segoe UI,Arial,sans-serif;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
     background:var(--bg);
+
     color:var(--text);
+
     min-height:100vh;
+
+    overflow-x:hidden;
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
-    background:
-        radial-gradient(circle at 10% 20%,rgba(129,140,248,.25),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(192,132,252,.25),transparent 30%),
-        linear-gradient(135deg,#111827,#312e81,#4c1d95);
-    color:white;
-    padding:22px 7%;
+
+    background:#ffffff;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
     position:relative;
+
     overflow:hidden;
 }
 
-nav{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+
+/* Decorative circles */
+
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+        rgba(109,63,169,.07);
+
+    top:-190px;
+    left:-100px;
+
+    pointer-events:none;
 }
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+        rgba(75,163,216,.07);
+
+    right:-120px;
+    top:-100px;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   NAV
+===================================================== */
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        22px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
 
 .brand{
-    font-size:25px;
-    font-weight:900;
+
+    font-size:24px;
+
+    font-weight:950;
+
     letter-spacing:2px;
+
+    color:var(--text);
 }
+
+.brand::after{
+
+    content:"";
+
+    display:inline-block;
+
+    width:7px;
+    height:7px;
+
+    margin-left:5px;
+
+    border-radius:50%;
+
+    background:var(--purple);
+}
+
 
 .nav-badge{
-    padding:8px 15px;
-    border:1px solid rgba(255,255,255,.2);
+
+    padding:
+        8px 16px;
+
+    border:
+        1px solid
+        #ddd9e8;
+
     border-radius:30px;
-    background:rgba(255,255,255,.08);
-    font-size:13px;
+
+    background:
+        #faf8fd;
+
+    color:var(--purple);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.4px;
 }
 
-/* ================= HERO ================= */
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-    max-width:1100px;
+
+    max-width:1050px;
+
     margin:auto;
+
     text-align:center;
-    padding:80px 20px 90px;
+
+    padding:
+        75px 20px
+        95px;
+
+    position:relative;
+
+    z-index:2;
 }
+
 
 .hero-label{
-    display:inline-block;
-    padding:8px 17px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:
+        8px 17px;
+
     border-radius:30px;
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
-    font-size:13px;
-    margin-bottom:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-purple),
+            var(--soft-blue)
+        );
+
+    border:
+        1px solid
+        #e3e0eb;
+
+    color:#596174;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    margin-bottom:24px;
 }
+
 
 .hero h1{
-    font-size:clamp(48px,8vw,82px);
+
+    font-size:
+        clamp(50px,8vw,88px);
+
     font-weight:950;
-    letter-spacing:4px;
-    margin-bottom:10px;
+
+    letter-spacing:5px;
+
+    line-height:1;
+
+    margin-bottom:18px;
+
+    color:var(--text);
 }
 
+
 .hero h1 span{
-    background:linear-gradient(90deg,#a5b4fc,#e9d5ff,#fbcfe8);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
     -webkit-background-clip:text;
+
     background-clip:text;
+
     color:transparent;
 }
 
+
 .hero h2{
-    font-size:clamp(21px,4vw,32px);
-    font-weight:700;
-    margin-bottom:15px;
+
+    font-size:
+        clamp(20px,4vw,31px);
+
+    font-weight:750;
+
+    margin-bottom:16px;
+
+    color:#263044;
 }
+
 
 .hero p{
-    max-width:650px;
+
+    max-width:680px;
+
     margin:auto;
-    color:#cbd5e1;
-    line-height:1.7;
-    font-size:16px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:15px;
 }
 
-/* ================= MAIN ================= */
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 main{
+
     max-width:1200px;
-    margin:-35px auto 0;
-    padding:0 20px 50px;
+
+    margin:auto;
+
+    padding:
+        5px 20px
+        65px;
+
     position:relative;
 }
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
 
 .section-title{
+
     text-align:center;
-    margin:50px 0 25px;
+
+    margin:
+        45px 0
+        27px;
 }
+
 
 .section-title h2{
+
     font-size:30px;
+
+    font-weight:850;
+
+    color:var(--text);
 }
+
 
 .section-title p{
+
     color:var(--muted);
-    margin-top:7px;
-}
 
-/* ================= SUBJECT CARDS ================= */
+    margin-top:8px;
 
-.subjects{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-
-.subject-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 12px 35px rgba(15,23,42,.07);
-    transition:.3s ease;
-    position:relative;
-    overflow:hidden;
-}
-
-.subject-card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 20px 45px rgba(15,23,42,.12);
-}
-
-.subject-card::after{
-    content:"";
-    position:absolute;
-    width:170px;
-    height:170px;
-    border-radius:50%;
-    background:var(--soft);
-    right:-80px;
-    top:-80px;
-}
-
-.subject-icon{
-    width:62px;
-    height:62px;
-    border-radius:18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    background:var(--soft);
-    margin-bottom:20px;
-}
-
-.subject-card h3{
-    font-size:25px;
-    margin-bottom:8px;
-}
-
-.subject-card .code{
-    color:var(--primary);
-    font-weight:700;
     font-size:14px;
 }
 
-.subject-card p{
-    color:var(--muted);
-    line-height:1.65;
-    margin:15px 0 22px;
+
+/* =====================================================
+   SUBJECT GRID
+===================================================== */
+
+.subjects{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
 }
 
-/* ================= NORMAL SUBJECT BUTTON ================= */
+
+/* =====================================================
+   SUBJECT CARD
+===================================================== */
+
+.subject-card{
+
+    background:var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.subject-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+        var(--soft-purple);
+
+    right:-90px;
+    top:-90px;
+
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+
+.subject-card:nth-child(2)::after{
+
+    background:
+        var(--soft-blue);
+}
+
+
+.subject-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 22px 50px
+        rgba(15,23,42,.11);
+}
+
+
+.subject-card:hover::after{
+
+    transform:scale(1.15);
+}
+
+
+/* =====================================================
+   CBSE LOGO
+===================================================== */
+
+.cbse-logo-wrap{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    margin-bottom:20px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.cbse-logo{
+
+    width:78px;
+    height:78px;
+
+    object-fit:contain;
+
+    background:#ffffff;
+
+    padding:7px;
+
+    border:
+        1px solid
+        #e4e6eb;
+
+    border-radius:13px;
+
+    box-shadow:
+        0 5px 16px
+        rgba(0,0,0,.07);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.subject-card:hover .cbse-logo{
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+        0 10px 24px
+        rgba(0,0,0,.10);
+}
+
+
+/* =====================================================
+   SUBJECT ICON
+===================================================== */
+
+.subject-icon{
+
+    width:62px;
+    height:62px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:29px;
+
+    background:
+        var(--soft-purple);
+
+    margin-bottom:20px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.subject-card:nth-child(2)
+.subject-icon{
+
+    background:
+        var(--soft-blue);
+}
+
+
+/* =====================================================
+   SUBJECT CODE
+===================================================== */
+
+.subject-card .code{
+
+    color:var(--purple);
+
+    font-weight:800;
+
+    font-size:13px;
+
+    letter-spacing:.5px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =====================================================
+   SUBJECT HEADING
+===================================================== */
+
+.subject-card h3{
+
+    font-size:25px;
+
+    margin:
+        7px 0 9px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.subject-card p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    font-size:14px;
+
+    margin:
+        15px 0 22px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =====================================================
+   NORMAL BUTTON
+===================================================== */
 
 .subject-btn{
+
     display:inline-block;
+
     text-decoration:none;
+
     color:white;
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
-    padding:13px 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    padding:
+        13px 22px;
+
     border-radius:12px;
-    font-weight:700;
-    transition:.2s;
+
+    font-weight:800;
+
+    font-size:13px;
+
+    transition:.25s;
+
+    position:relative;
+
+    z-index:3;
 }
+
 
 .subject-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 25px rgba(79,70,229,.25);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(75,120,180,.22);
 }
 
 
-/* ================================================= */
-/* ================= PYQ HUB BUTTON ================= */
-/* ================================================= */
+/* =====================================================
+   PYQ HUB BUTTON
+===================================================== */
 
 .pyq-hub-btn{
 
     position:relative;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     gap:12px;
 
     width:100%;
 
     margin-top:12px;
 
-    padding:19px 22px;
+    padding:
+        18px 20px;
 
     text-decoration:none;
 
@@ -250,30 +700,34 @@ main{
 
     font-weight:950;
 
-    letter-spacing:.5px;
+    letter-spacing:.4px;
 
     background:
         linear-gradient(
             135deg,
-            #4f46e5,
-            #7c3aed,
-            #9333ea
+            var(--purple),
+            var(--blue)
         );
 
     box-shadow:
-        0 12px 30px rgba(79,70,229,.30);
+        0 12px 30px
+        rgba(86,92,170,.25);
 
-    border:1px solid rgba(255,255,255,.18);
+    border:
+        1px solid
+        rgba(255,255,255,.2);
 
     overflow:hidden;
 
     transition:
         transform .25s ease,
         box-shadow .25s ease;
+
+    z-index:3;
 }
 
 
-/* SHINE EFFECT */
+/* Shine */
 
 .pyq-hub-btn::before{
 
@@ -282,6 +736,7 @@ main{
     position:absolute;
 
     top:0;
+
     left:-120%;
 
     width:70%;
@@ -296,7 +751,8 @@ main{
             transparent
         );
 
-    transform:skewX(-20deg);
+    transform:
+        skewX(-20deg);
 
     transition:.6s;
 }
@@ -305,7 +761,6 @@ main{
 .pyq-hub-btn:hover::before{
 
     left:130%;
-
 }
 
 
@@ -316,8 +771,8 @@ main{
         scale(1.015);
 
     box-shadow:
-        0 18px 40px rgba(79,70,229,.42);
-
+        0 18px 40px
+        rgba(86,92,170,.35);
 }
 
 
@@ -329,12 +784,15 @@ main{
     height:40px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     border-radius:12px;
 
-    background:rgba(255,255,255,.16);
+    background:
+        rgba(255,255,255,.16);
 
     font-size:22px;
 
@@ -353,14 +811,12 @@ main{
     align-items:flex-start;
 
     line-height:1.1;
-
 }
 
 
 .pyq-title{
 
     font-size:19px;
-
 }
 
 
@@ -370,12 +826,11 @@ main{
 
     font-weight:700;
 
-    opacity:.8;
+    opacity:.82;
 
     margin-top:4px;
 
     letter-spacing:1px;
-
 }
 
 
@@ -388,54 +843,91 @@ main{
     font-size:22px;
 
     transition:.25s;
-
 }
 
 
 .pyq-hub-btn:hover .pyq-arrow{
 
-    transform:translateX(5px);
-
+    transform:
+        translateX(5px);
 }
 
 
-/* ================= FEATURES ================= */
+/* =====================================================
+   FEATURES
+===================================================== */
 
 .features{
-    margin-top:60px;
+
+    margin-top:65px;
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:15px;
 }
 
+
 .feature{
-    background:white;
-    border:1px solid var(--border);
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
     border-radius:18px;
+
     padding:22px;
+
     text-align:center;
+
+    transition:.25s;
 }
 
+
+.feature:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(15,23,42,.06);
+}
+
+
 .feature-icon{
+
     font-size:26px;
+
     margin-bottom:10px;
 }
 
+
 .feature h4{
+
     font-size:15px;
-    margin-bottom:5px;
+
+    margin-bottom:6px;
 }
 
+
 .feature p{
+
     color:var(--muted);
+
     font-size:13px;
+
     line-height:1.5;
 }
 
 
-/* ================================================= */
-/* ================= FEEDBACK SYSTEM =============== */
-/* ================================================= */
+/* =====================================================
+   FEEDBACK FLOATING BUTTON
+===================================================== */
 
 .feedback-floating{
 
@@ -447,6 +939,7 @@ main{
     z-index:999;
 
     border:none;
+
     cursor:pointer;
 
     color:white;
@@ -454,36 +947,42 @@ main{
     background:
         linear-gradient(
             135deg,
-            var(--primary),
-            var(--primary2)
+            var(--purple),
+            var(--blue)
         );
 
-    padding:16px 25px;
+    padding:
+        15px 23px;
 
     border-radius:35px;
 
-    font-size:15px;
+    font-size:14px;
 
     font-weight:900;
 
-    letter-spacing:.2px;
-
     box-shadow:
-        0 12px 32px rgba(79,70,229,.35);
+        0 12px 32px
+        rgba(86,92,170,.30);
 
     transition:.25s ease;
 }
 
+
 .feedback-floating:hover{
 
-    transform:translateY(-4px) scale(1.02);
+    transform:
+        translateY(-4px)
+        scale(1.02);
 
     box-shadow:
-        0 17px 38px rgba(79,70,229,.42);
+        0 17px 38px
+        rgba(86,92,170,.38);
 }
 
 
-/* ================= OVERLAY ================= */
+/* =====================================================
+   FEEDBACK OVERLAY
+===================================================== */
 
 .feedback-overlay{
 
@@ -493,9 +992,11 @@ main{
 
     inset:0;
 
-    background:rgba(15,23,42,.68);
+    background:
+        rgba(15,23,42,.55);
 
-    backdrop-filter:blur(6px);
+    backdrop-filter:
+        blur(7px);
 
     z-index:1000;
 
@@ -506,13 +1007,16 @@ main{
     padding:20px;
 }
 
+
 .feedback-overlay.active{
 
     display:flex;
 }
 
 
-/* ================= FEEDBACK BOX ================= */
+/* =====================================================
+   FEEDBACK BOX
+===================================================== */
 
 .feedback-box{
 
@@ -526,34 +1030,46 @@ main{
 
     overflow-y:auto;
 
-    background:white;
+    background:#ffffff;
 
     border-radius:25px;
 
     padding:32px;
 
     box-shadow:
-        0 25px 70px rgba(15,23,42,.28);
+        0 25px 70px
+        rgba(15,23,42,.28);
 
-    animation:feedbackPop .25s ease;
+    animation:
+        feedbackPop .25s ease;
 }
+
 
 @keyframes feedbackPop{
 
     from{
+
         opacity:0;
-        transform:scale(.94) translateY(10px);
+
+        transform:
+            scale(.94)
+            translateY(10px);
     }
 
     to{
-        opacity:1;
-        transform:scale(1) translateY(0);
-    }
 
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
 }
 
 
-/* ================= CLOSE ================= */
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
 
 .feedback-close{
 
@@ -580,26 +1096,32 @@ main{
     transition:.2s;
 }
 
+
 .feedback-close:hover{
 
     background:#e2e8f0;
 
-    transform:rotate(5deg);
+    transform:
+        rotate(5deg);
 }
 
 
-/* ================= ICON ================= */
+/* =====================================================
+   FEEDBACK ICON
+===================================================== */
 
 .feedback-icon{
 
     width:62px;
     height:62px;
 
-    margin:0 auto 15px;
+    margin:
+        0 auto 15px;
 
     border-radius:19px;
 
-    background:var(--soft);
+    background:
+        var(--soft-purple);
 
     display:flex;
 
@@ -610,6 +1132,7 @@ main{
     font-size:29px;
 }
 
+
 .feedback-box h2{
 
     text-align:center;
@@ -618,6 +1141,7 @@ main{
 
     color:var(--text);
 }
+
 
 .feedback-subtitle{
 
@@ -629,11 +1153,14 @@ main{
 
     line-height:1.6;
 
-    margin:7px 0 25px;
+    margin:
+        7px 0 25px;
 }
 
 
-/* ================= LABELS ================= */
+/* =====================================================
+   FEEDBACK LABELS
+===================================================== */
 
 .feedback-box label{
 
@@ -643,13 +1170,16 @@ main{
 
     font-weight:800;
 
-    margin:17px 0 7px;
+    margin:
+        17px 0 7px;
 
     color:#334155;
 }
 
 
-/* ================= INPUTS ================= */
+/* =====================================================
+   FEEDBACK INPUTS
+===================================================== */
 
 .feedback-box input[type="text"],
 .feedback-box input[type="email"],
@@ -657,11 +1187,14 @@ main{
 
     width:100%;
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     border-radius:12px;
 
-    padding:13px 14px;
+    padding:
+        13px 14px;
 
     font-family:inherit;
 
@@ -676,18 +1209,23 @@ main{
     transition:.2s;
 }
 
+
 .feedback-box input[type="text"]:focus,
 .feedback-box input[type="email"]:focus,
 .feedback-box textarea:focus{
 
-    border-color:#818cf8;
+    border-color:
+        #8b72b5;
 
     box-shadow:
-        0 0 0 3px rgba(99,102,241,.10);
+        0 0 0 3px
+        rgba(109,63,169,.10);
 }
 
 
-/* ================= TEXTAREA ================= */
+/* =====================================================
+   TEXTAREA
+===================================================== */
 
 .feedback-box textarea{
 
@@ -697,7 +1235,9 @@ main{
 }
 
 
-/* ================= STARS ================= */
+/* =====================================================
+   STARS
+===================================================== */
 
 .stars{
 
@@ -709,13 +1249,16 @@ main{
 
     gap:5px;
 
-    margin:6px 0 3px;
+    margin:
+        6px 0 3px;
 }
+
 
 .stars input{
 
     display:none;
 }
+
 
 .stars label{
 
@@ -730,6 +1273,7 @@ main{
     transition:.15s;
 }
 
+
 .stars label:hover,
 .stars label:hover ~ label,
 .stars input:checked ~ label{
@@ -738,7 +1282,9 @@ main{
 }
 
 
-/* ================= SUBMIT ================= */
+/* =====================================================
+   FEEDBACK SUBMIT
+===================================================== */
 
 .feedback-submit{
 
@@ -753,8 +1299,8 @@ main{
     background:
         linear-gradient(
             135deg,
-            var(--primary),
-            var(--primary2)
+            var(--purple),
+            var(--blue)
         );
 
     padding:14px;
@@ -770,13 +1316,17 @@ main{
     transition:.2s;
 }
 
+
 .feedback-submit:hover{
 
-    transform:translateY(-2px);
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 10px 25px rgba(79,70,229,.25);
+        0 10px 25px
+        rgba(86,92,170,.25);
 }
+
 
 .feedback-submit:disabled{
 
@@ -788,7 +1338,9 @@ main{
 }
 
 
-/* ================= SUCCESS ================= */
+/* =====================================================
+   SUCCESS
+===================================================== */
 
 .feedback-success{
 
@@ -797,17 +1349,20 @@ main{
     text-align:center;
 }
 
+
 .feedback-success.active{
 
     display:block;
 }
+
 
 .success-check{
 
     width:68px;
     height:68px;
 
-    margin:10px auto 15px;
+    margin:
+        10px auto 15px;
 
     border-radius:50%;
 
@@ -826,10 +1381,12 @@ main{
     font-weight:900;
 }
 
+
 .feedback-success h3{
 
     font-size:25px;
 }
+
 
 .feedback-success p{
 
@@ -839,18 +1396,22 @@ main{
 
     line-height:1.6;
 
-    margin:8px 0 20px;
+    margin:
+        8px 0 20px;
 }
+
 
 .feedback-success button{
 
     border:none;
 
-    background:var(--soft);
+    background:
+        var(--soft-purple);
 
-    color:var(--primary);
+    color:var(--purple);
 
-    padding:10px 24px;
+    padding:
+        10px 24px;
 
     border-radius:10px;
 
@@ -860,85 +1421,269 @@ main{
 }
 
 
-/* ================================================= */
-/* ================= FOOTER ======================== */
-/* ================================================= */
+/* =====================================================
+   PREMIUM FOOTER
+===================================================== */
 
 footer{
-    background:#0f172a;
-    color:#94a3b8;
-    text-align:center;
-    padding:35px 20px;
-    margin-top:30px;
-    line-height:1.6;
+
+    background:
+        linear-gradient(
+            180deg,
+            #faf9fc 0%,
+            #ffffff 100%
+        );
+
+    border-top:
+        1px solid
+        var(--border);
+
+    padding:
+        55px 25px
+        20px;
+
+    margin-top:10px;
+
+    color:var(--muted);
 }
 
-footer strong{
-    color:white;
+
+/* FOOTER INNER */
+
+.footer-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1.2fr;
+
+    gap:55px;
+
+    padding-bottom:40px;
 }
 
-.heart{
-    color:#f43f5e;
+
+/* =====================================================
+   FOOTER BRAND
+===================================================== */
+
+.footer-brand{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
 }
 
 
-/* ================= FOOTER CONNECT ================= */
+.footer-brand-title{
 
-.footer-connect{
-    margin:25px 0 22px;
+    font-size:28px;
+
+    font-weight:950;
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    margin-bottom:10px;
 }
 
-.footer-connect h3{
-    color:white;
-    font-size:20px;
+
+.footer-brand p{
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:750;
+
     margin-bottom:6px;
 }
 
-.footer-connect p{
-    color:#94a3b8;
-    font-size:13px;
-    margin-bottom:15px;
+
+.footer-brand span{
+
+    color:var(--muted);
+
+    font-size:12px;
 }
 
-.social-links{
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-column{
+
     display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+
+.footer-column h4{
+
+    color:var(--text);
+
+    font-size:15px;
+
+    margin-bottom:16px;
+
+    position:relative;
+
+    padding-bottom:8px;
+}
+
+
+.footer-column h4::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:28px;
+
+    height:2px;
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+/* =====================================================
+   QUICK LINKS
+===================================================== */
+
+.footer-column > a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-bottom:9px;
+
+    transition:.2s;
+}
+
+
+.footer-column > a:hover{
+
+    color:var(--purple);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =====================================================
+   CONNECT
+===================================================== */
+
+.connect-column p{
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    max-width:270px;
+
+    margin-bottom:16px;
+}
+
+
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
+
+.social-links{
+
+    display:flex;
+
+    gap:9px;
+
     flex-wrap:wrap;
 }
 
-.social-links a{
+
+.social{
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    gap:8px;
+
+    gap:7px;
 
     text-decoration:none;
 
     color:white;
 
-    padding:10px 17px;
+    padding:
+        9px 14px;
 
     border-radius:10px;
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:800;
 
-    transition:.2s;
+    transition:.25s;
 }
 
-.social-links a:hover{
-    transform:translateY(-3px);
+
+.social:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.10);
 }
 
-.social-links .whatsapp{
+
+.social.whatsapp{
+
     background:#16a34a;
-    box-shadow:0 7px 18px rgba(22,163,74,.18);
 }
 
-.social-links .instagram{
+
+.social.instagram{
+
     background:
         linear-gradient(
             135deg,
@@ -946,72 +1691,181 @@ footer strong{
             #e1306c,
             #f77737
         );
-
-    box-shadow:0 7px 18px rgba(225,48,108,.18);
-}
-
-.social-links i{
-    font-size:17px;
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-top:20px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    color:#9ca3af;
+
+    font-size:11px;
+}
+
+
+.footer-bottom strong{
+
+    color:#555;
+}
+
+
+.heart{
+
+    color:#ef4444;
+
+    font-size:14px;
+
+    margin:
+        0 2px;
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
 
 @media(max-width:900px){
 
     .features{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
+    .footer-inner{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:35px;
+    }
+
+    .footer-brand{
+
+        grid-column:
+            1 / -1;
+    }
 }
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
 
 @media(max-width:700px){
 
     .subjects{
+
         grid-template-columns:1fr;
     }
 
     .hero{
-        padding:60px 15px 75px;
+
+        padding:
+            60px 15px
+            75px;
     }
 
     .hero h1{
+
         letter-spacing:2px;
     }
 
+    .footer-inner{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-brand{
+
+        grid-column:auto;
+    }
 }
+
+
+/* =====================================================
+   RESPONSIVE — SMALL MOBILE
+===================================================== */
 
 @media(max-width:450px){
 
     nav{
+
         gap:10px;
     }
 
+    .brand{
+
+        font-size:21px;
+    }
+
     .nav-badge{
-        font-size:11px;
+
+        font-size:10px;
+
+        padding:
+            7px 12px;
     }
 
     .hero h1{
+
         font-size:48px;
     }
 
+    .hero h2{
+
+        font-size:20px;
+    }
+
+    .hero p{
+
+        font-size:14px;
+    }
+
     .features{
+
         grid-template-columns:1fr;
     }
 
     .feedback-floating{
 
         right:15px;
+
         bottom:15px;
 
-        padding:14px 20px;
+        padding:
+            14px 20px;
 
-        font-size:14px;
+        font-size:13px;
     }
 
     .feedback-box{
 
-        padding:27px 21px;
+        padding:
+            27px 21px;
 
         border-radius:21px;
     }
@@ -1021,272 +1875,362 @@ footer strong{
         font-size:23px;
     }
 
-    .social-links a{
+    .social{
+
         width:100%;
+
         max-width:220px;
     }
 
-    /* PYQ BUTTON MOBILE */
-
     .pyq-hub-btn{
-        padding:17px 16px;
+
+        padding:
+            17px 16px;
     }
 
     .pyq-title{
+
         font-size:17px;
     }
 
+    .cbse-logo{
+
+        width:72px;
+        height:72px;
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        line-height:1.7;
+    }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
-<nav>
+    <nav>
 
-<div class="brand">
-THE GOAL
-</div>
+        <div class="brand">
+            THE GOAL
+        </div>
 
-<div class="nav-badge">
-CBSE CLASS 10
-</div>
+        <div class="nav-badge">
+            CBSE CLASS 10
+        </div>
 
-</nav>
+    </nav>
 
 
-<div class="hero">
+    <div class="hero">
 
-<div class="hero-label">
-🎓 CBSE CLASS 10 • LEARNING PORTAL
-</div>
+        <div class="hero-label">
+            🎓 CBSE CLASS 10 • LEARNING PORTAL
+        </div>
 
-<h1>
-<span>THE GOAL</span>
-</h1>
 
-<h2>
-Learn • Practice • Improve • Achieve
-</h2>
+        <h1>
+            <span>THE GOAL</span>
+        </h1>
 
-<p>
-A student-focused practice platform for CBSE Class 10.
-Prepare smarter with exam-oriented MCQs, chapter-wise practice
-and structured revision.
-</p>
 
-</div>
+        <h2>
+            Learn • Practice • Improve • Achieve
+        </h2>
+
+
+        <p>
+            A student-focused practice platform for CBSE Class 10.
+            Prepare smarter with exam-oriented MCQs, chapter-wise
+            practice and structured revision.
+        </p>
+
+    </div>
 
 </header>
 
 
-<!-- ================= MAIN ================= -->
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main>
 
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>
-Choose Your Subject
-</h2>
+        <h2>
+            Choose Your Subject
+        </h2>
 
-<p>
-Select a subject to begin your preparation.
-</p>
+        <p>
+            Select a subject to begin your preparation.
+        </p>
 
-</div>
+    </div>
 
 
-<!-- ================= SUBJECT CARDS ================= -->
 
-<section class="subjects">
+    <!-- =================================================
+         SUBJECT CARDS
+    ================================================= -->
 
+    <section class="subjects">
 
-<!-- ================= IT ================= -->
 
-<div class="subject-card">
+        <!-- =================================================
+             INFORMATION TECHNOLOGY
+        ================================================= -->
 
-<div class="subject-icon">
-💻
-</div>
+        <div class="subject-card">
 
-<div class="code">
-SUBJECT CODE • 402
-</div>
 
-<h3>
-Information Technology
-</h3>
+            <!-- CBSE LOGO -->
 
-<p>
-CBSE Class 10 Information Technology (402).
-Practice Employability Skills and Subject Specific
-Skills with exam-oriented tests designed for effective revision.
-</p>
+            <div class="cbse-logo-wrap">
 
-<a class="subject-btn" href="it.html">
-Explore IT (402) →
-</a>
+                <img
+                    src="cbse-logo.jpeg"
+                    alt="CBSE Logo"
+                    class="cbse-logo"
+                >
 
-</div>
+            </div>
 
 
-<!-- ================= MATHEMATICS ================= -->
+            <!-- SUBJECT ICON -->
 
-<div class="subject-card">
+            <div class="subject-icon">
+                💻
+            </div>
 
-<div class="subject-icon">
-🧮
-</div>
 
-<div class="code">
-CBSE CLASS 10
-</div>
+            <div class="code">
+                SUBJECT CODE • 402
+            </div>
 
-<h3>
-Mathematics
-</h3>
 
-<p>
-Chapter-wise practice, important questions and
-exam-focused preparation for CBSE Class 10 Mathematics.
-</p>
+            <h3>
+                Information Technology
+            </h3>
 
 
-<!-- ================= PYQ HUB ================= -->
+            <p>
+                CBSE Class 10 Information Technology (402).
+                Practice Employability Skills and Subject Specific
+                Skills with exam-oriented tests designed for effective revision.
+            </p>
 
-<a
-    class="pyq-hub-btn"
-    href="pyq-hub.html"
-    aria-label="Open CBSE Mathematics PYQ Hub"
->
 
-    <span class="pyq-icon">
-        📚
-    </span>
+            <a
+                class="subject-btn"
+                href="it.html"
+            >
+                Explore IT (402) →
+            </a>
 
-    <span class="pyq-text">
 
-        <span class="pyq-title">
-            PYQ HUB
-        </span>
+        </div>
 
-        <span class="pyq-subtitle">
-            2025 • 2026 • BASIC + STANDARD
-        </span>
 
-    </span>
 
-    <span class="pyq-arrow">
-        →
-    </span>
+        <!-- =================================================
+             MATHEMATICS
+        ================================================= -->
 
-</a>
+        <div class="subject-card">
 
 
-<br>
+            <!-- CBSE LOGO -->
 
+            <div class="cbse-logo-wrap">
 
-<a class="subject-btn" href="math.html">
-START →
-</a>
+                <img
+                    src="cbse-logo.jpeg"
+                    alt="CBSE Logo"
+                    class="cbse-logo"
+                >
 
-</div>
+            </div>
 
 
-</section>
+            <!-- SUBJECT ICON -->
 
+            <div class="subject-icon">
+                🧮
+            </div>
 
-<!-- ================= FEATURES ================= -->
 
-<section class="features">
+            <div class="code">
+                CBSE CLASS 10
+            </div>
 
 
-<div class="feature">
+            <h3>
+                Mathematics
+            </h3>
 
-<div class="feature-icon">
-📝
-</div>
 
-<h4>
-Exam-Oriented
-</h4>
+            <p>
+                Chapter-wise practice, important questions and
+                exam-focused preparation for CBSE Class 10 Mathematics.
+            </p>
 
-<p>
-Questions designed for focused CBSE preparation.
-</p>
 
-</div>
 
+            <!-- =================================================
+                 PYQ HUB
+            ================================================= -->
 
-<div class="feature">
+            <a
+                class="pyq-hub-btn"
+                href="pyq-hub.html"
+                aria-label="Open CBSE Mathematics PYQ Hub"
+            >
 
-<div class="feature-icon">
-⏱️
-</div>
+                <span class="pyq-icon">
+                    📚
+                </span>
 
-<h4>
-Timed Tests
-</h4>
 
-<p>
-Practice with a 20-minute test environment.
-</p>
+                <span class="pyq-text">
 
-</div>
+                    <span class="pyq-title">
+                        PYQ HUB
+                    </span>
 
+                    <span class="pyq-subtitle">
+                        2025 • 2026 • BASIC + STANDARD
+                    </span>
 
-<div class="feature">
+                </span>
 
-<div class="feature-icon">
-📊
-</div>
 
-<h4>
-Instant Results
-</h4>
+                <span class="pyq-arrow">
+                    →
+                </span>
 
-<p>
-Check your score and review your performance.
-</p>
+            </a>
 
-</div>
 
+            <br>
 
-<div class="feature">
 
-<div class="feature-icon">
-📱
-</div>
+            <a
+                class="subject-btn"
+                href="math.html"
+            >
+                START →
+            </a>
 
-<h4>
-Any Device
-</h4>
 
-<p>
-Practice comfortably on mobile, tablet or laptop.
-</p>
+        </div>
 
-</div>
 
+    </section>
 
-</section>
+
+
+    <!-- =================================================
+         FEATURES
+    ================================================= -->
+
+    <section class="features">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📝
+            </div>
+
+            <h4>
+                Exam-Oriented
+            </h4>
+
+            <p>
+                Questions designed for focused CBSE preparation.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⏱️
+            </div>
+
+            <h4>
+                Timed Tests
+            </h4>
+
+            <p>
+                Practice with a 20-minute test environment.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📊
+            </div>
+
+            <h4>
+                Instant Results
+            </h4>
+
+            <p>
+                Check your score and review your performance.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📱
+            </div>
+
+            <h4>
+                Any Device
+            </h4>
+
+            <p>
+                Practice comfortably on mobile, tablet or laptop.
+            </p>
+
+        </div>
+
+
+    </section>
 
 
 </main>
 
 
-<!-- ================================================= -->
-<!-- ================= FEEDBACK BUTTON =============== -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     FEEDBACK FLOATING BUTTON
+===================================================== -->
 
 <button
     class="feedback-floating"
@@ -1296,9 +2240,10 @@ Practice comfortably on mobile, tablet or laptop.
 </button>
 
 
-<!-- ================================================= -->
-<!-- ================= FEEDBACK POPUP ================ -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     FEEDBACK POPUP
+===================================================== -->
 
 <div
     class="feedback-overlay"
@@ -1330,12 +2275,16 @@ Practice comfortably on mobile, tablet or laptop.
             Tell Us What You Think
         </h2>
 
+
         <p class="feedback-subtitle">
             Your feedback helps us make THE GOAL better.
         </p>
 
 
-        <!-- ================= FORM ================= -->
+
+        <!-- =================================================
+             FEEDBACK FORM
+        ================================================= -->
 
         <form id="feedbackForm">
 
@@ -1378,7 +2327,9 @@ Practice comfortably on mobile, tablet or laptop.
                 Your Rating
             </label>
 
+
             <div class="stars">
+
 
                 <input
                     type="radio"
@@ -1440,10 +2391,12 @@ Practice comfortably on mobile, tablet or laptop.
                     ★
                 </label>
 
+
             </div>
 
 
-            <!-- TELL US -->
+
+            <!-- MESSAGE -->
 
             <label for="feedbackMessage">
                 Tell Us
@@ -1457,6 +2410,7 @@ Practice comfortably on mobile, tablet or laptop.
             ></textarea>
 
 
+
             <!-- SUBMIT -->
 
             <button
@@ -1467,34 +2421,43 @@ Practice comfortably on mobile, tablet or laptop.
                 SEND FEEDBACK →
             </button>
 
+
         </form>
 
 
-        <!-- ================= SUCCESS ================= -->
+
+        <!-- =================================================
+             SUCCESS
+        ================================================= -->
 
         <div
             class="feedback-success"
             id="feedbackSuccess"
         >
 
+
             <div class="success-check">
                 ✓
             </div>
 
+
             <h3>
                 Thank You! ❤️
             </h3>
+
 
             <p>
                 Your feedback has been received.
                 It helps us improve THE GOAL.
             </p>
 
+
             <button
                 onclick="closeFeedback()"
             >
                 CLOSE
             </button>
+
 
         </div>
 
@@ -1504,9 +2467,10 @@ Practice comfortably on mobile, tablet or laptop.
 </div>
 
 
-<!-- ================================================= -->
-<!-- ================= FEEDBACK SCRIPT =============== -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     FEEDBACK SCRIPT
+===================================================== -->
 
 <script>
 
@@ -1514,7 +2478,10 @@ const FEEDBACK_URL =
 "https://script.google.com/macros/s/AKfycbz_0DPiLtm6SIT8uyn7Sw7UO8cNyZezfszdyKtfDdLPe2OcVtFspQL9UOuS5yHD57qm/exec";
 
 
-/* ================= OPEN FEEDBACK ================= */
+
+/* =====================================================
+   OPEN FEEDBACK
+===================================================== */
 
 function openFeedback(){
 
@@ -1526,7 +2493,10 @@ function openFeedback(){
 }
 
 
-/* ================= CLOSE FEEDBACK ================= */
+
+/* =====================================================
+   CLOSE FEEDBACK
+===================================================== */
 
 function closeFeedback(){
 
@@ -1538,7 +2508,10 @@ function closeFeedback(){
 }
 
 
-/* ================= OUTSIDE CLICK ================= */
+
+/* =====================================================
+   OUTSIDE CLICK
+===================================================== */
 
 document
     .getElementById("feedbackOverlay")
@@ -1556,7 +2529,10 @@ document
     );
 
 
-/* ================= SUBMIT FEEDBACK ================= */
+
+/* =====================================================
+   SUBMIT FEEDBACK
+===================================================== */
 
 document
     .getElementById("feedbackForm")
@@ -1568,6 +2544,7 @@ document
 
 
             const form = this;
+
 
             const submitButton =
                 document.getElementById(
@@ -1642,84 +2619,181 @@ document
 </script>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-<strong>
-THE GOAL
-</strong>
 
-<br><br>
-
-CBSE Class 10 Learning Portal
+    <div class="footer-inner">
 
 
-<!-- ================= LET'S CONNECT ================= -->
+        <!-- =================================================
+             BRAND
+        ================================================= -->
 
-<div class="footer-connect">
+        <div class="footer-brand">
 
-<h3>
-Let's Connect
-</h3>
-
-<p>
-Have a suggestion, feedback or simply want to connect?
-</p>
+            <div class="footer-brand-title">
+                THE GOAL
+            </div>
 
 
-<div class="social-links">
+            <p>
+                CBSE Class 10 Learning Portal
+            </p>
 
 
-<!-- ================= WHATSAPP ================= -->
+            <span>
+                Learn • Practice • Improve • Achieve
+            </span>
 
-<a
-    href="https://chat.whatsapp.com/KbZQL2FaE5S98ziUvz7pyq"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="whatsapp"
->
-
-<i class="fa-brands fa-whatsapp"></i>
-
-WhatsApp
-
-</a>
+        </div>
 
 
-<!-- ================= INSTAGRAM ================= -->
 
-<a
-    href="https://www.instagram.com/the_goal_10th/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="instagram"
->
+        <!-- =================================================
+             QUICK LINKS
+        ================================================= -->
 
-<i class="fa-brands fa-instagram"></i>
+        <div class="footer-column">
 
-Instagram
-
-</a>
+            <h4>
+                Quick Links
+            </h4>
 
 
-</div>
+            <a href="index.html">
+                Home
+            </a>
 
-</div>
+
+            <a href="math.html">
+                Mathematics
+            </a>
 
 
-Made with Love
-<span class="heart">❤️</span>
-in India by Pushpender
+            <a href="it.html">
+                Information Technology
+            </a>
+
+
+            <a href="pyq-hub.html">
+                Mathematics PYQ Hub
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONNECT
+        ================================================= -->
+
+        <div class="footer-column connect-column">
+
+            <h4>
+                Let's Connect
+            </h4>
+
+
+            <p>
+                Have a suggestion, feedback
+                or simply want to connect?
+            </p>
+
+
+            <div class="social-links">
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://chat.whatsapp.com/KbZQL2FaE5S98ziUvz7pyq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social whatsapp"
+                >
+
+                    💬
+
+                    <span>
+                        WhatsApp
+                    </span>
+
+                </a>
+
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://www.instagram.com/the_goal_10th/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social instagram"
+                >
+
+                    📸
+
+                    <span>
+                        Instagram
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER BOTTOM
+    ================================================= -->
+
+    <div class="footer-bottom">
+
+
+        <div>
+
+            © 2026
+            <strong>
+                THE GOAL
+            </strong>
+
+            · CBSE Class 10 Learning Portal
+
+        </div>
+
+
+        <div>
+
+            Made with
+
+            <span class="heart">
+                ♥
+            </span>
+
+            in India by
+
+            <strong>
+                Pushpender
+            </strong>
+
+        </div>
+
+
+    </div>
+
 
 </footer>
-
-
-<!-- ================= FONT AWESOME ================= -->
-
-<script
-src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js">
-</script>
 
 
 </body>
