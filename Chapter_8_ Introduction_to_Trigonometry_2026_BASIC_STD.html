@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 8 - Introduction to Trigonometry</title>
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)'], ['$', '$']],
+      displayMath: [['\\[', '\\]'], ['$$', '$$']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    color: #222;
+    background: #fff;
+    margin: 0;
+    padding: 25px;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #111;
+  }
+
+  h2 {
+    font-size: 21px;
+    margin-top: 35px;
+    padding: 10px 14px;
+    border-left: 5px solid #333;
+    background: #f3f3f3;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin-top: 25px;
+  }
+
+  .question {
+    margin: 18px 0;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .question-number {
+    font-weight: bold;
+  }
+
+  .options {
+    margin: 8px 0 5px 20px;
+  }
+
+  .options div {
+    margin: 3px 0;
+  }
+
+  .sets {
+    font-size: 13px;
+    color: #555;
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  .formula {
+    text-align: center;
+    margin: 12px 0;
+  }
+
+  @media print {
+    body {
+      padding: 10px;
+    }
+
+    .question {
+      break-inside: avoid;
+    }
+
+    h2, h3 {
+      break-after: avoid;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>CHAPTER 8 : INTRODUCTION TO TRIGONOMETRY</h1>
+
+<!-- ===================================================== -->
+<h2>1. MULTIPLE CHOICE QUESTIONS (1 MARK)</h2>
+
+<h3>A. Trigonometric Ratios &amp; Basic Concepts</h3>
+
+<div class="question">
+  <div><span class="question-number">1.</span> If \( \sin\theta=\frac{a}{b} \), then \( \cos\theta \) is equal to:</div>
+  <div class="options">
+    <div>(A) \( \frac{b}{\sqrt{b^2-a^2}} \)</div>
+    <div>(B) \( \frac{b}{a} \)</div>
+    <div>(C) \( \frac{\sqrt{b^2-a^2}}{b} \)</div>
+    <div>(D) \( \frac{a}{\sqrt{b^2-a^2}} \)</div>
+  </div>
+  <div class="sets">[STD: 30/1/1 Q9, 30/1/3 Q7]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">2.</span> If \( \cos A=\frac12 \), then the value of \( \sin^2A+2\cos^2A \) is:</div>
+  <div class="options">
+    <div>(A) \( \frac32 \)</div>
+    <div>(B) \( \frac54 \)</div>
+    <div>(C) \( 1 \)</div>
+    <div>(D) \( \frac12 \)</div>
+  </div>
+  <div class="sets">[STD: 30/1/1 Q10, 30/1/2 Q11, 30/1/3 Q8]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">3.</span> If \( 2\sin A=1 \), then the value of \( \tan A+\cot A \) is:</div>
+  <div class="options">
+    <div>(A) \( \sqrt3 \)</div>
+    <div>(B) \( \frac4{\sqrt3} \)</div>
+    <div>(C) \( \frac{\sqrt3}{2} \)</div>
+    <div>(D) \( 1 \)</div>
+  </div>
+  <div class="sets">[STD: 30/2/1 Q11, 30/2/2 Q14, 30/2/3 Q5]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">4.</span> If \( \sin2\alpha=\frac{\sqrt3}{2} \), the value of \( \sin3\alpha \) is:</div>
+  <div class="options">
+    <div>(A) \( \frac{3\sqrt3}{4} \)</div>
+    <div>(B) \( \frac12 \)</div>
+    <div>(C) \( 1 \)</div>
+    <div>(D) \( \frac{\sqrt3}{4} \)</div>
+  </div>
+  <div class="sets">[STD: 30/3/1 Q15, 30/3/2 Q1, 30/3/3 Q12]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">5.</span> Which of the following statements is <strong>false</strong>?</div>
+  <div class="options">
+    <div>(A) \( \tan45^\circ=\cot45^\circ \)</div>
+    <div>(B) \( \sin90^\circ=\tan45^\circ \)</div>
+    <div>(C) \( \sin30^\circ=\cos30^\circ \)</div>
+    <div>(D) \( \sin45^\circ=\cos45^\circ \)</div>
+  </div>
+  <div class="sets">[BASIC: 430/1/1, 430/1/2, 430/1/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">6.</span> Find the value of \( \theta \) for which \( \sin2\theta=\tan45^\circ \).</div>
+  <div class="options">
+    <div>(A) \(22.5^\circ\)</div>
+    <div>(B) \(30^\circ\)</div>
+    <div>(C) \(45^\circ\)</div>
+    <div>(D) \(90^\circ\)</div>
+  </div>
+  <div class="sets">[BASIC: 430/3/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">7.</span> The value of \( \frac{2\tan60^\circ}{1-\tan^260^\circ} \) is:</div>
+  <div class="options">
+    <div>(A) \(-3\)</div>
+    <div>(B) \( \sqrt3 \)</div>
+    <div>(C) \(-\frac1{\sqrt3}\)</div>
+    <div>(D) \(-\sqrt3\)</div>
+  </div>
+  <div class="sets">[BASIC: 430/2/1, 430/2/2, 430/2/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">8.</span> The value of \( \frac13\cot^230^\circ-\frac12\sec^260^\circ \) is:</div>
+  <div class="options">
+    <div>(A) \(-1\)</div>
+    <div>(B) \(-2\)</div>
+    <div>(C) \( \frac58 \)</div>
+    <div>(D) \( \frac78 \)</div>
+  </div>
+  <div class="sets">[STD: 30/3/2 Q11]</div>
+</div>
+
+<h3>B. Trigonometric Identities &amp; Simplification</h3>
+
+<div class="question">
+  <div><span class="question-number">9.</span> The value of \( \frac{1+\tan^2A}{1+\cot^2A} \) is:</div>
+  <div class="options">
+    <div>(A) \( \tan^2A \)</div>
+    <div>(B) \(-1\)</div>
+    <div>(C) \(-\tan^2A\)</div>
+    <div>(D) \( \cot^2A \)</div>
+  </div>
+  <div class="sets">[STD: 30/4/1 Q12, 30/4/2 Q4, 30/4/3 Q15]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">10.</span> The value of \( \frac{\sec^2A-1}{\sin^2A} \) is same as:</div>
+  <div class="options">
+    <div>(A) \( \cos^2A \)</div>
+    <div>(B) \( \sec^2A \)</div>
+    <div>(C) \(-\sec^2A\)</div>
+    <div>(D) \( \cot^2A \)</div>
+  </div>
+  <div class="sets">[STD: 30/4/3 Q9]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">11.</span> The simplest form of \( \frac{\sec A}{\sqrt{\sec^2A-1}} \) is:</div>
+  <div class="options">
+    <div>(A) \( \sin A \)</div>
+    <div>(B) \( \tan A \)</div>
+    <div>(C) \( \csc A \)</div>
+    <div>(D) \( \cos A \)</div>
+  </div>
+  <div class="sets">[STD: 30/5/1 Q18, 30/5/2 Q9, 30/5/3 Q6]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">12.</span> The value of \( \tan^2A-\frac1{\cos^2A} \) is:</div>
+  <div class="options">
+    <div>(A) More than 1</div>
+    <div>(B) 1</div>
+    <div>(C) 0</div>
+    <div>(D) \(-1\)</div>
+  </div>
+  <div class="sets">[BASIC: 430/1/1]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">13.</span> The value of \( \cot^2A-\frac1{\sin^2A} \) is:</div>
+  <div class="options">
+    <div>(A) More than 1</div>
+    <div>(B) 1</div>
+    <div>(C) 0</div>
+    <div>(D) \(-1\)</div>
+  </div>
+  <div class="sets">[BASIC: 430/1/2]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">14.</span> The value of \( \frac1{\sec^2A}+\frac1{\csc^2A} \) is:</div>
+  <div class="options">
+    <div>(A) More than 1</div>
+    <div>(B) 1</div>
+    <div>(C) 0</div>
+    <div>(D) \(-1\)</div>
+  </div>
+  <div class="sets">[BASIC: 430/1/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">15.</span> The value of
+    \( (\sin^2A+\cos^2A)+(\sec^2A-\tan^2A)-(\cot^2A-\csc^2A) \)
+    is:
+  </div>
+  <div class="options">
+    <div>(A) 1</div>
+    <div>(B) \(-1\)</div>
+    <div>(C) 3</div>
+    <div>(D) 2</div>
+  </div>
+  <div class="sets">[BASIC: 430/2/1]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">16.</span> The value of
+    \( (\sin\theta+\cos\theta)^2+(\sin\theta-\cos\theta)^2 \)
+    is:
+  </div>
+  <div class="options">
+    <div>(A) 1</div>
+    <div>(B) 2</div>
+    <div>(C) \(2+2\sin\theta\cos\theta\)</div>
+    <div>(D) \(2+4\sin\theta\cos\theta\)</div>
+  </div>
+  <div class="sets">[BASIC: 430/2/2]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">17.</span> The value of
+    \( (\sec\theta-\cos\theta)^2+\sin^2\theta-\tan^2\theta \)
+    is:
+  </div>
+  <div class="options">
+    <div>(A) 0</div>
+    <div>(B) 1</div>
+    <div>(C) 2</div>
+    <div>(D) 4</div>
+  </div>
+  <div class="sets">[BASIC: 430/2/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">18.</span> The value of
+    \( \frac{\sec^230^\circ+\tan^230^\circ}
+    {\sin^245^\circ+\cos^245^\circ} \)
+    is:
+  </div>
+  <div class="options">
+    <div>(A) 1</div>
+    <div>(B) \( \frac53 \)</div>
+    <div>(C) \( \frac{13}{3} \)</div>
+    <div>(D) 7</div>
+  </div>
+  <div class="sets">[BASIC: 430/3/1]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">19.</span> The value of
+    \( \frac{\cot^2A-\csc^2A}{\sin30^\circ+\cos60^\circ} \)
+    is:
+  </div>
+  <div class="options">
+    <div>(A) 1</div>
+    <div>(B) \(-1\)</div>
+    <div>(C) \( \frac2{1+\sqrt3} \)</div>
+    <div>(D) \( -\frac2{1+\sqrt3} \)</div>
+  </div>
+  <div class="sets">[BASIC: 430/3/2]</div>
+</div>
+
+<!-- ===================================================== -->
+<h2>2. ASSERTION–REASON QUESTIONS (1 MARK)</h2>
+
+<div class="question">
+  <div><span class="question-number">20.</span> <strong>Assertion (A):</strong> For \( \sin\theta=1 \), \( \cos\theta \) must be 0.</div>
+  <div><strong>Reason (R):</strong> \( \sin^2\theta-\cos^2\theta=1 \).</div>
+  <div class="sets">[BASIC: 430/3/1 Q19]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">21.</span> <strong>Assertion (A):</strong> For an acute angle \( \theta \), \( \cot\theta=1\implies\csc\theta=2 \).</div>
+  <div><strong>Reason (R):</strong> \( \csc^2\theta-\cot^2\theta=1 \).</div>
+  <div class="sets">[BASIC: 430/3/2 Q20]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">22.</span> <strong>Assertion (A):</strong> For an angle \( \theta \), \( \sec\theta=1\implies\tan\theta=0 \).</div>
+  <div><strong>Reason (R):</strong> \( \sec^2\theta+\tan^2\theta=1 \).</div>
+  <div class="sets">[BASIC: 430/3/3 Q19]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">23.</span> <strong>Assertion (A):</strong> \( \tan2\theta \) is not defined at \( \theta=45^\circ \).</div>
+  <div><strong>Reason (R):</strong> \( \sin90^\circ\ne\cos90^\circ \).</div>
+  <div class="sets">[STD: 30/3/1 Q20, 30/3/2 Q20]</div>
+</div>
+
+<!-- ===================================================== -->
+<h2>3. VERY SHORT ANSWER QUESTIONS (2 MARKS)</h2>
+
+<h3>A. Finding Angles</h3>
+
+<div class="question">
+  <div><span class="question-number">24.</span> Find the values of \(A\) and \(B\), where \(0^\circ\le A<90^\circ,\ 0^\circ\le B<90^\circ\), if
+  \( \tan(A+B)=1 \) and \( \tan(A-B)=\frac1{\sqrt3} \).
+  </div>
+  <div class="sets">[BASIC: 430/1/1, 430/1/2, 430/1/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">25.</span> If
+    \( \sec(2A-B)=2 \) and \( \csc(A+B)=2 \),
+    find the values of \(A\) and \(B\).
+  </div>
+  <div class="sets">[STD: 30/5/2 Q22(a)]</div>
+</div>
+
+<h3>B. Geometrical Proof</h3>
+
+<div class="question">
+  <div><span class="question-number">26.</span> Prove geometrically that
+    \( \tan45^\circ=1 \).
+  </div>
+  <div class="sets">[BASIC: 430/1/1, 430/1/2, 430/1/3]</div>
+</div>
+
+<h3>C. Evaluation</h3>
+
+<div class="question">
+  <div><span class="question-number">27.</span> If \( \sin3A=1 \), find the value of
+    \( \cos2A-\tan^245^\circ \).
+  </div>
+  <div class="sets">[BASIC: 430/3/1, 430/3/2, 430/3/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">28.</span> Evaluate:
+    \( \frac{\sin^245^\circ}{\csc^230^\circ-\tan^245^\circ} \).
+  </div>
+  <div class="sets">[BASIC: 430/2/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">29.</span> Evaluate:
+    \( \frac{3\cos^230^\circ-6\csc^230^\circ}{\tan^260^\circ} \).
+  </div>
+  <div class="sets">[STD: 30/4/1 Q23(b), 30/4/2 Q25(b)]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">30.</span> Evaluate:
+    \( \sin^360^\circ-\frac{\tan30^\circ}{\cos^245^\circ} \).
+  </div>
+  <div class="sets">[STD: 30/5/1 Q24(a), 30/5/3 Q22(a)]</div>
+</div>
+
+<h3>D. Identity Proofs</h3>
+
+<div class="question">
+  <div><span class="question-number">31.</span> Prove that
+    \( \sqrt{\frac{1+\sin A}{1-\sin A}}=\sec A+\tan A \).
+  </div>
+  <div class="sets">[STD: 30/4/1 Q23(a), 30/4/2 Q25(a)]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">32.</span> Prove that
+    \( \frac{\tan\theta}{1+\tan^2\theta}
+    +\frac{\cot\theta}{1+\cot^2\theta}
+    =2\sin\theta\cos\theta \).
+  </div>
+  <div class="sets">[STD: 30/4/3 Q21(a)]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">33.</span> Prove that
+    \( 1+\frac{\cot^2\alpha}{1+\csc\alpha}=\csc\alpha \).
+  </div>
+  <div class="sets">[STD: 30/2/2 Q22(b)]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">34.</span> If
+    \( (\sec A+\tan A)(1-\sin A)=k\cos A \),
+    find the value of \(k\).
+  </div>
+  <div class="sets">[BASIC: 430/3/1, 430/3/2, 430/3/3]</div>
+</div>
+
+<!-- ===================================================== -->
+<h2>4. SHORT ANSWER QUESTIONS (3 MARKS)</h2>
+
+<h3>A. Prove the Following Identities</h3>
+
+<div class="question">
+  <div><span class="question-number">35.</span> Prove that
+    \( \sqrt{\frac{\csc A-1}{\csc A+1}}=\sec A-\tan A \).
+  </div>
+  <div class="sets">[BASIC: 430/1/2]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">36.</span> Prove that
+    \( (\sin A-\csc A)(\cos A-\sec A)
+    =\frac1{\tan A+\cot A} \).
+  </div>
+  <div class="sets">[BASIC: 430/1/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">37.</span> Prove that
+    \( \frac{\cos\theta}{1+\sin\theta}
+    +\frac{1+\sin\theta}{\cos\theta}
+    =2\sec\theta \).
+  </div>
+  <div class="sets">[BASIC: 430/2/1]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">38.</span> Prove that
+    \( \frac{\cos A-2\cos^3A}{2\sin^3A-\sin A}=\cot A \).
+  </div>
+  <div class="sets">[BASIC: 430/2/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">39.</span> Prove that
+    \( \frac{1+\csc A}{\csc A}
+    =\frac{\cos^2A}{1-\sin A} \).
+  </div>
+  <div class="sets">[BASIC: 430/3/1]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">40.</span> Prove that
+    \( \frac{1+\sec A}{\sec A}
+    =\frac{\sin^2A}{1-\cos A} \).
+  </div>
+  <div class="sets">[BASIC: 430/3/2]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">41.</span> Prove that
+    \( \frac{\tan\theta}{1+\cot\theta}
+    +\frac{\cot\theta}{1+\tan\theta}
+    =\tan\theta+\cot\theta-1 \).
+  </div>
+  <div class="sets">[BASIC: 430/3/3]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">42.</span> Prove that
+    \( \frac{\sin\theta-\cos\theta+1}
+    {\sin\theta+\cos\theta-1}
+    =\frac1{\sec\theta-\tan\theta} \).
+  </div>
+  <div class="sets">[STD: 30/4/1 Q28]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">43.</span> Prove that
+    \( \frac1{\sec x-\tan x}-\frac1{\cos x}
+    =\frac1{\cos x}-\frac1{\sec x+\tan x} \).
+  </div>
+  <div class="sets">[STD: 30/4/2 Q30]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">44.</span> Prove that
+    \( \frac{\tan\theta}{1-\cot\theta}
+    +\frac{\cot\theta}{1-\tan\theta}
+    =1+\tan\theta+\cot\theta \).
+  </div>
+  <div class="sets">[STD: 30/5/1 Q28, 30/5/3 Q30]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">45.</span> Prove that
+    \( (\sin A+\sec A)^2+(\cos A+\csc A)^2
+    =(1+\sec A\csc A)^2 \).
+  </div>
+  <div class="sets">[STD: 30/1/3 Q26(b), 30/3/1 Q26(b), 30/3/2 Q28(b)]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">46.</span> If
+    \( \sec\theta+\tan\theta=m \),
+    show that
+    \( \frac{m^2-1}{m^2+1}=\sin\theta \).
+  </div>
+  <div class="sets">[STD: 30/4/3 Q31]</div>
+</div>
+
+<!-- ===================================================== -->
+<h2>5. FIGURE-BASED TRIGONOMETRY</h2>
+
+<div class="question">
+  <div><span class="question-number">47.</span> A car is moving away from the base of a 30 m high tower. The angle of elevation of the top of the tower from the car at an instant, when the car is \(10\sqrt3\) m away from the base, is:</div>
+  <div class="options">
+    <div>(A) \(30^\circ\)</div>
+    <div>(B) \(45^\circ\)</div>
+    <div>(C) \(90^\circ\)</div>
+    <div>(D) \(60^\circ\)</div>
+  </div>
+  <div class="sets">[STD: 30/1/1 Q11]</div>
+</div>
+
+<div class="question">
+  <div><span class="question-number">48.</span> In the given figure, \(PT\) is a tangent to the circle with centre \(O\) and radius \(r\). If \(\angle POT=45^\circ\), then the length of \(OP\) is:</div>
+  <div class="options">
+    <div>(A) \(r\sqrt2\)</div>
+    <div>(B) \(\sqrt{2r}\)</div>
+    <div>(C) \(2r\)</div>
+    <div>(D) \(r^2\)</div>
+  </div>
+  <div class="sets">[STD: 30/3/1 Q12]</div>
+</div>
+
+</div>
+
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax) {
+      MathJax.typesetPromise();
+    }
+  });
+</script>
+
+</body>
+</html>

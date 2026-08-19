@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 3 – Pair of Linear Equations in Two Variables | CBSE Class 10 Basic Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:36px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:17px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+.content{
+    padding:28px 38px 45px;
+}
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+.assertion{
+    margin-top:7px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.assertion div + div{
+    margin-top:5px;
+}
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+.subparts{
+    margin-top:8px;
+    padding-left:20px;
+}
+
+.subparts div{
+    margin:4px 0;
+}
+
+mjx-container{
+    max-width:100%;
+}
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:32px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+}
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:28px;
+    }
+
+    .cover h2{
+        font-size:14px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>PAIR OF LINEAR EQUATIONS<br>IN TWO VARIABLES</h1>
+
+    <h2>Chapter 3 • Basic Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Basic Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 3: Pair of Linear Equations in Two Variables</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Basic Mathematics 2025</strong>
+        question paper sets, with major conceptual variations retained.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Solution Identification</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The number of solutions of the system of equations
+\[
+x=3,\qquad y=-1
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 0</div>
+    <div class="option">(B) 1</div>
+    <div class="option">(C) 2</div>
+    <div class="option">(D) Infinite</div>
+</div>
+
+<span class="set">Set 430/2/2</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Parallel Lines – Number of Solutions</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The number of solutions of the system of equations
+\[
+x=a,\qquad x=b
+\]
+where \(a\neq b\), is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 0</div>
+    <div class="option">(B) 1</div>
+    <div class="option">(C) 2</div>
+    <div class="option">(D) Infinite</div>
+</div>
+
+<span class="set">Set 430/2/3</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Finding the Constant</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If \((0,0)\) is the solution of the equation
+\[
+x+y=c-1,
+\]
+then the value of \(c\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 0</div>
+    <div class="option">(B) 1</div>
+    <div class="option">(C) \(-1\)</div>
+    <div class="option">(D) Any real number</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Unique Solution Condition</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+For what value(s) of \(k\) does the system of equations
+\[
+kx+2y=3
+\]
+and
+\[
+2x+y=5
+\]
+have a unique solution?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(k=\) a real number</div>
+    <div class="option">(B) \(k\neq8\)</div>
+    <div class="option">(C) \(k\neq4\)</div>
+    <div class="option">(D) \(k=4\)</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Parallel Lines Condition</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of \(m\) for which the lines
+\[
+14x+my=20
+\]
+and
+\[
+-3x+2y=16
+\]
+are parallel, is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{3}{14}\)</div>
+    <div class="option">(B) \(-\frac{7}{3}\)</div>
+    <div class="option">(C) \(-\frac{28}{3}\)</div>
+    <div class="option">(D) \(-\frac{3}{28}\)</div>
+</div>
+
+<span class="set">Set 430/4/2</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Consistency Nature</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The system of linear equations given by
+\[
+x=a,\qquad y=b
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) Consistent with a unique solution</div>
+    <div class="option">(B) Consistent with infinitely many solutions</div>
+    <div class="option">(C) Consistent with two solutions</div>
+    <div class="option">(D) Inconsistent</div>
+</div>
+
+<span class="set">Set 430/3/3</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. ASSERTION REASON -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Assertion – Reason Question</h2>
+</div>
+
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Consistency and Infinitely Many Solutions</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+The value of \(p\) for which the system of equations
+\[
+4x+py+8=0
+\]
+and
+\[
+2x+2y+2=0
+\]
+is consistent is \(4\).
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+The system of equations
+\[
+a_1x+b_1y=c_1
+\]
+and
+\[
+a_2x+b_2y=c_2
+\]
+is consistent with infinitely many solutions if
+\[
+\frac{a_1}{a_2}
+=
+\frac{b_1}{b_2}
+=
+\frac{c_1}{c_2}.
+\]
+</div>
+
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. 2 MARKS -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Very Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Algebraic Solution – Fractions</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Solve the following system of equations for \(x\) and \(y\):
+</div>
+
+<div class="formula">
+\[
+\frac{x}{2}+\frac{2y}{3}=-1
+\]
+
+\[
+x-\frac{y}{3}=3
+\]
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Algebraic Solution – Decimals</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Solve for \(x\) and \(y\):
+</div>
+
+<div class="formula">
+\[
+0.1x+0.3y=1
+\]
+
+\[
+0.2x-0.1y=-0.1
+\]
+</div>
+
+<span class="set">Set 430/1/2</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Infinitely Many Solutions</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Find the value of \(c\) for which the following pair of linear
+equations has infinitely many solutions:
+</div>
+
+<div class="formula">
+\[
+cx+3y=c-3
+\]
+
+\[
+12x+cy=c
+\]
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Arithmetic Solution</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Solve for \(x\) and \(y\):
+</div>
+
+<div class="formula">
+\[
+3x+2y=65
+\]
+
+\[
+2x+3y=60
+\]
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Graphical Solution</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Solve the following system of equations graphically:
+</div>
+
+<div class="formula">
+\[
+x+2y=10
+\]
+
+\[
+y=3
+\]
+</div>
+
+<span class="set">Set 430/3/2</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Graphical Solution</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Solve the following system of linear equations graphically:
+</div>
+
+<div class="formula">
+\[
+x+y=5
+\]
+
+\[
+x-y=3
+\]
+</div>
+
+<span class="set">Set 430/3/3</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IV. 3 MARKS -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Graphical Solution – Intersecting Lines</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Solve the following system of equations graphically:
+</div>
+
+<div class="formula">
+\[
+x+3y=6
+\]
+
+\[
+2x-3y=12
+\]
+</div>
+
+<span class="set">Set 430/1/2</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Word Problem – Complementary Angles</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+\(x\) and \(y\) are complementary angles such that
+\[
+x:y=1:2.
+\]
+
+Express the given information as a system of linear equations
+in two variables and hence solve it.
+</div>
+
+<span class="set">Set 430/1/2</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Graphical Intercepts</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Solve graphically the following pair of linear equations:
+</div>
+
+<div class="formula">
+\[
+2x-y=2
+\]
+
+\[
+4x-y=4
+\]
+</div>
+
+<div class="q-text">
+Also, write the coordinates of the points where the lines
+represented by these equations cut the \(y\)-axis.
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Word Problem – Cricket Coaching</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+An academy provided 10 bats and 5 balls for ₹32,500.
+Later, it bought 2 bats and 8 balls for ₹10,000.
+
+<br>
+
+If the price remained the same, find the cost of
+1 bat and 1 ball.
+</div>
+
+<span class="set">Set 430/2/2</span>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Word Problem – Fraction</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+A fraction becomes
+\[
+\frac{1}{3},
+\]
+when 1 is subtracted from the numerator and it becomes
+\[
+\frac{1}{4},
+\]
+when 8 is added to its denominator.
+
+<br>
+
+Find the fraction.
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Unknown \(k\) and Solutions</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Find the value of \(k\) for which the following pair of linear
+equations will have infinitely many solutions:
+</div>
+
+<div class="formula">
+\[
+kx+3y-(k-3)=0
+\]
+
+\[
+12x+ky-k=0
+\]
+</div>
+
+<div class="q-text">
+Hence, find any two solutions of the given pair of equations.
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- V. 5 MARKS -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">V</div>
+    <h2>Long Answer Type Questions</h2>
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">20. Graphical Analysis</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Determine graphically whether the following pair of linear
+equations has a unique solution or infinitely many solutions:
+</div>
+
+<div class="formula">
+\[
+2x+3y=12
+\]
+
+\[
+x-y=1
+\]
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q21 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">21. Word Problem – Number Digits</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+The sum of a 2-digit number and the number obtained by reversing
+the order of its digits is 121. The two digits differ by 3.
+</div>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+Represent the information in the form of a pair of linear equations.
+</div>
+
+<div>
+<strong>(ii)</strong>
+Show that the equations have a unique solution.
+</div>
+
+<div>
+<strong>(iii)</strong>
+Solve the equations and find the number.
+</div>
+
+</div>
+
+<span class="set">Set 430/5/2</span>
+
+</div>
+
+
+<!-- Q22 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">22. Graphical Solution – General</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Solve the following pair of equations using graphical method:
+</div>
+
+<div class="formula">
+\[
+3x-4y+3=0
+\]
+
+\[
+-2x+5y=9
+\]
+</div>
+
+<span class="set">Set 430/5/3</span>
+
+</div>
+
+
+<!-- Q23 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">23. Word Problem – Investment and Interest</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Nidhi received simple interest of ₹1,200 when she invested
+₹\(x\) at 6% p.a. and ₹\(y\) at 5% p.a. for 1 year.
+
+<br><br>
+
+Had she invested ₹\(x\) at 3% p.a. and ₹\(y\) at 8% p.a.
+for that year, she would have received simple interest of ₹1,260.
+
+<br><br>
+
+Find the values of \(x\) and \(y\).
+</div>
+
+<span class="set">Set 430/6/2</span>
+
+</div>
+
+
+<!-- Q24 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">24. Graphical Solution – Extended</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Solve the following pair of linear equations by graphical method:
+</div>
+
+<div class="formula">
+\[
+2x+y=9
+\]
+
+\[
+x-2y=2
+\]
+</div>
+
+<span class="set">Set 430/6/3</span>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Pair of Linear Equations • Basic Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 3
+    </div>
+
+</footer>
+
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>
+```

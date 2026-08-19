@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 7 – Coordinate Geometry | CBSE Class 10 Basic Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+    },
+    svg: {
+        fontCache: 'global'
+    }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTIONS ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= OPTIONS ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= CASE STUDY ================= */
+
+.casebox{
+    margin-top:7px;
+    padding:11px 13px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.casebox p{
+    margin:0 0 8px;
+}
+
+.casebox p:last-child{
+    margin-bottom:0;
+}
+
+.subparts{
+    margin-top:8px;
+    padding-left:18px;
+}
+
+.subparts div{
+    margin:5px 0;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+mjx-container{
+    max-width:100%;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    .top-btn{
+        display:none;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:30px;
+    }
+
+    .cover h2{
+        font-size:14px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>COORDINATE GEOMETRY</h1>
+
+    <h2>Chapter 7 • Basic Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Basic Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 7: Coordinate Geometry</h3>
+
+    <p>
+        Unique Previous Year Questions from the
+        <strong>CBSE Class 10 Basic Mathematics 2025</strong>
+        paper sets, covering coordinate concepts, distance formula,
+        section formula, midpoint, collinearity and case-study applications.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQs -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Basic Concepts</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+For a point \((3,-5)\), the value of
+\[
+\text{abscissa}-\text{ordinate}
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(-8\)</div>
+    <div class="option">(B) \(-2\)</div>
+    <div class="option">(C) \(2\)</div>
+    <div class="option">(D) \(8\)</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Mid-point Ratio</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The mid-point of a line segment divides the line segment in the ratio:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(1:2\)</div>
+    <div class="option">(B) \(2:1\)</div>
+    <div class="option">(C) \(1:1\)</div>
+    <div class="option">(D) \(\frac12:2\)</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Coordinate Distance</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The distance of a point \(P(3,-7)\) from the \(y\)-axis is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(3\)</div>
+    <div class="option">(B) \(7\)</div>
+    <div class="option">(C) \(-7\)</div>
+    <div class="option">(D) \(\sqrt{58}\)</div>
+</div>
+
+<span class="set">Set 430/1/2</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Literal Coordinates</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+For a point \(X(a,b)\), where \(b>a>0\), the value of
+\[
+[\text{distance from }x\text{-axis}]
+-
+[\text{distance from }y\text{-axis}]
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(a-b\)</div>
+    <div class="option">(B) \(b-a\)</div>
+    <div class="option">(C) \(a^2-b^2\)</div>
+    <div class="option">(D) \(b^2-a^2\)</div>
+</div>
+
+<span class="set">Set 430/1/3</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Distance from Origin</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The distance of the point \((2,3)\) from the origin is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(2\)</div>
+    <div class="option">(B) \(3\)</div>
+    <div class="option">(C) \(5\)</div>
+    <div class="option">(D) \(\sqrt{13}\)</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Mid-point and Axis</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The mid-point of the line segment joining the points
+\((1,3)\) and \((1,-3)\) lies:
+</div>
+
+<div class="options">
+    <div class="option">(A) at the origin</div>
+    <div class="option">(B) in the second quadrant</div>
+    <div class="option">(C) on \(x\)-axis</div>
+    <div class="option">(D) on \(y\)-axis</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Mid-point with Variables</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If point \((1,2)\) is the mid-point of the line segment joining
+the points \((3,5)\) and \((2a,b)\), then \((a,b)=\):
+</div>
+
+<div class="options">
+    <div class="option">(A) \((-1,-1)\)</div>
+    <div class="option">(B) \(\left(-\frac12,-\frac12\right)\)</div>
+    <div class="option">(C) \(\left(-\frac12,-1\right)\)</div>
+    <div class="option">(D) \(\left(-1,-\frac12\right)\)</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Alternative Mid-point</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If point \((a,2b)\) is the mid-point of the line segment joining
+the points \((3,5)\) and \((-1,-1)\), then \((a,b)\) is equal to:
+</div>
+
+<div class="options">
+    <div class="option">(A) \((1,2)\)</div>
+    <div class="option">(B) \((2,2)\)</div>
+    <div class="option">(C) \((2,1)\)</div>
+    <div class="option">(D) \((1,1)\)</div>
+</div>
+
+<span class="set">Set 430/3/3</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Distance Calculation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The distance between the points \((2,3)\) and \((-2,-3)\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(4\sqrt{13}\)</div>
+    <div class="option">(B) \(\sqrt{40}\)</div>
+    <div class="option">(C) \(2\sqrt{13}\)</div>
+    <div class="option">(D) \(5\)</div>
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Section Ratio</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The point \((x,0)\) divides the line segment joining the points
+\((-4,5)\) and \((0,-10)\) in the ratio:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(1:3\)</div>
+    <div class="option">(B) \(2:1\)</div>
+    <div class="option">(C) \(1:1\)</div>
+    <div class="option">(D) \(1:2\)</div>
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Distance – Alternative</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The distance between the points \((2,-7)\) and \((-2,-1)\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(10\)</div>
+    <div class="option">(B) \(2\sqrt{13}\)</div>
+    <div class="option">(C) \(8\)</div>
+    <div class="option">(D) \(4\sqrt{13}\)</div>
+</div>
+
+<span class="set">Set 430/4/2</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Geometric Figure Data</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+ABCD is a rectangle with its vertices at
+\[
+(2,-2),\;(8,4),\;(4,8),\;(-2,2)
+\]
+taken in order.
+
+The length of its diagonal is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(4\sqrt2\)</div>
+    <div class="option">(B) \(6\sqrt2\)</div>
+    <div class="option">(C) \(4\sqrt{26}\)</div>
+    <div class="option">(D) \(2\sqrt{26}\)</div>
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Line Equation and Point</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The point \((3,-5)\) lies on the line
+\[
+mx-y=11.
+\]
+
+The value of \(m\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(3\)</div>
+    <div class="option">(B) \(-2\)</div>
+    <div class="option">(C) \(8\)</div>
+    <div class="option">(D) \(2\)</div>
+</div>
+
+<span class="set">Set 430/6/3</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. VERY SHORT -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Very Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Section Formula</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+The line segment joining \((2,8)\) and \((-3,-5)\) is divided
+by point \(P(x,0)\) in a fixed ratio.
+
+Find that ratio and the value of \(x\).
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Trisection of a Line Segment</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Find the coordinates of the points of trisection of the line segment
+joining the points
+\[
+(-4,1)\quad\text{and}\quad(6,5).
+\]
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Collinearity</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Using distance formula, prove that the points
+\[
+(1,5),\quad(2,3),\quad(3,1)
+\]
+are collinear.
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Equidistant Relation</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Establish a relation between \(x\) and \(y\) such that the point
+\((x,y)\) is equidistant from the points
+\[
+(-2,5)\quad\text{and}\quad(3,9).
+\]
+</div>
+
+<span class="set">Set 430/5/2</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. SHORT ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Parallelogram Property</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+If the points
+\[
+A(-5,y),\quad B(2,-2),\quad C(8,4),\quad D(x,5)
+\]
+are the vertices of a parallelogram \(ABCD\), taken in order,
+find the values of \(x\) and \(y\).
+
+Hence, find the lengths of the sides of this parallelogram.
+</div>
+
+<span class="set">Set 430/4/2</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IV. CASE STUDY -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Case Study Based Questions</h2>
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Figure-Based – Circular Park</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="casebox">
+
+<p>
+In a society, there is a circular park having two gates placed at
+\[
+A(10,20)\quad\text{and}\quad B(50,50).
+\]
+
+Two fountains are installed at \(P\) and \(Q\) on \(AB\) such that
+\[
+AP=PQ=QB.
+\]
+</p>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+Find the coordinates of the centre \(C\).
+<span class="marks">1 Mark</span>
+</div>
+
+<div>
+<strong>(ii)</strong>
+Find the radius of the circular park.
+<span class="marks">1 Mark</span>
+</div>
+
+<div>
+<strong>(iii)</strong>
+Find the coordinates of point \(P\).
+<span class="marks">2 Marks</span>
+</div>
+
+<div>
+<strong>OR</strong>
+Find the distance of the fountain at \(Q\) from gate \(A\).
+<span class="marks">2 Marks</span>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">20. Figure-Based – Rectangular Field</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="casebox">
+
+<p>
+A rectangular field \(ABCD\) has vertices
+\[
+A(10,10),\quad B(40,10),\quad C(40,50),\quad D(x,y).
+\]
+
+Anita moves from \(A\) to \(E\), the point of intersection of the diagonals.
+Anil runs from \(C\) to \(A\) via \(D\).
+</p>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+Find the coordinates of point \(E\).
+<span class="marks">1 Mark</span>
+</div>
+
+<div>
+<strong>(ii)</strong>
+Find the distance between points \(B\) and \(C\).
+<span class="marks">1 Mark</span>
+</div>
+
+<div>
+<strong>(iii)</strong>
+Find the coordinates of point \(D\) and distance \(BD\).
+<span class="marks">2 Marks</span>
+</div>
+
+<div>
+<strong>OR</strong>
+Find the total distance travelled by Anita.
+<span class="marks">2 Marks</span>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q21 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">21. Figure-Based – Semicircular Park</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="casebox">
+
+<p>
+A semicircular park has a diameter \(AB\), where
+\[
+A(2,3)\quad\text{and}\quad B(22,3).
+\]
+
+A borewell is situated at the centre \(O\).
+</p>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+Find the coordinates of point \(O\).
+<span class="marks">1 Mark</span>
+</div>
+
+<div>
+<strong>(ii)</strong>
+Find the radius of the semicircular park.
+<span class="marks">1 Mark</span>
+</div>
+
+<div>
+<strong>(iii)</strong>
+A sapling is at \(C(12,y)\) on the boundary. Find \(C\).
+<span class="marks">2 Marks</span>
+</div>
+
+<div>
+<strong>OR</strong>
+A sapling is at \(P\) on \(AB\) such that
+\[
+PA=\frac13PB.
+\]
+Find the coordinates of \(P\).
+<span class="marks">2 Marks</span>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q22 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">22. Graph-Based – Robot Path</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="casebox">
+
+<p>
+A robot moves from \((0,0)\) to \(P(8,6)\), then to
+\(Q(12,2)\), and ends at \(S(-6,6)\) in straight lines.
+</p>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+Determine the distance \(OP\).
+<span class="marks">1 Mark</span>
+</div>
+
+<div>
+<strong>(ii)</strong>
+Line \(QS\) is
+\[
+2x+9y=42.
+\]
+
+Find the coordinates of the point where it intersects the \(y\)-axis.
+<span class="marks">1 Mark</span>
+</div>
+
+<div>
+<strong>(iii)</strong>
+Point \(R(4.8,y)\) divides segment \(OP\) in a certain ratio.
+Find the ratio and \(y\).
+<span class="marks">2 Marks</span>
+</div>
+
+<div>
+<strong>OR</strong>
+Using distance formula, show that
+\[
+\frac{PQ}{OS}=\frac23.
+\]
+<span class="marks">2 Marks</span>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Coordinate Geometry • Basic Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 7
+    </div>
+
+</footer>
+
+
+<button
+    class="top-btn"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

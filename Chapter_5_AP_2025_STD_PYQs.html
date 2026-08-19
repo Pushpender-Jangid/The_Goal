@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 5 – A.P. | CBSE Class 10 Standard Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+.assertion{
+    margin-top:7px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.assertion div + div{
+    margin-top:5px;
+}
+
+.subparts{
+    margin-top:8px;
+    padding-left:8px;
+}
+
+.subparts div{
+    margin:4px 0;
+}
+
+.case-study{
+    margin-top:8px;
+    padding:10px 12px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+mjx-container{
+    max-width:100%;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{background:#fff;}
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>ARITHMETIC PROGRESSIONS</h1>
+
+    <h2>Chapter 5 • Standard Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Standard Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 5: Arithmetic Progressions (A.P.)</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Standard Mathematics 2025</strong>
+        question paper sets.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Sum of \(m\) Terms</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If the sum of first \(m\) terms of an AP is
+\[
+2m^2+3m,
+\]
+then its second term is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 10</div>
+    <div class="option">(B) 9</div>
+    <div class="option">(C) 12</div>
+    <div class="option">(D) 4</div>
+</div>
+
+<span class="set">Series 30/1/1 (Q11)</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Common Difference</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The 11th and 13th terms of an AP are 39 and 45, respectively.
+What is the common difference of the AP?
+</div>
+
+<div class="options">
+    <div class="option">(A) 42</div>
+    <div class="option">(B) 21</div>
+    <div class="option">(C) 6</div>
+    <div class="option">(D) 3</div>
+</div>
+
+<span class="set">Series 30/1/3 (Q17)</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. \(10^\text{th}\) Term of an AP</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The 10th term of the AP
+\[
+5,\frac{19}{4},\frac{9}{2},\frac{17}{4},\ldots
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{11}{4}\)</div>
+    <div class="option">(B) \(\frac{4}{11}\)</div>
+    <div class="option">(C) \(\frac{13}{4}\)</div>
+    <div class="option">(D) \(\frac{4}{13}\)</div>
+</div>
+
+<span class="set">Series 30/2/1 (Q15)</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Term from the End</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The 9th term from the end (towards first term) of the AP
+\[
+7,11,15,19,\ldots,147
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 135</div>
+    <div class="option">(B) 125</div>
+    <div class="option">(C) 115</div>
+    <div class="option">(D) 39</div>
+</div>
+
+<span class="set">Series 30/2/2 (Q2) &amp; 30/2/3 (Q12)</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Assertion – Reason</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+Common difference of the AP
+\[
+5,1,-3,-7,\ldots
+\]
+is 4.
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+Common difference of the AP
+\[
+a_1,a_2,a_3,\ldots,a_n
+\]
+is obtained by
+\[
+d=a_n-a_{n-1}.
+\]
+</div>
+
+</div>
+
+<span class="set">Series 30/2/1 (Q19)</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Assertion – Reason</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+For an A.P.
+\[
+3,6,9,\ldots,198,
+\]
+the 10th term from the end is 168.
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+If \(a\) and \(l\) are the first term and last term of an A.P.
+with common difference \(d\), then the \(n\)-th term from the end
+of the given A.P. is
+\[
+l-(n-1)d.
+\]
+</div>
+
+</div>
+
+<span class="set">Series 30/5/1 (Q20)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. SHORT ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Sum of Three-Digit Multiples</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Find the sum of all 3-digit natural numbers which are divisible
+by 11.
+</div>
+
+<span class="set">Series 30/2/3 (Q27)</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Simple Interest as an A.P.</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+A sum of ₹2,000 is invested at 7% per annum simple interest.
+Calculate the interests at the end of 1st, 2nd and 3rd year.
+Do these interests form an AP? If so, find the interest at the
+end of the 27th year.
+</div>
+
+<span class="set">Series 30/2/1 (Q31) &amp; 30/2/2 (Q28)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. LONG ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Long Answer Type Questions</h2>
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Sum of First Sixteen Terms</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+The sum of the third term and the seventh term of an AP is 6
+and their product is 8. Find the sum of the first sixteen terms
+of the AP.
+</div>
+
+<span class="set">Series 30/3/1 (Q33a) &amp; 30/3/3 (Q34a)</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Find \(n\) and Sum of First 20 Terms</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+In an AP of \(n\) terms, the \(n\)-th term is 4 and the common
+difference is 2. If the sum of its \(n\) terms is \(-14\), then
+find \(n\). Also, find the sum of the first 20 terms.
+</div>
+
+<span class="set">Series 30/3/2 (Q32a)</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. First and Thirteenth Terms</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+The sum of the first six terms of an arithmetic progression is 42.
+The ratio of the 10th term to the 30th term is \(1:3\).
+Calculate the first and the thirteenth terms of the AP.
+</div>
+
+<span class="set">Series 30/3/2 (Q32b)</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Ages in an A.P.</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+The minimum age for children to participate in a painting competition
+is 8 years. It was observed that the youngest child was 8 years old
+and the ages of participants were in an increasing order with a
+common difference of 4 months. If the sum of the ages of all
+participants was 168 years, find the age of the eldest participant
+in the competition.
+</div>
+
+<span class="set">Series 30/3/1 (Q33b) &amp; 30/3/3 (Q34b)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IV. CASE STUDY -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Case Study Based Questions</h2>
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Charity Run</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="case-study">
+
+<div class="q-text">
+A school plans a series of rounds around a track for a charity run.
+The 1st round is 300 metres, and each subsequent round increases
+by 50 metres. Total rounds planned are 10.
+</div>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+Write the fourth, fifth and sixth terms of the Arithmetic Progression
+so formed. <strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(ii)</strong>
+Determine the distance of the 8th round. <strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(iii) (a)</strong>
+Find the total distance run after completing all 10 rounds.
+<strong>(2 marks)</strong>
+</div>
+
+<div>
+<strong>OR</strong>
+</div>
+
+<div>
+<strong>(iii) (b)</strong>
+If a runner completes only the first 6 rounds, what is the total
+distance run by the runner? <strong>(2 marks)</strong>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Series 30/1/1 (Q36) &amp; 30/1/3 (Q37)</span>
+
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Cable Cars</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="case-study">
+
+<div class="q-text">
+The distance of the first pole from the base point is 200 m, and
+subsequent poles are installed at equal intervals of 150 m.
+The total length of the cable car ride is 5000 m. The distance of
+the last pole from the top is 300 m.
+</div>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+Find the distance of the 10th pole from the base.
+<strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(ii)</strong>
+Find the distance between the 15th pole and 25th pole.
+<strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(iii) (a)</strong>
+Find the time taken by the cable car to reach the 15th pole from
+the top if it moves at 5 m/sec and starts from the top.
+<strong>(2 marks)</strong>
+</div>
+
+<div>
+<strong>OR</strong>
+</div>
+
+<div>
+<strong>(iii) (b)</strong>
+Find the total number of poles installed along the entire journey.
+<strong>(2 marks)</strong>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Series 30/4/3 (Q38)</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Equilateral Triangle Grid</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="case-study">
+
+<div class="q-text">
+In an equilateral triangle of side 10 cm, small equilateral
+triangles of side 1 cm are formed. Row 1 has one triangle,
+Row 2 has three, Row 3 has five, and so on.
+</div>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+How many triangles will be there in the bottom-most row?
+<strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(ii)</strong>
+How many triangles will be there in the fourth row from the bottom?
+<strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(iii) (a)</strong>
+Find the total number of triangles of side 1 cm each till the 8th row.
+<strong>(2 marks)</strong>
+</div>
+
+<div>
+<strong>OR</strong>
+</div>
+
+<div>
+<strong>(iii) (b)</strong>
+How many more triangles are there from the 5th row to the 10th row
+than in the first 4 rows? <strong>(2 marks)</strong>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Series 30/5/2 (Q36)</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Running Track</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="case-study">
+
+<div class="q-text">
+The length of the innermost lane (Lane 1) of an athletic track is
+400 m, and each subsequent lane is 7.6 m longer than the preceding
+lane.
+</div>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+What is the length of the 6th lane? <strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(ii)</strong>
+How much longer is the 8th lane than the 4th lane?
+<strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(iii) (a)</strong>
+A student runs one round each in the first six lanes. Find the
+total distance covered. <strong>(2 marks)</strong>
+</div>
+
+<div>
+<strong>OR</strong>
+</div>
+
+<div>
+<strong>(iii) (b)</strong>
+A student runs one round each in Lane 4 to Lane 8. Find the
+total distance covered. <strong>(2 marks)</strong>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Series 30/6/1 (Q37) &amp; 30/6/3 (Q38)</span>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Arithmetic Progressions • Standard Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 5
+    </div>
+
+</footer>
+
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

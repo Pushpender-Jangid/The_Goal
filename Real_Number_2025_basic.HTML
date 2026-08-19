@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 1 – Real Numbers | CBSE Class 10 Basic Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+/* ================= PAGE ================= */
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER / HEADER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+/* ================= CHAPTER INTRO ================= */
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTIONS ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:4px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= MCQ ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:7px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= ASSERTION ================= */
+
+.assertion{
+    margin-top:7px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.assertion div + div{
+    margin-top:5px;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+/* ================= IMPORTANT PAGE ================= */
+
+.page-note{
+    margin-top:22px;
+    padding:12px 14px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:6px;
+    color:#475569;
+    font-size:12px;
+}
+
+/* ================= FOOTER ================= */
+
+.book-footer{
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+}
+
+/* ================= TOP BUTTON ================= */
+
+.top{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#172033;
+    color:white;
+    cursor:pointer;
+    font-size:17px;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .book-footer{
+        padding:12px 25px;
+    }
+
+    .top{
+        display:none;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section{
+        page-break-inside:auto;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    mjx-container{
+        max-width:100%;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+
+    .book-footer{
+        padding:14px 18px;
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>REAL NUMBERS</h1>
+
+    <h2>Chapter 1 • Basic Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Basic Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 1: Real Numbers</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Basic Mathematics 2025</strong>
+        question paper sets. Redundant questions have been removed
+        to provide complete conceptual coverage.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. HCF / LCM Property</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If the HCF of two positive integers \(a\) and \(b\) is 1,
+then their LCM is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(a+b\)</div>
+    <div class="option">(B) \(a\)</div>
+    <div class="option">(C) \(b\)</div>
+    <div class="option">(D) \(ab\)</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Arithmetic Calculation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of \((\text{HCF}-\text{LCM})\) for the two numbers
+3 and 5 is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 2</div>
+    <div class="option">(B) 4</div>
+    <div class="option">(C) 14</div>
+    <div class="option">(D) \(-14\)</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Ending Digits</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The number \(2^n\), where \(n\) is a natural number,
+cannot end with the digit:
+</div>
+
+<div class="options">
+    <div class="option">(A) 4</div>
+    <div class="option">(B) 6</div>
+    <div class="option">(C) 2</div>
+    <div class="option">(D) 0</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Finding Unknown Variable</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If \(\operatorname{HCF}(x,20)=2\) and
+\(\operatorname{LCM}(x,20)=60\), then the value of \(x\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 3</div>
+    <div class="option">(B) 6</div>
+    <div class="option">(C) 20</div>
+    <div class="option">(D) 10</div>
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Exponents in HCF / LCM</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\(p=2^3\times3^2\times5\) and
+\(q=2^2\times3^3\), then the LCM of \(p\) and \(q\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(2^3\times3^3\)</div>
+    <div class="option">(B) \(2^2\times3^2\)</div>
+    <div class="option">(C) \(2^2\times3^2\times5\)</div>
+    <div class="option">(D) \(2^3\times3^3\times5\)</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Definition Based</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+A prime number has:
+</div>
+
+<div class="options">
+    <div class="option">(A) exactly two prime factors</div>
+    <div class="option">(B) exactly one prime factor</div>
+    <div class="option">(C) at least one prime factor</div>
+    <div class="option">(D) at least two prime factors</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Simplification Type</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+\[
+(2-5\sqrt3)^2
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) a negative integer</div>
+    <div class="option">(B) an irrational number</div>
+    <div class="option">(C) a rational number</div>
+    <div class="option">(D) a positive integer</div>
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. ASSERTION REASON -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Assertion – Reason Questions</h2>
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. HCF and LCM Relation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+For any two natural numbers \(a\) and \(b\), the HCF of
+\(a\) and \(b\) is a factor of the LCM of \(a\) and \(b\).
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+HCF of any two natural numbers divides both the numbers.
+</div>
+
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Prime Divisibility</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+The prime numbers which divide 36 also divide 6.
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+Any number which divides \(p^2\) also divides \(p\).
+</div>
+
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Product of Irrational Expressions</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+\[
+(a+\sqrt b)(a-\sqrt b)
+\]
+is a rational number, where \(a\) and \(b\) are positive integers.
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+Product of two irrationals is always rational.
+</div>
+
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. 2 MARKS -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Very Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Proof of Non-ending Zero</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Show that \(45^n\) cannot end with the digit 0,
+where \(n\) is a natural number.
+
+<br>
+
+Write the prime number \(a\) which on multiplying with
+\(45^n\) makes the product end with the digit 0.
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Divisibility Check</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Check whether
+\[
+15^n\times2^n
+\]
+where \(n\) is a natural number, ends with the digit zero.
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Prime Factorisation</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Using prime factorisation, find the HCF of 180, 140 and 210.
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IV. 3 MARKS -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Irrationality Proof</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+Prove that \(\sqrt2\) is an irrational number.
+
+<br><br>
+
+<strong>OR</strong>
+
+<br><br>
+
+Prove that \(\sqrt3\) is an irrational number.
+
+<br><br>
+
+<strong>OR</strong>
+
+<br><br>
+
+Prove that \(\sqrt5\) is an irrational number.
+
+</div>
+
+<span class="set">
+Sets 430/1/1, 430/2/1, 430/3/1
+</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Figure Related – Factor Tree</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+The factor tree of a number \(x\) is shown in the question paper.
+
+<br>
+
+Find the values of \(x,\;y,\;a\) and \(b\).
+
+<br>
+
+Hence, write the product of the prime factors of the number
+\(x\) so obtained.
+
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Fundamental Theorem of Arithmetic</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+State the <strong>Fundamental Theorem of Arithmetic</strong>.
+
+<br>
+
+Use it to find the LCM of 36 and 54.
+
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Composite Number Check</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+Find which among the following numbers \(a,\;b\) and \(c\)
+is/are composite numbers:
+
+<div class="formula">
+
+\[
+a=7\times11\times13+13
+\]
+
+\[
+b=6\times5\times4+4
+\]
+
+\[
+c=7\times13+6
+\]
+
+</div>
+
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Smallest Divisible Number</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+Find the smallest number which, when increased by 20,
+is exactly divisible by 72, 90 and 150.
+
+</div>
+
+<span class="set">Set 430/5/2</span>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Measuring Rods</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+Three measuring rods are of lengths 120 cm, 100 cm and 150 cm.
+
+<br>
+
+Find the least length of a fence that can be measured an exact
+number of times, using any of the rods.
+
+<br>
+
+How many times will each rod be used to measure the length
+of the fence?
+
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="book-footer">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Real Numbers • Basic Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Page • Chapter 1
+    </div>
+
+</footer>
+
+<button class="top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+</div>
+
+</body>
+</html>
+```

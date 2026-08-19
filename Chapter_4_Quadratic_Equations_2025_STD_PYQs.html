@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 4 – Quadratic Equations | CBSE Class 10 Standard Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+.subparts{
+    margin-top:8px;
+    padding-left:8px;
+}
+
+.subparts div{
+    margin:4px 0;
+}
+
+.case-study{
+    margin-top:8px;
+    padding:10px 12px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+mjx-container{
+    max-width:100%;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>QUADRATIC EQUATIONS</h1>
+
+    <h2>Chapter 4 • Standard Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Standard Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 4: Quadratic Equations</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Standard Mathematics 2025</strong>
+        question paper sets.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Quadratic Equation from Roots</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The quadratic equation whose roots are \(7\) and \(\frac{1}{7}\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(7x^2-50x+7=0\)</div>
+    <div class="option">(B) \(7x^2-50x+1=0\)</div>
+    <div class="option">(C) \(7x^2+50x-7=0\)</div>
+    <div class="option">(D) \(7x^2+50x-1=0\)</div>
+</div>
+
+<span class="set">Series 30/2/1 (Q3) &amp; 30/2/3 (Q18)</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Sum and Product of Roots</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The quadratic equation whose sum and product of roots are
+\(a\) and \(\frac{1}{a}\), respectively, is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(ax^2-ax+1=0\)</div>
+    <div class="option">(B) \(ax^2-a^2x+1=0\)</div>
+    <div class="option">(C) \(ax^2+ax+1=0\)</div>
+    <div class="option">(D) \(ax^2+a^2x-1=0\)</div>
+</div>
+
+<span class="set">Series 30/2/2 (Q1)</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Solving a Quadratic Equation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\frac{x}{12}-\frac{3}{x}=0,
+\]
+then the values of \(x\) are:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\pm6\)</div>
+    <div class="option">(B) \(\pm4\)</div>
+    <div class="option">(C) \(\pm12\)</div>
+    <div class="option">(D) \(\pm3\)</div>
+</div>
+
+<span class="set">Series 30/3/1 (Q5)</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Discriminant</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The discriminant of the quadratic equation
+\(bx^2+ax+c=0,\ b\neq0\), is given by:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(b^2-4ac\)</div>
+    <div class="option">(B) \(\sqrt{b^2-4ac}\)</div>
+    <div class="option">(C) \(\sqrt{a^2-4bc}\)</div>
+    <div class="option">(D) \(a^2-4bc\)</div>
+</div>
+
+<span class="set">Series 30/3/2 (Q14)</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Equal and Positive Roots</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of \(a\) for which
+\[
+ax^2+x+a=0
+\]
+has equal and positive roots is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(2\)</div>
+    <div class="option">(B) \(-2\)</div>
+    <div class="option">(C) \(\frac12\)</div>
+    <div class="option">(D) \(-\frac12\)</div>
+</div>
+
+<span class="set">Series 30/4/1 (Q3), 30/4/2 (Q5) &amp; 30/4/3 (Q12)</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Identifying a Quadratic Equation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following equations is a quadratic equation?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(x^2+1=(x-1)^2\)</div>
+    <div class="option">(B) \((x+\sqrt{x})^2=2x\sqrt{x}\)</div>
+    <div class="option">(C) \(x^3+3x^2=(x+1)^3\)</div>
+    <div class="option">(D) \((x+1)(x-1)=(x+1)^2\)</div>
+</div>
+
+<span class="set">Series 30/5/1 (Q4) &amp; 30/5/2 (Q8)</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Nature of Roots</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+x^2+bx+b=0
+\]
+has two real and distinct roots, then the value of \(b\) can be:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(0\)</div>
+    <div class="option">(B) \(4\)</div>
+    <div class="option">(C) \(3\)</div>
+    <div class="option">(D) \(-3\)</div>
+</div>
+
+<span class="set">Series 30/5/1 (Q5) &amp; 30/5/2 (Q7)</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Real and Equal Roots</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following quadratic equations has real and equal roots?
+</div>
+
+<div class="options">
+    <div class="option">(A) \((x+1)^2=2x+1\)</div>
+    <div class="option">(B) \(x^2+x=0\)</div>
+    <div class="option">(C) \(x^2-4=0\)</div>
+    <div class="option">(D) \(x^2+x+1=0\)</div>
+</div>
+
+<span class="set">Series 30/6/1 (Q3)</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Real and Distinct Roots</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following quadratic equations has real and distinct roots?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(x^2+2x=0\)</div>
+    <div class="option">(B) \(x^2+x+1=0\)</div>
+    <div class="option">(C) \((x-1)^2=1-2x\)</div>
+    <div class="option">(D) \(2x^2+x+1=0\)</div>
+</div>
+
+<span class="set">Series 30/6/2 (Q5)</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Equation without Real Roots</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following equations does not have a real root?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(x^2=0\)</div>
+    <div class="option">(B) \(2x-1=3\)</div>
+    <div class="option">(C) \(x^2+1=0\)</div>
+    <div class="option">(D) \(x^3+x^2=0\)</div>
+</div>
+
+<span class="set">Series 30/6/3 (Q12)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. VERY SHORT -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Very Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Equal Roots – Find \(k\)</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Find the value(s) of \(k\) so that the quadratic equation
+\[
+4x^2+kx+1=0
+\]
+has real and equal roots.
+</div>
+
+<span class="set">Series 30/3/1 (Q24a), 30/3/2 (Q22a) &amp; 30/3/3 (Q22a)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. LONG ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Long Answer Type Questions</h2>
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Right Triangle</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+The perimeter of a right triangle is \(60\) cm and its hypotenuse is
+\(25\) cm. Find the lengths of the other two sides of the triangle.
+</div>
+
+<span class="set">Series 30/1/1 (Q34a) &amp; 30/1/3 (Q32a)</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Train Speed</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+A train travels a distance of \(480\) km at a uniform speed. If the
+speed had been \(8\) km/h less, then it would have taken \(3\) hours
+more to cover the same distance. Find the speed of the train.
+</div>
+
+<span class="set">Series 30/1/1 (Q34b) &amp; 30/1/3 (Q32b)</span>
+
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Areas and Perimeters of Squares</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+The sum of the areas of two squares is \(52\text{ cm}^2\) and the
+difference of their perimeters is \(8\) cm. Find the lengths of the
+sides of the two squares.
+</div>
+
+<span class="set">Series 30/2/1 (Q33a) &amp; 30/2/2 (Q32a)</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Upward and Downward Journey</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+The time taken by a person to travel an upward distance of \(150\) km
+was \(2\frac{1}{2}\) hours more than the time taken in the downward
+return journey. If he returned at a speed of \(10\) km/h more than
+the speed while going up, find the speeds in each direction.
+</div>
+
+<span class="set">Series 30/2/1 (Q33b) &amp; 30/2/2 (Q32b)</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Rational Equation to Quadratic Equation</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Express the equation
+\[
+\frac{x-2}{x-3}+\frac{x-4}{x-5}=\frac{10}{3},
+\qquad x\neq3,5
+\]
+as a quadratic equation in standard form. Hence, find the roots of
+the equation so formed.
+</div>
+
+<span class="set">Series 30/4/1 (Q32b), 30/4/2 (Q33b) &amp; 30/4/3 (Q35b)</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Equal Roots – Parameter \(p\)</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Find the value(s) of \(p\) for which the quadratic equation
+\[
+(p+4)x^2-(p+1)x+1=0
+\]
+has real and equal roots. Also, find the roots of the equation(s)
+so obtained.
+</div>
+
+<span class="set">Series 30/5/1 (Q32b), 30/5/2 (Q33b) &amp; 30/5/3 (Q35b)</span>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Smallest Value of \(p\)</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Find the smallest value of \(p\) for which the quadratic equation
+\[
+x^2-2(p+1)x+p^2=0
+\]
+has real roots. Hence, find the roots of the equation so obtained.
+</div>
+
+<span class="set">Series 30/6/1 (Q32b) &amp; 30/6/2 (Q33b)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IV. CASE STUDY -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Case Study Based Question</h2>
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Rectangular Lawn and Walkway</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="case-study">
+
+<div class="q-text">
+The figure shows a rectangular lawn surrounded by a walkway of
+uniform width \(x\). A garden designer is planning a rectangular lawn
+with dimensions \(12\) metres by \(10\) metres. The total area of the
+lawn and the uniform walkway is \(360\) square metres.
+</div>
+
+<div class="subparts">
+
+<div>
+<strong>(i)</strong>
+Formulate the quadratic equation representing the total area of the
+lawn and the walkway, taking the width of walkway as \(x\) m.
+<strong>(1 mark)</strong>
+</div>
+
+<div>
+<strong>(ii)</strong>
+<strong>(a)</strong> Solve the quadratic equation to find the width of
+the walkway \(x\).
+<strong>(2 marks)</strong>
+</div>
+
+<div>
+<strong>OR</strong>
+</div>
+
+<div>
+<strong>(b)</strong> If the cost of paving the walkway at the rate of
+₹50 per square metre is ₹12,000, calculate the area of the walkway.
+<strong>(2 marks)</strong>
+</div>
+
+<div>
+<strong>(iii)</strong>
+Find the perimeter of the lawn.
+<strong>(1 mark)</strong>
+</div>
+
+</div>
+
+</div>
+
+<span class="set">Series 30/3/1 (Q36) &amp; 30/3/2 (Q37)</span>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Quadratic Equations • Standard Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 4
+    </div>
+
+</footer>
+
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

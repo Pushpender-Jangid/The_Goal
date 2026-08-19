@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chapter 13 - Statistics | CBSE Class 10 PYQs 2026</title>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
+        processEscapes: true
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f7fb;
+      color: #1f2937;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 18px 50px;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #173b68, #2563a6);
+      color: white;
+      padding: 28px 30px;
+      border-radius: 14px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    }
+
+    .header h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    .header p {
+      margin: 0;
+      font-size: 16px;
+      opacity: 0.95;
+    }
+
+    .chapter {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      padding: 24px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .section-title {
+      background: #eaf2fb;
+      border-left: 5px solid #2563a6;
+      padding: 11px 15px;
+      margin: 0 0 20px;
+      font-size: 21px;
+      font-weight: 700;
+      color: #173b68;
+      border-radius: 5px;
+    }
+
+    .sub-title {
+      font-size: 18px;
+      color: #1d4f85;
+      margin: 24px 0 12px;
+      padding-bottom: 7px;
+      border-bottom: 2px solid #dce7f3;
+    }
+
+    .question {
+      background: #fafcff;
+      border: 1px solid #dbe5ef;
+      border-radius: 9px;
+      padding: 17px 18px;
+      margin: 14px 0;
+    }
+
+    .question p {
+      margin: 7px 0;
+    }
+
+    .q-title {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .sets {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #5b6470;
+      font-weight: 600;
+    }
+
+    .marks {
+      display: inline-block;
+      background: #2563a6;
+      color: white;
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 7px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background: white;
+      font-size: 15px;
+    }
+
+    th, td {
+      border: 1px solid #b9c7d6;
+      padding: 9px 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #eaf2fb;
+      color: #173b68;
+      font-weight: 700;
+    }
+
+    .options {
+      margin-top: 10px;
+      padding: 10px 13px;
+      background: #f1f5f9;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .basic-label {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .std-label {
+      display: inline-block;
+      background: #7c3aed;
+      color: white;
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 13px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 15px auto;
+        padding: 0 10px 30px;
+      }
+
+      .header {
+        padding: 22px 18px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .chapter {
+        padding: 16px;
+      }
+
+      table {
+        font-size: 13px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .section-title {
+        font-size: 18px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .container {
+        max-width: none;
+        margin: 0;
+      }
+
+      .chapter {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .question {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Chapter 13: Statistics</h1>
+    <p>CBSE Class 10 Mathematics — Previous Year Questions 2026</p>
+    <p>Basic + Standard Mathematics | Chapterwise PYQ Collection</p>
+  </div>
+
+
+  <!-- ================= BASIC 2026 ================= -->
+
+  <div class="chapter">
+
+    <div class="section-title">
+      BASIC 2026
+    </div>
+
+    <!-- MCQ -->
+    <h2 class="sub-title">I. Multiple Choice Questions <span class="marks">1 Mark</span></h2>
+
+    <!-- Q1 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p class="q-title">
+        1. Class Marks &amp; Median Class
+      </p>
+
+      <p>
+        The class mark of the median class of the following data is:
+      </p>
+
+      <table>
+        <tr>
+          <th>Class Interval</th>
+          <th>10 – 25</th>
+          <th>25 – 40</th>
+          <th>40 – 55</th>
+          <th>55 – 70</th>
+          <th>70 – 85</th>
+          <th>85 – 100</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>2</td>
+          <td>3</td>
+          <td>7</td>
+          <td>6</td>
+          <td>6</td>
+          <td>6</td>
+        </tr>
+      </table>
+
+      <div class="options">
+        (A) 40 &nbsp;&nbsp;
+        (B) 55 &nbsp;&nbsp;
+        (C) 47.5 &nbsp;&nbsp;
+        (D) 62.5
+      </div>
+
+      <div class="sets">
+        Sets: 430/1/1, 430/1/2, 430/1/3
+      </div>
+    </div>
+
+
+    <!-- Q2 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p class="q-title">
+        2. Modal Class Limits
+      </p>
+
+      <p>
+        The lower limit of the modal class of the following distribution is:
+      </p>
+
+      <table>
+        <tr>
+          <th>Runs Scored</th>
+          <th>3000 – 4000</th>
+          <th>4000 – 5000</th>
+          <th>5000 – 6000</th>
+          <th>6000 – 7000</th>
+        </tr>
+        <tr>
+          <th>Number of Batsmen</th>
+          <td>5</td>
+          <td>10</td>
+          <td>9</td>
+          <td>8</td>
+        </tr>
+      </table>
+
+      <div class="options">
+        (A) 3000 &nbsp;&nbsp;
+        (B) 4000 &nbsp;&nbsp;
+        (C) 5000 &nbsp;&nbsp;
+        (D) 6000
+      </div>
+
+      <div class="sets">
+        Sets: 430/1/1, 430/1/2, 430/1/3
+      </div>
+    </div>
+
+
+    <!-- Q3 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p>
+        The lower limit of the modal class for the following distribution is:
+      </p>
+
+      <table>
+        <tr>
+          <th>Marks</th>
+          <th>0 – 10</th>
+          <th>10 – 20</th>
+          <th>20 – 30</th>
+          <th>30 – 40</th>
+          <th>40 – 50</th>
+        </tr>
+        <tr>
+          <th>Number of Students</th>
+          <td>5</td>
+          <td>3</td>
+          <td>4</td>
+          <td>8</td>
+          <td>3</td>
+        </tr>
+      </table>
+
+      <div class="options">
+        (A) 10 &nbsp;&nbsp;
+        (B) 20 &nbsp;&nbsp;
+        (C) 30 &nbsp;&nbsp;
+        (D) 40
+      </div>
+
+      <div class="sets">
+        Sets: 430/3/1, 430/3/2, 430/3/3
+      </div>
+    </div>
+
+
+    <!-- Q4 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p class="q-title">
+        4. Mode Formula Definitions
+      </p>
+
+      <p>
+        In the formula of mode given by
+        \[
+        \text{Mode}
+        =
+        l+
+        \left(
+        \frac{f_1-f_0}
+        {2f_1-f_0-f_2}
+        \right)\times h,
+        \]
+        \(f_1\) denotes the:
+      </p>
+
+      <div class="options">
+        (A) frequency of the modal class<br>
+        (B) frequency of class preceding modal class<br>
+        (C) frequency of class succeeding modal class<br>
+        (D) cumulative frequency of modal class
+      </div>
+
+      <div class="sets">
+        Sets: 430/2/1, 430/2/2, 430/2/3
+      </div>
+    </div>
+
+
+    <!-- Q5 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p class="q-title">
+        5. Empirical Relationship
+      </p>
+
+      <p>
+        For a distribution, if
+        \(\text{mean}=\text{median}=a\),
+        then its mode is:
+      </p>
+
+      <div class="options">
+        (A) \(3a\) &nbsp;&nbsp;
+        (B) \(2a\) &nbsp;&nbsp;
+        (C) \(a\) &nbsp;&nbsp;
+        (D) \(0\)
+      </div>
+
+      <div class="sets">
+        Sets: 430/2/1, 430/2/2, 430/2/3
+      </div>
+    </div>
+
+
+    <!-- Q6 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p>
+        For a distribution, if mean = 15 and mode = 12,
+        then its median is:
+      </p>
+
+      <div class="options">
+        (A) 12 &nbsp;&nbsp;
+        (B) 13 &nbsp;&nbsp;
+        (C) 14 &nbsp;&nbsp;
+        (D) 15
+      </div>
+
+      <div class="sets">
+        Sets: 430/3/1, 430/3/2, 430/3/3
+      </div>
+    </div>
+
+
+    <!-- LONG ANSWER -->
+    <h2 class="sub-title">II. Long Answer Questions <span class="marks">5 Marks</span></h2>
+
+
+    <!-- Q7 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p class="q-title">
+        7. Mean Calculation
+      </p>
+
+      <p>
+        Find the mean lifetime (in hours) of the electrical components:
+      </p>
+
+      <table>
+        <tr>
+          <th>Lifetime (in hours)</th>
+          <th>Number of electrical components</th>
+        </tr>
+        <tr><td>0 – 20</td><td>10</td></tr>
+        <tr><td>20 – 40</td><td>35</td></tr>
+        <tr><td>40 – 60</td><td>50</td></tr>
+        <tr><td>60 – 80</td><td>60</td></tr>
+        <tr><td>80 – 100</td><td>30</td></tr>
+        <tr><td>100 – 120</td><td>15</td></tr>
+      </table>
+
+      <div class="sets">
+        Set: 430/1/1
+      </div>
+    </div>
+
+
+    <!-- Q8 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p class="q-title">
+        8. Median Calculation
+      </p>
+
+      <p>
+        Find the median age of the policy holders:
+      </p>
+
+      <table>
+        <tr>
+          <th>Age (in years)</th>
+          <th>Number of policy holders</th>
+        </tr>
+        <tr><td>15 – 20</td><td>2</td></tr>
+        <tr><td>20 – 25</td><td>4</td></tr>
+        <tr><td>25 – 30</td><td>18</td></tr>
+        <tr><td>30 – 35</td><td>21</td></tr>
+        <tr><td>35 – 40</td><td>33</td></tr>
+        <tr><td>40 – 45</td><td>11</td></tr>
+        <tr><td>45 – 50</td><td>3</td></tr>
+        <tr><td>50 – 55</td><td>6</td></tr>
+        <tr><td>55 – 60</td><td>2</td></tr>
+      </table>
+
+      <div class="sets">
+        Set: 430/1/3
+      </div>
+    </div>
+
+
+    <!-- Q9 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p>
+        Find the median length (in mm) of the leaves:
+      </p>
+
+      <table>
+        <tr>
+          <th>Length in (mm)</th>
+          <th>Number of leaves</th>
+        </tr>
+        <tr><td>100 – 120</td><td>8</td></tr>
+        <tr><td>120 – 140</td><td>9</td></tr>
+        <tr><td>140 – 160</td><td>12</td></tr>
+        <tr><td>160 – 180</td><td>5</td></tr>
+        <tr><td>180 – 200</td><td>6</td></tr>
+      </table>
+
+      <div class="sets">
+        Sets: 430/2/1, 430/2/2, 430/2/3
+      </div>
+    </div>
+
+
+    <!-- Q10 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p class="q-title">
+        10. Missing Frequencies
+      </p>
+
+      <p>
+        If the mean number of days a student was absent is 12,
+        find the values of \(x\) and \(y\):
+      </p>
+
+      <table>
+        <tr>
+          <th>Number of days</th>
+          <th>0 – 4</th>
+          <th>4 – 8</th>
+          <th>8 – 12</th>
+          <th>12 – 16</th>
+          <th>16 – 20</th>
+          <th>20 – 24</th>
+        </tr>
+        <tr>
+          <th>Number of Absent students</th>
+          <td>1</td>
+          <td>8</td>
+          <td>\(x\)</td>
+          <td>6</td>
+          <td>5</td>
+          <td>\(y\)</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Sets: 430/2/1, 430/2/2, 430/2/3
+      </div>
+    </div>
+
+
+    <!-- Q11 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p>
+        The mean pocket allowance is ₹180. Find the value of \(f\).
+        Hence find the mode of given data:
+      </p>
+
+      <table>
+        <tr>
+          <th>Weekly Pocket Allowance (in ₹)</th>
+          <th>Number of Children</th>
+        </tr>
+        <tr><td>110 – 130</td><td>7</td></tr>
+        <tr><td>130 – 150</td><td>6</td></tr>
+        <tr><td>150 – 170</td><td>9</td></tr>
+        <tr><td>170 – 190</td><td>13</td></tr>
+        <tr><td>190 – 210</td><td>\(f\)</td></tr>
+        <tr><td>210 – 230</td><td>5</td></tr>
+        <tr><td>230 – 250</td><td>4</td></tr>
+      </table>
+
+      <div class="sets">
+        Set: 430/3/2
+      </div>
+    </div>
+
+
+    <!-- Q12 -->
+    <div class="question">
+      <span class="basic-label">BASIC</span>
+
+      <p>
+        Find the value of \(x\). Hence find the mean daily expenditure:
+      </p>
+
+      <table>
+        <tr>
+          <th>Daily Expenditure (in ₹)</th>
+          <th>Number of Households</th>
+        </tr>
+        <tr><td>500 – 750</td><td>4</td></tr>
+        <tr><td>750 – 1000</td><td>\(2x+1\)</td></tr>
+        <tr><td>1000 – 1250</td><td>12</td></tr>
+        <tr><td>1250 – 1500</td><td>\(x\)</td></tr>
+        <tr><td>1500 – 1750</td><td>2</td></tr>
+      </table>
+
+      <div class="sets">
+        Set: 430/3/3
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ================= STANDARD 2026 ================= -->
+
+  <div class="chapter">
+
+    <div class="section-title">
+      STANDARD 2026
+    </div>
+
+
+    <!-- MCQ -->
+    <h2 class="sub-title">I. Multiple Choice Questions <span class="marks">1 Mark</span></h2>
+
+
+    <!-- STD Q1 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p class="q-title">
+        1. Empirical Relationship — Find Mode
+      </p>
+
+      <p>
+        Mean and Median of a frequency distribution are 43 and 40 respectively.
+        The value of mode is:
+      </p>
+
+      <div class="options">
+        (A) 34 &nbsp;&nbsp;
+        (B) 43 &nbsp;&nbsp;
+        (C) 38.5 &nbsp;&nbsp;
+        (D) 41.5
+      </div>
+
+      <div class="sets">
+        Set 30/4/1 Q18, Set 30/4/2 Q13
+      </div>
+    </div>
+
+
+    <!-- STD Q2 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        The mean and median of a data are 43 and 43.4 respectively.
+        The mode of the distribution is:
+      </p>
+
+      <div class="options">
+        (A) 43.4 &nbsp;&nbsp;
+        (B) 42.4 &nbsp;&nbsp;
+        (C) 44.2 &nbsp;&nbsp;
+        (D) 49.3
+      </div>
+
+      <div class="sets">
+        Set 30/2/1 Q17
+      </div>
+    </div>
+
+
+    <!-- STD Q3 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        If the mean and mode of a data are 12 and 21 respectively,
+        then its median is:
+      </p>
+
+      <div class="options">
+        (A) 6 &nbsp;&nbsp;
+        (B) 13.5 &nbsp;&nbsp;
+        (C) 15 &nbsp;&nbsp;
+        (D) 14
+      </div>
+
+      <div class="sets">
+        Set 30/1/2 Q18, Set 30/1/3 Q15
+      </div>
+    </div>
+
+
+    <!-- STD Q4 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p class="q-title">
+        4. Step Deviation
+      </p>
+
+      <p>
+        While calculating mean, step deviation method was used
+        \[
+        u=\frac{x-a}{h}.
+        \]
+        If \(\bar{x}=64,\ h=5\) and \(a=62.5\), then the value of
+        \(\bar{u}\) is:
+      </p>
+
+      <div class="options">
+        (A) 0.5 &nbsp;&nbsp;
+        (B) 1.5 &nbsp;&nbsp;
+        (C) 0.3 &nbsp;&nbsp;
+        (D) 7.5
+      </div>
+
+      <div class="sets">
+        Set 30/5/1 Q6, Set 30/5/2 Q14, Set 30/5/3 Q11
+      </div>
+    </div>
+
+
+    <!-- LONG ANSWER -->
+    <h2 class="sub-title">II. Long Answer Type <span class="marks">5 Marks</span></h2>
+
+
+    <!-- STD Q5 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p class="q-title">
+        5. Find Mean and Mode
+      </p>
+
+      <p>
+        Find the mean and mode of the following distribution:
+      </p>
+
+      <table>
+        <tr>
+          <th>Class Interval</th>
+          <th>400–450</th>
+          <th>450–500</th>
+          <th>500–550</th>
+          <th>550–600</th>
+          <th>600–650</th>
+          <th>650–700</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>15</td>
+          <td>18</td>
+          <td>20</td>
+          <td>23</td>
+          <td>22</td>
+          <td>12</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Set 30/5/2 Q35a
+      </div>
+    </div>
+
+
+    <!-- STD Q6 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        Find the mean and mode of the following distribution:
+      </p>
+
+      <table>
+        <tr>
+          <th>Class</th>
+          <th>0–15</th>
+          <th>15–30</th>
+          <th>30–45</th>
+          <th>45–60</th>
+          <th>60–75</th>
+          <th>75–90</th>
+          <th>90–105</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>4</td>
+          <td>8</td>
+          <td>11</td>
+          <td>14</td>
+          <td>10</td>
+          <td>7</td>
+          <td>6</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Set 30/3/1 Q32b, Set 30/4/1 Q35b
+      </div>
+    </div>
+
+
+    <!-- STD Q7 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        Find the median and mode of the following distribution:
+      </p>
+
+      <table>
+        <tr>
+          <th>Class Interval</th>
+          <th>0–15</th>
+          <th>15–30</th>
+          <th>30–45</th>
+          <th>45–60</th>
+          <th>60–75</th>
+          <th>75–90</th>
+          <th>90–105</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>15</td>
+          <td>10</td>
+          <td>12</td>
+          <td>9</td>
+          <td>8</td>
+          <td>10</td>
+          <td>6</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Set 30/5/1 Q34b
+      </div>
+    </div>
+
+
+    <!-- MISSING FREQUENCIES -->
+
+    <h3 class="sub-title">Type B: Finding Missing Frequencies</h3>
+
+
+    <!-- STD Q8 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        The median is 50 and the sum of all frequencies is 90.
+        Find the values of \(p\) and \(q\).
+      </p>
+
+      <table>
+        <tr>
+          <th>Class</th>
+          <th>20–30</th>
+          <th>30–40</th>
+          <th>40–50</th>
+          <th>50–60</th>
+          <th>60–70</th>
+          <th>70–80</th>
+          <th>80–90</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>\(p\)</td>
+          <td>15</td>
+          <td>25</td>
+          <td>20</td>
+          <td>\(q\)</td>
+          <td>8</td>
+          <td>10</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Set 30/4/1 Q35a
+      </div>
+    </div>
+
+
+    <!-- STD Q9 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        If the median is 32.5 and total frequency is 40,
+        find \(x\) and \(y\).
+      </p>
+
+      <table>
+        <tr>
+          <th>Class</th>
+          <th>0–10</th>
+          <th>10–20</th>
+          <th>20–30</th>
+          <th>30–40</th>
+          <th>40–50</th>
+          <th>50–60</th>
+          <th>60–70</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>\(x\)</td>
+          <td>5</td>
+          <td>9</td>
+          <td>12</td>
+          <td>\(y\)</td>
+          <td>3</td>
+          <td>2</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Set 30/4/2 Q33b, Set 30/5/2 Q35b
+      </div>
+    </div>
+
+
+    <!-- STD Q10 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        The mean is 28 and sum of frequencies is 100.
+        Find \(p\) and \(q\).
+      </p>
+
+      <table>
+        <tr>
+          <th>Class Interval</th>
+          <th>0–10</th>
+          <th>10–20</th>
+          <th>20–30</th>
+          <th>30–40</th>
+          <th>40–50</th>
+          <th>50–60</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>12</td>
+          <td>\(p\)</td>
+          <td>27</td>
+          <td>20</td>
+          <td>\(q\)</td>
+          <td>6</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Set 30/5/1 Q34a
+      </div>
+    </div>
+
+
+    <!-- STD Q11 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        Mean is 53. Find the missing frequency \(p\),
+        then find the mode.
+      </p>
+
+      <table>
+        <tr>
+          <th>Class Interval</th>
+          <th>0–20</th>
+          <th>20–40</th>
+          <th>40–60</th>
+          <th>60–80</th>
+          <th>80–100</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>12</td>
+          <td>15</td>
+          <td>\(p\)</td>
+          <td>28</td>
+          <td>13</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Set 30/5/3 Q33a
+      </div>
+    </div>
+
+
+    <!-- SPECIAL DATA -->
+
+    <h3 class="sub-title">Type C: Special Data Formats</h3>
+
+
+    <!-- STD Q12 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        Compute the median of the following data:
+      </p>
+
+      <table>
+        <tr>
+          <th>Mid-value</th>
+          <th>115</th>
+          <th>125</th>
+          <th>135</th>
+          <th>145</th>
+          <th>155</th>
+          <th>165</th>
+          <th>175</th>
+        </tr>
+        <tr>
+          <th>Frequency</th>
+          <td>12</td>
+          <td>15</td>
+          <td>20</td>
+          <td>16</td>
+          <td>10</td>
+          <td>16</td>
+          <td>11</td>
+        </tr>
+      </table>
+
+      <div class="sets">
+        Set 30/5/3 Q33b
+      </div>
+    </div>
+
+
+    <!-- STD Q13 -->
+    <div class="question">
+      <span class="std-label">STANDARD</span>
+
+      <p>
+        Find the median and the mode for the following distribution:
+      </p>
+
+      <table>
+        <tr>
+          <th>Score</th>
+          <th>Number of students</th>
+        </tr>
+        <tr><td>0 and more</td><td>80</td></tr>
+        <tr><td>10 and more</td><td>77</td></tr>
+        <tr><td>20 and more</td><td>72</td></tr>
+        <tr><td>30 and more</td><td>65</td></tr>
+        <tr><td>40 and more</td><td>55</td></tr>
+        <tr><td>50 and more</td><td>43</td></tr>
+        <tr><td>60 and more</td><td>28</td></tr>
+        <tr><td>70 and more</td><td>16</td></tr>
+        <tr><td>80 and more</td><td>10</td></tr>
+        <tr><td>90 and more</td><td>8</td></tr>
+        <tr><td>100 and more</td><td>0</td></tr>
+      </table>
+
+      <div class="sets">
+        Set 30/1/3 Q33
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="footer">
+    Chapter 13 — Statistics | CBSE Class 10 Mathematics PYQs 2026
+    <br>
+    Basic + Standard Mathematics
+  </div>
+
+</div>
+
+</body>
+</html>

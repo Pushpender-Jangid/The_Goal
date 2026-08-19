@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 8 & 9 – Trigonometry | CBSE Class 10 Basic Mathematics 2025</title>
+
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+/* ================= BOOK ================= */
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+/* ================= CHAPTER DIVIDER ================= */
+
+.chapter-divider{
+    margin:35px 0 25px;
+    padding:13px 15px;
+    background:#f1f5f9;
+    border-left:4px solid #172033;
+    border-radius:5px;
+}
+
+.chapter-divider h2{
+    margin:0;
+    font-size:22px;
+}
+
+.chapter-divider p{
+    margin:3px 0 0;
+    color:#64748b;
+    font-size:13px;
+}
+
+/* ================= INTRO ================= */
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= MCQ ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= ASSERTION ================= */
+
+.assertion{
+    margin-top:7px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.assertion div + div{
+    margin-top:5px;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+/* ================= CASE STUDY ================= */
+
+.case-study{
+    padding:12px 0 15px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.case-label{
+    display:inline-block;
+    font-size:10px;
+    font-weight:800;
+    color:#fff;
+    background:#172033;
+    padding:3px 8px;
+    border-radius:12px;
+    margin-bottom:7px;
+}
+
+.case-question{
+    margin-top:8px;
+    padding-left:10px;
+    border-left:3px solid #cbd5e1;
+}
+
+.case-question div{
+    margin:5px 0;
+}
+
+/* ================= INLINE MATH ================= */
+
+mjx-container{
+    max-width:100%;
+}
+
+.MathJax{
+    outline:none;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question,
+    .case-study{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    mjx-container{
+        max-width:100%;
+    }
+
+    button{
+        display:none;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>TRIGONOMETRY</h1>
+
+    <h2>Chapters 8 & 9 • Basic Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Basic Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+
+<div class="chapter-intro">
+
+    <h3>Chapters 8 & 9: Trigonometry</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Basic Mathematics 2025</strong>
+        question paper sets. Repetitive questions have been removed
+        while retaining the major question types and variations.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 8 -->
+<!-- ===================================================== -->
+
+<div class="chapter-divider">
+
+    <h2>Chapter 8: Introduction to Trigonometry</h2>
+
+    <p>
+        Trigonometric ratios, identities, standard values and identity-based questions.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 8 : MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Value Comparison</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following statements is false?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\tan45^\circ=\cot45^\circ\)</div>
+    <div class="option">(B) \(\sin90^\circ=\tan45^\circ\)</div>
+    <div class="option">(C) \(\sin30^\circ=\cos30^\circ\)</div>
+    <div class="option">(D) \(\sin45^\circ=\cos45^\circ\)</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Identity Evaluation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of
+\[
+\tan^2 A-\frac{1}{\cos^2 A}
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) More than 1</div>
+    <div class="option">(B) 1</div>
+    <div class="option">(C) 0</div>
+    <div class="option">(D) \(-1\)</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Identity Application</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of
+\[
+\cot^2 A-\frac{1}{\sin^2 A}
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) More than 1</div>
+    <div class="option">(B) 1</div>
+    <div class="option">(C) 0</div>
+    <div class="option">(D) \(-1\)</div>
+</div>
+
+<span class="set">Set 430/1/2</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Reciprocal Identity</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\sec\theta-\tan\theta=2,
+\]
+then \(\sec\theta+\tan\theta\) is equal to:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac12\)</div>
+    <div class="option">(B) \(\sqrt2\)</div>
+    <div class="option">(C) \(\frac1{\sqrt2}\)</div>
+    <div class="option">(D) 2</div>
+</div>
+
+<span class="set">Set 430/4/2</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Ratio Calculation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\tan A=\frac12,
+\]
+then \(\sin A\) is equal to:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac2{\sqrt5}\)</div>
+    <div class="option">(B) \(\frac1{\sqrt3}\)</div>
+    <div class="option">(C) \(\frac1{\sqrt5}\)</div>
+    <div class="option">(D) 1</div>
+</div>
+
+<span class="set">Set 430/4/2</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Complex Evaluation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of
+\[
+\frac{\sec^2 30^\circ+\tan^2 30^\circ}
+{\sin^2 45^\circ+\cos^2 45^\circ}
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 1</div>
+    <div class="option">(B) \(\frac53\)</div>
+    <div class="option">(C) \(\frac{13}{3}\)</div>
+    <div class="option">(D) 7</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Variable Solving</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of \(\theta\) for which
+\[
+\sin2\theta=\tan45^\circ
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(22.5^\circ\)</div>
+    <div class="option">(B) \(30^\circ\)</div>
+    <div class="option">(C) \(45^\circ\)</div>
+    <div class="option">(D) \(90^\circ\)</div>
+</div>
+
+<span class="set">Set 430/3/3</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Algebraic Identity</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+\[
+(\sin\theta+\cos\theta)^2+
+(\sin\theta-\cos\theta)^2
+\]
+is equal to:
+</div>
+
+<div class="options">
+    <div class="option">(A) 1</div>
+    <div class="option">(B) 2</div>
+    <div class="option">(C) \(2+2\sin\theta\cos\theta\)</div>
+    <div class="option">(D) \(2+4\sin\theta\cos\theta\)</div>
+</div>
+
+<span class="set">Set 430/2/2</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Standard Table Value</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of
+\[
+\frac{2\tan60^\circ}{1-\tan^260^\circ}
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(-3\)</div>
+    <div class="option">(B) \(\sqrt3\)</div>
+    <div class="option">(C) \(-\frac1{\sqrt3}\)</div>
+    <div class="option">(D) \(-\sqrt3\)</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 8 : ASSERTION -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Assertion – Reason Questions</h2>
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Sine and Cosine Relation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+For \(\sin\theta=1\), \(\cos\theta\) must be 0.
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+\[
+\sin^2\theta-\cos^2\theta=1.
+\]
+</div>
+
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Cotangent and Cosecant</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+For an acute angle \(\theta\),
+\[
+\cot\theta=1\implies\csc\theta=\sqrt2.
+\]
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+\[
+\csc^2\theta-\cot^2\theta=1.
+\]
+</div>
+
+</div>
+
+<span class="set">Set 430/3/2</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 8 : 2 MARK -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Very Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Finding Unknown Angles</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Find the values of \(A\) and \(B\),
+where
+\[
+0^\circ\le A<90^\circ,\qquad
+0^\circ\le B<90^\circ,
+\]
+if
+\[
+\tan(A+B)=1
+\]
+and
+\[
+\tan(A-B)=\frac1{\sqrt3}.
+\]
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Geometric Proof</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that
+\[
+\tan45^\circ=1
+\]
+geometrically.
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Expression Evaluation</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Find the value of \(k\), if
+\[
+(\sec A+\tan A)(1-\sin A)=k\cos A.
+\]
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Standard Values</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Evaluate
+\[
+\frac{\cos45^\circ}
+{\sec30^\circ+\csc30^\circ}.
+\]
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Identity Verification</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Verify that
+\[
+\cos2A=
+\frac{1-\tan^2A}{1+\tan^2A}
+\]
+for \(A=30^\circ\).
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 8 : 3 MARK -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Proving Identity – Variant 1</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove the identity:
+\[
+\sqrt{\frac{\csc A-1}{\csc A+1}}
+=
+\sec A-\tan A.
+\]
+</div>
+
+<span class="set">Set 430/1/2</span>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Proving Identity – Variant 2</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove the identity:
+\[
+(\sin A-\csc A)(\cos A-\sec A)
+=
+\frac1{\tan A+\cot A}.
+\]
+</div>
+
+<span class="set">Set 430/1/3</span>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Proving Identity – Variant 3</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove the identity:
+\[
+\frac{\cos\theta}{1+\sin\theta}
++
+\frac{1+\sin\theta}{\cos\theta}
+=
+2\sec\theta.
+\]
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">20. Proving Identity – Variant 4</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove the identity:
+\[
+\frac{1+\sec A}{\sec A}
+=
+\frac{\sin^2A}{1-\cos A}.
+\]
+</div>
+
+<span class="set">Set 430/3/2</span>
+
+</div>
+
+
+<!-- Q21 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">21. Proving Identity – Variant 5</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove the identity:
+\[
+\frac{\tan\theta}{1-\cot\theta}
++
+\frac{\cot\theta}{1-\tan\theta}
+=
+\sec\theta\csc\theta+1.
+\]
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+
+<!-- Q22 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">22. Proving Identity – Variant 6</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove the identity:
+\[
+\left(1+\frac1{\tan^2\theta}\right)
+\left(1+\frac1{\cot^2\theta}\right)
+=
+\frac1{\sin^2\theta-\sin^4\theta}.
+\]
+</div>
+
+<span class="set">Set 430/6/2</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 9 -->
+<!-- ===================================================== -->
+
+<div class="chapter-divider">
+
+    <h2>Chapter 9: Some Applications of Trigonometry</h2>
+
+    <p>
+        Heights and distances, angles of elevation and depression,
+        shadows and real-life applications of trigonometry.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 9 : MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q23 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">23. Figure Interpretation – Angle of Depression</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+In the given figure, which of the following angles represents
+the angle of depression?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(x\)</div>
+    <div class="option">(B) \(y\)</div>
+    <div class="option">(C) \(z\)</div>
+    <div class="option">(D) \(a\)</div>
+</div>
+
+<div class="q-text">
+<em>
+Note: Figure shows an observer at a height looking down at an object,
+with \(z\) marked between the horizontal line and line of sight.
+</em>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q24 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">24. Conceptual Shadow</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+When the sun's altitude changes from \(30^\circ\) to \(60^\circ\),
+the length of the shadow of a tower will:
+</div>
+
+<div class="options">
+    <div class="option">(A) Become shorter</div>
+    <div class="option">(B) Become longer</div>
+    <div class="option">(C) Remain same</div>
+    <div class="option">(D) Be doubled</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q25 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">25. Angle of Elevation – Figure Based</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+In the given figure, the angle of elevation of point \(A\)
+from point \(C\) is:
+</div>
+
+<div class="formula">
+\[
+AB=2\text{ cm},\qquad
+BC=2\sqrt3\text{ cm},\qquad
+AC=4\text{ cm}
+\]
+</div>
+
+<div class="options">
+    <div class="option">(A) \(30^\circ\)</div>
+    <div class="option">(B) \(45^\circ\)</div>
+    <div class="option">(C) \(60^\circ\)</div>
+    <div class="option">(D) Cannot be determined</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 9 : LONG ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Long Answer Type Questions</h2>
+</div>
+
+
+<!-- Q26 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">26. Double Ships Problem</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+As observed from the top of a \(70\) m high lighthouse from the sea
+level, the angles of depression of two ships are \(30^\circ\) and
+\(45^\circ\).
+</div>
+
+<div class="q-text">
+If one ship is exactly behind the other on the same side of the
+lighthouse, find the distance between the two ships.
+</div>
+
+<div class="formula">
+\[
+\text{Use }\sqrt3=1.73
+\]
+</div>
+
+<span class="set">Set 430/4/2</span>
+
+</div>
+
+
+<!-- Q27 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">27. Building and Tower</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+The angle of elevation of the top of a building from the foot of
+a tower is \(30^\circ\) and the angle of elevation of the top of
+the tower from the foot of the building is \(60^\circ\).
+</div>
+
+<div class="q-text">
+If the tower is \(30\) m high, find the height of the building.
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- CHAPTER 9 : CASE STUDY -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Case Study Based Questions</h2>
+</div>
+
+
+<!-- Q28 -->
+
+<div class="case-study">
+
+<span class="case-label">CASE STUDY • 4 MARKS</span>
+
+<div class="q-head">
+
+    <div class="q-title">
+        28. Kite Festival – Figure/Data Based
+    </div>
+
+    <div class="marks">4 Marks</div>
+
+</div>
+
+<div class="q-text">
+
+Reena and Ravi are flying kites. The height of Reena's kite is
+\(60\) m above the ground. The string is inclined at \(30^\circ\)
+to the ground.
+
+<br><br>
+
+Ravi is flying a kite from a \(10\) m high building; his kite is
+also \(60\) m above the ground. The string used by Ravi is the
+same length as Reena's.
+
+</div>
+
+<div class="case-question">
+
+<div>
+<strong>(i)</strong> Find the length of string used by Reena.
+<strong>[1 Mark]</strong>
+</div>
+
+<div>
+<strong>(ii)</strong> Find the value of \(\sin\theta\) for Ravi's kite.
+<strong>[1 Mark]</strong>
+</div>
+
+<div>
+<strong>(iii)</strong> If \(\theta\) changes to \(60^\circ\) without
+changing the string length, find the new height of Ravi's kite.
+<strong>OR</strong>
+Find Ravi's kite height if the string had a \(30^\circ\)
+inclination with the roof.
+<strong>[2 Marks]</strong>
+</div>
+
+</div>
+
+<span class="set">Set 430/2/2</span>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Trigonometry • Basic Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapters 8 & 9
+    </div>
+
+</footer>
+
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

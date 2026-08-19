@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 12 – Surface Areas and Volumes | CBSE Class 10 Basic Mathematics 2025</title>
+
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= MCQ ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= ASSERTION ================= */
+
+.assertion{
+    margin-top:7px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.assertion div + div{
+    margin-top:5px;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+mjx-container{
+    max-width:100%;
+}
+
+.MathJax{
+    outline:none;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    mjx-container{
+        max-width:100%;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>SURFACE AREAS AND VOLUMES</h1>
+
+    <h2>Chapter 12 • Basic Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Basic Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 12: Surface Areas and Volumes</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Basic Mathematics 2025</strong>
+        question paper sets. Redundant questions have been removed
+        while retaining the major question types and variations.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Conceptual Solid</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+For which of the following solids is the lateral/curved surface area
+and total surface area the same?
+</div>
+
+<div class="options">
+    <div class="option">(A) Cube</div>
+    <div class="option">(B) Cuboid</div>
+    <div class="option">(C) Hemisphere</div>
+    <div class="option">(D) Sphere</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Ratio Analysis – Cone and Cylinder</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+A cone and a cylinder have the same base radius and volume.
+The ratio of their heights
+\[
+\text{height of cone}:\text{height of cylinder}
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(1:1\)</div>
+    <div class="option">(B) \(3:1\)</div>
+    <div class="option">(C) \(1:3\)</div>
+    <div class="option">(D) \(3:2\)</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Combination Formula</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+A cone of height \(h\) and radius \(r\) is surmounted on a solid
+cylinder of the same dimensions. The total surface area of the
+entire solid will be:
+</div>
+
+<div class="options">
+    <div class="option">
+        (A) \(2\pi rh+\pi r\sqrt{h^2+r^2}\)
+    </div>
+    <div class="option">
+        (B) \(2\pi rh+\pi r^2+\pi r\sqrt{h^2+r^2}\)
+    </div>
+    <div class="option">
+        (C) \(2\pi rh+2\pi r^2+\pi r\sqrt{h^2+r^2}\)
+    </div>
+    <div class="option">
+        (D) \(2\pi rh+\pi r\sqrt{h^2+r^2}-\pi r^2\)
+    </div>
+</div>
+
+<span class="set">Set 430/2/2</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Volume Ratio</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+A cone and cylinder have the same height and same radius.
+The volumes of the cone and cylinder are in the ratio:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(1:1\)</div>
+    <div class="option">(B) \(1:3\)</div>
+    <div class="option">(C) \(3:1\)</div>
+    <div class="option">(D) \(1:2\)</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Fitting Solids</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The largest possible cone is just fitted inside a hollow cube of
+edge \(25\) cm. The radius of the base of the cone is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(5\) cm</div>
+    <div class="option">(B) \(12.5\) cm</div>
+    <div class="option">(C) \(25\) cm</div>
+    <div class="option">(D) \(10\) cm</div>
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Figure-Based – Empty Space</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The volume of air in a hollow cylinder is \(450\text{ cm}^3\).
+A cone of the same height and radius as that of the cylinder is
+kept inside it. The volume of empty space in the cylinder is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(225\text{ cm}^3\)</div>
+    <div class="option">(B) \(150\text{ cm}^3\)</div>
+    <div class="option">(C) \(250\text{ cm}^3\)</div>
+    <div class="option">(D) \(300\text{ cm}^3\)</div>
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Joined Solids</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Two identical cones are joined as shown in the figure, with their
+bases touching. If the radius of the base is \(4\) cm and the slant
+height of each cone is \(6\) cm, then the height of the solid is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(8\) cm</div>
+    <div class="option">(B) \(4\sqrt5\) cm</div>
+    <div class="option">(C) \(2\sqrt5\) cm</div>
+    <div class="option">(D) \(12\) cm</div>
+</div>
+
+<span class="set">Set 430/6/3</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. ASSERTION REASON -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Assertion – Reason Question</h2>
+</div>
+
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Hemisphere Carved from Cylinder</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+When a hemisphere of same radius \(r\) is carved out from one side
+of a solid wooden cylinder, the total surface area of the remaining
+solid is increased by \(2\pi r^2\).
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+Curved surface area of a hemisphere is \(2\pi r^2\).
+</div>
+
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. SHORT ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Scooping Problem</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+A hemispherical depression is scooped out from the top face of a
+wooden cubical block of side \(14\) cm. If the diameter of the
+hemisphere is equal to the side of the cube, find the total surface
+area of the remaining solid block.
+</div>
+
+<div class="formula">
+\[
+\text{Use }\pi=\frac{22}{7}
+\]
+</div>
+
+<span class="set">Set 430/2/2</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IV. LONG ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Long Answer Type Questions</h2>
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Combination Volume</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+A toy is in the form of a cone surmounted on a hemisphere.
+The cone and hemisphere have the same radii. The height of the
+conical part of the toy is equal to the diameter of its base.
+If the radius of the conical part is \(5\) cm, find the volume
+of the toy.
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Combination Surface Area</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+A cubical block is surmounted by a hemisphere of radius \(3.5\) cm.
+What is the smallest possible length of the edge of the cube so that
+the hemisphere can totally lie on the cube? Find the total surface
+area of the solid so formed.
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Figure-Based – Wooden Article</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+A wooden article was made by scooping out a hemisphere
+(of same diameter) from one end of a solid cylinder.
+If the height of the cylinder is \(10\) cm and the diameter of
+the cylinder is \(14\) cm, find the total surface area of the
+remaining wooden article.
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Vessel Capacity</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+A spherical glass vessel has a cylindrical neck which is \(7\) cm
+long and \(2\) cm in diameter. The diameter of the spherical part
+is \(14\) cm. Find the capacity of the entire glass vessel.
+</div>
+
+<div class="formula">
+\[
+\text{Use }\pi=\frac{22}{7}
+\]
+</div>
+
+<span class="set">Set 430/2/3</span>
+
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Figure-Based – Perfume Bottle</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+A perfume bottle is in the form of a cylinder but the bottom has
+a hemispherical raised portion to reduce capacity. The inner
+diameter is \(5\) cm and height is \(10\) cm. Find the capacity
+of the bottle in mL.
+</div>
+
+<div class="formula">
+\[
+\text{Use }\pi=3.14,\qquad 1\text{ cm}^3=1\text{ mL}
+\]
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Composite Cylinder</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+From a solid wooden cylinder of height \(10\) cm and radius \(14\) cm,
+a cylinder of radius \(7\) cm and height \(5\) cm is scooped out to
+form a cavity inside. Find the total surface area of the remaining
+solid.
+</div>
+
+<span class="set">Set 430/3/2</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Figure-Based – Wooden Beads</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+A necklace is made of wooden beads. Each bead is a sphere of
+diameter \(4.2\) mm. A cylinder is hollowed out from each bead.
+If the radius of the cylinder is \(1\) mm, find the volume of
+wood left in each bead.
+</div>
+
+<span class="set">Set 430/3/3</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Advanced Scooping</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+From each end of a solid cylinder of height \(20\) cm and base
+radius \(7\) cm, a cone of base radius \(2.1\) cm and height
+\(5\) cm is scooped out. Find the volume of the remaining solid.
+</div>
+
+<span class="set">Set 430/5/2</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- V. CASE STUDY -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">V</div>
+    <h2>Case Study Based Questions</h2>
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Data-Based – Ball Pool</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="q-text">
+Suhana bought \(600\) new balls of diameter \(7\) cm to fill a pool.
+The cuboidal box containing the balls has dimensions
+\(42\text{ cm}\times91\text{ cm}\times50\text{ cm}\).
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>(i)</strong> Find the volume of one ball. <strong>[1 Mark]</strong>
+</div>
+
+<div>
+<strong>(ii)</strong> \(10\) balls are painted. Determine the area of
+painted surface. <strong>[1 Mark]</strong>
+</div>
+
+<div>
+<strong>(iii)</strong> Find the volume of empty space in the box.
+<strong>OR</strong> Determine how many balls are in the lowermost
+layer if they cover the base edge to edge.
+<strong>[2 Marks]</strong>
+</div>
+
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Data-Based – Bowl in Box</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="q-text">
+A hemispherical bowl is packed in a cuboidal box. The bowl just fits
+in the box. Its inner radius is \(10\) cm and outer radius is
+\(10.5\) cm.
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>(i)</strong> Find the dimensions of the cuboidal box.
+<strong>[1 Mark]</strong>
+</div>
+
+<div>
+<strong>(ii)</strong> Find the total outer surface area of the box.
+<strong>[1 Mark]</strong>
+</div>
+
+<div>
+<strong>(iii)</strong> Find the difference between the capacity of the
+bowl and volume of the box (use \(\pi=3.14\)).
+<strong>OR</strong> Find the inner area of the bowl to be painted.
+<strong>[2 Marks]</strong>
+</div>
+
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Surface Areas and Volumes • Basic Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 12
+    </div>
+
+</footer>
+
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

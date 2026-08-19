@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 14 – Probability | CBSE Class 10 Basic Mathematics 2025</title>
+
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+/* ================= BOOK ================= */
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+/* ================= INTRO ================= */
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= MCQ ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= ASSERTION ================= */
+
+.assertion{
+    margin-top:7px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.assertion div + div{
+    margin-top:5px;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+/* ================= SUB PARTS ================= */
+
+.subparts{
+    margin-top:8px;
+    padding-left:8px;
+}
+
+.subparts div{
+    margin:4px 0;
+}
+
+/* ================= INLINE MATH ================= */
+
+mjx-container{
+    max-width:100%;
+}
+
+.MathJax{
+    outline:none;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    mjx-container{
+        max-width:100%;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>PROBABILITY</h1>
+
+    <h2>Chapter 14 • Basic Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Basic Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 14: Probability</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Basic Mathematics 2025</strong>
+        question paper sets. Repetitive questions have been removed
+        while retaining the major question types and variations.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Conceptual – Sure Event</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+In a random experiment of throwing a die, which of the following
+is a sure event?
+</div>
+
+<div class="options">
+    <div class="option">(A) Getting a number between 1 and 6</div>
+    <div class="option">(B) Getting an odd number &lt; 7</div>
+    <div class="option">(C) Getting an even number &lt; 7</div>
+    <div class="option">(D) Getting a natural number &lt; 7</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Basic Complementary Probability</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If the probability of happening of an event is \(57\%\),
+then the probability of non-happening of the event is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(0.43\)</div>
+    <div class="option">(B) \(0.57\)</div>
+    <div class="option">(C) \(53\%\)</div>
+    <div class="option">(D) \(\frac{1}{57}\)</div>
+</div>
+
+<span class="set">Set 430/6/2</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Balls – Complementary Event</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+A bag contains 3 red, 4 white and 7 green balls. A ball is drawn
+at random. The probability that the ball drawn is
+<strong>not</strong> of red colour is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{1}{11}\)</div>
+    <div class="option">(B) \(\frac{3}{14}\)</div>
+    <div class="option">(C) \(\frac{11}{14}\)</div>
+    <div class="option">(D) \(\frac{3}{11}\)</div>
+</div>
+
+<span class="set">Set 430/1/2</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Dice – Doublet</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+In an experiment of throwing a pair of dice, the probability of
+<strong>not</strong> getting a doublet is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{1}{6}\)</div>
+    <div class="option">(B) \(\frac{5}{6}\)</div>
+    <div class="option">(C) \(\frac{1}{5}\)</div>
+    <div class="option">(D) \(\frac{1}{30}\)</div>
+</div>
+
+<span class="set">Set 430/1/3</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Dice – Total Outcomes</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The total number of outcomes in the experiment of simultaneous
+throw of <strong>three dice</strong> is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 6</div>
+    <div class="option">(B) 18</div>
+    <div class="option">(C) 36</div>
+    <div class="option">(D) 216</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Dice – Sum at Least 9</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+A pair of dice is thrown simultaneously. Let \(E\) denote the event
+that the sum of numbers obtained on both dice is at least 9.
+The number of outcomes in favour of event \(E\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 4</div>
+    <div class="option">(B) 6</div>
+    <div class="option">(C) 10</div>
+    <div class="option">(D) 26</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Dice – Sum More Than 9</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Two dice are rolled together. The probability of getting a sum
+more than 9 is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{5}{6}\)</div>
+    <div class="option">(B) \(\frac{5}{18}\)</div>
+    <div class="option">(C) \(\frac{1}{6}\)</div>
+    <div class="option">(D) \(\frac{1}{2}\)</div>
+</div>
+
+<span class="set">Set 430/6/3</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Dice – Algebraic Relation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Two dice are rolled together. The probability of getting an outcome
+\((a,b)\) such that \(b=2a\), is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{1}{6}\)</div>
+    <div class="option">(B) \(\frac{1}{12}\)</div>
+    <div class="option">(C) \(\frac{1}{36}\)</div>
+    <div class="option">(D) \(\frac{1}{9}\)</div>
+</div>
+
+<span class="set">Set 430/6/2</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Coins – Exactly One Tail</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Three coins are tossed together. The probability that only one
+coin shows tail is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{1}{2}\)</div>
+    <div class="option">(B) \(\frac{3}{8}\)</div>
+    <div class="option">(C) \(\frac{7}{8}\)</div>
+    <div class="option">(D) \(1\)</div>
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Coins – At Least One Head</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Three coins are tossed together. The probability that at least one
+head comes up is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{3}{8}\)</div>
+    <div class="option">(B) \(\frac{7}{8}\)</div>
+    <div class="option">(C) \(\frac{1}{8}\)</div>
+    <div class="option">(D) \(\frac{3}{4}\)</div>
+</div>
+
+<span class="set">Set 430/6/3</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Cards – Specific Number</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+A card is drawn at random from a well shuffled deck of 52 playing
+cards. The probability that the drawn card shows number \(9\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{1}{26}\)</div>
+    <div class="option">(B) \(\frac{4}{13}\)</div>
+    <div class="option">(C) \(\frac{1}{52}\)</div>
+    <div class="option">(D) \(\frac{1}{13}\)</div>
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Cards – Lost Card</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+A black card is lost from a deck of 52 playing cards. The remaining
+cards are shuffled and one card is drawn at random. The probability
+that the drawn card is the <strong>king of hearts</strong> is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{1}{52}\)</div>
+    <div class="option">(B) \(\frac{1}{4}\)</div>
+    <div class="option">(C) \(\frac{1}{51}\)</div>
+    <div class="option">(D) \(\frac{1}{26}\)</div>
+</div>
+
+<span class="set">Set 430/5/2</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Decimal / Percent Relation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If \(E\) is an event such that \(P(E)=1\%\), then
+\(P(\text{not }E)\) is equal to:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(0.09\)</div>
+    <div class="option">(B) \(0.99\)</div>
+    <div class="option">(C) \(\frac{1}{99}\)</div>
+    <div class="option">(D) \(0.90\)</div>
+</div>
+
+<span class="set">Set 430/5/2</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. ASSERTION REASON -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Assertion – Reason Question</h2>
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Complementary Probability</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+If \(E\) is an event such that
+\(P(E)=\frac{1}{999}\), then
+\(P(\text{not }E)=0.001\).
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+\[
+P(E)+P(\text{not }E)=1.
+\]
+</div>
+
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. VERY SHORT -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Very Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Figure Based – Geometric Probability</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+A coin is dropped at random on the rectangular region shown in
+the figure. The rectangle measures \(3\,m\times2\,m\), and a circle
+of radius \(0.7\,m\) lies inside it.
+</div>
+
+<div class="q-text">
+What is the probability that the coin will land inside the circle?
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Dice – Two Conditions</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+A die is thrown twice. Find the probability that:
+</div>
+
+<div class="subparts">
+    <div><strong>(i)</strong> the difference between the two numbers obtained is \(3\).</div>
+    <div><strong>(ii)</strong> the sum of the numbers obtained is \(8\).</div>
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Algebraic Probability – Marbles</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+A bag contains 40 marbles out of which some are white and others
+are black. If the probability of drawing a black marble is
+\(\frac{3}{5}\), find the number of white marbles.
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Cards – Prime and Perfect Square</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+In a pre-primary class, a teacher put cards numbered \(20\) to
+\(59\) in a bowl. A student picked up a card at random and read
+the number.
+</div>
+
+<div class="subparts">
+    <div><strong>(i)</strong> Find the probability that the number read was a prime number.</div>
+    <div><strong>(ii)</strong> Find the probability that the number read was a perfect square.</div>
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Numbered Discs – Two Conditions</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+A box contains 120 discs, numbered from \(1\) to \(120\). If one
+disc is drawn at random, find the probability that:
+</div>
+
+<div class="subparts">
+    <div><strong>(i)</strong> it bears a two-digit number.</div>
+    <div><strong>(ii)</strong> the number is a perfect square.</div>
+</div>
+
+<span class="set">Set 430/6/2</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IV. SHORT ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">20. Multi-Lot Pen Problem</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+A lot consists of 200 pens, of which 180 are good and the rest
+are defective. A customer will buy a pen if it is not defective.
+</div>
+
+<div class="subparts">
+    <div>
+        <strong>(i)</strong>
+        What is the probability that the customer will
+        <strong>not</strong> buy a pen drawn at random?
+    </div>
+
+    <div>
+        <strong>(ii)</strong>
+        Another lot of 100 pens containing 80 good pens is mixed
+        with the previous lot. What is the probability that the
+        customer will buy a pen drawn at random from the
+        <strong>entire lot</strong>?
+    </div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q21 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">21. Figure Based – Spinning Wheel</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+A game of chance consists of spinning a wheel which comes to rest
+at one of the numbers from \(1\) to \(10\), as shown in the figure.
+Find the probability that the wheel stops at:
+</div>
+
+<div class="subparts">
+    <div>
+        <strong>(i)</strong> a prime number greater than \(2\)
+    </div>
+
+    <div>
+        <strong>(ii)</strong> an odd number less than \(9\)
+    </div>
+
+    <div>
+        <strong>(iii)</strong> a multiple of \(4\)
+    </div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q22 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">22. Mixed Marbles</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+A box contains 6 blue, 4 white and 8 red marbles. A marble is
+drawn at random from this box. Find the probability that the
+marble so drawn is:
+</div>
+
+<div class="subparts">
+    <div><strong>(i)</strong> white</div>
+    <div><strong>(ii)</strong> white or red</div>
+    <div><strong>(iii)</strong> not red</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Probability • Basic Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 14
+    </div>
+
+</footer>
+
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

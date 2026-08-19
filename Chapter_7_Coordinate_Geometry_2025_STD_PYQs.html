@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 7 – Coordinate Geometry | CBSE Class 10 Standard Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+/* ================= BOOK ================= */
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+
+    /* IMPORTANT:
+       One continuous question counter
+       for the entire chapter.
+    */
+    counter-reset:question;
+}
+
+/* ================= INTRO ================= */
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+
+    page-break-inside:avoid;
+    break-inside:avoid;
+
+    /* Continuous numbering */
+    counter-increment:question;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+/*
+   AUTOMATIC QUESTION NUMBERING
+
+   Do NOT write 1., 2., 3. manually
+   inside .q-title.
+*/
+.q-title::before{
+    content:counter(question) ". ";
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= MCQ ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= ASSERTION ================= */
+
+.assertion{
+    margin-top:7px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.assertion div + div{
+    margin-top:5px;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+/* ================= SUB PARTS ================= */
+
+.subparts{
+    margin-top:8px;
+    padding-left:8px;
+}
+
+.subparts div{
+    margin:4px 0;
+}
+
+/* ================= INLINE MATH ================= */
+
+mjx-container{
+    max-width:100%;
+}
+
+.MathJax{
+    outline:none;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    mjx-container{
+        max-width:100%;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>COORDINATE GEOMETRY</h1>
+
+    <h2>Chapter 7 • Standard Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Standard Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 7: Coordinate Geometry</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Standard Mathematics 2025</strong>
+        question paper sets. Repetitive questions have been removed
+        while retaining the major question types and variations.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SECTION I : MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The mid-point of the line segment joining the points
+        \(P(-4,5)\) and \(Q(4,6)\) lies on:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) x-axis</div>
+    <div class="option">(B) y-axis</div>
+    <div class="option">(C) origin</div>
+    <div class="option">(D) neither x-axis nor y-axis</div>
+</div>
+
+<span class="set">Series 30/1/1 (Q3)</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The coordinates of the end points of a diameter of a circle
+        are \((2,4)\) and \((-3,-1)\). The length of its radius is:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{5\sqrt2}{2}\) units</div>
+    <div class="option">(B) \(5\sqrt2\) units</div>
+    <div class="option">(C) \(3\sqrt2\) units</div>
+    <div class="option">(D) \(\pm\frac{5\sqrt2}{2}\) units</div>
+</div>
+
+<span class="set">Series 30/1/3 (Q16)</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The coordinates of the end points of a diameter of a circle
+        are \((5,-2)\) and \((5,2)\). The length of the radius of
+        the circle is:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\pm2\)</div>
+    <div class="option">(B) \(\pm4\)</div>
+    <div class="option">(C) \(4\)</div>
+    <div class="option">(D) \(2\)</div>
+</div>
+
+<span class="set">Series 30/2/1 (Q5) &amp; 30/2/2 (Q10)</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The points \((-5,0)\), \((5,0)\) and \((0,4)\) are the
+        vertices of a triangle which is a/an:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) right-angled triangle</div>
+    <div class="option">(B) isosceles triangle</div>
+    <div class="option">(C) equilateral triangle</div>
+    <div class="option">(D) scalene triangle</div>
+</div>
+
+<span class="set">Series 30/2/1 (Q6), 30/2/3 (Q11) &amp; 30/3/3 (Q11)</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The perimeter of the triangle formed by the vertices
+        \((0,0)\), \((2,0)\) and \((0,2)\) is:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) 4 units</div>
+    <div class="option">(B) 6 units</div>
+    <div class="option">(C) \(6\sqrt2\) units</div>
+    <div class="option">(D) \((4+2\sqrt2)\) units</div>
+</div>
+
+<span class="set">Series 30/2/2 (Q3)</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The line represented by
+        \(\frac{x}{4}+\frac{y}{6}=1\), intersects x-axis and
+        y-axis respectively at \(P\) and \(Q\). The coordinates
+        of the mid-point of line segment \(PQ\) are:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) \((2,3)\)</div>
+    <div class="option">(B) \((3,2)\)</div>
+    <div class="option">(C) \((2,0)\)</div>
+    <div class="option">(D) \((0,3)\)</div>
+</div>
+
+<span class="set">Series 30/3/1 (Q6) &amp; 30/3/3 (Q15)</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        Two of the vertices of \(\triangle PQR\) are
+        \(P(-1,5)\) and \(Q(5,2)\). The coordinates of a point
+        which divides \(PQ\) in the ratio \(2:1\) are:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) \((3,-3)\)</div>
+    <div class="option">(B) \((5,5)\)</div>
+    <div class="option">(C) \((3,3)\)</div>
+    <div class="option">(D) \((5,1)\)</div>
+</div>
+
+<span class="set">Series 30/3/1 (Q7), 30/3/2 (Q4) &amp; 30/3/3 (Q10)</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        \(AOBC\) is a rectangle whose three vertices are
+        \(A(0,2)\), \(O(0,0)\) and \(B(4,0)\). The square of the
+        length of its diagonal is equal to:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) 36</div>
+    <div class="option">(B) 20</div>
+    <div class="option">(C) 16</div>
+    <div class="option">(D) 4</div>
+</div>
+
+<span class="set">Series 30/3/1 (Q16) &amp; 30/3/2 (Q8)</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        If the mid-point of the line segment joining the points
+        \((a,4)\) and \((2,2b)\) is \((2,6)\), then the value of
+        \((a+b)\) is:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) 6</div>
+    <div class="option">(B) 7</div>
+    <div class="option">(C) 8</div>
+    <div class="option">(D) 16</div>
+</div>
+
+<span class="set">Series 30/3/2 (Q15)</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The distance of the point \((4,0)\) from x-axis is:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) 4 units</div>
+    <div class="option">(B) 16 units</div>
+    <div class="option">(C) 0 units</div>
+    <div class="option">(D) \(4\sqrt2\) units</div>
+</div>
+
+<span class="set">Series 30/3/3 (Q3)</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The distance of which of the following points from origin
+        is less than 5 units?
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) \((3,4)\)</div>
+    <div class="option">(B) \((2,6)\)</div>
+    <div class="option">(C) \((-3,-4)\)</div>
+    <div class="option">(D) \((1,4)\)</div>
+</div>
+
+<span class="set">Series 30/4/2 (Q6)</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        In the figure given below, points \(P,Q,R\) divide the line
+        segment \(AB\) in four equal parts. The point \(Q\) divides
+        \(PB\) in the ratio:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) \(1:3\)</div>
+    <div class="option">(B) \(2:3\)</div>
+    <div class="option">(C) \(1:2\)</div>
+    <div class="option">(D) \(1:1\)</div>
+</div>
+
+<span class="set">Series 30/5/1 (Q6)</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The point \(P\) divides the line segment \(AB\) in the ratio
+        \(3:1\) as shown below \([A-P-B]\). The value of
+        \(\frac{AB}{PB}\) is:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) 3</div>
+    <div class="option">(B) \(\frac14\)</div>
+    <div class="option">(C) 4</div>
+    <div class="option">(D) \(\frac13\)</div>
+</div>
+
+<span class="set">Series 30/5/2 (Q6)</span>
+
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The distance of the point \(A(-3,-4)\) from x-axis is:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) 3</div>
+    <div class="option">(B) 4</div>
+    <div class="option">(C) 5</div>
+    <div class="option">(D) 7</div>
+</div>
+
+<span class="set">Series 30/6/1 (Q5)</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The distance of point \((a,-b)\) from x-axis is:
+    </div>
+
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="options">
+    <div class="option">(A) \(a\)</div>
+    <div class="option">(B) \(-a\)</div>
+    <div class="option">(C) \(b\)</div>
+    <div class="option">(D) \(-b\)</div>
+</div>
+
+<span class="set">Series 30/6/2 (Q7)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SECTION II : VERY SHORT -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Very Short Answer Questions</h2>
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        Find the length of the median through the vertex \(B\) of
+        \(\triangle ABC\) with vertices
+        \(A(9,-2)\), \(B(-3,7)\) and \(C(-1,10)\).
+    </div>
+
+    <div class="marks">2 Marks</div>
+</div>
+
+<span class="set">Series 30/1/3 (Q25)</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        The coordinates of the end points of the line segment
+        \(AB\) are \(A(-2,-2)\) and \(B(2,-4)\).
+        \(P\) is the point on \(AB\) such that
+        \(BP=\frac47AB\). Find the coordinates of point \(P\).
+    </div>
+
+    <div class="marks">2 Marks</div>
+</div>
+
+<span class="set">Series 30/5/1 (Q22) &amp; 30/5/3 (Q21)</span>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        Find the coordinates of a point \(P\) which is equidistant
+        from points with coordinates \(A(7,1)\) and \(B(3,5)\),
+        such that its abscissa is 2 more than its ordinate.
+    </div>
+
+    <div class="marks">2 Marks</div>
+</div>
+
+<span class="set">Series 30/6/1 (Q23) &amp; 30/6/2 (Q25)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SECTION III : SHORT ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Short Answer Questions</h2>
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        Find the ratio in which the y-axis divides the line segment
+        joining the points \((5,-6)\) and \((-1,-4)\).
+        Also find the point of intersection.
+    </div>
+
+    <div class="marks">3 Marks</div>
+</div>
+
+<span class="set">Series 30/1/1 (Q28) &amp; 30/1/3 (Q31)</span>
+
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        If the mid-point of the line segment joining the points
+        \(A(3,4)\) and \(B(k,6)\) is \(P(x,y)\) and
+        \(x+y-10=0\), then find the value of \(k\).
+    </div>
+
+    <div class="marks">3 Marks</div>
+</div>
+
+<span class="set">Series 30/2/1 (Q28) &amp; 30/2/3 (Q30)</span>
+
+</div>
+
+
+<!-- Q21 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        If \((a,b)\) is the mid-point of the line segment joining
+        the points \(A(10,-6)\) and \(B(k,4)\) and
+        \(a-2b=18\), then find the value of \(k\).
+    </div>
+
+    <div class="marks">3 Marks</div>
+</div>
+
+<span class="set">Series 30/2/2 (Q27)</span>
+
+</div>
+
+
+<!-- Q22 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        Find the coordinates of the points which divide the line
+        segment joining \(A(-2,2)\) and \(B(2,8)\) into four equal parts.
+    </div>
+
+    <div class="marks">3 Marks</div>
+</div>
+
+<span class="set">
+    Series 30/3/1 (Q26b), 30/3/2 (Q31b) &amp; 30/3/3 (Q31b)
+</span>
+
+</div>
+
+
+<!-- Q23 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">
+        Find a relation between \(x\) and \(y\) such that
+        \(P(x,y)\) is equidistant from the points
+        \(A(3,5)\) and \(B(7,1)\). Hence, write the coordinates
+        of the points on x-axis and y-axis which are equidistant
+        from points \(A\) and \(B\).
+    </div>
+
+    <div class="marks">3 Marks</div>
+</div>
+
+<span class="set">Series 30/5/1 (Q29) &amp; 30/5/2 (Q31)</span>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Coordinate Geometry • Standard Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 7
+    </div>
+
+</footer>
+
+
+<!-- ================= TOP BUTTON ================= -->
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

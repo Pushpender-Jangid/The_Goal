@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 6 – Triangles | CBSE Class 10 Basic Mathematics 2025</title>
+
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+/* ================= BOOK ================= */
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+/* ================= INTRO ================= */
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= MCQ ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+/* ================= CASE STUDY ================= */
+
+.case-box{
+    margin-top:8px;
+    padding:10px 12px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.subpart{
+    margin-top:7px;
+}
+
+.subpart:first-child{
+    margin-top:0;
+}
+
+/* ================= NOTE ================= */
+
+.note{
+    margin-top:8px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    color:#64748b;
+    font-size:12px;
+}
+
+/* ================= INLINE MATH ================= */
+
+mjx-container{
+    max-width:100%;
+}
+
+.MathJax{
+    outline:none;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    mjx-container{
+        max-width:100%;
+    }
+
+    .top-btn{
+        display:none;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>TRIANGLES</h1>
+
+    <h2>Chapter 6 • Basic Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Basic Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 6: Triangles</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Basic Mathematics 2025</strong>
+        question paper sets. Redundant questions have been removed
+        while retaining important similarity criteria, theorem
+        applications, figure-based problems and case-study variations.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Similarity Criteria</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following is <strong>not</strong> the criterion for
+similarity of triangles?
+</div>
+
+<div class="options">
+    <div class="option">(A) AAA</div>
+    <div class="option">(B) SSS</div>
+    <div class="option">(C) SAS</div>
+    <div class="option">(D) RHS</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Figure-Based Angle Calculation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+
+From the figures given, determine the measure of
+\(\angle P\).
+
+<br><br>
+
+For \(\triangle ABC\):
+\[
+\angle A=80^\circ,\qquad \angle B=60^\circ
+\]
+
+and its sides are \(3.8\) cm, \(3\sqrt3\) cm and \(6\) cm.
+
+For \(\triangle PQR\), the corresponding sides are
+\(6\sqrt3\) cm, \(7.6\) cm and \(12\) cm.
+
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\angle P=60^\circ\)</div>
+    <div class="option">(B) \(\angle P=80^\circ\)</div>
+    <div class="option">(C) \(\angle P=40^\circ\)</div>
+    <div class="option">(D) Cannot be determined</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Property-Based Similarity</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which types of triangles are <strong>always similar</strong>?
+</div>
+
+<div class="options">
+    <div class="option">(A) Right-angled triangles</div>
+    <div class="option">(B) Acute-angled triangles</div>
+    <div class="option">(C) Isosceles triangles</div>
+    <div class="option">(D) Equilateral triangles</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Figure-Based – Basic Proportionality</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+
+In \(\triangle ABC\), \(DE\parallel BC\).
+
+If
+\[
+AE=(2x+1)\text{ cm},\qquad EC=4\text{ cm},
+\]
+\[
+AD=(x+1)\text{ cm},\qquad DB=3\text{ cm},
+\]
+
+then the value of \(x\) is:
+
+</div>
+
+<div class="options">
+    <div class="option">(A) \(1\)</div>
+    <div class="option">(B) \(\frac12\)</div>
+    <div class="option">(C) \(-1\)</div>
+    <div class="option">(D) \(\frac13\)</div>
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Figure-Based Similarity Scale</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+
+What values of \(x\) and \(y\) will make
+\(\triangle ABC\) similar to \(\triangle QRP\)?
+
+<br><br>
+
+The sides of \(\triangle ABC\) are:
+\[
+2,\quad 3,\quad 2.5
+\]
+
+and the corresponding sides of \(\triangle QRP\) are:
+\[
+y,\quad x,\quad 4.
+\]
+
+</div>
+
+<div class="options">
+    <div class="option">(A) \(x=6,\ y=5\)</div>
+    <div class="option">(B) \(x=5,\ y=6\)</div>
+    <div class="option">(C) \(x=6,\ y=6\)</div>
+    <div class="option">(D) \(x=12,\ y=3.2\)</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. VERY SHORT -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Very Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Parallel Line Proof</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+
+In the given figure, if
+\[
+PQ\parallel RS,
+\]
+prove that
+\[
+\triangle POQ\sim\triangle SOR.
+\]
+
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Angle Calculation Using Similar Triangles</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+
+Given
+\[
+\triangle OSR\sim\triangle OQP,
+\]
+\[
+\angle ROQ=125^\circ,\qquad
+\angle ORS=70^\circ.
+\]
+
+Find the measures of
+\[
+\angle OSR
+\quad\text{and}\quad
+\angle OQP.
+\]
+
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Side-Angle Relation</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+
+\(D\) is a point on side \(BC\) of \(\triangle ABC\) such that
+\[
+\angle ADC=\angle BAC.
+\]
+
+Prove that
+\[
+(CA)^2=CB\cdot CD.
+\]
+
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Isosceles Triangle Proof</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+
+Given
+\[
+\angle ADE=\angle ACB
+\]
+and
+\[
+\frac{AD}{DB}=\frac{AE}{EC}.
+\]
+
+Prove that
+\[
+\triangle ABC
+\]
+is an isosceles triangle.
+
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Shadow Comparison</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+
+A vertical pole of height \(10\) m casts a shadow of \(15\) m.
+At the same time, a tower casts a shadow of \(45\) m.
+
+Find the height of the tower.
+
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Similar Triangles – Perimeter</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+
+The perimeters of two similar triangles are \(22\) cm and
+\(33\) cm respectively.
+
+If one side of the first triangle is \(9\) cm, find the length
+of the corresponding side of the second triangle.
+
+</div>
+
+<span class="set">Set 430/6/3</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. SHORT ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Coordinate-Based BPT</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+\(A(6,-3)\), \(B(0,5)\) and \(C(-2,1)\) are vertices of
+\(\triangle ABC\).
+
+Points
+\[
+P(3,1)
+\quad\text{and}\quad
+Q(2,-1)
+\]
+lie on sides \(AB\) and \(AC\) respectively.
+
+Check whether
+\[
+\frac{AP}{PB}=\frac{AQ}{QC}.
+\]
+
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Similarity from Congruence</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+It is given that
+\[
+\triangle ACD\cong\triangle ABE.
+\]
+
+Prove that
+\[
+\triangle ADE\sim\triangle ABC.
+\]
+
+</div>
+
+<span class="set">Set 430/5/3</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- IV. LONG ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">IV</div>
+    <h2>Long Answer Type Questions</h2>
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Basic Proportionality Theorem</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+State and prove the
+<strong>Basic Proportionality Theorem (BPT)</strong>.
+
+</div>
+
+<span class="set">Set 430/3/3</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. BPT Application – Quadrilateral</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+In quadrilateral \(ABCD\), diagonals \(AC\) and \(BD\)
+intersect at \(O\) such that
+\[
+\frac{AO}{BO}=\frac{CO}{DO}.
+\]
+
+Prove that \(ABCD\) is a trapezium.
+
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Converse of BPT</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+State the <strong>converse of the Basic Proportionality Theorem</strong>.
+
+Using it, prove that the line segment joining the mid-points
+of any two sides of a triangle is parallel to the third side.
+
+</div>
+
+<span class="set">Set 430/1/3</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. SAS Similarity Criterion</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+State the <strong>SAS criterion of similarity</strong> of two
+triangles.
+
+In the given figure,
+\[
+OA\cdot OC=OB\cdot OD.
+\]
+
+Use the SAS criterion to prove that
+\[
+AD\parallel CB.
+\]
+
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Median Similarity</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+\(CM\) and \(RN\) are respectively the medians of
+\(\triangle ABC\) and \(\triangle PQR\).
+
+If
+\[
+\triangle ABC\sim\triangle PQR,
+\]
+prove that:
+
+</div>
+
+<div class="formula">
+\[
+\text{(i) }\triangle AMC\sim\triangle PNR
+\]
+
+\[
+\text{(ii) }\angle BCM=\angle QRN
+\]
+
+\[
+\text{(iii) }\triangle BMC\sim\triangle QNR
+\]
+</div>
+
+<span class="set">Set 430/3/3</span>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Angle Bisector Similarity</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+State the <strong>AA criterion of similarity</strong>.
+
+In \(\triangle ABC\) and \(\triangle PQR\), \(AD\) and \(PS\)
+are angle bisectors of
+\[
+\angle BAC
+\quad\text{and}\quad
+\angle RPQ
+\]
+respectively.
+
+If
+\[
+\triangle ABC\sim\triangle PQR,
+\]
+prove that
+\[
+\triangle ACD\sim\triangle PRS.
+\]
+
+</div>
+
+<span class="set">Set 430/2/2</span>
+
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">20. Median-Parallel Relation</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+In \(\triangle ABC\), \(P\) and \(Q\) are points on \(AB\)
+and \(AC\) respectively such that
+\[
+PQ\parallel BC.
+\]
+
+If \(AD\) is the median drawn from \(A\) to \(BC\), prove that
+\(AD\) bisects \(PQ\).
+
+</div>
+
+<span class="set">Set 430/4/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- V. CASE STUDY -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">V</div>
+    <h2>Case Study Based Questions</h2>
+</div>
+
+
+<!-- Q21 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">21. Window Pattern – Similarity &amp; Trisection</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="q-text">
+
+A triangular window of a building represents a triangle
+\(\triangle ABC\) with
+\[
+\angle A=90^\circ
+\]
+and
+\[
+AB=AC.
+\]
+
+Points \(P\) and \(R\) trisect \(AB\) and
+\[
+PQ\parallel RS\parallel AC.
+\]
+
+</div>
+
+<div class="case-box">
+
+<div class="subpart">
+<strong>(i)</strong>
+Show that
+\[
+\triangle BPQ\sim\triangle BAC.
+\]
+</div>
+
+<div class="subpart">
+<strong>(ii)</strong>
+Prove that
+\[
+PQ=\frac13 AC.
+\]
+</div>
+
+<div class="subpart">
+<strong>(iii)</strong>
+If
+\[
+AB=3\text{ m},
+\]
+find the lengths of \(BQ\) and \(BS\).
+
+<strong>OR</strong>
+
+Prove that
+\[
+BR^2+RS^2=\frac49BC^2.
+\]
+</div>
+
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+
+<!-- Q22 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">22. Fine Arts Design – Equilateral Triangle</div>
+    <div class="marks">4 Marks</div>
+</div>
+
+<div class="q-text">
+
+A student designed triangular tiles in which a circular design
+of radius \(4\) cm is placed inside an equilateral triangle
+\(ABC\).
+
+</div>
+
+<div class="case-box">
+
+<div class="subpart">
+<strong>(i)</strong>
+Determine the length of
+\[
+OB.
+\]
+</div>
+
+<div class="subpart">
+<strong>(ii)</strong>
+Is
+\[
+DE\parallel CA?
+\]
+Give a reason.
+</div>
+
+<div class="subpart">
+<strong>(iii)</strong>
+Write all the angles of quadrilateral \(OEBD\) and show that
+it is a cyclic quadrilateral.
+
+<strong>OR</strong>
+
+Find the perimeter of
+\[
+\triangle ABC.
+\]
+</div>
+
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ================= SUMMARY ================= -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">✓</div>
+    <h2>Chapter Coverage</h2>
+</div>
+
+<div class="note">
+
+<strong>Important Types Covered:</strong>
+
+Similarity criteria • AAA / SAS / SSS • Basic Proportionality
+Theorem • Converse of BPT • Similar triangles • Angle relations •
+Proportional sides • Median properties • Angle bisector properties •
+Coordinate-based BPT • Shadow problems • Perimeter of similar triangles •
+Figure-based questions • Case-study applications.
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Triangles • Basic Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 6
+    </div>
+
+</footer>
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button
+    class="top-btn"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

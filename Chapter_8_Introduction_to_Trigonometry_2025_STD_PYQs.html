@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 8 – Introduction to Trigonometry | CBSE Class 10 Standard Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:38px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= MCQ ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= SUBPARTS ================= */
+
+.subparts{
+    margin-top:8px;
+    padding-left:8px;
+}
+
+.subparts div{
+    margin:5px 0;
+}
+
+/* ================= PROOF ================= */
+
+.proof{
+    margin-top:8px;
+    padding:9px 12px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+    overflow-x:auto;
+}
+
+/* ================= MATH ================= */
+
+mjx-container{
+    max-width:100%;
+}
+
+.MathJax{
+    outline:none;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:30px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>INTRODUCTION TO TRIGONOMETRY</h1>
+
+    <h2>Chapter 8 • Standard Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Standard Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 8: Introduction to Trigonometry</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Standard Mathematics 2025</strong>
+        question paper sets. Repetitive questions have been removed
+        while retaining the important question types and variations.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SECTION A -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">A</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Acute Angle – Sine</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If \(\theta\) is an acute angle and
+\(7+4\sin\theta=9\), then the value of \(\theta\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(90^\circ\)</div>
+    <div class="option">(B) \(30^\circ\)</div>
+    <div class="option">(C) \(45^\circ\)</div>
+    <div class="option">(D) \(60^\circ\)</div>
+</div>
+
+<span class="set">Series 30/1/1 (Q4) &amp; 30/1/3 (Q5)</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Trigonometric Simplification</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of
+\[
+\tan^2\theta-
+\left(\frac{1}{\cos\theta}\times\sec\theta\right)
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(1\)</div>
+    <div class="option">(B) \(0\)</div>
+    <div class="option">(C) \(-1\)</div>
+    <div class="option">(D) \(2\)</div>
+</div>
+
+<span class="set">Series 30/1/1 (Q5)</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Trigonometric Expression</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of
+\[
+(\tan A\csc A)^2-(\sin A\sec A)^2
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(0\)</div>
+    <div class="option">(B) \(1\)</div>
+    <div class="option">(C) \(-1\)</div>
+    <div class="option">(D) \(2\)</div>
+</div>
+
+<span class="set">Series 30/1/3 (Q2)</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Sine–Cosine Relation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+7\cos^2\theta+3\sin^2\theta=4,
+\]
+then the value of \(\theta\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(30^\circ\)</div>
+    <div class="option">(B) \(45^\circ\)</div>
+    <div class="option">(C) \(60^\circ\)</div>
+    <div class="option">(D) \(90^\circ\)</div>
+</div>
+
+<span class="set">Series 30/2/1 (Q1)</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Half Angle</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\sin(\alpha+\beta)=1,
+\]
+then the value of
+\[
+\sin\left(\frac{\alpha+\beta}{2}\right)
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac{1}{\sqrt2}\)</div>
+    <div class="option">(B) \(\frac12\)</div>
+    <div class="option">(C) \(0\)</div>
+    <div class="option">(D) \(1\)</div>
+</div>
+
+<span class="set">Series 30/2/2 (Q11)</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Standard Angles</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\sin30^\circ\tan45^\circ
+=
+\frac{\sec60^\circ}{k},
+\]
+then the value of \(k\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(4\)</div>
+    <div class="option">(B) \(3\)</div>
+    <div class="option">(C) \(2\)</div>
+    <div class="option">(D) \(1\)</div>
+</div>
+
+<span class="set">Series 30/2/2 (Q18)</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Sine Equals Cosine</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\sin\theta=\cos\theta,
+\qquad 0^\circ<\theta<90^\circ,
+\]
+then the value of
+\[
+\sec\theta\cdot\sin\theta
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\frac1{\sqrt2}\)</div>
+    <div class="option">(B) \(\sqrt2\)</div>
+    <div class="option">(C) \(0\)</div>
+    <div class="option">(D) \(1\)</div>
+</div>
+
+<span class="set">Series 30/2/3 (Q2)</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Multiple Angle</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\tan3\theta=\sqrt3,
+\]
+then
+\[
+\frac{\theta}{2}
+\]
+equals:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(60^\circ\)</div>
+    <div class="option">(B) \(30^\circ\)</div>
+    <div class="option">(C) \(20^\circ\)</div>
+    <div class="option">(D) \(10^\circ\)</div>
+</div>
+
+<span class="set">Series 30/3/1 (Q1) &amp; 30/3/3 (Q7)</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Cotangent–Tangent Identity</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+\[
+\cot\theta+\tan\theta
+\]
+equals:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\csc\theta\sec\theta\)</div>
+    <div class="option">(B) \(\sin\theta\sec\theta\)</div>
+    <div class="option">(C) \(\cos\theta\tan\theta\)</div>
+    <div class="option">(D) \(\sin\theta\cos\theta\)</div>
+</div>
+
+<span class="set">Series 30/3/1 (Q9), 30/3/2 (Q11) &amp; 30/3/3 (Q11)</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Multiple Angle – Sine</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\sin4\theta=\frac{\sqrt3}{2},
+\]
+then
+\[
+\frac{\theta}{3}
+\]
+equals:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(60^\circ\)</div>
+    <div class="option">(B) \(20^\circ\)</div>
+    <div class="option">(C) \(15^\circ\)</div>
+    <div class="option">(D) \(5^\circ\)</div>
+</div>
+
+<span class="set">Series 30/3/2 (Q5)</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Trigonometric Ratio Transformation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+\[
+\frac{\cos\theta}
+{\sqrt{1-\cos^2\theta}}
+\]
+is equal to:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\cot\theta\)</div>
+    <div class="option">(B) \(\sqrt{\cos\theta}\)</div>
+    <div class="option">(C) \(\frac{\cos\theta}{\sqrt{\sin\theta}}\)</div>
+    <div class="option">(D) \(\tan\theta\)</div>
+</div>
+
+<span class="set">Series 30/3/2 (Q13)</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Double Angle</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+\[
+\tan2A=3\tan A
+\]
+is true, when the measure of \(\angle A\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(90^\circ\)</div>
+    <div class="option">(B) \(60^\circ\)</div>
+    <div class="option">(C) \(45^\circ\)</div>
+    <div class="option">(D) \(30^\circ\)</div>
+</div>
+
+<span class="set">Series 30/4/1 (Q8)</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Comparison of Trigonometric Ratios</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following statements is true?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\sin20^\circ>\sin70^\circ\)</div>
+    <div class="option">(B) \(\sin20^\circ>\cos20^\circ\)</div>
+    <div class="option">(C) \(\cos20^\circ>\cos70^\circ\)</div>
+    <div class="option">(D) \(\tan20^\circ>\tan70^\circ\)</div>
+</div>
+
+<span class="set">Series 30/4/1 (Q9) &amp; 30/4/2 (Q11)</span>
+
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Trigonometric Identity</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following is a trigonometric identity?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\sin^2\theta=1+\cos^2\theta\)</div>
+    <div class="option">(B) \(\csc^2\theta+\cot^2\theta=1\)</div>
+    <div class="option">(C) \(\sec^2\theta=1+\tan^2\theta\)</div>
+    <div class="option">(D) \(\sin2\theta=2\sin\theta\)</div>
+</div>
+
+<span class="set">Series 30/4/2 (Q10)</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Tangent of Double Angle</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The value of
+\[
+\frac{2\tan60^\circ}{1-\tan^260^\circ}
+\]
+is same as the value of:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(-\tan30^\circ\)</div>
+    <div class="option">(B) \(-\tan60^\circ\)</div>
+    <div class="option">(C) \(2\sin60^\circ\)</div>
+    <div class="option">(D) \(2\cos60^\circ\)</div>
+</div>
+
+<span class="set">Series 30/5/2 (Q12)</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Right Triangle – Secant</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+In a right triangle \(ABC\), right-angled at \(A\), if
+\[
+\sin B=\frac14,
+\]
+then the value of \(\sec B\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(4\)</div>
+    <div class="option">(B) \(\frac{\sqrt{15}}4\)</div>
+    <div class="option">(C) \(\sqrt{15}\)</div>
+    <div class="option">(D) \(\frac4{\sqrt{15}}\)</div>
+</div>
+
+<span class="set">Series 30/6/2 (Q2) &amp; 30/6/3 (Q9)</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Standard Angles – Algebraic Relation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+x=2\sin60^\circ\cos60^\circ
+\]
+and
+\[
+y=\sin^230^\circ-\cos^230^\circ
+\]
+and
+\[
+x^2=ky^2,
+\]
+then the value of \(k\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(\sqrt3\)</div>
+    <div class="option">(B) \(-\sqrt3\)</div>
+    <div class="option">(C) \(3\)</div>
+    <div class="option">(D) \(-3\)</div>
+</div>
+
+<span class="set">Series 30/6/3 (Q3)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SECTION B -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">B</div>
+    <h2>Very Short Answer Questions</h2>
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Standard Angles – Algebraic Values</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+If
+\[
+x\cos60^\circ+y\cos0^\circ+\sin30^\circ-\cot45^\circ=5,
+\]
+then find the value of \(x+2y\).
+</div>
+
+<span class="set">Series 30/1/1 (Q21a) &amp; 30/1/3 (Q22a)</span>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Evaluation Using Standard Angles</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Evaluate:
+\[
+\frac{\tan^260^\circ}
+{\sin^260^\circ+\cos^230^\circ}.
+\]
+</div>
+
+<span class="set">Series 30/1/3 (Q22b)</span>
+
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">20. Given Tangent – Find Expression</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\tan A=\sqrt3,
+\]
+where \(A\) is an acute angle, then find:
+\[
+\frac{\sin^2A}{1+\cos^2A}.
+\]
+</div>
+
+<span class="set">Series 30/2/2 (Q25) &amp; 30/2/3 (Q24)</span>
+
+</div>
+
+
+<!-- Q21 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">21. Standard Angles – Find \(k\)</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+If
+\[
+4k=\tan^260^\circ-2\csc^230^\circ-2\tan^230^\circ,
+\]
+then find the value of \(k\).
+</div>
+
+<span class="set">Series 30/3/1 (Q21)</span>
+
+</div>
+
+
+<!-- Q22 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">22. Tangent and Cotangent</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\tan A+\cot A=6,
+\]
+then find:
+\[
+\tan^2A+\cot^2A-4.
+\]
+</div>
+
+<span class="set">Series 30/3/3 (Q21)</span>
+
+</div>
+
+
+<!-- Q23 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">23. Using Sine Difference Formula</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+It is given that
+\[
+\sin(A-B)=\sin A\cos B-\cos A\sin B.
+\]
+Use it to find the value of
+\[
+\sin15^\circ.
+\]
+</div>
+
+<span class="set">Series 30/5/1 (Q23a)</span>
+
+</div>
+
+
+<!-- Q24 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">24. Express Ratios in Terms of \(y\)</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\sin A=y,
+\]
+then express \(\cos A\) and \(\tan A\) in terms of \(y\).
+</div>
+
+<span class="set">Series 30/5/1 (Q23b)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- SECTION C -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">C</div>
+    <h2>Short Answer Questions</h2>
+</div>
+
+
+<!-- Q25 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">25. Prove the Trigonometric Identity</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\frac{\tan\theta}{1-\cot\theta}
++
+\frac{\cot\theta}{1-\tan\theta}
+=
+1+\sec\theta\csc\theta
+\]
+</div>
+
+<span class="set">Series 30/1/1 (Q27a)</span>
+
+</div>
+
+
+<!-- Q26 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">26. Prove the Identity Using Sine and Cosine</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\frac{\sin A+\cos A}{\sin A-\cos A}
++
+\frac{\sin A-\cos A}{\sin A+\cos A}
+=
+\frac{2}{2\sin^2A-1}
+\]
+</div>
+
+<span class="set">Series 30/1/1 (Q27b)</span>
+
+</div>
+
+
+<!-- Q27 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">27. Prove the Identity Using Reciprocal Ratios</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\left(1+\frac1{\tan^2\theta}\right)
+\left(1+\frac1{\cot^2\theta}\right)
+=
+\frac1{\sin^2\theta-\sin^4\theta}
+\]
+</div>
+
+<span class="set">Series 30/2/1 (Q27a)</span>
+
+</div>
+
+
+<!-- Q28 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">28. Prove the Identity Involving Cosecant</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\sqrt{\frac{\csc\theta-1}{\csc\theta+1}}
++
+\sqrt{\frac{\csc\theta+1}{\csc\theta-1}}
+=
+2\sec\theta
+\]
+</div>
+
+<span class="set">Series 30/2/1 (Q27b)</span>
+
+</div>
+
+
+<!-- Q29 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">29. Algebraic Form of Tangent and Sine</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\tan\theta+\sin\theta=m
+\]
+and
+\[
+\tan\theta-\sin\theta=n,
+\]
+then prove that:
+</div>
+
+<div class="proof">
+\[
+m^2-n^2=4\sqrt{mn}.
+\]
+</div>
+
+<span class="set">Series 30/2/2 (Q26a)</span>
+
+</div>
+
+
+<!-- Q30 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">30. Prove the Identity</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\frac{\cot A-1}{2-\sec^2A}
+=
+\frac{\cot A}{1+\tan A}
+\]
+</div>
+
+<span class="set">Series 30/2/2 (Q26b)</span>
+
+</div>
+
+
+<!-- Q31 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">31. Prove the Identity Involving Secant and Cosecant</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\sqrt{\sec^2\theta+\csc^2\theta}
+=
+\tan\theta+\cot\theta
+\]
+</div>
+
+<span class="set">Series 30/2/3 (Q26a)</span>
+
+</div>
+
+
+<!-- Q32 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">32. Cosecant–Cotangent Relation</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+If
+\[
+\csc\theta=x+\frac1{4x},
+\]
+prove that
+\[
+\csc\theta+\cot\theta=2x
+\]
+or
+\[
+\frac1{2x}.
+\]
+</div>
+
+<span class="set">Series 30/2/3 (Q26b)</span>
+
+</div>
+
+
+<!-- Q33 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">33. Prove the Identity Involving Secant</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\sqrt{\frac{\sec A-1}{\sec A+1}}
++
+\sqrt{\frac{\sec A+1}{\sec A-1}}
+=
+2\csc A
+\]
+</div>
+
+<span class="set">Series 30/3/2 (Q30a) &amp; 30/3/3 (Q30a)</span>
+
+</div>
+
+
+<!-- Q34 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">34. Prove the Identity Using Reciprocal Ratios</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\left(\frac1{\cos A}-\cos A\right)
+\left(\frac1{\sin A}-\sin A\right)
+=
+\frac1{\tan A+\cot A}
+\]
+</div>
+
+<span class="set">Series 30/3/2 (Q30b) &amp; 30/3/3 (Q30b)</span>
+
+</div>
+
+
+<!-- Q35 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">35. Prove the Identity Using Cubic Terms</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that:
+</div>
+
+<div class="proof">
+\[
+\frac{\cos\theta-2\cos^3\theta}
+{\sin\theta-2\sin^3\theta}
++\cot\theta
+=0
+\]
+</div>
+
+<span class="set">Series 30/6/1 (Q30a) &amp; 30/6/2 (Q26a)</span>
+
+</div>
+
+
+<!-- Q36 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">36. Given Sum of Sine and Cosine</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Given that
+\[
+\sin\theta+\cos\theta=x,
+\]
+prove that:
+</div>
+
+<div class="proof">
+\[
+\sin^4\theta+\cos^4\theta
+=
+\frac{2-(x^2-1)^2}{2}
+\]
+</div>
+
+<span class="set">Series 30/6/1 (Q30b) &amp; 30/6/2 (Q26b)</span>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Introduction to Trigonometry • Standard Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 8
+    </div>
+
+</footer>
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

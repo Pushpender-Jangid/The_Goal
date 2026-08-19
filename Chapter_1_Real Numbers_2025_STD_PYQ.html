@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 1 – Real Numbers | CBSE Class 10 Standard Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+.content{
+    padding:28px 38px 45px;
+}
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+.assertion{
+    margin-top:7px;
+    padding:8px 11px;
+    background:#f8fafc;
+    border-left:3px solid #64748b;
+    border-radius:4px;
+}
+
+.assertion div + div{
+    margin-top:5px;
+}
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+mjx-container{
+    max-width:100%;
+}
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    mjx-container{
+        max-width:100%;
+    }
+}
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>REAL NUMBERS</h1>
+
+    <h2>Chapter 1 • Standard Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Standard Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 1: Real Numbers</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Standard Mathematics 2025</strong>
+        question paper series.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. HCF and LCM</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If HCF(98, 28) = \(m\) and LCM(98, 28) = \(n\), then the value of
+\(n-7m\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 0</div>
+    <div class="option">(B) 28</div>
+    <div class="option">(C) 98</div>
+    <div class="option">(D) 198</div>
+</div>
+
+<span class="set">Series 30/1 (Sets 1 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Rational Number Between Irrational Numbers</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following is a rational number between
+\(\sqrt{3}\) and \(\sqrt{5}\)?
+</div>
+
+<div class="options">
+    <div class="option">(A) 1.4142387954012 ....</div>
+    <div class="option">(B) \(2.\overline{326}\)</div>
+    <div class="option">(C) \(\pi\)</div>
+    <div class="option">(D) 1.857142</div>
+</div>
+
+<span class="set">Series 30/1 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Least Perfect Square Divisible by Given Numbers</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The least number which is a perfect square and is divisible by each of
+16, 20 and 50, is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 1200</div>
+    <div class="option">(B) 100</div>
+    <div class="option">(C) 3600</div>
+    <div class="option">(D) 2400</div>
+</div>
+
+<span class="set">Series 30/2 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. HCF of Three Numbers</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The HCF of 40, 110 and 360 is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 40</div>
+    <div class="option">(B) 110</div>
+    <div class="option">(C) 360</div>
+    <div class="option">(D) 10</div>
+</div>
+
+<span class="set">Series 30/2 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Prime Factorisation</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The sum of the exponents of prime factors in the prime factorisation
+of 4004 is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 5</div>
+    <div class="option">(B) 4</div>
+    <div class="option">(C) 3</div>
+    <div class="option">(D) 2</div>
+</div>
+
+<span class="set">Series 30/2 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Prime Factorisation of 1080</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If
+\[
+1080=2^p\times3^q\times5,
+\]
+then \((p-q)\) is equal to:
+</div>
+
+<div class="options">
+    <div class="option">(A) 6</div>
+    <div class="option">(B) –1</div>
+    <div class="option">(C) 1</div>
+    <div class="option">(D) 0</div>
+</div>
+
+<span class="set">Series 30/2 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. LCM of LCMs</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If \(x\) is the LCM of 4, 6, 8 and \(y\) is the LCM of 3, 5, 7
+and \(p\) is the LCM of \(x\) and \(y\), then which of the following
+is true?
+</div>
+
+<div class="options">
+    <div class="option">(A) \(p=35x\)</div>
+    <div class="option">(B) \(p=4y\)</div>
+    <div class="option">(C) \(p=8x\)</div>
+    <div class="option">(D) \(p=16y\)</div>
+</div>
+
+<span class="set">Series 30/3 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. HCF and LCM of Algebraic Expressions</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+If \(x=ab^3\) and \(y=a^3b\), where \(a\) and \(b\) are prime
+numbers, then [HCF \((x,y)\) · LCM \((x,y)\)] is equal to:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(1-a^3b^3\)</div>
+    <div class="option">(B) \(ab(1-ab)\)</div>
+    <div class="option">(C) \(ab-a^4b^4\)</div>
+    <div class="option">(D) \(ab(1-ab)(1+ab)\)</div>
+</div>
+
+<span class="set">Series 30/4 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Rational and Irrational Numbers</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+\[
+(1+\sqrt3)^2-(1-\sqrt3)^2
+\]
+is:
+</div>
+
+<div class="options">
+    <div class="option">(A) a positive rational number.</div>
+    <div class="option">(B) a negative integer.</div>
+    <div class="option">(C) a positive irrational number.</div>
+    <div class="option">(D) a negative irrational number.</div>
+</div>
+
+<span class="set">Series 30/4 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. LCM with Unknown Exponents</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Let
+\[
+x=a^2b^3c^n
+\]
+and
+\[
+y=a^3b^mc^2,
+\]
+where \(a,b,c\) are prime numbers. If LCM of \(x\) and \(y\) is
+\[
+a^3b^4c^3,
+\]
+then the value of \(m+n\) is:
+</div>
+
+<div class="options">
+    <div class="option">(A) 10</div>
+    <div class="option">(B) 7</div>
+    <div class="option">(C) 6</div>
+    <div class="option">(D) 5</div>
+</div>
+
+<span class="set">Series 30/5 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Divisibility of Prime Factors</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+For any prime number \(p\), if \(p\) divides \(a^2\), where \(a\) is any
+real number, then \(p\) also divides:
+</div>
+
+<div class="options">
+    <div class="option">(A) \(a\)</div>
+    <div class="option">(B) \(a^{1/2}\)</div>
+    <div class="option">(C) \(a^{3/2}\)</div>
+    <div class="option">(D) \(a^{1/8}\)</div>
+</div>
+
+<span class="set">Series 30/5 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Classification of a Number</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+\(\sqrt{0.4}\) is a/an:
+</div>
+
+<div class="options">
+    <div class="option">(A) natural number</div>
+    <div class="option">(B) integer</div>
+    <div class="option">(C) rational number</div>
+    <div class="option">(D) irrational number</div>
+</div>
+
+<span class="set">Series 30/6 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Assertion – Reason: HCF and LCM</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="assertion">
+
+<div>
+<strong>Assertion (A):</strong>
+For any two prime numbers \(p\) and \(q\), their HCF is 1 and LCM is
+\(p+q\).
+</div>
+
+<div>
+<strong>Reason (R):</strong>
+For any two natural numbers, HCF × LCM = product of numbers.
+</div>
+
+</div>
+
+<span class="set">Series 30/6 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. VERY SHORT ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Very Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Least Common Multiple</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Find the smallest number which is divisible by both 644 and 462.
+</div>
+
+<span class="set">Series 30/3 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. HCF and LCM Using Ratio</div>
+    <div class="marks">2 Marks</div>
+</div>
+
+<div class="q-text">
+Two numbers are in the ratio \(4:5\) and their HCF is 11.
+Find the LCM of these numbers.
+</div>
+
+<span class="set">Series 30/3 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- III. SHORT ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">III</div>
+    <h2>Short Answer Type Questions</h2>
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Irrationality of \(\frac{1}{\sqrt5}\)</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that
+\[
+\frac{1}{\sqrt5}
+\]
+is an irrational number.
+</div>
+
+<span class="set">Series 30/1 (Sets 1 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Irrationality of \(\sqrt5\)</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that \(\sqrt5\) is an irrational number.
+</div>
+
+<span class="set">Series 30/1 (Sets 1 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q18 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">18. Irrationality of \(\sqrt3\)</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that \(\sqrt3\) is an irrational number.
+</div>
+
+<span class="set">Series 30/2, 30/4 &amp; 30/5</span>
+
+</div>
+
+
+<!-- Q19 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">19. Irrationality of \(\sqrt2\)</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that \(\sqrt2\) is an irrational number.
+</div>
+
+<span class="set">Series 30/2, 30/4 &amp; 30/5</span>
+
+</div>
+
+
+<!-- Q20 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">20. Irrationality of an Algebraic Expression</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that
+\[
+5\sqrt3+\frac{2}{3}
+\]
+is an irrational number, given that \(\sqrt3\) is an irrational number.
+</div>
+
+<span class="set">Series 30/3 (Set 3)</span>
+
+</div>
+
+
+<!-- Q21 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">21. Composite Number and Prime Number</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+
+Let \(p,q\) and \(r\) be three distinct prime numbers. Check whether
+\[
+p\cdot q\cdot r+q
+\]
+is a composite number or not.
+
+<br><br>
+
+Further, give an example for 3 distinct primes \(p,q,r\) such that:
+
+<br>
+
+(i) \(p\cdot q\cdot r+1\) is a composite number.
+
+<br>
+
+(ii) \(p\cdot q\cdot r+1\) is a prime number.
+
+</div>
+
+<span class="set">Series 30/6 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+
+<!-- Q22 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">22. Irrationality of \(\sqrt5\)</div>
+    <div class="marks">3 Marks</div>
+</div>
+
+<div class="q-text">
+Prove that \(\sqrt5\) is an irrational number.
+</div>
+
+<span class="set">Series 30/6 (Sets 1, 2 &amp; 3)</span>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Real Numbers • Standard Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 1
+    </div>
+
+</footer>
+
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

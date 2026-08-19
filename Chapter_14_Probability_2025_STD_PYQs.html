@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 14 - Probability | 2025 STD PYQs</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f7fa;
+        color: #1f2937;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 35px 45px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        border-radius: 12px;
+    }
+
+    .header {
+        text-align: center;
+        border-bottom: 3px solid #222;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 30px;
+        color: #111827;
+    }
+
+    .header h2 {
+        margin: 8px 0 0;
+        font-size: 18px;
+        font-weight: normal;
+        color: #6b7280;
+    }
+
+    .intro {
+        background: #f3f4f6;
+        padding: 15px 18px;
+        border-left: 5px solid #374151;
+        margin-bottom: 30px;
+        font-size: 15px;
+    }
+
+    .section-title {
+        background: #1f2937;
+        color: #fff;
+        padding: 11px 16px;
+        border-radius: 7px;
+        margin-top: 32px;
+        margin-bottom: 18px;
+        font-size: 19px;
+    }
+
+    .question {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 17px 20px;
+        margin-bottom: 15px;
+        background: #fff;
+        page-break-inside: avoid;
+    }
+
+    .question-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .q-number {
+        font-weight: bold;
+        font-size: 17px;
+        color: #111827;
+    }
+
+    .meta {
+        white-space: normal;
+        background: #eef2ff;
+        color: #3730a3;
+        padding: 5px 9px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .question-text {
+        font-size: 16px;
+    }
+
+    .options {
+        margin-top: 10px;
+        padding-left: 18px;
+    }
+
+    .options div {
+        margin: 4px 0;
+    }
+
+    .subparts {
+        margin-top: 12px;
+        padding-left: 18px;
+    }
+
+    .case-study {
+        background: #fafafa;
+        border-left: 4px solid #4b5563;
+        padding: 13px 16px;
+        margin-bottom: 12px;
+        border-radius: 4px;
+    }
+
+    .case-title {
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .end-note {
+        margin-top: 30px;
+        background: #f3f4f6;
+        padding: 15px 18px;
+        border-left: 5px solid #374151;
+    }
+
+    @media print {
+        body {
+            background: #fff;
+        }
+
+        .container {
+            box-shadow: none;
+            margin: 0;
+            max-width: none;
+            padding: 20px;
+        }
+
+        .question {
+            page-break-inside: avoid;
+        }
+    }
+</style>
+
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(','\\)'], ['$', '$']],
+        displayMath: [['\\[','\\]'], ['$$','$$']]
+    }
+};
+</script>
+
+<script async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>CHAPTER 14 : PROBABILITY</h1>
+        <h2>CBSE Class 10 Mathematics Standard — 2025 PYQs</h2>
+    </div>
+
+    <div class="intro">
+        <strong>PYQ Collection:</strong>
+        Unique questions extracted from Series 30/1 to 30/6.
+        Repeated questions have been consolidated while retaining all
+        relevant Series and Question references.
+    </div>
+
+
+    <!-- SECTION A -->
+
+    <div class="section-title">
+        Section A — Multiple Choice Questions (1 Mark)
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">1.</div>
+            <div class="meta">30/1/1 Q13 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            A card is selected at random from a deck of 52 playing cards.
+            The probability of it being a red face card is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{3}{13}\)</div>
+            <div>(B) \(\frac{2}{13}\)</div>
+            <div>(C) \(\frac{1}{2}\)</div>
+            <div>(D) \(\frac{3}{26}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">2.</div>
+            <div class="meta">30/1/3 Q18 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            A card is drawn at random from a pack of 52 cards.
+            What is the probability that the card drawn is a spade or a king?
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{13}\)</div>
+            <div>(B) \(\frac{2}{13}\)</div>
+            <div>(C) \(\frac{4}{13}\)</div>
+            <div>(D) \(\frac{9}{13}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">3.</div>
+            <div class="meta">30/2/1 Q2 • 30/2/3 Q8 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            The probability of drawing an even prime number out of numbers
+            from 1 to 30 is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{30}\)</div>
+            <div>(B) \(\frac{4}{15}\)</div>
+            <div>(C) \(\frac{7}{30}\)</div>
+            <div>(D) 0</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">4.</div>
+            <div class="meta">30/2/1 Q11 • 30/2/2 Q16 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            In a cricket match, a batsman hits the boundary 7 times out of
+            the 42 balls he plays. The probability of his
+            <strong>not</strong> hitting a boundary is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{7}\)</div>
+            <div>(B) \(\frac{2}{7}\)</div>
+            <div>(C) \(\frac{5}{6}\)</div>
+            <div>(D) \(\frac{1}{6}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">5.</div>
+            <div class="meta">30/2/2 Q13 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            If all the red face cards are removed from the deck of 52 playing
+            cards, then the probability of getting a black jack from the
+            remaining cards is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{2}{46}\)</div>
+            <div>(B) \(\frac{2}{52}\)</div>
+            <div>(C) \(\frac{4}{48}\)</div>
+            <div>(D) \(\frac{2}{23}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">6.</div>
+            <div class="meta">30/2/3 Q1 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            If for any event \(E\),
+            \(P(E)+P(\overline{E})=q\), then the value of
+            \(q^2-3\) is:
+        </div>
+
+        <div class="options">
+            <div>(A) 0</div>
+            <div>(B) −2</div>
+            <div>(C) 2</div>
+            <div>(D) 1</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">7.</div>
+            <div class="meta">30/3/1 Q14 • 30/3/2 Q10 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            A die is thrown once. The probability of getting a number which
+            is <strong>not</strong> a factor of 36, is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{2}\)</div>
+            <div>(B) \(\frac{2}{3}\)</div>
+            <div>(C) \(\frac{1}{6}\)</div>
+            <div>(D) \(\frac{5}{6}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">8.</div>
+            <div class="meta">30/3/3 Q6 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            If in a lottery, there are 10 prizes and 30 blanks, then the
+            probability of winning a prize is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{4}\)</div>
+            <div>(B) \(\frac{1}{3}\)</div>
+            <div>(C) \(\frac{3}{4}\)</div>
+            <div>(D) \(\frac{2}{3}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">9.</div>
+            <div class="meta">30/4/1 Q5 • 30/4/3 Q14 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            The number of red balls in a bag is 10 more than the number of
+            black balls. If the probability of drawing a red ball at random
+            from this bag is \(\frac{3}{5}\), then the total number of balls
+            in the bag is:
+        </div>
+
+        <div class="options">
+            <div>(A) 50</div>
+            <div>(B) 60</div>
+            <div>(C) 80</div>
+            <div>(D) 40</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">10.</div>
+            <div class="meta">30/4/1 Q18 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            A pair of dice is thrown. The probability that the sum of numbers
+            appearing on top faces is <strong>at most 10</strong> is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{11}\)</div>
+            <div>(B) \(\frac{10}{11}\)</div>
+            <div>(C) \(\frac{5}{6}\)</div>
+            <div>(D) \(\frac{11}{12}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">11.</div>
+            <div class="meta">30/4/2 Q2 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            A pair of dice is thrown once. The probability that the sum of
+            numbers appearing on top faces is <strong>at least 4</strong> is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{11}\)</div>
+            <div>(B) \(\frac{10}{11}\)</div>
+            <div>(C) \(\frac{5}{6}\)</div>
+            <div>(D) \(\frac{11}{12}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">12.</div>
+            <div class="meta">30/5/1 Q18 • 30/5/2 Q2 • 30/5/3 Q9 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            The probability of getting a composite number greater than 3
+            on throwing a die is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{6}\)</div>
+            <div>(B) \(\frac{1}{3}\)</div>
+            <div>(C) \(\frac{1}{2}\)</div>
+            <div>(D) \(\frac{2}{3}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">13.</div>
+            <div class="meta">30/5/2 Q9 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            A piggy bank contains ₹1 coins and ₹2 coins in the ratio
+            \(9:11\) respectively. The piggy bank is accidentally dropped
+            and a coin pops out of it. The probability that it is a ₹2 coin is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{9}{11}\)</div>
+            <div>(B) 0.45</div>
+            <div>(C) 0.55</div>
+            <div>(D) \(\frac{1}{11}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">14.</div>
+            <div class="meta">30/5/3 Q16 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            A bag contains red coloured, blue coloured and green coloured
+            balls in the ratio \(2:3:4\). A ball is drawn at random from the
+            given bag. The probability that the ball so drawn is
+            <strong>not of blue colour</strong> is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{9}\)</div>
+            <div>(B) \(\frac{1}{3}\)</div>
+            <div>(C) \(\frac{2}{3}\)</div>
+            <div>(D) \(\frac{5}{9}\)</div>
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">15.</div>
+            <div class="meta">30/6/1 Q8 • 30/6/2 Q10 • 30/6/3 Q17 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            Two coins are tossed simultaneously. The probability of getting
+            at least one head is:
+        </div>
+
+        <div class="options">
+            <div>(A) \(\frac{1}{4}\)</div>
+            <div>(B) \(\frac{1}{2}\)</div>
+            <div>(C) \(\frac{3}{4}\)</div>
+            <div>(D) 1</div>
+        </div>
+    </div>
+
+
+    <!-- ASSERTION REASON -->
+
+    <div class="section-title">
+        Assertion–Reason Questions (1 Mark)
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">16.</div>
+            <div class="meta">30/1/1 Q19 • 30/1/3 Q19 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            <strong>Assertion (A):</strong>
+            The probability of selecting a number at random from the numbers
+            1 to 20 is 1.
+            <br><br>
+
+            <strong>Reason (R):</strong>
+            For any event \(E\), if \(P(E)=1\), then \(E\) is called a
+            sure event.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">17.</div>
+            <div class="meta">30/6/1 Q20 • 30/6/2 Q20 • 30/6/3 Q19 • 1 Mark</div>
+        </div>
+
+        <div class="question-text">
+            <strong>Assertion (A):</strong>
+            In an experiment of throwing a die, Event \(E_1\): getting a
+            number less than 3 and Event \(E_2\): getting a number greater
+            than 3 are complementary events.
+            <br><br>
+
+            <strong>Reason (R):</strong>
+            If two events \(E\) and \(F\) are complementary events, then
+            \(P(E)+P(F)=1\).
+        </div>
+    </div>
+
+
+    <!-- SECTION B -->
+
+    <div class="section-title">
+        Section B — Very Short Answer Questions (2 Marks)
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">18.</div>
+            <div class="meta">30/3/1 Q22 • 30/3/2 Q25 • 30/3/3 Q23 • 2 Marks</div>
+        </div>
+
+        <div class="question-text">
+            The probability of guessing the correct answer of a certain test
+            question is \(\frac{x}{12}\). If the probability of not guessing
+            the correct answer is \(\frac{5}{6}\), then find the value of \(x\).
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">19.</div>
+            <div class="meta">30/4/1 Q25 • 30/4/2 Q22 • 2 Marks</div>
+        </div>
+
+        <div class="question-text">
+            Two friends Anil and Ashraf (or Saima and Aryaa) were born in the
+            month of December in the year 2010. Find the probability that:
+        </div>
+
+        <div class="subparts">
+            <strong>(i)</strong> They share the same date of birth.
+            <br>
+            <strong>(ii)</strong> They have different dates of birth.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">20.</div>
+            <div class="meta">30/4/3 Q24 • 2 Marks</div>
+        </div>
+
+        <div class="question-text">
+            Renu and Simran both were born in the year 2000, which is a leap
+            year. Find the probability that:
+        </div>
+
+        <div class="subparts">
+            <strong>(i)</strong> They share the same date of birth.
+            <br>
+            <strong>(ii)</strong> They have different dates of birth.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">21.</div>
+            <div class="meta">30/5/1 Q25 • 2 Marks</div>
+        </div>
+
+        <div class="question-text">
+            While shuffling a pack of 52 cards, one card was accidentally
+            dropped. Find the probability that the dropped card:
+        </div>
+
+        <div class="subparts">
+            <strong>(i)</strong> is not a face card.
+            <br>
+            <strong>(ii)</strong> is a black king.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">22.</div>
+            <div class="meta">30/5/2 Q22 • 2 Marks</div>
+        </div>
+
+        <div class="question-text">
+            All the face cards are removed from the pack of 52 cards and a
+            card is drawn at random from the remaining cards. Find the
+            probability that the card so drawn is:
+        </div>
+
+        <div class="subparts">
+            <strong>(i)</strong> a spade.
+            <br>
+            <strong>(ii)</strong> not an ace.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">23.</div>
+            <div class="meta">30/5/3 Q24 • 2 Marks</div>
+        </div>
+
+        <div class="question-text">
+            From a pack of 52 cards, all aces and all kings are removed.
+            A card is drawn at random from the remaining cards. Find the
+            probability that the card so drawn is:
+        </div>
+
+        <div class="subparts">
+            <strong>(i)</strong> a face card.
+            <br>
+            <strong>(ii)</strong> a card of red colour.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">24.</div>
+            <div class="meta">30/6/1 Q25 • 2 Marks</div>
+        </div>
+
+        <div class="question-text">
+            The number of red balls in a bag is three more than the number of
+            black balls. If the probability of drawing a red ball at random
+            from the given bag is \(\frac{12}{23}\), find the total number
+            of balls in the given bag.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">25.</div>
+            <div class="meta">30/6/3 Q24 • 2 Marks</div>
+        </div>
+
+        <div class="question-text">
+            A bag contains balls numbered 2 to 91 such that each ball bears
+            a different number. A ball is drawn at random from the bag.
+            Find the probability that:
+        </div>
+
+        <div class="subparts">
+            <strong>(i)</strong> It bears a 2-digit number.
+            <br>
+            <strong>(ii)</strong> It bears a multiple of 1.
+        </div>
+    </div>
+
+
+    <!-- SECTION C -->
+
+    <div class="section-title">
+        Section C — Short Answer Questions (3 Marks)
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">26.</div>
+            <div class="meta">30/1/1 Q31 • 3 Marks</div>
+        </div>
+
+        <div class="question-text">
+            Two dice are thrown at the same time. Determine the probability
+            that the difference of the numbers on the two dice is 2.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">27.</div>
+            <div class="meta">30/1/3 Q27 • 3 Marks</div>
+        </div>
+
+        <div class="question-text">
+            Two dice are rolled together. Find the probability of getting:
+        </div>
+
+        <div class="subparts">
+            <strong>(i)</strong> a multiple of 2 on one and a multiple of 3
+            on the other die.
+            <br><br>
+            <strong>(ii)</strong> the product of two numbers on the top of
+            the two dice is a perfect square.
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">28.</div>
+            <div class="meta">30/3/1 Q30 • 3 Marks</div>
+        </div>
+
+        <div class="question-text">
+            Three unbiased coins are tossed simultaneously. Find the
+            probability of getting:
+        </div>
+
+        <div class="subparts">
+            <strong>(a)</strong> exactly two tails
+            <br>
+            <strong>(b)</strong> at least one head
+            <br>
+            <strong>(c)</strong> at most two heads
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">29.</div>
+            <div class="meta">30/3/2 Q27 • 3 Marks</div>
+        </div>
+
+        <div class="question-text">
+            If 65% of the population has black eyes, 25% have brown eyes and
+            the remaining have blue eyes, what is the probability that a
+            person selected at random has:
+        </div>
+
+        <div class="subparts">
+            <strong>(a)</strong> blue eyes?
+            <br>
+            <strong>(b)</strong> brown or black eyes?
+        </div>
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">30.</div>
+            <div class="meta">30/3/3 Q26 • 3 Marks</div>
+        </div>
+
+        <div class="question-text">
+            All face cards of spades are removed from a pack of 52 playing
+            cards and the remaining pack is shuffled well. A card is then
+            drawn at random from the remaining pack. Find the probability
+            of getting:
+        </div>
+
+        <div class="subparts">
+            <strong>(a)</strong> a face card
+            <br>
+            <strong>(b)</strong> an ace or a jack
+        </div>
+    </div>
+
+
+    <!-- SECTION E -->
+
+    <div class="section-title">
+        Section E — Case Study Based Questions (4 Marks)
+    </div>
+
+
+    <div class="question">
+        <div class="question-header">
+            <div class="q-number">31.</div>
+            <div class="meta">
+                30/2/1 Q37 • 30/2/2 Q36 • 30/2/3 Q38 • 4 Marks
+            </div>
+        </div>
+
+        <div class="case-study">
+            <div class="case-title">Rahul's Lucky Charm</div>
+
+            Rahul has a jar of cards numbered from 10 to 74.
+
+            <br><br>
+
+            <strong>Rules:</strong>
+            <br>
+            • Even number = Win.
+            <br>
+            • Even and divisible by 5 = Win by a big margin.
+            <br>
+            • Odd number less than 30 = Win by a small margin.
+            <br>
+            • Prime number between 50 and 74 = Lose.
+        </div>
+
+        <div class="subparts">
+
+            <strong>(i)</strong>
+            What is the probability that Rahul draws a card with an even
+            number? <strong>(1 Mark)</strong>
+
+            <br><br>
+
+            <strong>(ii)</strong>
+            What is the probability that Rahul draws a card with an odd
+            number less than 30? <strong>(1 Mark)</strong>
+
+            <br><br>
+
+            <strong>(iii) (a)</strong>
+            What is the probability that Rahul draws a card with a prime
+            number between 50 and 74? <strong>(2 Marks)</strong>
+
+            <br>
+
+            <strong>OR</strong>
+
+            <br>
+
+            <strong>(iii) (b)</strong>
+            What is the probability that Rahul draws a card with an even
+            number divisible by 5? <strong>(2 Marks)</strong>
+
+        </div>
+    </div>
+
+
+    <div class="end-note">
+        <strong>End of Chapter 14 — Probability</strong>
+        <br><br>
+        Total Unique Questions:
+        <strong>31</strong>
+        <br>
+        MCQs: <strong>15</strong> &nbsp; | &nbsp;
+        Assertion–Reason: <strong>2</strong> &nbsp; | &nbsp;
+        2 Marks: <strong>8</strong> &nbsp; | &nbsp;
+        3 Marks: <strong>5</strong> &nbsp; | &nbsp;
+        Case Study: <strong>1</strong>
+    </div>
+
+</div>
+
+</body>
+</html>

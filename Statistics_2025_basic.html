@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 13 – Statistics | CBSE Class 10 Basic Mathematics 2025</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f4f6f9;
+    color:#172033;
+    font-family:"Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    font-size:14px;
+}
+
+.book{
+    width:min(920px,94%);
+    margin:28px auto;
+    background:#fff;
+    box-shadow:0 8px 35px rgba(15,23,42,.08);
+}
+
+/* ================= COVER ================= */
+
+.cover{
+    background:linear-gradient(135deg,#111827,#263449);
+    color:#fff;
+    padding:48px 42px 42px;
+    text-align:center;
+    border-bottom:5px solid #334155;
+}
+
+.brand{
+    font-size:12px;
+    letter-spacing:4px;
+    font-weight:700;
+    opacity:.75;
+}
+
+.cover h1{
+    margin:12px 0 4px;
+    font-size:40px;
+    line-height:1.15;
+    letter-spacing:.5px;
+}
+
+.cover h2{
+    margin:0;
+    font-size:18px;
+    font-weight:500;
+    color:#dbeafe;
+}
+
+.cover-line{
+    width:70px;
+    height:3px;
+    background:#94a3b8;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.cover-info{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.cover-info span{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.08);
+    padding:5px 11px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    padding:28px 38px 45px;
+}
+
+.chapter-intro{
+    padding-bottom:18px;
+    border-bottom:1px solid #e2e8f0;
+    margin-bottom:24px;
+}
+
+.chapter-intro h3{
+    margin:0 0 5px;
+    font-size:21px;
+}
+
+.chapter-intro p{
+    margin:0;
+    color:#64748b;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:27px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #172033;
+    padding-bottom:7px;
+    margin-bottom:13px;
+}
+
+.section-title .num{
+    width:29px;
+    height:29px;
+    border-radius:7px;
+    background:#172033;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:19px;
+}
+
+/* ================= QUESTION ================= */
+
+.question{
+    padding:12px 0 14px;
+    border-bottom:1px solid #e5e7eb;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.q-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.q-title{
+    font-weight:700;
+    color:#111827;
+}
+
+.marks{
+    white-space:nowrap;
+    font-size:10px;
+    font-weight:700;
+    color:#475569;
+    background:#f1f5f9;
+    padding:2px 7px;
+    border-radius:12px;
+}
+
+.q-text{
+    color:#1f2937;
+}
+
+.set{
+    display:inline-block;
+    margin-top:5px;
+    font-size:10px;
+    color:#64748b;
+    font-weight:700;
+}
+
+/* ================= MCQ ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 20px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+.option{
+    font-size:13px;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrap{
+    width:100%;
+    overflow-x:auto;
+    margin:9px 0 5px;
+}
+
+.data-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:12px;
+    min-width:600px;
+}
+
+.data-table th,
+.data-table td{
+    border:1px solid #cbd5e1;
+    padding:6px 7px;
+    text-align:center;
+}
+
+.data-table th{
+    background:#f8fafc;
+    font-weight:700;
+}
+
+/* ================= FORMULA ================= */
+
+.formula{
+    margin:8px 0;
+    padding:7px 10px;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:5px;
+    text-align:center;
+    overflow-x:auto;
+}
+
+mjx-container{
+    max-width:100%;
+}
+
+/* ================= PRINT ================= */
+
+@media print{
+
+    @page{
+        size:A4;
+        margin:14mm 14mm 16mm;
+    }
+
+    body{
+        background:#fff;
+        font-size:12.5px;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:35px 30px;
+    }
+
+    .cover h1{
+        font-size:34px;
+    }
+
+    .content{
+        padding:20px 25px 30px;
+    }
+
+    .question{
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+    .section-title{
+        page-break-after:avoid;
+    }
+
+    .data-table{
+        font-size:11px;
+    }
+
+    mjx-container{
+        max-width:100%;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    body{
+        background:#fff;
+    }
+
+    .book{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+
+    .cover{
+        padding:36px 20px;
+    }
+
+    .cover h1{
+        font-size:31px;
+    }
+
+    .cover h2{
+        font-size:15px;
+    }
+
+    .content{
+        padding:22px 18px 35px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+        gap:3px;
+    }
+
+    .q-head{
+        flex-direction:column;
+        gap:3px;
+    }
+
+    .marks{
+        align-self:flex-start;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+<!-- ================= COVER ================= -->
+
+<header class="cover">
+
+    <div class="brand">THE GOAL • CBSE CLASS 10</div>
+
+    <h1>STATISTICS</h1>
+
+    <h2>Chapter 13 • Basic Mathematics • 2025 PYQs</h2>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-info">
+        <span>CBSE 2025</span>
+        <span>Basic Mathematics</span>
+        <span>Previous Year Questions</span>
+        <span>Chapter-wise Collection</span>
+    </div>
+
+</header>
+
+
+<!-- ================= CONTENT ================= -->
+
+<main class="content">
+
+<div class="chapter-intro">
+
+    <h3>Chapter 13: Statistics</h3>
+
+    <p>
+        Unique Previous Year Questions extracted from the
+        <strong>CBSE Class 10 Basic Mathematics 2025</strong>
+        question paper sets. Repetitive questions have been removed
+        while retaining the major question types and variations.
+    </p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- I. MCQ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">I</div>
+    <h2>Multiple Choice Questions</h2>
+</div>
+
+
+<!-- Q1 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">1. Class Mark Analysis</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The class mark of the median class of the following data is:
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Class Interval</th>
+<th>10 – 25</th>
+<th>25 – 40</th>
+<th>40 – 55</th>
+<th>55 – 70</th>
+<th>70 – 85</th>
+<th>85 – 100</th>
+</tr>
+
+<tr>
+<th>Frequency</th>
+<td>2</td>
+<td>3</td>
+<td>7</td>
+<td>6</td>
+<td>6</td>
+<td>6</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="options">
+    <div class="option">(A) 40</div>
+    <div class="option">(B) 55</div>
+    <div class="option">(C) 47.5</div>
+    <div class="option">(D) 62.5</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q2 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">2. Modal Class Identification</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+The following distribution shows the number of runs scored by some batsmen
+in test matches. The lower limit of the modal class is:
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Runs Scored</th>
+<th>3000 – 4000</th>
+<th>4000 – 5000</th>
+<th>5000 – 6000</th>
+<th>6000 – 7000</th>
+</tr>
+
+<tr>
+<th>Number of Batsmen</th>
+<td>5</td>
+<td>10</td>
+<td>9</td>
+<td>8</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="options">
+    <div class="option">(A) 3000</div>
+    <div class="option">(B) 4000</div>
+    <div class="option">(C) 5000</div>
+    <div class="option">(D) 6000</div>
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q3 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">3. Formula Component</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+
+In the formula
+
+\[
+Mode=l+
+\left(
+\frac{f_1-f_0}
+{2f_1-f_0-f_2}
+\right)\times h,
+\]
+
+the symbol \(f_1\) denotes the:
+
+</div>
+
+<div class="options">
+    <div class="option">(A) frequency of the modal class</div>
+    <div class="option">(B) frequency of class preceding modal class</div>
+    <div class="option">(C) frequency of class succeeding modal class</div>
+    <div class="option">(D) cumulative frequency of modal class</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q4 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">4. Empirical Relation – Literal</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+
+For a distribution, if
+
+\[
+mean=median=a,
+\]
+
+then its mode is:
+
+</div>
+
+<div class="options">
+    <div class="option">(A) \(3a\)</div>
+    <div class="option">(B) \(2a\)</div>
+    <div class="option">(C) \(a\)</div>
+    <div class="option">(D) \(0\)</div>
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q5 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">5. Empirical Relation – Numerical</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+
+For a distribution, if \(mean=15\) and \(mode=12\),
+then its median is:
+
+</div>
+
+<div class="options">
+    <div class="option">(A) 12</div>
+    <div class="option">(B) 13</div>
+    <div class="option">(C) 14</div>
+    <div class="option">(D) 15</div>
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q6 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">6. Conceptual Property</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+Which of the following depends on all observations of a given data?
+</div>
+
+<div class="options">
+    <div class="option">(A) Median</div>
+    <div class="option">(B) Mean</div>
+    <div class="option">(C) Range</div>
+    <div class="option">(D) Mode</div>
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q7 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">7. Assumed Mean Method</div>
+    <div class="marks">1 Mark</div>
+</div>
+
+<div class="q-text">
+
+To calculate the mean of a grouped data, Rahul used assumed mean method.
+He used
+
+\[
+d=(x-A),
+\]
+
+where \(A\) is assumed mean. Then \(\bar{x}\) is equal to:
+
+</div>
+
+<div class="options">
+    <div class="option">(A) \(A+\bar d\)</div>
+    <div class="option">(B) \(A+h\bar d\)</div>
+    <div class="option">(C) \(h(A+\bar d)\)</div>
+    <div class="option">(D) \(A-h\bar d\)</div>
+</div>
+
+<span class="set">Set 430/6/1</span>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- II. LONG ANSWER -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-title">
+    <div class="num">II</div>
+    <h2>Long Answer Type Questions</h2>
+</div>
+
+
+<!-- Q8 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">8. Mean Lifetime Calculation</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Find the mean lifetime (in hours) of the 200 electrical components
+from the data below:
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Lifetime (in hours)</th>
+<th>0 – 20</th>
+<th>20 – 40</th>
+<th>40 – 60</th>
+<th>60 – 80</th>
+<th>80 – 100</th>
+<th>100 – 120</th>
+</tr>
+
+<tr>
+<th>No. of Components</th>
+<td>10</td>
+<td>35</td>
+<td>50</td>
+<td>60</td>
+<td>30</td>
+<td>15</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/1/1</span>
+
+</div>
+
+
+<!-- Q9 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">9. Mean Consumption</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+The following frequency distribution gives the monthly consumption
+of electricity of 68 consumers. Find the monthly mean consumption:
+
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Monthly Consumption (units)</th>
+<th>50 – 100</th>
+<th>100 – 150</th>
+<th>150 – 200</th>
+<th>200 – 250</th>
+<th>250 – 300</th>
+<th>300 – 350</th>
+<th>350 – 400</th>
+</tr>
+
+<tr>
+<th>Number of Consumers</th>
+<td>4</td>
+<td>5</td>
+<td>13</td>
+<td>20</td>
+<td>14</td>
+<td>8</td>
+<td>4</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/1/2</span>
+
+</div>
+
+
+<!-- Q10 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">10. Median Age</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Find the median age of the policyholders from the table below:
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Age (in years)</th>
+<th>15–20</th>
+<th>20–25</th>
+<th>25–30</th>
+<th>30–35</th>
+<th>35–40</th>
+<th>40–45</th>
+<th>45–50</th>
+<th>50–55</th>
+<th>55–60</th>
+</tr>
+
+<tr>
+<th>No. of Holders</th>
+<td>2</td>
+<td>4</td>
+<td>18</td>
+<td>21</td>
+<td>33</td>
+<td>11</td>
+<td>3</td>
+<td>6</td>
+<td>2</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/1/3</span>
+
+</div>
+
+
+<!-- Q11 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">11. Median Length – Leaves</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Find the median length (in mm) of the 40 leaves represented below:
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Length (in mm)</th>
+<th>100 – 120</th>
+<th>120 – 140</th>
+<th>140 – 160</th>
+<th>160 – 180</th>
+<th>180 – 200</th>
+</tr>
+
+<tr>
+<th>Number of Leaves</th>
+<td>8</td>
+<td>9</td>
+<td>12</td>
+<td>5</td>
+<td>6</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q12 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">12. Double Missing Frequency \((x,y)\)</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+If the mean number of days a student was absent is
+<strong>12</strong>, find the values of \(x\) and \(y\) for a class of
+<strong>30 students</strong>:
+
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Number of days</th>
+<th>0 – 4</th>
+<th>4 – 8</th>
+<th>8 – 12</th>
+<th>12 – 16</th>
+<th>16 – 20</th>
+<th>20 – 24</th>
+</tr>
+
+<tr>
+<th>Number of Absent students</th>
+<td>1</td>
+<td>8</td>
+<td>\(x\)</td>
+<td>6</td>
+<td>5</td>
+<td>\(y\)</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/2/1</span>
+
+</div>
+
+
+<!-- Q13 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">13. Median Weight</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Find the median weight of the 30 students from the following distribution:
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Weight (in kg)</th>
+<th>40 – 45</th>
+<th>45 – 50</th>
+<th>50 – 55</th>
+<th>55 – 60</th>
+<th>60 – 65</th>
+<th>65 – 70</th>
+</tr>
+
+<tr>
+<th>Number of students</th>
+<td>2</td>
+<td>5</td>
+<td>8</td>
+<td>6</td>
+<td>6</td>
+<td>3</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/3/1</span>
+
+</div>
+
+
+<!-- Q14 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">14. Single Missing Frequency \((f)\)</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+The mean weekly pocket allowance is <strong>₹180</strong>.
+Find the value of \(f\), and then find the <strong>mode</strong> of the data:
+
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Weekly Pocket Allowance (in ₹)</th>
+<th>110 – 130</th>
+<th>130 – 150</th>
+<th>150 – 170</th>
+<th>170 – 190</th>
+<th>190 – 210</th>
+<th>210 – 230</th>
+<th>230 – 250</th>
+</tr>
+
+<tr>
+<th>Number of Children</th>
+<td>7</td>
+<td>6</td>
+<td>9</td>
+<td>13</td>
+<td>\(f\)</td>
+<td>5</td>
+<td>4</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/3/2</span>
+
+</div>
+
+
+<!-- Q15 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">15. Variable Class Frequencies</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+The total number of households is <strong>25</strong>.
+Find the value of \(x\), then find the <strong>mean</strong>
+daily expenditure:
+
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Daily Expenditure (in ₹)</th>
+<th>500 – 750</th>
+<th>750 – 1000</th>
+<th>1000 – 1250</th>
+<th>1250 – 1500</th>
+<th>1500 – 1750</th>
+</tr>
+
+<tr>
+<th>Number of Households</th>
+<td>4</td>
+<td>\(2x+1\)</td>
+<td>12</td>
+<td>\(x\)</td>
+<td>2</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/3/3</span>
+
+</div>
+
+
+<!-- Q16 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">16. Mean and Mode – Combined</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+Find <strong>mean</strong> and <strong>mode</strong> of the following data:
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Class</th>
+<th>10 – 25</th>
+<th>25 – 40</th>
+<th>40 – 55</th>
+<th>55 – 70</th>
+<th>70 – 85</th>
+<th>85 – 100</th>
+</tr>
+
+<tr>
+<th>Number of Students</th>
+<td>12</td>
+<td>10</td>
+<td>15</td>
+<td>13</td>
+<td>8</td>
+<td>12</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+
+<!-- Q17 -->
+
+<div class="question">
+
+<div class="q-head">
+    <div class="q-title">17. Mode and Median – Hospital Data</div>
+    <div class="marks">5 Marks</div>
+</div>
+
+<div class="q-text">
+
+Find <strong>mode</strong> and <strong>median</strong> of the ages
+of patients admitted in a hospital during a year:
+
+</div>
+
+<div class="table-wrap">
+
+<table class="data-table">
+
+<tr>
+<th>Age (in years)</th>
+<th>5 – 15</th>
+<th>15 – 25</th>
+<th>25 – 35</th>
+<th>35 – 45</th>
+<th>45 – 55</th>
+<th>55 – 65</th>
+</tr>
+
+<tr>
+<th>Number of Patients</th>
+<td>7</td>
+<td>10</td>
+<td>21</td>
+<td>22</td>
+<td>15</td>
+<td>5</td>
+</tr>
+
+</table>
+
+</div>
+
+<span class="set">Set 430/5/1</span>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="
+    border-top:1px solid #e2e8f0;
+    padding:16px 38px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    color:#64748b;
+    font-size:10px;
+">
+
+    <div>
+        <strong>THE GOAL</strong> • CBSE Class 10
+    </div>
+
+    <div>
+        Statistics • Basic Mathematics • 2025 PYQs
+    </div>
+
+    <div>
+        Chapter 13
+    </div>
+
+</footer>
+
+
+<button
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        width:40px;
+        height:40px;
+        border:none;
+        border-radius:50%;
+        background:#172033;
+        color:white;
+        cursor:pointer;
+        font-size:17px;
+    ">
+    ↑
+</button>
+
+</div>
+
+</body>
+</html>

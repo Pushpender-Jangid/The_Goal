@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSE Class 10 Mathematics 2026 - Chapter 14 Probability</title>
+
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+    },
+    svg: {
+        fontCache: 'global'
+    }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f8;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #222;
+    line-height: 1.65;
+}
+
+.page {
+    max-width: 900px;
+    margin: 25px auto;
+    background: #fff;
+    padding: 38px 48px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* GOAL BRANDING */
+.brand {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.brand-line {
+    width: 100%;
+    height: 3px;
+    background: #111;
+    margin: 8px 0 3px;
+}
+
+.brand-subline {
+    width: 70%;
+    height: 1px;
+    background: #777;
+    margin: 0 auto 18px;
+}
+
+.chapter-title {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 700;
+    margin: 8px 0 4px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 28px;
+}
+
+.level-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 38px;
+    padding: 10px 0;
+    border-top: 3px solid #111;
+    border-bottom: 1px solid #777;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #222;
+}
+
+.section-title span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+}
+
+.question {
+    margin: 18px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.qno {
+    font-weight: 700;
+}
+
+.source {
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+    margin-top: 7px;
+}
+
+.options {
+    margin: 8px 0 0 22px;
+}
+
+.subpart {
+    margin: 8px 0 0 20px;
+}
+
+.assertion,
+.reason {
+    margin-top: 8px;
+}
+
+.note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+.case-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.footer-line {
+    margin-top: 35px;
+    border-top: 2px solid #111;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .page {
+        margin: 0;
+        max-width: none;
+        box-shadow: none;
+        padding: 25px 35px;
+    }
+
+    .question {
+        break-inside: avoid;
+    }
+
+    .level-title {
+        break-before: page;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- BRAND -->
+    <div class="brand">
+        <div class="brand-name">THE GOAL</div>
+        <div class="brand-line"></div>
+        <div class="brand-subline"></div>
+    </div>
+
+    <div class="chapter-title">CHAPTER 14 : PROBABILITY</div>
+    <div class="subtitle">
+        CBSE Class 10 Mathematics — PYQs 2026 | Basic + Standard
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- BASIC -->
+    <!-- ====================================================== -->
+
+    <div class="level-title">
+        BASIC QUESTION PAPER 2026
+    </div>
+
+
+    <!-- BASIC SECTION A -->
+
+    <div class="section-title">
+        SECTION A : MULTIPLE CHOICE QUESTIONS <span>(1 Mark Each)</span>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">1.</span>
+        In a random experiment of throwing a die, which of the following
+        is a <strong>sure event</strong>?
+
+        <div class="options">
+            (A) Getting a number between 1 and 6
+            <br>
+            (B) Getting an odd number &lt; 7
+            <br>
+            (C) Getting an even number &lt; 7
+            <br>
+            (D) Getting a natural number &lt; 7
+        </div>
+
+        <div class="source">
+            [Set: 430/1/1]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">2.</span>
+        A bag contains 3 red, 4 white and 7 green balls.
+        A ball is drawn at random. The probability that the ball
+        drawn is <strong>not of red colour</strong> is:
+
+        <div class="source">
+            [Sets: 430/1/2, 430/2/2]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">3.</span>
+        The total number of outcomes in the experiment of
+        <strong>simultaneous throw of three dice</strong> is:
+
+        <div class="options">
+            (A) 6
+            &nbsp;&nbsp;&nbsp;
+            (B) 18
+            &nbsp;&nbsp;&nbsp;
+            (C) 36
+            &nbsp;&nbsp;&nbsp;
+            (D) 216
+        </div>
+
+        <div class="source">
+            [Sets: 430/2/1, 430/2/2, 430/2/3]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">4.</span>
+        In an experiment of throwing a pair of dice, the probability
+        of <strong>not getting a doublet</strong> is:
+
+        <div class="source">
+            [Set: 430/1/3]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">5.</span>
+        A pair of dice is thrown once. Let event \(E\) represent
+        “the sum of numbers on two dice is <strong>at least 9</strong>”.
+        The number of outcomes in favour of event \(E\) is:
+
+        <div class="options">
+            (A) 4
+            &nbsp;&nbsp;&nbsp;
+            (B) 6
+            &nbsp;&nbsp;&nbsp;
+            (C) 10
+            &nbsp;&nbsp;&nbsp;
+            (D) 26
+        </div>
+
+        <div class="source">
+            [Sets: 430/3/1, 430/3/2, 430/3/3]
+        </div>
+    </div>
+
+
+    <!-- BASIC SECTION B -->
+
+    <div class="section-title">
+        SECTION B : SHORT ANSWER QUESTIONS <span>(3 Marks Each)</span>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">1.</span>
+
+        <strong>Type A: Defective Items (Pens Lot)</strong>
+
+        <p>
+            A lot consists of 200 pens of which 180 are good and the rest
+            are defective. A customer will buy a pen if it is not defective.
+            The shopkeeper draws a pen at random.
+        </p>
+
+        <div class="subpart">
+            <strong>(i)</strong>
+            What is the probability that the customer will
+            <strong>not buy it</strong>?
+        </div>
+
+        <div class="subpart">
+            <strong>(ii)</strong>
+            Another lot of 100 pens containing 80 good pens is mixed
+            with the previous lot. The shopkeeper now draws one pen
+            at random from the entire lot. What is the probability that
+            the customer will <strong>buy the pen</strong>?
+        </div>
+
+        <div class="source">
+            [Sets: 430/1/1, 430/1/2, 430/1/3]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">2.</span>
+
+        <strong>Type B: Game of Chance (Spinning Wheel)</strong>
+
+        <p>
+            A wheel is divided into 10 equal sectors numbered 1 to 10.
+            What is the probability that the wheel stops at:
+        </p>
+
+        <div class="subpart">
+            <strong>(i)</strong> a prime number greater than 2?
+        </div>
+
+        <div class="subpart">
+            <strong>(ii)</strong> an odd number less than 9?
+        </div>
+
+        <div class="subpart">
+            <strong>(iii)</strong> a multiple of 4?
+        </div>
+
+        <div class="source">
+            [Sets: 430/2/1, 430/2/2, 430/2/3]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">3.</span>
+
+        <strong>Type C: Coloured Marbles</strong>
+
+        <p>
+            A box contains 6 blue, 4 white and 8 red marbles.
+            A marble is drawn at random. Find the probability that
+            the marble drawn is:
+        </p>
+
+        <div class="subpart">
+            <strong>(i)</strong> white
+        </div>
+
+        <div class="subpart">
+            <strong>(ii)</strong> white or red
+        </div>
+
+        <div class="subpart">
+            <strong>(iii)</strong> not red
+        </div>
+
+        <div class="source">
+            [Sets: 430/3/1, 430/3/2, 430/3/3]
+        </div>
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- STANDARD -->
+    <!-- ====================================================== -->
+
+    <div class="level-title">
+        STANDARD QUESTION PAPER 2026
+    </div>
+
+
+    <!-- STANDARD SECTION A -->
+
+    <div class="section-title">
+        SECTION A : MULTIPLE CHOICE QUESTIONS <span>(1 Mark Each)</span>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">1.</span>
+        Two different dice are rolled together. The probability that
+        both the obtained numbers are less than 4, is:
+
+        <div class="options">
+            (A) \(\dfrac{2}{9}\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(\dfrac{7}{36}\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(\dfrac{1}{4}\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(\dfrac{2}{3}\)
+        </div>
+
+        <div class="source">
+            [Set 30/4/1 Q10, Set 30/4/2 Q6]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">2.</span>
+        Two dice are rolled together. The probability that the sum
+        of the numbers obtained is at most 12, is:
+
+        <div class="options">
+            (A) \(1\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(0\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(\dfrac{1}{2}\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(\dfrac{35}{36}\)
+        </div>
+
+        <div class="source">
+            [Set 30/4/3 Q17]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">3.</span>
+        Two dice are rolled together. The probability that the sum
+        of the numbers obtained is divisible by 6, is:
+
+        <div class="options">
+            (A) \(\dfrac{1}{6}\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(\dfrac{11}{36}\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(\dfrac{1}{12}\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(\dfrac{1}{4}\)
+        </div>
+
+        <div class="source">
+            [Set 30/3/1 Q5, Set 30/3/3 Q2]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">4.</span>
+        Two dice are rolled together. The probability of getting
+        an outcome \((x,y)\) where \(x>y\), is:
+
+        <div class="options">
+            (A) \(\dfrac{5}{12}\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(\dfrac{5}{6}\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(1\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(0\)
+        </div>
+
+        <div class="source">
+            [Set 30/5/3 Q18]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">5.</span>
+        A die is thrown once. The probability of getting a number
+        other than 3 is:
+
+        <div class="options">
+            (A) \(\dfrac{1}{6}\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(\dfrac{3}{6}\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(\dfrac{5}{6}\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(1\)
+        </div>
+
+        <div class="source">
+            [Set 30/1/1 Q18]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">6.</span>
+        Three coins are tossed together. The probability of getting
+        exactly one head, is:
+
+        <div class="options">
+            (A) \(\dfrac{1}{8}\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(\dfrac{3}{4}\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(\dfrac{1}{2}\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(\dfrac{3}{8}\)
+        </div>
+
+        <div class="source">
+            [Set 30/3/2 Q9]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">7.</span>
+        The probability for a randomly selected number out of
+        \(1,2,3,4,\ldots,25\) to be a composite number is:
+
+        <div class="options">
+            (A) \(\dfrac{15}{25}\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(\dfrac{10}{25}\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(\dfrac{11}{25}\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(\dfrac{9}{25}\)
+        </div>
+
+        <div class="source">
+            [Set 30/2/1 Q18, Set 30/2/2 Q17, Set 30/2/3 Q18]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">8.</span>
+        Meena calculates that the probability of her winning the
+        first prize in a lottery is \(0.08\). If a total of 800 tickets
+        were sold, the number of tickets bought by her is:
+
+        <div class="options">
+            (A) 64
+            &nbsp;&nbsp;&nbsp;
+            (B) 640
+            &nbsp;&nbsp;&nbsp;
+            (C) 100
+            &nbsp;&nbsp;&nbsp;
+            (D) 10
+        </div>
+
+        <div class="source">
+            [Set 30/5/1 Q16, Set 30/5/2 Q12, Set 30/5/3 Q3]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">9.</span>
+        Which of the following cannot be the probability of an event?
+
+        <div class="options">
+            (A) \(\dfrac{39}{100}\)
+            <br>
+            (B) \(\dfrac{0.001}{20}\)
+            <br>
+            (C) \(\dfrac{10}{0.2}\)
+            <br>
+            (D) \(10\%\)
+        </div>
+
+        <div class="source">
+            [Set 30/5/1 Q10, Set 30/5/2 Q17, Set 30/5/3 Q13]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">10.</span>
+        For an event \(E\),
+        \(P(E)+P(\bar{E})=x\).
+        Then the value of \(x^2-3\) is:
+
+        <div class="options">
+            (A) \(-2\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(2\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(1\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(-1\)
+        </div>
+
+        <div class="source">
+            [Set 30/1/2 Q4]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">11.</span>
+        A card is drawn at random from a well-shuffled deck of
+        52 playing cards. The probability that it is either a ten
+        or a king is:
+
+        <div class="options">
+            (A) \(\dfrac{1}{26}\)
+            &nbsp;&nbsp;&nbsp;
+            (B) \(\dfrac{2}{13}\)
+            &nbsp;&nbsp;&nbsp;
+            (C) \(\dfrac{1}{13}\)
+            &nbsp;&nbsp;&nbsp;
+            (D) \(\dfrac{8}{26}\)
+        </div>
+
+        <div class="source">
+            [Set 30/5/1 Q11, Set 30/5/2 Q7]
+        </div>
+    </div>
+
+
+    <!-- STANDARD SECTION B -->
+
+    <div class="section-title">
+        SECTION B : ASSERTION–REASON QUESTIONS <span>(1 Mark Each)</span>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">1.</span>
+
+        <div class="assertion">
+            <strong>Assertion (A):</strong>
+            If probability of happening of an event is \(0.2p\),
+            \(p>0\), then \(p\) can’t be more than 5.
+        </div>
+
+        <div class="reason">
+            <strong>Reason (R):</strong>
+            \(P(\bar{E})=1-P(E)\) for an event \(E\).
+        </div>
+
+        <div class="source">
+            [Set 30/4/1 Q19, Set 30/4/2 Q20,
+            Set 30/5/2 Q20, Set 30/5/3 Q19]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">2.</span>
+
+        <div class="assertion">
+            <strong>Assertion (A):</strong>
+            The probability that a leap year has 53 Mondays is
+            \(\dfrac{2}{7}\).
+        </div>
+
+        <div class="reason">
+            <strong>Reason (R):</strong>
+            The probability that a non-leap year has 53 Mondays is
+            \(\dfrac{5}{7}\).
+        </div>
+
+        <div class="source">
+            [Set 30/1/1 Q19, Set 30/1/2 Q19]
+        </div>
+    </div>
+
+
+    <!-- STANDARD SECTION C -->
+
+    <div class="section-title">
+        SECTION C : VERY SHORT ANSWER QUESTIONS <span>(2 Marks Each)</span>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">1.</span>
+        A bag contains 25 balls. Some of them are yellow and others
+        are green. One ball is drawn at random. If the probability of
+        getting a green ball is \(\dfrac{3}{5}\), then find the number
+        of yellow balls.
+
+        <div class="source">
+            [Set 30/5/1 Q25, Set 30/5/2 Q24, Set 30/5/3 Q23]
+        </div>
+    </div>
+
+
+    <!-- STANDARD SECTION D -->
+
+    <div class="section-title">
+        SECTION D : SHORT ANSWER QUESTIONS <span>(3 Marks Each)</span>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">1.</span>
+        A bag contains 30 balls out of which \(m\) number of balls
+        are blue in colour.
+
+        <div class="subpart">
+            <strong>(i)</strong>
+            Find the probability that a ball drawn at random from
+            the bag is not blue.
+        </div>
+
+        <div class="subpart">
+            <strong>(ii)</strong>
+            If 6 more blue balls are added in the bag, then the
+            probability of drawing a blue ball will be
+            \(\dfrac{4}{5}\) times the probability of drawing a blue
+            ball in the first case. Find the value of \(m\).
+        </div>
+
+        <div class="source">
+            [Set 30/4/1 Q30, Set 30/4/2 Q29, Set 30/4/3 Q27]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">2.</span>
+        Two dice of different colours are thrown at the same time.
+        Write down all the possible outcomes.
+
+        <div class="subpart">
+            <strong>(i)</strong>
+            What is the probability that the same number appears
+            on both the dice?
+        </div>
+
+        <div class="subpart">
+            <strong>(ii)</strong>
+            What is the probability that different numbers appear
+            on both the dice?
+        </div>
+
+        <div class="source">
+            [Set 30/1/1 Q31]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">3.</span>
+        Two dice are thrown at the same time. Determine the
+        probability that:
+
+        <div class="subpart">
+            <strong>(i)</strong>
+            the sum of the numbers on the two dice is 5.
+        </div>
+
+        <div class="subpart">
+            <strong>(ii)</strong>
+            the difference of the numbers on the two dice is 3.
+        </div>
+
+        <div class="source">
+            [Set 30/2/2 Q28]
+        </div>
+    </div>
+
+
+    <div class="question">
+        <span class="qno">4.</span>
+        Two different dice are thrown together. Find the probability
+        that the numbers obtained have:
+
+        <div class="subpart">
+            <strong>(i)</strong>
+            even sum
+        </div>
+
+        <div class="subpart">
+            <strong>(ii)</strong>
+            even product
+        </div>
+
+        <div class="source">
+            [Set 30/2/3 Q30]
+        </div>
+    </div>
+
+
+    <!-- STANDARD SECTION E -->
+
+    <div class="section-title">
+        SECTION E : CASE STUDY QUESTION <span>(4 Marks)</span>
+    </div>
+
+
+    <div class="question">
+
+        <div class="case-title">
+            Playing Cards
+        </div>
+
+        <p>
+            A group of friends wanted to play cards with two identical
+            packs together. While shuffling the cards, three cards are
+            dropped. Rest of the cards are shuffled and one card is
+            drawn at random.
+        </p>
+
+        <p>
+            Assuming that the dropped cards were a queen of hearts,
+            a ten of spades and an ace of clubs:
+        </p>
+
+        <div class="subpart">
+            <strong>(i)</strong>
+            Find the probability that the drawn card is a face card.
+            <strong>(1 Mark)</strong>
+        </div>
+
+        <div class="subpart">
+            <strong>(ii)</strong>
+            Find the probability that the drawn card is either a king
+            or a queen.
+            <strong>(1 Mark)</strong>
+        </div>
+
+        <div class="subpart">
+            <strong>(iii) (a)</strong>
+            Do you think that the probability of getting a queen was
+            higher if none of the cards were dropped? Justify your answer.
+            <strong>(2 Marks)</strong>
+        </div>
+
+        <div class="subpart">
+            <strong>OR</strong>
+        </div>
+
+        <div class="subpart">
+            <strong>(iii) (b)</strong>
+            Find the probability that the drawn card is a jack.
+            Compare it with the probability when none of the cards
+            were dropped. In which case is the probability of getting
+            a jack higher?
+            <strong>(2 Marks)</strong>
+        </div>
+
+        <div class="source">
+            [Set 30/3/1 Q37, Set 30/3/2 Q36, Set 30/3/3 Q38]
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer-line">
+        THE GOAL &nbsp;•&nbsp;
+        CBSE CLASS 10 MATHEMATICS &nbsp;•&nbsp;
+        2026 PYQs &nbsp;•&nbsp;
+        BASIC + STANDARD
+    </div>
+
+</div>
+
+</body>
+</html>
