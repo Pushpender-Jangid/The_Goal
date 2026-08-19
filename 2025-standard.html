@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>2025 Standard PYQs | THE GOAL</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,495 +16,1948 @@
 }
 
 :root{
-    --primary:#4f46e5;
-    --primary2:#7c3aed;
-    --bg:#f8fafc;
-    --text:#0f172a;
+
+    --bg:#ffffff;
+    --card:#ffffff;
+
+    --text:#111827;
     --muted:#64748b;
-    --border:#e2e8f0;
-    --soft:#eef2ff;
+
+    --purple:#6d3fa9;
+    --purple-dark:#59318f;
+
+    --blue:#4ba3d8;
+    --blue-dark:#368fc7;
+
+    --border:#e7e9ef;
+
+    --soft-purple:#f3edfa;
+    --soft-blue:#edf7fc;
+
+    --shadow:
+        0 12px 35px rgba(15,23,42,.07);
+
     --coming:#f59e0b;
     --coming2:#ea580c;
 }
 
 body{
-    font-family:Inter,Segoe UI,Arial,sans-serif;
-    background:
-        radial-gradient(circle at 10% 0%,#eef2ff,transparent 28%),
-        radial-gradient(circle at 90% 10%,#f3e8ff,transparent 25%),
-        var(--bg);
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:var(--bg);
+
     color:var(--text);
+
     min-height:100vh;
+
+    overflow-x:hidden;
 }
 
-/* HEADER */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
-    background:
-        radial-gradient(circle at 10% 20%,rgba(129,140,248,.28),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(192,132,252,.25),transparent 30%),
-        linear-gradient(135deg,#111827,#312e81,#4c1d95);
-    color:white;
-    padding:22px 6% 70px;
-}
 
-.topbar{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+    background:#ffffff;
 
-.brand{
-    font-size:24px;
-    font-weight:900;
-    letter-spacing:2px;
-}
+    border-bottom:
+        1px solid
+        var(--border);
 
-.back{
-    color:white;
-    text-decoration:none;
-    padding:9px 16px;
-    border-radius:25px;
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
-    font-size:13px;
-    transition:.2s;
-}
-
-.back:hover{
-    background:rgba(255,255,255,.18);
-}
-
-.hero{
-    text-align:center;
-    max-width:850px;
-    margin:65px auto 0;
-}
-
-.badge{
-    display:inline-block;
-    padding:8px 17px;
-    border-radius:30px;
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
-    font-size:13px;
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-size:clamp(42px,7vw,70px);
-    font-weight:950;
-    letter-spacing:1px;
-}
-
-.hero h1 span{
-    background:linear-gradient(90deg,#a5b4fc,#e9d5ff,#fbcfe8);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.hero p{
-    color:#cbd5e1;
-    line-height:1.7;
-    margin-top:12px;
-}
-
-/* MAIN */
-
-main{
-    max-width:1200px;
-    margin:-35px auto 60px;
-    padding:0 20px;
-}
-
-.info{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:22px;
-    padding:22px;
-    text-align:center;
-    box-shadow:0 15px 40px rgba(15,23,42,.08);
-    margin-bottom:35px;
-}
-
-.info strong{
-    color:var(--primary);
-}
-
-/* CHAPTER GRID */
-
-.chapter-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.chapter{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:22px;
-    padding:24px;
-    box-shadow:0 10px 30px rgba(15,23,42,.06);
-    transition:.25s;
     position:relative;
+
     overflow:hidden;
 }
 
-.chapter:hover{
-    transform:translateY(-5px);
-    box-shadow:0 18px 40px rgba(79,70,229,.13);
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+        rgba(109,63,169,.07);
+
+    top:-190px;
+    left:-100px;
+
+    pointer-events:none;
 }
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+        rgba(75,163,216,.07);
+
+    right:-120px;
+    top:-100px;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        18px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* BRAND */
+
+.nav-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    text-decoration:none;
+}
+
+.nav-logo{
+
+    width:52px;
+    height:52px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    transition:.25s;
+}
+
+.nav-brand:hover .nav-logo{
+
+    transform:
+        rotate(-3deg)
+        scale(1.05);
+}
+
+.brand-text{
+
+    font-size:22px;
+
+    font-weight:950;
+
+    letter-spacing:1.5px;
+
+    color:var(--text);
+}
+
+.brand-text span{
+
+    color:var(--purple);
+}
+
+
+/* NAV BADGE */
+
+.nav-badge{
+
+    padding:
+        8px 16px;
+
+    border:
+        1px solid
+        #ddd9e8;
+
+    border-radius:30px;
+
+    background:
+        #faf8fd;
+
+    color:var(--purple);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.4px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:
+        55px 20px
+        90px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* HERO LOGO */
+
+.hero-logo-wrap{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:22px;
+}
+
+.hero-logo{
+
+    width:110px;
+    height:110px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 14px 24px
+            rgba(15,23,42,.12)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+.hero-logo:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+}
+
+
+/* BADGE */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:
+        8px 17px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-purple),
+            var(--soft-blue)
+        );
+
+    border:
+        1px solid
+        #e3e0eb;
+
+    color:#596174;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    margin-bottom:24px;
+}
+
+
+/* HERO HEADING */
+
+.hero h1{
+
+    font-size:
+        clamp(42px,7vw,76px);
+
+    font-weight:950;
+
+    letter-spacing:2px;
+
+    line-height:1;
+
+    margin-bottom:18px;
+
+    color:var(--text);
+}
+
+.hero h1 span{
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        5px 20px
+        65px;
+
+    position:relative;
+}
+
+
+/* =====================================================
+   INFO CARD
+===================================================== */
+
+.info{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #faf8fd
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:20px;
+
+    padding:20px 22px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    margin:
+        0 0 35px;
+
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.info strong{
+
+    color:var(--purple);
+
+    font-weight:900;
+}
+
+
+/* =====================================================
+   CHAPTER GRID
+===================================================== */
+
+.chapter-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+}
+
+
+/* =====================================================
+   CHAPTER CARD
+===================================================== */
+
+.chapter{
+
+    background:var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* DECORATIVE CIRCLE */
+
+.chapter::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+        var(--soft-purple);
+
+    right:-85px;
+    top:-85px;
+
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+.chapter:nth-child(even)::after{
+
+    background:
+        var(--soft-blue);
+}
+
+.chapter:hover{
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 22px 50px
+        rgba(15,23,42,.11);
+}
+
+.chapter:hover::after{
+
+    transform:scale(1.15);
+}
+
+
+/* =====================================================
+   CHAPTER NUMBER
+===================================================== */
 
 .number{
-    width:48px;
-    height:48px;
+
+    width:55px;
+    height:55px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    border-radius:14px;
-    background:var(--soft);
-    color:var(--primary);
-    font-weight:900;
-    margin-bottom:15px;
+
+    border-radius:17px;
+
+    background:
+        var(--soft-purple);
+
+    color:var(--purple);
+
+    font-weight:950;
+
+    font-size:15px;
+
+    margin-bottom:19px;
+
+    position:relative;
+
+    z-index:2;
+
+    border:
+        1px solid
+        #e5dcef;
 }
+
+.chapter:nth-child(even)
+.number{
+
+    background:
+        var(--soft-blue);
+
+    color:var(--blue-dark);
+
+    border-color:#dceef8;
+}
+
+
+/* =====================================================
+   CHAPTER TITLE
+===================================================== */
 
 .chapter h2{
-    font-size:20px;
-    margin-bottom:6px;
+
+    font-size:21px;
+
+    line-height:1.35;
+
+    margin-bottom:8px;
+
+    position:relative;
+
+    z-index:2;
+
+    color:var(--text);
 }
+
+
+/* =====================================================
+   CHAPTER DESCRIPTION
+===================================================== */
 
 .chapter p{
+
     color:var(--muted);
+
     font-size:13px;
-    margin-bottom:18px;
+
+    line-height:1.6;
+
+    margin-bottom:21px;
+
+    position:relative;
+
+    z-index:2;
 }
 
-/* NORMAL BUTTON */
+
+/* =====================================================
+   NORMAL BUTTON
+===================================================== */
 
 .btn{
+
     display:inline-block;
+
     text-decoration:none;
+
     color:white;
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
-    padding:11px 18px;
-    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    padding:
+        13px 21px;
+
+    border-radius:12px;
+
     font-size:13px;
-    font-weight:800;
-    transition:.2s;
+
+    font-weight:900;
+
+    transition:.25s;
+
+    position:relative;
+
+    z-index:3;
+
+    box-shadow:
+        0 7px 18px
+        rgba(86,92,170,.15);
 }
 
 .btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(79,70,229,.25);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 11px 25px
+        rgba(86,92,170,.25);
 }
 
-/* COMING SOON BUTTON */
+
+/* =====================================================
+   COMING SOON
+===================================================== */
 
 .coming-soon{
+
     display:inline-flex;
+
     align-items:center;
-    gap:7px;
+
+    gap:8px;
+
     color:white;
-    background:linear-gradient(135deg,var(--coming),var(--coming2));
-    padding:11px 18px;
-    border-radius:11px;
-    font-size:13px;
-    font-weight:800;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--coming),
+            var(--coming2)
+        );
+
+    padding:
+        13px 18px;
+
+    border-radius:12px;
+
+    font-size:12px;
+
+    font-weight:900;
+
     cursor:default;
-    box-shadow:0 6px 16px rgba(234,88,12,.15);
+
+    box-shadow:
+        0 7px 18px
+        rgba(234,88,12,.15);
+
+    position:relative;
+
+    z-index:3;
 }
 
 .coming-soon::before{
+
     content:"▶";
-    font-size:10px;
+
+    font-size:9px;
 }
 
 .coming-label{
+
     display:inline-block;
+
     margin-left:8px;
-    padding:5px 9px;
+
+    padding:
+        6px 10px;
+
     border-radius:20px;
+
     background:#fff7ed;
+
     color:#c2410c;
+
     font-size:10px;
+
     font-weight:900;
-    border:1px solid #fed7aa;
+
+    border:
+        1px solid
+        #fed7aa;
+
+    position:relative;
+
+    z-index:3;
 }
 
-/* FOOTER */
+
+/* =====================================================
+   PREMIUM FOOTER
+===================================================== */
 
 footer{
-    background:#0f172a;
-    color:#94a3b8;
-    text-align:center;
-    padding:30px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #faf9fc 0%,
+            #ffffff 100%
+        );
+
+    border-top:
+        1px solid
+        var(--border);
+
+    padding:
+        55px 25px
+        20px;
+
+    margin-top:10px;
+
+    color:var(--muted);
 }
 
-footer strong{
+
+/* =====================================================
+   FOOTER INNER
+===================================================== */
+
+.footer-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1.2fr;
+
+    gap:55px;
+
+    padding-bottom:40px;
+}
+
+
+/* =====================================================
+   FOOTER BRAND
+===================================================== */
+
+.footer-brand{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+
+/* FOOTER LOGO */
+
+.footer-logo{
+
+    width:95px;
+    height:95px;
+
+    object-fit:contain;
+
+    margin-bottom:13px;
+
+    filter:
+        drop-shadow(
+            0 9px 18px
+            rgba(15,23,42,.10)
+        );
+
+    transition:.3s;
+}
+
+.footer-logo:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+}
+
+
+/* FOOTER TITLE */
+
+.footer-brand-title{
+
+    font-size:26px;
+
+    font-weight:950;
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    margin-bottom:8px;
+}
+
+.footer-brand p{
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:750;
+
+    margin-bottom:6px;
+}
+
+.footer-brand span{
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+.footer-column h4{
+
+    color:var(--text);
+
+    font-size:15px;
+
+    margin-bottom:16px;
+
+    position:relative;
+
+    padding-bottom:8px;
+}
+
+.footer-column h4::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:28px;
+    height:2px;
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+/* =====================================================
+   FOOTER LINKS
+===================================================== */
+
+.footer-column > a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-bottom:9px;
+
+    transition:.2s;
+}
+
+.footer-column > a:hover{
+
+    color:var(--purple);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =====================================================
+   CONNECT
+===================================================== */
+
+.connect-column p{
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    max-width:270px;
+
+    margin-bottom:16px;
+}
+
+
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
+
+.social-links{
+
+    display:flex;
+
+    gap:9px;
+
+    flex-wrap:wrap;
+}
+
+.social{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    text-decoration:none;
+
     color:white;
+
+    padding:
+        9px 14px;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.25s;
 }
 
-/* MOBILE */
+.social:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.10);
+}
+
+.social.whatsapp{
+
+    background:#16a34a;
+}
+
+.social.instagram{
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #e1306c,
+            #f77737
+        );
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-top:20px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    color:#9ca3af;
+
+    font-size:11px;
+}
+
+.footer-bottom strong{
+
+    color:#555;
+}
+
+.heart{
+
+    color:#ef4444;
+
+    font-size:14px;
+
+    margin:
+        0 2px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:900px){
+
+    .chapter-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .footer-inner{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:35px;
+    }
+
+    .footer-brand{
+
+        grid-column:
+            1 / -1;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:700px){
 
     .chapter-grid{
+
         grid-template-columns:1fr;
     }
 
-    header{
-        padding-bottom:65px;
+    .hero{
+
+        padding:
+            45px 15px
+            70px;
     }
 
-    .topbar{
-        gap:10px;
+    .hero-logo{
+
+        width:100px;
+        height:100px;
     }
 
-    .brand{
-        font-size:20px;
+    .hero h1{
+
+        letter-spacing:1px;
+
+        font-size:
+            clamp(38px,11vw,58px);
     }
 
     .chapter{
+
+        padding:25px;
+    }
+
+    .footer-inner{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-brand{
+
+        grid-column:auto;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:450px){
+
+    nav{
+
+        gap:10px;
+    }
+
+    .nav-logo{
+
+        width:46px;
+        height:46px;
+    }
+
+    .brand-text{
+
+        font-size:18px;
+    }
+
+    .nav-badge{
+
+        font-size:10px;
+
+        padding:
+            7px 12px;
+    }
+
+    .hero-logo{
+
+        width:90px;
+        height:90px;
+    }
+
+    .hero h1{
+
+        font-size:40px;
+    }
+
+    .hero p{
+
+        font-size:14px;
+    }
+
+    .info{
+
+        padding:
+            18px 15px;
+
+        font-size:13px;
+    }
+
+    .chapter{
+
         padding:22px;
     }
 
-    .hero{
-        margin-top:50px;
+    .chapter h2{
+
+        font-size:19px;
+    }
+
+    .coming-soon{
+
+        padding:
+            12px 14px;
+
+        font-size:11px;
+    }
+
+    .coming-label{
+
+        margin-left:5px;
+    }
+
+    .footer-logo{
+
+        width:90px;
+        height:90px;
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        line-height:1.7;
     }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header>
 
-<div class="topbar">
 
-<div class="brand">
-THE GOAL
-</div>
+    <nav>
 
-<a href="pyq-hub.html" class="back">
-← PYQ HUB
-</a>
 
-</div>
+        <!-- THE GOAL BRAND -->
 
-<div class="hero">
+        <a
+            href="index.html"
+            class="nav-brand"
+        >
 
-<div class="badge">
-📕 CBSE CLASS 10 • 2025 STANDARD
-</div>
+            <img
+                src="goal.png"
+                alt="THE GOAL Logo"
+                class="nav-logo"
+            >
 
-<h1>
-<span>2025 STANDARD PYQs</span>
-</h1>
+            <div class="brand-text">
 
-<p>
-Chapter-wise collection of CBSE Class 10 Mathematics
-2025 Standard Previous Year Questions.
-</p>
+                THE
+                <span>GOAL</span>
 
-</div>
+            </div>
+
+        </a>
+
+
+        <div class="nav-badge">
+
+            CBSE CLASS 10
+
+        </div>
+
+
+    </nav>
+
+
+    <!-- =================================================
+         HERO
+    ================================================= -->
+
+    <div class="hero">
+
+
+        <div class="hero-logo-wrap">
+
+            <img
+                src="goal.png"
+                alt="THE GOAL"
+                class="hero-logo"
+            >
+
+        </div>
+
+
+        <div class="badge">
+
+            📕 CBSE CLASS 10 • 2025 STANDARD
+
+        </div>
+
+
+        <h1>
+
+            <span>
+                2025 STANDARD PYQs
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Chapter-wise collection of CBSE Class 10 Mathematics
+            2025 Standard Previous Year Questions.
+
+        </p>
+
+
+    </div>
+
 
 </header>
 
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
 <main>
 
-<div class="info">
-🎯 <strong>2025 STANDARD</strong> — Select a chapter to explore Standard PYQs.
-</div>
 
-<section class="chapter-grid">
+    <!-- INFO -->
 
-<!-- CHAPTER 1 -->
+    <div class="info">
 
-<div class="chapter">
-<div class="number">01</div>
-<h2>Real Numbers</h2>
-<p>Chapter 1 • Standard</p>
-<a class="btn" href="Chapter_1_Real Numbers_2025_STD_PYQ.html">
-VIEW PYQs →
-</a>
-</div>
+        🎯
 
-<!-- CHAPTER 2 -->
+        <strong>
+            2025 STANDARD
+        </strong>
 
-<div class="chapter">
-<div class="number">02</div>
-<h2>Polynomials</h2>
-<p>Chapter 2 • Standard</p>
-<a class="btn" href="Chapter_2_Polynomials_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
+        — Select a chapter to explore Standard PYQs.
 
-<!-- CHAPTER 3 -->
+    </div>
 
-<div class="chapter">
-<div class="number">03</div>
-<h2>Pair of Linear Equations in Two Variables</h2>
-<p>Chapter 3 • Standard</p>
-<a class="btn" href="Chapter_3_Pair_of_Linear_Equations_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
 
-<!-- CHAPTER 4 -->
 
-<div class="chapter">
-<div class="number">04</div>
-<h2>Quadratic Equations</h2>
-<p>Chapter 4 • Standard</p>
-<a class="btn" href="Chapter_4_Quadratic_Equations_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
+    <!-- =================================================
+         CHAPTER GRID
+    ================================================= -->
 
-<!-- CHAPTER 5 -->
+    <section class="chapter-grid">
 
-<div class="chapter">
-<div class="number">05</div>
-<h2>Arithmetic Progressions</h2>
-<p>Chapter 5 • Standard</p>
-<a class="btn" href="Chapter_5_AP_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
 
-<!-- CHAPTER 6 - COMING SOON -->
 
-<div class="chapter">
-<div class="number">06</div>
-<h2>Triangles</h2>
-<p>Chapter 6 • Standard</p>
+        <!-- CHAPTER 1 -->
 
-<span class="coming-soon">
-COMING SOON ON YOUTUBE
-</span>
+        <div class="chapter">
 
-<span class="coming-label">
-SOON
-</span>
-</div>
+            <div class="number">
+                01
+            </div>
 
-<!-- CHAPTER 7 -->
+            <h2>
+                Real Numbers
+            </h2>
 
-<div class="chapter">
-<div class="number">07</div>
-<h2>Coordinate Geometry</h2>
-<p>Chapter 7 • Standard</p>
-<a class="btn" href="Chapter_7_Coordinate_Geometry_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
+            <p>
+                Chapter 1 • Standard
+            </p>
 
-<!-- CHAPTER 8 -->
+            <a
+                class="btn"
+                href="Chapter_1_Real Numbers_2025_STD_PYQ.html"
+            >
+                VIEW PYQs →
+            </a>
 
-<div class="chapter">
-<div class="number">08</div>
-<h2>Introduction to Trigonometry</h2>
-<p>Chapter 8 • Standard</p>
-<a class="btn" href="Chapter_8_Introduction_to_Trigonometry_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
+        </div>
 
-<!-- CHAPTER 9 -->
 
-<div class="chapter">
-<div class="number">09</div>
-<h2>Some Applications of Trigonometry</h2>
-<p>Chapter 9 • Standard</p>
-<a class="btn" href="Chapter_9_Some_Applications_of_Trigonometry_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
 
-<!-- CHAPTER 10 - COMING SOON -->
+        <!-- CHAPTER 2 -->
 
-<div class="chapter">
-<div class="number">10</div>
-<h2>Circles</h2>
-<p>Chapter 10 • Standard</p>
+        <div class="chapter">
 
-<span class="coming-soon">
-COMING SOON ON YOUTUBE
-</span>
+            <div class="number">
+                02
+            </div>
 
-<span class="coming-label">
-SOON
-</span>
-</div>
+            <h2>
+                Polynomials
+            </h2>
 
-<!-- CHAPTER 11 - COMING SOON -->
+            <p>
+                Chapter 2 • Standard
+            </p>
 
-<div class="chapter">
-<div class="number">11</div>
-<h2>Areas Related to Circles</h2>
-<p>Chapter 11 • Standard</p>
+            <a
+                class="btn"
+                href="Chapter_2_Polynomials_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
 
-<span class="coming-soon">
-COMING SOON ON YOUTUBE
-</span>
+        </div>
 
-<span class="coming-label">
-SOON
-</span>
-</div>
 
-<!-- CHAPTER 12 -->
 
-<div class="chapter">
-<div class="number">12</div>
-<h2>Surface Areas and Volumes</h2>
-<p>Chapter 12 • Standard</p>
-<a class="btn" href="Chapter_12_Surface_Areas_and_Volumes_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
+        <!-- CHAPTER 3 -->
 
-<!-- CHAPTER 13 -->
+        <div class="chapter">
 
-<div class="chapter">
-<div class="number">13</div>
-<h2>Statistics</h2>
-<p>Chapter 13 • Standard</p>
-<a class="btn" href="Chapter_13_Statistics_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
+            <div class="number">
+                03
+            </div>
 
-<!-- CHAPTER 14 -->
+            <h2>
+                Pair of Linear Equations in Two Variables
+            </h2>
 
-<div class="chapter">
-<div class="number">14</div>
-<h2>Probability</h2>
-<p>Chapter 14 • Standard</p>
-<a class="btn" href="Chapter_14_Probability_2025_STD_PYQs.html">
-VIEW PYQs →
-</a>
-</div>
+            <p>
+                Chapter 3 • Standard
+            </p>
 
-</section>
+            <a
+                class="btn"
+                href="Chapter_3_Pair_of_Linear_Equations_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+
+        <!-- CHAPTER 4 -->
+
+        <div class="chapter">
+
+            <div class="number">
+                04
+            </div>
+
+            <h2>
+                Quadratic Equations
+            </h2>
+
+            <p>
+                Chapter 4 • Standard
+            </p>
+
+            <a
+                class="btn"
+                href="Chapter_4_Quadratic_Equations_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+
+        <!-- CHAPTER 5 -->
+
+        <div class="chapter">
+
+            <div class="number">
+                05
+            </div>
+
+            <h2>
+                Arithmetic Progressions
+            </h2>
+
+            <p>
+                Chapter 5 • Standard
+            </p>
+
+            <a
+                class="btn"
+                href="Chapter_5_AP_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+
+        <!-- CHAPTER 6 - COMING SOON -->
+
+        <div class="chapter">
+
+            <div class="number">
+                06
+            </div>
+
+            <h2>
+                Triangles
+            </h2>
+
+            <p>
+                Chapter 6 • Standard
+            </p>
+
+
+            <span class="coming-soon">
+
+                COMING SOON ON YOUTUBE
+
+            </span>
+
+
+            <span class="coming-label">
+
+                SOON
+
+            </span>
+
+        </div>
+
+
+
+        <!-- CHAPTER 7 -->
+
+        <div class="chapter">
+
+            <div class="number">
+                07
+            </div>
+
+            <h2>
+                Coordinate Geometry
+            </h2>
+
+            <p>
+                Chapter 7 • Standard
+            </p>
+
+            <a
+                class="btn"
+                href="Chapter_7_Coordinate_Geometry_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+
+        <!-- CHAPTER 8 -->
+
+        <div class="chapter">
+
+            <div class="number">
+                08
+            </div>
+
+            <h2>
+                Introduction to Trigonometry
+            </h2>
+
+            <p>
+                Chapter 8 • Standard
+            </p>
+
+            <a
+                class="btn"
+                href="Chapter_8_Introduction_to_Trigonometry_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+
+        <!-- CHAPTER 9 -->
+
+        <div class="chapter">
+
+            <div class="number">
+                09
+            </div>
+
+            <h2>
+                Some Applications of Trigonometry
+            </h2>
+
+            <p>
+                Chapter 9 • Standard
+            </p>
+
+            <a
+                class="btn"
+                href="Chapter_9_Some_Applications_of_Trigonometry_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+
+        <!-- CHAPTER 10 - COMING SOON -->
+
+        <div class="chapter">
+
+            <div class="number">
+                10
+            </div>
+
+            <h2>
+                Circles
+            </h2>
+
+            <p>
+                Chapter 10 • Standard
+            </p>
+
+
+            <span class="coming-soon">
+
+                COMING SOON ON YOUTUBE
+
+            </span>
+
+
+            <span class="coming-label">
+
+                SOON
+
+            </span>
+
+        </div>
+
+
+
+        <!-- CHAPTER 11 - COMING SOON -->
+
+        <div class="chapter">
+
+            <div class="number">
+                11
+            </div>
+
+            <h2>
+                Areas Related to Circles
+            </h2>
+
+            <p>
+                Chapter 11 • Standard
+            </p>
+
+
+            <span class="coming-soon">
+
+                COMING SOON ON YOUTUBE
+
+            </span>
+
+
+            <span class="coming-label">
+
+                SOON
+
+            </span>
+
+        </div>
+
+
+
+        <!-- CHAPTER 12 -->
+
+        <div class="chapter">
+
+            <div class="number">
+                12
+            </div>
+
+            <h2>
+                Surface Areas and Volumes
+            </h2>
+
+            <p>
+                Chapter 12 • Standard
+            </p>
+
+            <a
+                class="btn"
+                href="Chapter_12_Surface_Areas_and_Volumes_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+
+        <!-- CHAPTER 13 -->
+
+        <div class="chapter">
+
+            <div class="number">
+                13
+            </div>
+
+            <h2>
+                Statistics
+            </h2>
+
+            <p>
+                Chapter 13 • Standard
+            </p>
+
+            <a
+                class="btn"
+                href="Chapter_13_Statistics_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+
+        <!-- CHAPTER 14 -->
+
+        <div class="chapter">
+
+            <div class="number">
+                14
+            </div>
+
+            <h2>
+                Probability
+            </h2>
+
+            <p>
+                Chapter 14 • Standard
+            </p>
+
+            <a
+                class="btn"
+                href="Chapter_14_Probability_2025_STD_PYQs.html"
+            >
+                VIEW PYQs →
+            </a>
+
+        </div>
+
+
+    </section>
+
 
 </main>
 
+
+
+<!-- =====================================================
+     PREMIUM FOOTER
+===================================================== -->
+
 <footer>
 
-<strong>THE GOAL</strong>
-<br><br>
 
-CBSE Class 10 Mathematics • 2025 Standard PYQ Hub
-<br>
+    <div class="footer-inner">
 
-Made with ❤️ in India by Pushpender
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+
+            <img
+                src="goal.png"
+                alt="THE GOAL Logo"
+                class="footer-logo"
+            >
+
+
+            <div class="footer-brand-title">
+
+                THE GOAL
+
+            </div>
+
+
+            <p>
+
+                CBSE Class 10 Learning Portal
+
+            </p>
+
+
+            <span>
+
+                Learn • Practice • Improve • Achieve
+
+            </span>
+
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+
+            <h4>
+                Quick Links
+            </h4>
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="math.html">
+                Mathematics
+            </a>
+
+
+            <a href="it.html">
+                Information Technology
+            </a>
+
+
+            <a href="pyq-hub.html">
+                Mathematics PYQ Hub
+            </a>
+
+
+        </div>
+
+
+
+        <!-- CONNECT -->
+
+        <div class="footer-column connect-column">
+
+
+            <h4>
+                Let's Connect
+            </h4>
+
+
+            <p>
+
+                Have a suggestion, feedback
+                or simply want to connect?
+
+            </p>
+
+
+            <div class="social-links">
+
+
+                <a
+                    href="https://chat.whatsapp.com/KbZQL2FaE5S98ziUvz7pyq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social whatsapp"
+                >
+
+                    💬
+
+                    <span>
+                        WhatsApp
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/the_goal_10th/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social instagram"
+                >
+
+                    📸
+
+                    <span>
+                        Instagram
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+
+        <div>
+
+            © 2026
+
+            <strong>
+                THE GOAL
+            </strong>
+
+            · CBSE Class 10 Learning Portal
+
+        </div>
+
+
+        <div>
+
+            Made with
+
+            <span class="heart">
+                ♥
+            </span>
+
+            in India by
+
+            <strong>
+                Pushpender
+            </strong>
+
+        </div>
+
+
+    </div>
+
 
 </footer>
+
 
 </body>
 </html>
