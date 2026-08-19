@@ -16,59 +16,106 @@
 }
 
 :root{
-    --bg:#f8fafc;
+
+    --bg:#ffffff;
     --card:#ffffff;
-    --text:#0f172a;
+
+    --text:#111827;
     --muted:#64748b;
-    --primary:#4f46e5;
-    --primary2:#7c3aed;
-    --border:#e2e8f0;
-    --soft:#eef2ff;
+
+    --purple:#6d3fa9;
+    --purple-dark:#59318f;
+
+    --blue:#4ba3d8;
+    --blue-dark:#368fc7;
+
+    --border:#e7e9ef;
+
+    --soft-purple:#f3edfa;
+    --soft-blue:#edf7fc;
+
+    --shadow:
+        0 12px 35px rgba(15,23,42,.07);
 }
 
 body{
-    font-family:Inter,Segoe UI,Arial,sans-serif;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
     background:var(--bg);
     color:var(--text);
+
     min-height:100vh;
+
+    overflow-x:hidden;
 }
 
 
-/* ================================================= */
-/* ================= HEADER ======================== */
-/* ================================================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 header{
 
-    background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(129,140,248,.28),
-            transparent 30%
-        ),
+    background:#ffffff;
 
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(192,132,252,.28),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #111827,
-            #312e81,
-            #4c1d95
-        );
-
-    color:white;
-
-    padding:22px 7% 75px;
+    border-bottom:
+        1px solid
+        var(--border);
 
     position:relative;
 
     overflow:hidden;
 }
 
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+        rgba(109,63,169,.07);
+
+    top:-190px;
+    left:-100px;
+
+    pointer-events:none;
+}
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+        rgba(75,163,216,.07);
+
+    right:-120px;
+    top:-100px;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   NAV
+===================================================== */
 
 nav{
 
@@ -76,92 +123,221 @@ nav{
 
     margin:auto;
 
+    padding:
+        18px 20px;
+
     display:flex;
 
     justify-content:space-between;
 
     align-items:center;
+
+    position:relative;
+
+    z-index:2;
 }
 
 
-.brand{
+/* =====================================================
+   BRAND
+===================================================== */
 
-    font-size:25px;
+.nav-brand{
 
-    font-weight:900;
+    display:flex;
 
-    letter-spacing:2px;
+    align-items:center;
+
+    gap:11px;
+
+    text-decoration:none;
+}
+
+.nav-logo{
+
+    width:52px;
+    height:52px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    transition:.25s;
+}
+
+.nav-brand:hover .nav-logo{
+
+    transform:
+        rotate(-3deg)
+        scale(1.05);
+}
+
+.brand-text{
+
+    font-size:22px;
+
+    font-weight:950;
+
+    letter-spacing:1.5px;
+
+    color:var(--text);
+}
+
+.brand-text span{
+
+    color:var(--purple);
 }
 
 
 .nav-badge{
 
-    padding:8px 15px;
+    padding:
+        8px 16px;
 
-    border:1px solid rgba(255,255,255,.2);
+    border:
+        1px solid
+        #ddd9e8;
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.08);
+    background:
+        #faf8fd;
 
-    font-size:13px;
+    color:var(--purple);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.4px;
 }
 
 
-/* ================================================= */
-/* ================= HERO ========================== */
-/* ================================================= */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
 
-    max-width:1000px;
+    max-width:1050px;
 
     margin:auto;
 
     text-align:center;
 
-    padding:70px 20px 30px;
+    padding:
+        55px 20px
+        85px;
+
+    position:relative;
+
+    z-index:2;
 }
 
+
+/* HERO LOGO */
+
+.hero-logo-wrap{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:22px;
+}
+
+.hero-logo{
+
+    width:115px;
+    height:115px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 14px 24px
+            rgba(15,23,42,.12)
+        );
+
+    transition:
+        transform .3s ease;
+}
+
+.hero-logo:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+}
+
+
+/* =====================================================
+   HERO LABEL
+===================================================== */
 
 .hero-label{
 
-    display:inline-block;
+    display:inline-flex;
 
-    padding:8px 18px;
+    align-items:center;
+
+    gap:7px;
+
+    padding:
+        8px 17px;
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.1);
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-purple),
+            var(--soft-blue)
+        );
 
-    border:1px solid rgba(255,255,255,.2);
+    border:
+        1px solid
+        #e3e0eb;
 
-    font-size:13px;
+    color:#596174;
 
-    margin-bottom:20px;
+    font-size:12px;
+
+    font-weight:800;
+
+    margin-bottom:24px;
 }
 
+
+/* =====================================================
+   HERO HEADING
+===================================================== */
 
 .hero h1{
 
-    font-size:clamp(48px,8vw,76px);
+    font-size:
+        clamp(48px,8vw,82px);
 
     font-weight:950;
 
-    letter-spacing:3px;
+    letter-spacing:4px;
 
-    margin-bottom:12px;
+    line-height:1;
+
+    margin-bottom:18px;
+
+    color:var(--text);
 }
-
 
 .hero h1 span{
 
     background:
         linear-gradient(
             90deg,
-            #a5b4fc,
-            #e9d5ff,
-            #fbcfe8
+            var(--purple),
+            var(--blue)
         );
 
     -webkit-background-clip:text;
@@ -172,39 +348,54 @@ nav{
 }
 
 
-.hero p{
+.hero h2{
 
-    max-width:650px;
+    font-size:
+        clamp(20px,4vw,30px);
 
-    margin:auto;
+    font-weight:750;
 
-    color:#cbd5e1;
+    margin-bottom:16px;
 
-    line-height:1.7;
-
-    font-size:16px;
+    color:#263044;
 }
 
 
-/* ================================================= */
-/* ================= MAIN ========================== */
-/* ================================================= */
+.hero p{
+
+    max-width:680px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 main{
 
     max-width:1200px;
 
-    margin:-40px auto 0;
+    margin:auto;
 
-    padding:0 20px 70px;
+    padding:
+        5px 20px
+        65px;
 
     position:relative;
 }
 
 
-/* ================================================= */
-/* ================= BACK BUTTON =================== */
-/* ================================================= */
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
 .back-btn{
 
@@ -216,67 +407,87 @@ main{
 
     text-decoration:none;
 
-    color:var(--muted);
+    color:var(--purple);
 
-    background:white;
+    background:#faf8fd;
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        #ddd9e8;
 
-    padding:10px 17px;
+    padding:
+        10px 17px;
 
     border-radius:12px;
 
     font-size:13px;
 
-    font-weight:800;
+    font-weight:850;
 
-    box-shadow:0 8px 20px rgba(15,23,42,.06);
+    box-shadow:
+        0 7px 20px
+        rgba(15,23,42,.05);
 
-    transition:.2s;
+    transition:.25s;
 }
-
 
 .back-btn:hover{
 
-    color:var(--primary);
+    color:white;
 
-    transform:translateX(-3px);
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
 
-    box-shadow:0 12px 25px rgba(15,23,42,.1);
+    border-color:transparent;
+
+    transform:
+        translateX(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(86,92,170,.20);
 }
 
 
-/* ================================================= */
-/* ================= SECTION TITLE ================= */
-/* ================================================= */
+/* =====================================================
+   SECTION TITLE
+===================================================== */
 
 .section-title{
 
     text-align:center;
 
-    margin:45px 0 30px;
+    margin:
+        45px 0
+        30px;
 }
-
 
 .section-title h2{
 
     font-size:30px;
 
-    margin-bottom:7px;
-}
+    font-weight:850;
 
+    color:var(--text);
+}
 
 .section-title p{
 
     color:var(--muted);
 
+    margin-top:8px;
+
     font-size:14px;
 }
 
 
-/* ================================================= */
-/* ================= PYQ GRID ===================== */
-/* ================================================= */
+/* =====================================================
+   PYQ GRID
+===================================================== */
 
 .pyq-grid{
 
@@ -289,17 +500,19 @@ main{
 }
 
 
-/* ================================================= */
-/* ================= PYQ CARD ===================== */
-/* ================================================= */
+/* =====================================================
+   PYQ CARD
+===================================================== */
 
 .pyq-card{
 
     background:var(--card);
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
-    border-radius:26px;
+    border-radius:25px;
 
     padding:30px;
 
@@ -308,22 +521,27 @@ main{
     overflow:hidden;
 
     box-shadow:
-        0 12px 35px rgba(15,23,42,.07);
+        var(--shadow);
 
-    transition:.3s ease;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
-
 
 .pyq-card:hover{
 
-    transform:translateY(-8px);
+    transform:
+        translateY(-7px);
 
     box-shadow:
-        0 22px 50px rgba(15,23,42,.13);
+        0 22px 50px
+        rgba(15,23,42,.11);
 }
 
 
-/* decorative circle */
+/* =====================================================
+   DECORATIVE CIRCLE
+===================================================== */
 
 .pyq-card::after{
 
@@ -331,31 +549,51 @@ main{
 
     position:absolute;
 
-    width:180px;
-
-    height:180px;
+    width:190px;
+    height:190px;
 
     border-radius:50%;
 
-    background:var(--soft);
+    background:
+        var(--soft-purple);
 
     right:-95px;
 
     top:-95px;
 
-    z-index:0;
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+.pyq-card:nth-child(2)::after{
+
+    background:
+        var(--soft-blue);
+}
+
+.pyq-card:nth-child(3)::after{
+
+    background:
+        var(--soft-purple);
+}
+
+.pyq-card:hover::after{
+
+    transform:
+        scale(1.15);
 }
 
 
-/* ================================================= */
-/* ================= CARD TOP ====================== */
-/* ================================================= */
+/* =====================================================
+   CARD TOP
+===================================================== */
 
 .card-top{
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
 
     display:flex;
 
@@ -367,6 +605,10 @@ main{
 }
 
 
+/* =====================================================
+   YEAR BADGE
+===================================================== */
+
 .year-badge{
 
     display:inline-flex;
@@ -375,13 +617,15 @@ main{
 
     gap:7px;
 
-    padding:8px 13px;
+    padding:
+        8px 13px;
 
     border-radius:30px;
 
-    background:var(--soft);
+    background:
+        var(--soft-purple);
 
-    color:var(--primary);
+    color:var(--purple);
 
     font-size:12px;
 
@@ -391,14 +635,13 @@ main{
 }
 
 
-/* ================================================= */
-/* ================= CBSE LOGO ===================== */
-/* ================================================= */
+/* =====================================================
+   CBSE LOGO
+===================================================== */
 
 .cbse-logo{
 
     width:64px;
-
     height:64px;
 
     object-fit:contain;
@@ -409,14 +652,18 @@ main{
 
     padding:5px;
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     box-shadow:
-        0 7px 18px rgba(15,23,42,.12);
+        0 7px 18px
+        rgba(15,23,42,.10);
 
-    transition:.25s;
+    transition:
+        transform .25s,
+        box-shadow .25s;
 }
-
 
 .cbse-logo:hover{
 
@@ -425,29 +672,29 @@ main{
         rotate(2deg);
 
     box-shadow:
-        0 10px 25px rgba(79,70,229,.2);
+        0 10px 25px
+        rgba(109,63,169,.18);
 }
 
 
-/* ================================================= */
-/* ================= CARD CONTENT ================== */
-/* ================================================= */
+/* =====================================================
+   PYQ ICON
+===================================================== */
 
 .pyq-icon{
 
     width:65px;
-
     height:65px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    border-radius:19px;
+    border-radius:18px;
 
-    background:var(--soft);
+    background:
+        var(--soft-purple);
 
     font-size:31px;
 
@@ -458,6 +705,24 @@ main{
     z-index:1;
 }
 
+.pyq-card:nth-child(2)
+.pyq-icon{
+
+    background:
+        var(--soft-blue);
+}
+
+.pyq-card:nth-child(3)
+.pyq-icon{
+
+    background:
+        var(--soft-purple);
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
 
 .pyq-card h3{
 
@@ -470,14 +735,15 @@ main{
     z-index:1;
 }
 
-
 .pyq-card .small-title{
 
-    color:var(--primary);
+    color:var(--purple);
 
     font-weight:800;
 
     font-size:13px;
+
+    letter-spacing:.4px;
 
     position:relative;
 
@@ -489,11 +755,13 @@ main{
 
     color:var(--muted);
 
-    line-height:1.65;
+    line-height:1.7;
 
     font-size:14px;
 
-    margin:14px 0 23px;
+    margin:
+        14px 0
+        23px;
 
     position:relative;
 
@@ -501,9 +769,9 @@ main{
 }
 
 
-/* ================================================= */
-/* ================= TAGS ========================== */
-/* ================================================= */
+/* =====================================================
+   TAGS
+===================================================== */
 
 .tags{
 
@@ -523,11 +791,14 @@ main{
 
 .tag{
 
-    padding:6px 9px;
+    padding:
+        6px 9px;
 
     background:#f8fafc;
 
-    border:1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     border-radius:8px;
 
@@ -539,9 +810,9 @@ main{
 }
 
 
-/* ================================================= */
-/* ================= OPEN BUTTON =================== */
-/* ================================================= */
+/* =====================================================
+   OPEN BUTTON
+===================================================== */
 
 .pyq-btn{
 
@@ -562,11 +833,12 @@ main{
     background:
         linear-gradient(
             135deg,
-            var(--primary),
-            var(--primary2)
+            var(--purple),
+            var(--blue)
         );
 
-    padding:14px 18px;
+    padding:
+        14px 18px;
 
     border-radius:13px;
 
@@ -574,26 +846,62 @@ main{
 
     font-weight:900;
 
-    transition:.25s;
+    transition:
+        transform .25s,
+        box-shadow .25s;
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
+
+    overflow:hidden;
 }
 
+.pyq-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:70%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.24),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:.6s;
+}
+
+.pyq-btn:hover::before{
+
+    left:130%;
+}
 
 .pyq-btn:hover{
 
-    transform:translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 12px 27px rgba(79,70,229,.28);
+        0 12px 27px
+        rgba(86,92,170,.28);
 }
 
 
-/* ================================================= */
-/* ================= INFO BOX ====================== */
-/* ================================================= */
+/* =====================================================
+   INFO BOX
+===================================================== */
 
 .info-box{
 
@@ -602,15 +910,18 @@ main{
     background:
         linear-gradient(
             135deg,
-            #eef2ff,
-            #f5f3ff
+            var(--soft-purple),
+            var(--soft-blue)
         );
 
-    border:1px solid #ddd6fe;
+    border:
+        1px solid
+        #e1dceb;
 
     border-radius:20px;
 
-    padding:22px 25px;
+    padding:
+        22px 25px;
 
     text-align:center;
 }
@@ -618,7 +929,7 @@ main{
 
 .info-box strong{
 
-    color:var(--primary);
+    color:var(--purple);
 }
 
 
@@ -634,41 +945,348 @@ main{
 }
 
 
-/* ================================================= */
-/* ================= FOOTER ======================== */
-/* ================================================= */
+/* =====================================================
+   PREMIUM FOOTER
+===================================================== */
 
 footer{
 
-    background:#0f172a;
+    background:
+        linear-gradient(
+            180deg,
+            #faf9fc 0%,
+            #ffffff 100%
+        );
 
-    color:#94a3b8;
+    border-top:
+        1px solid
+        var(--border);
 
-    text-align:center;
+    padding:
+        55px 25px
+        20px;
 
-    padding:35px 20px;
+    margin-top:10px;
+
+    color:var(--muted);
+}
+
+
+/* =====================================================
+   FOOTER INNER
+===================================================== */
+
+.footer-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1.2fr;
+
+    gap:55px;
+
+    padding-bottom:40px;
+}
+
+
+/* =====================================================
+   FOOTER BRAND
+===================================================== */
+
+.footer-brand{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+
+.footer-logo{
+
+    width:110px;
+    height:110px;
+
+    object-fit:contain;
+
+    margin-bottom:13px;
+
+    filter:
+        drop-shadow(
+            0 9px 18px
+            rgba(15,23,42,.10)
+        );
+
+    transition:.3s;
+}
+
+.footer-logo:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+}
+
+
+.footer-brand-title{
+
+    font-size:26px;
+
+    font-weight:950;
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    margin-bottom:8px;
+}
+
+.footer-brand p{
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:750;
+
+    margin-bottom:6px;
+}
+
+.footer-brand span{
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   FOOTER COLUMNS
+===================================================== */
+
+.footer-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+.footer-column h4{
+
+    color:var(--text);
+
+    font-size:15px;
+
+    margin-bottom:16px;
+
+    position:relative;
+
+    padding-bottom:8px;
+}
+
+.footer-column h4::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:28px;
+    height:2px;
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+/* =====================================================
+   QUICK LINKS
+===================================================== */
+
+.footer-column > a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-bottom:9px;
+
+    transition:.2s;
+}
+
+.footer-column > a:hover{
+
+    color:var(--purple);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =====================================================
+   CONNECT
+===================================================== */
+
+.connect-column p{
+
+    font-size:13px;
 
     line-height:1.6;
+
+    max-width:270px;
+
+    margin-bottom:16px;
 }
 
 
-footer strong{
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+.social-links{
+
+    display:flex;
+
+    gap:9px;
+
+    flex-wrap:wrap;
+}
+
+.social{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    text-decoration:none;
 
     color:white;
+
+    padding:
+        9px 14px;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.25s;
 }
 
+.social:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,.10);
+}
+
+.social.whatsapp{
+
+    background:#16a34a;
+}
+
+.social.instagram{
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #e1306c,
+            #f77737
+        );
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-top:20px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    color:#9ca3af;
+
+    font-size:11px;
+}
+
+.footer-bottom strong{
+
+    color:#555;
+}
 
 .heart{
 
-    color:#f43f5e;
+    color:#ef4444;
+
+    font-size:14px;
+
+    margin:
+        0 2px;
 }
 
 
-/* ================================================= */
-/* ================= RESPONSIVE ==================== */
-/* ================================================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
     .pyq-grid{
 
@@ -676,42 +1294,71 @@ footer strong{
             repeat(2,1fr);
     }
 
+    .footer-inner{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:35px;
+    }
+
+    .footer-brand{
+
+        grid-column:
+            1 / -1;
+    }
 }
 
 
-@media(max-width:650px){
+/* =====================================================
+   MOBILE
+===================================================== */
 
-    header{
-
-        padding-bottom:65px;
-    }
-
-
-    .hero{
-
-        padding-top:55px;
-    }
-
-
-    .hero h1{
-
-        font-size:48px;
-    }
-
+@media(max-width:700px){
 
     .pyq-grid{
 
         grid-template-columns:1fr;
     }
 
+    .hero{
+
+        padding:
+            45px 15px
+            70px;
+    }
+
+    .hero-logo{
+
+        width:105px;
+        height:105px;
+    }
+
+    .hero h1{
+
+        letter-spacing:2px;
+    }
+
+    .footer-inner{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-brand{
+
+        grid-column:auto;
+    }
 
     .pyq-card{
 
-        padding:26px;
+        padding:27px;
     }
-
 }
 
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media(max-width:450px){
 
@@ -720,30 +1367,76 @@ footer strong{
         gap:10px;
     }
 
+    .nav-logo{
 
-    .brand{
-
-        font-size:21px;
+        width:46px;
+        height:46px;
     }
 
+    .brand-text{
+
+        font-size:18px;
+    }
 
     .nav-badge{
 
         font-size:10px;
 
-        padding:7px 11px;
+        padding:
+            7px 12px;
     }
 
+    .hero-logo{
+
+        width:95px;
+        height:95px;
+    }
 
     .hero h1{
 
-        font-size:42px;
+        font-size:44px;
     }
 
+    .hero h2{
+
+        font-size:20px;
+    }
 
     .hero p{
 
         font-size:14px;
+    }
+
+    .section-title h2{
+
+        font-size:26px;
+    }
+
+    .pyq-card h3{
+
+        font-size:23px;
+    }
+
+    .footer-logo{
+
+        width:95px;
+        height:95px;
+    }
+
+    .social{
+
+        width:100%;
+
+        max-width:220px;
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        line-height:1.7;
     }
 
 }
@@ -756,389 +1449,584 @@ footer strong{
 <body>
 
 
-<!-- ================================================= -->
-<!-- ================= HEADER ======================== -->
-<!-- ================================================= -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
-<nav>
+    <nav>
 
-<div class="brand">
-THE GOAL
-</div>
+        <a
+            href="index.html"
+            class="nav-brand"
+        >
 
-<div class="nav-badge">
-CBSE CLASS 10 • PYQ HUB
-</div>
+            <img
+                src="goal.png"
+                alt="THE GOAL Logo"
+                class="nav-logo"
+            >
 
-</nav>
+            <div class="brand-text">
+                THE <span>GOAL</span>
+            </div>
+
+        </a>
 
 
-<div class="hero">
+        <div class="nav-badge">
+            CBSE CLASS 10 • PYQ HUB
+        </div>
 
-<div class="hero-label">
-📚 PREVIOUS YEAR QUESTIONS
-</div>
+    </nav>
 
-<h1>
-<span>PYQ HUB</span>
-</h1>
 
-<p>
-Explore CBSE Class 10 Mathematics Previous Year Questions
-in a clean chapter-wise and type-wise format.
-Practice smarter with Basic and Standard papers.
-</p>
+    <div class="hero">
 
-</div>
+
+        <div class="hero-logo-wrap">
+
+            <img
+                src="goal.png"
+                alt="THE GOAL"
+                class="hero-logo"
+            >
+
+        </div>
+
+
+        <div class="hero-label">
+            📚 PREVIOUS YEAR QUESTIONS
+        </div>
+
+
+        <h1>
+            <span>PYQ HUB</span>
+        </h1>
+
+
+        <h2>
+            Practice • Revise • Improve • Achieve
+        </h2>
+
+
+        <p>
+            Explore CBSE Class 10 Mathematics Previous Year Questions
+            in a clean chapter-wise and type-wise format.
+            Practice smarter with Basic and Standard papers.
+        </p>
+
+    </div>
 
 </header>
 
 
-<!-- ================================================= -->
-<!-- ================= MAIN ========================== -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main>
 
 
-<!-- BACK -->
+    <!-- BACK -->
 
-<a
-    href="index.html"
-    class="back-btn"
->
-    ← Back to Home
-</a>
+    <a
+        href="index.html"
+        class="back-btn"
+    >
+        ← Back to Home
+    </a>
 
 
-<div class="section-title">
 
-<h2>
-Choose Your PYQ Collection
-</h2>
+    <div class="section-title">
 
-<p>
-Select the year and paper type you want to practice.
-</p>
+        <h2>
+            Choose Your PYQ Collection
+        </h2>
 
-</div>
+        <p>
+            Select the year and paper type you want to practice.
+        </p>
 
+    </div>
 
-<!-- ================================================= -->
-<!-- ================= PYQ CARDS ==================== -->
-<!-- ================================================= -->
 
-<section class="pyq-grid">
 
+    <!-- =================================================
+         PYQ CARDS
+    ================================================= -->
 
-<!-- ================================================= -->
-<!-- ================= 2026 ========================== -->
-<!-- ================================================= -->
+    <section class="pyq-grid">
 
-<div class="pyq-card">
 
+        <!-- =================================================
+             2026
+        ================================================= -->
 
-<div class="card-top">
+        <div class="pyq-card">
 
-<div class="year-badge">
-📅 2026
-</div>
 
+            <div class="card-top">
 
-<a
-    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
-    target="_blank"
-    rel="noopener noreferrer"
-    title="View CBSE Official Logo"
->
+                <div class="year-badge">
+                    📅 2026
+                </div>
 
-<img
-    class="cbse-logo"
-    src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
-    alt="CBSE Logo"
->
 
-</a>
+                <a
+                    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View CBSE Official Logo"
+                >
 
-</div>
+                    <img
+                        class="cbse-logo"
+                        src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
+                        alt="CBSE Logo"
+                    >
 
+                </a>
 
-<div class="pyq-icon">
-📚
-</div>
+            </div>
 
 
-<div class="small-title">
-CBSE MATHEMATICS
-</div>
+            <div class="pyq-icon">
+                📚
+            </div>
 
 
-<h3>
-2026 PYQs
-</h3>
+            <div class="small-title">
+                CBSE MATHEMATICS
+            </div>
 
 
-<p>
-Complete collection of CBSE Class 10 Mathematics
-2026 Previous Year Questions with both Basic and
-Standard papers organized chapter-wise and type-wise.
-</p>
+            <h3>
+                2026 PYQs
+            </h3>
 
 
-<div class="tags">
+            <p>
+                Complete collection of CBSE Class 10 Mathematics
+                2026 Previous Year Questions with both Basic and
+                Standard papers organized chapter-wise and type-wise.
+            </p>
 
-<span class="tag">
-BASIC
-</span>
 
-<span class="tag">
-STANDARD
-</span>
+            <div class="tags">
 
-<span class="tag">
-CHAPTERWISE
-</span>
+                <span class="tag">
+                    BASIC
+                </span>
 
-<span class="tag">
-TYPEWISE
-</span>
+                <span class="tag">
+                    STANDARD
+                </span>
 
-</div>
+                <span class="tag">
+                    CHAPTERWISE
+                </span>
 
+                <span class="tag">
+                    TYPEWISE
+                </span>
 
-<a
-    href="2026-pyq.html"
-    class="pyq-btn"
->
-    OPEN 2026 PYQs →
-</a>
+            </div>
 
 
-</div>
+            <a
+                href="2026-pyq.html"
+                class="pyq-btn"
+            >
+                OPEN 2026 PYQs →
+            </a>
 
 
-<!-- ================================================= -->
-<!-- ================= 2025 BASIC =================== -->
-<!-- ================================================= -->
+        </div>
 
-<div class="pyq-card">
 
 
-<div class="card-top">
+        <!-- =================================================
+             2025 BASIC
+        ================================================= -->
 
-<div class="year-badge">
-📅 2025
-</div>
+        <div class="pyq-card">
 
 
-<a
-    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
-    target="_blank"
-    rel="noopener noreferrer"
-    title="View CBSE Official Logo"
->
+            <div class="card-top">
 
-<img
-    class="cbse-logo"
-    src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
-    alt="CBSE Logo"
->
+                <div class="year-badge">
+                    📅 2025
+                </div>
 
-</a>
 
-</div>
+                <a
+                    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View CBSE Official Logo"
+                >
 
+                    <img
+                        class="cbse-logo"
+                        src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
+                        alt="CBSE Logo"
+                    >
 
-<div class="pyq-icon">
-📝
-</div>
+                </a>
 
+            </div>
 
-<div class="small-title">
-CBSE MATHEMATICS
-</div>
 
+            <div class="pyq-icon">
+                📝
+            </div>
 
-<h3>
-2025 Basic
-</h3>
 
+            <div class="small-title">
+                CBSE MATHEMATICS
+            </div>
 
-<p>
-Chapter-wise collection of CBSE Class 10 Mathematics
-Basic Mathematics Previous Year Questions from the
-2025 examination.
-</p>
 
+            <h3>
+                2025 Basic
+            </h3>
 
-<div class="tags">
 
-<span class="tag">
-BASIC
-</span>
+            <p>
+                Chapter-wise collection of CBSE Class 10 Mathematics
+                Basic Mathematics Previous Year Questions from the
+                2025 examination.
+            </p>
 
-<span class="tag">
-2025
-</span>
 
-<span class="tag">
-CHAPTERWISE
-</span>
+            <div class="tags">
 
-<span class="tag">
-PYQs
-</span>
+                <span class="tag">
+                    BASIC
+                </span>
 
-</div>
+                <span class="tag">
+                    2025
+                </span>
 
+                <span class="tag">
+                    CHAPTERWISE
+                </span>
 
-<a
-    href="2025-basic.html"
-    class="pyq-btn"
->
-    OPEN 2025 BASIC →
-</a>
+                <span class="tag">
+                    PYQs
+                </span>
 
+            </div>
 
-</div>
 
+            <a
+                href="2025-basic.html"
+                class="pyq-btn"
+            >
+                OPEN 2025 BASIC →
+            </a>
 
-<!-- ================================================= -->
-<!-- ================= 2025 STANDARD ================ -->
-<!-- ================================================= -->
 
-<div class="pyq-card">
+        </div>
 
 
-<div class="card-top">
 
-<div class="year-badge">
-📅 2025
-</div>
+        <!-- =================================================
+             2025 STANDARD
+        ================================================= -->
 
+        <div class="pyq-card">
 
-<a
-    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
-    target="_blank"
-    rel="noopener noreferrer"
-    title="View CBSE Official Logo"
->
 
-<img
-    class="cbse-logo"
-    src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
-    alt="CBSE Logo"
->
+            <div class="card-top">
 
-</a>
+                <div class="year-badge">
+                    📅 2025
+                </div>
 
-</div>
 
+                <a
+                    href="https://github.com/Pushpender-Jangid/The_Goal/blob/main/cbse-logo.jpeg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View CBSE Official Logo"
+                >
 
-<div class="pyq-icon">
-🎯
-</div>
+                    <img
+                        class="cbse-logo"
+                        src="https://raw.githubusercontent.com/Pushpender-Jangid/The_Goal/main/cbse-logo.jpeg"
+                        alt="CBSE Logo"
+                    >
 
+                </a>
 
-<div class="small-title">
-CBSE MATHEMATICS
-</div>
+            </div>
 
 
-<h3>
-2025 Standard
-</h3>
+            <div class="pyq-icon">
+                🎯
+            </div>
 
 
-<p>
-Chapter-wise collection of CBSE Class 10 Mathematics
-Standard Mathematics Previous Year Questions from the
-2025 examination.
-</p>
+            <div class="small-title">
+                CBSE MATHEMATICS
+            </div>
 
 
-<div class="tags">
+            <h3>
+                2025 Standard
+            </h3>
 
-<span class="tag">
-STANDARD
-</span>
 
-<span class="tag">
-2025
-</span>
+            <p>
+                Chapter-wise collection of CBSE Class 10 Mathematics
+                Standard Mathematics Previous Year Questions from the
+                2025 examination.
+            </p>
 
-<span class="tag">
-CHAPTERWISE
-</span>
 
-<span class="tag">
-PYQs
-</span>
+            <div class="tags">
 
-</div>
+                <span class="tag">
+                    STANDARD
+                </span>
 
+                <span class="tag">
+                    2025
+                </span>
 
-<a
-    href="2025-standard.html"
-    class="pyq-btn"
->
-    OPEN 2025 STANDARD →
-</a>
+                <span class="tag">
+                    CHAPTERWISE
+                </span>
 
+                <span class="tag">
+                    PYQs
+                </span>
 
-</div>
+            </div>
 
 
-</section>
+            <a
+                href="2025-standard.html"
+                class="pyq-btn"
+            >
+                OPEN 2025 STANDARD →
+            </a>
 
 
-<!-- ================================================= -->
-<!-- ================= INFO ========================== -->
-<!-- ================================================= -->
+        </div>
 
-<div class="info-box">
 
-<p>
-<strong>📌 PYQ HUB</strong>
-</p>
+    </section>
 
-<p>
-Questions are organized chapter-wise and type-wise
-for easier revision and exam preparation.
-Always cross-check with official CBSE material when needed.
-</p>
 
-</div>
+
+    <!-- =================================================
+         INFO
+    ================================================= -->
+
+    <div class="info-box">
+
+        <p>
+            <strong>
+                📌 PYQ HUB
+            </strong>
+        </p>
+
+        <p>
+            Questions are organized chapter-wise and type-wise
+            for easier revision and exam preparation.
+            Always cross-check with official CBSE material when needed.
+        </p>
+
+    </div>
 
 
 </main>
 
 
-<!-- ================================================= -->
-<!-- ================= FOOTER ======================== -->
-<!-- ================================================= -->
+
+<!-- =====================================================
+     PREMIUM FOOTER
+===================================================== -->
 
 <footer>
 
-<strong>
-THE GOAL
-</strong>
 
-<br><br>
+    <div class="footer-inner">
 
-CBSE Class 10 Learning Portal
 
-<br><br>
+        <!-- =================================================
+             BRAND
+        ================================================= -->
 
-Previous Year Questions • Chapter-wise Practice
+        <div class="footer-brand">
 
-<br><br>
 
-Made with Love
-<span class="heart">❤️</span>
-in India by Pushpender
+            <img
+                src="goal.png"
+                alt="THE GOAL Logo"
+                class="footer-logo"
+            >
+
+
+            <div class="footer-brand-title">
+                THE GOAL
+            </div>
+
+
+            <p>
+                CBSE Class 10 Learning Portal
+            </p>
+
+
+            <span>
+                Learn • Practice • Improve • Achieve
+            </span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QUICK LINKS
+        ================================================= -->
+
+        <div class="footer-column">
+
+            <h4>
+                Quick Links
+            </h4>
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="math.html">
+                Mathematics
+            </a>
+
+
+            <a href="it.html">
+                Information Technology
+            </a>
+
+
+            <a href="pyq-hub.html">
+                Mathematics PYQ Hub
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CONNECT
+        ================================================= -->
+
+        <div class="footer-column connect-column">
+
+            <h4>
+                Let's Connect
+            </h4>
+
+
+            <p>
+                Have a suggestion, feedback
+                or simply want to connect?
+            </p>
+
+
+            <div class="social-links">
+
+
+                <a
+                    href="https://chat.whatsapp.com/KbZQL2FaE5S98ziUvz7pyq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social whatsapp"
+                >
+
+                    💬
+
+                    <span>
+                        WhatsApp
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/the_goal_10th/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social instagram"
+                >
+
+                    📸
+
+                    <span>
+                        Instagram
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER BOTTOM
+    ================================================= -->
+
+    <div class="footer-bottom">
+
+
+        <div>
+
+            © 2026
+
+            <strong>
+                THE GOAL
+            </strong>
+
+            · CBSE Class 10 Learning Portal
+
+        </div>
+
+
+        <div>
+
+            Made with
+
+            <span class="heart">
+                ♥
+            </span>
+
+            in India by
+
+            <strong>
+                Pushpender
+            </strong>
+
+        </div>
+
+
+    </div>
+
 
 </footer>
 
