@@ -1,0 +1,3789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<link rel="icon" type="image/png" href="goal.png">
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>THE GOAL | RBSE Class 10 Learning Portal</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root{
+
+    --bg:#ffffff;
+    --card:#ffffff;
+
+    --text:#111827;
+    --muted:#64748b;
+
+    --purple:#6d3fa9;
+    --purple-dark:#59318f;
+
+    --blue:#4ba3d8;
+    --blue-dark:#368fc7;
+
+    --border:#e7e9ef;
+
+    --soft-purple:#f3edfa;
+    --soft-blue:#edf7fc;
+
+    --soft-green:#eefaf3;
+
+    --shadow:
+        0 12px 35px rgba(15,23,42,.07);
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    background:#ffffff;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:370px;
+    height:370px;
+
+    border-radius:50%;
+
+    background:
+        rgba(109,63,169,.07);
+
+    top:-200px;
+    left:-110px;
+
+    pointer-events:none;
+}
+
+
+header::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    background:
+        rgba(75,163,216,.08);
+
+    right:-130px;
+    top:-100px;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   NAV
+===================================================== */
+
+nav{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        18px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:10;
+}
+
+
+.nav-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    text-decoration:none;
+}
+
+
+.nav-logo{
+
+    width:52px;
+    height:52px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    transition:.25s;
+}
+
+
+.nav-brand:hover .nav-logo{
+
+    transform:
+        rotate(-3deg)
+        scale(1.05);
+}
+
+
+.brand-text{
+
+    font-size:22px;
+
+    font-weight:950;
+
+    letter-spacing:1.5px;
+
+    color:var(--text);
+}
+
+
+.brand-text span{
+
+    color:var(--purple);
+}
+
+
+.nav-badge{
+
+    padding:
+        8px 16px;
+
+    border:
+        1px solid
+        #ddd9e8;
+
+    border-radius:30px;
+
+    background:#faf8fd;
+
+    color:var(--purple);
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:.4px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        55px 20px
+        70px;
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        1.05fr
+        .95fr;
+
+    align-items:center;
+
+    gap:55px;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content{
+
+    text-align:left;
+}
+
+
+.hero-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        8px 17px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-purple),
+            var(--soft-blue)
+        );
+
+    border:
+        1px solid
+        #e3e0eb;
+
+    color:#596174;
+
+    font-size:12px;
+
+    font-weight:850;
+
+    margin-bottom:20px;
+}
+
+
+.hero h1{
+
+    font-size:
+        clamp(48px,6vw,76px);
+
+    font-weight:950;
+
+    letter-spacing:3px;
+
+    line-height:1;
+
+    margin-bottom:17px;
+
+    color:var(--text);
+}
+
+
+.hero h1 span{
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+}
+
+
+.hero h2{
+
+    font-size:
+        clamp(21px,3vw,30px);
+
+    font-weight:850;
+
+    line-height:1.25;
+
+    margin-bottom:17px;
+
+    color:#263044;
+}
+
+
+.hero p{
+
+    max-width:620px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+}
+
+
+.hero strong{
+
+    color:var(--purple);
+}
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-actions{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+
+.hero-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        14px 22px;
+
+    border-radius:13px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(86,92,170,.20);
+
+    transition:.25s;
+}
+
+
+.hero-primary:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(86,92,170,.30);
+}
+
+
+.hero-secondary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        13px 21px;
+
+    border-radius:13px;
+
+    text-decoration:none;
+
+    color:var(--purple);
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        #ddd9e8;
+
+    font-size:13px;
+
+    font-weight:850;
+
+    transition:.25s;
+}
+
+
+.hero-secondary:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--soft-purple);
+}
+
+
+/* =====================================================
+   HERO TRUST
+===================================================== */
+
+.hero-trust{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:17px;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+}
+
+
+.trust-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    font-weight:750;
+}
+
+
+.trust-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.hero-visual{
+
+    min-height:440px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+.visual-glow{
+
+    position:absolute;
+
+    width:360px;
+
+    height:360px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(109,63,169,.08),
+            rgba(75,163,216,.10)
+        );
+}
+
+
+/* =====================================================
+   RBSE LOGO HERO
+===================================================== */
+
+.rbse-hero-logo{
+
+    width:210px;
+
+    height:210px;
+
+    object-fit:contain;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:32px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 22px 55px
+        rgba(15,23,42,.14);
+
+    position:relative;
+
+    z-index:5;
+
+    animation:
+        logoFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes logoFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+    }
+
+    50%{
+
+        transform:
+            translateY(-13px);
+    }
+}
+
+
+/* =====================================================
+   FLOATING RBSE LABELS
+===================================================== */
+
+.rbse-floating{
+
+    position:absolute;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 15px 35px
+        rgba(15,23,42,.10);
+
+    border-radius:16px;
+
+    padding:
+        12px 15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    font-size:11px;
+
+    font-weight:850;
+
+    color:#475569;
+
+    z-index:8;
+
+    animation:
+        floatLabel 4s ease-in-out infinite;
+}
+
+
+.rbse-floating img{
+
+    width:28px;
+
+    height:28px;
+
+    object-fit:contain;
+}
+
+
+.rbse-floating.one{
+
+    top:45px;
+
+    left:15px;
+}
+
+
+.rbse-floating.two{
+
+    top:150px;
+
+    right:0;
+
+    animation-delay:1s;
+}
+
+
+.rbse-floating.three{
+
+    bottom:35px;
+
+    left:45px;
+
+    animation-delay:2s;
+}
+
+
+@keyframes floatLabel{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+    }
+
+    50%{
+
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:
+        5px 20px
+        70px;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin:
+        50px 0
+        28px;
+}
+
+
+.section-title h2{
+
+    font-size:30px;
+
+    font-weight:900;
+
+    color:var(--text);
+}
+
+
+.section-title p{
+
+    color:var(--muted);
+
+    margin-top:8px;
+
+    font-size:14px;
+
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   BIG RESOURCE CARDS
+===================================================== */
+
+.resource-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:24px;
+}
+
+
+.resource-card{
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+
+.resource-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+
+    height:190px;
+
+    border-radius:50%;
+
+    background:
+        var(--soft-purple);
+
+    right:-95px;
+
+    top:-95px;
+
+    pointer-events:none;
+}
+
+
+.resource-card:nth-child(2)::after{
+
+    background:
+        var(--soft-blue);
+}
+
+
+.resource-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 22px 50px
+        rgba(15,23,42,.11);
+}
+
+
+/* =====================================================
+   RESOURCE HEADER
+===================================================== */
+
+.resource-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:17px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.resource-logo{
+
+    width:75px;
+
+    height:75px;
+
+    object-fit:contain;
+
+    padding:8px;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        #e3e6eb;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 7px 20px
+        rgba(0,0,0,.07);
+}
+
+
+.resource-icon{
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:17px;
+
+    font-size:28px;
+
+    background:
+        var(--soft-purple);
+}
+
+
+.resource-card:nth-child(2)
+.resource-icon{
+
+    background:
+        var(--soft-blue);
+}
+
+
+.resource-card h3{
+
+    font-size:23px;
+
+    margin-top:4px;
+}
+
+
+.resource-card p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    font-size:13px;
+
+    margin:
+        20px 0;
+}
+
+
+/* =====================================================
+   RESOURCE BUTTON
+===================================================== */
+
+.resource-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:13px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    position:relative;
+
+    z-index:3;
+
+    transition:.25s;
+}
+
+
+.resource-btn:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(86,92,170,.25);
+}
+
+
+/* =====================================================
+   CHAPTER NOTES
+===================================================== */
+
+.notes-section{
+
+    margin-top:65px;
+}
+
+
+.notes-card{
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.notes-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+        var(--soft-purple);
+
+    right:-120px;
+
+    top:-120px;
+
+    pointer-events:none;
+}
+
+
+.notes-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    position:relative;
+
+    z-index:2;
+
+    margin-bottom:25px;
+}
+
+
+.notes-logo{
+
+    width:85px;
+
+    height:85px;
+
+    object-fit:contain;
+
+    padding:8px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+}
+
+
+.notes-top h3{
+
+    font-size:25px;
+}
+
+
+.notes-top p{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-top:6px;
+}
+
+
+/* =====================================================
+   CHAPTER GRID
+===================================================== */
+
+.chapter-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:12px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.chapter-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:
+        14px 15px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    background:#ffffff;
+
+    color:var(--text);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    transition:.25s;
+}
+
+
+.chapter-link:hover{
+
+    transform:
+        translateY(-3px);
+
+    border-color:#d8cde6;
+
+    background:
+        var(--soft-purple);
+
+    color:var(--purple);
+}
+
+
+.chapter-number{
+
+    width:31px;
+
+    height:31px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:10px;
+
+    color:var(--purple);
+
+    background:
+        var(--soft-purple);
+
+    font-size:11px;
+
+    font-weight:950;
+}
+
+
+/* =====================================================
+   YEAR WISE
+===================================================== */
+
+.pyq-section{
+
+    margin-top:70px;
+}
+
+
+.pyq-banner{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    color:white;
+
+    border-radius:25px;
+
+    padding:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(86,92,170,.22);
+
+    margin-bottom:25px;
+}
+
+
+.pyq-banner-logo{
+
+    width:75px;
+
+    height:75px;
+
+    object-fit:contain;
+
+    background:white;
+
+    padding:8px;
+
+    border-radius:18px;
+}
+
+
+.pyq-banner h3{
+
+    font-size:25px;
+}
+
+
+.pyq-banner p{
+
+    font-size:13px;
+
+    opacity:.88;
+
+    margin-top:6px;
+
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   YEAR GRID
+===================================================== */
+
+.year-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:14px;
+}
+
+
+.year-card{
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:18px;
+
+    padding:18px 12px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(15,23,42,.05);
+
+    transition:.25s;
+}
+
+
+.year-card:hover{
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 16px 32px
+        rgba(15,23,42,.10);
+}
+
+
+.year-logo{
+
+    width:45px;
+
+    height:45px;
+
+    object-fit:contain;
+
+    margin-bottom:8px;
+}
+
+
+.year-card h4{
+
+    font-size:18px;
+
+    margin-bottom:11px;
+}
+
+
+.year-btn{
+
+    display:block;
+
+    padding:
+        10px 8px;
+
+    border-radius:10px;
+
+    background:
+        var(--soft-purple);
+
+    color:var(--purple);
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    transition:.2s;
+}
+
+
+.year-btn:hover{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    color:white;
+}
+
+
+/* =====================================================
+   SUBJECT PYQ SECTION
+===================================================== */
+
+.subject-section{
+
+    margin-top:70px;
+}
+
+
+.subject-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:22px;
+}
+
+
+.subject-pyq-card{
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:24px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+
+.subject-pyq-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(15,23,42,.11);
+}
+
+
+.subject-pyq-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    background:
+        var(--soft-purple);
+
+    right:-70px;
+
+    top:-70px;
+
+    pointer-events:none;
+}
+
+
+.subject-pyq-card:nth-child(even)::after{
+
+    background:
+        var(--soft-blue);
+}
+
+
+.subject-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    position:relative;
+
+    z-index:2;
+
+    margin-bottom:20px;
+}
+
+
+.subject-rbse-logo{
+
+    width:67px;
+
+    height:67px;
+
+    object-fit:contain;
+
+    padding:7px;
+
+    background:white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:17px;
+}
+
+
+.subject-top h3{
+
+    font-size:22px;
+}
+
+
+.subject-top span{
+
+    display:block;
+
+    color:var(--purple);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    margin-top:4px;
+
+    letter-spacing:.6px;
+}
+
+
+/* =====================================================
+   SUBJECT YEAR BUTTONS
+===================================================== */
+
+.subject-years{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:8px;
+
+    position:relative;
+
+    z-index:3;
+}
+
+
+.subject-year{
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:11px;
+
+    padding:
+        10px 5px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    transition:.2s;
+
+    background:#fff;
+}
+
+
+.subject-year:hover{
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    transform:
+        translateY(-2px);
+}
+
+
+.subject-year img{
+
+    width:25px;
+
+    height:25px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:
+        0 auto 5px;
+}
+
+
+/* =====================================================
+   NOTICE
+===================================================== */
+
+.notice{
+
+    margin-top:55px;
+
+    padding:20px 22px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--soft-purple),
+            var(--soft-blue)
+        );
+
+    border:
+        1px solid
+        #e2ddec;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:13px;
+}
+
+
+.notice-icon{
+
+    font-size:22px;
+}
+
+
+.notice h4{
+
+    font-size:14px;
+
+    margin-bottom:5px;
+}
+
+
+.notice p{
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   FEEDBACK BUTTON
+===================================================== */
+
+.feedback-floating{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    z-index:999;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    padding:
+        15px 23px;
+
+    border-radius:35px;
+
+    font-size:14px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 12px 32px
+        rgba(86,92,170,.30);
+
+    transition:.25s;
+}
+
+
+.feedback-floating:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.02);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:
+        linear-gradient(
+            180deg,
+            #faf9fc 0%,
+            #ffffff 100%
+        );
+
+    border-top:
+        1px solid
+        var(--border);
+
+    padding:
+        55px 25px
+        20px;
+
+    margin-top:10px;
+
+    color:var(--muted);
+}
+
+
+.footer-inner{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1.2fr;
+
+    gap:55px;
+
+    padding-bottom:40px;
+}
+
+
+.footer-brand{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+
+.footer-logo{
+
+    width:105px;
+
+    height:105px;
+
+    object-fit:contain;
+
+    margin-bottom:13px;
+}
+
+
+.footer-brand-title{
+
+    font-size:26px;
+
+    font-weight:950;
+
+    letter-spacing:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    margin-bottom:8px;
+}
+
+
+.footer-brand p{
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:750;
+
+    margin-bottom:6px;
+}
+
+
+.footer-brand span{
+
+    color:var(--muted);
+
+    font-size:12px;
+}
+
+
+.footer-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+}
+
+
+.footer-column h4{
+
+    color:var(--text);
+
+    font-size:15px;
+
+    margin-bottom:16px;
+
+    position:relative;
+
+    padding-bottom:8px;
+}
+
+
+.footer-column h4::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:28px;
+
+    height:2px;
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+.footer-column a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    margin-bottom:9px;
+
+    transition:.2s;
+}
+
+
+.footer-column a:hover{
+
+    color:var(--purple);
+
+    transform:
+        translateX(3px);
+}
+
+
+.social-links{
+
+    display:flex;
+
+    gap:9px;
+
+    flex-wrap:wrap;
+}
+
+
+.social{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    text-decoration:none;
+
+    color:white !important;
+
+    padding:
+        9px 14px;
+
+    border-radius:10px;
+
+    font-size:12px !important;
+
+    font-weight:800;
+
+    transition:.25s;
+}
+
+
+.social:hover{
+
+    transform:
+        translateY(-3px);
+}
+
+
+.social.whatsapp{
+
+    background:#16a34a;
+}
+
+
+.social.instagram{
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #e1306c,
+            #f77737
+        );
+}
+
+
+.footer-bottom{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding-top:20px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    color:#9ca3af;
+
+    font-size:11px;
+}
+
+
+.footer-bottom strong{
+
+    color:#555;
+}
+
+
+.heart{
+
+    color:#ef4444;
+
+    font-size:14px;
+
+    margin:
+        0 2px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:900px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:30px;
+    }
+
+
+    .hero-content{
+
+        text-align:center;
+    }
+
+
+    .hero p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+    }
+
+
+    .hero-actions,
+    .hero-trust{
+
+        justify-content:center;
+    }
+
+
+    .resource-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .chapter-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .year-grid{
+
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+
+    .subject-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .footer-inner{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:35px;
+    }
+
+
+    .footer-brand{
+
+        grid-column:
+            1 / -1;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    nav{
+
+        padding:
+            15px;
+    }
+
+
+    .hero{
+
+        padding:
+            40px 15px
+            55px;
+    }
+
+
+    .hero-visual{
+
+        min-height:390px;
+    }
+
+
+    .rbse-hero-logo{
+
+        width:170px;
+
+        height:170px;
+    }
+
+
+    .rbse-floating{
+
+        padding:
+            9px 11px;
+
+        font-size:9px;
+    }
+
+
+    .rbse-floating img{
+
+        width:23px;
+
+        height:23px;
+    }
+
+
+    .rbse-floating.one{
+
+        left:0;
+
+        top:30px;
+    }
+
+
+    .rbse-floating.two{
+
+        right:0;
+
+        top:130px;
+    }
+
+
+    .rbse-floating.three{
+
+        left:15px;
+
+        bottom:25px;
+    }
+
+
+    .chapter-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .year-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .subject-years{
+
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+
+    .pyq-banner{
+
+        align-items:flex-start;
+
+        padding:22px;
+    }
+
+
+    .pyq-banner-logo{
+
+        width:60px;
+
+        height:60px;
+    }
+
+
+    .pyq-banner h3{
+
+        font-size:21px;
+    }
+
+
+    .footer-inner{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .footer-brand{
+
+        grid-column:auto;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:450px){
+
+    .brand-text{
+
+        font-size:18px;
+    }
+
+
+    .nav-logo{
+
+        width:45px;
+
+        height:45px;
+    }
+
+
+    .nav-badge{
+
+        font-size:9px;
+
+        padding:
+            7px 10px;
+    }
+
+
+    .hero h1{
+
+        font-size:45px;
+
+        letter-spacing:1px;
+    }
+
+
+    .hero h2{
+
+        font-size:20px;
+    }
+
+
+    .hero p{
+
+        font-size:13px;
+    }
+
+
+    .hero-actions{
+
+        flex-direction:column;
+
+        width:100%;
+    }
+
+
+    .hero-primary,
+    .hero-secondary{
+
+        width:100%;
+    }
+
+
+    .hero-visual{
+
+        min-height:350px;
+    }
+
+
+    .rbse-hero-logo{
+
+        width:145px;
+
+        height:145px;
+    }
+
+
+    .resource-card,
+    .notes-card{
+
+        padding:21px;
+    }
+
+
+    .notes-top h3{
+
+        font-size:21px;
+    }
+
+
+    .year-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .subject-years{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .feedback-floating{
+
+        right:15px;
+
+        bottom:15px;
+
+        padding:
+            13px 18px;
+
+        font-size:12px;
+    }
+
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        line-height:1.7;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+
+<nav>
+
+<a
+    href="index.html"
+    class="nav-brand"
+>
+
+<img
+    src="goal.png"
+    alt="THE GOAL Logo"
+    class="nav-logo"
+>
+
+<div class="brand-text">
+THE <span>GOAL</span>
+</div>
+
+</a>
+
+
+<div class="nav-badge">
+RBSE CLASS 10
+</div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<div class="hero-label">
+🏫 RBSE CLASS 10 • RAJASTHAN BOARD
+</div>
+
+
+<h1>
+<span>THE GOAL</span>
+</h1>
+
+
+<h2>
+RBSE Class 10 Preparation,
+Made Simple.
+</h2>
+
+
+<p>
+
+Chapter-wise Mathematics notes,
+previous year papers and subject-wise
+exam preparation resources — all in one place.
+
+<br><br>
+
+<strong>
+Learn → Practice → Revise → Improve
+</strong>
+
+</p>
+
+
+<div class="hero-actions">
+
+
+<a
+    href="#math-notes"
+    class="hero-primary"
+>
+📖 START WITH NOTES →
+</a>
+
+
+<a
+    href="#pyq"
+    class="hero-secondary"
+>
+📚 EXPLORE PYQs
+</a>
+
+
+</div>
+
+
+<div class="hero-trust">
+
+
+<div class="trust-item">
+
+<span class="trust-dot"></span>
+
+Chapter-wise Notes
+
+</div>
+
+
+<div class="trust-item">
+
+<span class="trust-dot"></span>
+
+2021–2025 PYQs
+
+</div>
+
+
+<div class="trust-item">
+
+<span class="trust-dot"></span>
+
+RBSE Class 10
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- HERO VISUAL -->
+
+<div class="hero-visual">
+
+
+<div class="visual-glow"></div>
+
+
+<img
+    src="rbse.png"
+    alt="RBSE Logo"
+    class="rbse-hero-logo"
+>
+
+
+<div class="rbse-floating one">
+
+<img
+    src="rbse.png"
+    alt="RBSE"
+>
+
+Mathematics
+
+</div>
+
+
+<div class="rbse-floating two">
+
+<img
+    src="rbse.png"
+    alt="RBSE"
+>
+
+Previous Year Papers
+
+</div>
+
+
+<div class="rbse-floating three">
+
+<img
+    src="rbse.png"
+    alt="RBSE"
+>
+
+Class 10
+
+</div>
+
+
+</div>
+
+</section>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     QUICK RESOURCE SECTION
+===================================================== -->
+
+<div class="section-title">
+
+<h2>
+Your RBSE Class 10 Resources
+</h2>
+
+<p>
+Start with chapter-wise notes, then practice real previous year papers.
+</p>
+
+</div>
+
+
+<section class="resource-grid">
+
+
+<!-- MATH NOTES -->
+
+<div class="resource-card">
+
+
+<div class="resource-header">
+
+
+<img
+    src="rbse.png"
+    alt="RBSE Logo"
+    class="resource-logo"
+>
+
+
+<div>
+
+<div class="resource-icon">
+🧮
+</div>
+
+<h3>
+Mathematics Notes
+</h3>
+
+</div>
+
+
+</div>
+
+
+<p>
+
+Chapter-wise Mathematics notes designed for
+RBSE Class 10 preparation. Study the concepts
+chapter by chapter and revise important points.
+
+</p>
+
+
+<a
+    href="#math-notes"
+    class="resource-btn"
+>
+📖 OPEN CHAPTER-WISE NOTES →
+</a>
+
+
+</div>
+
+
+<!-- PYQ -->
+
+<div class="resource-card">
+
+
+<div class="resource-header">
+
+
+<img
+    src="rbse.png"
+    alt="RBSE Logo"
+    class="resource-logo"
+>
+
+
+<div>
+
+<div class="resource-icon">
+📚
+</div>
+
+<h3>
+RBSE Previous Year Papers
+</h3>
+
+</div>
+
+
+</div>
+
+
+<p>
+
+Practice RBSE Class 10 previous year papers
+from 2021 to 2025 for Mathematics, Science,
+Social Science, Hindi and English.
+
+</p>
+
+
+<a
+    href="#pyq"
+    class="resource-btn"
+>
+📚 EXPLORE YEAR-WISE PYQs →
+</a>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     MATHEMATICS CHAPTER NOTES
+===================================================== -->
+
+<section
+    class="notes-section"
+    id="math-notes"
+>
+
+
+<div class="section-title">
+
+<h2>
+📖 Chapter-wise Mathematics Notes
+</h2>
+
+<p>
+Start your RBSE Mathematics preparation chapter by chapter.
+</p>
+
+</div>
+
+
+<div class="notes-card">
+
+
+<div class="notes-top">
+
+
+<img
+    src="rbse.png"
+    alt="RBSE Logo"
+    class="notes-logo"
+>
+
+
+<div>
+
+<h3>
+RBSE Class 10 Mathematics
+</h3>
+
+<p>
+Chapter-wise notes • Concept-focused • Exam-oriented
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="chapter-grid">
+
+
+<a
+    href="real-numbers.html"
+    class="chapter-link"
+>
+<span class="chapter-number">01</span>
+Real Numbers
+</a>
+
+
+<a
+    href="polynomials.html"
+    class="chapter-link"
+>
+<span class="chapter-number">02</span>
+Polynomials
+</a>
+
+
+<a
+    href="linear-equations.html"
+    class="chapter-link"
+>
+<span class="chapter-number">03</span>
+Pair of Linear Equations
+</a>
+
+
+<a
+    href="quadratic-equations.html"
+    class="chapter-link"
+>
+<span class="chapter-number">04</span>
+Quadratic Equations
+</a>
+
+
+<a
+    href="ap.html"
+    class="chapter-link"
+>
+<span class="chapter-number">05</span>
+Arithmetic Progressions
+</a>
+
+
+<a
+    href="triangles.html"
+    class="chapter-link"
+>
+<span class="chapter-number">06</span>
+Triangles
+</a>
+
+
+<a
+    href="coordinate.html"
+    class="chapter-link"
+>
+<span class="chapter-number">07</span>
+Coordinate Geometry
+</a>
+
+
+<a
+    href="trigonometry.html"
+    class="chapter-link"
+>
+<span class="chapter-number">08</span>
+Introduction to Trigonometry
+</a>
+
+
+<a
+    href="application_of_trignometry.html"
+    class="chapter-link"
+>
+<span class="chapter-number">09</span>
+Applications of Trigonometry
+</a>
+
+
+<a
+    href="#"
+    class="chapter-link"
+    onclick="return comingSoon()"
+>
+<span class="chapter-number">10</span>
+Coming Soon
+</a>
+
+
+<a
+    href="area_related_to_circle.html"
+    class="chapter-link"
+>
+<span class="chapter-number">11</span>
+Areas Related to Circle
+</a>
+
+
+<a
+    href="surface_area.html"
+    class="chapter-link"
+>
+<span class="chapter-number">12</span>
+Surface Areas
+</a>
+
+
+<a
+    href="statistics.html"
+    class="chapter-link"
+>
+<span class="chapter-number">13</span>
+Statistics
+</a>
+
+
+<a
+    href="probability.html"
+    class="chapter-link"
+>
+<span class="chapter-number">14</span>
+Probability
+</a>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     YEAR WISE PYQ
+===================================================== -->
+
+<section
+    class="pyq-section"
+    id="pyq"
+>
+
+
+<div class="section-title">
+
+<h2>
+📚 Year-wise RBSE PYQs
+</h2>
+
+<p>
+Choose a year and practice the actual RBSE Class 10 board paper.
+</p>
+
+</div>
+
+
+<div class="pyq-banner">
+
+
+<img
+    src="rbse.png"
+    alt="RBSE Logo"
+    class="pyq-banner-logo"
+>
+
+
+<div>
+
+<h3>
+RBSE Class 10 Previous Year Papers
+</h3>
+
+<p>
+Available for 2021, 2022, 2023, 2024 and 2025
+across major Class 10 subjects.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     ENGLISH
+===================================================== -->
+
+<div class="year-grid">
+
+
+<div class="year-card">
+
+<img
+    src="rbse.png"
+    class="year-logo"
+    alt="RBSE"
+>
+
+<h4>2021</h4>
+
+<a
+    href="RBSE ENGLISH 2021.pdf"
+    class="year-btn"
+    target="_blank"
+>
+OPEN ENGLISH
+</a>
+
+</div>
+
+
+<div class="year-card">
+
+<img
+    src="rbse.png"
+    class="year-logo"
+    alt="RBSE"
+>
+
+<h4>2022</h4>
+
+<a
+    href="RBSE ENGLISH 2022.pdf"
+    class="year-btn"
+    target="_blank"
+>
+OPEN ENGLISH
+</a>
+
+</div>
+
+
+<div class="year-card">
+
+<img
+    src="rbse.png"
+    class="year-logo"
+    alt="RBSE"
+>
+
+<h4>2023</h4>
+
+<a
+    href="RBSE ENGLISH 2023.pdf"
+    class="year-btn"
+    target="_blank"
+>
+OPEN ENGLISH
+</a>
+
+</div>
+
+
+<div class="year-card">
+
+<img
+    src="rbse.png"
+    class="year-logo"
+    alt="RBSE"
+>
+
+<h4>2024</h4>
+
+<a
+    href="RBSE ENGLISH 2024.pdf"
+    class="year-btn"
+    target="_blank"
+>
+OPEN ENGLISH
+</a>
+
+</div>
+
+
+<div class="year-card">
+
+<img
+    src="rbse.png"
+    class="year-logo"
+    alt="RBSE"
+>
+
+<h4>2025</h4>
+
+<a
+    href="RBSE ENGLISH 2025.pdf"
+    class="year-btn"
+    target="_blank"
+>
+OPEN ENGLISH
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     SUBJECT PYQ
+===================================================== -->
+
+<section
+    class="subject-section"
+>
+
+
+<div class="section-title">
+
+<h2>
+📑 Subject-wise Previous Year Papers
+</h2>
+
+<p>
+Select a subject and open the paper for your required year.
+</p>
+
+</div>
+
+
+<div class="subject-grid">
+
+
+<!-- =====================================================
+     MATHEMATICS
+===================================================== -->
+
+<div class="subject-pyq-card">
+
+
+<div class="subject-top">
+
+
+<img
+    src="rbse.png"
+    class="subject-rbse-logo"
+    alt="RBSE Logo"
+>
+
+
+<div>
+
+<h3>
+🧮 Mathematics
+</h3>
+
+<span>
+RBSE CLASS 10 • MATHS
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="subject-years">
+
+
+<a
+    href="RBSE MATH 2021.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2021
+
+</a>
+
+
+<a
+    href="RBSE MATH 2022.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2022
+
+</a>
+
+
+<a
+    href="RBSE MATH 2023.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2023
+
+</a>
+
+
+<a
+    href="RBSE MATH 2024.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2024
+
+</a>
+
+
+<a
+    href="RBSE MATH 2025.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2025
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     SCIENCE
+===================================================== -->
+
+<div class="subject-pyq-card">
+
+
+<div class="subject-top">
+
+
+<img
+    src="rbse.png"
+    class="subject-rbse-logo"
+    alt="RBSE Logo"
+>
+
+
+<div>
+
+<h3>
+🔬 Science
+</h3>
+
+<span>
+RBSE CLASS 10 • SCIENCE
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="subject-years">
+
+
+<a
+    href="RBSE SCIENCE 2021.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2021
+
+</a>
+
+
+<a
+    href="RBSE SCIENCE 2022.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2022
+
+</a>
+
+
+<a
+    href="RBSE SCIENCE 2023.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2023
+
+</a>
+
+
+<a
+    href="RBSE SCIENCE 2024.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2024
+
+</a>
+
+
+<a
+    href="RBSE SCIENCE 2025.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2025
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     SOCIAL SCIENCE
+===================================================== -->
+
+<div class="subject-pyq-card">
+
+
+<div class="subject-top">
+
+
+<img
+    src="rbse.png"
+    class="subject-rbse-logo"
+    alt="RBSE Logo"
+>
+
+
+<div>
+
+<h3>
+🌍 Social Science
+</h3>
+
+<span>
+RBSE CLASS 10 • SOCIAL SCIENCE
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="subject-years">
+
+
+<a
+    href="RBSE SS 2021.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2021
+
+</a>
+
+
+<a
+    href="RBSE SS 2022.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2022
+
+</a>
+
+
+<a
+    href="RBSE SS 2023.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2023
+
+</a>
+
+
+<a
+    href="RBSE SS 2024.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2024
+
+</a>
+
+
+<a
+    href="RBSE SS 2025.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2025
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     HINDI
+===================================================== -->
+
+<div class="subject-pyq-card">
+
+
+<div class="subject-top">
+
+
+<img
+    src="rbse.png"
+    class="subject-rbse-logo"
+    alt="RBSE Logo"
+>
+
+
+<div>
+
+<h3>
+📕 Hindi
+</h3>
+
+<span>
+RBSE CLASS 10 • HINDI
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="subject-years">
+
+
+<a
+    href="RBSE HINDI 2021.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2021
+
+</a>
+
+
+<a
+    href="RBSE HINDI 2022.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2022
+
+</a>
+
+
+<a
+    href="RBSE HINDI 2023.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2023
+
+</a>
+
+
+<a
+    href="RBSE HINDI 2024.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2024
+
+</a>
+
+
+<a
+    href="RBSE HINDI 2025.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2025
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     ENGLISH
+===================================================== -->
+
+<div class="subject-pyq-card">
+
+
+<div class="subject-top">
+
+
+<img
+    src="rbse.png"
+    class="subject-rbse-logo"
+    alt="RBSE Logo"
+>
+
+
+<div>
+
+<h3>
+📘 English
+</h3>
+
+<span>
+RBSE CLASS 10 • ENGLISH
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="subject-years">
+
+
+<a
+    href="RBSE ENGLISH 2021.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2021
+
+</a>
+
+
+<a
+    href="RBSE ENGLISH 2022.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2022
+
+</a>
+
+
+<a
+    href="RBSE ENGLISH 2023.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2023
+
+</a>
+
+
+<a
+    href="RBSE ENGLISH 2024.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2024
+
+</a>
+
+
+<a
+    href="RBSE ENGLISH 2025.pdf"
+    target="_blank"
+    class="subject-year"
+>
+
+<img src="rbse.png" alt="RBSE">
+
+2025
+
+</a>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTICE
+===================================================== -->
+
+<div class="notice">
+
+
+<div class="notice-icon">
+💡
+</div>
+
+
+<div>
+
+<h4>
+How to use THE GOAL for RBSE?
+</h4>
+
+
+<p>
+
+First study the chapter-wise Mathematics notes,
+then solve previous year papers subject-wise.
+Use the papers to understand the question pattern,
+important topics and exam-level practice.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<div class="footer-inner">
+
+
+<!-- BRAND -->
+
+<div class="footer-brand">
+
+
+<img
+    src="goal.png"
+    alt="THE GOAL Logo"
+    class="footer-logo"
+>
+
+
+<div class="footer-brand-title">
+THE GOAL
+</div>
+
+
+<p>
+RBSE Class 10 Learning Portal
+</p>
+
+
+<span>
+Learn • Practice • Revise • Achieve
+</span>
+
+
+</div>
+
+
+<!-- QUICK LINKS -->
+
+<div class="footer-column">
+
+
+<h4>
+Quick Links
+</h4>
+
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="rbse.html">
+RBSE Home
+</a>
+
+
+<a href="#math-notes">
+Mathematics Notes
+</a>
+
+
+<a href="#pyq">
+RBSE PYQs
+</a>
+
+
+</div>
+
+
+<!-- RESOURCES -->
+
+<div class="footer-column">
+
+
+<h4>
+RBSE Resources
+</h4>
+
+
+<a href="#math-notes">
+Chapter-wise Maths Notes
+</a>
+
+
+<a href="#pyq">
+Mathematics PYQs
+</a>
+
+
+<a href="#pyq">
+Science PYQs
+</a>
+
+
+<a href="#pyq">
+Social Science PYQs
+</a>
+
+
+<a href="#pyq">
+Hindi & English PYQs
+</a>
+
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+
+<div>
+
+© 2026
+
+<strong>
+THE GOAL
+</strong>
+
+· RBSE Class 10 Learning Portal
+
+</div>
+
+
+<div>
+
+Made with
+
+<span class="heart">
+♥
+</span>
+
+in India
+
+</div>
+
+
+</div>
+
+
+</footer>
+
+
+<script>
+
+function comingSoon(){
+
+    alert(
+        "Chapter 10 notes are coming soon. 🚀"
+    );
+
+    return false;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
