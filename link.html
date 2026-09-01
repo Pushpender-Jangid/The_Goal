@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>THE GOAL | Study Hub</title>
+
+<style>
+
+/* =========================================================
+   THE GOAL — PREMIUM LINK PAGE
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --blue:#2457E6;
+    --blue-dark:#173FAE;
+    --blue-light:#6689F5;
+    --yellow:#FFD83D;
+
+    --bg:#F5F7FC;
+    --text:#11172A;
+    --muted:#788096;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body{
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% -8%,
+            rgba(36,87,230,.15),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            #F8FAFF 0%,
+            #F3F6FB 100%
+        );
+
+    color:var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND MATH
+========================================================= */
+
+.math-bg{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+    overflow:hidden;
+
+    z-index:0;
+}
+
+.math{
+    position:absolute;
+
+    color:var(--blue);
+
+    opacity:.035;
+
+    font-weight:900;
+
+    user-select:none;
+}
+
+.math1{
+    top:8%;
+    left:4%;
+    font-size:85px;
+    transform:rotate(-15deg);
+}
+
+.math2{
+    top:28%;
+    right:3%;
+    font-size:75px;
+    transform:rotate(12deg);
+}
+
+.math3{
+    top:58%;
+    left:2%;
+    font-size:95px;
+}
+
+.math4{
+    bottom:13%;
+    right:5%;
+    font-size:80px;
+    transform:rotate(-12deg);
+}
+
+.math5{
+    bottom:38%;
+    right:45%;
+    font-size:55px;
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.wrapper{
+    position:relative;
+
+    z-index:2;
+
+    width:min(520px,92%);
+
+    min-height:100vh;
+
+    margin:auto;
+
+    padding:
+        34px 0
+        45px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile{
+    text-align:center;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-wrap{
+    position:relative;
+
+    width:108px;
+    height:108px;
+
+    margin:auto;
+}
+
+.logo{
+    width:100%;
+    height:100%;
+
+    padding:5px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 14px 38px
+        rgba(25,48,100,.16);
+
+    animation:
+        floating 4s ease-in-out infinite;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    border-radius:50%;
+}
+
+.logo-wrap::after{
+    content:"";
+
+    position:absolute;
+
+    inset:-7px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(36,87,230,.16);
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand{
+    margin-top:18px;
+
+    font-size:25px;
+
+    font-weight:950;
+
+    letter-spacing:4px;
+}
+
+.verified{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:17px;
+    height:17px;
+
+    margin-left:3px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    color:white;
+
+    font-size:9px;
+
+    vertical-align:3px;
+
+    box-shadow:
+        0 3px 8px
+        rgba(36,87,230,.25);
+}
+
+
+/* =========================================================
+   BIO
+========================================================= */
+
+.bio{
+    margin-top:9px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    font-weight:500;
+}
+
+
+/* =========================================================
+   STUDY BADGE
+========================================================= */
+
+.study-badge{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-top:13px;
+
+    padding:
+        7px 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFF6C7,
+            #FFF1A3
+        );
+
+    color:#6D5900;
+
+    border-radius:30px;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 5px 14px
+        rgba(180,150,0,.08);
+}
+
+
+/* =========================================================
+   LINK AREA
+========================================================= */
+
+.links{
+    margin-top:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+}
+
+
+/* =========================================================
+   ALL MAIN BUTTONS
+========================================================= */
+
+.link{
+    position:relative;
+
+    width:100%;
+
+    min-height:88px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        16px 72px;
+
+    border-radius:29px;
+
+    text-decoration:none;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1F55E5 0%,
+            #3569EA 45%,
+            #6689F5 100%
+        );
+
+    border:none;
+
+    box-shadow:
+
+        0 8px 0
+        var(--blue-dark),
+
+        0 18px 38px
+        rgba(36,87,230,.23),
+
+        inset 0 1px 1px
+        rgba(255,255,255,.28);
+
+    font-size:14px;
+
+    font-weight:950;
+
+    letter-spacing:.15px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* =========================================================
+   GLOSS EFFECT
+========================================================= */
+
+.link::before{
+    content:"";
+
+    position:absolute;
+
+    top:-80%;
+    left:-35%;
+
+    width:42%;
+    height:260%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.32),
+            transparent
+        );
+
+    transform:rotate(20deg);
+
+    transition:.65s;
+}
+
+.link:hover::before{
+    left:115%;
+}
+
+.link:hover{
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+
+        0 9px 0
+        var(--blue-dark),
+
+        0 25px 45px
+        rgba(36,87,230,.31),
+
+        inset 0 1px 1px
+        rgba(255,255,255,.35);
+}
+
+
+/* =========================================================
+   ICON CIRCLE
+========================================================= */
+
+.icon{
+    position:absolute;
+
+    left:14px;
+
+    width:58px;
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.16);
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:
+
+        inset 0 2px 5px
+        rgba(255,255,255,.15),
+
+        0 5px 14px
+        rgba(0,0,0,.09);
+
+    font-size:24px;
+
+    z-index:2;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.arrow{
+    position:absolute;
+
+    right:14px;
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.16);
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    color:#FFFFFF;
+
+    font-size:19px;
+
+    font-weight:900;
+
+    transition:.25s;
+
+    z-index:2;
+}
+
+.link:hover .arrow{
+    background:
+        rgba(255,255,255,.26);
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   BUTTON TEXT
+========================================================= */
+
+.hero-text{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:5px;
+
+    z-index:2;
+}
+
+.hero-main{
+    font-size:18px;
+
+    font-weight:950;
+
+    letter-spacing:.2px;
+}
+
+.hero-sub{
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:1.7px;
+
+    opacity:.78;
+}
+
+
+/* =========================================================
+   LATEST BADGE
+========================================================= */
+
+.new{
+    position:absolute;
+
+    top:9px;
+
+    right:62px;
+
+    padding:
+        5px 9px;
+
+    border-radius:8px;
+
+    background:var(--yellow);
+
+    color:#554500;
+
+    font-size:6px;
+
+    font-weight:950;
+
+    letter-spacing:1px;
+
+    box-shadow:
+        0 3px 8px
+        rgba(0,0,0,.10);
+
+    z-index:3;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    margin:
+        31px 0
+        -1px;
+
+    color:#9198A9;
+
+    font-size:8px;
+
+    font-weight:950;
+
+    letter-spacing:2px;
+}
+
+.section::before,
+.section::after{
+    content:"";
+
+    height:1px;
+
+    flex:1;
+
+    background:#DEE3EC;
+}
+
+
+/* =========================================================
+   VERSION BADGE
+========================================================= */
+
+.version-badge{
+    position:absolute;
+
+    top:9px;
+
+    left:63px;
+
+    padding:
+        4px 8px;
+
+    border-radius:7px;
+
+    background:
+        rgba(255,255,255,.17);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    color:#fff;
+
+    font-size:6px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    z-index:3;
+}
+
+
+/* =========================================================
+   SOCIAL ROW
+========================================================= */
+
+.social-row{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+    margin-top:16px;
+}
+
+
+/* =========================================================
+   SOCIAL BUTTON
+========================================================= */
+
+.social{
+    min-height:74px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    border-radius:25px;
+
+    background:#FFFFFF;
+
+    border:
+        1px solid
+        #E2E6EF;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    font-size:11px;
+
+    font-weight:950;
+
+    box-shadow:
+        0 8px 22px
+        rgba(28,48,90,.07);
+
+    transition:.25s;
+}
+
+.social:hover{
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(28,48,90,.12);
+}
+
+
+/* =========================================================
+   SOCIAL ICON CIRCLE
+========================================================= */
+
+.social-icon{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#EEF2FF;
+
+    box-shadow:
+        inset 0 1px 2px
+        rgba(255,255,255,.9);
+}
+
+
+/* =========================================================
+   INSTAGRAM ORIGINAL-STYLE LOGO
+========================================================= */
+
+.instagram-logo{
+
+    width:25px;
+    height:25px;
+
+    border-radius:7px;
+
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle at 68% 28%,
+            #FFD600 0%,
+            #FF7A00 28%,
+            #E1306C 52%,
+            #C13584 70%,
+            #833AB4 100%
+        );
+
+    box-shadow:
+        0 3px 8px
+        rgba(225,48,108,.22);
+}
+
+
+/* Instagram outer camera */
+
+.instagram-logo::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:4px;
+
+    border:
+        2px solid
+        #FFFFFF;
+
+    border-radius:6px;
+}
+
+
+/* Instagram lens */
+
+.instagram-logo::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:6px;
+    height:6px;
+
+    left:7.5px;
+    top:7.5px;
+
+    border:
+        2px solid
+        #FFFFFF;
+
+    border-radius:50%;
+
+    box-shadow:
+        7px -7px 0 -2px #FFFFFF;
+}
+
+
+/* =========================================================
+   YOUTUBE ORIGINAL-STYLE LOGO
+========================================================= */
+
+.youtube-logo{
+
+    width:29px;
+    height:21px;
+
+    position:relative;
+
+    background:#FF0000;
+
+    border-radius:6px;
+
+    box-shadow:
+        0 3px 8px
+        rgba(255,0,0,.22);
+}
+
+
+/* YouTube play */
+
+.youtube-logo::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:11px;
+    top:5.5px;
+
+    width:0;
+    height:0;
+
+    border-top:
+        5px solid transparent;
+
+    border-bottom:
+        5px solid transparent;
+
+    border-left:
+        8px solid #FFFFFF;
+}
+
+
+/* =========================================================
+   YOUTUBE COMING SOON
+========================================================= */
+
+.social-disabled{
+
+    opacity:.62;
+
+    cursor:not-allowed;
+
+    user-select:none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    margin-top:38px;
+
+    text-align:center;
+
+    color:#9BA1AF;
+
+    font-size:8px;
+
+    line-height:1.9;
+
+    letter-spacing:1px;
+}
+
+.footer strong{
+    color:#697184;
+}
+
+
+/* =========================================================
+   FLOATING LOGO
+========================================================= */
+
+@keyframes floating{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .wrapper{
+        width:91%;
+
+        padding-top:29px;
+    }
+
+    .logo-wrap{
+        width:94px;
+        height:94px;
+    }
+
+    .brand{
+        font-size:22px;
+
+        letter-spacing:3px;
+    }
+
+    .bio{
+        font-size:9px;
+    }
+
+    .links{
+        margin-top:27px;
+
+        gap:14px;
+    }
+
+    .link{
+        min-height:82px;
+
+        border-radius:26px;
+
+        font-size:13px;
+
+        padding-left:70px;
+
+        padding-right:61px;
+    }
+
+    .icon{
+        width:53px;
+        height:53px;
+
+        left:13px;
+
+        font-size:21px;
+    }
+
+    .arrow{
+        width:37px;
+        height:37px;
+
+        right:13px;
+
+        font-size:16px;
+    }
+
+    .hero-main{
+        font-size:16px;
+    }
+
+    .hero-sub{
+        font-size:7px;
+    }
+
+    .new{
+        right:54px;
+    }
+
+    .version-badge{
+        left:57px;
+    }
+
+    .social{
+        min-height:69px;
+
+        border-radius:22px;
+
+        font-size:10px;
+    }
+
+    .social-icon{
+        width:37px;
+        height:37px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media(max-width:360px){
+
+    .link{
+        font-size:11px;
+
+        padding-left:59px;
+
+        padding-right:57px;
+    }
+
+    .hero-main{
+        font-size:14px;
+    }
+
+    .section{
+        font-size:7px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     BACKGROUND MATH
+========================================================= -->
+
+<div class="math-bg">
+
+    <div class="math math1">π</div>
+
+    <div class="math math2">√x</div>
+
+    <div class="math math3">x²</div>
+
+    <div class="math math4">∑</div>
+
+    <div class="math math5">△</div>
+
+</div>
+
+
+
+<div class="wrapper">
+
+
+<!-- =========================================================
+     PROFILE
+========================================================= -->
+
+<section class="profile">
+
+
+    <div class="logo-wrap">
+
+        <div class="logo">
+
+            <img
+                src="goal.png"
+                alt="THE GOAL Logo"
+            >
+
+        </div>
+
+    </div>
+
+
+    <div class="brand">
+
+        THE GOAL
+
+        <span class="verified">
+            ✓
+        </span>
+
+    </div>
+
+
+    <div class="bio">
+
+        CBSE Class 9th & 10th Mathematics
+
+        <br>
+
+        PYQs • Notes • MCQs • Board Preparation
+
+    </div>
+
+
+    <div class="study-badge">
+
+        🎯 Study Smart • Score Better
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     MAIN RESOURCES
+========================================================= -->
+
+<div class="links">
+
+
+    <!-- =====================================================
+         2026 PYQ
+    ====================================================== -->
+
+    <a
+        href="https://pushpender-jangid.github.io/The_Goal/2026-pyq.html"
+        target="_blank"
+        rel="noopener"
+        class="link"
+    >
+
+        <span class="new">
+            LATEST
+        </span>
+
+
+        <span class="icon">
+            🔥
+        </span>
+
+
+        <span class="hero-text">
+
+            <span class="hero-main">
+                CBSE 2026 MATHS PYQs
+            </span>
+
+            <span class="hero-sub">
+                BOARD EXAM • CHAPTERWISE
+            </span>
+
+        </span>
+
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+
+
+    <!-- =====================================================
+         2025 BASIC
+    ====================================================== -->
+
+    <a
+        href="https://pushpender-jangid.github.io/The_Goal/2025-basic.html"
+        target="_blank"
+        rel="noopener"
+        class="link"
+    >
+
+        <span class="version-badge">
+            BASIC
+        </span>
+
+
+        <span class="icon">
+            📚
+        </span>
+
+
+        <span class="hero-text">
+
+            <span class="hero-main">
+                CBSE 2025 MATHS PYQs
+            </span>
+
+            <span class="hero-sub">
+                BASIC • BOARD EXAM
+            </span>
+
+        </span>
+
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+
+
+    <!-- =====================================================
+         2025 STANDARD
+    ====================================================== -->
+
+    <a
+        href="https://pushpender-jangid.github.io/The_Goal/2025-standard.html"
+        target="_blank"
+        rel="noopener"
+        class="link"
+    >
+
+        <span class="version-badge">
+            STANDARD
+        </span>
+
+
+        <span class="icon">
+            🚀
+        </span>
+
+
+        <span class="hero-text">
+
+            <span class="hero-main">
+                CBSE 2025 MATHS PYQs
+            </span>
+
+            <span class="hero-sub">
+                STANDARD • BOARD EXAM
+            </span>
+
+        </span>
+
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     MATHS RESOURCES
+========================================================= -->
+
+<div class="section">
+
+    MATHS RESOURCES
+
+</div>
+
+
+<div class="links">
+
+
+    <a
+        href="https://pushpender-jangid.github.io/The_Goal/math.html"
+        target="_blank"
+        rel="noopener"
+        class="link"
+    >
+
+        <span class="icon">
+            📖
+        </span>
+
+
+        <span class="hero-text">
+
+            <span class="hero-main">
+                CLASS 10 CHAPTERWISE NOTES
+            </span>
+
+            <span class="hero-sub">
+                CONCEPTS • FORMULAS • EXAMPLES
+            </span>
+
+        </span>
+
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     IT 402
+========================================================= -->
+
+<div class="section">
+
+    INFORMATION TECHNOLOGY • 402
+
+</div>
+
+
+<div class="links">
+
+
+    <!-- IT NOTES -->
+
+    <a
+        href="https://pushpender-jangid.github.io/The_Goal/it.html"
+        target="_blank"
+        rel="noopener"
+        class="link"
+    >
+
+        <span class="icon">
+            💻
+        </span>
+
+
+        <span class="hero-text">
+
+            <span class="hero-main">
+                IT 402 — COMPLETE NOTES
+            </span>
+
+            <span class="hero-sub">
+                THEORY • IMPORTANT TOPICS
+            </span>
+
+        </span>
+
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+
+
+    <!-- IT MCQ -->
+
+    <a
+        href="https://pushpender-jangid.github.io/The_Goal/it.html"
+        target="_blank"
+        rel="noopener"
+        class="link"
+    >
+
+        <span class="icon">
+            🧠
+        </span>
+
+
+        <span class="hero-text">
+
+            <span class="hero-main">
+                IT 402 — MCQ TEST
+            </span>
+
+            <span class="hero-sub">
+                PRACTICE • TEST YOURSELF
+            </span>
+
+        </span>
+
+
+        <span class="arrow">
+            →
+        </span>
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     SOCIAL
+========================================================= -->
+
+<div class="section">
+
+    FOLLOW THE GOAL
+
+</div>
+
+
+<div class="social-row">
+
+
+    <!-- =====================================================
+         INSTAGRAM
+    ====================================================== -->
+
+    <a
+        href="https://www.instagram.com/shreya_sharma_10th/"
+        target="_blank"
+        rel="noopener"
+        class="social"
+    >
+
+        <span class="social-icon">
+
+            <span class="instagram-logo"></span>
+
+        </span>
+
+        INSTAGRAM
+
+    </a>
+
+
+
+    <!-- =====================================================
+         YOUTUBE — COMING SOON
+    ====================================================== -->
+
+    <div
+        class="social social-disabled"
+        title="YouTube link coming soon"
+    >
+
+        <span class="social-icon">
+
+            <span class="youtube-logo"></span>
+
+        </span>
+
+        YOUTUBE
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <strong>THE GOAL</strong>
+
+    <br>
+
+    CBSE CLASS 9th & 10th MATHEMATICS
+
+    <br>
+
+    PRACTICE • IMPROVE • SCORE
+
+</footer>
+
+
+</div>
+
+</body>
+</html>
