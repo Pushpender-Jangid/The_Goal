@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Goal — STSE 2026 LCT Hindi Practice Tests</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F3FA;
+  --paper-2:#EBE6F5;
+  --ink:#241934;
+  --ink-soft:#665E77;
+  --purple:#723FA3;
+  --purple-deep:#5B2F86;
+  --blue:#4DA4E0;
+  --blue-deep:#3487C4;
+  --green:#1F8A5F;
+  --red:#C0392B;
+  --line:#DBD3EA;
+  --card:#FFFFFF;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  box-sizing:border-box;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#191420; --paper-2:#221B2C; --ink:#EDE8F5; --ink-soft:#B3A9C4;
+    --card:#231C2D; --line:#3B3049;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#191420; --paper-2:#221B2C; --ink:#EDE8F5; --ink-soft:#B3A9C4;
+  --card:#231C2D; --line:#3B3049;
+}
+html{scroll-padding-top: env(safe-area-inset-top, 0px);}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Poppins', 'Noto Sans Devanagari', system-ui, sans-serif;
+  min-height:100%;
+  line-height:1.5;
+}
+.wrap{max-width:880px; margin:0 auto; padding:24px 20px 60px;}
+h1,h2,h3{font-family:'Poppins', sans-serif; margin:0 0 6px; font-weight:700;}
+.hindi{font-family:'Noto Sans Devanagari', sans-serif;}
+.masthead{
+  display:flex; align-items:center; gap:14px; margin-bottom:24px;
+  padding-bottom:16px; border-bottom:2px solid var(--line);
+}
+.masthead img{width:52px; height:52px; flex-shrink:0;}
+.masthead .title{font-size:1.25rem; letter-spacing:.2px; font-weight:700; color:var(--purple);}
+.masthead .sub{color:var(--ink-soft); font-size:.82rem; margin-top:2px;}
+.badge{
+  margin-left:auto; font-size:.72rem; color:#fff; background:var(--blue);
+  padding:4px 11px; border-radius:20px; white-space:nowrap; font-weight:600;
+}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:6px;
+  padding:20px 22px; margin-bottom:16px;
+}
+.field label{display:block; font-size:.82rem; color:var(--ink-soft); margin-bottom:6px;}
+input[type=text]{
+  width:100%; padding:11px 13px; font-size:1rem; font-family:inherit;
+  border:1px solid var(--line); border-radius:5px; background:var(--paper);
+  color:var(--ink);
+}
+input[type=text]:focus{outline:2px solid var(--purple); outline-offset:1px;}
+button{font-family:inherit; cursor:pointer;}
+.btn{
+  background:var(--purple); color:#fff; border:none; border-radius:5px;
+  padding:11px 20px; font-size:.95rem; font-weight:600;
+}
+.btn:hover{background:var(--purple-deep);}
+.btn:disabled{background:var(--line); color:var(--ink-soft); cursor:not-allowed;}
+.btn.ghost{background:transparent; color:var(--purple); border:1px solid var(--purple);}
+.btn.ghost:hover{background:var(--purple); color:#fff;}
+.paper-list{display:grid; gap:12px; margin-top:6px;}
+.paper-row{
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  border:1px solid var(--line); border-radius:6px; padding:14px 16px; background:var(--paper-2);
+  flex-wrap:wrap;
+}
+.paper-row .pname{font-family:'Poppins', sans-serif; font-weight:600; font-size:1.05rem;}
+.paper-row .pmeta{color:var(--ink-soft); font-size:.8rem; margin-top:2px;}
+.pill{
+  font-size:.72rem; padding:2px 8px; border-radius:20px; border:1px solid var(--green); color:var(--green);
+}
+.hidden{display:none !important;}
+#test-header{
+  display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;
+  position:sticky; top:env(safe-area-inset-top, 0px); background:var(--paper);
+  padding:10px 0; border-bottom:2px solid var(--ink); z-index:5;
+}
+#timer{font-variant-numeric:tabular-nums; font-weight:700; color:var(--purple); font-size:1.1rem;}
+.palette{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 18px;}
+.palette button{
+  width:34px; height:34px; border-radius:4px; border:1px solid var(--line); background:var(--card);
+  color:var(--ink); font-size:.82rem; font-weight:600;
+}
+.palette button.answered{background:var(--green); color:#fff; border-color:var(--green);}
+.passage-box{
+  border-left:4px solid var(--blue); background:var(--paper-2); padding:14px 18px; margin-bottom:20px;
+  font-family:'Poppins', sans-serif; font-size:1rem; line-height:1.8;
+}
+.qblock{border-bottom:1px solid var(--line); padding:18px 0;}
+.qnum{color:var(--purple); font-weight:700; margin-right:6px;}
+.qtext{font-size:1.02rem; margin-bottom:10px;}
+.opt{
+  display:flex; gap:10px; align-items:flex-start; padding:8px 10px; border-radius:5px; margin-bottom:6px;
+  border:1px solid transparent; cursor:pointer;
+}
+.opt:hover{background:var(--paper-2);}
+.opt input{margin-top:3px;}
+.opt.selected{border-color:var(--purple); background:var(--paper-2);}
+.review .opt.correct-answer{border-color:var(--green); background:rgba(31,111,84,.12);}
+.review .opt.wrong-selected{border-color:var(--red); background:rgba(192,57,43,.12);}
+.stat-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin:18px 0;}
+.stat{border:1px solid var(--line); border-radius:6px; padding:14px; text-align:center; background:var(--paper-2);}
+.stat .num{font-family:'Poppins', sans-serif; font-size:1.7rem; font-weight:700;}
+.stat .lab{font-size:.78rem; color:var(--ink-soft); margin-top:2px;}
+.bar-row{display:flex; align-items:center; gap:10px; margin:6px 0; font-size:.88rem;}
+.bar-row .name{width:170px; flex-shrink:0;}
+.bar-track{flex:1; background:var(--paper-2); border-radius:20px; height:10px; overflow:hidden;}
+.bar-fill{height:100%; background:var(--green); border-radius:20px;}
+.bar-pct{width:64px; text-align:right; color:var(--ink-soft); flex-shrink:0;}
+table.hist{width:100%; border-collapse:collapse; font-size:.88rem;}
+table.hist th, table.hist td{text-align:left; padding:8px 6px; border-bottom:1px solid var(--line);}
+.footer-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;}
+.tag-correct{color:var(--green); font-weight:600;}
+.tag-wrong{color:var(--red); font-weight:600;}
+.tag-skip{color:var(--ink-soft); font-weight:600;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="masthead">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAABLEklEQVR42u3dd3gc12Eu/PfMzPZdAIveCBIgCbD3qt4ty5Zkyb3EPY7jksTJzU1cbj5/8ef4+saJ4yiJrx3bceSiyI4sS7IkW5WqpNh7AxuI3sv2nZlzvj8WpCVKFBbAYgvw/p5Hj0Rxd7F7MDvv6UcopRSIiIgoqzQWAREREQOYiIiIAUxEREQMYCIiIgYwERERMYCJiIgYwERERMQAJiIiYgATERERA5iIiIgBTERExAAmIiIiBjAREREDmIiIiBjAREREDGAiIiJiABMRETGAiYiIiAFMRETEACYiImIAExEREQOYiIiIAUxEREQMYCIiIgYwERERMYCJiIgYwERERMQAJiIiYgATERExgImIiIgBTERExAAmIiIiBjAREREDmIiIiBjAREREDGAiIiJiABMRETGAiYiIGMBERETEACYiImIAExEREQOYiIiIAUxEREQMYCIiIgYwERERMYCJiIgYwERERAxgIiIiYgATERExgImIiIgBTERExAAmIiIiBjAREREDmIiIiBjAREREDGAiIiIGMBERETGAiYiIGMBERETEACYiImIAExEREQOYiIiIAUxEREQMYCIiIgYwERERA5iIiIgYwERERAxgIiIiYgATERExgImIiIgBTERExAAmIiIiBjAREREDmIiIiAFMREREDGAiIiIGMBERETGAiYiIGMBERETEACYiImIAExEREQOYiIiIAUxERMQAJiIiIgYwERERA5iIiIgYwERERAxgIiIiYgATERExgImIiIgBTERExAAmIiIiBjAREREDmIiIiAFMREREDGAiIiIGMBERETGAiYiIGMBERETEACYiImIAExEREQOYiIiIAUxERMQAJiIiIgYwERERA5iIiIgYwERERAxgIiIiYgATERExgImIiIgBTERExAAmIiJiABMREREDmIiIiAFMREREDGAiIiIGMBERETGAiYiIGMBERETEACYiImIAExERMYCJiIiIAUxERMQAJiIiIgYwERERA5iIiIgYwERERAxgIiIiYgATERExgImIiOYgg0VAc91jjz2GQ4cOQdNmrj4qpcT69etx0003veHf//SnP0VXVxeEEFBK4Y477sCSJUum/XNPnDiBhx566OLr1tfX4wMf+EBaz92+fTue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IVFSITySwHBvGKP9UQz3RjA2HEd4OI7oWBy2qVLjWHZqM35d16DpgMtrwB/0IFDiRnGFFyWVPgSrfCgq88Dp5jhLOsJJif6ojcGYRF84ieGYxFhCIpSwkbBT9xzLVoAAHONjax5DwO/UUOzSUOo1UOl3oMwtUO4zePNJtxIaNTHcF8VIXwQjfRGMDsQQGYkjNBJDMmZD2qlrXimMX+8ChkuDr9iNQIkbgVI3glV+FFd6EazyTflc3rkmaSsMxWwMRCX6IxYGohZG4zZCSYmoqSCVGJ+Zn5phrQFwaIDfqSHg0hD06KjwGSj3Gqjwaih26TxGkQFMREQ0+3B1NBEREQOYiIiIAUxEREQMYCIiIgYwERERMYCJiIgYwERERMQAJiIiYgATERERA5iIiIgBTERExAAmIiIiBjAREREDmIiIiBjAREREDGAiIiJiABMRETGAiYiIiAFMRETEACYiImIAExEREQOYiIiIAUxEREQMYCIiIgYwERERMYCJiIgYwERERMQAJiIiYgATERExgImIiIgBTERExAAmIiIiBjAREREDmIiIiBjAREREDGAiIiJiABMRETGAiYiIGMBERETEACYiImIAExEREQOYiIiIAUxEREQMYCIiIgYwERERMYCJiIgYwERERAxgIiIiYgATERExgImIiIgBTERExAAmIiIiBjAREREDmIiIiBjAREREDGAiIiIGMBERETGAiYiIGMBERETEACYiImIAExEREQOYiIiIAUxEREQMYCIiIgYwERERA5iIiIgYwERERAxgIiIiYgATERExgImIiIgBTERExAAmIiIiBjAREREDmIiIiAFMREREDGAiIiIGMBERETGAiYiIGMBERETEACYiImIAExEREQOYiIiIAUxERMQAZhEQERExgImIiBjARERExAAmIiJiABMREREDmIiIiAFMREREDGAiIiIGMBERETGAiYiIGMBEREQMYCIiImIAExERMYCJiIiIAUxERMQAJiIiIgYwERERA5iIiIgYwERERAxgIiIiBjARERExgImIiBjARERExAAmIiJiABMREREDmIiIiAFMREREDGAiIiIGMBEREQOYiIiIGMBEREQMYCIiImIAExERMYCJiIiIAUxERMQAJiIiIgYwERERA5iIiIgBTERERAxgIiIiBjARERExgImIiBjARERExAAmIiJiABMREREDmIiIiAFMRETEACYiIiIGMBEREQOYiIiIGMBEREQMYCIiImIAExERMYCJiIiIAUxERMQAJiIiYgATERERA5iIiIgBTERERAxgIiIiBjARERExgImIiBjARERExAAmIiJiABMRETGAiYiIiAFMRETEACYiIiIGMBEREQOYiIiIGMBEREQMYCIiImIAExERMYCJiIgYwERERMQAJiIiYgATERERA5iIiIgBTERERAxgIiIiBjARERExgImIiBjAREREDGAiIiJiABMRETGAiYiIiAFMRETEACYiIiIGMBEREQOYiIiIGMBEREQMYCIiImIAExERMYCJiIgYwERERMQAJiIiYgATERERA5iIiIgBTERERAxgIiIiBjARERExgImIiBjAREREDGAiIiJiABMRETGAiYiIiAFMRETEACYiIiIGMBEREQOYiIiIGMBEREQMYCIiIgYwERERzaz/H0LRHO8jOK5EAAAAAElFTkSuQmCC" alt="The Goal">
+    <div>
+      <div class="title">The Goal — STSE 2026 LCT Hindi</div>
+      <div class="sub">5 Model Papers · 200 Questions · 40 Marks / 45 Minutes each</div>
+    </div>
+    <div class="badge">40 Marks</div>
+  </div>
+
+  <!-- SCREEN 1: HOME -->
+  <div id="screen-home">
+    <div class="card field">
+      <label for="uname">Enter your name</label>
+      <input type="text" id="uname" placeholder="e.g. Rahul Sharma" autocomplete="off">
+    </div>
+
+    <div class="card">
+      <h2 style="font-size:1.1rem;">Choose a Model Paper</h2>
+      <div class="paper-list" id="paper-list"></div>
+    </div>
+
+    <div class="card hidden" id="history-card">
+      <h2 style="font-size:1.1rem;">Previous Results</h2>
+      <table class="hist" id="hist-table"></table>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: TEST -->
+  <div id="screen-test" class="hidden">
+    <div id="test-header">
+      <div>
+        <strong id="test-title"></strong>
+        <div class="sub" id="test-sub" style="color:var(--ink-soft); font-size:.8rem;"></div>
+      </div>
+      <div id="timer">45:00</div>
+    </div>
+    <div class="palette" id="palette"></div>
+    <div id="passage-container"></div>
+    <div id="questions"></div>
+    <div class="footer-actions">
+      <button class="btn" id="submit-btn">Submit Test</button>
+      <button class="btn ghost" id="exit-btn">Exit Test</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: RESULT -->
+  <div id="screen-result" class="hidden">
+    <div class="card">
+      <h2 id="res-title" style="font-size:1.2rem;"></h2>
+      <div class="sub" id="res-sub" style="color:var(--ink-soft);"></div>
+      <div class="stat-grid" id="stat-grid"></div>
+    </div>
+
+    <div class="card">
+      <h3 style="font-size:1rem;">Topic-wise Analysis</h3>
+      <div id="topic-analysis"></div>
+    </div>
+
+    <div class="card">
+      <h3 style="font-size:1rem;">Question-wise Review</h3>
+      <div id="review-list" class="review"></div>
+    </div>
+
+    <div class="footer-actions">
+      <button class="btn" id="back-home-btn">Back to Home</button>
+    </div>
+  </div>
+</div>
+
+<script id="papers-data" type="application/json">[{"passage": "मानव जीवन का वास्तविक सौंदर्य और सार्थकता निस्वार्थ सेवा भाव एवं कठिन परिश्रम में निहित है। जो मनुष्य केवल अपने स्वार्थ के लिए जीता है, उसका जीवन सीमित रह जाता है। परोपकार ही मानव का सच्चा धर्म है। जीवन में आने वाली कठिनाइयों से घबराए बिना जो निरंतर अपने लक्ष्य की ओर अग्रसर रहते हैं, वे ही सफलता के शिखर पर पहुँचते हैं।", "questions": [{"n": 1, "q": "प्रस्तुत गद्यांश में 'मानव धर्म' किसे कहा गया है?", "opts": {"A": "केवल धन कमाना", "B": "निस्वार्थ भाव से समाज सेवा करना", "C": "स्वयं के सुख की चिंता करना", "D": "पद और प्रतिष्ठा प्राप्त करना"}, "ans": "B"}, {"n": 2, "q": "'परोपकार' शब्द में कौन सी संधि है?", "opts": {"A": "दीर्घ संधि", "B": "गुण संधि", "C": "वृद्धि संधि", "D": "यण संधि"}, "ans": "B"}, {"n": 3, "q": "गद्यांश के अनुसार सफलता का मूल मंत्र क्या है?", "opts": {"A": "कठिन परिश्रम और सतत प्रयास", "B": "भाग्य के भरोसे बैठना", "C": "दूसरों पर निर्भर रहना", "D": "अवसर की प्रतीक्षा करना"}, "ans": "A"}, {"n": 4, "q": "'सत्यनिष्ठा' का विलोम शब्द क्या होगा?", "opts": {"A": "असत्यता", "B": "छल", "C": "मिथ्याचार/अविश्वास", "D": "दुराचार"}, "ans": "C"}, {"n": 5, "q": "'निस्वार्थ' शब्द में कौन सा उपसर्ग प्रयुक्त हुआ है?", "opts": {"A": "निर", "B": "निस", "C": "निः", "D": "नि"}, "ans": "C"}, {"n": 6, "q": "'हिमालय' शब्द का सही संधि-विच्छेद है:", "opts": {"A": "हिम + आलय", "B": "हिमा + लय", "C": "हिम + लय", "D": "हिमा + आलय"}, "ans": "A"}, {"n": 7, "q": "'महोत्सव' शब्द में कौन-सी संधि है?", "opts": {"A": "यण संधि", "B": "गुण संधि", "C": "अयादि संधि", "D": "वृद्धि संधि"}, "ans": "B"}, {"n": 8, "q": "'इत्यादि' (इति + आदि) में कौन सी संधि है?", "opts": {"A": "यण संधि", "B": "दीर्घ संधि", "C": "गुण संधि", "D": "व्यंजन संधि"}, "ans": "A"}, {"n": 9, "q": "'सज्जन' शब्द का संधि विच्छेद क्या होगा?", "opts": {"A": "सज + जन", "B": "सत् + जन", "C": "समा + जन", "D": "सद् + जन"}, "ans": "B"}, {"n": 10, "q": "'नीलकंठ' (नीला है कंठ जिसका - शिव) में कौन सा समास है?", "opts": {"A": "कर्मधारय समास", "B": "बहुव्रीहि समास", "C": "द्विगु समास", "D": "तत्पुरुष समास"}, "ans": "B"}, {"n": 11, "q": "'राजकुमार' शब्द में कौन सा समास निहित है?", "opts": {"A": "द्वंद्व समास", "B": "तत्पुरुष समास", "C": "अव्ययीभाव समास", "D": "बहुव्रीहि समास"}, "ans": "B"}, {"n": 12, "q": "'यथाशक्ति' शब्द में कौन-सा समास है?", "opts": {"A": "द्विगु समास", "B": "अव्ययीभाव समास", "C": "तत्पुरुष समास", "D": "कर्मधारय समास"}, "ans": "B"}, {"n": 13, "q": "'चौराहा' (चार राहों का समूह) में कौन सा समास है?", "opts": {"A": "द्विगु समास", "B": "बहुव्रीहि समास", "C": "द्वंद्व समास", "D": "कर्मधारय समास"}, "ans": "A"}, {"n": 14, "q": "'अत्यधिक' शब्द में कौन सा उपसर्ग लगा है?", "opts": {"A": "अत", "B": "अति", "C": "अत्य", "D": "आ"}, "ans": "B"}, {"n": 15, "q": "'अनुज' शब्द में कौन सा उपसर्ग है?", "opts": {"A": "अनु", "B": "अन", "C": "अ", "D": "अज्"}, "ans": "A"}, {"n": 16, "q": "'मिठास' शब्द में प्रयुक्त प्रत्यय है:", "opts": {"A": "स", "B": "आस", "C": "ठास", "D": "आसि"}, "ans": "B"}, {"n": 17, "q": "'पढ़ाई' शब्द में कौन सा प्रत्यय जुड़ा हुआ है?", "opts": {"A": "आई", "B": "ई", "C": "ाई", "D": "ढाई"}, "ans": "A"}, {"n": 18, "q": "'अग्नि' शब्द का सही पर्यायवाची शब्द कौन सा है?", "opts": {"A": "पवन", "B": "पावक", "C": "गगन", "D": "अंबर"}, "ans": "B"}, {"n": 19, "q": "'सूर्य' का पर्यायवाची शब्द नहीं है:", "opts": {"A": "दिनकर", "B": "भास्कर", "C": "सुधाकर", "D": "रवि"}, "ans": "C"}, {"n": 20, "q": "'अमृत' शब्द का सटीक विलोम शब्द है:", "opts": {"A": "विष", "B": "जल", "C": "सुधा", "D": "पीयूष"}, "ans": "A"}, {"n": 21, "q": "'उत्थान' शब्द का विलोम शब्द होगा:", "opts": {"A": "पतन", "B": "उत्कर्ष", "C": "अवनति", "D": "विनाश"}, "ans": "A"}, {"n": 22, "q": "'अलि' और 'अली' शब्द-युग्म का सही अर्थ-भेद है:", "opts": {"A": "सखी - भौंरा", "B": "भौंरा - सखी", "C": "जल - कमल", "D": "वायु - अग्नि"}, "ans": "B"}, {"n": 23, "q": "'अन्न' और 'अन्य' शब्द-युग्म का अर्थ है:", "opts": {"A": "अनाज - दूसरा", "B": "दूसरा - अनाज", "C": "भोजन - जल", "D": "फल - फूल"}, "ans": "A"}, {"n": 24, "q": "'अंक' शब्द का अनेकार्थी शब्द नहीं है:", "opts": {"A": "गोद", "B": "संख्या", "C": "नाटक का अध्याय", "D": "पर्वत"}, "ans": "D"}, {"n": 25, "q": "'जो सब कुछ जानता हो' वाक्यांश के लिए एक शब्द है:", "opts": {"A": "सर्वज्ञ", "B": "अल्पज्ञ", "C": "अज्ञ", "D": "विद्वान"}, "ans": "A"}, {"n": 26, "q": "'जिसका कोई शत्रु न जन्मा हो' के लिए एक शब्द:", "opts": {"A": "अजातशत्रु", "B": "अल्पशत्रु", "C": "निशत्रु", "D": "विजेता"}, "ans": "A"}, {"n": 27, "q": "निम्नलिखित में से शुद्ध वर्तनी वाला शब्द चुनिए:", "opts": {"A": "उज्ज्वल", "B": "उज्वल", "C": "उज्जवल", "D": "उज्वल"}, "ans": "A"}, {"n": 28, "q": "निम्नलिखित में शुद्ध शब्द पहचानिए:", "opts": {"A": "कवयित्री", "B": "कवियत्री", "C": "कवियित्री", "D": "कवीयित्री"}, "ans": "A"}, {"n": 29, "q": "'वह अपने कार्य में प्रवीण है' — वाक्य में कौन-सा कारक है?", "opts": {"A": "संबंध कारक", "B": "अधिकरण कारक", "C": "करण कारक", "D": "अपादान कारक"}, "ans": "B"}, {"n": 30, "q": "निम्नलिखित में से अशुद्ध वाक्य का चयन कीजिए:", "opts": {"A": "वह नित्य टहलता है।", "B": "मेरे को जयपुर जाना है।", "C": "राम ने पुस्तक पढ़ी।", "D": "बच्चे खेल रहे हैं।"}, "ans": "B"}, {"n": 31, "q": "'आँखों का तारा होना' मुहावरे का सही अर्थ है:", "opts": {"A": "बहुत सुंदर होना", "B": "अत्यधिक प्रिय होना", "C": "आँख की रोशनी बढ़ना", "D": "प्रिय वस्तु खोना"}, "ans": "B"}, {"n": 32, "q": "'श्रीगणेश करना' का अर्थ है:", "opts": {"A": "कार्य प्रारंभ करना", "B": "कार्य समाप्त करना", "C": "पूजा करना", "D": "बाधा उत्पन्न करना"}, "ans": "A"}, {"n": 33, "q": "'अंधों में काना राजा' लोकोक्ति का अर्थ है:", "opts": {"A": "मूर्खों में थोड़ा ज्ञानी भी आदर पाता है", "B": "सभी लोग विद्वान होना", "C": "अंधा होना", "D": "राजा बनना"}, "ans": "A"}, {"n": 34, "q": "'संज्ञा' के स्थान पर प्रयुक्त होने वाले शब्द कहलाते हैं:", "opts": {"A": "सर्वनाम", "B": "विशेषण", "C": "क्रिया", "D": "अव्यय"}, "ans": "A"}, {"n": 35, "q": "'सुंदर' शब्द व्याकरण की दृष्टि से क्या है?", "opts": {"A": "विशेषण", "B": "संज्ञा", "C": "सर्वनाम", "D": "क्रिया"}, "ans": "A"}, {"n": 36, "q": "'राम पुस्तक पढ़ता है' में कौन-सी क्रिया है?", "opts": {"A": "सकर्मक क्रिया", "B": "अकर्मक क्रिया", "C": "द्विकर्मक क्रिया", "D": "प्रेरणास्पद क्रिया"}, "ans": "A"}, {"n": 37, "q": "वृक्ष से पत्ते गिरते हैं' वाक्य में कौन सा कारक है?", "opts": {"A": "अपादान कारक", "B": "करण कारक", "C": "कर्म कारक", "D": "संबंध कारक"}, "ans": "A"}, {"n": 38, "q": "'अहंकार' शब्द में कौन-सी संधि है?", "opts": {"A": "स्वर संधि", "B": "विसर्ग संधि", "C": "यण संधि", "D": "व्यंजन संधि"}, "ans": "D"}, {"n": 39, "q": "'प्रत्यक्ष' शब्द में कौन सा उपसर्ग है?", "opts": {"A": "प्रति", "B": "प्र", "C": "परा", "D": "परि"}, "ans": "A"}, {"n": 40, "q": "'हँसना' क्रिया का प्रकार है:", "opts": {"A": "सकर्मक क्रिया", "B": "अकर्मक क्रिया", "C": "संयुक्त क्रिया", "D": "प्रेरणार्थक क्रिया"}, "ans": "B"}]}, {"passage": "भारतीय संस्कृति का मूल आधार 'वसुधैव कुटुंबकम्' की भावना में निहित है। हमारी संस्कृति विभिन्नताओं में एकता का संदेश देती है। इतिहास साक्षी है कि हमने सदैव सत्य, अहिंसा और शांति का मार्ग अपनाया है। सांस्कृतिक धरोहर का संरक्षण प्रत्येक नागरिक का परम कर्तव्य है।", "questions": [{"n": 1, "q": "भारतीय संस्कृति का मूल आधार क्या माना गया है?", "opts": {"A": "वसुधैव कुटुंबकम् की भावना", "B": "केवल अपने राष्ट्र की चिंता", "C": "धन संग्रह", "D": "युद्ध विजय"}, "ans": "A"}, {"n": 2, "q": "'सहिष्णुता' शब्द का अर्थ है:", "opts": {"A": "सहनशीलता", "B": "क्रोध", "C": "घृणा", "D": "भय"}, "ans": "A"}, {"n": 3, "q": "हमारी संस्कृति का मुख्य संदेश क्या है?", "opts": {"A": "विविधता में एकता", "B": "भेदभाव", "C": "केवल भौतिक प्रगति", "D": "आक्रामकता"}, "ans": "A"}, {"n": 4, "q": "'संस्कृति' शब्द में कौन सा उपसर्ग है?", "opts": {"A": "सम्", "B": "सम्", "C": "सं", "D": "स"}, "ans": "B"}, {"n": 5, "q": "'समन्वय' का सही संधि विच्छेद होगा:", "opts": {"A": "सम + अन्वय", "B": "सम् + अन्वय", "C": "समा + न्वय", "D": "सम् + आय"}, "ans": "B"}, {"n": 6, "q": "'पवन' (पो + अन) में कौन सी संधि है?", "opts": {"A": "गुण संधि", "B": "अयादि संधि", "C": "यण संधि", "D": "वृद्धि संधि"}, "ans": "B"}, {"n": 7, "q": "'सद्भावना' का सही संधि विच्छेद है:", "opts": {"A": "सत + भावना", "B": "सत् + भावना", "C": "सद् + भावना", "D": "सदा + भावना"}, "ans": "B"}, {"n": 8, "q": "'रामायण' का संधि विच्छेद क्या होगा?", "opts": {"A": "राम + अयन", "B": "राम + आयन", "C": "रामा + अयन", "D": "राम + यन"}, "ans": "A"}, {"n": 9, "q": "'मनोहर' (मनः + हर) में कौन सी संधि है?", "opts": {"A": "स्वर संधि", "B": "विसर्ग संधि", "C": "व्यंजन संधि", "D": "यण संधि"}, "ans": "B"}, {"n": 10, "q": "'दिन-रात' में कौन सा समास है?", "opts": {"A": "द्वंद्व समास", "B": "द्विगु समास", "C": "तत्पुरुष समास", "D": "बहुव्रीहि समास"}, "ans": "A"}, {"n": 11, "q": "'लंबोदर' (लंबा है उदर जिनका - गणेश) में समास है:", "opts": {"A": "कर्मधारय", "B": "बहुव्रीहि", "C": "द्विगु", "D": "तत्पुरुष"}, "ans": "B"}, {"n": 12, "q": "'त्रिफला' शब्द में कौन सा समास है?", "opts": {"A": "द्विगु समास", "B": "अव्ययीभाव समास", "C": "द्वंद्व समास", "D": "कर्मधारय समास"}, "ans": "A"}, {"n": 13, "q": "'पीतांबर' (पीला है वस्त्र जिसका) में समास है:", "opts": {"A": "तत्पुरुष समास", "B": "बहुव्रीहि समास", "C": "द्विगु समास", "D": "अव्ययीभाव समास"}, "ans": "B"}, {"n": 14, "q": "'दुर्लभ' शब्द में कौन सा उपसर्ग है?", "opts": {"A": "दुर्", "B": "दुः", "C": "दुर", "D": "दु"}, "ans": "A"}, {"n": 15, "q": "'पर्यावरण' में उपसर्ग है:", "opts": {"A": "परि", "B": "प्र", "C": "परा", "D": "पर्य"}, "ans": "A"}, {"n": 16, "q": "'साहित्यिक' शब्द में प्रत्यय है:", "opts": {"A": "इक", "B": "क", "C": "तिक", "D": "अक"}, "ans": "A"}, {"n": 17, "q": "'हँसौड़' शब्द में कौन सा प्रत्यय जुड़ा है?", "opts": {"A": "औड़", "B": "ड़", "C": "औड़ा", "D": "उड़"}, "ans": "A"}, {"n": 18, "q": "'कमल' का पर्यायवाची शब्द है:", "opts": {"A": "नीरज", "B": "नीरद", "C": "नीरधि", "D": "व्योम"}, "ans": "A"}, {"n": 19, "q": "'गंगा' शब्द का पर्यायवाची नहीं है:", "opts": {"A": "भागीरथी", "B": "सुरसरि", "C": "कालिंदी", "D": "मंदाकिनी"}, "ans": "C"}, {"n": 20, "q": "'आकाश' का सही विलोम शब्द होगा:", "opts": {"A": "पाताल", "B": "अंबर", "C": "गगन", "D": "धरती"}, "ans": "A"}, {"n": 21, "q": "'सुलभ' शब्द का विलोम शब्द है:", "opts": {"A": "दुर्लभ", "B": "अलभ्य", "C": "दुष्प्राप्य", "D": "कठिन"}, "ans": "A"}, {"n": 22, "q": "'कुल' और 'कूल' शब्द-युग्म का अर्थ है:", "opts": {"A": "वंश - किनारा", "B": "किनारा - वंश", "C": "संपूर्ण - जल", "D": "ठंडा - गरम"}, "ans": "A"}, {"n": 23, "q": "'ग्रह' और 'गृह' का सही अर्थ-भेद क्या है?", "opts": {"A": "नक्षत्र - घर", "B": "घर - नक्षत्र", "C": "सूर्य - चंद्रमा", "D": "भूमि - आकाश"}, "ans": "A"}, {"n": 24, "q": "'कनक' का अनेकार्थी अर्थ नहीं है:", "opts": {"A": "सोना", "B": "धतूरा", "C": "गेहूं", "D": "कमल"}, "ans": "D"}, {"n": 25, "q": "'जो कभी न मरे' के लिए एक शब्द:", "opts": {"A": "अमर", "B": "अजर", "C": "अविनाशी", "D": "अमर्त्य"}, "ans": "A"}, {"n": 26, "q": "'जिसके आने की तिथि न हो':", "opts": {"A": "अतिथि", "B": "अनाहूत", "C": "आगंतुक", "D": "अभ्यागत"}, "ans": "A"}, {"n": 27, "q": "शुद्ध वर्तनी वाला शब्द चुनिए:", "opts": {"A": "आशीर्वाद", "B": "आशिर्वाद", "C": "आशिरवाद", "D": "अशर्वाद"}, "ans": "A"}, {"n": 28, "q": "अशुद्ध वर्तनी वाला शब्द पहचानिए:", "opts": {"A": "पूज्यनीय", "B": "पूजनीय", "C": "सामाजिक", "D": "परीक्षा"}, "ans": "A"}, {"n": 29, "q": "'पेड़ से फल गिरा' — इसमें कारक है:", "opts": {"A": "अपादान कारक", "B": "करण कारक", "C": "कर्म कारक", "D": "अधिकरण कारक"}, "ans": "A"}, {"n": 30, "q": "शुद्ध वाक्य पहचानिए:", "opts": {"A": "यहाँ शुद्ध गाय का दूध मिलता है।", "B": "यहाँ गाय का शुद्ध दूध मिलता है।", "C": "गाय का शुद्ध यहाँ दूध मिलता है।", "D": "दूध यहाँ शुद्ध गाय का मिलता है।"}, "ans": "B"}, {"n": 31, "q": "'नाकों चने चबाना' मुहावरे का अर्थ है:", "opts": {"A": "बहुत परेशान करना", "B": "चने खाना", "C": "क्रोधित होना", "D": "हार मान लेना"}, "ans": "A"}, {"n": 32, "q": "'ईंट से ईंट बजाना' का अर्थ है:", "opts": {"A": "कड़ी टक्कर देना/विनाश करना", "B": "ईंट जोड़ना", "C": "भवन बनाना", "D": "मित्रता करना"}, "ans": "A"}, {"n": 33, "q": "'नाच न जाने आँगन टेढ़ा' लोकोक्ति का अर्थ है:", "opts": {"A": "अपनी कमी छिपाने के लिए दूसरों में दोष निकालना", "B": "नाचना न आना", "C": "आँगन का खराब होना", "D": "झूठी प्रशंसा करना"}, "ans": "A"}, {"n": 34, "q": "जातिवाचक संज्ञा का उदाहरण है:", "opts": {"A": "नदी", "B": "जयपुर", "C": "गंगा", "D": "हिमालय"}, "ans": "A"}, {"n": 35, "q": "भाववाचक संज्ञा शब्द है:", "opts": {"A": "बचपन", "B": "बालक", "C": "सुंदर", "D": "वीर"}, "ans": "A"}, {"n": 36, "q": "'वह स्वतः चला जाएगा' में 'स्वतः' कौन सा सर्वनाम है?", "opts": {"A": "निजवाचक सर्वनाम", "B": "पुरुषवाचक सर्वनाम", "C": "निश्चयवाचक सर्वनाम", "D": "संबंधवाचक सर्वनाम"}, "ans": "A"}, {"n": 37, "q": "'परिमाणवाचक विशेषण' का उदाहरण है:", "opts": {"A": "थोड़ा दूध", "B": "चार पुस्तकें", "C": "सुंदर बालिका", "D": "वह छात्र"}, "ans": "A"}, {"n": 38, "q": "'पक्षी आकाश में उड़ते हैं' में उड़ना कौन-सी क्रिया है?", "opts": {"A": "अकर्मक क्रिया", "B": "सकर्मक क्रिया", "C": "प्रेरणास्पद क्रिया", "D": "द्विकर्मक क्रिया"}, "ans": "A"}, {"n": 39, "q": "'अव्यय' शब्द होते हैं:", "opts": {"A": "जिनमें लिंग, वचन, कारक से विकार न हो", "B": "जो बदलते हैं", "C": "केवल संज्ञा", "D": "केवल क्रिया"}, "ans": "A"}, {"n": 40, "q": "'कारक' के कुल कितने भेद होते हैं?", "opts": {"A": "आठ भेद", "B": "छह भेद", "C": "सात भेद", "D": "पाँच भेद"}, "ans": "A"}]}, {"passage": "समय का सदुपयोग ही जीवन की सफलता की कुंजी है। बीता हुआ समय कभी वापस नहीं आता। जो व्यक्ति समय का मूल्य समझता है, सफलता उसके कदम चूमती है। आलस्य मनुष्य का सबसे बड़ा शत्रु है, जो उसकी प्रगति में बाधा डालता है।", "questions": [{"n": 1, "q": "समय के बारे में गद्यांश में क्या कहा गया है?", "opts": {"A": "बीता समय कभी वापस नहीं आता", "B": "समय रुक सकता है", "C": "समय का कोई मूल्य नहीं", "D": "आलस्य समय बढ़ाता है"}, "ans": "A"}, {"n": 2, "q": "'सद्व्यवहार' का सही संधि विच्छेद है:", "opts": {"A": "सत + व्यवहार", "B": "सत् + व्यवहार", "C": "सद् + व्यवहार", "D": "सदा + व्यवहार"}, "ans": "A"}, {"n": 3, "q": "मनुष्य की उन्नति में सबसे बड़ा बाधक कौन है?", "opts": {"A": "कठिन परिश्रम", "B": "आलस्य", "C": "समय का सदुपयोग", "D": "शिक्षा"}, "ans": "B"}, {"n": 4, "q": "'निरंतर' शब्द में उपसर्ग पहचानिए:", "opts": {"A": "निर", "B": "निर्", "C": "नि", "D": "निः"}, "ans": "B"}, {"n": 5, "q": "'समय प्रबंधन' में कौन सा समास है?", "opts": {"A": "तत्पुरुष समास", "B": "अव्ययीभाव समास", "C": "द्विगु समास", "D": "द्वंद्व समास"}, "ans": "A"}, {"n": 6, "q": "'सच्चरित्र' (सत + चरित्र) में कौन सी संधि है?", "opts": {"A": "व्यंजन संधि", "B": "स्वर संधि", "C": "विसर्ग संधि", "D": "यण संधि"}, "ans": "A"}, {"n": 7, "q": "'प्रत्येक' (प्रति + एक) शब्द में संधि है:", "opts": {"A": "गुण संधि", "B": "यण संधि", "C": "वृद्धि संधि", "D": "दीर्घ संधि"}, "ans": "B"}, {"n": 8, "q": "'निराशा' का सही संधि विच्छेद है:", "opts": {"A": "निः + आशा", "B": "निर + आशा", "C": "नि + आशा", "D": "निरः + आशा"}, "ans": "A"}, {"n": 9, "q": "'विद्यार्थी' शब्द में कौन-सी संधि है?", "opts": {"A": "गुण संधि", "B": "दीर्घ संधि", "C": "वृद्धि संधि", "D": "यण संधि"}, "ans": "B"}, {"n": 10, "q": "'माता-पिता' शब्द में कौन सा समास है?", "opts": {"A": "द्वंद्व समास", "B": "तत्पुरुष समास", "C": "द्विगु समास", "D": "बहुव्रीहि समास"}, "ans": "A"}, {"n": 11, "q": "'नवग्रह' शब्द का समास विग्रह एवं नाम है:", "opts": {"A": "नौ ग्रहों का समूह - द्विगु", "B": "नया ग्रह - कर्मधारय", "C": "नव और ग्रह - द्वंद्व", "D": "इनमें से कोई नहीं"}, "ans": "A"}, {"n": 12, "q": "'सप्तर्षि' में समास है:", "opts": {"A": "द्विगु समास", "B": "तत्पुरुष समास", "C": "अव्ययीभाव समास", "D": "बहुव्रीहि समास"}, "ans": "A"}, {"n": 13, "q": "'प्रतिदिन' में समास है:", "opts": {"A": "अव्ययीभाव समास", "B": "तत्पुरुष समास", "C": "द्विगु समास", "D": "बहुव्रीहि समास"}, "ans": "A"}, {"n": 14, "q": "'अपमान' शब्द में उपसर्ग है:", "opts": {"A": "अप", "B": "अव", "C": "अ", "D": "मान"}, "ans": "A"}, {"n": 15, "q": "'सुपुत्र' शब्द में उपसर्ग है:", "opts": {"A": "सु", "B": "स्व", "C": "स", "D": "पुत्र"}, "ans": "A"}, {"n": 16, "q": "'घबराहट' शब्द में प्रत्यय है:", "opts": {"A": "आहट", "B": "हट", "C": "ट", "D": "घबरा"}, "ans": "A"}, {"n": 17, "q": "'बचपन' शब्द में कौन सा प्रत्यय है?", "opts": {"A": "पन", "B": "अन", "C": "न", "D": "बच"}, "ans": "A"}, {"n": 18, "q": "'अमृत' का पर्यायवाची शब्द है:", "opts": {"A": "पीयूष", "B": "गरल", "C": "तोय", "D": "वारि"}, "ans": "A"}, {"n": 19, "q": "'जल' का पर्यायवाची शब्द नहीं है:", "opts": {"A": "नीर", "B": "तोय", "C": "अंबु", "D": "अनल"}, "ans": "D"}, {"n": 20, "q": "'राजा' का सही विलोम शब्द है:", "opts": {"A": "रंक", "B": "प्रजा", "C": "रानी", "D": "सैनिक"}, "ans": "A"}, {"n": 21, "q": "'सत्य' का विलोम शब्द है:", "opts": {"A": "असत्य", "B": "झूठ", "C": "मिथ्या", "D": "ये सभी"}, "ans": "A"}, {"n": 22, "q": "'तरणि' और 'तरणी' का सही अर्थ-भेद है:", "opts": {"A": "सूर्य - नाव", "B": "नाव - सूर्य", "C": "स्त्री - युवती", "D": "जल - तरंग"}, "ans": "A"}, {"n": 23, "q": "'दीवा' और 'दिवा' का अर्थ-भेद:", "opts": {"A": "दीया - दिन", "B": "दिन - दीया", "C": "दीपक - प्रकाश", "D": "रात्रि - दिन"}, "ans": "A"}, {"n": 24, "q": "'सारंग' शब्द का अर्थ नहीं है:", "opts": {"A": "हिरण", "B": "मोर", "C": "कमल", "D": "पत्थर"}, "ans": "D"}, {"n": 25, "q": "'जो आँखों के सामने हो' के लिए एक शब्द:", "opts": {"A": "प्रत्यक्ष", "B": "परोक्ष", "C": "दृश्य", "D": "अपरोक्ष"}, "ans": "A"}, {"n": 26, "q": "'कम बोलने वाला' वाक्यांश हेतु शब्द:", "opts": {"A": "मितभाषी", "B": "वाचाल", "C": "मृदुभाषी", "D": "अल्पभाषी"}, "ans": "A"}, {"n": 27, "q": "निम्नलिखित में से शुद्ध शब्द है:", "opts": {"A": "शृंगार", "B": "श्रृंगार", "C": "सिंगार", "D": "श्रंगार"}, "ans": "A"}, {"n": 28, "q": "सही वर्तनी वाला शब्द है:", "opts": {"A": "मिष्ठान्न", "B": "मिष्ठान", "C": "मिष्टान", "D": "मिष्टान्न"}, "ans": "A"}, {"n": 29, "q": "'राम ने रावण को बाण से मारा' — 'बाण से' में कौन सा कारक है?", "opts": {"A": "करण कारक", "B": "कर्म कारक", "C": "अपादान कारक", "D": "कर्ता कारक"}, "ans": "A"}, {"n": 30, "q": "अशुद्ध वाक्य चुनिए:", "opts": {"A": "खरगोश को काटकर गाजर खिलाओ।", "B": "गाजर काटकर खरगोश को खिलाओ।", "C": "वह विद्वान महिला है।", "D": "वह सज्जन व्यक्ति है।"}, "ans": "A"}, {"n": 31, "q": "'अंगूठा दिखाना' मुहावरे का अर्थ है:", "opts": {"A": "अंगूठा बड़ा करना", "B": "ऐन वक्त पर मना करना", "C": "मदद करना", "D": "चिढ़ाना"}, "ans": "B"}, {"n": 32, "q": "'गागर में सागर भरना' का अर्थ:", "opts": {"A": "घड़े में पानी भरना", "B": "थोड़े शब्दों में बहुत कुछ कहना", "C": "समुद्र से पानी लाना", "D": "असंभव कार्य करना"}, "ans": "B"}, {"n": 33, "q": "'जिसकी लाठी उसकी भैंस' का अर्थ:", "opts": {"A": "शक्ति संपन्न व्यक्ति का ही अधिकार होता है", "B": "भैंस चराना", "C": "लाठी मारना", "D": "पशुपालन करना"}, "ans": "A"}, {"n": 34, "q": "व्यक्तिवाचक संज्ञा शब्द है:", "opts": {"A": "हिमालय", "B": "पर्वत", "C": "शहर", "D": "देश"}, "ans": "A"}, {"n": 35, "q": "'यह मेरी पुस्तक है' में 'यह' सर्वनाम है:", "opts": {"A": "निश्चयवाचक सर्वनाम", "B": "अनिश्चयवाचक सर्वनाम", "C": "निजवाचक सर्वनाम", "D": "पुरुषवाचक सर्वनाम"}, "ans": "A"}, {"n": 36, "q": "'ईमानदार व्यक्ति' में 'ईमानदार' शब्द है:", "opts": {"A": "गुणवाचक विशेषण", "B": "संख्यावाचक विशेषण", "C": "परिमाणवाचक विशेषण", "D": "सार्वनामिक विशेषण"}, "ans": "A"}, {"n": 37, "q": "'राम सो रहा है' वाक्य में क्रिया का भेद है:", "opts": {"A": "अकर्मक क्रिया", "B": "सकर्मक क्रिया", "C": "प्रेरणास्पद", "D": "संयुक्त"}, "ans": "A"}, {"n": 38, "q": "'धीरे-धीरे' शब्द व्याकरण की दृष्टि से क्या है?", "opts": {"A": "क्रियाविशेषण (अव्यय)", "B": "विशेषण", "C": "संज्ञा", "D": "सर्वनाम"}, "ans": "A"}, {"n": 39, "q": "'अरे! तुम कब आए?' में 'अरे!' कौन-सा अव्यय है?", "opts": {"A": "विस्मयादिबोधक अव्यय", "B": "संबंधबोधक", "C": "समुच्चयबोधक", "D": "निपात"}, "ans": "A"}, {"n": 40, "q": "'क्रिया के करने वाले' को क्या कहते हैं?", "opts": {"A": "कर्ता", "B": "कर्म", "C": "करण", "D": "सम्प्रदान"}, "ans": "A"}]}, {"passage": "अनुशासन जीवन को सुव्यवस्थित और दिशा प्रदान करने वाली शक्ति है। विद्यार्थी जीवन में अनुशासन का विशेष महत्त्व है। जो छात्र नियमों का पालन करते हैं, वे न केवल परीक्षा में अपितु जीवन के हर क्षेत्र में सफल होते हैं। अनुशासनहीनता समाज में अराजकता उत्पन्न करती है।", "questions": [{"n": 1, "q": "अनुशासन का मुख्य कार्य क्या है?", "opts": {"A": "जीवन को दिशा एवं सुव्यवस्था देना", "B": "स्वतंत्रता छीनना", "C": "तनाव बढ़ाना", "D": "समय व्यर्थ करना"}, "ans": "A"}, {"n": 2, "q": "'अनुशासन' शब्द में मूल शब्द और उपसर्ग है:", "opts": {"A": "अनु + शासन", "B": "अ + नुशासन", "C": "अनुश + आसन", "D": "अन + उशासन"}, "ans": "A"}, {"n": 3, "q": "विद्यार्थी जीवन में अनुशासन क्यों आवश्यक है?", "opts": {"A": "जीवन के हर क्षेत्र में सफलता हेतु", "B": "केवल परीक्षा पास करने हेतु", "C": "शिक्षकों के डर से", "D": "धन कमाने हेतु"}, "ans": "A"}, {"n": 4, "q": "'सदाचार' शब्द का सही संधि विच्छेद है:", "opts": {"A": "सत + आचार", "B": "सत् + आचार", "C": "सदा + आचार", "D": "सम + आचार"}, "ans": "A"}, {"n": 5, "q": "'कर्तव्यनिष्ठ' शब्द का समास है:", "opts": {"A": "तत्पुरुष समास", "B": "अव्ययीभाव", "C": "बहुव्रीहि", "D": "द्विगु"}, "ans": "A"}, {"n": 6, "q": "'नयन' (ने + अन) शब्द में कौन-सी संधि है?", "opts": {"A": "अयादि स्वर संधि", "B": "गुण संधि", "C": "यण संधि", "D": "दीर्घ संधि"}, "ans": "A"}, {"n": 7, "q": "'जगदीश' (जगत + ईश) का संधि विच्छेद है:", "opts": {"A": "जगत् + ईश", "B": "जगत + ईश", "C": "जग + ईश", "D": "जगदी + श"}, "ans": "A"}, {"n": 8, "q": "'निश्छल' (निः + छल) में संधि है:", "opts": {"A": "विसर्ग संधि", "B": "स्वर संधि", "C": "व्यंजन संधि", "D": "गुण संधि"}, "ans": "A"}, {"n": 9, "q": "'महोर्षि' (महा + ऋषि) में संधि है:", "opts": {"A": "गुण संधि", "B": "यण संधि", "C": "वृद्धि संधि", "D": "दीर्घ संधि"}, "ans": "A"}, {"n": 10, "q": "'पंचानन' (पांच हैं आनन जिसके - शिव) में समास है:", "opts": {"A": "बहुव्रीहि समास", "B": "द्विगु समास", "C": "कर्मधारय", "D": "तत्पुरुष"}, "ans": "A"}, {"n": 11, "q": "'चरणकमल' (कमल के समान चरण) में समास है:", "opts": {"A": "कर्मधारय समास", "B": "बहुव्रीहि समास", "C": "द्विगु समास", "D": "अव्ययीभाव"}, "ans": "A"}, {"n": 12, "q": "'नर-नारी' में समास है:", "opts": {"A": "द्वंद्व समास", "B": "द्विगु समास", "C": "तत्पुरुष समास", "D": "बहुव्रीहि"}, "ans": "A"}, {"n": 13, "q": "'दशानन' में समास है:", "opts": {"A": "बहुव्रीहि समास", "B": "द्विगु समास", "C": "द्वंद्व समास", "D": "तत्पुरुष"}, "ans": "A"}, {"n": 14, "q": "'अभिमान' शब्द में उपसर्ग है:", "opts": {"A": "अभि", "B": "अव", "C": "अ", "D": "मान"}, "ans": "A"}, {"n": 15, "q": "'प्रगति' शब्द में उपसर्ग है:", "opts": {"A": "प्र", "B": "परा", "C": "परि", "D": "प्रति"}, "ans": "A"}, {"n": 16, "q": "'लेखक' शब्द में कौन सा प्रत्यय है?", "opts": {"A": "अक", "B": "क", "C": "खक", "D": "आक"}, "ans": "A"}, {"n": 17, "q": "'सफलता' शब्द में कौन सा प्रत्यय है?", "opts": {"A": "ता", "B": "लत्ता", "C": "आ", "D": "ताः"}, "ans": "A"}, {"n": 18, "q": "'अश्व' का सही पर्यायवाची शब्द है:", "opts": {"A": "हय/घोटक", "B": "नाग", "C": "कुंजर", "D": "करि"}, "ans": "A"}, {"n": 19, "q": "पर्यायवाची की दृष्टि से असंगत युग्म पहचानिए:", "opts": {"A": "हवा - अनिल", "B": "आग - अनल", "C": "पानी - जल", "D": "अंबर - पाताल"}, "ans": "D"}, {"n": 20, "q": "'वरदान' शब्द का विलोम शब्द होगा:", "opts": {"A": "अभिशाप", "B": "दण्ड", "C": "श्राप", "D": "ये सभी"}, "ans": "D"}, {"n": 21, "q": "'नवीन' शब्द का विलोम शब्द है:", "opts": {"A": "प्राचीन", "B": "पुरातन", "C": "पुराना", "D": "ये सभी"}, "ans": "D"}, {"n": 22, "q": "'अविराम' और 'अभिराम' शब्द-युग्म का अर्थ है:", "opts": {"A": "बिना रुके - सुंदर", "B": "सुंदर - बिना रुके", "C": "लगातार - विश्राम", "D": "आराम - सुंदर"}, "ans": "A"}, {"n": 23, "q": "'अपेक्षा' और 'उपेक्षा' का सही अर्थ-भेद:", "opts": {"A": "इच्छा/तुलना - अवहेलना", "B": "अवहेलना - इच्छा", "C": "आदर - अनादर", "D": "आवश्यकता - पूर्ति"}, "ans": "A"}, {"n": 24, "q": "'अंबर' का अनेकार्थी अर्थ है:", "opts": {"A": "आकाश एवं कपड़ा", "B": "जल एवं थल", "C": "अग्नि एवं वायु", "D": "पेड़ एवं पौधा"}, "ans": "A"}, {"n": 25, "q": "'जिसका कोई अंत न हो' के लिए एक शब्द:", "opts": {"A": "अनंत", "B": "असीम", "C": "अपार", "D": "अमर"}, "ans": "A"}, {"n": 26, "q": "'उपकार को मानने वाला' वाक्यांश हेतु शब्द:", "opts": {"A": "कृतज्ञ", "B": "कृतघ्न", "C": "उपकारी", "D": "दयालु"}, "ans": "A"}, {"n": 27, "q": "सही वर्तनी वाला शब्द पहचानिए:", "opts": {"A": "ऐतिहासिक", "B": "एतिहासिक", "C": "एतेहासिक", "D": "इतिहासिक"}, "ans": "A"}, {"n": 28, "q": "शुद्ध शब्द कौन सा है?", "opts": {"A": "शुश्रूषा", "B": "सुश्रुषा", "C": "सुश्रूषा", "D": "शुश्रुषा"}, "ans": "A"}, {"n": 29, "q": "'मोहन ने सोहन को पुस्तक दी' में 'सोहन को' में कारक है:", "opts": {"A": "सम्प्रदान कारक", "B": "कर्म कारक", "C": "संबंध कारक", "D": "करण कारक"}, "ans": "A"}, {"n": 30, "q": "शुद्ध वाक्य का चयन कीजिए:", "opts": {"A": "साहित्य और जीवन का घनिष्ठ संबंध है।", "B": "साहित्य और जीवन का घोर संबंध है।", "C": "वहाँ भारी भरकम भीड़ थी।", "D": "मैं गाता-गाता रो पड़ा।"}, "ans": "A"}, {"n": 31, "q": "'अपने मुँह मियाँ मिट्ठू बनना' का अर्थ है:", "opts": {"A": "अपनी प्रशंसा स्वयं करना", "B": "तोते की तरह बोलना", "C": "मीठी बातें करना", "D": "प्रशंसा सुनना"}, "ans": "A"}, {"n": 32, "q": "'नौ दो ग्यारह होना' मुहावरे का अर्थ:", "opts": {"A": "रफूचक्कर होना/भाग जाना", "B": "गिनती गिनना", "C": "एकत्र होना", "D": "विजयी होना"}, "ans": "A"}, {"n": 33, "q": "'आसमान से गिरा खजूर में अटका' लोकोक्ति का अर्थ:", "opts": {"A": "एक मुसीबत से निकलकर दूसरी में फँसना", "B": "खजूर के पेड़ पर चढ़ना", "C": "आसमान से गिरना", "D": "यात्रा करना"}, "ans": "A"}, {"n": 34, "q": "भाववाचक संज्ञा का उदाहरण है:", "opts": {"A": "मिठास", "B": "मीठा", "C": "आम", "D": "फल"}, "ans": "A"}, {"n": 35, "q": "'कोई आ रहा है' में 'कोई' सर्वनाम है:", "opts": {"A": "अनिश्चयवाचक सर्वनाम", "B": "निश्चयवाचक सर्वनाम", "C": "निजवाचक", "D": "प्रश्नवाचक"}, "ans": "A"}, {"n": 36, "q": "'पाँच किलो गेहूँ' में विशेषण का कौन-सा भेद है?", "opts": {"A": "निश्चित परिमाणवाचक विशेषण", "B": "संख्यावाचक", "C": "गुणवाचक", "D": "संकेतवाचक"}, "ans": "A"}, {"n": 37, "q": "'शिक्षक ने छात्र से निबंध लिखवाया' में क्रिया है:", "opts": {"A": "प्रेरणार्थक क्रिया", "B": "अकर्मक क्रिया", "C": "पूर्वकालिक क्रिया", "D": "नामधातु क्रिया"}, "ans": "A"}, {"n": 38, "q": "'समुच्चयबोधक अव्यय' का उदाहरण है:", "opts": {"A": "और/तथा/लेकिन", "B": "धीरे-धीरे", "C": "अरे!", "D": "निकट"}, "ans": "A"}, {"n": 39, "q": "'अपादान कारक' का विभक्ति चिन्ह क्या है?", "opts": {"A": "से (पृथक होने के अर्थ में)", "B": "को", "C": "में, पर", "D": "का, के, की"}, "ans": "A"}, {"n": 40, "q": "'वाच्य' के कितने प्रकार होते हैं?", "opts": {"A": "तीन (कर्तृ, कर्म, भाव)", "B": "दो", "C": "चार", "D": "पाँच"}, "ans": "A"}]}, {"passage": "पर्यावरण संतुलन ही मानव सभ्यता के अस्तित्व का मूलाधार है। वृक्षारोपण और जल संरक्षण आज की सबसे बड़ी आवश्यकता है। औद्योगिक प्रगति के साथ-साथ प्राकृतिक संसाधनों का अंधाधुंध दोहन विनाश को निमंत्रण दे रहा है। हमें आने वाली पीढ़ियों के लिए प्रकृति का संरक्षण करना ही होगा।", "questions": [{"n": 1, "q": "मानव सभ्यता के अस्तित्व का मूलाधार क्या है?", "opts": {"A": "पर्यावरण संतुलन", "B": "केवल औद्योगिक विकास", "C": "धन संग्रह", "D": "शहरीकरण"}, "ans": "A"}, {"n": 2, "q": "'पर्यावरण' का सही संधि विच्छेद है:", "opts": {"A": "परि + आवरण", "B": "पया + वरण", "C": "पर्या + वरण", "D": "पर + आवरण"}, "ans": "A"}, {"n": 3, "q": "गद्यांश के अनुसार वर्तमान समय की सबसे बड़ी आवश्यकता क्या है?", "opts": {"A": "वृक्षारोपण एवं जल संरक्षण", "B": "नए कारखाने लगाना", "C": "वनों की कटाई", "D": "प्लास्टिक उपयोग"}, "ans": "A"}, {"n": 4, "q": "'संरक्षण' शब्द में कौन सा उपसर्ग है?", "opts": {"A": "सम्", "B": "सम्", "C": "सं", "D": "स"}, "ans": "B"}, {"n": 5, "q": "'प्रदूषण' शब्द का सही विलोम शब्द क्या होगा?", "opts": {"A": "स्वच्छता/पवित्रता", "B": "गंदगी", "C": "विकृति", "D": "मलीनता"}, "ans": "A"}, {"n": 6, "q": "'एकाएक' (एक + एक) में कौन सी संधि है?", "opts": {"A": "वृद्धि संधि", "B": "गुण संधि", "C": "दीर्घ संधि", "D": "यण संधि"}, "ans": "C"}, {"n": 7, "q": "'उज्ज्वल' (उत् + ज्वल) में कौन-सी संधि है?", "opts": {"A": "व्यंजन संधि", "B": "स्वर संधि", "C": "विसर्ग संधि", "D": "यण संधि"}, "ans": "A"}, {"n": 8, "q": "'नमस्ते' (नमः + ते) में संधि है:", "opts": {"A": "विसर्ग संधि", "B": "व्यंजन संधि", "C": "दीर्घ संधि", "D": "गुण संधि"}, "ans": "A"}, {"n": 9, "q": "'महोत्कर्ष' (महा + उत्कर्ष) में संधि है:", "opts": {"A": "गुण संधि", "B": "वृद्धि संधि", "C": "यण संधि", "D": "अयादि संधि"}, "ans": "A"}, {"n": 10, "q": "'चंद्रशेखर' (चंद्र है शिखर पर जिसके - शिव) में समास है:", "opts": {"A": "बहुव्रीहि समास", "B": "कर्मधारय", "C": "तत्पुरुष", "D": "द्विगु"}, "ans": "A"}, {"n": 11, "q": "'देशभक्ति' (देश के लिए भक्ति) में समास है:", "opts": {"A": "तत्पुरुष समास (सम्प्रदान)", "B": "द्वंद्व", "C": "अव्ययीभाव", "D": "द्विगु"}, "ans": "A"}, {"n": 12, "q": "'रातोरात' शब्द में समास है:", "opts": {"A": "अव्ययीभाव समास", "B": "द्वंद्व", "C": "द्विगु", "D": "कर्मधारय"}, "ans": "A"}, {"n": 13, "q": "'त्रिभुवन' (तीन भुवनों का समूह) में समास है:", "opts": {"A": "द्विगु समास", "B": "बहुव्रीहि", "C": "द्वंद्व", "D": "तत्पुरुष"}, "ans": "A"}, {"n": 14, "q": "'अधिकार' शब्द में उपसर्ग है:", "opts": {"A": "अधि", "B": "अध", "C": "अ", "D": "कार"}, "ans": "A"}, {"n": 15, "q": "'दुर्जन' शब्द में उपसर्ग है:", "opts": {"A": "दुर्", "B": "दुः", "C": "दु", "D": "जन"}, "ans": "A"}, {"n": 16, "q": "'दुकानदार' शब्द में प्रत्यय है:", "opts": {"A": "दार", "B": "आर", "C": "र", "D": "दुकान"}, "ans": "A"}, {"n": 17, "q": "'चमकिला' (चमक + ईला) में प्रत्यय है:", "opts": {"A": "ईला", "B": "ला", "C": "किला", "D": "आ"}, "ans": "A"}, {"n": 18, "q": "'सूर्य' का पर्यायवाची शब्द है:", "opts": {"A": "भास्कर/दिनकर", "B": "शशांक", "C": "चंद्रमा", "D": "तारकेश"}, "ans": "A"}, {"n": 19, "q": "'पहाड़' का सही पर्यायवाची शब्द है:", "opts": {"A": "पर्वत/गिरी/शैल", "B": "नदी", "C": "सागर", "D": "पाषाण"}, "ans": "A"}, {"n": 20, "q": "'अंधकार' का विलोम शब्द है:", "opts": {"A": "प्रकाश", "B": "उजियाला", "C": "आलोक", "D": "ये सभी"}, "ans": "D"}, {"n": 21, "q": "'आयात' का सही विलोम शब्द होगा:", "opts": {"A": "निर्यात", "B": "आयातित", "C": "भिजवाना", "D": "क्रय"}, "ans": "A"}, {"n": 22, "q": "'शोक' और 'शौक' का सही अर्थ-भेद:", "opts": {"A": "दुःख - चाव/रुचि", "B": "चाव - दुःख", "C": "भय - क्रोध", "D": "दुःख - भय"}, "ans": "A"}, {"n": 23, "q": "'सूत' और 'सुत' का सही अर्थ-भेद है:", "opts": {"A": "धागा/सारथी - पुत्र", "B": "पुत्र - धागा", "C": "कपड़ा - सूती", "D": "राजा - सेवक"}, "ans": "A"}, {"n": 24, "q": "'कल' शब्द का अनेकार्थी अर्थ नहीं है:", "opts": {"A": "आने वाला दिन", "B": "मशीन", "C": "मधुर ध्वनि", "D": "कलश"}, "ans": "D"}, {"n": 25, "q": "'जिसका कोई सहारा न हो' के लिए एक शब्द:", "opts": {"A": "अनाथ", "B": "बेसहारा", "C": "असहाय", "D": "ये सभी"}, "ans": "D"}, {"n": 26, "q": "'उपकार को न मानने वाला' कहलाता है:", "opts": {"A": "कृतघ्न", "B": "कृतज्ञ", "C": "स्वार्थी", "D": "पापी"}, "ans": "A"}, {"n": 27, "q": "शुद्ध वर्तनी वाला शब्द पहचानिए:", "opts": {"A": "ज्योत्स्ना", "B": "ज्योत्सना", "C": "जोत्सना", "D": "ज्योत्शना"}, "ans": "A"}, {"n": 28, "q": "अशुद्ध वर्तनी वाला शब्द है:", "opts": {"A": "आधीन (शुद्ध: अधीन)", "B": "अधीन", "C": "अनाधिकार", "D": "स्वास्थ्य"}, "ans": "A"}, {"n": 29, "q": "'हे प्रभु! रक्षा करो' में कौन सा कारक है?", "opts": {"A": "संबोधन कारक", "B": "कर्ता कारक", "C": "कर्म कारक", "D": "संबंध कारक"}, "ans": "A"}, {"n": 30, "q": "निम्नलिखित में से शुद्ध वाक्य का चयन कीजिए:", "opts": {"A": "मुझे केवल सौ रुपये चाहिए।", "B": "मुझे मात्र केवल सौ रुपये चाहिए।", "C": "सौ रुपये मात्र मुझे चाहिए केवल।", "D": "केवल सौ रुपये मात्र चाहिए।"}, "ans": "A"}, {"n": 31, "q": "'हाथ कंगन को आरसी क्या' लोकोक्ति का अर्थ:", "opts": {"A": "प्रत्यक्ष को प्रमाण की आवश्यकता नहीं होती", "B": "कंगन पहनना", "C": "शीशा देखना", "D": "गहने बनाना"}, "ans": "A"}, {"n": 32, "q": "'पापड़ बेलना' का अर्थ है:", "opts": {"A": "कठिन जीवन व्यतीत करना/कष्ट सहना", "B": "पापड़ बनाना", "C": "भोजन पकाना", "D": "व्यापार करना"}, "ans": "A"}, {"n": 33, "q": "'उल्टा चोर कोतवाल को डांटे' का अर्थ:", "opts": {"A": "अपना अपराध न मानकर उल्टा निर्दोष पर दोष मढ़ना", "B": "चोरी करना", "C": "पुलिस से डरना", "D": "झगड़ा करना"}, "ans": "A"}, {"n": 34, "q": "'सेना' शब्द किस प्रकार की संज्ञा है?", "opts": {"A": "समुदायवाचक (समूहवाचक) संज्ञा", "B": "व्यक्तिवाचक", "C": "भाववाचक", "D": "द्रव्यवाचक"}, "ans": "A"}, {"n": 35, "q": "'दूध' किस संज्ञा का उदाहरण है?", "opts": {"A": "द्रव्यवाचक संज्ञा", "B": "जातिवाचक", "C": "भाववाचक", "D": "व्यक्तिवाचक"}, "ans": "A"}, {"n": 36, "q": "'जो करेगा सो भरेगा' में 'जो...सो' सर्वनाम है:", "opts": {"A": "संबंधवाचक सर्वनाम", "B": "निजवाचक", "C": "प्रश्नवाचक", "D": "निश्चयवाचक"}, "ans": "A"}, {"n": 37, "q": "'सार्वनामिक विशेषण' का उदाहरण है:", "opts": {"A": "यह लड़का चतुर है।", "B": "चतुर लड़का", "C": "चार लड़के", "D": "थोड़ा पानी"}, "ans": "A"}, {"n": 38, "q": "'कर्म वाच्य' का उदाहरण पहचानिए:", "opts": {"A": "राम द्वारा पुस्तक पढ़ी जाती है।", "B": "राम पुस्तक पढ़ता है।", "C": "राम से चला नहीं जाता।", "D": "मोहन हँसता है।"}, "ans": "A"}, {"n": 39, "q": "'क्रिया का प्रभाव जिस पर पड़ता है' उसे कहते हैं:", "opts": {"A": "कर्म", "B": "कर्ता", "C": "करण", "D": "सम्प्रदान"}, "ans": "A"}, {"n": 40, "q": "'संयुक्त वाक्य' का उदाहरण है:", "opts": {"A": "सूर्योदय हुआ और अंधकार दूर हो गया।", "B": "सूर्योदय होते ही अंधकार चला गया।", "C": "जो सूर्योदय हुआ वही अंधकार गया।", "D": "सूर्योदय पर अंधकार गया।"}, "ans": "A"}]}]</script>
+<script>
+const PAPERS = JSON.parse(document.getElementById('papers-data').textContent);
+const PAPER_NAMES = ['Model Paper 1','Model Paper 2','Model Paper 3','Model Paper 4','Model Paper 5'];
+const TOTAL_SECONDS = 45*60;
+
+const TOPIC_RULES = [
+  ['Sandhi', ['संधि']],
+  ['Samas', ['समास']],
+  ['Upsarg (Prefix)', ['उपसर्ग']],
+  ['Pratyay (Suffix)', ['प्रत्यय']],
+  ['Paryayvachi (Synonyms)', ['पर्यायवाची','पर्याय']],
+  ['Vilom (Antonyms)', ['विलोम']],
+  ['Muhavare & Lokoktiyan', ['मुहावर','लोकोक्ति']],
+  ['Word Pairs / Anekarthi', ['युग्म','अनेकार्थी']],
+  ['One-Word Substitution', ['एक शब्द']],
+  ['Vartani (Spelling)', ['वर्तनी','शुद्ध शब्द','शुद्ध वर्तनी']],
+  ['Karak (Case)', ['कारक']],
+  ['Sentence Correction', ['वाक्य']],
+  ['Sangya/Sarvanam/Visheshan/Kriya', ['संज्ञा','सर्वनाम','विशेषण','क्रिया','अव्यय','वाच्य']],
+  ['Passage Comprehension', []],
+];
+function topicOf(q, idx){
+  for(const [name, kws] of TOPIC_RULES){
+    if(kws.length===0) continue;
+    if(kws.some(k=>q.q.includes(k))) return name;
+  }
+  if(idx < 5) return 'Passage Comprehension';
+  return 'General Grammar';
+}
+
+function safeGet(key){ try{ const v = localStorage.getItem(key); return v?JSON.parse(v):null; }catch(e){ return null; } }
+function safeSet(key,val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+
+let state = { name:'', paperIdx:0, answers:{}, startTime:0, timerId:null, remaining:TOTAL_SECONDS };
+
+const $ = sel => document.querySelector(sel);
+const screens = { home: $('#screen-home'), test: $('#screen-test'), result: $('#screen-result') };
+function showScreen(name){
+  Object.values(screens).forEach(s=>s.classList.add('hidden'));
+  screens[name].classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+
+function renderHome(){
+  const savedName = safeGet('stse_name');
+  if(savedName) $('#uname').value = savedName;
+
+  const list = $('#paper-list');
+  list.innerHTML = '';
+  PAPER_NAMES.forEach((pname, idx)=>{
+    const attempts = safeGet('stse_history_'+idx) || [];
+    const best = attempts.length ? Math.max(...attempts.map(a=>a.score)) : null;
+    const row = document.createElement('div');
+    row.className = 'paper-row';
+    row.innerHTML = `
+      <div>
+        <div class="pname">${pname}</div>
+        <div class="pmeta">40 Questions · 45 Minutes ${best!==null ? '· Best score: '+best+'/40' : '· Not attempted yet'}</div>
+      </div>
+      <button class="btn" data-idx="${idx}">Start Test</button>
+    `;
+    row.querySelector('button').addEventListener('click', ()=>startTest(idx));
+    list.appendChild(row);
+  });
+
+  renderHistory();
+}
+
+function renderHistory(){
+  let rows = [];
+  for(let i=0;i<5;i++){
+    const attempts = safeGet('stse_history_'+i) || [];
+    attempts.forEach(a=> rows.push({paper:i, ...a}));
+  }
+  const card = $('#history-card');
+  if(rows.length===0){ card.classList.add('hidden'); return; }
+  card.classList.remove('hidden');
+  rows.sort((a,b)=> b.ts - a.ts);
+  const tbl = $('#hist-table');
+  tbl.innerHTML = '<tr><th>Name</th><th>Paper</th><th>Score</th><th>Date</th></tr>' +
+    rows.slice(0,10).map(r=>`<tr><td>${r.name}</td><td>${PAPER_NAMES[r.paper]}</td><td>${r.score}/40</td><td>${new Date(r.ts).toLocaleDateString('en-IN')}</td></tr>`).join('');
+}
+
+function startTest(idx){
+  const name = $('#uname').value.trim();
+  if(!name){ alert('Please enter your name first.'); $('#uname').focus(); return; }
+  safeSet('stse_name', name);
+  state = { name, paperIdx: idx, answers:{}, startTime: Date.now(), remaining: TOTAL_SECONDS };
+  renderTest();
+  showScreen('test');
+  startTimer();
+}
+
+function renderTest(){
+  const paper = PAPERS[state.paperIdx];
+  $('#test-title').textContent = PAPER_NAMES[state.paperIdx];
+  $('#test-sub').textContent = state.name + ' · 40 Questions';
+
+  $('#passage-container').innerHTML = `<div class="passage-box"><strong>Passage (गद्यांश):</strong><br><span class="hindi">${paper.passage}</span></div>`;
+
+  const pal = $('#palette');
+  pal.innerHTML = '';
+  paper.questions.forEach(q=>{
+    const b = document.createElement('button');
+    b.textContent = q.n;
+    b.id = 'pal-'+q.n;
+    b.addEventListener('click', ()=>{ document.getElementById('q-'+q.n).scrollIntoView({behavior:'smooth', block:'center'}); });
+    pal.appendChild(b);
+  });
+
+  const qc = $('#questions');
+  qc.innerHTML = '';
+  paper.questions.forEach(q=>{
+    const block = document.createElement('div');
+    block.className = 'qblock';
+    block.id = 'q-'+q.n;
+    const optsHtml = ['A','B','C','D'].map(letter => `
+      <label class="opt" data-letter="${letter}" data-qn="${q.n}">
+        <input type="radio" name="q${q.n}" value="${letter}">
+        <span class="hindi">${letter}) ${q.opts[letter]}</span>
+      </label>`).join('');
+    block.innerHTML = `<div class="qtext"><span class="qnum">Q${q.n}.</span><span class="hindi">${q.q}</span></div>${optsHtml}`;
+    qc.appendChild(block);
+  });
+
+  qc.querySelectorAll('.opt').forEach(opt=>{
+    opt.addEventListener('click', ()=>{
+      const qn = opt.dataset.qn, letter = opt.dataset.letter;
+      state.answers[qn] = letter;
+      document.querySelectorAll(`.opt[data-qn="${qn}"]`).forEach(o=>o.classList.remove('selected'));
+      opt.classList.add('selected');
+      opt.querySelector('input').checked = true;
+      const pb = document.getElementById('pal-'+qn);
+      if(pb) pb.classList.add('answered');
+    });
+  });
+}
+
+function startTimer(){
+  clearInterval(state.timerId);
+  updateTimerDisplay();
+  state.timerId = setInterval(()=>{
+    state.remaining--;
+    updateTimerDisplay();
+    if(state.remaining<=0){ clearInterval(state.timerId); finishTest(); }
+  }, 1000);
+}
+function updateTimerDisplay(){
+  const m = Math.max(0,Math.floor(state.remaining/60));
+  const s = Math.max(0,state.remaining%60);
+  $('#timer').textContent = String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+
+$('#submit-btn').addEventListener('click', ()=>{
+  const answered = Object.keys(state.answers).length;
+  if(answered < 40){
+    if(!confirm(`You have answered ${answered}/40 questions. The rest will be marked unanswered. Submit anyway?`)) return;
+  }
+  finishTest();
+});
+$('#exit-btn').addEventListener('click', ()=>{
+  if(confirm('Are you sure you want to exit? Your progress will not be saved.')){
+    clearInterval(state.timerId);
+    showScreen('home');
+    renderHome();
+  }
+});
+$('#back-home-btn').addEventListener('click', ()=>{ showScreen('home'); renderHome(); });
+
+function finishTest(){
+  clearInterval(state.timerId);
+  const paper = PAPERS[state.paperIdx];
+  const timeTakenSec = TOTAL_SECONDS - state.remaining;
+
+  let correct=0, wrong=0, skipped=0;
+  const topicStats = {};
+  const perQ = [];
+
+  paper.questions.forEach((q, idx)=>{
+    const given = state.answers[q.n];
+    const isCorrect = given === q.ans;
+    const topic = topicOf(q, idx);
+    if(!topicStats[topic]) topicStats[topic] = {correct:0,total:0};
+    topicStats[topic].total++;
+    if(given===undefined){ skipped++; }
+    else if(isCorrect){ correct++; topicStats[topic].correct++; }
+    else { wrong++; }
+    perQ.push({q, given, isCorrect});
+  });
+
+  const score = correct;
+  const pct = Math.round((correct/40)*100);
+
+  const history = safeGet('stse_history_'+state.paperIdx) || [];
+  history.push({name:state.name, score, ts:Date.now(), timeTaken:timeTakenSec});
+  safeSet('stse_history_'+state.paperIdx, history);
+
+  renderResult({score, correct, wrong, skipped, pct, timeTakenSec, topicStats, perQ, paperIdx: state.paperIdx});
+  showScreen('result');
+}
+
+function fmtTime(sec){
+  const m = Math.floor(sec/60), s = sec%60;
+  return `${m} min ${s} sec`;
+}
+
+function grade(pct){
+  if(pct>=90) return 'Excellent — fully exam-ready';
+  if(pct>=75) return 'Very good — a bit more practice will sharpen it further';
+  if(pct>=60) return 'Good — focus on your weaker topics';
+  if(pct>=40) return 'Below average — regular practice needed';
+  return 'Needs improvement — revise core grammar concepts';
+}
+
+function renderResult(r){
+  $('#res-title').textContent = state.name + ' — ' + PAPER_NAMES[r.paperIdx] + ' Result';
+  $('#res-sub').textContent = `Time taken: ${fmtTime(r.timeTakenSec)} · ${grade(r.pct)}`;
+
+  $('#stat-grid').innerHTML = `
+    <div class="stat"><div class="num">${r.score}/40</div><div class="lab">Total Score</div></div>
+    <div class="stat"><div class="num">${r.pct}%</div><div class="lab">Percentage</div></div>
+    <div class="stat"><div class="num tag-correct">${r.correct}</div><div class="lab">Correct</div></div>
+    <div class="stat"><div class="num tag-wrong">${r.wrong}</div><div class="lab">Wrong</div></div>
+    <div class="stat"><div class="num tag-skip">${r.skipped}</div><div class="lab">Skipped</div></div>
+  `;
+
+  const topicKeys = Object.keys(r.topicStats).sort((a,b)=> (r.topicStats[a].correct/r.topicStats[a].total) - (r.topicStats[b].correct/r.topicStats[b].total));
+  $('#topic-analysis').innerHTML = topicKeys.map(t=>{
+    const s = r.topicStats[t];
+    const pct = Math.round((s.correct/s.total)*100);
+    return `<div class="bar-row">
+      <div class="name">${t} (${s.correct}/${s.total})</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%; background:${pct<50?'var(--red)':'var(--green)'}"></div></div>
+      <div class="bar-pct">${pct}%</div>
+    </div>`;
+  }).join('');
+
+  $('#review-list').innerHTML = r.perQ.map(({q,given,isCorrect})=>{
+    const statusTag = given===undefined ? '<span class="tag-skip">Skipped</span>' : (isCorrect ? '<span class="tag-correct">Correct</span>' : '<span class="tag-wrong">Wrong</span>');
+    const optsHtml = ['A','B','C','D'].map(letter=>{
+      let cls='opt';
+      if(letter===q.ans) cls+=' correct-answer';
+      else if(letter===given && !isCorrect) cls+=' wrong-selected';
+      return `<div class="${cls}"><span class="hindi">${letter}) ${q.opts[letter]}</span></div>`;
+    }).join('');
+    return `<div class="qblock">
+      <div class="qtext"><span class="qnum">Q${q.n}.</span><span class="hindi">${q.q}</span> &nbsp;${statusTag}</div>
+      ${optsHtml}
+    </div>`;
+  }).join('');
+}
+
+renderHome();
+</script>
+</body>
+</html>
