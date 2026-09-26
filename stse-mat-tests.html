@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Rajasthan STSE 2026 | MAT - 5 Model Tests</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    background:#f7f8fc;
+    color:#182033;
+}
+
+header{
+    background:linear-gradient(135deg,#6d3fa9,#4ba3d8);
+    color:#fff;
+    text-align:center;
+    padding:28px 15px;
+}
+
+header h1{
+    margin:0 0 8px;
+    font-size:clamp(25px,4vw,36px);
+}
+
+header p{margin:5px 0}
+
+.container{
+    max-width:1100px;
+    margin:25px auto;
+    padding:0 15px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid #e7e8ee;
+    border-radius:20px;
+    padding:22px;
+    margin-bottom:18px;
+    box-shadow:0 8px 28px rgba(31,41,55,.06);
+}
+
+.hidden{display:none!important}
+
+.test-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.test-btn{
+    border:1px solid #ded5e9;
+    background:#fff;
+    border-radius:16px;
+    padding:20px;
+    text-align:left;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.test-btn:hover{
+    border-color:#6d3fa9;
+    transform:translateY(-2px);
+}
+
+.test-btn h3{
+    margin:0 0 8px;
+    color:#6d3fa9;
+}
+
+input[type=text]{
+    width:100%;
+    padding:14px;
+    border:1px solid #d9dce5;
+    border-radius:11px;
+    font-size:16px;
+}
+
+button{
+    font:inherit;
+    font-weight:700;
+}
+
+.primary{
+    background:linear-gradient(135deg,#6d3fa9,#4ba3d8);
+    color:#fff;
+    border:0;
+    border-radius:11px;
+    padding:13px 20px;
+    cursor:pointer;
+}
+
+.secondary{
+    background:#fff;
+    color:#6d3fa9;
+    border:1px solid #6d3fa9;
+    border-radius:11px;
+    padding:12px 18px;
+    cursor:pointer;
+}
+
+.secondary:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+}
+
+.exam-top{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(247,248,252,.97);
+    padding:10px 0;
+}
+
+.top-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+}
+
+.timer{
+    background:#f1ebf8;
+    color:#6d3fa9;
+    border-radius:10px;
+    padding:10px 15px;
+    font-weight:800;
+    min-width:75px;
+    text-align:center;
+}
+
+.progress{
+    height:8px;
+    background:#e5e7eb;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#6d3fa9,#4ba3d8);
+    transition:.2s;
+}
+
+.question-card{
+    margin-top:18px;
+    background:#fff;
+    border:1px solid #e7e8ee;
+    border-radius:20px;
+    padding:24px;
+}
+
+.q-number{
+    color:#6d3fa9;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.question-en{
+    font-size:18px;
+    font-weight:700;
+    line-height:1.55;
+}
+
+.question-hi{
+    margin-top:7px;
+    font-size:17px;
+    font-weight:600;
+    line-height:1.6;
+    color:#344054;
+}
+
+.topic{
+    display:inline-block;
+    margin-top:12px;
+    font-size:12px;
+    color:#6d3fa9;
+    background:#f3edfa;
+    padding:5px 9px;
+    border-radius:20px;
+}
+
+.options{
+    margin-top:20px;
+}
+
+.option{
+    display:block;
+    border:1px solid #e0e2e8;
+    border-radius:12px;
+    padding:13px;
+    margin:10px 0;
+    cursor:pointer;
+    line-height:1.55;
+}
+
+.option:hover{
+    border-color:#bba5cf;
+    background:#fbf9fd;
+}
+
+.option input{
+    margin-right:8px;
+}
+
+.opt-en{
+    font-weight:600;
+}
+
+.opt-hi{
+    color:#536174;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:18px;
+}
+
+.score{
+    font-size:48px;
+    font-weight:900;
+    color:#6d3fa9;
+}
+
+.result-box{
+    background:#f8f5fb;
+    border-radius:14px;
+    padding:15px;
+    margin:14px 0;
+    line-height:1.7;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+}
+
+th,td{
+    border-bottom:1px solid #e4e6eb;
+    padding:10px;
+    text-align:left;
+}
+
+.review{
+    border:1px solid #e2e4e9;
+    border-radius:14px;
+    padding:15px;
+    margin:12px 0;
+}
+
+.review.correct{
+    border-left:5px solid #16834b;
+}
+
+.review.wrong{
+    border-left:5px solid #c0392b;
+}
+
+.correct-text{
+    color:#16834b;
+    font-weight:700;
+}
+
+.wrong-text{
+    color:#c0392b;
+    font-weight:700;
+}
+
+.small{
+    color:#64748b;
+    font-size:13px;
+}
+
+footer{
+    text-align:center;
+    padding:28px;
+    color:#64748b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Rajasthan STSE 2026 – MAT</h1>
+<p>State Talent Search Examination</p>
+<p>Class X · Mental Ability Test · 5 Model Tests</p>
+<p>50 Questions · 50 Marks · 45 Minutes</p>
+</header>
+
+<div class="container">
+
+<!-- HOME -->
+<section id="home" class="card">
+
+<h2>MAT Model Test Series</h2>
+
+<p>
+<strong>English + Hindi</strong> · Mixed Topic Pattern ·
+</p>
+
+<p class="small">
+</p>
+
+<div class="test-grid">
+
+<button class="test-btn" onclick="openTest(0)">
+<h3>MODEL TEST – 01</h3>
+50 Questions<br>
+45 Minutes
+</button>
+
+<button class="test-btn" onclick="openTest(1)">
+<h3>MODEL TEST – 02</h3>
+50 Questions<br>
+45 Minutes
+</button>
+
+<button class="test-btn" onclick="openTest(2)">
+<h3>MODEL TEST – 03</h3>
+50 Questions<br>
+45 Minutes
+</button>
+
+<button class="test-btn" onclick="openTest(3)">
+<h3>MODEL TEST – 04</h3>
+50 Questions<br>
+45 Minutes
+</button>
+
+<button class="test-btn" onclick="openTest(4)">
+<h3>MODEL TEST – 05</h3>
+50 Questions<br>
+45 Minutes
+</button>
+
+</div>
+</section>
+
+
+<!-- START -->
+<section id="start" class="card hidden">
+
+<h2 id="selectedTitle"></h2>
+
+<p>
+Enter your name. The 45-minute timer will start when you click
+<strong>Start Test</strong>.
+</p>
+
+<input
+    id="studentName"
+    type="text"
+    maxlength="60"
+    placeholder="Enter your name / अपना नाम लिखें"
+>
+
+<br><br>
+
+<button class="primary" onclick="startTest()">
+Start Test / परीक्षा शुरू करें
+</button>
+
+<button class="secondary" onclick="goHome()">
+Back
+</button>
+
+</section>
+
+
+<!-- EXAM -->
+<section id="exam" class="hidden">
+
+<div class="exam-top">
+
+<div class="top-row">
+
+<div>
+<strong id="testHeading"></strong>
+<br>
+<span class="small" id="questionNumber"></span>
+</div>
+
+<div class="timer" id="timer">
+45:00
+</div>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+</div>
+
+<div id="questionContainer"></div>
+
+<div class="navigation">
+
+<button
+    class="secondary"
+    id="previousButton"
+    onclick="previousQuestion()">
+← Previous
+</button>
+
+<button
+    class="primary"
+    id="nextButton"
+    onclick="nextQuestion()">
+Next →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- RESULT -->
+<section id="result" class="card hidden"></section>
+
+</div>
+
+<footer>
+Rajasthan STSE 2026 MAT Practice · The Goal
+</footer>
+
+
+<script>
+
+/* ============================================================
+   QUESTION DATA
+   ============================================================ */
+
+const tests = [];
+
+
+/*
+Each question:
+{
+ en: English question,
+ hi: Hindi question,
+ options: [
+   [English, Hindi],
+   ...
+ ],
+ answer: correct option index,
+ topic: topic name,
+ exp: explanation
+}
+*/
+
+
+function Q(en,hi,options,answer,topic,exp){
+
+    return {
+        en,
+        hi,
+        options,
+        answer,
+        topic,
+        exp
+    };
+
+}
+
+
+/* ============================================================
+   TEST 1
+   ============================================================ */
+
+tests.push([
+
+Q(
+"Evaluate: 18 + 6 × 3 − 4.",
+"हल कीजिए: 18 + 6 × 3 − 4.",
+[
+["32","32"],
+["28","28"],
+["26","26"],
+["38","38"]
+],
+0,
+"BODMAS",
+"Multiplication first: 6×3=18; then 18+18−4=32."
+),
+
+Q(
+"A person walks 6 km north and then 4 km east. In which direction is he from the starting point?",
+"एक व्यक्ति 6 किमी उत्तर और फिर 4 किमी पूर्व जाता है। वह प्रारम्भिक स्थान से किस दिशा में है?",
+[
+["North-East","उत्तर-पूर्व"],
+["North-West","उत्तर-पश्चिम"],
+["South-East","दक्षिण-पूर्व"],
+["South-West","दक्षिण-पश्चिम"]
+],
+0,
+"Direction Sense",
+"The movement is north plus east, so the direction is North-East."
+),
+
+Q(
+"Find the next number: 4, 9, 14, 19, ?",
+"अगली संख्या ज्ञात कीजिए: 4, 9, 14, 19, ?",
+[
+["24","24"],
+["23","23"],
+["25","25"],
+["29","29"]
+],
+0,
+"Number Series",
+"Each term increases by 5."
+),
+
+Q(
+"Book is related to Reading in the same way as Food is related to ?",
+"Book का संबंध Reading से उसी प्रकार है जैसे Food का संबंध किससे है?",
+[
+["Eating","खाना"],
+["Cooking","पकाना"],
+["Kitchen","रसोई"],
+["Plate","प्लेट"]
+],
+0,
+"Analogy",
+"A book is used for reading; food is used for eating."
+),
+
+Q(
+"Find the odd one out: 16, 25, 36, 50.",
+"विषम संख्या ज्ञात कीजिए: 16, 25, 36, 50.",
+[
+["16","16"],
+["25","25"],
+["36","36"],
+["50","50"]
+],
+3,
+"Classification",
+"16, 25 and 36 are perfect squares; 50 is not."
+),
+
+Q(
+"If CAT is coded as DBU, how is DOG coded using the same rule?",
+"यदि CAT को DBU लिखा जाता है, तो उसी नियम से DOG को कैसे लिखा जाएगा?",
+[
+["EPH","EPH"],
+["EOH","EOH"],
+["DPG","DPG"],
+["FPH","FPH"]
+],
+0,
+"Coding-Decoding",
+"Each letter is moved one position forward."
+),
+
+Q(
+"A is the brother of B. B is the daughter of C. How is A related to C?",
+"A, B का भाई है। B, C की पुत्री है। A का C से क्या संबंध है?",
+[
+["Son","पुत्र"],
+["Brother","भाई"],
+["Father","पिता"],
+["Uncle","चाचा/मामा"]
+],
+0,
+"Blood Relation",
+"A is the son of C."
+),
+
+Q(
+"A student is 12th from the top and 19th from the bottom. How many students are there in the class?",
+"एक विद्यार्थी ऊपर से 12वाँ और नीचे से 19वाँ है। कक्षा में कुल कितने विद्यार्थी हैं?",
+[
+["30","30"],
+["31","31"],
+["29","29"],
+["32","32"]
+],
+0,
+"Ranking",
+"Total = 12 + 19 − 1 = 30."
+),
+
+Q(
+"All roses are flowers. All flowers are plants. Which conclusion follows?",
+"सभी गुलाब फूल हैं। सभी फूल पौधे हैं। कौन-सा निष्कर्ष सही है?",
+[
+["All roses are plants.","सभी गुलाब पौधे हैं।"],
+["All plants are roses.","सभी पौधे गुलाब हैं।"],
+["Some plants are not flowers.","कुछ पौधे फूल नहीं हैं।"],
+["No rose is a plant.","कोई गुलाब पौधा नहीं है।"]
+],
+0,
+"Syllogism",
+"Roses are flowers and flowers are plants, therefore roses are plants."
+),
+
+Q(
+"In a group, 32 students study Hindi, 25 study English and 8 study both. How many study only English?",
+"एक समूह में 32 विद्यार्थी हिन्दी, 25 अंग्रेज़ी और 8 दोनों पढ़ते हैं। केवल अंग्रेज़ी पढ़ने वाले कितने हैं?",
+[
+["17","17"],
+["25","25"],
+["33","33"],
+["15","15"]
+],
+0,
+"Venn Diagram",
+"Only English = 25 − 8 = 17."
+),
+
+Q(
+"Find the next letter: A, C, E, G, ?",
+"अगला अक्षर ज्ञात कीजिए: A, C, E, G, ?",
+[
+["I","I"],
+["H","H"],
+["J","J"],
+["K","K"]
+],
+0,
+"Alphabet Series",
+"Every alternate alphabet letter is used."
+),
+
+Q(
+"At 3:00, the angle between the hour hand and minute hand is:",
+"3:00 बजे घंटे और मिनट की सुई के बीच कोण कितना होता है?",
+[
+["90°","90°"],
+["60°","60°"],
+["120°","120°"],
+["180°","180°"]
+],
+0,
+"Clock",
+"At 3:00 the hands are perpendicular."
+),
+
+Q(
+"If today is Monday, what day will it be after 17 days?",
+"यदि आज सोमवार है, तो 17 दिन बाद कौन-सा दिन होगा?",
+[
+["Thursday","गुरुवार"],
+["Wednesday","बुधवार"],
+["Friday","शुक्रवार"],
+["Tuesday","मंगलवार"]
+],
+0,
+"Calendar",
+"17 mod 7 = 3; Monday + 3 days = Thursday."
+),
+
+Q(
+"Which number should replace ?: 7 × 4 + 3 = ?",
+"कौन-सी संख्या ? के स्थान पर आएगी: 7 × 4 + 3 = ?",
+[
+["31","31"],
+["28","28"],
+["35","35"],
+["25","25"]
+],
+0,
+"Mathematical Operation",
+"7×4=28; 28+3=31."
+),
+
+Q(
+"A train travels 60 km in 1 hour. How far will it travel in 3 hours?",
+"एक ट्रेन 1 घंटे में 60 किमी चलती है। 3 घंटे में कितनी दूरी तय करेगी?",
+[
+["180 km","180 किमी"],
+["120 km","120 किमी"],
+["240 km","240 किमी"],
+["150 km","150 किमी"]
+],
+0,
+"Arithmetic Reasoning",
+"Distance = speed × time = 60×3 = 180 km."
+),
+
+Q(
+"Simplify: 48 ÷ 6 + 7 × 2.",
+"सरल कीजिए: 48 ÷ 6 + 7 × 2.",
+[
+["22","22"],
+["30","30"],
+["16","16"],
+["28","28"]
+],
+0,
+"BODMAS",
+"48÷6=8 and 7×2=14; total 22."
+),
+
+Q(
+"Find the next number: 3, 6, 12, 24, ?",
+"अगली संख्या ज्ञात कीजिए: 3, 6, 12, 24, ?",
+[
+["48","48"],
+["36","36"],
+["42","42"],
+["54","54"]
+],
+0,
+"Number Series",
+"Each term is multiplied by 2."
+),
+
+Q(
+"Pen is related to Writing as Knife is related to:",
+"Pen का संबंध Writing से है, उसी प्रकार Knife का संबंध किससे है?",
+[
+["Cutting","काटना"],
+["Drawing","चित्र बनाना"],
+["Reading","पढ़ना"],
+["Walking","चलना"]
+],
+0,
+"Analogy",
+"A pen is used for writing; a knife is used for cutting."
+),
+
+Q(
+"Find the odd one: January, March, May, Tuesday.",
+"विषम शब्द ज्ञात कीजिए: January, March, May, Tuesday.",
+[
+["January","January"],
+["March","March"],
+["May","May"],
+["Tuesday","Tuesday"]
+],
+3,
+"Classification",
+"Three are months; Tuesday is a day."
+),
+
+Q(
+"If PEN is coded as QFO, how is MAP coded?",
+"यदि PEN को QFO लिखा जाता है, तो MAP को कैसे लिखा जाएगा?",
+[
+["NBQ","NBQ"],
+["NBO","NBO"],
+["MBQ","MBQ"],
+["OBR","OBR"]
+],
+0,
+"Coding-Decoding",
+"Each letter moves one step forward."
+),
+
+Q(
+"P is the mother of Q. Q is the brother of R. How is P related to R?",
+"P, Q की माता है। Q, R का भाई है। P का R से क्या संबंध है?",
+[
+["Mother","माता"],
+["Sister","बहन"],
+["Aunt","चाची/मौसी"],
+["Grandmother","दादी/नानी"]
+],
+0,
+"Blood Relation",
+"P is the mother of R."
+),
+
+Q(
+"Ravi is 8th from the left and 15th from the right. How many persons are there?",
+"रवि बाएँ से 8वाँ और दाएँ से 15वाँ है। कुल कितने व्यक्ति हैं?",
+[
+["22","22"],
+["23","23"],
+["21","21"],
+["24","24"]
+],
+0,
+"Ranking",
+"Total = 8+15−1 = 22."
+),
+
+Q(
+"No birds are mammals. All sparrows are birds. Which conclusion follows?",
+"कोई पक्षी स्तनपायी नहीं है। सभी गौरैया पक्षी हैं। कौन-सा निष्कर्ष सही है?",
+[
+["No sparrow is a mammal.","कोई गौरैया स्तनपायी नहीं है।"],
+["All mammals are sparrows.","सभी स्तनपायी गौरैया हैं।"],
+["Some sparrows are mammals.","कुछ गौरैया स्तनपायी हैं।"],
+["All birds are sparrows.","सभी पक्षी गौरैया हैं।"]
+],
+0,
+"Syllogism",
+"Sparrows are birds and birds are not mammals."
+),
+
+Q(
+"In a class, 40 study Maths, 30 study Science and 12 study both. How many study only Science?",
+"एक कक्षा में 40 विद्यार्थी गणित, 30 विज्ञान और 12 दोनों पढ़ते हैं। केवल विज्ञान पढ़ने वाले कितने हैं?",
+[
+["18","18"],
+["30","30"],
+["42","42"],
+["12","12"]
+],
+0,
+"Venn Diagram",
+"Only Science = 30−12 = 18."
+),
+
+Q(
+"Find the next letter: B, E, H, K, ?",
+"अगला अक्षर ज्ञात कीजिए: B, E, H, K, ?",
+[
+["N","N"],
+["M","M"],
+["O","O"],
+["P","P"]
+],
+0,
+"Alphabet Series",
+"The letters advance by 3 positions."
+),
+
+Q(
+"A clock shows 6:00. What is the angle between its hands?",
+"एक घड़ी 6:00 बजा रही है। उसकी दोनों सुइयों के बीच कोण कितना है?",
+[
+["180°","180°"],
+["90°","90°"],
+["120°","120°"],
+["60°","60°"]
+],
+0,
+"Clock",
+"At 6:00 the hands are opposite each other."
+),
+
+Q(
+"If 1 January is Monday, what day is 8 January?",
+"यदि 1 जनवरी सोमवार है, तो 8 जनवरी कौन-सा दिन होगा?",
+[
+["Monday","सोमवार"],
+["Tuesday","मंगलवार"],
+["Sunday","रविवार"],
+["Wednesday","बुधवार"]
+],
+0,
+"Calendar",
+"Seven days later is the same weekday."
+),
+
+Q(
+"Find: 15 + 5 × 4 − 10 ÷ 2.",
+"ज्ञात कीजिए: 15 + 5 × 4 − 10 ÷ 2.",
+[
+["30","30"],
+["25","25"],
+["35","35"],
+["20","20"]
+],
+0,
+"BODMAS",
+"5×4=20 and 10÷2=5; 15+20−5=30."
+),
+
+Q(
+"A shopkeeper buys an item for ₹400 and sells it for ₹450. Find the profit.",
+"एक दुकानदार ₹400 में वस्तु खरीदकर ₹450 में बेचता है। लाभ ज्ञात कीजिए।",
+[
+["₹50","₹50"],
+["₹40","₹40"],
+["₹60","₹60"],
+["₹45","₹45"]
+],
+0,
+"Arithmetic Reasoning",
+"Profit = Selling Price − Cost Price = ₹50."
+),
+
+Q(
+"Find the missing number: 5, 11, 17, 23, ?",
+"लुप्त संख्या ज्ञात कीजिए: 5, 11, 17, 23, ?",
+[
+["29","29"],
+["28","28"],
+["30","30"],
+["31","31"]
+],
+0,
+"Number Series",
+"Each term increases by 6."
+),
+
+Q(
+"Which word is different: Cow, Goat, Horse, Sparrow?",
+"कौन-सा शब्द अलग है: Cow, Goat, Horse, Sparrow?",
+[
+["Cow","Cow"],
+["Goat","Goat"],
+["Horse","Horse"],
+["Sparrow","Sparrow"]
+],
+3,
+"Classification",
+"Sparrow is a bird; the others are mammals."
+),
+
+Q(
+"If DELHI is coded as EFMIJ, how is INDIA coded?",
+"यदि DELHI को EFMIJ लिखा जाता है, तो INDIA को कैसे लिखा जाएगा?",
+[
+["JOEJB","JOEJB"],
+["JPEJB","JPEJB"],
+["HMCHZ","HMCHZ"],
+["JODJB","JODJB"]
+],
+0,
+"Coding-Decoding",
+"Each letter is shifted one place forward."
+),
+
+Q(
+"X is father of Y. Y is sister of Z. How is X related to Z?",
+"X, Y का पिता है। Y, Z की बहन है। X का Z से क्या संबंध है?",
+[
+["Father","पिता"],
+["Brother","भाई"],
+["Uncle","चाचा/मामा"],
+["Grandfather","दादा/नाना"]
+],
+0,
+"Blood Relation",
+"X is the father of both Y and Z."
+),
+
+Q(
+"Meena is 14th from the front in a queue of 32. What is her position from the back?",
+"32 लोगों की कतार में मीना आगे से 14वीं है। पीछे से उसकी स्थिति क्या होगी?",
+[
+["19th","19वीं"],
+["18th","18वीं"],
+["20th","20वीं"],
+["17th","17वीं"]
+],
+0,
+"Ranking",
+"32−14+1=19."
+),
+
+Q(
+"All pens are stationery. Some stationery is expensive. Which statement definitely follows?",
+"सभी पेन स्टेशनरी हैं। कुछ स्टेशनरी महँगी है। कौन-सा कथन निश्चित रूप से सही है?",
+[
+["All pens are stationery.","सभी पेन स्टेशनरी हैं।"],
+["All expensive things are pens.","सभी महँगी वस्तुएँ पेन हैं।"],
+["No pen is expensive.","कोई पेन महँगा नहीं है।"],
+["All stationery is pen.","सारी स्टेशनरी पेन है।"]
+],
+0,
+"Syllogism",
+"The first statement directly establishes the conclusion."
+),
+
+Q(
+"45 students study Hindi, 24 study English and 9 study both. How many study only Hindi?",
+"45 विद्यार्थी हिन्दी, 24 अंग्रेज़ी और 9 दोनों पढ़ते हैं। केवल हिन्दी पढ़ने वाले कितने हैं?",
+[
+["36","36"],
+["35","35"],
+["34","34"],
+["33","33"]
+],
+0,
+"Venn Diagram",
+"Only Hindi = 45−9=36."
+),
+
+Q(
+"Find the next letter: Z, X, V, T, ?",
+"अगला अक्षर ज्ञात कीजिए: Z, X, V, T, ?",
+[
+["R","R"],
+["S","S"],
+["Q","Q"],
+["P","P"]
+],
+0,
+"Alphabet Series",
+"Each letter moves two places backward."
+),
+
+Q(
+"A person faces east. He turns left, then left again. Which direction is he facing?",
+"एक व्यक्ति पूर्व की ओर मुख किए है। वह बाएँ मुड़ता है और फिर बाएँ मुड़ता है। अब वह किस दिशा में है?",
+[
+["West","पश्चिम"],
+["East","पूर्व"],
+["North","उत्तर"],
+["South","दक्षिण"]
+],
+0,
+"Direction Sense",
+"Two left turns from east lead to west."
+),
+
+Q(
+"If today is Wednesday, what day was it 10 days ago?",
+"यदि आज बुधवार है, तो 10 दिन पहले कौन-सा दिन था?",
+[
+["Sunday","रविवार"],
+["Monday","सोमवार"],
+["Tuesday","मंगलवार"],
+["Saturday","शनिवार"]
+],
+0,
+"Calendar",
+"10 mod 7 = 3; three days before Wednesday is Sunday."
+),
+
+Q(
+"Simplify: 64 ÷ 8 × 3 + 5.",
+"सरल कीजिए: 64 ÷ 8 × 3 + 5.",
+[
+["29","29"],
+["21","21"],
+["32","32"],
+["24","24"]
+],
+0,
+"BODMAS",
+"64÷8=8; 8×3=24; 24+5=29."
+),
+
+Q(
+"A number is increased from 80 to 100. What is the increase?",
+"एक संख्या 80 से बढ़कर 100 हो जाती है। वृद्धि कितनी है?",
+[
+["20","20"],
+["15","15"],
+["25","25"],
+["10","10"]
+],
+0,
+"Arithmetic Reasoning",
+"Increase = 100−80 = 20."
+),
+
+Q(
+"Find the next number: 81, 27, 9, 3, ?",
+"अगली संख्या ज्ञात कीजिए: 81, 27, 9, 3, ?",
+[
+["1","1"],
+["2","2"],
+["0","0"],
+["6","6"]
+],
+0,
+"Number Series",
+"Each term is divided by 3."
+),
+
+Q(
+"Which is different: Square, Rectangle, Triangle, Rose?",
+"अलग कौन है: Square, Rectangle, Triangle, Rose?",
+[
+["Square","वर्ग"],
+["Rectangle","आयत"],
+["Triangle","त्रिभुज"],
+["Rose","गुलाब"]
+],
+3,
+"Classification",
+"Rose is not a geometrical figure."
+),
+
+Q(
+"Hand : Glove :: Foot : ?",
+"Hand : Glove :: Foot : ?",
+[
+["Shoe","जूता"],
+["Cap","टोपी"],
+["Shirt","कमीज़"],
+["Belt","बेल्ट"]
+],
+0,
+"Analogy",
+"A glove is worn on a hand and a shoe on a foot."
+),
+
+Q(
+"Rita is sister of Mohan. Mohan is son of Kiran. How is Rita related to Kiran?",
+"रीता, मोहन की बहन है। मोहन, किरण का पुत्र है। रीता का किरण से क्या संबंध है?",
+[
+["Daughter","पुत्री"],
+["Sister","बहन"],
+["Mother","माता"],
+["Aunt","चाची/मौसी"]
+],
+0,
+"Blood Relation",
+"Rita is also Kiran's daughter."
+),
+
+Q(
+"A is 5th from the left and 9th from the right. How many people are in the row?",
+"A बाएँ से 5वाँ और दाएँ से 9वाँ है। पंक्ति में कुल कितने लोग हैं?",
+[
+["13","13"],
+["14","14"],
+["12","12"],
+["15","15"]
+],
+0,
+"Ranking",
+"5+9−1=13."
+),
+
+Q(
+"Some students are athletes. All athletes are fit. Which conclusion follows?",
+"कुछ विद्यार्थी खिलाड़ी हैं। सभी खिलाड़ी फिट हैं। कौन-सा निष्कर्ष सही है?",
+[
+["Some students are fit.","कुछ विद्यार्थी फिट हैं।"],
+["All students are athletes.","सभी विद्यार्थी खिलाड़ी हैं।"],
+["No athlete is fit.","कोई खिलाड़ी फिट नहीं है।"],
+["All fit people are students.","सभी फिट लोग विद्यार्थी हैं।"]
+],
+0,
+"Syllogism",
+"The students who are athletes are necessarily fit."
+),
+
+Q(
+"60 students study Science, 35 study Maths and 15 study both. How many study only Maths?",
+"60 विद्यार्थी विज्ञान, 35 गणित और 15 दोनों पढ़ते हैं। केवल गणित पढ़ने वाले कितने हैं?",
+[
+["20","20"],
+["25","25"],
+["15","15"],
+["50","50"]
+],
+0,
+"Venn Diagram",
+"Only Maths = 35−15=20."
+)
+
+]);
+
+
+/* ============================================================
+   TESTS 2–5
+   ============================================================ */
+
+/*
+The following four tests use a separate bank of 50 questions
+each. The order is intentionally mixed so that the same topic
+does not appear in blocks.
+*/
+
+const test2 = [
+
+Q("Simplify: 25 + 4 × 6 − 8.","सरल कीजिए: 25 + 4 × 6 − 8.",
+[["41","41"],["37","37"],["45","45"],["33","33"]],0,"BODMAS","4×6=24; 25+24−8=41."),
+
+Q("A walks 5 km west and then 3 km north. Direction from start?","A 5 किमी पश्चिम और फिर 3 किमी उत्तर जाता है। प्रारम्भ से दिशा?",
+[["North-West","उत्तर-पश्चिम"],["South-West","दक्षिण-पश्चिम"],["North-East","उत्तर-पूर्व"],["South-East","दक्षिण-पूर्व"]],0,"Direction Sense","West plus north gives North-West."),
+
+Q("Find next: 6, 12, 18, 24, ?","अगली संख्या: 6, 12, 18, 24, ?",
+[["30","30"],["32","32"],["28","28"],["36","36"]],0,"Number Series","Add 6."),
+
+Q("Teacher : School :: Doctor : ?","Teacher : School :: Doctor : ?",
+[["Hospital","अस्पताल"],["Court","न्यायालय"],["Market","बाज़ार"],["Farm","खेत"]],0,"Analogy","A doctor works in a hospital."),
+
+Q("Odd one out: 2, 3, 5, 9.","विषम चुनिए: 2, 3, 5, 9.",
+[["2","2"],["3","3"],["5","5"],["9","9"]],3,"Classification","2,3,5 are prime; 9 is composite."),
+
+Q("If SUN is coded as TVO, how is MAP coded?","यदि SUN को TVO लिखा जाए, तो MAP कैसे लिखा जाएगा?",
+[["NBQ","NBQ"],["MBQ","MBQ"],["NBR","NBR"],["OCP","OCP"]],0,"Coding-Decoding","Each letter advances by one."),
+
+Q("P is daughter of Q. Q is father of R. How is P related to R?","P, Q की पुत्री है। Q, R का पिता है। P का R से संबंध?",
+[["Sister","बहन"],["Mother","माता"],["Aunt","चाची/मौसी"],["Cousin","चचेरी/ममेरी बहन"]],0,"Blood Relation","P and R are children of Q."),
+
+Q("A person is 17th from top and 12th from bottom. Total?","एक व्यक्ति ऊपर से 17वाँ और नीचे से 12वाँ है। कुल?",
+[["28","28"],["29","29"],["27","27"],["30","30"]],0,"Ranking","17+12−1=28."),
+
+Q("All cats are animals. Which conclusion definitely follows?","सभी बिल्लियाँ जानवर हैं। निश्चित निष्कर्ष?",
+[["All cats are animals.","सभी बिल्लियाँ जानवर हैं।"],["All animals are cats.","सभी जानवर बिल्लियाँ हैं।"],["No cat is animal.","कोई बिल्ली जानवर नहीं है।"],["Some animals are not cats.","कुछ जानवर बिल्ली नहीं हैं।"]],0,"Syllogism","Directly stated."),
+
+Q("50 study A, 30 study B, 12 study both. Only B?","50 A, 30 B और 12 दोनों पढ़ते हैं। केवल B कितने?",
+[["18","18"],["30","30"],["42","42"],["12","12"]],0,"Venn Diagram","30−12=18."),
+
+Q("Next letter: C, F, I, L, ?","अगला अक्षर: C, F, I, L, ?",
+[["O","O"],["N","N"],["P","P"],["Q","Q"]],0,"Alphabet Series","Advance by 3."),
+
+Q("At 9:00 angle between hands?","9:00 बजे दोनों सुइयों के बीच कोण?",
+[["90°","90°"],["180°","180°"],["45°","45°"],["120°","120°"]],0,"Clock","The hands are perpendicular."),
+
+Q("If today is Friday, what day after 12 days?","आज शुक्रवार है। 12 दिन बाद कौन-सा दिन?",
+[["Wednesday","बुधवार"],["Tuesday","मंगलवार"],["Thursday","गुरुवार"],["Monday","सोमवार"]],0,"Calendar","12 mod 7=5; Friday+5=Wednesday."),
+
+Q("Simplify: 30 ÷ 5 + 8 × 2.","सरल करें: 30 ÷ 5 + 8 × 2.",
+[["22","22"],["28","28"],["20","20"],["18","18"]],0,"BODMAS","6+16=22."),
+
+Q("A vehicle travels 45 km/h for 4 hours. Distance?","वाहन 45 किमी/घंटा की गति से 4 घंटे चलता है। दूरी?",
+[["180 km","180 किमी"],["160 km","160 किमी"],["200 km","200 किमी"],["90 km","90 किमी"]],0,"Arithmetic Reasoning","45×4=180."),
+
+Q("Next: 10, 20, 40, 80, ?","अगला: 10, 20, 40, 80, ?",
+[["160","160"],["120","120"],["140","140"],["180","180"]],0,"Number Series","Multiply by 2."),
+
+Q("Eye : See :: Ear : ?","Eye : See :: Ear : ?",
+[["Hear","सुनना"],["Speak","बोलना"],["Walk","चलना"],["Touch","छूना"]],0,"Analogy","Ear is used for hearing."),
+
+Q("Odd one: Delhi, Jaipur, Mumbai, Nepal.","विषम: Delhi, Jaipur, Mumbai, Nepal.",
+[["Delhi","दिल्ली"],["Jaipur","जयपुर"],["Mumbai","मुंबई"],["Nepal","नेपाल"]],3,"Classification","Nepal is a country; others are Indian cities."),
+
+Q("If BOX is CPY, how is CAR coded?","यदि BOX को CPY लिखा जाता है, CAR कैसे लिखा जाएगा?",
+[["DBS","DBS"],["DAS","DAS"],["CBS","CBS"],["EBS","EBS"]],0,"Coding-Decoding","Each letter advances one."),
+
+Q("M is brother of N. N is mother of O. M is O's:","M, N का भाई है। N, O की माता है। M, O का क्या है?",
+[["Uncle","मामा"],["Father","पिता"],["Brother","भाई"],["Grandfather","दादा/नाना"]],0,"Blood Relation","Mother's brother is maternal uncle."),
+
+Q("A is 10th from left and 16th from right. Total?","A बाएँ से 10वाँ और दाएँ से 16वाँ है। कुल?",
+[["25","25"],["26","26"],["24","24"],["27","27"]],0,"Ranking","10+16−1=25."),
+
+Q("All mangoes are fruits. No fruit is a stone. Conclusion?","सभी आम फल हैं। कोई फल पत्थर नहीं है। निष्कर्ष?",
+[["No mango is a stone.","कोई आम पत्थर नहीं है।"],["All stones are mangoes.","सभी पत्थर आम हैं।"],["Some mangoes are stones.","कुछ आम पत्थर हैं।"],["All fruits are mangoes.","सभी फल आम हैं।"]],0,"Syllogism","Mangoes are fruits and fruits are not stones."),
+
+Q("36 study Hindi, 20 English, 8 both. Only Hindi?","36 हिन्दी, 20 अंग्रेज़ी और 8 दोनों पढ़ते हैं। केवल हिन्दी?",
+[["28","28"],["36","36"],["20","20"],["30","30"]],0,"Venn Diagram","36−8=28."),
+
+Q("Next: D, H, L, P, ?","अगला: D, H, L, P, ?",
+[["T","T"],["U","U"],["S","S"],["V","V"]],0,"Alphabet Series","Advance by 4."),
+
+Q("At 12:00 angle?","12:00 बजे कोण?",
+[["0°","0°"],["90°","90°"],["180°","180°"],["60°","60°"]],0,"Clock","Both hands overlap."),
+
+Q("If 10 March is Tuesday, 17 March is:","यदि 10 मार्च मंगलवार है, तो 17 मार्च कौन-सा दिन?",
+[["Tuesday","मंगलवार"],["Wednesday","बुधवार"],["Monday","सोमवार"],["Thursday","गुरुवार"]],0,"Calendar","Seven days later is Tuesday."),
+
+Q("Simplify: 9 + 7 × 3 − 5.","सरल करें: 9 + 7 × 3 − 5.",
+[["25","25"],["28","28"],["23","23"],["21","21"]],0,"BODMAS","9+21−5=25."),
+
+Q("A book costs ₹120. What is cost of 5 books?","एक पुस्तक ₹120 की है। 5 पुस्तकों की कीमत?",
+[["₹600","₹600"],["₹500","₹500"],["₹720","₹720"],["₹480","₹480"]],0,"Arithmetic Reasoning","120×5=600."),
+
+Q("Next: 100, 90, 80, 70, ?","अगला: 100, 90, 80, 70, ?",
+[["60","60"],["65","65"],["55","55"],["50","50"]],0,"Number Series","Subtract 10."),
+
+Q("Bird : Fly :: Fish : ?","Bird : Fly :: Fish : ?",
+[["Swim","तैरना"],["Run","दौड़ना"],["Walk","चलना"],["Jump","कूदना"]],0,"Analogy","Fish swim."),
+
+Q("Odd one: 8, 27, 64, 100.","विषम: 8, 27, 64, 100.",
+[["8","8"],["27","27"],["64","64"],["100","100"]],3,"Classification","8,27,64 are cubes; 100 is not."),
+
+Q("If HAT is IBU, how is TOP coded?","यदि HAT को IBU लिखा जाए, TOP कैसे लिखा जाएगा?",
+[["UPQ","UPQ"],["UPO","UQP"],["VPQ","VPQ"],["TPQ","TPQ"]],0,"Coding-Decoding","Each letter moves one step forward."),
+
+Q("R is father of S. S is mother of T. R is T's:","R, S का पिता है। S, T की माता है। R, T का क्या है?",
+[["Grandfather","दादा/नाना"],["Father","पिता"],["Uncle","चाचा/मामा"],["Brother","भाई"]],0,"Blood Relation","Mother's father is grandfather."),
+
+Q("A is 7th from left and 8th from right. Total?","A बाएँ से 7वाँ और दाएँ से 8वाँ है। कुल?",
+[["14","14"],["15","15"],["13","13"],["16","16"]],0,"Ranking","7+8−1=14."),
+
+Q("All squares are rectangles. All rectangles are quadrilaterals. Conclusion?","सभी वर्ग आयत हैं। सभी आयत चतुर्भुज हैं। निष्कर्ष?",
+[["All squares are quadrilaterals.","सभी वर्ग चतुर्भुज हैं।"],["All quadrilaterals are squares.","सभी चतुर्भुज वर्ग हैं।"],["No square is a quadrilateral.","कोई वर्ग चतुर्भुज नहीं है।"],["Some rectangles are circles.","कुछ आयत वृत्त हैं।"]],0,"Syllogism","Squares are rectangles and rectangles are quadrilaterals."),
+
+Q("55 study A, 32 B, 14 both. Only A?","55 A, 32 B और 14 दोनों पढ़ते हैं। केवल A?",
+[["41","41"],["46","46"],["32","32"],["14","14"]],0,"Venn Diagram","55−14=41."),
+
+Q("Next letter: E, G, I, K, ?","अगला अक्षर: E, G, I, K, ?",
+[["M","M"],["N","N"],["L","L"],["O","O"]],0,"Alphabet Series","Advance by 2."),
+
+Q("At 6:00, the hands form a straight angle. Its measure is:","6:00 बजे सुइयाँ सीधा कोण बनाती हैं। उसका माप?",
+[["180°","180°"],["90°","90°"],["120°","120°"],["360°","360°"]],0,"Clock","Straight angle = 180°."),
+
+Q("If today is Sunday, what day was 15 days ago?","आज रविवार है। 15 दिन पहले कौन-सा दिन था?",
+[["Saturday","शनिवार"],["Friday","शुक्रवार"],["Sunday","रविवार"],["Monday","सोमवार"]],0,"Calendar","15 mod 7=1; one day before Sunday is Saturday."),
+
+Q("Simplify: 100 − 20 ÷ 4 × 3.","सरल करें: 100 − 20 ÷ 4 × 3.",
+[["85","85"],["90","90"],["75","75"],["80","80"]],0,"BODMAS","20÷4=5; 5×3=15; 100−15=85."),
+
+Q("A man earns ₹500 per day. How much in 6 days?","एक व्यक्ति ₹500 प्रतिदिन कमाता है। 6 दिनों में कितनी कमाई?",
+[["₹3000","₹3000"],["₹2500","₹2500"],["₹3500","₹3500"],["₹2800","₹2800"]],0,"Arithmetic Reasoning","500×6=3000."),
+
+Q("Next: 2, 5, 10, 17, 26, ?","अगला: 2, 5, 10, 17, 26, ?",
+[["37","37"],["36","36"],["38","38"],["39","39"]],0,"Number Series","Differences are 3,5,7,9, so next difference is 11."),
+
+Q("Finger : Hand :: Toe : ?","Finger : Hand :: Toe : ?",
+[["Foot","पैर"],["Head","सिर"],["Arm","बाँह"],["Leg","टांग"]],0,"Analogy","A toe is part of the foot."),
+
+Q("Odd one: Rose, Lotus, Lily, Wheat.","विषम: Rose, Lotus, Lily, Wheat.",
+[["Rose","गुलाब"],["Lotus","कमल"],["Lily","लिली"],["Wheat","गेहूँ"]],3,"Classification","Wheat is a crop, not a flower."),
+
+Q("If RAT is SBU, how is TOP coded?","यदि RAT को SBU लिखा जाता है, TOP कैसे लिखा जाएगा?",
+[["UPQ","UPQ"],["UOQ","UOQ"],["VPQ","VPQ"],["TPR","TPR"]],0,"Coding-Decoding","Each letter moves one position forward."),
+
+Q("B is sister of C. C is father of D. B is D's:","B, C की बहन है। C, D का पिता है। B, D की क्या है?",
+[["Aunt","बुआ"],["Mother","माता"],["Sister","बहन"],["Grandmother","दादी"]],0,"Blood Relation","Father's sister is aunt."),
+
+Q("A is 13th from top in a class of 40. Rank from bottom?","40 की कक्षा में A ऊपर से 13वाँ है। नीचे से रैंक?",
+[["28","28"],["27","27"],["29","29"],["26","26"]],0,"Ranking","40−13+1=28."),
+
+Q("Some cars are electric. All electric vehicles are quiet. Conclusion?","कुछ कारें इलेक्ट्रिक हैं। सभी इलेक्ट्रिक वाहन शांत हैं। निष्कर्ष?",
+[["Some cars are quiet.","कुछ कारें शांत हैं।"],["All cars are quiet.","सभी कारें शांत हैं।"],["No car is quiet.","कोई कार शांत नहीं है।"],["All quiet things are cars.","सभी शांत वस्तुएँ कार हैं।"]],0,"Syllogism","The electric cars are quiet."),
+
+Q("70 study A, 40 B, 18 both. Only B?","70 A, 40 B और 18 दोनों पढ़ते हैं। केवल B?",
+[["22","22"],["40","40"],["58","58"],["18","18"]],0,"Venn Diagram","40−18=22.")
+
+];
+
+tests.push(test2);
+
+
+/* ============================================================
+   TEST 3
+   ============================================================ */
+
+const test3=[
+
+Q("Simplify: 32 ÷ 4 + 9 × 2.","सरल करें: 32 ÷ 4 + 9 × 2.",
+[["26","26"],["25","25"],["24","24"],["28","28"]],0,"BODMAS","8+18=26."),
+
+Q("A walks 4 km south and 6 km east. Direction?","A 4 किमी दक्षिण और 6 किमी पूर्व जाता है। दिशा?",
+[["South-East","दक्षिण-पूर्व"],["South-West","दक्षिण-पश्चिम"],["North-East","उत्तर-पूर्व"],["North-West","उत्तर-पश्चिम"]],0,"Direction Sense","South plus east gives South-East."),
+
+Q("Next: 11, 22, 33, 44, ?","अगला: 11,22,33,44,?",
+[["55","55"],["54","54"],["56","56"],["66","66"]],0,"Number Series","Add 11."),
+
+Q("Seed : Plant :: Egg : ?","Seed : Plant :: Egg : ?",
+[["Bird","पक्षी"],["Nest","घोंसला"],["Hen","मुर्गी"],["Food","भोजन"]],0,"Analogy","A seed develops into a plant; an egg can develop into a bird."),
+
+Q("Odd one: 49, 64, 81, 90.","विषम: 49,64,81,90.",
+[["49","49"],["64","64"],["81","81"],["90","90"]],3,"Classification","49,64,81 are perfect squares."),
+
+Q("If CAR is DBS, then PEN is:","यदि CAR को DBS लिखा जाए, तो PEN क्या होगा?",
+[["QFO","QFO"],["QFN","QFN"],["PGO","PGO"],["RFO","RFO"]],0,"Coding-Decoding","Shift every letter by one."),
+
+Q("H is mother of J. J is father of K. H is K's:","H, J की माता है। J, K का पिता है। H, K की क्या है?",
+[["Grandmother","दादी/नानी"],["Mother","माता"],["Aunt","चाची/मौसी"],["Sister","बहन"]],0,"Blood Relation","Father's mother is grandmother."),
+
+Q("A is 9th from left and 11th from right. Total?","A बाएँ से 9वाँ और दाएँ से 11वाँ है। कुल?",
+[["19","19"],["20","20"],["18","18"],["21","21"]],0,"Ranking","9+11−1=19."),
+
+Q("All doctors are graduates. Ravi is a doctor. Conclusion?","सभी डॉक्टर स्नातक हैं। रवि डॉक्टर है। निष्कर्ष?",
+[["Ravi is a graduate.","रवि स्नातक है।"],["Ravi is a teacher.","रवि शिक्षक है।"],["All graduates are doctors.","सभी स्नातक डॉक्टर हैं।"],["Ravi is not a graduate.","रवि स्नातक नहीं है।"]],0,"Syllogism","Ravi belongs to the set of doctors."),
+
+Q("60 study A, 35 B, 15 both. Only A?","60 A,35 B और15 दोनों पढ़ते हैं। केवल A?",
+[["45","45"],["40","40"],["50","50"],["15","15"]],0,"Venn Diagram","60−15=45."),
+
+Q("Next: F, I, L, O, ?","अगला: F,I,L,O,?",
+[["R","R"],["S","S"],["Q","Q"],["T","T"]],0,"Alphabet Series","Advance by 3."),
+
+Q("At 2:00 angle?","2:00 बजे कोण?",
+[["60°","60°"],["30°","30°"],["90°","90°"],["120°","120°"]],0,"Clock","Each hour mark represents 30°; two marks = 60°."),
+
+Q("If today is Tuesday, what day after 23 days?","आज मंगलवार है। 23 दिन बाद कौन-सा दिन?",
+[["Thursday","गुरुवार"],["Friday","शुक्रवार"],["Wednesday","बुधवार"],["Monday","सोमवार"]],0,"Calendar","23 mod 7=2; Tuesday+2=Thursday."),
+
+Q("Simplify: 45 − 5 × 4 + 6.","सरल करें: 45 − 5 × 4 + 6.",
+[["31","31"],["35","35"],["29","29"],["41","41"]],0,"BODMAS","45−20+6=31."),
+
+Q("A bus travels 70 km in 2 hours. Average speed?","बस 2 घंटे में 70 किमी चलती है। औसत गति?",
+[["35 km/h","35 किमी/घंटा"],["70 km/h","70 किमी/घंटा"],["30 km/h","30 किमी/घंटा"],["40 km/h","40 किमी/घंटा"]],0,"Arithmetic Reasoning","70÷2=35 km/h."),
+
+Q("Next: 1, 4, 7, 10, ?","अगला: 1,4,7,10,?",
+[["13","13"],["12","12"],["14","14"],["15","15"]],0,"Number Series","Add 3."),
+
+Q("Water : Thirst :: Food : ?","Water : Thirst :: Food : ?",
+[["Hunger","भूख"],["Sleep","नींद"],["Heat","गर्मी"],["Cold","ठंड"]],0,"Analogy","Water satisfies thirst; food satisfies hunger."),
+
+Q("Odd one: Monday, Tuesday, April, Friday.","विषम: Monday, Tuesday, April, Friday.",
+[["Monday","सोमवार"],["Tuesday","मंगलवार"],["April","अप्रैल"],["Friday","शुक्रवार"]],2,"Classification","April is a month."),
+
+Q("If MAP is NBQ, then BOX is:","यदि MAP को NBQ लिखा जाए, तो BOX क्या होगा?",
+[["CPY","CPY"],["COY","COY"],["CQY","CQY"],["BPX","BPX"]],0,"Coding-Decoding","Each letter advances one."),
+
+Q("K is daughter of L. L is brother of M. K is M's:","K, L की पुत्री है। L, M का भाई है। K का M से संबंध?",
+[["Niece","भतीजी/भांजी"],["Daughter","पुत्री"],["Sister","बहन"],["Aunt","चाची/मौसी"]],0,"Blood Relation","Brother's daughter is niece."),
+
+Q("A is 15th from top in a class of 45. Rank from bottom?","45 की कक्षा में A ऊपर से 15वाँ है। नीचे से रैंक?",
+[["31","31"],["30","30"],["32","32"],["29","29"]],0,"Ranking","45−15+1=31."),
+
+Q("All mangoes are fruits. No fruits are stones. Conclusion?","सभी आम फल हैं। कोई फल पत्थर नहीं है। निष्कर्ष?",
+[["No mango is a stone.","कोई आम पत्थर नहीं है।"],["Some mangoes are stones.","कुछ आम पत्थर हैं।"],["All stones are mangoes.","सभी पत्थर आम हैं।"],["All fruits are stones.","सभी फल पत्थर हैं।"]],0,"Syllogism","Mangoes are fruits, and fruits cannot be stones."),
+
+Q("48 study Hindi, 30 English, 10 both. Only Hindi?","48 हिन्दी,30 अंग्रेज़ी और10 दोनों पढ़ते हैं। केवल हिन्दी?",
+[["38","38"],["40","40"],["42","42"],["30","30"]],0,"Venn Diagram","48−10=38."),
+
+Q("Next: M, O, Q, S, ?","अगला: M,O,Q,S,?",
+[["U","U"],["T","T"],["V","V"],["W","W"]],0,"Alphabet Series","Advance by 2."),
+
+Q("At 10:00 angle?","10:00 बजे कोण?",
+[["60°","60°"],["90°","90°"],["120°","120°"],["30°","30°"]],0,"Clock","Two hour marks = 60°."),
+
+Q("If 5 June is Friday, what day is 12 June?","यदि 5 जून शुक्रवार है, तो 12 जून कौन-सा दिन?",
+[["Friday","शुक्रवार"],["Saturday","शनिवार"],["Thursday","गुरुवार"],["Wednesday","बुधवार"]],0,"Calendar","Seven days later is Friday."),
+
+Q("Simplify: 80 ÷ 10 + 4 × 5.","सरल करें: 80 ÷ 10 + 4 × 5.",
+[["28","28"],["24","24"],["30","30"],["20","20"]],0,"BODMAS","8+20=28."),
+
+Q("A person saves ₹250 each month. Savings in 8 months?","एक व्यक्ति हर महीने ₹250 बचाता है। 8 महीनों में बचत?",
+[["₹2000","₹2000"],["₹1800","₹1800"],["₹2200","₹2200"],["₹1500","₹1500"]],0,"Arithmetic Reasoning","250×8=2000."),
+
+Q("Next: 5, 10, 17, 26, 37, ?","अगला: 5,10,17,26,37,?",
+[["50","50"],["49","49"],["51","51"],["52","52"]],0,"Number Series","Differences are 5,7,9,11,13."),
+
+Q("Light : Dark :: Day : ?","Light : Dark :: Day : ?",
+[["Night","रात"],["Morning","सुबह"],["Evening","शाम"],["Sun","सूर्य"]],0,"Analogy","Day is opposite to night."),
+
+Q("Odd one: Gold, Silver, Copper, Wood.","विषम: Gold, Silver, Copper, Wood.",
+[["Gold","सोना"],["Silver","चाँदी"],["Copper","तांबा"],["Wood","लकड़ी"]],3,"Classification","Wood is not a metal."),
+
+Q("If HEN is IFO, how is CAT coded?","यदि HEN को IFO लिखा जाए, CAT कैसे लिखा जाएगा?",
+[["DBU","DBU"],["CBT","CBT"],["DCT","DCT"],["EBU","EBU"]],0,"Coding-Decoding","Each letter advances one."),
+
+Q("T is brother of U. U is mother of V. T is V's:","T, U का भाई है। U, V की माता है। T, V का क्या है?",
+[["Uncle","मामा"],["Father","पिता"],["Brother","भाई"],["Grandfather","दादा/नाना"]],0,"Blood Relation","Mother's brother is uncle."),
+
+Q("A is 6th from left and 13th from right. Total?","A बाएँ से 6वाँ और दाएँ से 13वाँ है। कुल?",
+[["18","18"],["19","19"],["17","17"],["20","20"]],0,"Ranking","6+13−1=18."),
+
+Q("Some students are athletes. All athletes are fit. Conclusion?","कुछ विद्यार्थी खिलाड़ी हैं। सभी खिलाड़ी फिट हैं। निष्कर्ष?",
+[["Some students are fit.","कुछ विद्यार्थी फिट हैं।"],["All students are fit.","सभी विद्यार्थी फिट हैं।"],["No athlete is fit.","कोई खिलाड़ी फिट नहीं है।"],["All fit people are athletes.","सभी फिट लोग खिलाड़ी हैं।"]],0,"Syllogism","The students who are athletes are fit."),
+
+Q("75 study A, 42 B, 16 both. Only B?","75 A,42 B और16 दोनों पढ़ते हैं। केवल B?",
+[["26","26"],["25","25"],["30","30"],["16","16"]],0,"Venn Diagram","42−16=26."),
+
+Q("Next: Q, N, K, H, ?","अगला: Q,N,K,H,?",
+[["E","E"],["F","F"],["D","D"],["G","G"]],0,"Alphabet Series","Move backward by 3."),
+
+Q("At 4:00 angle?","4:00 बजे कोण?",
+[["120°","120°"],["90°","90°"],["60°","60°"],["150°","150°"]],0,"Clock","Four hour marks = 120°."),
+
+Q("If today is Saturday, what day was 9 days ago?","आज शनिवार है। 9 दिन पहले कौन-सा दिन था?",
+[["Thursday","गुरुवार"],["Friday","शुक्रवार"],["Wednesday","बुधवार"],["Tuesday","मंगलवार"]],0,"Calendar","9 mod 7=2; Saturday−2=Thursday."),
+
+Q("Simplify: 54 ÷ 6 + 3 × 7.","सरल करें: 54 ÷ 6 + 3 × 7.",
+[["30","30"],["27","27"],["33","33"],["24","24"]],0,"BODMAS","9+21=30."),
+
+Q("A shopkeeper buys for ₹700 and sells for ₹770. Profit?","दुकानदार ₹700 में खरीदकर ₹770 में बेचता है। लाभ?",
+[["₹70","₹70"],["₹60","₹60"],["₹80","₹80"],["₹50","₹50"]],0,"Arithmetic Reasoning","770−700=70."),
+
+Q("Next: 2, 8, 18, 32, 50, ?","अगला: 2,8,18,32,50,?",
+[["72","72"],["70","70"],["74","74"],["68","68"]],0,"Number Series","Terms follow 2×1², 2×2², 2×3²... next = 2×6²=72."),
+
+Q("Puppy : Dog :: Kitten : ?","Puppy : Dog :: Kitten : ?",
+[["Cat","बिल्ली"],["Cow","गाय"],["Horse","घोड़ा"],["Goat","बकरी"]],0,"Analogy","A kitten is a young cat."),
+
+Q("Odd one: 12, 18, 24, 31.","विषम: 12,18,24,31.",
+[["12","12"],["18","18"],["24","24"],["31","31"]],3,"Classification","12,18,24 are divisible by 6; 31 is not."),
+
+Q("If TOP is UPQ, then BOX is:","यदि TOP को UPQ लिखा जाए, तो BOX क्या होगा?",
+[["CPY","CPY"],["CQY","CQY"],["BPY","BPY"],["DOZ","DOZ"]],0,"Coding-Decoding","Each letter advances one."),
+
+Q("B is sister of C. C is father of D. B is D's:","B, C की बहन है। C, D का पिता है। B, D की क्या है?",
+[["Aunt","बुआ"],["Mother","माता"],["Sister","बहन"],["Grandmother","दादी"]],0,"Blood Relation","Father's sister is aunt."),
+
+Q("A is 18th from top and 15th from bottom. Total?","A ऊपर से 18वाँ और नीचे से 15वाँ है। कुल?",
+[["32","32"],["33","33"],["31","31"],["34","34"]],0,"Ranking","18+15−1=32."),
+
+Q("All squares are rectangles. Which conclusion is valid?","सभी वर्ग आयत हैं। कौन-सा निष्कर्ष सही है?",
+[["Every square is a rectangle.","हर वर्ग एक आयत है।"],["Every rectangle is a square.","हर आयत वर्ग है।"],["No square is rectangle.","कोई वर्ग आयत नहीं है।"],["Some squares are circles.","कुछ वर्ग वृत्त हैं।"]],0,"Syllogism","Directly follows from the statement."),
+
+Q("65 study A, 38 B, 11 both. Only A?","65 A,38 B और11 दोनों पढ़ते हैं। केवल A?",
+[["54","54"],["53","53"],["49","49"],["50","50"]],0,"Venn Diagram","65−11=54.")
+
+];
+
+tests.push(test3);
+
+
+/* ============================================================
+   TEST 4
+   ============================================================ */
+
+const test4=[
+
+Q("Simplify: 40 − 8 ÷ 2 + 6.","सरल करें: 40 − 8 ÷ 2 + 6.",
+[["42","42"],["38","38"],["44","44"],["40","40"]],0,"BODMAS","8÷2=4; 40−4+6=42."),
+
+Q("A walks 3 km north and 7 km west. Direction?","A 3 किमी उत्तर और 7 किमी पश्चिम जाता है। दिशा?",
+[["North-West","उत्तर-पश्चिम"],["North-East","उत्तर-पूर्व"],["South-West","दक्षिण-पश्चिम"],["South-East","दक्षिण-पूर्व"]],0,"Direction Sense","North plus west = North-West."),
+
+Q("Next: 9, 18, 27, 36, ?","अगला: 9,18,27,36,?",
+[["45","45"],["44","44"],["46","46"],["54","54"]],0,"Number Series","Add 9."),
+
+Q("Author : Book :: Painter : ?","Author : Book :: Painter : ?",
+[["Painting","चित्र"],["Pen","कलम"],["Wall","दीवार"],["Colour","रंग"]],0,"Analogy","A painter creates a painting."),
+
+Q("Odd one: 11, 13, 17, 21.","विषम: 11,13,17,21.",
+[["11","11"],["13","13"],["17","17"],["21","21"]],3,"Classification","21 is not prime."),
+
+Q("If MAP is NBQ, then DOG is:","यदि MAP को NBQ लिखा जाए, तो DOG क्या होगा?",
+[["EPH","EPH"],["EOH","EOH"],["DPG","DPG"],["FPH","FPH"]],0,"Coding-Decoding","Shift each letter one step forward."),
+
+Q("S is son of T. T is daughter of U. S is U's:","S, T का पुत्र है। T, U की पुत्री है। S का U से संबंध?",
+[["Grandson","नाती/पोता"],["Son","पुत्र"],["Brother","भाई"],["Nephew","भतीजा/भांजा"]],0,"Blood Relation","T is U's daughter and S is T's son."),
+
+Q("A is 11th from left and 20th from right. Total?","A बाएँ से 11वाँ और दाएँ से 20वाँ है। कुल?",
+[["30","30"],["31","31"],["29","29"],["32","32"]],0,"Ranking","11+20−1=30."),
+
+Q("All birds have wings. Sparrow is a bird. Conclusion?","सभी पक्षियों के पंख होते हैं। गौरैया एक पक्षी है। निष्कर्ष?",
+[["Sparrow has wings.","गौरैया के पंख हैं।"],["All winged things are birds.","सभी पंख वाले पक्षी हैं।"],["Sparrow is a mammal.","गौरैया स्तनपायी है।"],["No bird has wings.","किसी पक्षी के पंख नहीं हैं।"]],0,"Syllogism","Sparrow belongs to the group of birds."),
+
+Q("55 study Maths, 32 Science, 14 both. Only Science?","55 गणित,32 विज्ञान और14 दोनों पढ़ते हैं। केवल विज्ञान?",
+[["18","18"],["20","20"],["32","32"],["14","14"]],0,"Venn Diagram","32−14=18."),
+
+Q("Next: B, D, F, H, ?","अगला: B,D,F,H,?",
+[["J","J"],["I","I"],["K","K"],["L","L"]],0,"Alphabet Series","Advance by 2."),
+
+Q("At 1:00 angle?","1:00 बजे कोण?",
+[["30°","30°"],["60°","60°"],["90°","90°"],["120°","120°"]],0,"Clock","One hour mark = 30°."),
+
+Q("If today is Monday, what day after 25 days?","आज सोमवार है। 25 दिन बाद कौन-सा दिन?",
+[["Friday","शुक्रवार"],["Thursday","गुरुवार"],["Saturday","शनिवार"],["Wednesday","बुधवार"]],0,"Calendar","25 mod 7=4; Monday+4=Friday."),
+
+Q("Simplify: 72 ÷ 9 + 5 × 3.","सरल करें: 72 ÷ 9 + 5 × 3.",
+[["23","23"],["26","26"],["21","21"],["18","18"]],0,"BODMAS","8+15=23."),
+
+Q("A worker earns ₹350 per day for 7 days. Total?","एक श्रमिक ₹350 प्रतिदिन 7 दिन कमाता है। कुल?",
+[["₹2450","₹2450"],["₹2350","₹2350"],["₹2500","₹2500"],["₹2400","₹2400"]],0,"Arithmetic Reasoning","350×7=2450."),
+
+Q("Next: 14, 21, 28, 35, ?","अगला: 14,21,28,35,?",
+[["42","42"],["40","40"],["43","43"],["49","49"]],0,"Number Series","Add 7."),
+
+Q("Nose : Smell :: Tongue : ?","Nose : Smell :: Tongue : ?",
+[["Taste","स्वाद लेना"],["Hear","सुनना"],["See","देखना"],["Touch","छूना"]],0,"Analogy","Tongue is used for taste."),
+
+Q("Odd one: Bus, Car, Train, Mango.","विषम: Bus, Car, Train, Mango.",
+[["Bus","बस"],["Car","कार"],["Train","ट्रेन"],["Mango","आम"]],3,"Classification","Mango is a fruit."),
+
+Q("If CAT is DBU, how is PEN coded?","यदि CAT को DBU लिखा जाता है, PEN कैसे लिखा जाएगा?",
+[["QFO","QFO"],["QFN","QFN"],["PFO","PFO"],["RFO","RFO"]],0,"Coding-Decoding","Shift each letter one step."),
+
+Q("F is father of G. G is mother of H. F is H's:","F, G का पिता है। G, H की माता है। F का H से संबंध?",
+[["Grandfather","दादा/नाना"],["Father","पिता"],["Uncle","चाचा/मामा"],["Brother","भाई"]],0,"Blood Relation","Mother's father is grandfather."),
+
+Q("A is 4th from left and 12th from right. Total?","A बाएँ से 4वाँ और दाएँ से 12वाँ है। कुल?",
+[["15","15"],["16","16"],["14","14"],["17","17"]],0,"Ranking","4+12−1=15."),
+
+Q("All fruits are edible. Mango is a fruit. Conclusion?","सभी फल खाने योग्य हैं। आम एक फल है। निष्कर्ष?",
+[["Mango is edible.","आम खाने योग्य है।"],["All edible things are mangoes.","सभी खाने योग्य चीजें आम हैं।"],["Mango is not edible.","आम खाने योग्य नहीं है।"],["No fruit is edible.","कोई फल खाने योग्य नहीं है।"]],0,"Syllogism","Mango belongs to fruits."),
+
+Q("40 study Hindi, 25 English, 10 both. Only English?","40 हिन्दी,25 अंग्रेज़ी और10 दोनों पढ़ते हैं। केवल अंग्रेज़ी?",
+[["15","15"],["20","20"],["25","25"],["10","10"]],0,"Venn Diagram","25−10=15."),
+
+Q("Next: Y, W, U, S, ?","अगला: Y,W,U,S,?",
+[["Q","Q"],["R","R"],["P","P"],["O","O"]],0,"Alphabet Series","Move backward by 2."),
+
+Q("At 8:00 angle?","8:00 बजे कोण?",
+[["120°","120°"],["90°","90°"],["60°","60°"],["150°","150°"]],0,"Clock","Four hour marks = 120°."),
+
+Q("If 2 August is Monday, 9 August is:","यदि 2 अगस्त सोमवार है, तो 9 अगस्त कौन-सा दिन?",
+[["Monday","सोमवार"],["Tuesday","मंगलवार"],["Sunday","रविवार"],["Wednesday","बुधवार"]],0,"Calendar","Seven days later."),
+
+Q("Simplify: 90 − 7 × 5 + 5.","सरल करें: 90 − 7 × 5 + 5.",
+[["60","60"],["65","65"],["55","55"],["70","70"]],0,"BODMAS","90−35+5=60."),
+
+Q("A dozen pencils cost ₹240. Cost of one pencil?","12 पेंसिलों की कीमत ₹240 है। एक पेंसिल की कीमत?",
+[["₹20","₹20"],["₹24","₹24"],["₹15","₹15"],["₹30","₹30"]],0,"Arithmetic Reasoning","240÷12=20."),
+
+Q("Next: 1, 3, 6, 10, 15, ?","अगला: 1,3,6,10,15,?",
+[["21","21"],["20","20"],["22","22"],["23","23"]],0,"Number Series","Add 2,3,4,5, then 6."),
+
+Q("Day : Week :: Month : ?","Day : Week :: Month : ?",
+[["Year","वर्ष"],["Date","तारीख"],["Hour","घंटा"],["Season","ऋतु"]],0,"Analogy","A month is a part of a year."),
+
+Q("Odd one: Iron, Aluminium, Copper, Plastic.","विषम: Iron, Aluminium, Copper, Plastic.",
+[["Iron","लोहा"],["Aluminium","एल्युमिनियम"],["Copper","तांबा"],["Plastic","प्लास्टिक"]],3,"Classification","Plastic is not a metal."),
+
+Q("If PEN is QFO, then BOX is:","यदि PEN को QFO लिखा जाए, तो BOX क्या होगा?",
+[["CPY","CPY"],["CQY","CQY"],["BPY","BPY"],["DPY","DPY"]],0,"Coding-Decoding","Every letter advances one."),
+
+Q("N is mother of P. P is brother of Q. N is Q's:","N, P की माता है। P, Q का भाई है। N का Q से संबंध?",
+[["Mother","माता"],["Sister","बहन"],["Aunt","चाची/मौसी"],["Grandmother","दादी/नानी"]],0,"Blood Relation","N is mother of both P and Q."),
+
+Q("A is 16th from top in a class of 50. Rank from bottom?","50 की कक्षा में A ऊपर से 16वाँ है। नीचे से रैंक?",
+[["35","35"],["34","34"],["36","36"],["33","33"]],0,"Ranking","50−16+1=35."),
+
+Q("No books are toys. Some toys are balls. Which conclusion follows?","कोई पुस्तक खिलौना नहीं है। कुछ खिलौने गेंद हैं। कौन-सा निष्कर्ष सही है?",
+[["No books are toys.","कोई पुस्तक खिलौना नहीं है।"],["All books are balls.","सभी पुस्तकें गेंद हैं।"],["Some books are toys.","कुछ पुस्तकें खिलौने हैं।"],["All toys are books.","सभी खिलौने पुस्तकें हैं।"]],0,"Syllogism","The first statement is directly valid."),
+
+Q("70 study A, 45 B, 20 both. Only A?","70 A,45 B और20 दोनों पढ़ते हैं। केवल A?",
+[["50","50"],["45","45"],["55","55"],["20","20"]],0,"Venn Diagram","70−20=50."),
+
+Q("Next: C, G, K, O, ?","अगला: C,G,K,O,?",
+[["S","S"],["T","T"],["R","R"],["U","U"]],0,"Alphabet Series","Advance by 4."),
+
+Q("At 5:00 angle?","5:00 बजे कोण?",
+[["150°","150°"],["120°","120°"],["90°","90°"],["60°","60°"]],0,"Clock","Five hour marks = 150°."),
+
+Q("If today is Thursday, what day was 21 days ago?","आज गुरुवार है। 21 दिन पहले कौन-सा दिन था?",
+[["Thursday","गुरुवार"],["Wednesday","बुधवार"],["Friday","शुक्रवार"],["Tuesday","मंगलवार"]],0,"Calendar","21 is exactly three weeks."),
+
+Q("Simplify: 36 ÷ 6 + 9 × 2.","सरल करें: 36 ÷ 6 + 9 × 2.",
+[["24","24"],["21","21"],["27","27"],["18","18"]],0,"BODMAS","6+18=24."),
+
+Q("A man buys 8 notebooks at ₹35 each. Total cost?","एक व्यक्ति ₹35 की 8 कॉपियाँ खरीदता है। कुल कीमत?",
+[["₹280","₹280"],["₹250","₹250"],["₹300","₹300"],["₹270","₹270"]],0,"Arithmetic Reasoning","35×8=280."),
+
+Q("Next: 3, 8, 15, 24, 35, ?","अगला: 3,8,15,24,35,?",
+[["48","48"],["47","47"],["49","49"],["50","50"]],0,"Number Series","Differences are 5,7,9,11,13."),
+
+Q("Puppy : Dog :: Calf : ?","Puppy : Dog :: Calf : ?",
+[["Cow","गाय"],["Horse","घोड़ा"],["Goat","बकरी"],["Sheep","भेड़"]],0,"Analogy","A calf is a young cow."),
+
+Q("Odd one: 15, 21, 27, 34.","विषम: 15,21,27,34.",
+[["15","15"],["21","21"],["27","27"],["34","34"]],3,"Classification","15,21,27 are divisible by 3."),
+
+Q("If BOX is CPY, then HAT is:","यदि BOX को CPY लिखा जाए, HAT क्या होगा?",
+[["IBU","IBU"],["HBU","HBU"],["IBT","IBT"],["JBU","JBU"]],0,"Coding-Decoding","Each letter moves one forward."),
+
+Q("K is brother of L. L is mother of M. K is M's:","K, L का भाई है। L, M की माता है। K का M से संबंध?",
+[["Uncle","मामा"],["Father","पिता"],["Brother","भाई"],["Grandfather","दादा/नाना"]],0,"Blood Relation","Mother's brother is uncle."),
+
+Q("A is 20th from left and 10th from right. Total?","A बाएँ से 20वाँ और दाएँ से 10वाँ है। कुल?",
+[["29","29"],["30","30"],["28","28"],["31","31"]],0,"Ranking","20+10−1=29."),
+
+Q("All roses are flowers. Some flowers are red. Which definitely follows?","सभी गुलाब फूल हैं। कुछ फूल लाल हैं। कौन-सा निश्चित रूप से सही है?",
+[["All roses are flowers.","सभी गुलाब फूल हैं।"],["All flowers are roses.","सभी फूल गुलाब हैं।"],["All roses are red.","सभी गुलाब लाल हैं।"],["No rose is red.","कोई गुलाब लाल नहीं है।"]],0,"Syllogism","The first statement is directly given."),
+
+Q("80 study A, 45 B, 20 both. Only B?","80 A,45 B और20 दोनों पढ़ते हैं। केवल B?",
+[["25","25"],["30","30"],["45","45"],["20","20"]],0,"Venn Diagram","45−20=25.")
+
+];
+
+tests.push(test4);
+
+
+/* ============================================================
+   TEST 5
+   ============================================================ */
+
+const test5=[
+
+Q("Simplify: 56 ÷ 7 + 6 × 4.","सरल करें: 56 ÷ 7 + 6 × 4.",
+[["32","32"],["30","30"],["34","34"],["28","28"]],0,"BODMAS","8+24=32."),
+
+Q("A walks 8 km east and then 2 km north. Direction?","A 8 किमी पूर्व और फिर 2 किमी उत्तर जाता है। दिशा?",
+[["North-East","उत्तर-पूर्व"],["South-East","दक्षिण-पूर्व"],["North-West","उत्तर-पश्चिम"],["South-West","दक्षिण-पश्चिम"]],0,"Direction Sense","East plus north = North-East."),
+
+Q("Next: 13, 26, 39, 52, ?","अगला: 13,26,39,52,?",
+[["65","65"],["64","64"],["66","66"],["78","78"]],0,"Number Series","Add 13."),
+
+Q("Pen : Ink :: Car : ?","Pen : Ink :: Car : ?",
+[["Fuel","ईंधन"],["Road","सड़क"],["Wheel","पहिया"],["Driver","चालक"]],0,"Analogy","Pen uses ink; car uses fuel."),
+
+Q("Odd one: 4, 9, 16, 20.","विषम: 4,9,16,20.",
+[["4","4"],["9","9"],["16","16"],["20","20"]],3,"Classification","4,9,16 are perfect squares."),
+
+Q("If DOG is EPH, then CAT is:","यदि DOG को EPH लिखा जाता है, तो CAT क्या होगा?",
+[["DBU","DBU"],["DCT","DCT"],["CBU","CBU"],["EBU","EBU"]],0,"Coding-Decoding","Each letter advances one."),
+
+Q("R is mother of S. S is brother of T. R is T's:","R, S की माता है। S, T का भाई है। R का T से संबंध?",
+[["Mother","माता"],["Sister","बहन"],["Aunt","चाची/मौसी"],["Grandmother","दादी/नानी"]],0,"Blood Relation","R is mother of both S and T."),
+
+Q("A is 14th from left and 17th from right. Total?","A बाएँ से 14वाँ और दाएँ से 17वाँ है। कुल?",
+[["30","30"],["31","31"],["29","29"],["32","32"]],0,"Ranking","14+17−1=30."),
+
+Q("All teachers are educated. Ravi is a teacher. Conclusion?","सभी शिक्षक शिक्षित हैं। रवि शिक्षक है। निष्कर्ष?",
+[["Ravi is educated.","रवि शिक्षित है।"],["All educated are teachers.","सभी शिक्षित शिक्षक हैं।"],["Ravi is not educated.","रवि शिक्षित नहीं है।"],["No teacher is educated.","कोई शिक्षक शिक्षित नहीं है।"]],0,"Syllogism","Ravi belongs to teachers, who are educated."),
+
+Q("45 study A, 30 B, 12 both. Only A?","45 A,30 B और12 दोनों पढ़ते हैं। केवल A?",
+[["33","33"],["35","35"],["30","30"],["12","12"]],0,"Venn Diagram","45−12=33."),
+
+Q("Next: H, K, N, Q, ?","अगला: H,K,N,Q,?",
+[["T","T"],["S","S"],["U","U"],["R","R"]],0,"Alphabet Series","Advance by 3."),
+
+Q("At 7:00 angle?","7:00 बजे कोण?",
+[["150°","150°"],["120°","120°"],["90°","90°"],["60°","60°"]],0,"Clock","Five hour marks give 150° as the smaller angle."),
+
+Q("If today is Tuesday, what day after 16 days?","आज मंगलवार है। 16 दिन बाद कौन-सा दिन?",
+[["Thursday","गुरुवार"],["Friday","शुक्रवार"],["Wednesday","बुधवार"],["Monday","सोमवार"]],0,"Calendar","16 mod 7=2; Tuesday+2=Thursday."),
+
+Q("Simplify: 63 ÷ 9 + 4 × 6.","सरल करें: 63 ÷ 9 + 4 × 6.",
+[["31","31"],["28","28"],["35","35"],["25","25"]],0,"BODMAS","7+24=31."),
+
+Q("A car travels 55 km/h for 3 hours. Distance?","कार 55 किमी/घंटा की गति से 3 घंटे चलती है। दूरी?",
+[["165 km","165 किमी"],["150 km","150 किमी"],["175 km","175 किमी"],["110 km","110 किमी"]],0,"Arithmetic Reasoning","55×3=165."),
+
+Q("Next: 20, 30, 40, 50, ?","अगला: 20,30,40,50,?",
+[["60","60"],["65","65"],["55","55"],["70","70"]],0,"Number Series","Add 10."),
+
+Q("Bird : Nest :: Lion : ?","Bird : Nest :: Lion : ?",
+[["Den","गुफा/मांद"],["Cage","पिंजरा"],["Forest","जंगल"],["Tree","पेड़"]],0,"Analogy","A lion lives in a den."),
+
+Q("Odd one: Red, Blue, Green, Table.","विषम: Red, Blue, Green, Table.",
+[["Red","लाल"],["Blue","नीला"],["Green","हरा"],["Table","मेज़"]],3,"Classification","Table is not a colour."),
+
+Q("If PEN is QFO, then CAT is:","यदि PEN को QFO लिखा जाता है, तो CAT क्या होगा?",
+[["DBU","DBU"],["CBU","CBU"],["DCT","DCT"],["EBU","EBU"]],0,"Coding-Decoding","Each letter advances one."),
+
+Q("M is father of N. N is mother of O. M is O's:","M, N का पिता है। N, O की माता है। M का O से संबंध?",
+[["Grandfather","दादा/नाना"],["Father","पिता"],["Uncle","चाचा/मामा"],["Brother","भाई"]],0,"Blood Relation","Mother's father is grandfather."),
+
+Q("A is 8th from left and 18th from right. Total?","A बाएँ से 8वाँ और दाएँ से 18वाँ है। कुल?",
+[["25","25"],["26","26"],["24","24"],["27","27"]],0,"Ranking","8+18−1=25."),
+
+Q("All apples are fruits. Some fruits are sweet. Which is definitely true?","सभी सेब फल हैं। कुछ फल मीठे हैं। निश्चित रूप से क्या सही है?",
+[["All apples are fruits.","सभी सेब फल हैं।"],["All apples are sweet.","सभी सेब मीठे हैं।"],["All fruits are apples.","सभी फल सेब हैं।"],["No apple is sweet.","कोई सेब मीठा नहीं है।"]],0,"Syllogism","The first statement is directly given."),
+
+Q("52 study Hindi, 31 English, 11 both. Only English?","52 हिन्दी,31 अंग्रेज़ी और11 दोनों पढ़ते हैं। केवल अंग्रेज़ी?",
+[["20","20"],["21","21"],["31","31"],["11","11"]],0,"Venn Diagram","31−11=20."),
+
+Q("Next: J, M, P, S, ?","अगला: J,M,P,S,?",
+[["V","V"],["U","U"],["W","W"],["T","T"]],0,"Alphabet Series","Advance by 3."),
+
+Q("At 11:00 angle?","11:00 बजे कोण?",
+[["30°","30°"],["60°","60°"],["90°","90°"],["120°","120°"]],0,"Clock","One hour mark = 30°."),
+
+Q("If 4 September is Monday, 18 September is:","यदि 4 सितंबर सोमवार है, तो 18 सितंबर कौन-सा दिन?",
+[["Monday","सोमवार"],["Tuesday","मंगलवार"],["Sunday","रविवार"],["Wednesday","बुधवार"]],0,"Calendar","14 days later is the same weekday."),
+
+Q("Simplify: 84 ÷ 7 + 5 × 3.","सरल करें: 84 ÷ 7 + 5 × 3.",
+[["27","27"],["25","25"],["30","30"],["24","24"]],0,"BODMAS","12+15=27."),
+
+Q("A book costs ₹75. Cost of 8 books?","एक पुस्तक ₹75 की है। 8 पुस्तकों की कीमत?",
+[["₹600","₹600"],["₹550","₹550"],["₹625","₹625"],["₹650","₹650"]],0,"Arithmetic Reasoning","75×8=600."),
+
+Q("Next: 7, 14, 28, 56, ?","अगला: 7,14,28,56,?",
+[["112","112"],["98","98"],["100","100"],["120","120"]],0,"Number Series","Multiply by 2."),
+
+Q("Doctor : Patient :: Teacher : ?","Doctor : Patient :: Teacher : ?",
+[["Student","विद्यार्थी"],["School","विद्यालय"],["Book","पुस्तक"],["Class","कक्षा"]],0,"Analogy","Teacher teaches students."),
+
+Q("Odd one: 1, 4, 9, 15.","विषम: 1,4,9,15.",
+[["1","1"],["4","4"],["9","9"],["15","15"]],3,"Classification","1,4,9 are perfect squares."),
+
+Q("If HAT is IBU, then PEN is:","यदि HAT को IBU लिखा जाए, PEN क्या होगा?",
+[["QFO","QFO"],["QFN","QFN"],["PFO","PFO"],["RFO","RFO"]],0,"Coding-Decoding","Shift each letter one forward."),
+
+Q("A is brother of B. B is mother of C. A is C's:","A, B का भाई है। B, C की माता है। A का C से संबंध?",
+[["Uncle","मामा"],["Father","पिता"],["Brother","भाई"],["Grandfather","दादा/नाना"]],0,"Blood Relation","Mother's brother is uncle."),
+
+Q("A is 19th from top in a class of 55. Rank from bottom?","55 की कक्षा में A ऊपर से 19वाँ है। नीचे से रैंक?",
+[["37","37"],["36","36"],["38","38"],["35","35"]],0,"Ranking","55−19+1=37."),
+
+Q("All squares are rectangles. No rectangle is a circle. Conclusion?","सभी वर्ग आयत हैं। कोई आयत वृत्त नहीं है। निष्कर्ष?",
+[["No square is a circle.","कोई वर्ग वृत्त नहीं है।"],["All circles are squares.","सभी वृत्त वर्ग हैं।"],["Some squares are circles.","कुछ वर्ग वृत्त हैं।"],["All rectangles are squares.","सभी आयत वर्ग हैं।"]],0,"Syllogism","Squares are rectangles, and rectangles are not circles."),
+
+Q("60 study A, 40 B, 15 both. Only B?","60 A,40 B और15 दोनों पढ़ते हैं। केवल B?",
+[["25","25"],["20","20"],["40","40"],["15","15"]],0,"Venn Diagram","40−15=25."),
+
+Q("Next: V, T, R, P, ?","अगला: V,T,R,P,?",
+[["N","N"],["O","O"],["M","M"],["Q","Q"]],0,"Alphabet Series","Move backward by 2."),
+
+Q("At 3:00 the angle is:","3:00 बजे कोण कितना है?",
+[["90°","90°"],["60°","60°"],["120°","120°"],["180°","180°"]],0,"Clock","3 hour marks = 90°."),
+
+Q("If today is Wednesday, what day after 30 days?","आज बुधवार है। 30 दिन बाद कौन-सा दिन?",
+[["Friday","शुक्रवार"],["Thursday","गुरुवार"],["Saturday","शनिवार"],["Monday","सोमवार"]],0,"Calendar","30 mod 7=2; Wednesday+2=Friday."),
+
+Q("Simplify: 96 ÷ 12 + 7 × 3.","सरल करें: 96 ÷ 12 + 7 × 3.",
+[["29","29"],["30","30"],["27","27"],["32","32"]],0,"BODMAS","8+21=29."),
+
+Q("A worker completes 5 units per day. How many in 9 days?","एक श्रमिक प्रतिदिन 5 इकाई पूरा करता है। 9 दिनों में कितनी?",
+[["45","45"],["40","40"],["50","50"],["35","35"]],0,"Arithmetic Reasoning","5×9=45."),
+
+Q("Next: 6, 11, 18, 27, 38, ?","अगला: 6,11,18,27,38,?",
+[["51","51"],["50","50"],["52","52"],["53","53"]],0,"Number Series","Differences are 5,7,9,11,13."),
+
+Q("Hand : Finger :: Foot : ?","Hand : Finger :: Foot : ?",
+[["Toe","पैर की उंगली"],["Leg","टांग"],["Shoe","जूता"],["Knee","घुटना"]],0,"Analogy","Finger is part of hand; toe is part of foot."),
+
+Q("Odd one: Circle, Square, Triangle, Mango.","विषम: Circle, Square, Triangle, Mango.",
+[["Circle","वृत्त"],["Square","वर्ग"],["Triangle","त्रिभुज"],["Mango","आम"]],3,"Classification","Mango is not a geometrical figure."),
+
+Q("If RAT is SBU, then DOG is:","यदि RAT को SBU लिखा जाए, DOG क्या होगा?",
+[["EPH","EPH"],["EOH","EOH"],["DPG","DPG"],["FPH","FPH"]],0,"Coding-Decoding","Each letter moves one position forward."),
+
+Q("P is daughter of Q. Q is brother of R. P is R's:","P, Q की पुत्री है। Q, R का भाई है। P का R से संबंध?",
+[["Niece","भतीजी/भांजी"],["Daughter","पुत्री"],["Sister","बहन"],["Aunt","चाची/मौसी"]],0,"Blood Relation","Brother's daughter is niece."),
+
+Q("A is 12th from left and 14th from right. Total?","A बाएँ से 12वाँ और दाएँ से 14वाँ है। कुल?",
+[["25","25"],["26","26"],["24","24"],["27","27"]],0,"Ranking","12+14−1=25."),
+
+Q("All pens are stationery. All stationery is useful. Conclusion?","सभी पेन स्टेशनरी हैं। सारी स्टेशनरी उपयोगी है। निष्कर्ष?",
+[["All pens are useful.","सभी पेन उपयोगी हैं।"],["All useful things are pens.","सभी उपयोगी चीजें पेन हैं।"],["No pen is useful.","कोई पेन उपयोगी नहीं है।"],["Some stationery is not useful.","कुछ स्टेशनरी उपयोगी नहीं है।"]],0,"Syllogism","Pens are stationery and stationery is useful."),
+
+Q("75 study Hindi, 42 English, 16 both. Only Hindi?","75 हिन्दी,42 अंग्रेज़ी और16 दोनों पढ़ते हैं। केवल हिन्दी?",
+[["59","59"],["58","58"],["61","61"],["42","42"]],0,"Venn Diagram","75−16=59."),
+
+Q("Next: A, D, G, J, ?","अगला: A,D,G,J,?",
+[["M","M"],["N","N"],["L","L"],["O","O"]],0,"Alphabet Series","Advance by 3."),
+
+Q("At 9:00 angle?","9:00 बजे कोण?",
+[["90°","90°"],["180°","180°"],["60°","60°"],["120°","120°"]],0,"Clock","The hands are perpendicular."),
+
+Q("If today is Friday, what day was 28 days ago?","आज शुक्रवार है। 28 दिन पहले कौन-सा दिन था?",
+[["Friday","शुक्रवार"],["Thursday","गुरुवार"],["Saturday","शनिवार"],["Wednesday","बुधवार"]],0,"Calendar","28 days = exactly four weeks."),
+
+Q("Simplify: 120 − 8 × 7 + 4.","सरल करें: 120 − 8 × 7 + 4.",
+[["68","68"],["70","70"],["72","72"],["64","64"]],0,"BODMAS","120−56+4=68."),
+
+Q("A trader earns ₹90 profit on each item. Profit on 7 items?","एक व्यापारी प्रत्येक वस्तु पर ₹90 लाभ कमाता है। 7 वस्तुओं पर लाभ?",
+[["₹630","₹630"],["₹600","₹600"],["₹650","₹650"],["₹700","₹700"]],0,"Arithmetic Reasoning","90×7=630."),
+
+Q("Next: 4, 10, 18, 28, 40, ?","अगला: 4,10,18,28,40,?",
+[["54","54"],["52","52"],["56","56"],["58","58"]],0,"Number Series","Differences are 6,8,10,12,14."),
+
+Q("Fish : Water :: Bird : ?","Fish : Water :: Bird : ?",
+[["Air","वायु"],["Nest","घोंसला"],["Tree","पेड़"],["Sky","आकाश"]],0,"Analogy","Fish live in water; birds live/move in air."),
+
+Q("Odd one: Apple, Mango, Potato, Banana.","विषम: Apple, Mango, Potato, Banana.",
+[["Apple","सेब"],["Mango","आम"],["Potato","आलू"],["Banana","केला"]],2,"Classification","Potato is a vegetable; others are fruits."),
+
+Q("If BOX is CPY, then PEN is:","यदि BOX को CPY लिखा जाए, PEN क्या होगा?",
+[["QFO","QFO"],["QFN","QFN"],["RFO","RFO"],["PFO","PFO"]],0,"Coding-Decoding","Each letter advances one."),
+
+Q("X is father of Y. Y is mother of Z. X is Z's:","X, Y का पिता है। Y, Z की माता है। X का Z से संबंध?",
+[["Grandfather","दादा/नाना"],["Father","पिता"],["Uncle","चाचा/मामा"],["Brother","भाई"]],0,"Blood Relation","Mother's father is grandfather."),
+
+Q("A is 21st from top and 9th from bottom. Total?","A ऊपर से 21वाँ और नीचे से 9वाँ है। कुल?",
+[["29","29"],["30","30"],["28","28"],["31","31"]],0,"Ranking","21+9−1=29."),
+
+Q("All books are useful. Some books are novels. Which conclusion follows?","सभी पुस्तकें उपयोगी हैं। कुछ पुस्तकें उपन्यास हैं। कौन-सा निष्कर्ष सही है?",
+[["Some novels are useful.","कुछ उपन्यास उपयोगी हैं।"],["All useful things are novels.","सभी उपयोगी चीजें उपन्यास हैं।"],["No novel is useful.","कोई उपन्यास उपयोगी नहीं है।"],["All books are novels.","सभी पुस्तकें उपन्यास हैं।"]],0,"Syllogism","The books that are novels are also useful."),
+
+Q("80 study A, 50 B, 25 both. Only B?","80 A,50 B और25 दोनों पढ़ते हैं। केवल B?",
+[["25","25"],["30","30"],["50","50"],["75","75"]],0,"Venn Diagram","50−25=25.")
+
+];
+
+tests.push(test5);
+
+
+/* ============================================================
+   VALIDATION
+   ============================================================ */
+
+console.assert(tests.length===5,"There must be five tests.");
+
+tests.forEach((test,i)=>{
+    console.assert(test.length===50,
+        "Test "+(i+1)+" should contain 50 questions.");
+});
+
+
+/* ============================================================
+   TEST ENGINE
+   ============================================================ */
+
+let selectedTest=0;
+let currentQuestion=0;
+let answers=[];
+let studentName="";
+let timeLeft=45*60;
+let timer=null;
+let submitted=false;
+
+
+function showSection(id){
+
+    ["home","start","exam","result"].forEach(section=>{
+        document.getElementById(section).classList.add("hidden");
+    });
+
+    document.getElementById(id).classList.remove("hidden");
+}
+
+
+function openTest(index){
+
+    selectedTest=index;
+
+    document.getElementById("selectedTitle").innerHTML=
+        "Rajasthan STSE 2026 MAT – Model Test "+(index+1);
+
+    document.getElementById("studentName").value="";
+
+    showSection("start");
+
+    setTimeout(()=>{
+        document.getElementById("studentName").focus();
+    },100);
+
+}
+
+
+function goHome(){
+
+    if(timer){
+        clearInterval(timer);
+        timer=null;
+    }
+
+    showSection("home");
+}
+
+
+function startTest(){
+
+    studentName=document
+        .getElementById("studentName")
+        .value
+        .trim();
+
+    if(!studentName){
+
+        alert("Please enter your name / कृपया अपना नाम लिखें।");
+
+        return;
+    }
+
+    currentQuestion=0;
+
+    answers=new Array(50).fill(null);
+
+    timeLeft=45*60;
+
+    submitted=false;
+
+    document.getElementById("testHeading").innerText=
+        "Model Test "+(selectedTest+1)+" · "+studentName;
+
+    showSection("exam");
+
+    renderQuestion();
+
+    startTimer();
+}
+
+
+function startTimer(){
+
+    if(timer){
+        clearInterval(timer);
+    }
+
+    timer=setInterval(()=>{
+
+        timeLeft--;
+
+        updateTimer();
+
+        if(timeLeft<=0){
+
+            clearInterval(timer);
+
+            timer=null;
+
+            alert(
+                "Time is over.\nसमय समाप्त हो गया है।"
+            );
+
+            submitTest();
+
+        }
+
+    },1000);
+
+    updateTimer();
+}
+
+
+function updateTimer(){
+
+    let min=Math.floor(timeLeft/60);
+
+    let sec=timeLeft%60;
+
+    document.getElementById("timer").innerText=
+        String(min).padStart(2,"0")
+        +":"
+        +String(sec).padStart(2,"0");
+}
+
+
+function renderQuestion(){
+
+    const data=tests[selectedTest][currentQuestion];
+
+    document.getElementById("questionNumber").innerText=
+        "Question "+(currentQuestion+1)+" of 50";
+
+    document.getElementById("progressBar").style.width=
+        ((currentQuestion+1)/50*100)+"%";
+
+
+    let html=`
+
+    <div class="question-card">
+
+        <div class="q-number">
+            QUESTION ${currentQuestion+1}
+        </div>
+
+        <div class="question-en">
+            ${data.en}
+        </div>
+
+        <div class="question-hi">
+            ${data.hi}
+        </div>
+
+        <div class="topic">
+            ${data.topic}
+        </div>
+
+        <div class="options">
+    `;
+
+
+    data.options.forEach((option,index)=>{
+
+        html+=`
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="answer"
+                value="${index}"
+                ${answers[currentQuestion]===index?"checked":""}
+                onchange="saveAnswer(${index})"
+            >
+
+            <span class="opt-en">
+                ${String.fromCharCode(65+index)}.
+                ${option[0]}
+            </span>
+
+            <br>
+
+            <span class="opt-hi">
+                ${option[1]}
+            </span>
+
+        </label>
+
+        `;
+
+    });
+
+
+    html+=`
+
+        </div>
+
+    </div>
+    `;
+
+
+    document.getElementById("questionContainer").innerHTML=html;
+
+
+    document.getElementById("previousButton").disabled=
+        currentQuestion===0;
+
+
+    document.getElementById("nextButton").innerText=
+        currentQuestion===49
+        ?"Submit Test / टेस्ट जमा करें"
+        :"Next / अगला";
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+function saveAnswer(index){
+
+    answers[currentQuestion]=index;
+
+}
+
+
+function previousQuestion(){
+
+    if(currentQuestion>0){
+
+        currentQuestion--;
+
+        renderQuestion();
+
+    }
+
+}
+
+
+function nextQuestion(){
+
+    if(currentQuestion===49){
+
+        if(confirm(
+            "Submit the test?\nक्या आप टेस्ट जमा करना चाहते हैं?"
+        )){
+
+            submitTest();
+
+        }
+
+        return;
+    }
+
+    currentQuestion++;
+
+    renderQuestion();
+
+}
+
+
+/* ============================================================
+   RESULT
+   ============================================================ */
+
+function submitTest(){
+
+    if(submitted){
+        return;
+    }
+
+    submitted=true;
+
+    if(timer){
+        clearInterval(timer);
+        timer=null;
+    }
+
+
+    let score=0;
+    let attempted=0;
+
+    const topicStats={};
+
+
+    tests[selectedTest].forEach((question,index)=>{
+
+        if(!topicStats[question.topic]){
+
+            topicStats[question.topic]={
+                total:0,
+                correct:0
+            };
+
+        }
+
+        topicStats[question.topic].total++;
+
+
+        if(answers[index]!==null){
+
+            attempted++;
+
+            if(answers[index]===question.answer){
+
+                score++;
+
+                topicStats[question.topic].correct++;
+
+            }
+
+        }
+
+    });
+
+
+    const wrong=attempted-score;
+
+    const unattempted=50-attempted;
+
+    const percentage=(score/50*100).toFixed(1);
+
+
+    let performance;
+
+
+    if(score>=45){
+
+        performance=
+        "Excellent. Your accuracy is strong. Continue practising with strict time limits.";
+
+    }else if(score>=40){
+
+        performance=
+        "Very good performance. Focus on reducing small mistakes and improving speed.";
+
+    }else if(score>=30){
+
+        performance=
+        "Good attempt. Review the questions you missed and practise the weaker topics.";
+
+    }else if(score>=20){
+
+        performance=
+        "More practice is needed. Revise concepts topic-wise before attempting another full test.";
+
+    }else{
+
+        performance=
+        "Start with topic-wise practice, strengthen the basics and then attempt the full test again.";
+
+    }
+
+
+    let rows="";
+
+
+    Object.keys(topicStats).forEach(topic=>{
+
+        const s=topicStats[topic];
+
+        const accuracy=
+            ((s.correct/s.total)*100).toFixed(0);
+
+        rows+=`
+
+        <tr>
+
+            <td>${topic}</td>
+
+            <td>${s.correct}/${s.total}</td>
+
+            <td>${accuracy}%</td>
+
+        </tr>
+
+        `;
+
+    });
+
+
+    let review="";
+
+
+    tests[selectedTest].forEach((question,index)=>{
+
+        const selected=answers[index];
+
+        const correct=
+            selected===question.answer;
+
+
+        let selectedText=
+            selected===null
+            ?"Not Attempted / प्रयास नहीं किया"
+            :question.options[selected][0]
+            +" / "
+            +question.options[selected][1];
+
+
+        review+=`
+
+        <div class="review ${correct?"correct":"wrong"}">
+
+            <div>
+
+                <strong>
+                    Q${index+1}. ${question.en}
+                </strong>
+
+                <br>
+
+                <span>
+                    ${question.hi}
+                </span>
+
+            </div>
+
+            <p class="${correct?"correct-text":"wrong-text"}">
+
+                ${correct
+                    ?"✓ Correct / सही"
+                    :"✗ Incorrect / गलत"
+                }
+
+            </p>
+
+            <p>
+                <strong>Your Answer:</strong>
+                ${selectedText}
+            </p>
+
+            <p>
+                <strong>Correct Answer:</strong>
+                ${String.fromCharCode(65+question.answer)}.
+                ${question.options[question.answer][0]}
+                /
+                ${question.options[question.answer][1]}
+            </p>
+
+            <div class="small">
+                <strong>Explanation:</strong>
+                ${question.exp}
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("result").innerHTML=`
+
+    <h2>
+        Test Analysis Report
+    </h2>
+
+    <p>
+        <strong>Student:</strong>
+        ${escapeHTML(studentName)}
+    </p>
+
+    <p>
+        <strong>Model Test:</strong>
+        ${selectedTest+1}
+    </p>
+
+    <div class="score">
+        ${score}/50
+    </div>
+
+    <p>
+        <strong>Percentage:</strong>
+        ${percentage}%
+    </p>
+
+    <div class="result-box">
+
+        <strong>Attempted:</strong> ${attempted}
+        <br>
+
+        <strong>Correct:</strong> ${score}
+        <br>
+
+        <strong>Wrong:</strong> ${wrong}
+        <br>
+
+        <strong>Unattempted:</strong> ${unattempted}
+
+    </div>
+
+    <div class="result-box">
+
+        <strong>Performance Analysis</strong>
+
+        <br>
+
+        ${performance}
+
+    </div>
+
+
+    <h3>
+        Topic-wise Analysis
+    </h3>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Topic</th>
+                <th>Score</th>
+                <th>Accuracy</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            ${rows}
+
+        </tbody>
+
+    </table>
+
+
+    <h3>
+        Detailed Answer Review
+    </h3>
+
+    ${review}
+
+
+    <br>
+
+    <button
+        class="primary"
+        onclick="openTest(${selectedTest})">
+        Retake Test
+    </button>
+
+    <button
+        class="secondary"
+        onclick="goHome()">
+        Choose Another Test
+    </button>
+
+    `;
+
+
+    showSection("result");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+function escapeHTML(value){
+
+    return String(value)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+
+}
+
+
+/* ============================================================
+   PREVENT ACCIDENTAL REFRESH DURING TEST
+   ============================================================ */
+
+window.addEventListener("beforeunload",function(event){
+
+    if(
+        !document
+        .getElementById("exam")
+        .classList
+        .contains("hidden")
+        &&
+        !submitted
+    ){
+
+        event.preventDefault();
+
+        event.returnValue="";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
