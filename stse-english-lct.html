@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan STSE 2026 | English LCT</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    background:#f8fafc;
+    color:#111827;
+}
+
+button,input{
+    font:inherit;
+}
+
+.header{
+    background:linear-gradient(135deg,#6d3fa9,#4ba3d8);
+    color:white;
+    padding:32px 18px;
+    text-align:center;
+}
+
+.header h1{
+    margin:0;
+    font-size:30px;
+}
+
+.header p{
+    margin:8px 0 0;
+}
+
+.container{
+    max-width:1000px;
+    margin:28px auto;
+    padding:0 16px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:22px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+h2{
+    color:#5f3795;
+    margin-top:0;
+}
+
+.paper-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
+}
+
+.paper-btn{
+    border:2px solid #eadff5;
+    background:#f8f3fc;
+    border-radius:18px;
+    padding:20px;
+    cursor:pointer;
+    text-align:left;
+    transition:.2s;
+}
+
+.paper-btn:hover{
+    transform:translateY(-2px);
+    border-color:#6d3fa9;
+}
+
+.paper-btn strong{
+    display:block;
+    color:#5f3795;
+    font-size:19px;
+    margin-bottom:6px;
+}
+
+input[type="text"]{
+    width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    outline:none;
+    margin:8px 0 15px;
+}
+
+.primary{
+    background:linear-gradient(135deg,#6d3fa9,#4ba3d8);
+    color:white;
+    border:0;
+    border-radius:12px;
+    padding:13px 22px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.secondary{
+    background:white;
+    color:#5f3795;
+    border:1px solid #d8c9e8;
+    border-radius:12px;
+    padding:12px 18px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.hidden{
+    display:none!important;
+}
+
+.test-bar{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+    padding:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.timer{
+    font-weight:800;
+    color:#b42318;
+    background:#fff1f0;
+    border:1px solid #ffd1cc;
+    padding:9px 15px;
+    border-radius:10px;
+}
+
+.progress{
+    height:9px;
+    background:#e5e7eb;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0 22px;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#6d3fa9,#4ba3d8);
+}
+
+.question{
+    border:1px solid #e5e7eb;
+    border-radius:17px;
+    padding:18px;
+    margin:14px 0;
+}
+
+.question h3{
+    font-size:16px;
+    line-height:1.5;
+    margin:0 0 13px;
+}
+
+.option{
+    display:block;
+    padding:11px 12px;
+    margin:8px 0;
+    border:1px solid #e5e7eb;
+    border-radius:11px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#f8f3fc;
+}
+
+.option input{
+    width:auto;
+    margin-right:8px;
+}
+
+.submit-area{
+    text-align:center;
+    margin:25px 0;
+}
+
+.score{
+    font-size:45px;
+    font-weight:800;
+    color:#5f3795;
+    text-align:center;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin:20px 0;
+}
+
+.stat{
+    padding:17px;
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    text-align:center;
+}
+
+.stat b{
+    display:block;
+    font-size:25px;
+    color:#5f3795;
+}
+
+.review{
+    padding:15px;
+    border-radius:14px;
+    margin:10px 0;
+}
+
+.correct{
+    background:#ecfdf3;
+    border-left:5px solid #16a34a;
+}
+
+.wrong{
+    background:#fff1f2;
+    border-left:5px solid #dc2626;
+}
+
+.unattempted{
+    background:#f8fafc;
+    border-left:5px solid #64748b;
+}
+
+.analysis-box{
+    background:#f8f3fc;
+    border-radius:17px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.footer{
+    text-align:center;
+    padding:30px 15px;
+    color:#64748b;
+}
+
+@media(max-width:600px){
+    .header h1{
+        font-size:24px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>RAJASTHAN STSE 2026</h1>
+    <p>Class X – Language Comprehension Test (LCT)</p>
+    <p>English Model Test Series • 5 Papers • 200 Questions</p>
+</div>
+
+<div class="container">
+
+<!-- HOME -->
+<section id="home" class="card">
+    <h2>English LCT – Model Test Series</h2>
+
+    <p>
+        Choose any model paper below. Each paper contains
+        <b>40 questions</b>, carries <b>40 marks</b> and has a
+        <b>45-minute</b> time limit.
+    </p>
+
+    <div class="paper-grid">
+
+        <button class="paper-btn" onclick="selectPaper(0)">
+            <strong>Model Paper 1</strong>
+            40 Questions • 40 Marks
+        </button>
+
+        <button class="paper-btn" onclick="selectPaper(1)">
+            <strong>Model Paper 2</strong>
+            40 Questions • 40 Marks
+        </button>
+
+        <button class="paper-btn" onclick="selectPaper(2)">
+            <strong>Model Paper 3</strong>
+            40 Questions • 40 Marks
+        </button>
+
+        <button class="paper-btn" onclick="selectPaper(3)">
+            <strong>Model Paper 4</strong>
+            40 Questions • 40 Marks
+        </button>
+
+        <button class="paper-btn" onclick="selectPaper(4)">
+            <strong>Model Paper 5</strong>
+            40 Questions • 40 Marks
+        </button>
+
+    </div>
+</section>
+
+<!-- NAME -->
+<section id="nameScreen" class="card hidden">
+
+    <h2 id="selectedTitle">Model Paper 1</h2>
+
+    <p>
+        Enter your name before starting the test.
+    </p>
+
+    <label><b>Student Name</b></label>
+    <input
+        type="text"
+        id="studentName"
+        placeholder="Enter your full name"
+        maxlength="60"
+    >
+
+    <button class="primary" onclick="startTest()">
+        Start Test
+    </button>
+
+    <button class="secondary" onclick="backHome()">
+        Back
+    </button>
+
+</section>
+
+<!-- TEST -->
+<section id="testScreen" class="hidden">
+
+    <div class="test-bar">
+        <div>
+            <b id="testTitle"></b>
+            <div id="studentDisplay"></div>
+        </div>
+
+        <div class="timer">
+            ⏱ <span id="timer">45:00</span>
+        </div>
+    </div>
+
+    <div class="card">
+
+        <div>
+            <b>Progress</b>
+            <span id="progressText">0 / 40 answered</span>
+        </div>
+
+        <div class="progress">
+            <span id="progressBar"></span>
+        </div>
+
+        <div id="questionsContainer"></div>
+
+        <div class="submit-area">
+            <button class="primary" onclick="submitTest(false)">
+                Submit Test
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RESULT -->
+<section id="resultScreen" class="card hidden">
+
+    <h2 style="text-align:center;">Test Result</h2>
+
+    <p id="resultStudent" style="text-align:center;"></p>
+
+    <div class="score">
+        <span id="scoreValue">0</span> / 40
+    </div>
+
+    <div style="text-align:center;">
+        <b id="performance"></b>
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <b id="correctCount">0</b>
+            Correct
+        </div>
+
+        <div class="stat">
+            <b id="wrongCount">0</b>
+            Wrong
+        </div>
+
+        <div class="stat">
+            <b id="unattemptedCount">0</b>
+            Unattempted
+        </div>
+
+    </div>
+
+    <div class="analysis-box">
+
+        <h3>Detailed Analysis</h3>
+
+        <p>
+            <b>Percentage:</b>
+            <span id="percentage"></span>%
+        </p>
+
+        <p>
+            <b>Attempted:</b>
+            <span id="attempted"></span> / 40
+        </p>
+
+        <p>
+            <b>Accuracy:</b>
+            <span id="accuracy"></span>%
+        </p>
+
+        <p id="feedback"></p>
+
+    </div>
+
+    <h3>Question-wise Review</h3>
+
+    <div id="reviewContainer"></div>
+
+    <br>
+
+    <button class="primary" onclick="retakeTest()">
+        Retake Paper
+    </button>
+
+    <button class="secondary" onclick="backHome()">
+        Choose Another Paper
+    </button>
+
+</section>
+
+</div>
+
+<div class="footer">
+    Made with Love ❤️ in India by Pushpender
+    <br>
+    The Goal • Rajasthan STSE 2026
+</div>
+
+
+<script>
+
+/* =====================================================
+   QUESTION DATA
+===================================================== */
+
+const papers = [
+
+/* ================= PAPER 1 ================= */
+
+[
+["Riya usually _____ to school by bicycle.",["go","goes","is going","gone"],"B"],
+["Look! The children _____ a kite in the field.",["fly","flew","are flying","have flown"],"C"],
+["We _____ the museum before it closed.",["visited","had visited","have visited","visit"],"B"],
+["By next month, my brother _____ his course.",["completes","completed","will have completed","has completed"],"C"],
+["She _____ in Jaipur for five years before moving to Delhi.",["lives","has lived","had lived","will live"],"C"],
+["If you work hard, you _____ succeed.",["would","will","might have","had"],"B"],
+["The teacher said that the earth _____ round the sun.",["moved","moves","had moved","is moving"],"B"],
+["The students _____ their project when the principal entered.",["discuss","were discussing","have discussed","will discuss"],"B"],
+["Choose the correct passive form: “People speak English all over the world.”",["English was spoken all over the world.","English is spoken all over the world.","English has spoken all over the world.","English speaks all over the world."],"B"],
+["Choose the correct passive form: “The mechanic repaired my bicycle.”",["My bicycle repaired the mechanic.","My bicycle was repaired by the mechanic.","My bicycle is repaired by the mechanic.","My bicycle had repaired the mechanic."],"B"],
+["He said, “I am feeling tired.”",["He said that he is feeling tired.","He said that I was feeling tired.","He said that he was feeling tired.","He says that he felt tired."],"C"],
+["Mother said to me, “Do not waste water.”",["Mother told me not to waste water.","Mother told me do not waste water.","Mother said me not waste water.","Mother asked me that do not waste water."],"A"],
+["You _____ obey the rules of the examination hall.",["must","can","may","would"],"A"],
+["_____ I borrow your dictionary for a few minutes?",["Must","May","Shall","Need"],"B"],
+["Neither the teacher nor the students _____ absent today.",["is","was","are","has"],"C"],
+["Each of the players _____ received a medal.",["have","are","has","were"],"C"],
+["There isn't _____ milk left in the bottle.",["many","much","few","several"],"B"],
+["She bought _____ umbrella because it was raining.",["a","an","the","no article"],"B"],
+["The cat jumped _____ the table.",["onto","between","among","beside"],"A"],
+["The school is situated _____ the railway station and the market.",["among","between","across","into"],"B"],
+["Choose the synonym of “rapid”.",["slow","quick","weak","late"],"B"],
+["Choose the antonym of “ancient”.",["old","historic","modern","former"],"C"],
+["Choose the correctly spelt word.",["Neccessary","Necesary","Necessary","Nessessary"],"C"],
+["Choose the correct meaning of “look after”.",["search","take care of","look behind","ignore"],"B"],
+["I stayed at home _____ it was raining heavily.",["because","although","unless","while"],"A"],
+["_____ he is poor, he is honest.",["Because","Although","Unless","Since"],"B"],
+["Rearrange: P every morning; Q goes for a walk; R my grandfather; S in the park.",["RQPS","QRSP","PRQS","SRQP"],"A"],
+["Arrange: P the importance of trees; Q everyone should understand; R for our environment; S clearly.",["QPSR","QPRS","PQRS","RQPS"],"B"],
+["I want _____ a new language.",["learn","learning","to learn","learned"],"C"],
+["The box is too heavy _____ alone.",["carry","carrying","to carry","carried"],"C"],
+["This is the girl. She won the competition.",["This is the girl who won the competition.","This is the girl which won the competition.","This is the girl whom won the competition.","This is the girl where won the competition."],"A"],
+["Choose the correct transformation: “As soon as the bell rang, the students left.”",["No sooner did the bell ring than the students left.","No sooner the bell rang when students left.","The bell rang because students left.","The students left before the bell rang."],"A"],
+["You are coming with us, _____?",["are you","aren't you","don't you","won't you"],"B"],
+["Let's start the work, _____?",["shall we","will we","do we","aren't we"],"A"],
+["Choose the correctly punctuated sentence.",["Rahul said “I will return tomorrow.”","Rahul said, “I will return tomorrow.”","Rahul said “I will return tomorrow”.","Rahul, said “I will return tomorrow.”"],"B"],
+["Why did the villagers face difficulty during summer?",["There was no school.","There was a shortage of water.","The pond was too large.","There were no trees."],"B"],
+["Who first decided to clean the pond?",["The shopkeepers","The teachers","A group of students","The village officers"],"C"],
+["What did the students remove from the pond?",["Stones and bricks","Plastic waste and dry leaves","Fish and plants","Sand and soil"],"B"],
+["What happened after the monsoon?",["The pond dried up.","The school closed.","The pond filled with rainwater.","The villagers left the village."],"C"],
+["The passage mainly highlights the importance of _____.",["individual and community effort","building new schools","avoiding rainy weather","increasing village population"],"A"]
+],
+
+/* ================= PAPER 2 ================= */
+
+[
+["My father _____ the newspaper every morning.",["read","reads","is reading","has read"],"B"],
+["I _____ my homework just now.",["finish","finished","have finished","had finishing"],"C"],
+["They _____ cricket when it started raining.",["play","were playing","have played","will play"],"B"],
+["She _____ the letter before her friend arrived.",["posts","has posted","had posted","will post"],"C"],
+["We _____ to Udaipur next Sunday.",["travelled","travel","will travel","had travelled"],"C"],
+["By 8 p.m., the guests _____ dinner.",["will have finished","finish","finished","are finishing"],"A"],
+["When I reached the station, the train _____.",["leaves","has left","had left","will leave"],"C"],
+["If she had more time, she _____ help us.",["will","would","shall","must"],"B"],
+["The students planted fifty trees.",["Fifty trees are planted by students.","Fifty trees were planted by the students.","Fifty trees have planted students.","Fifty trees planted the students."],"B"],
+["Open the door.",["Let the door be opened.","Let the door opened.","The door opens.","The door was opening."],"A"],
+["Ravi said, “I have completed my work.”",["Ravi said that he had completed his work.","Ravi said that I completed my work.","Ravi says that he has completed my work.","Ravi said that he completes his work."],"A"],
+["The teacher said to the students, “Work quietly.”",["The teacher advised the students to work quietly.","The teacher said students worked quietly.","The teacher asked that students working quietly.","The teacher told students work quietly."],"A"],
+["We _____ respect our national symbols.",["ought to","might","could have","used"],"A"],
+["_____ you please lend me your pen?",["Would","Must","Need","Shall"],"A"],
+["The quality of these apples _____ excellent.",["are","were","is","have"],"C"],
+["A number of students _____ participated in the event.",["has","have","is","was"],"B"],
+["There are _____ chairs in the room.",["much","little","several","less"],"C"],
+["He is _____ honest officer.",["a","an","the","no article"],"B"],
+["The bird flew _____ the river.",["across","among","beside","at"],"A"],
+["The teacher stood _____ the two students.",["between","across","into","over"],"A"],
+["Choose the synonym of “brave”.",["timid","courageous","careless","nervous"],"B"],
+["Choose the antonym of “expand”.",["increase","extend","contract","enlarge"],"C"],
+["Choose the correctly spelt word.",["Environment","Enviroment","Envirenment","Environmant"],"A"],
+["“Give up” means:",["continue","surrender or stop trying","distribute","collect"],"B"],
+["Take an umbrella _____ you may get wet.",["or","because","though","since"],"A"],
+["You cannot enter _____ you have a valid pass.",["unless","because","although","while"],"A"],
+["Arrange: P carefully; Q the instructions; R read; S before beginning.",["RQSP","QRPS","PRQS","SRQP"],"A"],
+["Arrange: P finally reached the village; Q after walking for hours; R the travellers; S before sunset.",["RQPS","QRSP","PRSQ","SRQP"],"A"],
+["She enjoys _____ storybooks.",["read","to read","reading","reads"],"C"],
+["It is difficult _____ such a complicated problem.",["solve","solving","to solve","solved"],"C"],
+["This is the house _____ my grandfather built.",["who","which","whom","whose"],"B"],
+["He was tired. He continued working.",["Although he was tired, he continued working.","Because he was tired, he stopped working.","He continued working because he was not tired.","He was tired and therefore stopped working."],"A"],
+["Nobody called you, _____?",["did they","didn't they","did he","wasn't he"],"A"],
+["She rarely misses class, _____?",["does she","doesn't she","is she","did she"],"A"],
+["Choose the correctly punctuated sentence.",["“Where are you going?” asked Meena.","“Where are you going”? asked Meena.","“Where are you going,” asked Meena?","Where are you going? “asked Meena.”"],"A"],
+["What do books preserve?",["Only pictures","Knowledge","Money","Buildings"],"B"],
+["What is changing in the digital age?",["The value of knowledge","Reading habits","Human history","The number of languages"],"B"],
+["Reading can improve _____.",["vocabulary","height","eyesight automatically","weather"],"A"],
+["A good book can encourage readers to _____.",["avoid problems","see problems from another point of view","stop learning","reject all opinions"],"B"],
+["The central idea of the passage is the _____.",["decline of education","continuing value of reading","history of printing machines","disadvantages of digital devices"],"B"]
+],
+
+/* ================= PAPER 3 ================= */
+
+[
+["The sun _____ in the east.",["rise","rises","is rising","has risen"],"B"],
+["At present, my sister _____ for her examination.",["prepares","prepared","is preparing","has prepared"],"C"],
+["We _____ this movie twice already.",["see","saw","have seen","had seeing"],"C"],
+["He _____ his bicycle yesterday.",["repairs","repaired","has repaired","is repairing"],"B"],
+["They _____ dinner when their uncle arrived.",["had","were having","have had","will have"],"B"],
+["After the rain stopped, the children _____ outside.",["went","have gone","had gone","are going"],"A"],
+["I _____ you as soon as I reach home.",["called","call","will call","had called"],"C"],
+["She _____ have forgotten the appointment; she is usually punctual.",["mustn't","might","should have","needn't"],"B"],
+["The chef is preparing the meal.",["The meal is being prepared by the chef.","The meal was prepared by the chef.","The meal has prepared the chef.","The chef is being prepared by the meal."],"A"],
+["Someone has stolen my bag.",["My bag has been stolen.","My bag was stealing.","My bag is stolen someone.","Someone was stolen by my bag."],"A"],
+["Anita said, “I will help you.”",["Anita said that she would help me.","Anita said that I will help her.","Anita says that she helped me.","Anita said that she will helping me."],"A"],
+["Father said, “Where have you been?”",["Father asked me where I had been.","Father said where have I been.","Father asked where have you been.","Father told me where I am."],"A"],
+["You _____ wear a helmet while riding a motorcycle.",["should","may","can","might"],"A"],
+["Students _____ not use mobile phones during the examination.",["must","could","would","might"],"A"],
+["Mathematics _____ my favourite subject.",["are","is","were","have"],"B"],
+["Neither of the answers _____ correct.",["are","were","is","have"],"C"],
+["There is _____ information available about the event.",["many","several","little","few"],"C"],
+["She wants to become _____ engineer.",["a","an","the","no article"],"B"],
+["The children ran _____ the playground.",["across","beside","above","into"],"A"],
+["The plane flew _____ the clouds.",["below","above","between","beside"],"B"],
+["Synonym of “assist” is:",["help","prevent","refuse","disturb"],"A"],
+["Antonym of “victory” is:",["success","triumph","defeat","achievement"],"C"],
+["Choose the correctly spelt word.",["Separate","Seperate","Separete","Seperrate"],"A"],
+["“Break down” means:",["stop functioning","build carefully","rise quickly","move upward"],"A"],
+["He worked hard _____ he could achieve his goal.",["so that","unless","although","whereas"],"A"],
+["_____ you hurry, you will miss the bus.",["If","Unless","Because","Though"],"B"],
+["Arrange: P a healthy mind; Q lives in; R a healthy body; S they say.",["SQPR","QPRS","RQPS","PSRQ"],"A"],
+["Arrange: P the match; Q because of rain; R was cancelled; S yesterday.",["PRSQ","PQRS","RPSQ","SQPR"],"A"],
+["He avoided _____ about the incident.",["talk","to talk","talking","talked"],"C"],
+["She went to the library _____ a book.",["borrow","borrowing","to borrow","borrowed"],"C"],
+["The boy _____ bicycle was stolen reported the matter.",["who","whose","whom","which"],"B"],
+["He is too weak to walk.",["He is so weak that he cannot walk.","He is very weak but he walks.","He walks because he is weak.","He is weak enough to walk."],"A"],
+["You haven't finished the work, _____?",["have you","haven't you","did you","do you"],"A"],
+["Everyone enjoyed the show, _____?",["didn't they","did they","wasn't he","don't they"],"A"],
+["Choose the correctly punctuated sentence.",["After dinner, we went for a walk.","After dinner we, went for a walk.","After, dinner we went for a walk.","After dinner we went, for a walk."],"A"],
+["According to the passage, success depends on _____.",["intelligence alone","several qualities including practice and patience","luck alone","avoiding difficult subjects"],"B"],
+["What can mistakes show?",["What needs more attention","That learning is impossible","That exams are unnecessary","That intelligence is useless"],"A"],
+["What may happen through consistent study?",["Improvement over time","Immediate perfection","No change","Loss of interest in every subject"],"A"],
+["An effective learner tries to understand _____.",["only the marks","why an answer is correct","how to avoid studying","only difficult words"],"B"],
+["The passage mainly promotes _____.",["careless learning","consistent and thoughtful learning","competition without practice","memorising every answer"],"B"]
+],
+
+/* ================= PAPER 4 ================= */
+
+[
+["Water _____ at 100°C.",["boil","boils","is boiling","boiled"],"B"],
+["The workers _____ the road since morning.",["repair","repaired","have been repairing","had repair"],"C"],
+["I _____ him last week.",["meet","met","have met","am meeting"],"B"],
+["She _____ the book before the teacher asked about it.",["reads","had read","is reading","has read"],"B"],
+["We _____ for the bus for half an hour when it finally arrived.",["waited","have waited","had been waiting","wait"],"C"],
+["I think it _____ rain tonight.",["will","was","has","had"],"A"],
+["By this time tomorrow, they _____ the journey.",["complete","completed","will have completed","have completed"],"C"],
+["When the teacher entered, everyone _____ silently.",["sits","was sitting","has sat","will sit"],"B"],
+["People admire the scientist.",["The scientist is admired by people.","The scientist was admire people.","People are admired by scientist.","The scientist has admired people."],"A"],
+["They will announce the result tomorrow.",["The result announced tomorrow.","The result will be announced tomorrow.","The result is announcing tomorrow.","Tomorrow will announce the result."],"B"],
+["Mohan said, “I can solve this problem.”",["Mohan said that he could solve that problem.","Mohan said that I can solve this problem.","Mohan says that he could solve this problem.","Mohan said that he can solved that problem."],"A"],
+["She said to me, “Please help me.”",["She requested me to help her.","She ordered me help her.","She said me that help her.","She requested that I helped me."],"A"],
+["We _____ save electricity whenever possible.",["should","might","could have","would have"],"A"],
+["_____ I come in, sir?",["May","Must","Need","Would"],"A"],
+["The news _____ very surprising.",["are","were","is","have"],"C"],
+["Ten kilometres _____ a long distance to walk.",["are","were","is","have"],"C"],
+["There are _____ students in the hall.",["much","a little","many","less"],"C"],
+["He found _____ old coin in the garden.",["a","an","the","no article"],"B"],
+["The boy fell _____ the river but was rescued.",["into","over","among","beside"],"A"],
+["The shop is _____ the bank.",["beside","into","across","above"],"A"],
+["Synonym of “accurate” is:",["exact","careless","uncertain","rough"],"A"],
+["Antonym of “generous” is:",["kind","helpful","selfish","charitable"],"C"],
+["Choose the correctly spelt word.",["Privilege","Priviledge","Privelege","Privillage"],"A"],
+["“Put off” means:",["postpone","wear","remove permanently","encourage"],"A"],
+["I will wait here _____ you return.",["until","because","although","unless"],"A"],
+["He could not attend the meeting _____ he was ill.",["because","although","unless","whereas"],"A"],
+["Arrange: P should be planted; Q more trees; R to protect; S the environment.",["QPRS","PQRS","RSPQ","SRQP"],"A"],
+["Arrange: P when I reached; Q the shop; R had already closed; S it.",["PQSR","PSRQ","QPRS","RSPQ"],"A"],
+["I look forward to _____ you again.",["meet","meeting","met","have meet"],"B"],
+["He stopped _____ when the principal entered.",["talking","to talking","talk","talked"],"A"],
+["The woman _____ lives next door is a doctor.",["which","whose","who","whom"],"C"],
+["The road was narrow. The driver drove carefully.",["As the road was narrow, the driver drove carefully.","The driver drove carelessly because the road was narrow.","The road was narrow but the driver stopped forever.","The driver drove carefully although the road was wide."],"A"],
+["Don't be late, _____?",["will you","do you","are you","won't you"],"A"],
+["He never tells lies, _____?",["does he","doesn't he","is he","did he"],"A"],
+["Choose the correctly punctuated sentence.",["Jaipur, the capital of Rajasthan, is a historic city.","Jaipur the capital, of Rajasthan is a historic city.","Jaipur, the capital of Rajasthan is a historic city.","Jaipur the capital of Rajasthan, is a historic city."],"A"],
+["A public library can serve as a _____.",["market","learning centre","sports ground","railway station"],"B"],
+["Who especially benefits from access to library books?",["Students who cannot purchase many books","Only shopkeepers","Only tourists","Only teachers"],"A"],
+["What kind of environment can a library provide?",["Noisy","Quiet","Dangerous","Crowded with traffic"],"B"],
+["Libraries may organise activities to encourage _____.",["travelling","reading and discussion","shopping","sports competitions only"],"B"],
+["The passage presents libraries mainly as places for _____.",["learning and reading","entertainment only","business","transportation"],"A"]
+],
+
+/* ================= PAPER 5 ================= */
+
+[
+["My mother _____ tea every evening.",["make","makes","is make","making"],"B"],
+["Listen! Someone _____ at the door.",["knocks","knocked","is knocking","has knock"],"C"],
+["They _____ the assignment already.",["submit","submitted","have submitted","had submit"],"C"],
+["The match _____ before we arrived at the stadium.",["starts","has started","had started","is starting"],"C"],
+["While I _____ home, I saw an accident.",["walk","was walking","have walked","had walked"],"B"],
+["She _____ her grandparents next weekend.",["visited","visits","will visit","had visited"],"C"],
+["By the end of this year, he _____ ten books.",["writes","wrote","will have written","has write"],"C"],
+["If you had informed me, I _____ you.",["help","will help","would have helped","helped"],"C"],
+["The gardener waters the plants every day.",["The plants are watered by the gardener every day.","The plants were watering the gardener.","The gardener is watered by the plants.","The plants have watered every day."],"A"],
+["Someone broke the window.",["The window is broken someone.","The window was broken.","Someone was broken by the window.","The window has breaking."],"B"],
+["Seema said, “I am going to Delhi tomorrow.”",["Seema said that she was going to Delhi the next day.","Seema said that I was going to Delhi tomorrow.","Seema said that she is going Delhi yesterday.","Seema says she went Delhi tomorrow."],"A"],
+["The officer said to the guard, “Close the gate.”",["The officer ordered the guard to close the gate.","The officer asked the guard closed the gate.","The officer said the guard closing the gate.","The officer told that gate closed."],"A"],
+["You _____ complete the form before submitting it.",["must","might","could","would"],"A"],
+["It _____ rain later; the sky is cloudy.",["may","mustn't","needn't","ought"],"A"],
+["The furniture in this room _____ very expensive.",["are","were","is","have"],"C"],
+["Neither Ram nor his friends _____ ready.",["is","was","are","has"],"C"],
+["There is _____ sugar in my tea.",["too much","too many","several","few"],"A"],
+["She is _____ university student.",["a","an","the","no article"],"A"],
+["The car passed _____ the tunnel.",["through","among","above","beside"],"A"],
+["The picture is hanging _____ the wall.",["on","into","across","among"],"A"],
+["Synonym of “essential” is:",["necessary","optional","useless","unusual"],"A"],
+["Antonym of “include” is:",["contain","involve","exclude","accept"],"C"],
+["Choose the correctly spelt word.",["Discipline","Disipline","Disciplene","Discepline"],"A"],
+["“Carry on” means:",["continue","stop","remove","hide"],"A"],
+["She smiled _____ she was nervous.",["although","because","unless","so that"],"A"],
+["You will not improve _____ you practise regularly.",["unless","because","though","whereas"],"A"],
+["Arrange: P should use; Q students; R their time; S wisely.",["QRPS","QPRS","RQPS","PSRQ"],"B"],
+["Arrange: P the road; Q after the storm; R was cleared; S by the workers.",["PRSQ","QPRS","RPSQ","SPRQ"],"A"],
+["She decided _____ the competition.",["enter","entering","to enter","entered"],"C"],
+["He enjoys _____ photographs of nature.",["taking","to take","take","took"],"A"],
+["I met the teacher _____ you recommended.",["whom","whose","where","who"],"A"],
+["Very few cities are as clean as this city.",["This is one of the cleanest cities.","This city is dirtier than every city.","No city is clean.","This city is not clean."],"A"],
+["She can swim, _____?",["can't she","can she","doesn't she","isn't she"],"A"],
+["Nobody likes dishonesty, _____?",["do they","don't they","does he","isn't it"],"A"],
+["Choose the correctly punctuated sentence.",["My favourite subjects are English, Mathematics and Science.","My favourite subjects are English Mathematics, and Science.","My favourite subjects are, English Mathematics and Science.","My favourite subjects are English, Mathematics, and, Science."],"A"],
+["Water is described as a valuable _____.",["machine","natural resource","building","product"],"B"],
+["Why is all the water on earth not easily available for human use?",["Only a small proportion is easily available.","There is no water on earth.","All water is polluted.","People do not need water."],"A"],
+["Which habit can help conserve water?",["Leaving taps open","Repairing leaking taps","Increasing wastage","Ignoring leaks"],"B"],
+["Who has a role in water conservation?",["Only governments","Only scientists","Individuals and communities as well as governments","Only farmers"],"C"],
+["The main message of the passage is to _____.",["waste water freely","conserve water responsibly","stop using water","avoid community participation"],"B"]
+]
+
+];
+
+let selectedPaper = 0;
+let student = "";
+let timerInterval;
+let timeLeft = 45 * 60;
+
+
+/* =====================================================
+   SCREEN CONTROL
+===================================================== */
+
+function hideAll(){
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("nameScreen").classList.add("hidden");
+    document.getElementById("testScreen").classList.add("hidden");
+    document.getElementById("resultScreen").classList.add("hidden");
+}
+
+function selectPaper(index){
+    selectedPaper = index;
+
+    hideAll();
+
+    document.getElementById("nameScreen").classList.remove("hidden");
+
+    document.getElementById("selectedTitle").textContent =
+        "Model Test Paper " + (index + 1);
+
+    document.getElementById("studentName").value = "";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+function backHome(){
+
+    clearInterval(timerInterval);
+
+    hideAll();
+
+    document.getElementById("home").classList.remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =====================================================
+   START TEST
+===================================================== */
+
+function startTest(){
+
+    const name =
+        document.getElementById("studentName").value.trim();
+
+    if(!name){
+        alert("Please enter your name before starting the test.");
+        return;
+    }
+
+    student = name;
+
+    hideAll();
+
+    document.getElementById("testScreen").classList.remove("hidden");
+
+    document.getElementById("testTitle").textContent =
+        "Rajasthan STSE 2026 • English LCT • Paper " +
+        (selectedPaper + 1);
+
+    document.getElementById("studentDisplay").textContent =
+        "Student: " + student;
+
+    renderQuestions();
+
+    timeLeft = 45 * 60;
+
+    updateTimer();
+
+    clearInterval(timerInterval);
+
+    timerInterval = setInterval(function(){
+
+        timeLeft--;
+
+        updateTimer();
+
+        if(timeLeft <= 0){
+
+            clearInterval(timerInterval);
+
+            alert("Time is over. Your test will be submitted automatically.");
+
+            submitTest(true);
+        }
+
+    },1000);
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =====================================================
+   RENDER QUESTIONS
+===================================================== */
+
+function renderQuestions(){
+
+    const container =
+        document.getElementById("questionsContainer");
+
+    container.innerHTML = "";
+
+    papers[selectedPaper].forEach(function(q,index){
+
+        const div = document.createElement("div");
+
+        div.className = "question";
+
+        let html = "";
+
+        html += "<h3>" +
+            (index + 1) +
+            ". " +
+            q[0] +
+            "</h3>";
+
+        q[1].forEach(function(option,i){
+
+            const letter =
+                String.fromCharCode(65 + i);
+
+            html += `
+                <label class="option">
+                    <input
+                        type="radio"
+                        name="q${index}"
+                        value="${letter}"
+                        onchange="updateProgress()"
+                    >
+                    <b>(${letter})</b> ${option}
+                </label>
+            `;
+        });
+
+        div.innerHTML = html;
+
+        container.appendChild(div);
+
+    });
+
+    updateProgress();
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+function updateProgress(){
+
+    let answered = 0;
+
+    papers[selectedPaper].forEach(function(_,index){
+
+        const selected =
+            document.querySelector(
+                `input[name="q${index}"]:checked`
+            );
+
+        if(selected){
+            answered++;
+        }
+
+    });
+
+    document.getElementById("progressText").textContent =
+        answered + " / 40 answered";
+
+    document.getElementById("progressBar").style.width =
+        ((answered / 40) * 100) + "%";
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function updateTimer(){
+
+    const minutes =
+        Math.floor(timeLeft / 60);
+
+    const seconds =
+        timeLeft % 60;
+
+    document.getElementById("timer").textContent =
+        String(minutes).padStart(2,"0") +
+        ":" +
+        String(seconds).padStart(2,"0");
+}
+
+
+/* =====================================================
+   SUBMIT TEST
+===================================================== */
+
+function submitTest(autoSubmit){
+
+    if(!autoSubmit){
+
+        const unanswered =
+            papers[selectedPaper].length -
+            countAnswered();
+
+        if(unanswered > 0){
+
+            const confirmSubmit =
+                confirm(
+                    "You have " +
+                    unanswered +
+                    " unanswered question(s).\n\n" +
+                    "Do you still want to submit?"
+                );
+
+            if(!confirmSubmit){
+                return;
+            }
+        }
+    }
+
+    clearInterval(timerInterval);
+
+    calculateResult();
+}
+
+
+function countAnswered(){
+
+    let count = 0;
+
+    papers[selectedPaper].forEach(function(_,index){
+
+        if(
+            document.querySelector(
+                `input[name="q${index}"]:checked`
+            )
+        ){
+            count++;
+        }
+
+    });
+
+    return count;
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+function calculateResult(){
+
+    let correct = 0;
+    let wrong = 0;
+    let unattempted = 0;
+
+    const review =
+        document.getElementById("reviewContainer");
+
+    review.innerHTML = "";
+
+    papers[selectedPaper].forEach(function(q,index){
+
+        const selected =
+            document.querySelector(
+                `input[name="q${index}"]:checked`
+            );
+
+        const userAnswer =
+            selected ? selected.value : null;
+
+        const correctAnswer = q[2];
+
+        let status = "";
+
+        if(!userAnswer){
+
+            unattempted++;
+
+            status = "unattempted";
+
+        }
+        else if(userAnswer === correctAnswer){
+
+            correct++;
+
+            status = "correct";
+
+        }
+        else{
+
+            wrong++;
+
+            status = "wrong";
+        }
+
+        const correctIndex =
+            correctAnswer.charCodeAt(0) - 65;
+
+        const correctText =
+            q[1][correctIndex];
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "review " + status;
+
+        let statusText = "";
+
+        if(status === "correct"){
+            statusText = "✓ Correct";
+        }
+        else if(status === "wrong"){
+            statusText = "✗ Wrong";
+        }
+        else{
+            statusText = "— Not Attempted";
+        }
+
+        item.innerHTML = `
+            <b>Q${index + 1}. ${statusText}</b>
+            <br><br>
+            <b>Your Answer:</b>
+            ${
+                userAnswer
+                ? "(" + userAnswer + ") " +
+                  q[1][userAnswer.charCodeAt(0)-65]
+                : "Not Attempted"
+            }
+            <br>
+            <b>Correct Answer:</b>
+            (${correctAnswer}) ${correctText}
+        `;
+
+        review.appendChild(item);
+
+    });
+
+    const attempted =
+        correct + wrong;
+
+    const percentage =
+        (correct / 40) * 100;
+
+    const accuracy =
+        attempted > 0
+        ? (correct / attempted) * 100
+        : 0;
+
+    let performance = "";
+
+    if(percentage >= 90){
+        performance =
+            "Excellent performance! 🌟";
+    }
+    else if(percentage >= 75){
+        performance =
+            "Very good performance! Keep it up.";
+    }
+    else if(percentage >= 50){
+        performance =
+            "Good effort. More practice can improve your score.";
+    }
+    else{
+        performance =
+            "Keep practising and revise the topics carefully.";
+    }
+
+    document.getElementById("scoreValue").textContent =
+        correct;
+
+    document.getElementById("correctCount").textContent =
+        correct;
+
+    document.getElementById("wrongCount").textContent =
+        wrong;
+
+    document.getElementById("unattemptedCount").textContent =
+        unattempted;
+
+    document.getElementById("percentage").textContent =
+        percentage.toFixed(1);
+
+    document.getElementById("attempted").textContent =
+        attempted;
+
+    document.getElementById("accuracy").textContent =
+        accuracy.toFixed(1);
+
+    document.getElementById("performance").textContent =
+        performance;
+
+    document.getElementById("resultStudent").textContent =
+        student +
+        " • Model Paper " +
+        (selectedPaper + 1);
+
+    document.getElementById("feedback").innerHTML =
+        "<b>Performance Note:</b> " +
+        performance;
+
+    hideAll();
+
+    document.getElementById("resultScreen").classList.remove("hidden");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =====================================================
+   RETAKE
+===================================================== */
+
+function retakeTest(){
+
+    startTest();
+
+}
+
+</script>
+
+</body>
+</html>
