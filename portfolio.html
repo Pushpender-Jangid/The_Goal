@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PUSHPENDER JANGID | Portfolio</title>
+
+<meta name="description"
+content="Portfolio of Pushpender Jangid — Data Analysis, Web Development and The Goal.">
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#f8fafc;
+    color:#111827;
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(109,63,169,.10);
+    filter:blur(90px);
+    top:-180px;
+    left:-180px;
+    z-index:-2;
+    animation:float1 9s ease-in-out infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:rgba(75,163,216,.10);
+    filter:blur(100px);
+    right:-180px;
+    bottom:-150px;
+    z-index:-2;
+    animation:float2 11s ease-in-out infinite alternate;
+}
+
+@keyframes float1{
+    from{transform:translate(0,0);}
+    to{transform:translate(100px,100px);}
+}
+
+@keyframes float2{
+    from{transform:translate(0,0);}
+    to{transform:translate(-80px,-80px);}
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    padding:18px 6%;
+    transition:.35s ease;
+}
+
+nav.scrolled{
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    box-shadow:0 8px 30px rgba(15,23,42,.07);
+}
+
+.nav-inner{
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#111827;
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:.5px;
+}
+
+.logo img{
+    width:38px;
+    height:38px;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#64748b;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#6d3fa9;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 6% 70px;
+}
+
+.hero-inner{
+    max-width:1150px;
+    width:100%;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    align-items:center;
+    gap:70px;
+}
+
+.small-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 14px;
+    border-radius:50px;
+
+    background:#f3edfa;
+    color:#6d3fa9;
+
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.small-tag span{
+    width:7px;
+    height:7px;
+    background:#6d3fa9;
+    border-radius:50%;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        box-shadow:0 0 0 0 rgba(109,63,169,.3);
+    }
+
+    50%{
+        box-shadow:0 0 0 7px rgba(109,63,169,0);
+    }
+
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,76px);
+    line-height:1.02;
+    letter-spacing:-4px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#6d3fa9;
+}
+
+.hero p{
+    max-width:580px;
+    color:#64748b;
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.location{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.location strong{
+    color:#111827;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:13px 20px;
+    border-radius:13px;
+    font-size:14px;
+    font-weight:700;
+    transition:.3s ease;
+}
+
+.btn-primary{
+    color:white;
+    background:linear-gradient(135deg,#6d3fa9,#4ba3d8);
+    box-shadow:0 12px 28px rgba(109,63,169,.22);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 17px 35px rgba(109,63,169,.28);
+}
+
+.btn-secondary{
+    color:#374151;
+    background:white;
+    border:1px solid #e5e7eb;
+}
+
+.btn-secondary:hover{
+    transform:translateY(-3px);
+    border-color:#c4b5fd;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-wrap{
+    display:flex;
+    justify-content:center;
+    position:relative;
+}
+
+.profile-card{
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    background:white;
+    padding:10px;
+
+    box-shadow:
+        0 25px 70px rgba(15,23,42,.12),
+        0 5px 15px rgba(15,23,42,.05);
+
+    transform:rotate(2deg);
+    transition:.5s ease;
+    position:relative;
+}
+
+.profile-card::before{
+    content:"";
+    position:absolute;
+    inset:-12px;
+    border-radius:50%;
+    border:1px solid rgba(109,63,169,.18);
+    z-index:-1;
+}
+
+.profile-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+}
+
+.floating-logo{
+    position:absolute;
+    width:82px;
+    height:82px;
+    background:white;
+    border-radius:22px;
+    padding:12px;
+    bottom:15px;
+    left:5px;
+
+    box-shadow:0 15px 35px rgba(15,23,42,.14);
+
+    animation:logoFloat 3.5s ease-in-out infinite;
+}
+
+.floating-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+@keyframes logoFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-9px) rotate(3deg);
+    }
+
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:100px 6%;
+}
+
+.container{
+    max-width:1050px;
+    margin:auto;
+}
+
+.section-title{
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:#6d3fa9;
+    font-weight:800;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-top:8px;
+    letter-spacing:-1.5px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box{
+    background:white;
+    border:1px solid #edf0f5;
+    border-radius:25px;
+    padding:35px;
+
+    box-shadow:0 15px 45px rgba(15,23,42,.05);
+
+    transition:.35s ease;
+}
+
+.about-box:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 50px rgba(15,23,42,.08);
+}
+
+.about-box p{
+    color:#64748b;
+    line-height:1.9;
+    font-size:15px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education-list{
+    display:grid;
+    gap:18px;
+}
+
+.education-card{
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #f7f3fc
+    );
+
+    border:1px solid #eee8f7;
+    border-radius:25px;
+    padding:28px;
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    transition:.35s ease;
+}
+
+.education-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(109,63,169,.10);
+}
+
+.edu-icon{
+    width:60px;
+    height:60px;
+    flex-shrink:0;
+
+    border-radius:17px;
+    background:#f3edfa;
+
+    display:grid;
+    place-items:center;
+
+    color:#6d3fa9;
+    font-size:23px;
+}
+
+.education-card h3{
+    font-size:19px;
+    margin-bottom:7px;
+}
+
+.education-card p{
+    color:#64748b;
+    font-size:14px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.project-card{
+    background:white;
+    border:1px solid #edf0f5;
+    border-radius:25px;
+    padding:30px;
+    min-height:220px;
+
+    position:relative;
+    overflow:hidden;
+
+    transition:.4s ease;
+}
+
+.project-card::after{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:#f3edfa;
+    right:-60px;
+    top:-60px;
+    transition:.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 50px rgba(15,23,42,.09);
+}
+
+.project-card:hover::after{
+    transform:scale(1.35);
+}
+
+.project-number{
+    color:#6d3fa9;
+    font-weight:800;
+    font-size:13px;
+    margin-bottom:35px;
+    position:relative;
+    z-index:2;
+}
+
+.project-card h3{
+    font-size:22px;
+    margin-bottom:12px;
+    position:relative;
+    z-index:2;
+}
+
+.project-card p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.7;
+    position:relative;
+    z-index:2;
+}
+
+/* =========================
+   THE GOAL
+========================= */
+
+.goal-project{
+    margin-top:22px;
+    background:#111827;
+    color:white;
+    border-radius:28px;
+    padding:38px;
+
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.goal-project::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:rgba(109,63,169,.25);
+    filter:blur(45px);
+    right:-80px;
+    top:-120px;
+}
+
+.goal-content{
+    position:relative;
+    z-index:2;
+}
+
+.goal-content img{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+
+.goal-content h3{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.goal-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+    max-width:620px;
+    font-size:14px;
+}
+
+.goal-link{
+    position:relative;
+    z-index:2;
+    flex-shrink:0;
+}
+
+.goal-link a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    text-decoration:none;
+    color:white;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    padding:13px 18px;
+    border-radius:12px;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.goal-link a:hover{
+    background:white;
+    color:#111827;
+    transform:translateY(-3px);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+    background:white;
+    border:1px solid #edf0f5;
+    border-radius:30px;
+    padding:42px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+
+    box-shadow:0 15px 50px rgba(15,23,42,.05);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.contact-box::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    background:#f3edfa;
+    border-radius:50%;
+    filter:blur(50px);
+    left:-120px;
+    bottom:-130px;
+}
+
+.contact-left{
+    position:relative;
+    z-index:2;
+}
+
+.contact-left h2{
+    font-size:31px;
+    margin-bottom:12px;
+}
+
+.contact-left p{
+    color:#64748b;
+    line-height:1.8;
+    font-size:14px;
+    max-width:350px;
+}
+
+/* CONTACT LINKS */
+
+.contact-links{
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+    position:relative;
+    z-index:2;
+}
+
+.contact-item{
+    text-decoration:none;
+    color:#374151;
+
+    padding:13px 15px;
+
+    border:1px solid #edf0f5;
+    border-radius:17px;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    font-size:14px;
+    font-weight:600;
+
+    background:rgba(255,255,255,.85);
+
+    transition:.35s ease;
+}
+
+.contact-item:hover{
+    transform:translateX(7px);
+    border-color:#d7c5ef;
+    box-shadow:0 10px 25px rgba(109,63,169,.09);
+}
+
+/* REAL ICON BOX */
+
+.contact-icon{
+    width:44px;
+    height:44px;
+    min-width:44px;
+
+    border-radius:13px;
+
+    display:grid;
+    place-items:center;
+
+    font-size:20px;
+
+    transition:.35s ease;
+}
+
+.contact-item:hover .contact-icon{
+    transform:scale(1.08) rotate(-5deg);
+}
+
+/* Instagram */
+
+.instagram-icon{
+    background:linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+
+    color:white;
+}
+
+/* WhatsApp */
+
+.whatsapp-icon{
+    background:#25D366;
+    color:white;
+}
+
+/* Email */
+
+.email-icon{
+    background:#eef2ff;
+    color:#5b4bb7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:38px 6%;
+    text-align:center;
+    color:#94a3b8;
+    font-size:13px;
+}
+
+footer .heart{
+    color:#e25555;
+    display:inline-block;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        gap:55px;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .location{
+        justify-content:center;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .profile-card{
+        width:280px;
+        height:280px;
+    }
+
+    section{
+        padding:75px 5%;
+    }
+
+    .section-title h2{
+        font-size:31px;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .goal-project{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .hero h1{
+        font-size:45px;
+        letter-spacing:-2.5px;
+    }
+
+    .profile-card{
+        width:250px;
+        height:250px;
+    }
+
+    .floating-logo{
+        width:70px;
+        height:70px;
+        left:-8px;
+    }
+
+    .about-box,
+    .education-card,
+    .project-card,
+    .goal-project,
+    .contact-box{
+        padding:25px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav id="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+
+            <img src="THE.png" alt="The Goal">
+
+            <span>PUSHPENDER JANGID</span>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-inner">
+
+        <div class="hero-text reveal">
+
+            <div class="small-tag">
+
+                <span></span>
+
+                Portfolio
+
+            </div>
+
+            <h1>
+
+                Hi, I'm<br>
+
+                <span>PUSHPENDER.</span>
+
+            </h1>
+
+            <p>
+
+                I work on Data Analysis and Web Development.
+                I also build and manage <strong>The Goal</strong>,
+                a learning platform for students.
+
+            </p>
+
+            <div class="location">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <strong>Rajasthan, India</strong>
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="#projects"
+                   class="btn btn-primary">
+
+                    View Projects
+
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-secondary">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-wrap reveal">
+
+            <div class="profile-card">
+
+                <img src="photo.png"
+                     alt="PUSHPENDER JANGID">
+
+            </div>
+
+            <div class="floating-logo">
+
+                <img src="THE.png"
+                     alt="The Goal Logo">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>About Me</small>
+
+            <h2>A little about me</h2>
+
+        </div>
+
+        <div class="about-box reveal">
+
+            <p>
+
+                I'm Pushpender Jangid from Rajasthan.
+                I am interested in Data Analysis, Web Development
+                and building useful digital projects. I like working
+                on simple ideas and turning them into practical
+                websites and tools.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>Study & Learning</small>
+
+            <h2>What I'm learning</h2>
+
+        </div>
+
+
+        <div class="education-list">
+
+            <div class="education-card reveal">
+
+                <div class="edu-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Graduation</h3>
+
+                    <p>
+                        Currently pursuing graduation
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="education-card reveal">
+
+                <div class="edu-icon">
+
+                    <i class="fa-solid fa-laptop-code"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>Diploma in Data Science</h3>
+
+                    <p>
+                        IIT Madras
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>Projects</small>
+
+            <h2>Things I've worked on</h2>
+
+        </div>
+
+
+        <div class="projects">
+
+            <div class="project-card reveal">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>Data Analysis</h3>
+
+                <p>
+
+                    Working with data to find useful information,
+                    understand patterns and present results in a
+                    simple way.
+
+                </p>
+
+            </div>
+
+
+            <div class="project-card reveal">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>Web Development</h3>
+
+                <p>
+
+                    Creating responsive websites and interactive
+                    web pages using HTML, CSS and JavaScript.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- THE GOAL -->
+
+        <div class="goal-project reveal">
+
+            <div class="goal-content">
+
+                <img src="THE.png"
+                     alt="The Goal">
+
+                <h3>Building The Goal</h3>
+
+                <p>
+
+                    The Goal is a learning website focused on helping
+                    Class 9 and 10 students with Mathematics, PYQs,
+                    tests and useful study material.
+
+                </p>
+
+            </div>
+
+            <div class="goal-link">
+
+                <a href="https://pushpender-jangid.github.io/The_Goal/"
+                   target="_blank">
+
+                    Visit The Goal
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <small>Contact</small>
+
+            <h2>Let's connect</h2>
+
+        </div>
+
+
+        <div class="contact-box reveal">
+
+            <div class="contact-left">
+
+                <h2>Get in touch.</h2>
+
+                <p>
+
+                    Have a project, idea or just want to connect?
+                    You can reach me here.
+
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+
+                <!-- INSTAGRAM -->
+
+                <a class="contact-item"
+                   href="https://instagram.com/pushpender__jangid"
+                   target="_blank">
+
+                    <div class="contact-icon instagram-icon">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </div>
+
+                    <span>Instagram</span>
+
+                </a>
+
+
+                <!-- WHATSAPP -->
+
+                <a class="contact-item"
+                   href="https://wa.me/919929908953"
+                   target="_blank">
+
+                    <div class="contact-icon whatsapp-icon">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </div>
+
+                    <span>WhatsApp</span>
+
+                </a>
+
+
+                <!-- EMAIL -->
+
+                <a class="contact-item"
+                   href="mailto:pushpender1733@gmal.com">
+
+                    <div class="contact-icon email-icon">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </div>
+
+                    <span>pushpender1733@gmal.com</span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Made with
+
+    <span class="heart">❤️</span>
+
+    in India
+
+</footer>
+
+
+<script>
+
+/* =========================
+   NAVBAR
+========================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 40){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("active");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold:0.12
+    }
+);
+
+revealElements.forEach(el => {
+
+    observer.observe(el);
+
+});
+
+
+/* =========================
+   PROFILE MOUSE EFFECT
+========================= */
+
+const profileCard =
+document.querySelector(".profile-card");
+
+document.addEventListener("mousemove", (e) => {
+
+    if(!profileCard || window.innerWidth < 800)
+        return;
+
+    const x =
+        (window.innerWidth / 2 - e.clientX) / 100;
+
+    const y =
+        (window.innerHeight / 2 - e.clientY) / 100;
+
+    profileCard.style.transform =
+        `rotate(2deg) rotateX(${y}deg) rotateY(${x}deg)`;
+
+});
+
+
+profileCard.addEventListener("mouseleave", () => {
+
+    profileCard.style.transform =
+        "rotate(2deg)";
+
+});
+
+</script>
+
+</body>
+</html>
+```
