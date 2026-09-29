@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1811,6 +1812,29 @@ main{
 }
 
 
+.feedback-box input:focus,
+.feedback-box textarea:focus{
+
+    border-color:var(--purple);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(109,63,169,.08);
+}
+
+
+.feedback-box input:invalid:not(:placeholder-shown){
+
+    border-color:#f59e0b;
+}
+
+
+.feedback-box input:valid{
+
+    border-color:#cbd5e1;
+}
+
+
 .feedback-box textarea{
 
     min-height:115px;
@@ -2721,7 +2745,6 @@ footer{
 
 <nav>
 
-<!-- MAIN HOMEPAGE -->
 <a
     href="index.html"
     class="nav-brand"
@@ -2753,8 +2776,6 @@ CLASS 9th & 10th • MATHS
 
 <section class="hero">
 
-
-<!-- HERO LEFT -->
 
 <div class="hero-content">
 
@@ -2863,10 +2884,6 @@ Hindi + English
 <div class="visual-glow"></div>
 
 
-<!-- =====================================================
-     CBSE CARD → cbse.html
-===================================================== -->
-
 <a
     href="cbse.html"
     class="board-card cbse"
@@ -2905,10 +2922,6 @@ ENTER CBSE →
 
 </a>
 
-
-<!-- =====================================================
-     RBSE CARD → rbse.html
-===================================================== -->
 
 <a
     href="rbse.html"
@@ -2971,10 +2984,6 @@ Two Boards.
 <main id="boards">
 
 
-<!-- =====================================================
-     BOARD SECTION
-===================================================== -->
-
 <div class="section-title">
 
 <h2>
@@ -2991,10 +3000,6 @@ Select your board and start your Mathematics preparation.
 
 <section class="boards">
 
-
-<!-- =====================================================
-     CBSE
-===================================================== -->
 
 <div class="board-selection-card">
 
@@ -3057,8 +3062,6 @@ ENGLISH
 </div>
 
 
-<!-- MAIN CBSE BUTTON → cbse.html -->
-
 <a
     href="cbse.html"
     class="board-btn"
@@ -3069,10 +3072,6 @@ ENTER CBSE PORTAL →
 
 </div>
 
-
-<!-- =====================================================
-     RBSE
-===================================================== -->
 
 <div class="board-selection-card rbse-card">
 
@@ -3134,8 +3133,6 @@ ENGLISH
 
 </div>
 
-
-<!-- RBSE BUTTON → rbse.html -->
 
 <a
     href="rbse.html"
@@ -3237,7 +3234,6 @@ Study Mathematics using clear English explanations,
 questions and exam-focused resources.
 </p>
 
-
 </div>
 
 
@@ -3258,7 +3254,6 @@ Hindi Medium
 गणित की तैयारी हिंदी माध्यम के विद्यार्थियों के लिए
 सरल और व्यवस्थित तरीके से।
 </p>
-
 
 </div>
 
@@ -3415,18 +3410,21 @@ Your Name
 >
 
 
-<label for="feedbackEmail">
-Email Address
+<label for="feedbackMobile">
+Mobile Number
 </label>
 
 
 <input
-    id="feedbackEmail"
-    type="email"
-    name="email"
-    placeholder="Enter your email"
+    id="feedbackMobile"
+    type="tel"
+    name="mobile"
+    placeholder="Enter your 10-digit mobile number"
     required
-    autocomplete="email"
+    inputmode="numeric"
+    pattern="[0-9]{10}"
+    maxlength="10"
+    autocomplete="tel"
 >
 
 
@@ -3528,12 +3526,12 @@ SEND FEEDBACK →
 </div>
 
 
-<h3>
+<h3 id="feedbackSuccessTitle">
 Thank You! ❤️
 </h3>
 
 
-<p>
+<p id="feedbackSuccessMessage">
 Your feedback has been received.
 It helps us improve THE GOAL.
 </p>
@@ -3562,28 +3560,265 @@ const FEEDBACK_URL =
 "https://script.google.com/macros/s/AKfycbz_0DPiLtm6SIT8uyn7Sw7UO8cNyZezfszdyKtfDdLPe2OcVtFspQL9UOuS5yHD57qm/exec";
 
 
-function openFeedback(){
+/* =====================================================
+   GROUP MEMBERS
 
-    document
-        .getElementById("feedbackOverlay")
-        .classList
-        .add("active");
+   These numbers permanently hide feedback
+   on the browser where they are entered.
+===================================================== */
+
+const GROUP_MEMBERS = [
+
+    "8386919798",
+
+    "9694884615"
+
+];
+
+
+/* =====================================================
+   LOCAL STORAGE KEY
+===================================================== */
+
+const GROUP_MEMBER_STORAGE =
+"goalGroupMember";
+
+
+/* =====================================================
+   CHECK LOCAL STORAGE
+===================================================== */
+
+function isGroupMemberHidden(){
+
+    return localStorage.getItem(
+        GROUP_MEMBER_STORAGE
+    ) === "true";
 
 }
 
+
+/* =====================================================
+   HIDE FEEDBACK PERMANENTLY
+===================================================== */
+
+function hideFeedbackPermanently(){
+
+    /*
+       Save the status permanently
+       in this browser.
+    */
+
+    localStorage.setItem(
+        GROUP_MEMBER_STORAGE,
+        "true"
+    );
+
+
+    /*
+       Hide floating feedback button.
+    */
+
+    const floatingButton =
+        document.querySelector(
+            ".feedback-floating"
+        );
+
+
+    if(floatingButton){
+
+        floatingButton.style.display =
+            "none";
+
+    }
+
+
+    /*
+       Close feedback popup.
+    */
+
+    const overlay =
+        document.getElementById(
+            "feedbackOverlay"
+        );
+
+
+    if(overlay){
+
+        overlay.classList.remove(
+            "active"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   OPEN FEEDBACK
+===================================================== */
+
+function openFeedback(){
+
+    /*
+       If browser is already marked
+       as a group member, don't open.
+    */
+
+    if(isGroupMemberHidden()){
+
+        hideFeedbackPermanently();
+
+        return;
+
+    }
+
+
+    const overlay =
+        document.getElementById(
+            "feedbackOverlay"
+        );
+
+
+    const form =
+        document.getElementById(
+            "feedbackForm"
+        );
+
+
+    const success =
+        document.getElementById(
+            "feedbackSuccess"
+        );
+
+
+    /*
+       Reset normal form state.
+    */
+
+    form.style.display =
+        "block";
+
+
+    success.classList.remove(
+        "active"
+    );
+
+
+    overlay.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE FEEDBACK
+===================================================== */
 
 function closeFeedback(){
 
     document
-        .getElementById("feedbackOverlay")
+        .getElementById(
+            "feedbackOverlay"
+        )
         .classList
-        .remove("active");
+        .remove(
+            "active"
+        );
 
 }
 
 
+/* =====================================================
+   GROUP MEMBER DETECTION
+===================================================== */
+
+function checkGroupMember(){
+
+    const mobileInput =
+        document.getElementById(
+            "feedbackMobile"
+        );
+
+
+    const mobile =
+        mobileInput.value
+            .replace(/\D/g, "");
+
+
+    /*
+       Keep only digits.
+    */
+
+    mobileInput.value =
+        mobile;
+
+
+    /*
+       Wait until 10 digits.
+    */
+
+    if(mobile.length !== 10){
+
+        return false;
+
+    }
+
+
+    /*
+       Check whether number belongs
+       to a group member.
+    */
+
+    if(
+        GROUP_MEMBERS.includes(
+            mobile
+        )
+    ){
+
+        /*
+           Permanently hide feedback
+           on this browser.
+        */
+
+        hideFeedbackPermanently();
+
+        return true;
+
+    }
+
+
+    return false;
+
+}
+
+
+/* =====================================================
+   MOBILE INPUT LISTENER
+===================================================== */
+
 document
-    .getElementById("feedbackOverlay")
+    .getElementById(
+        "feedbackMobile"
+    )
+    .addEventListener(
+        "input",
+        function(){
+
+            checkGroupMember();
+
+        }
+    );
+
+
+/* =====================================================
+   CLOSE WHEN CLICKING OUTSIDE
+===================================================== */
+
+document
+    .getElementById(
+        "feedbackOverlay"
+    )
     .addEventListener(
         "click",
         function(e){
@@ -3598,15 +3833,73 @@ document
     );
 
 
+/* =====================================================
+   SUBMIT FEEDBACK
+===================================================== */
+
 document
-    .getElementById("feedbackForm")
+    .getElementById(
+        "feedbackForm"
+    )
     .addEventListener(
         "submit",
         async function(e){
 
             e.preventDefault();
 
-            const form = this;
+
+            const form =
+                this;
+
+
+            const mobile =
+                document
+                    .getElementById(
+                        "feedbackMobile"
+                    )
+                    .value
+                    .replace(
+                        /\D/g,
+                        ""
+                    );
+
+
+            /*
+               NEVER submit group member
+               numbers to Google Sheets.
+            */
+
+            if(
+                GROUP_MEMBERS.includes(
+                    mobile
+                )
+            ){
+
+                hideFeedbackPermanently();
+
+                return;
+
+            }
+
+
+            /*
+               Validate mobile number.
+            */
+
+            if(
+                !/^\d{10}$/.test(
+                    mobile
+                )
+            ){
+
+                alert(
+                    "Please enter a valid 10-digit mobile number."
+                );
+
+                return;
+
+            }
+
 
             const submitButton =
                 document.getElementById(
@@ -3614,14 +3907,18 @@ document
                 );
 
 
-            submitButton.disabled = true;
+            submitButton.disabled =
+                true;
+
 
             submitButton.textContent =
                 "SENDING...";
 
 
             const formData =
-                new FormData(form);
+                new FormData(
+                    form
+                );
 
 
             try{
@@ -3629,15 +3926,39 @@ document
                 await fetch(
                     FEEDBACK_URL,
                     {
+
                         method:"POST",
+
                         body:formData,
+
                         mode:"no-cors"
+
                     }
                 );
 
 
+                /*
+                   Hide submitted form.
+                */
+
                 form.style.display =
                     "none";
+
+
+                /*
+                   Show success message.
+                */
+
+                document.getElementById(
+                    "feedbackSuccessTitle"
+                ).textContent =
+                    "Thank You! ❤️";
+
+
+                document.getElementById(
+                    "feedbackSuccessMessage"
+                ).textContent =
+                    "Your feedback has been received. It helps us improve THE GOAL.";
 
 
                 document
@@ -3645,7 +3966,9 @@ document
                         "feedbackSuccess"
                     )
                     .classList
-                    .add("active");
+                    .add(
+                        "active"
+                    );
 
 
                 form.reset();
@@ -3671,6 +3994,43 @@ document
 
         }
     );
+
+
+/* =====================================================
+   RESTORE GROUP MEMBER STATE
+   WHEN PAGE LOADS
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        /*
+           If this browser was already marked,
+           permanently hide the feedback button.
+        */
+
+        if(
+            isGroupMemberHidden()
+        ){
+
+            const floatingButton =
+                document.querySelector(
+                    ".feedback-floating"
+                );
+
+
+            if(floatingButton){
+
+                floatingButton.style.display =
+                    "none";
+
+            }
+
+        }
+
+    }
+);
 
 </script>
 
@@ -3725,21 +4085,15 @@ Quick Links
 </h4>
 
 
-<!-- HOME → index.html -->
-
 <a href="index.html">
 Home
 </a>
 
 
-<!-- CBSE → cbse.html -->
-
 <a href="cbse.html">
 CBSE Mathematics
 </a>
 
-
-<!-- RBSE → rbse.html -->
 
 <a href="rbse.html">
 RBSE Mathematics
@@ -3773,8 +4127,13 @@ or simply want to connect?
 <div class="social-links">
 
 
+<!-- =====================================================
+     WHATSAPP
+     Direct chat → 9929908953
+===================================================== -->
+
 <a
-    href="https://chat.whatsapp.com"
+    href="https://wa.me/919929908953"
     target="_blank"
     rel="noopener noreferrer"
     class="social whatsapp"
@@ -3789,8 +4148,13 @@ WhatsApp
 </a>
 
 
+<!-- =====================================================
+     INSTAGRAM
+     @the.goal.10th
+===================================================== -->
+
 <a
-    href="https://www.instagram.com/shreya_sharma_10th"
+    href="https://www.instagram.com/the.goal.10th/"
     target="_blank"
     rel="noopener noreferrer"
     class="social instagram"
@@ -3814,7 +4178,9 @@ Instagram
 </div>
 
 
-<!-- FOOTER BOTTOM -->
+<!-- =====================================================
+     FOOTER BOTTOM
+===================================================== -->
 
 <div class="footer-bottom">
 
@@ -3854,3 +4220,4 @@ in India
 </body>
 
 </html>
+```
