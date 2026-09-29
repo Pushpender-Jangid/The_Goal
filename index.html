@@ -3550,7 +3550,7 @@ CLOSE
 
 
 <!-- =====================================================
-     FEEDBACK SCRIPT
+     UPDATED FEEDBACK SCRIPT
 ===================================================== -->
 
 <script>
@@ -3560,13 +3560,15 @@ const FEEDBACK_URL =
 
 
 /* =====================================================
-   GROUP MEMBERS
+   CHANNEL MEMBERS
 
-   These numbers permanently hide feedback
-   on the browser where they are entered.
+   These numbers:
+   1. Show Channel Member message
+   2. Hide feedback permanently
+   3. Are NEVER sent to Google Sheets
 ===================================================== */
 
-const GROUP_MEMBERS = [
+const CHANNEL_MEMBERS = [
 
     "8386919798",
 
@@ -3579,49 +3581,68 @@ const GROUP_MEMBERS = [
    LOCAL STORAGE KEY
 ===================================================== */
 
-const GROUP_MEMBER_STORAGE =
-"goalGroupMember";
+const CHANNEL_MEMBER_STORAGE =
+"goalChannelMember";
 
 
 /* =====================================================
-   CHECK LOCAL STORAGE
+   CHECK SAVED CHANNEL MEMBER STATUS
 ===================================================== */
 
-function isGroupMemberHidden(){
+function isChannelMember(){
 
     return localStorage.getItem(
-        GROUP_MEMBER_STORAGE
+        CHANNEL_MEMBER_STORAGE
     ) === "true";
 
 }
 
 
 /* =====================================================
-   HIDE FEEDBACK PERMANENTLY
+   SHOW CHANNEL MEMBER MESSAGE
 ===================================================== */
 
-function hideFeedbackPermanently(){
+function showChannelMemberMessage(){
 
-    /*
-       Save the status permanently
-       in this browser.
-    */
-
-    localStorage.setItem(
-        GROUP_MEMBER_STORAGE,
-        "true"
-    );
+    const form =
+        document.getElementById(
+            "feedbackForm"
+        );
 
 
-    /*
-       Hide floating feedback button.
-    */
+    const success =
+        document.getElementById(
+            "feedbackSuccess"
+        );
+
+
+    const overlay =
+        document.getElementById(
+            "feedbackOverlay"
+        );
+
 
     const floatingButton =
         document.querySelector(
             ".feedback-floating"
         );
 
+
+    /*
+       Hide feedback form.
+    */
+
+    if(form){
+
+        form.style.display =
+            "none";
+
+    }
+
+
+    /*
+       Hide floating feedback button.
+    */
 
     if(floatingButton){
 
@@ -3632,18 +3653,42 @@ function hideFeedbackPermanently(){
 
 
     /*
-       Close feedback popup.
+       IMPORTANT:
+       Show exact Channel Member message.
     */
 
-    const overlay =
-        document.getElementById(
-            "feedbackOverlay"
+    document.getElementById(
+        "feedbackSuccessTitle"
+    ).textContent =
+        "You are a Channel Member ❤️";
+
+
+    document.getElementById(
+        "feedbackSuccessMessage"
+    ).textContent =
+        "Thank you for being a part of THE GOAL.";
+
+
+    /*
+       Show success/message box.
+    */
+
+    if(success){
+
+        success.classList.add(
+            "active"
         );
 
+    }
+
+
+    /*
+       Keep popup visible.
+    */
 
     if(overlay){
 
-        overlay.classList.remove(
+        overlay.classList.add(
             "active"
         );
 
@@ -3659,13 +3704,14 @@ function hideFeedbackPermanently(){
 function openFeedback(){
 
     /*
-       If browser is already marked
-       as a group member, don't open.
+       If this browser was already
+       marked as Channel Member,
+       show the message instead.
     */
 
-    if(isGroupMemberHidden()){
+    if(isChannelMember()){
 
-        hideFeedbackPermanently();
+        showChannelMemberMessage();
 
         return;
 
@@ -3691,7 +3737,7 @@ function openFeedback(){
 
 
     /*
-       Reset normal form state.
+       Normal feedback form.
     */
 
     form.style.display =
@@ -3729,10 +3775,10 @@ function closeFeedback(){
 
 
 /* =====================================================
-   GROUP MEMBER DETECTION
+   CHECK CHANNEL MEMBER NUMBER
 ===================================================== */
 
-function checkGroupMember(){
+function checkChannelMember(){
 
     const mobileInput =
         document.getElementById(
@@ -3740,21 +3786,29 @@ function checkGroupMember(){
         );
 
 
+    if(!mobileInput){
+
+        return false;
+
+    }
+
+
+    /*
+       Only numbers.
+    */
+
     const mobile =
         mobileInput.value
             .replace(/\D/g, "");
 
-
-    /*
-       Keep only digits.
-    */
 
     mobileInput.value =
         mobile;
 
 
     /*
-       Wait until 10 digits.
+       Wait until exactly
+       10 digits are entered.
     */
 
     if(mobile.length !== 10){
@@ -3765,22 +3819,32 @@ function checkGroupMember(){
 
 
     /*
-       Check whether number belongs
-       to a group member.
+       Check Channel Member numbers.
     */
 
     if(
-        GROUP_MEMBERS.includes(
+        CHANNEL_MEMBERS.includes(
             mobile
         )
     ){
 
         /*
-           Permanently hide feedback
-           on this browser.
+           Save permanently
+           in this browser.
         */
 
-        hideFeedbackPermanently();
+        localStorage.setItem(
+            CHANNEL_MEMBER_STORAGE,
+            "true"
+        );
+
+
+        /*
+           Show the message.
+        */
+
+        showChannelMemberMessage();
+
 
         return true;
 
@@ -3804,7 +3868,7 @@ document
         "input",
         function(){
 
-            checkGroupMember();
+            checkChannelMember();
 
         }
     );
@@ -3863,27 +3927,39 @@ document
                     );
 
 
-            /*
-               NEVER submit group member
-               numbers to Google Sheets.
-            */
+            /* =================================================
+               SECURITY CHECK
+
+               Channel member numbers are blocked BEFORE
+               FormData/fetch is created.
+
+               Therefore they will NEVER be submitted
+               to Google Sheets.
+            ================================================= */
 
             if(
-                GROUP_MEMBERS.includes(
+                CHANNEL_MEMBERS.includes(
                     mobile
                 )
             ){
 
-                hideFeedbackPermanently();
+                localStorage.setItem(
+                    CHANNEL_MEMBER_STORAGE,
+                    "true"
+                );
+
+
+                showChannelMemberMessage();
+
 
                 return;
 
             }
 
 
-            /*
-               Validate mobile number.
-            */
+            /* =================================================
+               NORMAL MOBILE VALIDATION
+            ================================================= */
 
             if(
                 !/^\d{10}$/.test(
@@ -3913,6 +3989,10 @@ document
             submitButton.textContent =
                 "SENDING...";
 
+
+            /*
+               Only NORMAL users reach this point.
+            */
 
             const formData =
                 new FormData(
@@ -3945,7 +4025,7 @@ document
 
 
                 /*
-                   Show success message.
+                   Normal success message.
                 */
 
                 document.getElementById(
@@ -3969,6 +4049,10 @@ document
                         "active"
                     );
 
+
+                /*
+                   Reset form.
+                */
 
                 form.reset();
 
@@ -3996,7 +4080,7 @@ document
 
 
 /* =====================================================
-   RESTORE GROUP MEMBER STATE
+   RESTORE CHANNEL MEMBER STATE
    WHEN PAGE LOADS
 ===================================================== */
 
@@ -4005,12 +4089,13 @@ document.addEventListener(
     function(){
 
         /*
-           If this browser was already marked,
-           permanently hide the feedback button.
+           If this browser has already been
+           marked as Channel Member,
+           hide feedback button.
         */
 
         if(
-            isGroupMemberHidden()
+            isChannelMember()
         ){
 
             const floatingButton =
@@ -4128,7 +4213,6 @@ or simply want to connect?
 
 <!-- =====================================================
      WHATSAPP
-     Direct chat → 9929908953
 ===================================================== -->
 
 <a
@@ -4149,7 +4233,6 @@ WhatsApp
 
 <!-- =====================================================
      INSTAGRAM
-     @the.goal.10th
 ===================================================== -->
 
 <a
@@ -4219,4 +4302,3 @@ in India
 </body>
 
 </html>
-```
